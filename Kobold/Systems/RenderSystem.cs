@@ -1,13 +1,18 @@
 ﻿using Arch.Core;
-using Arch.Core.Extensions;
 using Kobold.Core.Abstractions;
 using Kobold.Core.Components;
-using Kobold.Core.Systems;
-using System.Drawing;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Pong.Systems
+namespace Kobold.Core.Systems
 {
-    public class RenderSystem : ISystem
+    /// <summary>
+    /// Generic rendering system that handles all basic render components
+    /// </summary>
+    public class RenderSystem : IRenderSystem
     {
         private readonly IRenderer _renderer;
         private readonly World _world;
@@ -36,12 +41,13 @@ namespace Pong.Systems
                 _renderer.DrawText(textRenderer.Text, transform.Position, textRenderer.Color, textRenderer.FontSize);
             });
 
-            _renderer.End();
-        }
+            // Future: Add more render types here
+            // - Sprites/Textures
+            // - Circles
+            // - Lines
+            // - Particles
 
-        public void Update(float deltaTime)
-        {
-            // pass
+            _renderer.End();
         }
     }
 }

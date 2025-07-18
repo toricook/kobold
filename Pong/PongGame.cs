@@ -55,23 +55,34 @@ namespace Pong
 
         private void InitializeSystems()
         {
-            // Create systems
-            var inputSystem = new InputSystem(InputManager, World);
-            var movementSystem = new MovementSystem(World);
-            var aiSystem = new AISystem(World);
-            var collisionSystem = new CollisionSystem(World, EventBus, SCREEN_WIDTH, SCREEN_HEIGHT);
-            var renderSystem = new RenderSystem(Renderer, World);
-            var scoreSystem = new ScoreSystem(World, EventBus, 2);
-            var gameStateSystem = new GameStateSystem(World, EventBus, InputManager);
+            // Physics configuration - no gravity or damping for Pong
+            var physicsConfig = new PhysicsConfig
+            {
+                EnableGravity = false,
+                EnableDamping = false
+            };
 
-            // Register systems with SystemManager
-            SystemManager.AddSystem(inputSystem, requiresGameplayState: true);        // Only during gameplay
-            SystemManager.AddSystem(movementSystem, requiresGameplayState: true);     // Only during gameplay
-            SystemManager.AddSystem(aiSystem, requiresGameplayState: true);           // Only during gameplay
-            SystemManager.AddSystem(collisionSystem, requiresGameplayState: true);    // Only during gameplay
-            SystemManager.AddSystem(renderSystem, requiresGameplayState: false);      // Always render
-            SystemManager.AddSystem(scoreSystem, requiresGameplayState: false);       // Always handle score events
-            SystemManager.AddSystem(gameStateSystem, requiresGameplayState: false);   // Always handle game state
+            // Create systems - using core systems where possible
+            var inputSystem = new InputSystem(InputManager, World);
+            var physicsSystem = new PhysicsSystem(World, physicsConfig);
+            var coreCollisionSystem = new CollisionSystem(World, EventBus);
+            var pongCollisionHandler = new PongCollisionHandler(World, EventBus, SCREEN_WIDTH, SCREEN_HEIGHT);
+            var aiSystem = new AISystem(World);
+            var renderSystem = new RenderSystem(Renderer, World); // Core RenderSystem
+            var scoreSystem = new ScoreSystem(World, EventBus, 2);
+            var gameStateSystem = new PongGameStateSystem(World, EventBus, InputManager);
+
+            // Register update systems with ordering
+            SystemManager.AddSystem(inputSystem, SystemUpdateOrder.INPUT, requiresGameplayState: true);
+            SystemManager.AddSystem(physicsSystem, SystemUpdateOrder.PHYSICS, requiresGameplayState: true);
+            SystemManager.AddSystem(coreCollisionSystem, SystemUpdateOrder.COLLISION, requiresGameplayState: true);
+            SystemManager.AddSystem(pongCollisionHandler, SystemUpdateOrder.COLLISION + 1, requiresGameplayState: true);
+            SystemManager.AddSystem(aiSystem, SystemUpdateOrder.AI, requiresGameplayState: true);
+            SystemManager.AddSystem(scoreSystem, SystemUpdateOrder.GAME_LOGIC, requiresGameplayState: false);
+            SystemManager.AddSystem(gameStateSystem, SystemUpdateOrder.UI, requiresGameplayState: false);
+
+            // Register render systems separately
+            SystemManager.AddRenderSystem(renderSystem);
         }
 
         private void CreateGameState()
@@ -85,12 +96,13 @@ namespace Pong
         {
             // Player paddle (left side)
             _playerPaddle = World.Create(
-                new Transform(new Vector2(50f, SCREEN_HEIGHT / 2 - PADDLE_HEIGHT / 2)),
-                new Velocity(Vector2.Zero),
-                new Paddle(PADDLE_SPEED, isPlayer: true),
-                new BoxCollider(new Vector2(PADDLE_WIDTH, PADDLE_HEIGHT)),
-                new RectangleRenderer(new Vector2(PADDLE_WIDTH, PADDLE_HEIGHT), Color.White)
-            );
+                        new Transform(new Vector2(50f, SCREEN_HEIGHT / 2 - PADDLE_HEIGHT / 2)),
+                        new Velocity(Vector2.Zero),
+                        new Paddle(PADDLE_SPEED, isPlayer: true),
+                        PlayerControlled.CreateVerticalOnly(PADDLE_SPEED),
+                        new BoxCollider(new Vector2(PADDLE_WIDTH, PADDLE_HEIGHT)),
+                        new RectangleRenderer(new Vector2(PADDLE_WIDTH, PADDLE_HEIGHT), Color.White)
+                    );
 
             // AI paddle (right side)
             _aiPaddle = World.Create(
@@ -136,13 +148,11 @@ namespace Pong
 
         public override void Update(float deltaTime)
         {
-            // SystemManager.UpdateAll() is called by base.Update()
             base.Update(deltaTime);
         }
 
         public override void Render()
         {
-
             var renderSystem = SystemManager.GetSystem<RenderSystem>();
             renderSystem?.Render();
         }
