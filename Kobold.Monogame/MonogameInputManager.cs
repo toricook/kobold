@@ -24,7 +24,8 @@ namespace Kobold.Monogame
             { KeyCode.Up, XnaKeys.Up },
             { KeyCode.Down, XnaKeys.Down },
             { KeyCode.Left, XnaKeys.Left },
-            { KeyCode.Right, XnaKeys.Right }
+            { KeyCode.Right, XnaKeys.Right },
+            { KeyCode.P, XnaKeys.P },
         };
 
         public void Update()

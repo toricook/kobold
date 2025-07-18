@@ -19,7 +19,8 @@ namespace Kobold.Core.Abstractions
     public enum KeyCode
     {
         W, A, S, D, Space, Enter, Escape,
-        Up, Down, Left, Right
+        Up, Down, Left, Right,
+        P
         // Add more as needed
     }
 
