@@ -19,7 +19,7 @@ namespace Kobold.Core
         {
             World = World.Create();
             EventBus = new EventBus();
-            SystemManager = new SystemManager(EventBus);
+            SystemManager = new SystemManager(EventBus, World);
         }
 
         // Alternative constructor for direct injection

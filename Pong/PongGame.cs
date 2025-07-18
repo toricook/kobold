@@ -61,17 +61,17 @@ namespace Pong
             var aiSystem = new AISystem(World);
             var collisionSystem = new CollisionSystem(World, EventBus, SCREEN_WIDTH, SCREEN_HEIGHT);
             var renderSystem = new RenderSystem(Renderer, World);
-            var scoreSystem = new ScoreSystem(World, EventBus);
+            var scoreSystem = new ScoreSystem(World, EventBus, 2);
             var gameStateSystem = new GameStateSystem(World, EventBus, InputManager);
 
             // Register systems with SystemManager
-            SystemManager.AddSystem(inputSystem);
-            SystemManager.AddSystem(movementSystem);
-            SystemManager.AddSystem(aiSystem);
-            SystemManager.AddSystem(collisionSystem);
-            SystemManager.AddSystem(renderSystem);
-            SystemManager.AddSystem(scoreSystem);
-            SystemManager.AddSystem(gameStateSystem);
+            SystemManager.AddSystem(inputSystem, requiresGameplayState: true);        // Only during gameplay
+            SystemManager.AddSystem(movementSystem, requiresGameplayState: true);     // Only during gameplay
+            SystemManager.AddSystem(aiSystem, requiresGameplayState: true);           // Only during gameplay
+            SystemManager.AddSystem(collisionSystem, requiresGameplayState: true);    // Only during gameplay
+            SystemManager.AddSystem(renderSystem, requiresGameplayState: false);      // Always render
+            SystemManager.AddSystem(scoreSystem, requiresGameplayState: false);       // Always handle score events
+            SystemManager.AddSystem(gameStateSystem, requiresGameplayState: false);   // Always handle game state
         }
 
         private void CreateGameState()
@@ -142,14 +142,9 @@ namespace Pong
 
         public override void Render()
         {
-            // RenderSystem handles rendering through SystemManager
-            // But we still need to call Begin/End
-            Renderer.Begin();
 
-            // The RenderSystem will handle drawing everything
-            // We could remove this override entirely if RenderSystem calls Begin/End
-
-            Renderer.End();
+            var renderSystem = SystemManager.GetSystem<RenderSystem>();
+            renderSystem?.Render();
         }
     }
 }

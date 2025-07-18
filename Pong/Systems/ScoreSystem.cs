@@ -1,4 +1,5 @@
 ﻿using Arch.Core;
+using Kobold.Core.Abstractions;
 using Kobold.Core.Components;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
@@ -11,19 +12,23 @@ using System.Threading.Tasks;
 
 namespace Pong.Systems
 {
-    public class ScoreSystem : ISystem, IEventHandler<PlayerScoredEvent>
+    public class ScoreSystem : ISystem, IEventHandler<PlayerScoredEvent>, IEventHandler<GameRestartEvent>
     {
         private readonly World _world;
         private readonly EventBus _eventBus;
         private Score _currentScore;
-        private static readonly int _winningScore = 10;
+        private readonly int _winningScore;
 
-        public ScoreSystem(World world, EventBus eventBus)
+        public ScoreSystem(World world, EventBus eventBus, int winningScore = 10)
         {
             _world = world;
             _eventBus = eventBus;
             _currentScore = new Score();
+            _winningScore = winningScore;
+
             eventBus.Subscribe<PlayerScoredEvent>(this);
+            eventBus.Subscribe<GameRestartEvent>(this);
+
         }
 
         public void Handle(PlayerScoredEvent eventData)
@@ -38,6 +43,12 @@ namespace Pong.Systems
             }
 
             UpdateScoreDisplay();
+            CheckForGameOver();
+        }
+
+        public void Handle(GameRestartEvent eventData)
+        {
+            ResetScore();
         }
 
         private void UpdateScoreDisplay()
@@ -72,7 +83,7 @@ namespace Pong.Systems
 
         public void Update(float deltaTime)
         {
-            // pass
+            //pass
         }
     }
 }
