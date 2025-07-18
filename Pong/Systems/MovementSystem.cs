@@ -1,11 +1,12 @@
 ﻿using Arch.Core;
 using Arch.Core.Extensions;
 using Kobold.Core.Components;
+using Kobold.Core.Systems;
 using System.Numerics;
 
 namespace Pong.Systems
 {
-    public class MovementSystem
+    public class MovementSystem : ISystem
     {
         private readonly World _world;
 

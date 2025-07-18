@@ -1,20 +1,24 @@
 ﻿using Arch.Core;
 using Arch.Core.Extensions;
 using Kobold.Core.Components;
+using Kobold.Core.Events;
+using Kobold.Core.Systems;
 using Pong.Components;
 using System.Numerics;
 
 namespace Pong.Systems
 {
-    public class CollisionSystem
+    public class CollisionSystem : ISystem
     {
         private readonly World _world;
+        private readonly EventBus _eventBus;
         private readonly float _screenWidth;
         private readonly float _screenHeight;
 
-        public CollisionSystem(World world, float screenWidth, float screenHeight)
+        public CollisionSystem(World world, EventBus eventBus, float screenWidth, float screenHeight)
         {
             _world = world;
+            _eventBus = eventBus;
             _screenWidth = screenWidth;
             _screenHeight = screenHeight;
         }
@@ -41,16 +45,28 @@ namespace Pong.Systems
                 }
 
                 // Left and right walls (scoring)
-                if (transform.Position.X <= 0 || transform.Position.X >= _screenWidth)
+                if (transform.Position.X <= 0)
                 {
-                    // Reset ball to center
-                    transform.Position = new Vector2(_screenWidth / 2, _screenHeight / 2);
-                    velocity.Value = new Vector2(-Math.Sign(velocity.Value.X) * ball.Speed,
-                        (Random.Shared.NextSingle() - 0.5f) * ball.Speed);
-
-                    // Update score (you'd implement this)
+                    // AI scored (ball went off left side)
+                    _eventBus.Publish(new PlayerScoredEvent(playerId: 2, newScore: 0)); // Score will be calculated by handler
+                    ResetBall(ref transform, ref velocity, ball.Speed, 1); // Ball goes right
+                }
+                else if (transform.Position.X >= _screenWidth)
+                {
+                    // Player scored (ball went off right side)
+                    _eventBus.Publish(new PlayerScoredEvent(playerId: 1, newScore: 0)); // Score will be calculated by handler
+                    ResetBall(ref transform, ref velocity, ball.Speed, -1); // Ball goes left
                 }
             });
+        }
+
+        private void ResetBall(ref Transform transform, ref Velocity velocity, float speed, int direction)
+        {
+            transform.Position = new Vector2(_screenWidth / 2, _screenHeight / 2);
+            var newVelocity = new Vector2(direction * speed, (Random.Shared.NextSingle() - 0.5f) * speed);
+            velocity.Value = newVelocity;
+
+            _eventBus.Publish(new BallResetEvent(newVelocity.X, newVelocity.Y));
         }
 
         private void HandleBallPaddleCollisions()

@@ -1,5 +1,7 @@
 ﻿using Arch.Core;
 using Kobold.Core.Abstractions;
+using Kobold.Core.Events;
+using Kobold.Core.Systems;
 
 namespace Kobold.Core
 {
@@ -8,18 +10,21 @@ namespace Kobold.Core
         protected World World;
         protected IRenderer Renderer;
         protected IInputManager InputManager;
+        protected EventBus EventBus;
+        protected SystemManager SystemManager;
 
         private bool _isInitialized = false;
 
         public GameEngineBase()
         {
             World = World.Create();
+            EventBus = new EventBus();
+            SystemManager = new SystemManager(EventBus);
         }
 
         // Alternative constructor for direct injection
-        public GameEngineBase(IRenderer renderer, IInputManager inputManager)
+        public GameEngineBase(IRenderer renderer, IInputManager inputManager) : this()
         {
-            World = World.Create();
             Renderer = renderer;
             InputManager = inputManager;
         }
@@ -53,7 +58,8 @@ namespace Kobold.Core
         {
             if (!_isInitialized)
                 throw new InvalidOperationException("Game engine must be initialized before updating");
-            // Override in derived classes to add systems
+
+            SystemManager.UpdateAll(deltaTime);
         }
 
         public virtual void Render()
@@ -67,6 +73,8 @@ namespace Kobold.Core
 
         public virtual void Shutdown()
         {
+            SystemManager.ClearSystems();
+            EventBus.Clear();
             World.Dispose();
         }
     }

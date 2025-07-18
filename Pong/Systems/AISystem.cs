@@ -1,12 +1,13 @@
 ﻿using Arch.Core;
 using Arch.Core.Extensions;
 using Kobold.Core.Components;
+using Kobold.Core.Systems;
 using Pong.Components;
 using System.Numerics;
 
 namespace Pong.Systems
 {
-    public class AISystem
+    public class AISystem : ISystem
     {
         private readonly World _world;
 

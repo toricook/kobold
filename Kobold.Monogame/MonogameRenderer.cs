@@ -66,22 +66,6 @@ namespace Kobold.Monogame
             }
         }
 
-        private void DrawTextAsRectangles(string text, SystemVector2 position, SystemColor color, float fontSize)
-        {
-            float charWidth = fontSize * 0.6f;
-            float charHeight = fontSize;
-
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (text[i] != ' ') // Don't draw spaces
-                {
-                    var charPos = new SystemVector2(position.X + i * charWidth, position.Y);
-                    var charSize = new SystemVector2(charWidth * 0.8f, charHeight);
-                    DrawRectangle(charPos, charSize, color);
-                }
-            }
-        }
-
         private Color ToXnaColor(SystemColor color)
         {
             return new Color(color.R, color.G, color.B, color.A);

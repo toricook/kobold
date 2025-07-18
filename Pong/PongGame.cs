@@ -2,6 +2,8 @@
 using Arch.Core.Extensions;
 using Kobold.Core.Abstractions;
 using Kobold.Core.Components;
+using Kobold.Core.Events;
+using Kobold.Core.Systems;
 using Kobold.Core;
 using Pong.Components;
 using Pong.Systems;
@@ -20,35 +22,63 @@ namespace Pong
         private const float PADDLE_SPEED = 300f;
         private const float BALL_SPEED = 250f;
 
-        private InputSystem _inputSystem;
-        private MovementSystem _movementSystem;
-        private AISystem _aiSystem;
-        private CollisionSystem _collisionSystem;
-        private RenderSystem _renderSystem;
-
         private Entity _playerPaddle;
         private Entity _aiPaddle;
         private Entity _ball;
         private Entity _scoreDisplay;
-        private Score _gameScore;
+        private Entity _gameStateEntity;
+
+        public PongGame() : base()
+        {
+        }
+
+        public PongGame(IRenderer renderer, IInputManager inputManager)
+            : base(renderer, inputManager)
+        {
+        }
 
         public override void Initialize()
         {
             base.Initialize();
 
-            // Initialize systems
-            _inputSystem = new InputSystem(InputManager, World);
-            _movementSystem = new MovementSystem(World);
-            _aiSystem = new AISystem(World);
-            _collisionSystem = new CollisionSystem(World, SCREEN_WIDTH, SCREEN_HEIGHT);
-            _renderSystem = new RenderSystem(Renderer, World);
+            // Create game state entity
+            CreateGameState();
 
             // Create game entities
             CreatePaddles();
             CreateBall();
             CreateUI();
 
-            _gameScore = new Score();
+            // Initialize and register systems
+            InitializeSystems();
+        }
+
+        private void InitializeSystems()
+        {
+            // Create systems
+            var inputSystem = new InputSystem(InputManager, World);
+            var movementSystem = new MovementSystem(World);
+            var aiSystem = new AISystem(World);
+            var collisionSystem = new CollisionSystem(World, EventBus, SCREEN_WIDTH, SCREEN_HEIGHT);
+            var renderSystem = new RenderSystem(Renderer, World);
+            var scoreSystem = new ScoreSystem(World, EventBus);
+            var gameStateSystem = new GameStateSystem(World, EventBus, InputManager);
+
+            // Register systems with SystemManager
+            SystemManager.AddSystem(inputSystem);
+            SystemManager.AddSystem(movementSystem);
+            SystemManager.AddSystem(aiSystem);
+            SystemManager.AddSystem(collisionSystem);
+            SystemManager.AddSystem(renderSystem);
+            SystemManager.AddSystem(scoreSystem);
+            SystemManager.AddSystem(gameStateSystem);
+        }
+
+        private void CreateGameState()
+        {
+            _gameStateEntity = World.Create(
+                new GameState(GameStateType.Playing)
+            );
         }
 
         private void CreatePaddles()
@@ -106,53 +136,20 @@ namespace Pong
 
         public override void Update(float deltaTime)
         {
+            // SystemManager.UpdateAll() is called by base.Update()
             base.Update(deltaTime);
-
-            // Update all systems
-            _inputSystem.Update(deltaTime);
-            _aiSystem.Update(deltaTime);
-            _movementSystem.Update(deltaTime);
-            _collisionSystem.Update(deltaTime);
-
-            // Update score display
-            UpdateScoreDisplay();
-
-            // Check for game restart
-            if (InputManager.IsKeyPressed(KeyCode.Space))
-            {
-                ResetGame();
-            }
-        }
-
-        private void UpdateScoreDisplay()
-        {
-            ref var textRenderer = ref World.Get<TextRenderer>(_scoreDisplay);
-            textRenderer.Text = $"{_gameScore.PlayerScore} - {_gameScore.AIScore}";
-        }
-
-        private void ResetGame()
-        {
-            // Reset ball position and velocity
-            ref var ballTransform = ref World.Get<Transform>(_ball);
-            ref var ballVelocity = ref World.Get<Velocity>(_ball);
-
-            ballTransform.Position = new Vector2(SCREEN_WIDTH / 2 - BALL_SIZE / 2, SCREEN_HEIGHT / 2 - BALL_SIZE / 2);
-            ballVelocity.Value = new Vector2(-BALL_SPEED, (Random.Shared.NextSingle() - 0.5f) * BALL_SPEED);
-
-            // Reset paddle positions
-            ref var playerTransform = ref World.Get<Transform>(_playerPaddle);
-            ref var aiTransform = ref World.Get<Transform>(_aiPaddle);
-
-            playerTransform.Position = new Vector2(50f, SCREEN_HEIGHT / 2 - PADDLE_HEIGHT / 2);
-            aiTransform.Position = new Vector2(SCREEN_WIDTH - 50f - PADDLE_WIDTH, SCREEN_HEIGHT / 2 - PADDLE_HEIGHT / 2);
-
-            // Reset scores
-            _gameScore = new Score();
         }
 
         public override void Render()
         {
-            _renderSystem.Render();
+            // RenderSystem handles rendering through SystemManager
+            // But we still need to call Begin/End
+            Renderer.Begin();
+
+            // The RenderSystem will handle drawing everything
+            // We could remove this override entirely if RenderSystem calls Begin/End
+
+            Renderer.End();
         }
     }
 }

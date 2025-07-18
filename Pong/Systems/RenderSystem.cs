@@ -2,11 +2,12 @@
 using Arch.Core.Extensions;
 using Kobold.Core.Abstractions;
 using Kobold.Core.Components;
+using Kobold.Core.Systems;
 using System.Drawing;
 
 namespace Pong.Systems
 {
-    public class RenderSystem
+    public class RenderSystem : ISystem
     {
         private readonly IRenderer _renderer;
         private readonly World _world;
@@ -36,6 +37,11 @@ namespace Pong.Systems
             });
 
             _renderer.End();
+        }
+
+        public void Update(float deltaTime)
+        {
+            // pass
         }
     }
 }

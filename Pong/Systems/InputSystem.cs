@@ -1,12 +1,13 @@
 ﻿using Arch.Core;
 using Kobold.Core.Abstractions;
 using Kobold.Core.Components;
+using Kobold.Core.Systems;
 using Pong.Components;
 using System.Numerics;
 
 namespace Pong.Systems
 {
-    public class InputSystem
+    public class InputSystem : ISystem
     {
         private readonly IInputManager _inputManager;
         private readonly World _world;
