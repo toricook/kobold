@@ -241,7 +241,7 @@ namespace Kobold.Core.Systems
         private bool IsGamePlaying()
         {
             var gameStateQuery = new QueryDescription().WithAll<GameState>();
-            bool isPlaying = true;
+            bool isPlaying = true; // Default to playing if no game state found
 
             _world.Query(in gameStateQuery, (ref GameState gameState) =>
             {

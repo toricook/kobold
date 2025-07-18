@@ -9,9 +9,6 @@ using System.Threading.Tasks;
 
 namespace Kobold.Core.Systems
 {
-    /// <summary>
-    /// Generic rendering system that handles all basic render components
-    /// </summary>
     public class RenderSystem : IRenderSystem
     {
         private readonly IRenderer _renderer;
@@ -27,27 +24,78 @@ namespace Kobold.Core.Systems
         {
             _renderer.Begin();
 
-            // Render rectangles
+            // Collect all renderable entities with their layers
+            var renderableEntities = new List<RenderableEntity>();
+
+            // Collect rectangles - layer is built into the component
             var rectangleQuery = new QueryDescription().WithAll<Transform, RectangleRenderer>();
-            _world.Query(in rectangleQuery, (ref Transform transform, ref RectangleRenderer rectangleRenderer) =>
+            _world.Query(in rectangleQuery, (Entity entity, ref Transform transform, ref RectangleRenderer rectangleRenderer) =>
             {
-                _renderer.DrawRectangle(transform.Position, rectangleRenderer.Size, rectangleRenderer.Color);
+                renderableEntities.Add(new RenderableEntity
+                {
+                    Entity = entity,
+                    Layer = rectangleRenderer.Layer, // Layer from component
+                    RenderType = RenderType.Rectangle,
+                    Transform = transform,
+                    RectangleRenderer = rectangleRenderer
+                });
             });
 
-            // Render text
+            // Collect text - layer is built into the component
             var textQuery = new QueryDescription().WithAll<Transform, TextRenderer>();
-            _world.Query(in textQuery, (ref Transform transform, ref TextRenderer textRenderer) =>
+            _world.Query(in textQuery, (Entity entity, ref Transform transform, ref TextRenderer textRenderer) =>
             {
-                _renderer.DrawText(textRenderer.Text, transform.Position, textRenderer.Color, textRenderer.FontSize);
+                renderableEntities.Add(new RenderableEntity
+                {
+                    Entity = entity,
+                    Layer = textRenderer.Layer, // Layer from component
+                    RenderType = RenderType.Text,
+                    Transform = transform,
+                    TextRenderer = textRenderer
+                });
             });
 
-            // Future: Add more render types here
-            // - Sprites/Textures
-            // - Circles
-            // - Lines
-            // - Particles
+            // Sort by layer (lower layers render first, appear behind)
+            renderableEntities.Sort((a, b) => a.Layer.CompareTo(b.Layer));
+
+            // Render in layer order
+            foreach (var renderable in renderableEntities)
+            {
+                switch (renderable.RenderType)
+                {
+                    case RenderType.Rectangle:
+                        _renderer.DrawRectangle(renderable.Transform.Position,
+                            renderable.RectangleRenderer.Size,
+                            renderable.RectangleRenderer.Color);
+                        break;
+
+                    case RenderType.Text:
+                        _renderer.DrawText(renderable.TextRenderer.Text,
+                            renderable.Transform.Position,
+                            renderable.TextRenderer.Color,
+                            renderable.TextRenderer.FontSize);
+                        break;
+                }
+            }
 
             _renderer.End();
+
+        }
+
+        private struct RenderableEntity
+        {
+            public Entity Entity;
+            public int Layer;
+            public RenderType RenderType;
+            public Transform Transform;
+            public RectangleRenderer RectangleRenderer;
+            public TextRenderer TextRenderer;
+        }
+
+        private enum RenderType
+        {
+            Rectangle,
+            Text
         }
     }
 }

@@ -11,15 +11,15 @@ using System.Threading.Tasks;
 namespace Kobold.Core.Systems
 {
     /// <summary>
-    /// Generic game state management system
+    /// Generic game state management system. Configure states with callbacks and an input that should trigger a transition out of this state
+    /// if applicable. Then calling ChangeState will handle performing the callbacks and publishing a GameStateChangedEvent.
     /// </summary>
     public class GameStateSystem<TGameState> : ISystem where TGameState : struct
     {
         protected readonly World World;
         protected readonly EventBus EventBus;
         protected readonly IInputManager InputManager;
-        private readonly Dictionary<TGameState, GameStateConfig> _stateConfigs = new();
-        private readonly List<Entity> _currentUIEntities = new();
+        private readonly Dictionary<string, StateConfig> _stateConfigs = new();
 
         public GameStateSystem(World world, EventBus eventBus, IInputManager inputManager)
         {
@@ -33,19 +33,16 @@ namespace Kobold.Core.Systems
             HandleStateTransitionInputs();
         }
 
-        /// <summary>
-        /// Configure a game state with UI and input handling
-        /// </summary>
-        public void ConfigureState(TGameState state, GameStateConfig config)
+        public void ConfigureState(TGameState state, StateConfig config)
         {
-            _stateConfigs[state] = config;
+            string stateKey = state.ToString();
+            _stateConfigs[stateKey] = config;
         }
 
-        /// <summary>
-        /// Change to a new game state
-        /// </summary>
         public void ChangeState(TGameState newState)
         {
+            var previousState = GetCurrentState();
+
             // Update the game state entity
             var gameStateQuery = new QueryDescription().WithAll<TGameState>();
             World.Query(in gameStateQuery, (ref TGameState gameState) =>
@@ -53,13 +50,10 @@ namespace Kobold.Core.Systems
                 gameState = newState;
             });
 
-            // Handle UI changes
-            HandleStateChange(newState);
+            // Handle state change logic
+            HandleStateChange(newState, previousState);
         }
 
-        /// <summary>
-        /// Get the current game state
-        /// </summary>
         public TGameState GetCurrentState()
         {
             TGameState currentState = default;
@@ -74,89 +68,58 @@ namespace Kobold.Core.Systems
         protected virtual void HandleStateTransitionInputs()
         {
             var currentState = GetCurrentState();
+            string stateKey = currentState.ToString();
 
-            if (_stateConfigs.TryGetValue(currentState, out var config))
+            if (_stateConfigs.TryGetValue(stateKey, out var config))
             {
-                // Check for input-based state transitions
                 foreach (var transition in config.InputTransitions)
                 {
                     if (InputManager.IsKeyPressed(transition.Key))
                     {
-                        ChangeState((TGameState)transition.NextState);
-                        transition.OnTransition?.Invoke();
-                        break;
+                        if (transition.NextState is TGameState nextState)
+                        {
+                            ChangeState(nextState);
+                            transition.OnTransition?.Invoke();
+                            break;
+                        }
                     }
                 }
             }
         }
 
-        protected virtual void HandleStateChange(TGameState newState)
+        protected virtual void HandleStateChange(TGameState newState, TGameState previousState)
         {
-            // Clear current UI
-            ClearCurrentUI();
+            string previousStateKey = previousState.ToString();
+            string newStateKey = newState.ToString();
 
-            // Show new UI if configured
-            if (_stateConfigs.TryGetValue(newState, out var config))
+            // Call previous state exit callback
+            if (_stateConfigs.TryGetValue(previousStateKey, out var previousConfig))
             {
-                foreach (var uiElement in config.UIElements)
-                {
-                    var entity = World.Create(uiElement.Components.ToArray());
-                    _currentUIEntities.Add(entity);
-                }
+                previousConfig.OnStateExit?.Invoke();
+            }
 
-                // Call state enter callback
+            // Call new state enter callback
+            if (_stateConfigs.TryGetValue(newStateKey, out var config))
+            {
                 config.OnStateEnter?.Invoke();
             }
-        }
 
-        protected void ClearCurrentUI()
-        {
-            foreach (var entity in _currentUIEntities)
-            {
-                World.Destroy(entity);
-            }
-            _currentUIEntities.Clear();
-        }
-
-        /// <summary>
-        /// Stop all movement (common for pause/game over states)
-        /// </summary>
-        protected void StopAllMovement()
-        {
-            var velocityQuery = new QueryDescription().WithAll<Velocity>();
-            World.Query(in velocityQuery, (ref Velocity velocity) =>
-            {
-                velocity.Value = System.Numerics.Vector2.Zero;
-            });
+            // Publish state change event
+            EventBus.Publish(new GameStateChangedEvent<TGameState>(previousState, newState));
         }
     }
 
-    /// <summary>
-    /// Configuration for a game state
-    /// </summary>
-    public class GameStateConfig
+    public class StateConfig
     {
-        public List<UIElementConfig> UIElements { get; set; } = new();
         public List<InputTransition> InputTransitions { get; set; } = new();
         public Action OnStateEnter { get; set; }
         public Action OnStateExit { get; set; }
     }
 
-    /// <summary>
-    /// Configuration for a UI element to show in a state
-    /// </summary>
-    public class UIElementConfig
-    {
-        public List<object> Components { get; set; } = new();
-    }
-
-    /// <summary>
-    /// Input-based state transition
-    /// </summary>
     public class InputTransition
     {
         public KeyCode Key { get; set; }
-        public object NextState { get; set; } // Generic to work with any state type
+        public object NextState { get; set; }
         public Action OnTransition { get; set; }
     }
 

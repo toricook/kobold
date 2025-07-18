@@ -8,7 +8,7 @@ namespace Pong
     {
         public static void Main()
         {
-            var pongGame = new PongGame(); // No dependencies needed here
+            var pongGame = new PongGame(); 
             using var host = new MonoGameHost(pongGame);
             host.Run();
         }

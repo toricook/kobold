@@ -15,6 +15,10 @@ using System.Threading.Tasks;
 
 namespace Pong.Systems
 {
+    /// <summary>
+    /// Handles Pong-specific game state transitions and game logic
+    /// Pure state management - no UI concerns
+    /// </summary>
     public class PongGameStateSystem : GameStateSystem<GameState>, IEventHandler<GameOverEvent>
     {
         private const float SCREEN_WIDTH = 800f;
@@ -23,23 +27,15 @@ namespace Pong.Systems
         public PongGameStateSystem(World world, EventBus eventBus, IInputManager inputManager)
             : base(world, eventBus, inputManager)
         {
-            // Configure game states
             ConfigureGameStates();
-
-            // Subscribe to game events
-            eventBus.Subscribe<GameOverEvent>(this);
+            EventBus.Subscribe<GameOverEvent>(this);
         }
 
         private void ConfigureGameStates()
         {
             // Configure Game Over state
-            ConfigureState(new GameState(GameStateType.GameOver), new GameStateConfig
+            ConfigureState(new GameState(GameStateType.GameOver), new StateConfig
             {
-                UIElements = new List<UIElementConfig>
-                {
-                    UIElementFactory.CreateText(new Vector2(300f, 250f), "Game Over!", Color.White, 32f),
-                    UIElementFactory.CreateText(new Vector2(280f, 320f), "Press SPACE to restart", Color.Gray, 16f)
-                },
                 InputTransitions = new List<InputTransition>
                 {
                     new InputTransition
@@ -47,47 +43,204 @@ namespace Pong.Systems
                         Key = KeyCode.Space,
                         NextState = new GameState(GameStateType.Playing),
                         OnTransition = RestartGame
+                    },
+                },
+                OnStateEnter = OnGameOverEnter,
+                OnStateExit = OnGameOverExit
+            });
+
+            // Configure Playing state
+            ConfigureState(new GameState(GameStateType.Playing), new StateConfig
+            {
+                InputTransitions = new List<InputTransition>
+                {
+                    new InputTransition
+                    {
+                        Key = KeyCode.P,
+                        NextState = new GameState(GameStateType.Paused),
+                        OnTransition = () => Console.WriteLine("Game paused")
                     }
                 },
-                OnStateEnter = () => StopAllMovement()
+                OnStateEnter = OnPlayingEnter,
+                OnStateExit = OnPlayingExit
+            });
+
+            // Configure Paused state
+            ConfigureState(new GameState(GameStateType.Paused), new StateConfig
+            {
+                InputTransitions = new List<InputTransition>
+                {
+                    new InputTransition
+                    {
+                        Key = KeyCode.Space,
+                        NextState = new GameState(GameStateType.Playing),
+                        OnTransition = () => Console.WriteLine("Game resumed with space")
+                    }
+                },
+                OnStateEnter = OnPausedEnter,
+                OnStateExit = OnPausedExit
             });
         }
 
+        // Event handler for game over events from other systems
         public void Handle(GameOverEvent eventData)
-        {
-            var gameOverState = new GameState(GameStateType.GameOver,
-                $"Player {eventData.WinningPlayerId} Wins!",
-                eventData.WinningPlayerId);
+        { 
+            // Create game over state with winner information
+            var gameOverState = new GameState(
+                GameStateType.GameOver,
+                $"Player {eventData.WinningPlayerId} Wins! {eventData.WinnerScore}-{eventData.LoserScore}",
+                eventData.WinningPlayerId
+            );
 
             ChangeState(gameOverState);
         }
 
+        // State enter/exit callbacks
+        private void OnGameOverEnter()
+        {
+
+            // Remove the ball's renderer so it's invisible during game over (in a more complex game this should be handled in a different system maybe)
+            var ballQuery = new QueryDescription().WithAll<Ball, RectangleRenderer>();
+            World.Query(in ballQuery, (Entity entity, ref Ball ball, ref RectangleRenderer renderer) =>
+            {
+                // Store the renderer for later restoration (optional, see below)
+                World.Remove<RectangleRenderer>(entity);
+            });
+        }
+
+        private void OnGameOverExit()
+        {
+
+            // Restore the ball's renderer
+            var ballQuery = new QueryDescription().WithAll<Ball>().WithNone<RectangleRenderer>();
+            World.Query(in ballQuery, (Entity entity) =>
+            {
+                // Add the renderer back
+                var ballRenderer = RectangleRenderer.GameObject(new Vector2(20f, 20f), Color.White);
+                World.Add(entity, ballRenderer);
+                Console.WriteLine($"Added renderer back to ball entity: {entity}");
+            });
+        }
+
+        private void OnPlayingEnter()
+        {
+            Console.WriteLine("Entering Playing state");
+            // Game is now active - could start background music, etc.
+        }
+
+        private void OnPlayingExit()
+        {
+            Console.WriteLine("Exiting Playing state");
+            // Could pause music, save state, etc.
+        }
+
+        private void OnPausedEnter()
+        {
+            Console.WriteLine("Entering Paused state");
+            // Could pause music, dim screen, etc.
+        }
+
+        private void OnPausedExit()
+        {
+            Console.WriteLine("Exiting Paused state");
+            // Resume game logic
+        }
+
+        // Game restart logic - resets all game entities to initial state
         private void RestartGame()
         {
-            // Reset ball position and give it initial velocity
+            Console.WriteLine("PongGameStateSystem: Restarting game...");
+
+            ResetBall();
+            ResetPaddles();
+
+            // Notify other systems that the game is restarting
+            EventBus.Publish(new GameRestartEvent());
+        }
+
+        private void ResetBall()
+        {
             var ballQuery = new QueryDescription().WithAll<Ball, Transform, Velocity>();
             World.Query(in ballQuery, (ref Ball ball, ref Transform transform, ref Velocity velocity) =>
             {
+                // Reset to center
                 transform.Position = new Vector2(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-                velocity.Value = new Vector2(-ball.Speed, (Random.Shared.NextSingle() - 0.5f) * ball.Speed);
-            });
 
-            // Reset paddle positions
-            var paddleQuery = new QueryDescription().WithAll<Paddle, Transform>();
-            World.Query(in paddleQuery, (ref Paddle paddle, ref Transform transform) =>
+                // Random direction but ensure it's not too vertical
+                var angle = (Random.Shared.NextSingle() - 0.5f) * 0.5f; // -0.25 to 0.25 radians
+                var direction = Random.Shared.Next(2) == 0 ? -1 : 1; // Left or right
+
+                velocity.Value = new Vector2(
+                    direction * ball.Speed * MathF.Cos(angle),
+                    ball.Speed * MathF.Sin(angle)
+                );
+
+                Console.WriteLine($"Ball reset: position={transform.Position}, velocity={velocity.Value}");
+            });
+        }
+
+        private void ResetPaddles()
+        {
+            var paddleQuery = new QueryDescription().WithAll<Paddle, Transform, Velocity>();
+            World.Query(in paddleQuery, (ref Paddle paddle, ref Transform transform, ref Velocity velocity) =>
             {
+                // Stop paddle movement
+                velocity.Value = Vector2.Zero;
+
+                // Reset positions
                 if (paddle.IsPlayer)
                 {
                     transform.Position = new Vector2(50f, SCREEN_HEIGHT / 2 - 50f);
+                    Console.WriteLine("Player paddle reset");
                 }
                 else
                 {
                     transform.Position = new Vector2(SCREEN_WIDTH - 70f, SCREEN_HEIGHT / 2 - 50f);
+                    Console.WriteLine("AI paddle reset");
                 }
             });
+        }
 
-            // Publish restart event for score system
-            EventBus.Publish(new GameRestartEvent());
+        // Additional helper methods for game state queries
+        public bool IsGamePlaying()
+        {
+            var currentState = GetCurrentState();
+            return currentState.IsPlaying;
+        }
+
+        public bool IsGameOver()
+        {
+            var currentState = GetCurrentState();
+            return currentState.IsGameOver;
+        }
+
+        public bool IsGamePaused()
+        {
+            var currentState = GetCurrentState();
+            return currentState.IsPaused;
+        }
+
+        // Method to force a state change (could be useful for debugging or special events)
+        public void ForceGameOver(int winningPlayerId, string message = "")
+        {
+            var gameOverState = new GameState(GameStateType.GameOver, message, winningPlayerId);
+            ChangeState(gameOverState);
+        }
+
+        public void ForcePause()
+        {
+            if (IsGamePlaying())
+            {
+                ChangeState(new GameState(GameStateType.Paused));
+            }
+        }
+
+        public void ForceResume()
+        {
+            if (IsGamePaused())
+            {
+                ChangeState(new GameState(GameStateType.Playing));
+            }
         }
     }
 }
