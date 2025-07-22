@@ -83,9 +83,13 @@ namespace Kobold.Core.Systems
             var colliders = new List<ColliderInfo>();
 
             // Collect box colliders
-            var boxQuery = new QueryDescription().WithAll<Transform, BoxCollider>();
+            var boxQuery = new QueryDescription().WithAll<Transform, BoxCollider>().WithNone<PendingDestruction>(); // Ignore entities marked for destruction
             _world.Query(in boxQuery, (Entity entity, ref Transform transform, ref BoxCollider collider) =>
             {
+                // Safety check - make sure entity is still alive
+                if (!_world.IsAlive(entity))
+                    return;
+
                 var layer = GetCollisionLayer(entity);
                 colliders.Add(new ColliderInfo
                 {
@@ -111,6 +115,12 @@ namespace Kobold.Core.Systems
                     // Check for box-box collision
                     if (IsBoxBoxCollision(collider1, collider2, out var collisionPoint, out var collisionNormal))
                     {
+                        // Double-check entities are still alive before publishing event
+                        if (!_world.IsAlive(collider1.Entity) || !_world.IsAlive(collider2.Entity))
+                        {
+                            continue; // Skip this collision
+                        }
+
                         // Create detailed collision event
                         var collisionEvent = new CollisionEvent(
                             collider1.Entity,

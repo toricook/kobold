@@ -135,6 +135,11 @@ namespace Kobold.Core.Systems
         }
     }
 
+    public class GameRestartEvent : BaseEvent
+    {
+        // Empty - just a signal to restart the game
+    }
+
     public class GameRestartRequestedEvent : BaseEvent
     {
         // Empty - just a signal to restart

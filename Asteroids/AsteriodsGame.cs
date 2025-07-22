@@ -46,6 +46,10 @@ namespace Asteroids
 
             // Initialize and register systems
             InitializeSystems();
+
+            // Spawn initial wave of asteroids
+            var asteroidSystem = SystemManager.GetSystem<AsteroidSystem>();
+            asteroidSystem?.SpawnWave(1);
         }
 
         private void InitializeSystems()
@@ -80,25 +84,28 @@ namespace Asteroids
 
             // Create systems
             var shipControlSystem = new ShipControlSystem(World, InputManager);
+            var weaponSystem = new WeaponSystem(World, InputManager, EventBus);
+            var asteroidSystem = new AsteroidSystem(World, EventBus, Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT);
+            var asteroidCollisionHandler = new AsteroidCollisionHandler(World, EventBus);
             var physicsSystem = new PhysicsSystem(World, physicsConfig);
             var boundarySystem = new BoundarySystem(World, EventBus, boundaryConfig);
             var collisionSystem = new CollisionSystem(World, EventBus, collisionConfig);
+            var lifetimeSystem = new DestructionSystem(World);
             var renderSystem = new RenderSystem(Renderer, World);
 
             // Register systems with proper gameplay state requirements
             // These systems should ONLY run during "Playing" state
             SystemManager.AddSystem(shipControlSystem, SystemUpdateOrder.INPUT, requiresGameplayState: true);
+            SystemManager.AddSystem(weaponSystem, SystemUpdateOrder.INPUT + 1, requiresGameplayState: true);
             SystemManager.AddSystem(physicsSystem, SystemUpdateOrder.PHYSICS, requiresGameplayState: true);
-            SystemManager.AddSystem(boundarySystem, SystemUpdateOrder.PHYSICS + 1, requiresGameplayState: true);
+            SystemManager.AddSystem(lifetimeSystem, SystemUpdateOrder.PHYSICS + 5, requiresGameplayState: true);
+            SystemManager.AddSystem(boundarySystem, SystemUpdateOrder.PHYSICS + 10, requiresGameplayState: true);
             SystemManager.AddSystem(collisionSystem, SystemUpdateOrder.COLLISION, requiresGameplayState: true);
+            SystemManager.AddSystem(asteroidCollisionHandler, SystemUpdateOrder.COLLISION + 1, requiresGameplayState: true);
+            SystemManager.AddSystem(asteroidSystem, SystemUpdateOrder.GAME_LOGIC, requiresGameplayState: true);
 
             // Render system always runs
             SystemManager.AddRenderSystem(renderSystem);
-
-            // Subscribe to boundary events for debugging
-            EventBus.Subscribe<BoundaryCollisionEvent>(evt => {
-                Console.WriteLine($"Boundary collision: Entity {evt.Entity} hit {evt.Boundary} with behavior {evt.Behavior}");
-            });
         }
 
         private void CreateGameState()
@@ -121,6 +128,7 @@ namespace Asteroids
                 new MaxSpeed(SHIP_MAX_SPEED),
                 new Drag(0.005f, 0.01f), // Custom drag for ship
                 new BoxCollider(new Vector2(SHIP_SIZE, SHIP_SIZE)),
+                new Weapon(fireRate: 6f, bulletSpeed: 400f, bulletLifetime: 2.5f),
                 TriangleRenderer.PointingRight(SHIP_SIZE, SHIP_SIZE * 0.8f, Color.White),
                 new CustomBoundaryBehavior(BoundaryBehavior.Wrap),
                 new CollisionLayerComponent(CollisionLayer.Player),

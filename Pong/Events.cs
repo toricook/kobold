@@ -44,9 +44,4 @@ namespace Pong
             LoserScore = loserScore;
         }
     }
-
-    public class GameRestartEvent : BaseEvent
-    {
-        // Empty - just a signal to restart the game
-    }
 }

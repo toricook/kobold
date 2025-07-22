@@ -137,7 +137,6 @@ namespace Kobold.Core.Systems
             }
         }
 
-
         private void WrapAroundBoundary(ref Transform transform, BoundaryType boundary, EntityBounds bounds)
         {
             switch (boundary)
@@ -195,11 +194,15 @@ namespace Kobold.Core.Systems
 
         private void DestroyEntity(Entity entity)
         {
-            // Publish destruction event before destroying
-            _eventBus.Publish(new EntityDestroyedEvent(entity, DestructionReason.BoundaryExit));
+            // Safety check - make sure entity still exists before destroying
+            if (!_world.IsAlive(entity))
+            {
+                Console.WriteLine($"WARNING: Attempted to destroy already dead entity: {entity}");
+                return;
+            }
 
-            // Destroy the entity
-            _world.Destroy(entity);
+            // Use safe destruction instead of immediate destruction
+            DestructionSystem.MarkForDestruction(_world, entity, DestructionReason.BoundaryExit);
         }
 
         private EntityBounds GetEntityBounds(Vector2 position, Vector2 size, Vector2 offset)
@@ -344,29 +347,6 @@ namespace Kobold.Core.Systems
             Boundary = boundary;
             Behavior = behavior;
         }
-    }
-
-    /// <summary>
-    /// Event for when an entity is destroyed by boundary collision
-    /// </summary>
-    public class EntityDestroyedEvent : BaseEvent
-    {
-        public Entity Entity { get; }
-        public DestructionReason Reason { get; }
-
-        public EntityDestroyedEvent(Entity entity, DestructionReason reason)
-        {
-            Entity = entity;
-            Reason = reason;
-        }
-    }
-
-    public enum DestructionReason
-    {
-        BoundaryExit,
-        Collision,
-        Lifetime,
-        Manual
     }
 
     /// <summary>
