@@ -1,5 +1,6 @@
 ﻿using Kobold.Core;
 using Kobold.Core.Abstractions;
+using Kobold.Core.Configuration;
 using Kobold.Monogame;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -16,16 +17,24 @@ namespace Kobold.Monogame
         private IGameEngine _gameEngine;
         private MonoGameInputManager _inputManager;
 
-        public MonoGameHost(IGameEngine gameEngine)
+        private Color _backgroundColor;
+
+        public MonoGameHost(IGameEngine gameEngine, GameConfig? config = null)
         {
+            var gameConfig = config ?? new GameConfig();   
+
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
             _gameEngine = gameEngine;
 
-            // Set window size for Pong
-            _graphics.PreferredBackBufferWidth = 800;
-            _graphics.PreferredBackBufferHeight = 600;
+            // Set window size
+            _graphics.PreferredBackBufferWidth = gameConfig.ScreenWidth;
+            _graphics.PreferredBackBufferHeight = gameConfig.ScreenHeight;
+
+
+            // Set clear color
+            _backgroundColor = MonoGameRenderer.ToXnaColor(gameConfig.BackgroundColor);
         }
 
         protected override void LoadContent()
@@ -64,7 +73,7 @@ namespace Kobold.Monogame
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black); // Black background for Pong
+            GraphicsDevice.Clear(_backgroundColor);
             _gameEngine.Render();
             base.Draw(gameTime);
         }

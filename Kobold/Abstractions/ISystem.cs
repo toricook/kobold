@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kobold.Core.Systems
+namespace Kobold.Core.Abstractions
 {
     public interface ISystem
     {

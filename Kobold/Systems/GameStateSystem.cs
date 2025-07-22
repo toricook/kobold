@@ -123,4 +123,26 @@ namespace Kobold.Core.Systems
         public Action OnTransition { get; set; }
     }
 
+    public class GameStateChangedEvent<TGameState> : BaseEvent where TGameState : struct
+    {
+        public TGameState PreviousState { get; }
+        public TGameState NewState { get; }
+
+        public GameStateChangedEvent(TGameState previousState, TGameState newState)
+        {
+            PreviousState = previousState;
+            NewState = newState;
+        }
+    }
+
+    public class GameRestartRequestedEvent : BaseEvent
+    {
+        // Empty - just a signal to restart
+    }
+
+    public class GamePauseRequestedEvent : BaseEvent
+    {
+        // Empty - just a signal to pause
+    }
+
 }

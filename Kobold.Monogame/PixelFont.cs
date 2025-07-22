@@ -405,7 +405,25 @@ namespace Kobold.Monogame
                "  ██  ",
                "      ",
                "  ██  "
-            }
+            },
+            [':'] = new[]
+            {
+               "      ",
+               "  ██  ",
+               "      ",
+               "      ",
+               "  ██  ",
+               "      "
+            },
+            ['/'] = new[]
+            {
+               "    ██",
+               "    ██",
+               "   ██ ",
+               "  ██  ",
+               " ██   ",
+               "██    "
+            },
         };
 
         public static void DrawText(IRenderer renderer, string text, Vector2 position, Color color, float fontSize = 16f)
