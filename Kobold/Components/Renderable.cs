@@ -76,4 +76,64 @@ namespace Kobold.Core.Components
         public static TextRenderer DebugText(string text, Color color, float fontSize = 12f)
             => new TextRenderer(text, color, fontSize, RenderLayers.Debug);
     }
+
+    /// <summary>
+    /// Triangle renderer component
+    /// </summary>
+    public struct TriangleRenderer : IRenderable
+    {
+        public Vector2[] Points; // 3 points relative to transform position
+        public Color Color;
+        public int Layer { get; }
+
+        public TriangleRenderer(Vector2[] points, Color color, int layer = RenderLayers.GameObjects)
+        {
+            if (points.Length != 3)
+                throw new ArgumentException("Triangle must have exactly 3 points");
+
+            Points = points;
+            Color = color;
+            Layer = layer;
+        }
+
+        public TriangleRenderer(Vector2 point1, Vector2 point2, Vector2 point3, Color color,
+            int layer = RenderLayers.GameObjects) : this(new Vector2[] { point1, point2, point3 }, color, layer)
+        {
+        }
+
+        /// <summary>
+        /// Create an isosceles triangle pointing up
+        /// </summary>
+        public static TriangleRenderer PointingUp(float width, float height, Color color, int layer = RenderLayers.GameObjects)
+        {
+            var points = new Vector2[]
+            {
+                new Vector2(0, -height/2),           // Top point
+                new Vector2(-width/2, height/2),     // Bottom left
+                new Vector2(width/2, height/2)       // Bottom right
+            };
+            return new TriangleRenderer(points, color, layer);
+        }
+
+        /// <summary>
+        /// Create an isosceles triangle pointing right
+        /// </summary>
+        public static TriangleRenderer PointingRight(float width, float height, Color color, int layer = RenderLayers.GameObjects)
+        {
+            var points = new Vector2[]
+            {
+                new Vector2(width/2, 0),             // Tip (pointing right)
+                new Vector2(-width/2, -height/2),    // Bottom left
+                new Vector2(-width/2, height/2)      // Top left
+            };
+            return new TriangleRenderer(points, color, layer);
+        }
+
+        // Convenience constructors for common layers
+        public static TriangleRenderer GameObject(Vector2[] points, Color color)
+            => new TriangleRenderer(points, color, RenderLayers.GameObjects);
+
+        public static TriangleRenderer UI(Vector2[] points, Color color)
+            => new TriangleRenderer(points, color, RenderLayers.UI);
+    }
 }

@@ -66,7 +66,126 @@ namespace Kobold.Monogame
             }
         }
 
-        private Color ToXnaColor(SystemColor color)
+        public void DrawTriangle(SystemVector2[] points, SystemVector2 position, float rotation, SystemColor color)
+        {
+            if (points.Length != 3)
+                throw new ArgumentException("Triangle must have exactly 3 points");
+
+            // Draw triangle as 3 lines (wireframe)
+            var transformedPoints = TransformPoints(points, position, rotation);
+
+            DrawLine(transformedPoints[0], transformedPoints[1], color);
+            DrawLine(transformedPoints[1], transformedPoints[2], color);
+            DrawLine(transformedPoints[2], transformedPoints[0], color);
+        }
+
+        public void DrawTriangleFilled(SystemVector2[] points, SystemVector2 position, float rotation, SystemColor color)
+        {
+            if (points.Length != 3)
+                throw new ArgumentException("Triangle must have exactly 3 points");
+
+            // For filled triangles, we'll use a simple approach with lines
+            // This isn't perfect but works for small triangles like ships
+            var transformedPoints = TransformPoints(points, position, rotation);
+
+            // Draw triangle by filling with horizontal lines
+            FillTriangle(transformedPoints, color);
+        }
+
+        public void DrawLine(SystemVector2 start, SystemVector2 end, SystemColor color, float thickness = 1f)
+        {
+            var distance = SystemVector2.Distance(start, end);
+            var angle = MathF.Atan2(end.Y - start.Y, end.X - start.X);
+
+            var rectangle = new Rectangle(
+                (int)start.X,
+                (int)(start.Y - thickness / 2),
+                (int)distance,
+                (int)thickness
+            );
+
+            _spriteBatch.Draw(_pixelTexture, rectangle, null, ToXnaColor(color), angle, Vector2.Zero, SpriteEffects.None, 0);
+        }
+
+        private SystemVector2[] TransformPoints(SystemVector2[] points, SystemVector2 position, float rotation)
+        {
+            var transformed = new SystemVector2[points.Length];
+
+            for (int i = 0; i < points.Length; i++)
+            {
+                // Apply rotation
+                if (rotation != 0f)
+                {
+                    float cos = MathF.Cos(rotation);
+                    float sin = MathF.Sin(rotation);
+
+                    float rotatedX = points[i].X * cos - points[i].Y * sin;
+                    float rotatedY = points[i].X * sin + points[i].Y * cos;
+
+                    transformed[i] = new SystemVector2(rotatedX + position.X, rotatedY + position.Y);
+                }
+                else
+                {
+                    transformed[i] = points[i] + position;
+                }
+            }
+
+            return transformed;
+        }
+
+        private void FillTriangle(SystemVector2[] points, SystemColor color)
+        {
+            // Simple triangle filling using scanline approach
+            // Sort points by Y coordinate
+            Array.Sort(points, (a, b) => a.Y.CompareTo(b.Y));
+
+            var p1 = points[0]; // Top point
+            var p2 = points[1]; // Middle point  
+            var p3 = points[2]; // Bottom point
+
+            // Draw horizontal lines to fill the triangle
+            for (float y = p1.Y; y <= p3.Y; y += 1f)
+            {
+                float leftX, rightX;
+
+                // Find intersection points with triangle edges
+                if (y <= p2.Y)
+                {
+                    // Upper part of triangle
+                    leftX = GetXAtY(p1, p2, y);
+                    rightX = GetXAtY(p1, p3, y);
+                }
+                else
+                {
+                    // Lower part of triangle
+                    leftX = GetXAtY(p2, p3, y);
+                    rightX = GetXAtY(p1, p3, y);
+                }
+
+                // Ensure leftX is actually on the left
+                if (leftX > rightX)
+                {
+                    (leftX, rightX) = (rightX, leftX);
+                }
+
+                // Draw horizontal line
+                if (rightX - leftX > 0)
+                {
+                    DrawLine(new SystemVector2(leftX, y), new SystemVector2(rightX, y), color);
+                }
+            }
+        }
+
+        private float GetXAtY(SystemVector2 p1, SystemVector2 p2, float y)
+        {
+            if (Math.Abs(p2.Y - p1.Y) < 0.001f) // Avoid division by zero
+                return p1.X;
+
+            float t = (y - p1.Y) / (p2.Y - p1.Y);
+            return p1.X + t * (p2.X - p1.X);
+        }
+
+        public static Color ToXnaColor(SystemColor color)
         {
             return new Color(color.R, color.G, color.B, color.A);
         }

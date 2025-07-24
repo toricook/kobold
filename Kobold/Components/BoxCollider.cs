@@ -18,16 +18,4 @@ namespace Kobold.Core.Components
             Offset = offset;
         }
     }
-
-    public struct CircleCollider
-    {
-        public float Radius;
-        public Vector2 Offset;
-
-        public CircleCollider(float radius, Vector2 offset = default)
-        {
-            Radius = radius;
-            Offset = offset;
-        }
-    }
 }
