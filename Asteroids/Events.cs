@@ -141,4 +141,111 @@ namespace Asteroids.Events
             HitPosition = hitPosition;
         }
     }
+
+    /// <summary>
+    /// Event fired when score changes
+    /// </summary>
+    public class ScoreChangedEvent : BaseEvent
+    {
+        public int NewScore { get; }
+        public int PointsAdded { get; }
+        public Vector2 Position { get; } // Where the points were earned
+
+        public ScoreChangedEvent(int newScore, int pointsAdded, Vector2 position)
+        {
+            NewScore = newScore;
+            PointsAdded = pointsAdded;
+            Position = position;
+        }
+    }
+
+    /// <summary>
+    /// Event fired when a new high score is achieved
+    /// </summary>
+    public class HighScoreEvent : BaseEvent
+    {
+        public int NewHighScore { get; }
+        public int PointsOver { get; }
+
+        public HighScoreEvent(int newHighScore, int pointsOver)
+        {
+            NewHighScore = newHighScore;
+            PointsOver = pointsOver;
+        }
+    }
+
+    /// <summary>
+    /// Event fired for bonus score events
+    /// </summary>
+    public class BonusScoreEvent : BaseEvent
+    {
+        public int Points { get; }
+        public string Reason { get; }
+
+        public BonusScoreEvent(int points, string reason)
+        {
+            Points = points;
+            Reason = reason;
+        }
+    }
+
+    /// <summary>
+    /// Event fired when lives count changes
+    /// </summary>
+    public class LivesChangedEvent : BaseEvent
+    {
+        public int NewLives { get; }
+        public int PreviousLives { get; }
+
+        public LivesChangedEvent(int newLives, int previousLives)
+        {
+            NewLives = newLives;
+            PreviousLives = previousLives;
+        }
+    }
+
+    /// <summary>
+    /// Event fired when respawn process starts
+    /// </summary>
+    public class RespawnStartedEvent : BaseEvent
+    {
+        public float RespawnDelay { get; }
+
+        public RespawnStartedEvent(float respawnDelay)
+        {
+            RespawnDelay = respawnDelay;
+        }
+    }
+
+    /// <summary>
+    /// Event fired when ship respawns
+    /// </summary>
+    public class ShipRespawnedEvent : BaseEvent
+    {
+        public Entity Ship { get; }
+        public Vector2 Position { get; }
+        public int LivesRemaining { get; }
+
+        public ShipRespawnedEvent(Entity ship, Vector2 position, int livesRemaining)
+        {
+            Ship = ship;
+            Position = position;
+            LivesRemaining = livesRemaining;
+        }
+    }
+
+    /// <summary>
+    /// Event fired when game is over (no lives left)
+    /// </summary>
+    public class GameOverEvent : BaseEvent
+    {
+        public int FinalLives { get; }
+        public int LivesRemaining { get; }
+
+        public GameOverEvent(int finalLives, int livesRemaining)
+        {
+            FinalLives = finalLives;
+            LivesRemaining = livesRemaining;
+        }
+    }
 }

@@ -39,6 +39,8 @@ namespace Asteroids.Systems
 
         public void Handle(CollisionEvent eventData)
         {
+            Console.WriteLine($"AsteroidCollisionHandler received collision: {eventData.Entity1} vs {eventData.Entity2}");
+
             var entity1 = eventData.Entity1;
             var entity2 = eventData.Entity2;
 
@@ -54,11 +56,17 @@ namespace Asteroids.Systems
                 // Check for different collision types
                 if (IsBulletAsteroidCollision(entity1, entity2, out var bullet, out var asteroid))
                 {
+                    Console.WriteLine($"Bullet-Asteroid collision: Bullet {bullet}, Asteroid {asteroid}");
                     HandleBulletAsteroidCollision(bullet, asteroid, eventData.CollisionPoint);
                 }
                 else if (IsShipAsteroidCollision(entity1, entity2, out var ship, out var asteroidHit))
                 {
+                    Console.WriteLine($"Ship-Asteroid collision: Ship {ship}, Asteroid {asteroidHit}");
                     HandleShipAsteroidCollision(ship, asteroidHit, eventData.CollisionPoint);
+                }
+                else
+                {
+                    Console.WriteLine("Collision type not recognized");
                 }
             }
             catch (Exception ex)
@@ -75,19 +83,32 @@ namespace Asteroids.Systems
             bullet = Entity.Null;
             asteroid = Entity.Null;
 
-            // Check entity1 = bullet, entity2 = asteroid
-            if (_world.Has<Projectile>(entity1) && _world.Has<Asteroid>(entity2))
+            // Safety checks
+            if (!_world.IsAlive(entity1) || !_world.IsAlive(entity2))
+                return false;
+
+            try
             {
-                bullet = entity1;
-                asteroid = entity2;
-                return true;
+                // Check entity1 = bullet, entity2 = asteroid
+                if (_world.Has<Projectile>(entity1) && _world.Has<Asteroid>(entity2))
+                {
+                    bullet = entity1;
+                    asteroid = entity2;
+                    return true;
+                }
+                // Check entity2 = bullet, entity1 = asteroid
+                else if (_world.Has<Projectile>(entity2) && _world.Has<Asteroid>(entity1))
+                {
+                    bullet = entity2;
+                    asteroid = entity1;
+                    return true;
+                }
             }
-            // Check entity2 = bullet, entity1 = asteroid
-            else if (_world.Has<Projectile>(entity2) && _world.Has<Asteroid>(entity1))
+            catch (Exception ex)
             {
-                bullet = entity2;
-                asteroid = entity1;
-                return true;
+                Console.WriteLine($"ERROR checking bullet-asteroid collision: {ex.Message}");
+                Console.WriteLine($"Entity1: {entity1}, Entity2: {entity2}");
+                return false;
             }
 
             return false;
@@ -98,19 +119,47 @@ namespace Asteroids.Systems
             ship = Entity.Null;
             asteroid = Entity.Null;
 
-            // Check entity1 = ship, entity2 = asteroid
-            if (_world.Has<Ship>(entity1) && _world.Has<Asteroid>(entity2))
+            // Safety checks
+            if (!_world.IsAlive(entity1) || !_world.IsAlive(entity2))
+                return false;
+
+            try
             {
-                ship = entity1;
-                asteroid = entity2;
-                return true;
+                // Debug: Check what components each entity has
+                bool entity1HasShip = _world.Has<Ship>(entity1);
+                bool entity1HasAsteroid = _world.Has<Asteroid>(entity1);
+                bool entity2HasShip = _world.Has<Ship>(entity2);
+                bool entity2HasAsteroid = _world.Has<Asteroid>(entity2);
+
+                Console.WriteLine($"Entity1 {entity1}: Ship={entity1HasShip}, Asteroid={entity1HasAsteroid}");
+                Console.WriteLine($"Entity2 {entity2}: Ship={entity2HasShip}, Asteroid={entity2HasAsteroid}");
+
+                // Check entity1 = ship, entity2 = asteroid
+                if (entity1HasShip && entity2HasAsteroid)
+                {
+                    ship = entity1;
+                    asteroid = entity2;
+                    Console.WriteLine($"Found Ship-Asteroid collision: Ship={ship}, Asteroid={asteroid}");
+                    return true;
+                }
+                // Check entity2 = ship, entity1 = asteroid
+                else if (entity2HasShip && entity1HasAsteroid)
+                {
+                    ship = entity2;
+                    asteroid = entity1;
+                    Console.WriteLine($"Found Ship-Asteroid collision: Ship={ship}, Asteroid={asteroid}");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Not a ship-asteroid collision");
+                }
             }
-            // Check entity2 = ship, entity1 = asteroid
-            else if (_world.Has<Ship>(entity2) && _world.Has<Asteroid>(entity1))
+            catch (Exception ex)
             {
-                ship = entity2;
-                asteroid = entity1;
-                return true;
+                Console.WriteLine($"ERROR checking ship-asteroid collision: {ex.Message}");
+                Console.WriteLine($"Entity1: {entity1}, Entity2: {entity2}");
+                return false;
             }
 
             return false;
@@ -132,9 +181,16 @@ namespace Asteroids.Systems
 
         private void HandleShipAsteroidCollision(Entity ship, Entity asteroid, Vector2 collisionPoint)
         {
+            Console.WriteLine($"Ship-Asteroid collision detected: Ship {ship}, Asteroid {asteroid}");
+
             // Check if ship is invulnerable (recently respawned)
             if (_world.Has<Invulnerable>(ship))
+            {
+                Console.WriteLine("Ship is invulnerable, ignoring collision");
                 return;
+            }
+
+            Console.WriteLine("Ship is vulnerable, processing collision");
 
             // Publish ship hit event
             _eventBus.Publish(new ShipHitEvent(ship, asteroid, collisionPoint));
@@ -150,6 +206,23 @@ namespace Asteroids.Systems
 
             var layer = _world.Get<CollisionLayerComponent>(bullet);
             return layer.Layer == CollisionLayer.PlayerProjectile;
+        }
+    }
+
+    /// <summary>
+    /// Event fired when the player ship is hit by an asteroid
+    /// </summary>
+    public class ShipHitEvent : BaseEvent
+    {
+        public Entity Ship { get; }
+        public Entity Asteroid { get; }
+        public Vector2 HitPosition { get; }
+
+        public ShipHitEvent(Entity ship, Entity asteroid, Vector2 hitPosition)
+        {
+            Ship = ship;
+            Asteroid = asteroid;
+            HitPosition = hitPosition;
         }
     }
 }
