@@ -1,5 +1,7 @@
 ﻿using Arch.Core;
-using Kobold.Core.Abstractions;
+using Kobold.Core.Abstractions.Core;
+using Kobold.Core.Abstractions.Input;
+using Kobold.Core.Abstractions.Rendering;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
 

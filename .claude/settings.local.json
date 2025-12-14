@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet build:*)",
+      "Bash(dir AsteroidsbinDebugnet8.0*.dll /B)",
+      "Bash(dir AsteroidsbinDebugnet8.0*.exe /B)",
+      "Bash(ls:*)",
+      "Bash(test:*)",
+      "Bash(find:*)"
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-﻿using Kobold.Core.Abstractions;
+﻿using Kobold.Core.Abstractions.Input;
 using Microsoft.Xna.Framework.Input;
 using System.Numerics;
 using XnaKeys = Microsoft.Xna.Framework.Input.Keys;

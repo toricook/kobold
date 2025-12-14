@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kobold.Core.Abstractions
 {
+    /// <summary>
+    /// At its core, a system is just a thing that is reponsible for applying updates to entities.
+    /// </summary>
     public interface ISystem
     {
         void Update(float deltaTime);

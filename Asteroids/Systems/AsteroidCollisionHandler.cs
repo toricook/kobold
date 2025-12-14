@@ -1,5 +1,4 @@
 ﻿using Arch.Core;
-using Kobold.Core.Components;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
 using Asteroids.Components;
@@ -11,6 +10,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Kobold.Core.Abstractions;
+using Kobold.Core.Components;
 
 namespace Asteroids.Systems
 {

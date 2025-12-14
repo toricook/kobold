@@ -1,5 +1,4 @@
 ﻿using Arch.Core;
-using Kobold.Core.Components;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
 using Asteroids.Events;
@@ -9,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Kobold.Core.Abstractions;
+using Kobold.Core.Components;
 
 namespace Asteroids.Systems
 {

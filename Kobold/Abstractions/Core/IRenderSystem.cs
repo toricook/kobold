@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Kobold.Core.Abstractions
 {
     /// <summary>
-    /// Interface for systems that only need to render
+    /// Interface for systems that only need to render. 
     /// </summary>
     public interface IRenderSystem
     {

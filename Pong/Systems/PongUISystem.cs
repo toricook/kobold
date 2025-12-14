@@ -16,7 +16,7 @@ namespace Pong.Systems
     /// Simple Pong-specific UI system that listens for game state events
     /// and directly manages UI entities
     /// </summary>
-    public class PongUISystem : ISystem, IEventHandler<GameStateChangedEvent<GameState>>
+    public class PongUISystem : ISystem, IEventHandler<GameStateChangedEvent<CoreGameState>>
     {
         private readonly World _world;
         private readonly EventBus _eventBus;
@@ -28,7 +28,7 @@ namespace Pong.Systems
             _eventBus = eventBus;
 
             // Subscribe to state change events
-            _eventBus.Subscribe<GameStateChangedEvent<GameState>>(this);
+            _eventBus.Subscribe<GameStateChangedEvent<CoreGameState>>(this);
 
         }
 
@@ -37,7 +37,7 @@ namespace Pong.Systems
             // Could add UI animations here if needed
         }
 
-        public void Handle(GameStateChangedEvent<GameState> eventData)
+        public void Handle(GameStateChangedEvent<CoreGameState> eventData)
         {
             // Clear existing UI
             ClearUI();
@@ -45,21 +45,21 @@ namespace Pong.Systems
             // Create new UI based on the state
             switch (eventData.NewState.State)
             {
-                case GameStateType.GameOver:
+                case StandardGameState.GameOver:
                     CreateGameOverUI(eventData.NewState);
                     break;
 
-                case GameStateType.Playing:
+                case StandardGameState.Playing:
                     // No extra UI needed for playing
                     break;
 
-                case GameStateType.Paused:
+                case StandardGameState.Paused:
                     CreatePausedUI();
                     break;
             }
         }
 
-        private void CreateGameOverUI(GameState gameState)
+        private void CreateGameOverUI(CoreGameState gameState)
         {
 
             // Game Over title - UI layer

@@ -10,4 +10,8 @@
     <PackageReference Include="Arch" Version="2.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstractions\Audio\" />
+  </ItemGroup>
+
 </Project>
