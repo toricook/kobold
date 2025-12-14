@@ -1,6 +1,7 @@
 ﻿using Arch.Core;
 using Kobold.Core.Abstractions;
 using Kobold.Core.Components;
+using Kobold.Core.Components.Gameplay;
 using Kobold.Core.Events;
 using System;
 using System.Collections.Generic;
@@ -50,7 +51,10 @@ namespace Kobold.Core.Systems
 
         private void HandleBoundaryCollision(Entity entity, ref Transform transform, BoundaryType boundary, EntityBounds bounds)
         {
-            switch (_config.BoundaryBehavior)
+            // Check if entity has custom boundary behavior
+            var behavior = GetBoundaryBehavior(entity);
+
+            switch (behavior)
             {
                 case BoundaryBehavior.Clamp:
                     ClampToBoundary(ref transform, boundary, bounds);
@@ -61,9 +65,33 @@ namespace Kobold.Core.Systems
                 case BoundaryBehavior.Bounce:
                     BounceOffBoundary(entity, ref transform, boundary, bounds);
                     break;
+                case BoundaryBehavior.Destroy:
+                    DestroyEntity(entity);
+                    break;
             }
 
             _eventBus.Publish(new BoundaryCollisionEvent(entity, boundary));
+        }
+
+        private BoundaryBehavior GetBoundaryBehavior(Entity entity)
+        {
+            // Check for custom boundary behavior component first
+            if (_world.Has<CustomBoundaryBehavior>(entity))
+            {
+                return _world.Get<CustomBoundaryBehavior>(entity).Behavior;
+            }
+
+            // Fall back to global config
+            return _config.BoundaryBehavior;
+        }
+
+        private void DestroyEntity(Entity entity)
+        {
+            // Add pending destruction component to mark entity for destruction
+            if (!_world.Has<PendingDestruction>(entity))
+            {
+                _world.Add(entity, new PendingDestruction(DestructionReason.BoundaryExit));
+            }
         }
 
         private void ClampToBoundary(ref Transform transform, BoundaryType boundary, EntityBounds bounds)

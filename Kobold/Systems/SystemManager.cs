@@ -27,7 +27,7 @@ namespace Kobold.Core.Systems
     /// <summary>
     /// Enhanced system manager with ordering and render system support
     /// </summary>
-    public class SystemManager
+    public class SystemManager : IEventHandler<GameStateChangedEvent<CoreGameState>>
     {
         private readonly List<SystemInfo> _allSystems = new();
         private readonly List<SystemInfo> _gameplaySystems = new();
@@ -36,10 +36,19 @@ namespace Kobold.Core.Systems
         private readonly EventBus _eventBus;
         private readonly World _world;
 
+        // Cached game state to avoid expensive queries every frame
+        private bool _isGamePlayingCached;
+
         public SystemManager(EventBus eventBus, World world)
         {
             _eventBus = eventBus;
             _world = world;
+
+            // Subscribe to game state changes to keep cache updated
+            _eventBus.Subscribe<GameStateChangedEvent<CoreGameState>>(this);
+
+            // Initialize the cache
+            _isGamePlayingCached = QueryIsGamePlaying();
         }
 
         /// <summary>
@@ -120,8 +129,8 @@ namespace Kobold.Core.Systems
                 systemInfo.System.Update(deltaTime);
             }
 
-            // Only update gameplay systems if game is playing
-            if (IsGamePlaying())
+            // Only update gameplay systems if game is playing (using cached value)
+            if (_isGamePlayingCached)
             {
                 foreach (var systemInfo in _gameplaySystems)
                 {
@@ -203,7 +212,7 @@ namespace Kobold.Core.Systems
                 GameplaySystems = _gameplaySystems.Count,
                 AlwaysUpdateSystems = _alwaysUpdateSystems.Count,
                 RenderSystems = _renderSystems.Count,
-                IsGamePlaying = IsGamePlaying()
+                IsGamePlaying = _isGamePlayingCached
             };
         }
 
@@ -239,7 +248,19 @@ namespace Kobold.Core.Systems
             return systemInfo?.IsEnabled ?? false;
         }
 
-        private bool IsGamePlaying()
+        /// <summary>
+        /// Event handler for game state changes - updates the cached playing state
+        /// </summary>
+        public void Handle(GameStateChangedEvent<CoreGameState> eventData)
+        {
+            _isGamePlayingCached = eventData.NewState.IsPlaying;
+        }
+
+        /// <summary>
+        /// Queries the world for the current game playing state
+        /// This is expensive and should only be called during initialization
+        /// </summary>
+        private bool QueryIsGamePlaying()
         {
             var gameStateQuery = new QueryDescription().WithAll<CoreGameState>();
             bool isPlaying = true; // Default to playing if no game state found
