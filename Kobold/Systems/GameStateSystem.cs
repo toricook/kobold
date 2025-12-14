@@ -1,5 +1,6 @@
 ﻿using Arch.Core;
 using Kobold.Core.Abstractions;
+using Kobold.Core.Abstractions.Input;
 using Kobold.Core.Components;
 using Kobold.Core.Events;
 using System;
@@ -121,33 +122,6 @@ namespace Kobold.Core.Systems
         public KeyCode Key { get; set; }
         public object NextState { get; set; }
         public Action OnTransition { get; set; }
-    }
-
-    public class GameStateChangedEvent<TGameState> : BaseEvent where TGameState : struct
-    {
-        public TGameState PreviousState { get; }
-        public TGameState NewState { get; }
-
-        public GameStateChangedEvent(TGameState previousState, TGameState newState)
-        {
-            PreviousState = previousState;
-            NewState = newState;
-        }
-    }
-
-    public class GameRestartEvent : BaseEvent
-    {
-        // Empty - just a signal to restart the game
-    }
-
-    public class GameRestartRequestedEvent : BaseEvent
-    {
-        // Empty - just a signal to restart
-    }
-
-    public class GamePauseRequestedEvent : BaseEvent
-    {
-        // Empty - just a signal to pause
     }
 
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Numerics;
 using System.Drawing;
-using Kobold.Core.Abstractions;
+using Kobold.Core.Abstractions.Rendering;
 
 namespace Kobold.Monogame
 {

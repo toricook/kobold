@@ -6,8 +6,11 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kobold.Core.Abstractions
+namespace Kobold.Core.Abstractions.Rendering
 {
+    /// <summary>
+    /// The renderer defines how stuff actually gets drawn to the screen
+    /// </summary>
     public interface IRenderer
     {
         void Begin();
@@ -20,9 +23,4 @@ namespace Kobold.Core.Abstractions
         void DrawLine(Vector2 start, Vector2 end, Color color, float thickness = 1f);
     }
 
-    public interface ITexture
-    {
-        int Width { get; }
-        int Height { get; }
-    }
 }

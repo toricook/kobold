@@ -1,5 +1,5 @@
 ﻿using Kobold.Core;
-using Kobold.Core.Abstractions;
+using Kobold.Core.Abstractions.Core;
 using Kobold.Core.Configuration;
 using Kobold.Monogame;
 using Microsoft.Xna.Framework;

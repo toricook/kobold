@@ -5,8 +5,11 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kobold.Core.Abstractions
+namespace Kobold.Core.Abstractions.Input
 {
+    /// <summary>
+    /// The input manager is responsible for getting input from the hardware
+    /// </summary>
     public interface IInputManager
     {
         bool IsKeyPressed(KeyCode key);

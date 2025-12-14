@@ -1,4 +1,4 @@
-﻿using Kobold.Core.Abstractions;
+﻿using Kobold.Core.Abstractions.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;

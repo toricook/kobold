@@ -1,5 +1,5 @@
 ﻿using Arch.Core;
-using Kobold.Core.Abstractions;
+using Kobold.Core.Abstractions.Input;
 using Kobold.Core.Components;
 using Kobold.Core.Events;
 using Kobold.Core.Factories;
@@ -19,7 +19,7 @@ namespace Pong.Systems
     /// Handles Pong-specific game state transitions and game logic
     /// Pure state management - no UI concerns
     /// </summary>
-    public class PongGameStateSystem : GameStateSystem<GameState>, IEventHandler<GameOverEvent>
+    public class PongGameStateSystem : GameStateSystem<CoreGameState>, IEventHandler<GameOverEvent>
     {
         private const float SCREEN_WIDTH = 800f;
         private const float SCREEN_HEIGHT = 600f;
@@ -34,14 +34,14 @@ namespace Pong.Systems
         private void ConfigureGameStates()
         {
             // Configure Game Over state
-            ConfigureState(new GameState(GameStateType.GameOver), new StateConfig
+            ConfigureState(new CoreGameState(StandardGameState.GameOver), new StateConfig
             {
                 InputTransitions = new List<InputTransition>
                 {
                     new InputTransition
                     {
                         Key = KeyCode.Space,
-                        NextState = new GameState(GameStateType.Playing),
+                        NextState = new CoreGameState(StandardGameState.Playing),
                         OnTransition = RestartGame
                     },
                 },
@@ -50,14 +50,14 @@ namespace Pong.Systems
             });
 
             // Configure Playing state
-            ConfigureState(new GameState(GameStateType.Playing), new StateConfig
+            ConfigureState(new CoreGameState(StandardGameState.Playing), new StateConfig
             {
                 InputTransitions = new List<InputTransition>
                 {
                     new InputTransition
                     {
                         Key = KeyCode.P,
-                        NextState = new GameState(GameStateType.Paused),
+                        NextState = new CoreGameState(StandardGameState.Paused),
                         OnTransition = () => Console.WriteLine("Game paused")
                     }
                 },
@@ -66,14 +66,14 @@ namespace Pong.Systems
             });
 
             // Configure Paused state
-            ConfigureState(new GameState(GameStateType.Paused), new StateConfig
+            ConfigureState(new CoreGameState(StandardGameState.Paused), new StateConfig
             {
                 InputTransitions = new List<InputTransition>
                 {
                     new InputTransition
                     {
                         Key = KeyCode.Space,
-                        NextState = new GameState(GameStateType.Playing),
+                        NextState = new CoreGameState(StandardGameState.Playing),
                         OnTransition = () => Console.WriteLine("Game resumed with space")
                     }
                 },
@@ -86,10 +86,9 @@ namespace Pong.Systems
         public void Handle(GameOverEvent eventData)
         { 
             // Create game over state with winner information
-            var gameOverState = new GameState(
-                GameStateType.GameOver,
-                $"Player {eventData.WinningPlayerId} Wins! {eventData.WinnerScore}-{eventData.LoserScore}",
-                eventData.WinningPlayerId
+            var gameOverState = new CoreGameState(
+                StandardGameState.GameOver,
+                $"Player {eventData.WinningPlayerId} Wins! {eventData.WinnerScore}-{eventData.LoserScore}"
             );
 
             ChangeState(gameOverState);
@@ -223,7 +222,7 @@ namespace Pong.Systems
         // Method to force a state change (could be useful for debugging or special events)
         public void ForceGameOver(int winningPlayerId, string message = "")
         {
-            var gameOverState = new GameState(GameStateType.GameOver, message, winningPlayerId);
+            var gameOverState = new CoreGameState(StandardGameState.GameOver, message);
             ChangeState(gameOverState);
         }
 
@@ -231,7 +230,7 @@ namespace Pong.Systems
         {
             if (IsGamePlaying())
             {
-                ChangeState(new GameState(GameStateType.Paused));
+                ChangeState(new CoreGameState(StandardGameState.Paused));
             }
         }
 
@@ -239,7 +238,7 @@ namespace Pong.Systems
         {
             if (IsGamePaused())
             {
-                ChangeState(new GameState(GameStateType.Playing));
+                ChangeState(new CoreGameState(StandardGameState.Playing));
             }
         }
     }

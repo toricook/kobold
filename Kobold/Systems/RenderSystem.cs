@@ -1,5 +1,6 @@
 ﻿using Arch.Core;
 using Kobold.Core.Abstractions;
+using Kobold.Core.Abstractions.Rendering;
 using Kobold.Core.Components;
 using System;
 using System.Collections.Generic;
@@ -41,20 +42,6 @@ namespace Kobold.Core.Systems
                 });
             });
 
-            // Collect triangles - layer is built into the component
-            var triangleQuery = new QueryDescription().WithAll<Transform, TriangleRenderer>();
-            _world.Query(in triangleQuery, (Entity entity, ref Transform transform, ref TriangleRenderer triangleRenderer) =>
-            {
-                renderableEntities.Add(new RenderableEntity
-                {
-                    Entity = entity,
-                    Layer = triangleRenderer.Layer,
-                    RenderType = RenderType.Triangle,
-                    Transform = transform,
-                    TriangleRenderer = triangleRenderer
-                });
-            });
-
             // Collect text - layer is built into the component
             var textQuery = new QueryDescription().WithAll<Transform, TextRenderer>();
             _world.Query(in textQuery, (Entity entity, ref Transform transform, ref TextRenderer textRenderer) =>
@@ -83,13 +70,6 @@ namespace Kobold.Core.Systems
                             renderable.RectangleRenderer.Color);
                         break;
 
-                    case RenderType.Triangle:
-                        _renderer.DrawTriangleFilled(renderable.TriangleRenderer.Points,
-                            renderable.Transform.Position,
-                            renderable.Transform.Rotation,
-                            renderable.TriangleRenderer.Color);
-                        break;
-
                     case RenderType.Text:
                         _renderer.DrawText(renderable.TextRenderer.Text,
                             renderable.Transform.Position,
@@ -110,14 +90,12 @@ namespace Kobold.Core.Systems
             public RenderType RenderType;
             public Transform Transform;
             public RectangleRenderer RectangleRenderer;
-            public TriangleRenderer TriangleRenderer;
             public TextRenderer TextRenderer;
         }
 
         private enum RenderType
         {
             Rectangle,
-            Triangle,
             Text
         }
     }

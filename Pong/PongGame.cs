@@ -1,6 +1,5 @@
 ﻿using Arch.Core;
 using Arch.Core.Extensions;
-using Kobold.Core.Abstractions;
 using Kobold.Core.Components;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
@@ -9,6 +8,8 @@ using Pong.Components;
 using Pong.Systems;
 using System.Drawing;
 using System.Numerics;
+using Kobold.Core.Abstractions.Input;
+using Kobold.Core.Abstractions.Rendering;
 
 namespace Pong
 {
@@ -93,7 +94,7 @@ namespace Pong
         private void CreateGameState()
         {
             _gameStateEntity = World.Create(
-                new GameState(GameStateType.Playing)
+                new CoreGameState(StandardGameState.Playing)
             );
         }
 

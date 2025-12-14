@@ -1,6 +1,7 @@
 ﻿using Arch.Core;
 using Kobold.Core.Abstractions;
 using Kobold.Core.Components;
+using Kobold.Core.Components.Gameplay;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
 using System;
