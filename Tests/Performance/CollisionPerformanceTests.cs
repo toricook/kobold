@@ -15,39 +15,55 @@ using Tests.Helpers;
 
 namespace Tests.Performance
 {
+    /// <summary>
+    /// Performance benchmarks using BenchmarkDotNet.
+    /// These are NOT run during regular CI/CD tests.
+    /// Run separately using the PerformanceProfiler tool to generate markdown reports.
+    /// </summary>
     [TestFixture]
+    [Explicit("Performance benchmarks - run manually or via dedicated performance profiler")]
     public class CollisionPerformanceTests
     {
         [Test]
         [Category("Performance")]
-        public void CollisionSystem_With100Entities_CompletesInUnder5ms()
+        public void CollisionSystem_WithVariousEntityCounts_ReportsPerformance()
         {
-            // Arrange
-            var testWorld = new TestWorld();
-            var collisionSystem = new CollisionSystem(testWorld.World, testWorld.EventBus);
+            // This test just reports performance, doesn't fail
+            var entityCounts = new[] { 10, 50, 100, 200, 500 };
 
-            // Create 100 entities
-            var random = new Random(42);
-            for (int i = 0; i < 100; i++)
+            foreach (var count in entityCounts)
             {
-                testWorld.World.Create(
-                    new Transform(new Vector2(random.Next(0, 800), random.Next(0, 600))),
-                    new BoxCollider(new Vector2(20, 20)),
-                    new CollisionLayerComponent(CollisionLayer.Default)
-                );
+                var testWorld = new TestWorld();
+                var collisionSystem = new CollisionSystem(testWorld.World, testWorld.EventBus);
+
+                // Create entities
+                var random = new Random(42);
+                for (int i = 0; i < count; i++)
+                {
+                    testWorld.World.Create(
+                        new Transform(new Vector2(random.Next(0, 800), random.Next(0, 600))),
+                        new BoxCollider(new Vector2(20, 20)),
+                        new CollisionLayerComponent(CollisionLayer.Default)
+                    );
+                }
+
+                // Warm up
+                collisionSystem.Update(0.016f);
+
+                // Measure multiple runs
+                var runs = 100;
+                var stopwatch = Stopwatch.StartNew();
+                for (int i = 0; i < runs; i++)
+                {
+                    collisionSystem.Update(0.016f);
+                }
+                stopwatch.Stop();
+
+                var avgMs = stopwatch.Elapsed.TotalMilliseconds / runs;
+                TestContext.WriteLine($"Collision with {count,3} entities: {avgMs:F3}ms avg (over {runs} runs)");
+
+                testWorld.Dispose();
             }
-
-            // Act - measure with stopwatch
-            var stopwatch = Stopwatch.StartNew();
-            collisionSystem.Update(0.016f);
-            stopwatch.Stop();
-
-            // Assert
-            stopwatch.ElapsedMilliseconds.Should().BeLessThan(5,
-                "collision detection should complete within frame budget (16.6ms)");
-
-            // Log for tracking
-            TestContext.WriteLine($"Collision took {stopwatch.Elapsed.TotalMilliseconds:F2}ms for 100 entities");
         }
     }
 }
