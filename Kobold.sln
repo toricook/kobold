@@ -22,6 +22,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kobold.Extensions", "Kobold.Extensions\Kobold.Extensions.csproj", "{026D360D-B6EC-42C6-8186-C3E43545AB6C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Procedural", "Procedural\Procedural.csproj", "{B86A79A2-8636-4570-B24D-8BBA72179F47}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Experiments", "Experiments\Experiments.csproj", "{ECD54E24-EF14-4070-892B-CFB48B50D67C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +56,14 @@ Global
 		{026D360D-B6EC-42C6-8186-C3E43545AB6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{026D360D-B6EC-42C6-8186-C3E43545AB6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{026D360D-B6EC-42C6-8186-C3E43545AB6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B86A79A2-8636-4570-B24D-8BBA72179F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B86A79A2-8636-4570-B24D-8BBA72179F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B86A79A2-8636-4570-B24D-8BBA72179F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B86A79A2-8636-4570-B24D-8BBA72179F47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECD54E24-EF14-4070-892B-CFB48B50D67C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECD54E24-EF14-4070-892B-CFB48B50D67C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECD54E24-EF14-4070-892B-CFB48B50D67C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECD54E24-EF14-4070-892B-CFB48B50D67C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
