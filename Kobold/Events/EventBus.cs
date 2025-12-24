@@ -44,17 +44,57 @@ namespace Kobold.Core.Events
 
         public void Publish<T>(T eventData) where T : IEvent
         {
-            var eventType = typeof(T);
+            var eventType = eventData.GetType();
 
-            if (_handlers.TryGetValue(eventType, out var handlers))
+            // Publish to handlers for this specific type and all base types/interfaces
+            foreach (var type in GetEventTypeHierarchy(eventType))
             {
-                foreach (var handler in handlers.ToList()) // ToList to avoid modification during iteration
+                if (_handlers.TryGetValue(type, out var handlers))
                 {
-                    if (handler is IEventHandler<T> typedHandler)
+                    foreach (var handler in handlers.ToList()) // ToList to avoid modification during iteration
                     {
-                        typedHandler.Handle(eventData);
+                        if (handler is IEventHandler<T> typedHandler)
+                        {
+                            typedHandler.Handle(eventData);
+                        }
+                        else
+                        {
+                            // Handle case where handler expects a base type
+                            var handleMethod = handler.GetType().GetMethod("Handle");
+                            if (handleMethod != null)
+                            {
+                                try
+                                {
+                                    handleMethod.Invoke(handler, new object[] { eventData });
+                                }
+                                catch
+                                {
+                                    // Ignore if invoke fails (wrong type)
+                                }
+                            }
+                        }
                     }
                 }
+            }
+        }
+
+        private IEnumerable<Type> GetEventTypeHierarchy(Type type)
+        {
+            // Return the type itself
+            yield return type;
+
+            // Return all base classes
+            var baseType = type.BaseType;
+            while (baseType != null && baseType != typeof(object))
+            {
+                yield return baseType;
+                baseType = baseType.BaseType;
+            }
+
+            // Return all interfaces
+            foreach (var interfaceType in type.GetInterfaces())
+            {
+                yield return interfaceType;
             }
         }
 

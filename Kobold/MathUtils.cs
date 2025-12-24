@@ -119,7 +119,7 @@ namespace Kobold.Core
         /// Wraps an angle to be within -PI to PI range
         /// </summary>
         /// <param name="angle">Angle in radians</param>
-        /// <returns>Wrapped angle</returns>
+        /// <returns>Wrapped angle in range (-PI, PI]</returns>
         public static float WrapAngle(float angle)
         {
             while (angle > MathF.PI)
@@ -130,15 +130,22 @@ namespace Kobold.Core
         }
 
         /// <summary>
-        /// Gets the shortest angle difference between two angles
+        /// Gets the shortest angle difference between two angles.
         /// </summary>
         /// <param name="from">From angle in radians</param>
         /// <param name="to">To angle in radians</param>
-        /// <returns>Shortest angle difference</returns>
+        /// <returns>Shortest angle difference in range [-PI, PI]</returns>
         public static float AngleDifference(float from, float to)
         {
-            float difference = to - from;
-            return WrapAngle(difference);
+            float difference = WrapAngle(to) - WrapAngle(from);
+
+            // Wrap the difference to [-PI, PI]
+            while (difference > MathF.PI)
+                difference -= 2 * MathF.PI;
+            while (difference < -MathF.PI)
+                difference += 2 * MathF.PI;
+
+            return difference;
         }
     }
 }
