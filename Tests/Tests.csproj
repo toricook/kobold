@@ -28,6 +28,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\Kobold.Extensions\Kobold.Extensions.csproj" />
 		<ProjectReference Include="..\Kobold\Kobold.Core.csproj" />
 	</ItemGroup>
 </Project>
