@@ -6,7 +6,9 @@
       "Bash(dir AsteroidsbinDebugnet8.0*.exe /B)",
       "Bash(ls:*)",
       "Bash(test:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(dotnet restore:*)",
+      "Bash(dotnet test:*)"
     ]
   }
 }

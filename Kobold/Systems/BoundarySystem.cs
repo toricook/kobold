@@ -48,9 +48,33 @@ namespace Kobold.Core.Systems
             });
         }
 
+        private BoundaryBehavior GetBehaviorForEntity(Entity entity)
+        {
+            // Check for custom behavior component first
+            if (_world.Has<Kobold.Core.Components.Gameplay.CustomBoundaryBehavior>(entity))
+            {
+                return _world.Get<Kobold.Core.Components.Gameplay.CustomBoundaryBehavior>(entity).Behavior;
+            }
+
+            // Check entity tags
+            if (_world.Has<Projectile>(entity))
+                return _config.ProjectileBehavior;
+
+            if (_world.Has<Player>(entity))
+                return _config.PlayerBehavior;
+
+            if (_world.Has<Enemy>(entity))
+                return _config.EnemyBehavior;
+
+            // Fall back to default behavior
+            return _config.DefaultBehavior;
+        }
+
         private void HandleBoundaryCollision(Entity entity, ref Transform transform, BoundaryType boundary, EntityBounds bounds)
         {
-            switch (_config.BoundaryBehavior)
+            var behavior = GetBehaviorForEntity(entity);
+
+            switch (behavior)
             {
                 case BoundaryBehavior.Clamp:
                     ClampToBoundary(ref transform, boundary, bounds);
@@ -61,9 +85,12 @@ namespace Kobold.Core.Systems
                 case BoundaryBehavior.Bounce:
                     BounceOffBoundary(entity, ref transform, boundary, bounds);
                     break;
+                case BoundaryBehavior.Destroy:
+                    DestructionSystem.MarkForDestruction(_world, entity, DestructionReason.BoundaryExit);
+                    break;
             }
 
-            _eventBus.Publish(new BoundaryCollisionEvent(entity, boundary));
+            _eventBus?.Publish(new BoundaryCollisionEvent(entity, boundary));
         }
 
         private void ClampToBoundary(ref Transform transform, BoundaryType boundary, EntityBounds bounds)

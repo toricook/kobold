@@ -1,0 +1,33 @@
+﻿<!-- Kobold.Tests.csproj -->
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<IsPackable>false</IsPackable>
+		<IsTestProject>true</IsTestProject>
+		<OutputType>Exe</OutputType>
+		<StartupObject>Tests.Performance.PerformanceProfiler</StartupObject>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Test SDK - required for test discovery and execution -->
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+
+		<!-- Testing frameworks -->
+		<PackageReference Include="NUnit" Version="4.0.1" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
+		<PackageReference Include="FluentAssertions" Version="6.12.0" />
+
+		<!-- Mocking -->
+		<PackageReference Include="NSubstitute" Version="5.1.0" />
+
+		<!-- Performance testing -->
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
+
+		<!-- Test coverage -->
+		<PackageReference Include="coverlet.collector" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Kobold\Kobold.Core.csproj" />
+	</ItemGroup>
+</Project>
