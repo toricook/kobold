@@ -17,6 +17,7 @@ namespace Kobold.Core.Abstractions.Rendering
         void End();
         void DrawRectangle(Vector2 position, Vector2 size, Color color);
         void DrawTexture(ITexture texture, Vector2 position, Vector2 scale = default);
+        void DrawSprite(ITexture texture, Vector2 position, Rectangle sourceRect, Vector2 scale, float rotation, Color tint);
         void DrawText(string text, Vector2 position, Color color, float fontSize = 16f);
         void DrawTriangle(Vector2[] points, Vector2 position, float rotation, Color color);
         void DrawTriangleFilled(Vector2[] points, Vector2 position, float rotation, Color color);

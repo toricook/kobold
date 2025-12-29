@@ -56,6 +56,20 @@ namespace Kobold.Core.Systems
                 });
             });
 
+            // Collect sprites - layer is built into the component
+            var spriteQuery = new QueryDescription().WithAll<Transform, SpriteRenderer>();
+            _world.Query(in spriteQuery, (Entity entity, ref Transform transform, ref SpriteRenderer spriteRenderer) =>
+            {
+                renderableEntities.Add(new RenderableEntity
+                {
+                    Entity = entity,
+                    Layer = spriteRenderer.Layer, // Layer from component
+                    RenderType = RenderType.Sprite,
+                    Transform = transform,
+                    SpriteRenderer = spriteRenderer
+                });
+            });
+
             // Sort by layer (lower layers render first, appear behind)
             renderableEntities.Sort((a, b) => a.Layer.CompareTo(b.Layer));
 
@@ -76,6 +90,15 @@ namespace Kobold.Core.Systems
                             renderable.TextRenderer.Color,
                             renderable.TextRenderer.FontSize);
                         break;
+
+                    case RenderType.Sprite:
+                        _renderer.DrawSprite(renderable.SpriteRenderer.Texture,
+                            renderable.Transform.Position,
+                            renderable.SpriteRenderer.SourceRect,
+                            renderable.SpriteRenderer.Scale,
+                            renderable.SpriteRenderer.Rotation,
+                            renderable.SpriteRenderer.Tint);
+                        break;
                 }
             }
 
@@ -91,12 +114,14 @@ namespace Kobold.Core.Systems
             public Transform Transform;
             public RectangleRenderer RectangleRenderer;
             public TextRenderer TextRenderer;
+            public SpriteRenderer SpriteRenderer;
         }
 
         private enum RenderType
         {
             Rectangle,
-            Text
+            Text,
+            Sprite
         }
     }
 }

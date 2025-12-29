@@ -31,7 +31,7 @@ namespace Experiments
 
             [Documentation("Random seed (0 for random)")]
             public int Seed = 0;
-
+            
             [Documentation("Whether map edges count as walls")]
             public bool EdgeIsWall = true;
 
