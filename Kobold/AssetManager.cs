@@ -1,21 +1,29 @@
 using Kobold.Core.Abstractions.Core;
 using Kobold.Core.Abstractions.Rendering;
+using Kobold.Core.Assets;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
 
 namespace Kobold.Core
 {
     /// <summary>
-    /// Manages loading and caching of game assets (textures, etc.)
+    /// Manages loading and caching of game assets (textures, sprite sheets, etc.)
     /// </summary>
     public class AssetManager
     {
         private readonly IContentLoader _contentLoader;
         private readonly Dictionary<string, ITexture> _textureCache;
+        private readonly Dictionary<string, SpriteSheet> _spriteSheetCache;
+        private readonly string _contentRoot;
 
-        public AssetManager(IContentLoader contentLoader)
+        public AssetManager(IContentLoader contentLoader, string contentRoot = "Content")
         {
             _contentLoader = contentLoader;
+            _contentRoot = contentRoot;
             _textureCache = new Dictionary<string, ITexture>();
+            _spriteSheetCache = new Dictionary<string, SpriteSheet>();
         }
 
         /// <summary>
@@ -99,6 +107,184 @@ namespace Kobold.Core
         public IEnumerable<string> GetCachedTexturePaths()
         {
             return _textureCache.Keys;
+        }
+
+        // ===== SPRITE SHEET METHODS =====
+
+        /// <summary>
+        /// Load a sprite sheet with its configuration (expects .png and .json files)
+        /// </summary>
+        /// <param name="path">Path to the sprite sheet (without extension)</param>
+        /// <returns>The loaded sprite sheet</returns>
+        public SpriteSheet LoadSpriteSheet(string path)
+        {
+            // Check if already cached
+            if (_spriteSheetCache.TryGetValue(path, out var cachedSheet))
+            {
+                return cachedSheet;
+            }
+
+            // Load texture
+            var texture = LoadTexture(path);
+
+            // Load config from JSON
+            var configPath = GetConfigPath(path);
+            var config = LoadSpriteSheetConfig(configPath);
+
+            // Create and cache sprite sheet
+            var spriteSheet = new SpriteSheet(texture, config);
+            _spriteSheetCache[path] = spriteSheet;
+
+            return spriteSheet;
+        }
+
+        /// <summary>
+        /// Load a sprite sheet configuration from a JSON file
+        /// </summary>
+        /// <param name="configPath">Path to the JSON config file</param>
+        /// <returns>The loaded configuration</returns>
+        public SpriteSheetConfig LoadSpriteSheetConfig(string configPath)
+        {
+            string fullPath = configPath;
+            if (!Path.IsPathRooted(configPath))
+            {
+                fullPath = Path.Combine(_contentRoot, configPath);
+            }
+
+            if (!Path.HasExtension(fullPath))
+            {
+                fullPath += ".json";
+            }
+
+            if (!File.Exists(fullPath))
+            {
+                throw new FileNotFoundException($"Sprite sheet config file not found: {fullPath}");
+            }
+
+            var json = File.ReadAllText(fullPath);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            var config = JsonSerializer.Deserialize<SpriteSheetConfig>(json, options);
+
+            if (config == null)
+            {
+                throw new InvalidOperationException($"Failed to deserialize sprite sheet config from: {fullPath}");
+            }
+
+            return config;
+        }
+
+        /// <summary>
+        /// Save a sprite sheet configuration to a JSON file
+        /// </summary>
+        /// <param name="config">The configuration to save</param>
+        /// <param name="configPath">Path where to save the config</param>
+        public void SaveSpriteSheetConfig(SpriteSheetConfig config, string configPath)
+        {
+            string fullPath = configPath;
+            if (!Path.IsPathRooted(configPath))
+            {
+                fullPath = Path.Combine(_contentRoot, configPath);
+            }
+
+            if (!Path.HasExtension(fullPath))
+            {
+                fullPath += ".json";
+            }
+
+            // Create directory if it doesn't exist
+            var directory = Path.GetDirectoryName(fullPath);
+            if (!string.IsNullOrEmpty(directory) && !Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+            var json = JsonSerializer.Serialize(config, options);
+            File.WriteAllText(fullPath, json);
+        }
+
+        /// <summary>
+        /// Get a previously loaded sprite sheet from cache
+        /// </summary>
+        /// <param name="path">Path to the sprite sheet</param>
+        /// <returns>The cached sprite sheet, or null if not loaded</returns>
+        public SpriteSheet? GetSpriteSheet(string path)
+        {
+            _spriteSheetCache.TryGetValue(path, out var sheet);
+            return sheet;
+        }
+
+        /// <summary>
+        /// Check if a sprite sheet is already loaded in cache
+        /// </summary>
+        /// <param name="path">Path to check</param>
+        /// <returns>True if the sprite sheet is cached</returns>
+        public bool IsSpriteSheetLoaded(string path)
+        {
+            return _spriteSheetCache.ContainsKey(path);
+        }
+
+        /// <summary>
+        /// Unload a specific sprite sheet from cache
+        /// </summary>
+        /// <param name="path">Path to the sprite sheet to unload</param>
+        /// <returns>True if the sprite sheet was unloaded, false if it wasn't cached</returns>
+        public bool UnloadSpriteSheet(string path)
+        {
+            return _spriteSheetCache.Remove(path);
+        }
+
+        /// <summary>
+        /// Unload all cached sprite sheets
+        /// </summary>
+        public void UnloadAllSpriteSheets()
+        {
+            _spriteSheetCache.Clear();
+        }
+
+        /// <summary>
+        /// Unload all assets (textures and sprite sheets)
+        /// </summary>
+        public void UnloadAll()
+        {
+            UnloadAllTextures();
+            UnloadAllSpriteSheets();
+        }
+
+        /// <summary>
+        /// Get count of currently cached sprite sheets
+        /// </summary>
+        public int CachedSpriteSheetCount => _spriteSheetCache.Count;
+
+        /// <summary>
+        /// Get all currently cached sprite sheet paths
+        /// </summary>
+        public IEnumerable<string> GetCachedSpriteSheetPaths()
+        {
+            return _spriteSheetCache.Keys;
+        }
+
+        private string GetConfigPath(string assetPath)
+        {
+            // Remove extension if present
+            var pathWithoutExt = Path.GetFileNameWithoutExtension(assetPath);
+            var directory = Path.GetDirectoryName(assetPath);
+
+            if (string.IsNullOrEmpty(directory))
+            {
+                return pathWithoutExt + ".json";
+            }
+
+            return Path.Combine(directory, pathWithoutExt + ".json");
         }
     }
 }

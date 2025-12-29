@@ -2,6 +2,7 @@ using Arch.Core;
 using Kobold.Core;
 using Kobold.Core.Abstractions.Input;
 using Kobold.Core.Abstractions.Rendering;
+using Kobold.Core.Assets;
 using Kobold.Core.Components;
 using Kobold.Core.Components.Gameplay;
 using Kobold.Core.Systems;
@@ -14,6 +15,7 @@ namespace CaveExplorer
     {
         // Entity references
         private Entity _gameStateEntity;
+        private SpriteSheet _spriteSheet;
 
         public CaveExplorerGame() : base()
         {
@@ -94,13 +96,52 @@ namespace CaveExplorer
 
         private void CreateInitialEntities()
         {
-            // Create a simple test entity (a white square) to verify the game is running
-            var testEntity = World.Create(
+            // Load sprite sheet
+            _spriteSheet = Assets.LoadSpriteSheet("sprites");
+
+            // Create test sprites to display different sprites from the sheet
+            // Player sprite (frame 0)
+            var player = World.Create(
                 new Transform(new Vector2(Constants.SCREEN_WIDTH / 2, Constants.SCREEN_HEIGHT / 2)),
-                new Velocity(Vector2.Zero),
-                new BoxCollider(new Vector2(50f, 50f)),
-                RectangleRenderer.GameObject(new Vector2(50f, 50f), Color.White)
+                new SpriteRenderer(_spriteSheet.Texture,
+                    _spriteSheet.GetFrame(0),
+                    new Vector2(2f, 2f))
             );
+
+            // Enemy sprite (frame 1)
+            var enemy1 = World.Create(
+                new Transform(new Vector2(200, 200)),
+                new SpriteRenderer(_spriteSheet.Texture,
+                    _spriteSheet.GetFrame(1),
+                    new Vector2(2f, 2f))
+            );
+
+            // Another sprite (frame 2)
+            var enemy2 = World.Create(
+                new Transform(new Vector2(800, 200)),
+                new SpriteRenderer(_spriteSheet.Texture,
+                    _spriteSheet.GetFrame(2),
+                    new Vector2(2f, 2f))
+            );
+
+            // Display a sprite from the second row (frame 21 = first sprite of row 2)
+            var secondRowSprite = World.Create(
+                new Transform(new Vector2(200, 500)),
+                new SpriteRenderer(_spriteSheet.Texture,
+                    _spriteSheet.GetFrame(21),
+                    new Vector2(2f, 2f))
+            );
+
+            // Using a named region (if you want to use specific sprites)
+            if (_spriteSheet.HasNamedRegion("player"))
+            {
+                var namedPlayer = World.Create(
+                    new Transform(new Vector2(800, 500)),
+                    new SpriteRenderer(_spriteSheet.Texture,
+                        _spriteSheet.GetNamedRegion("player"),
+                        new Vector2(2f, 2f))
+                );
+            }
         }
 
         public override void Update(float deltaTime)

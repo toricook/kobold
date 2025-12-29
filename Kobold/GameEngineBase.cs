@@ -64,8 +64,8 @@ namespace Kobold.Core
             if (ContentLoader == null)
                 throw new InvalidOperationException("ContentLoader must be set before initialization");
 
-            // Create AssetManager with the ContentLoader
-            Assets = new AssetManager(ContentLoader);
+            // Create AssetManager with the ContentLoader and content root
+            Assets = new AssetManager(ContentLoader, ContentLoader.ContentRoot);
 
             _isInitialized = true;
         }
@@ -90,7 +90,7 @@ namespace Kobold.Core
         public virtual void Shutdown()
         {
             // Unload all assets
-            Assets?.UnloadAllTextures();
+            Assets?.UnloadAll();
 
             SystemManager.ClearSystems();
             EventBus.Clear();

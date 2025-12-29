@@ -13,6 +13,8 @@ namespace Kobold.Monogame
         private readonly GraphicsDevice _graphicsDevice;
         private readonly string _contentRoot;
 
+        public string ContentRoot => _contentRoot;
+
         public MonoGameContentLoader(GraphicsDevice graphicsDevice, string contentRoot = "Content")
         {
             _graphicsDevice = graphicsDevice;
@@ -42,6 +44,7 @@ namespace Kobold.Monogame
             // Load texture from file
             using (var fileStream = File.OpenRead(fullPath))
             {
+
                 var texture = Texture2D.FromStream(_graphicsDevice, fileStream);
                 return new MonoGameTexture(texture);
             }

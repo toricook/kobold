@@ -12,4 +12,10 @@
     <ProjectReference Include="..\Kobold\Kobold.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="Content\**\*.*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

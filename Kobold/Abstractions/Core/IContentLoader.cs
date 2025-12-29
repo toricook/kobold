@@ -8,6 +8,11 @@ namespace Kobold.Core.Abstractions.Core
     public interface IContentLoader
     {
         /// <summary>
+        /// Root directory for content files
+        /// </summary>
+        string ContentRoot { get; }
+
+        /// <summary>
         /// Load a texture from a file path
         /// </summary>
         /// <param name="path">Path to the texture file (relative to content directory)</param>
