@@ -1,10 +1,11 @@
-﻿using Arch.Core;
+using Arch.Core;
 using Kobold.Core.Abstractions;
 using Kobold.Core.Abstractions.Rendering;
 using Kobold.Core.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,6 +25,9 @@ namespace Kobold.Core.Systems
         public void Render()
         {
             _renderer.Begin();
+
+            // Get camera (if exists)
+            Camera? camera = GetCamera();
 
             // Collect all renderable entities with their layers
             var renderableEntities = new List<RenderableEntity>();
@@ -76,24 +80,32 @@ namespace Kobold.Core.Systems
             // Render in layer order
             foreach (var renderable in renderableEntities)
             {
+                // Convert world position to screen position
+                Vector2 screenPosition = camera.HasValue
+                    ? camera.Value.WorldToScreen(renderable.Transform.Position)
+                    : renderable.Transform.Position;
+
+                // Round to integer pixel coordinates to prevent sub-pixel rendering artifacts
+                screenPosition = new Vector2(MathF.Round(screenPosition.X), MathF.Round(screenPosition.Y));
+
                 switch (renderable.RenderType)
                 {
                     case RenderType.Rectangle:
-                        _renderer.DrawRectangle(renderable.Transform.Position,
+                        _renderer.DrawRectangle(screenPosition,
                             renderable.RectangleRenderer.Size,
                             renderable.RectangleRenderer.Color);
                         break;
 
                     case RenderType.Text:
                         _renderer.DrawText(renderable.TextRenderer.Text,
-                            renderable.Transform.Position,
+                            screenPosition,
                             renderable.TextRenderer.Color,
                             renderable.TextRenderer.FontSize);
                         break;
 
                     case RenderType.Sprite:
                         _renderer.DrawSprite(renderable.SpriteRenderer.Texture,
-                            renderable.Transform.Position,
+                            screenPosition,
                             renderable.SpriteRenderer.SourceRect,
                             renderable.SpriteRenderer.Scale,
                             renderable.SpriteRenderer.Rotation,
@@ -104,6 +116,19 @@ namespace Kobold.Core.Systems
 
             _renderer.End();
 
+        }
+
+        private Camera? GetCamera()
+        {
+            var cameraQuery = new QueryDescription().WithAll<Camera>();
+            Camera? result = null;
+
+            _world.Query(in cameraQuery, (ref Camera camera) =>
+            {
+                result = camera;
+            });
+
+            return result;
         }
 
         private struct RenderableEntity
