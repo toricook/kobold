@@ -12,6 +12,8 @@ namespace Kobold.Core
         protected World World;
         protected IRenderer Renderer;
         protected IInputManager InputManager;
+        protected IContentLoader ContentLoader;
+        protected AssetManager Assets;
         protected EventBus EventBus;
         protected SystemManager SystemManager;
 
@@ -46,12 +48,24 @@ namespace Kobold.Core
             InputManager = inputManager;
         }
 
+        public void SetContentLoader(IContentLoader contentLoader)
+        {
+            if (_isInitialized)
+                throw new InvalidOperationException("Cannot set content loader after initialization");
+            ContentLoader = contentLoader;
+        }
+
         public virtual void Initialize()
         {
             if (Renderer == null)
                 throw new InvalidOperationException("Renderer must be set before initialization");
             if (InputManager == null)
                 throw new InvalidOperationException("InputManager must be set before initialization");
+            if (ContentLoader == null)
+                throw new InvalidOperationException("ContentLoader must be set before initialization");
+
+            // Create AssetManager with the ContentLoader and content root
+            Assets = new AssetManager(ContentLoader, ContentLoader.ContentRoot);
 
             _isInitialized = true;
         }
@@ -75,6 +89,9 @@ namespace Kobold.Core
 
         public virtual void Shutdown()
         {
+            // Unload all assets
+            Assets?.UnloadAll();
+
             SystemManager.ClearSystems();
             EventBus.Clear();
             World.Dispose();

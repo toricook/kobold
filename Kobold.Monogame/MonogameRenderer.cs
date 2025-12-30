@@ -49,6 +49,28 @@ namespace Kobold.Monogame
             }
         }
 
+        public void DrawSprite(ITexture texture, SystemVector2 position, System.Drawing.Rectangle sourceRect, SystemVector2 scale, float rotation, SystemColor tint)
+        {
+            if (texture is MonoGameTexture mgTexture)
+            {
+                var scaleVector = new Vector2(scale.X, scale.Y);
+                var xnaSourceRect = new Rectangle(sourceRect.X, sourceRect.Y, sourceRect.Width, sourceRect.Height);
+                var origin = new Vector2(sourceRect.Width / 2f, sourceRect.Height / 2f);
+
+                _spriteBatch.Draw(
+                    mgTexture.Texture,
+                    new Vector2(position.X, position.Y),
+                    xnaSourceRect,
+                    ToXnaColor(tint),
+                    rotation,
+                    origin,
+                    scaleVector,
+                    SpriteEffects.None,
+                    0f
+                );
+            }
+        }
+
         public void DrawText(string text, SystemVector2 position, SystemColor color, float fontSize = 16f)
         {
             if (_defaultFont != null)

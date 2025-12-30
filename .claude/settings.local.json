@@ -8,7 +8,19 @@
       "Bash(test:*)",
       "Bash(find:*)",
       "Bash(dotnet restore:*)",
-      "Bash(dotnet test:*)"
+      "Bash(dotnet test:*)",
+      "Bash(mkdir:*)",
+      "WebFetch(domain:www.nuget.org)",
+      "WebFetch(domain:github.com)",
+      "Bash(dotnet run)",
+      "Bash(dotnet sln:*)",
+      "Bash(git mv:*)",
+      "Bash(move Experiments Kobold.Experiments)",
+      "Bash(git add:*)",
+      "Bash(git rm:*)",
+      "Bash(cat:*)",
+      "Bash(dir:*)",
+      "Bash(timeout 5 dotnet run:*)"
     ]
   }
 }

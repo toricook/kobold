@@ -1,10 +1,11 @@
-﻿using Arch.Core;
+using Arch.Core;
 using Kobold.Core.Abstractions;
 using Kobold.Core.Abstractions.Rendering;
 using Kobold.Core.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,6 +25,9 @@ namespace Kobold.Core.Systems
         public void Render()
         {
             _renderer.Begin();
+
+            // Get camera (if exists)
+            Camera? camera = GetCamera();
 
             // Collect all renderable entities with their layers
             var renderableEntities = new List<RenderableEntity>();
@@ -56,31 +60,75 @@ namespace Kobold.Core.Systems
                 });
             });
 
+            // Collect sprites - layer is built into the component
+            var spriteQuery = new QueryDescription().WithAll<Transform, SpriteRenderer>();
+            _world.Query(in spriteQuery, (Entity entity, ref Transform transform, ref SpriteRenderer spriteRenderer) =>
+            {
+                renderableEntities.Add(new RenderableEntity
+                {
+                    Entity = entity,
+                    Layer = spriteRenderer.Layer, // Layer from component
+                    RenderType = RenderType.Sprite,
+                    Transform = transform,
+                    SpriteRenderer = spriteRenderer
+                });
+            });
+
             // Sort by layer (lower layers render first, appear behind)
             renderableEntities.Sort((a, b) => a.Layer.CompareTo(b.Layer));
 
             // Render in layer order
             foreach (var renderable in renderableEntities)
             {
+                // Convert world position to screen position
+                Vector2 screenPosition = camera.HasValue
+                    ? camera.Value.WorldToScreen(renderable.Transform.Position)
+                    : renderable.Transform.Position;
+
+                // Round to integer pixel coordinates to prevent sub-pixel rendering artifacts
+                screenPosition = new Vector2(MathF.Round(screenPosition.X), MathF.Round(screenPosition.Y));
+
                 switch (renderable.RenderType)
                 {
                     case RenderType.Rectangle:
-                        _renderer.DrawRectangle(renderable.Transform.Position,
+                        _renderer.DrawRectangle(screenPosition,
                             renderable.RectangleRenderer.Size,
                             renderable.RectangleRenderer.Color);
                         break;
 
                     case RenderType.Text:
                         _renderer.DrawText(renderable.TextRenderer.Text,
-                            renderable.Transform.Position,
+                            screenPosition,
                             renderable.TextRenderer.Color,
                             renderable.TextRenderer.FontSize);
+                        break;
+
+                    case RenderType.Sprite:
+                        _renderer.DrawSprite(renderable.SpriteRenderer.Texture,
+                            screenPosition,
+                            renderable.SpriteRenderer.SourceRect,
+                            renderable.SpriteRenderer.Scale,
+                            renderable.SpriteRenderer.Rotation,
+                            renderable.SpriteRenderer.Tint);
                         break;
                 }
             }
 
             _renderer.End();
 
+        }
+
+        private Camera? GetCamera()
+        {
+            var cameraQuery = new QueryDescription().WithAll<Camera>();
+            Camera? result = null;
+
+            _world.Query(in cameraQuery, (ref Camera camera) =>
+            {
+                result = camera;
+            });
+
+            return result;
         }
 
         private struct RenderableEntity
@@ -91,12 +139,14 @@ namespace Kobold.Core.Systems
             public Transform Transform;
             public RectangleRenderer RectangleRenderer;
             public TextRenderer TextRenderer;
+            public SpriteRenderer SpriteRenderer;
         }
 
         private enum RenderType
         {
             Rectangle,
-            Text
+            Text,
+            Sprite
         }
     }
 }
