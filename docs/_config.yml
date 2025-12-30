@@ -1,17 +1,57 @@
 title: Kobold Game Framework
-description: A lightweight ECS game framework built on MonoGame
-theme: jekyll-theme-cayman
-show_downloads: false
-
-# GitHub Pages configuration
+description: A lightweight ECS game framework with platform-agnostic core
 baseurl: "/Kobold"
 url: "https://toricook.github.io"
+
+# Theme configuration
+remote_theme: just-the-docs/just-the-docs
+
+# Color scheme (can be: light, dark, or custom)
+color_scheme: kobold
+
+# Logo and favicon
+logo: "/assets/images/logo.png"
+
+# Search
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# Heading anchor links
+heading_anchors: true
+
+# Footer content
+footer_content: "Copyright &copy; 2025 Kobold Framework. Distributed under the <a href=\"https://github.com/toricook/Kobold/blob/main/LICENSE\">MIT license</a>."
+
+# Navigation
+nav_sort: case_insensitive
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Footer last edit timestamp
+last_edit_timestamp: true
+last_edit_time_format: "%b %e %Y at %I:%M %p"
+
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/toricook/Kobold"
+gh_edit_branch: "main"
+gh_edit_view_mode: "tree"
 
 # Markdown settings
 markdown: kramdown
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
 
 # Exclude files from processing
 exclude:
@@ -19,3 +59,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor/
+  - node_modules/
+  - .sass-cache/
+  - .jekyll-cache/

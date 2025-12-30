@@ -1,3 +1,10 @@
+---
+layout: default
+title: Architecture
+parent: Core Framework
+nav_order: 1
+---
+
 # Kobold Architecture - Entity Component System
 
 Kobold is built on the **Entity Component System (ECS)** architectural pattern, providing high-performance, data-oriented game development. This guide explains what ECS is, why Kobold uses it, and how it works.

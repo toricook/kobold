@@ -1,0 +1,54 @@
+// Kobold custom color scheme for Just the Docs
+
+// Primary brand color - Deep blue/purple
+$purple-000: #f5f3ff;
+$purple-100: #e9d5ff;
+$purple-200: #c4b5fd;
+$purple-300: #a78bfa;
+$purple-400: #8b5cf6;
+$purple-500: #7c3aed;
+$purple-600: #6d28d9;
+$purple-700: #5b21b6;
+$purple-800: #4c1d95;
+$purple-900: #2e1065;
+
+// Accent color - Cyan for links and highlights
+$cyan-000: #ecfeff;
+$cyan-100: #cffafe;
+$cyan-200: #a5f3fc;
+$cyan-300: #67e8f9;
+$cyan-400: #22d3ee;
+$cyan-500: #06b6d4;
+$cyan-600: #0891b2;
+$cyan-700: #0e7490;
+$cyan-800: #155e75;
+$cyan-900: #164e63;
+
+// Use purple as primary brand color
+$link-color: $purple-600;
+$btn-primary-color: $purple-600;
+$base-button-color: $purple-000;
+
+// Code and syntax highlighting
+$code-background-color: #f6f8fa;
+$border-color: $purple-200;
+
+// Navigation
+$sidebar-color: #fafbfc;
+$nav-child-link-color: $purple-700;
+$search-background-color: $purple-000;
+$search-result-preview-color: $purple-700;
+
+// Body
+$body-background-color: $white;
+$body-heading-color: $purple-900;
+$body-text-color: $grey-dk-100;
+
+// Feedback colors
+$green-000: #f0fdf4;
+$green-100: #dcfce7;
+$green-200: #bbf7d0;
+$green-300: #86efac;
+
+// Code blocks
+$code-linenumber-color: $grey-dk-000;

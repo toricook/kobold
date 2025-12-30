@@ -1,3 +1,10 @@
+---
+layout: default
+title: Quick Start
+parent: Getting Started
+nav_order: 2
+---
+
 # Quick Start - 5 Minutes to Your First Game
 
 This guide will get you up and running with Kobold in about 5 minutes. We'll create a simple game with a moving, bouncing sprite.

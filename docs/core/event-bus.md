@@ -1,3 +1,10 @@
+---
+layout: default
+title: Event Bus
+parent: Core Framework
+nav_order: 6
+---
+
 # Event Bus - Decoupled Event System
 
 The `EventBus` provides a pub/sub (publish/subscribe) event system for decoupled communication between game systems. It's accessible via `GameEngineBase.Events`.

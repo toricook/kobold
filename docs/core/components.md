@@ -1,3 +1,10 @@
+---
+layout: default
+title: Components
+parent: Core Framework
+nav_order: 3
+---
+
 # Components Reference
 
 Components are data structs that you attach to entities. This page documents all built-in components in Kobold.Core.

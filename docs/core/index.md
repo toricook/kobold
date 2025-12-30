@@ -1,3 +1,10 @@
+---
+layout: default
+title: Core Framework
+nav_order: 3
+has_children: true
+---
+
 # Kobold.Core - Framework Overview
 
 **Kobold.Core** is the heart of the Kobold framework. It provides the Entity Component System architecture, game engine base, physics, collision, rendering pipeline, and all the core components and systems you need to build 2D games.

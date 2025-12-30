@@ -1,3 +1,10 @@
+---
+layout: default
+title: Installation
+parent: Getting Started
+nav_order: 1
+---
+
 # Installation Guide
 
 Detailed guide for installing Kobold and setting up your development environment.

@@ -1,3 +1,10 @@
+---
+layout: default
+title: Systems
+parent: Core Framework
+nav_order: 4
+---
+
 # Systems Reference
 
 Systems contain the logic that processes entities with specific components each frame. This page documents all built-in systems in Kobold.Core.

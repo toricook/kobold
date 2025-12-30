@@ -1,7 +1,13 @@
 source "https://rubygems.org"
 
-gem "github-pages", group: :jekyll_plugins
-gem "jekyll-theme-cayman"
+gem "jekyll", "~> 3.9"
+gem "just-the-docs"
+
+# GitHub Pages plugins
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-seo-tag"
+end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.

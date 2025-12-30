@@ -1,3 +1,10 @@
+---
+layout: default
+title: Asset Manager
+parent: Core Framework
+nav_order: 5
+---
+
 # Asset Manager - Loading and Managing Assets
 
 The `AssetManager` class handles loading, caching, and managing textures and sprite sheets in Kobold. It's accessible via `GameEngineBase.Assets`.

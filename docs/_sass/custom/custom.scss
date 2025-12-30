@@ -1,0 +1,114 @@
+// Custom styles for Kobold documentation
+
+// Improve code block appearance
+.highlight {
+  border-radius: 6px;
+  border: 1px solid #e1e4e8;
+
+  pre {
+    border-radius: 6px;
+  }
+}
+
+// Inline code styling
+code {
+  background-color: #f6f8fa;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 85%;
+  border: 1px solid #e1e4e8;
+}
+
+// Improve heading spacing
+.main-content {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h2 {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #e1e4e8;
+  }
+}
+
+// Improve button styling
+.btn-primary {
+  background-image: linear-gradient(to bottom, #8b5cf6, #7c3aed);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+  &:hover, &:active {
+    background-image: linear-gradient(to bottom, #7c3aed, #6d28d9);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btn {
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+// Callout/admonition styling
+blockquote {
+  border-left: 4px solid #8b5cf6;
+  background-color: #f5f3ff;
+  padding: 1em 1.5em;
+  margin: 1.5em 0;
+  border-radius: 0 6px 6px 0;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Table improvements
+table {
+  border-radius: 6px;
+  overflow: hidden;
+
+  thead th {
+    background-color: #f5f3ff;
+    font-weight: 600;
+  }
+
+  tbody tr:hover {
+    background-color: #fafbfc;
+  }
+}
+
+// Navigation improvements
+.nav-list .nav-list-item {
+  .nav-list-link {
+    &:hover {
+      background-color: #f5f3ff;
+    }
+
+    &.active {
+      background-color: #e9d5ff;
+      font-weight: 600;
+    }
+  }
+}
+
+// Search improvements
+.search-input {
+  border-radius: 6px;
+  border: 2px solid #e1e4e8;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+  }
+}
+
+// Footer improvements
+.site-footer {
+  border-top: 1px solid #e1e4e8;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
