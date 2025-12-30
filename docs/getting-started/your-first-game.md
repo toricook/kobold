@@ -1,10 +1,3 @@
----
-layout: default
-title: Your First Game
-parent: Getting Started
-nav_order: 3
----
-
 # Your First Game - Complete Tutorial
 
 Build a simple but complete game to learn Kobold fundamentals. We'll create a space shooter with enemies, projectiles, and scoring.

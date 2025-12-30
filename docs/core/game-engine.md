@@ -1,10 +1,3 @@
----
-layout: default
-title: Game Engine
-parent: Core Framework
-nav_order: 2
----
-
 # GameEngineBase - Core Game Class
 
 `GameEngineBase` is the abstract base class that every Kobold game extends. It manages the game lifecycle, ECS World, systems, assets, events, and platform implementations.

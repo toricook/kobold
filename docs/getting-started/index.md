@@ -1,10 +1,3 @@
----
-layout: default
-title: Getting Started
-nav_order: 2
-has_children: true
----
-
 # Getting Started with Kobold
 
 Welcome to Kobold! This guide will help you install the framework, understand the basics, and build your first game.

@@ -1,10 +1,3 @@
----
-layout: default
-title: Utilities
-parent: Core Framework
-nav_order: 7
----
-
 # Utilities - Helper Functions
 
 Kobold provides various utility classes and functions for common game development tasks.

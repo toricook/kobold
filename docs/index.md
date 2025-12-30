@@ -1,21 +1,4 @@
----
-layout: default
-title: Home
-nav_order: 1
-description: "Kobold is a lightweight ECS game framework with platform-agnostic core"
-permalink: /
----
-
 # Kobold Game Framework
-{: .fs-9 }
-
-A lightweight, high-performance 2D game framework built on the Entity Component System (ECS) architecture.
-{: .fs-6 .fw-300 }
-
-[Get Started](getting-started/installation){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[View on GitHub](https://github.com/toricook/Kobold){: .btn .fs-5 .mb-4 .mb-md-0 }
-
----
 
 **Kobold** is a lightweight, high-performance 2D game framework built on the Entity Component System (ECS) architecture. The core framework is **platform-agnostic**, with rendering and platform-specific functionality abstracted behind interfaces. While MonoGame is the primary and recommended platform host, the architecture allows for alternative implementations or even integration with other engines.
 
