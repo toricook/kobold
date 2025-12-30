@@ -1,0 +1,343 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  id: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.Acceleration
+  - Kobold.Core.Components.AngularAcceleration
+  - Kobold.Core.Components.AngularVelocity
+  - Kobold.Core.Components.Animation
+  - Kobold.Core.Components.AnimationClip
+  - Kobold.Core.Components.BoxCollider
+  - Kobold.Core.Components.Camera
+  - Kobold.Core.Components.CoreGameState
+  - Kobold.Core.Components.Debug
+  - Kobold.Core.Components.Destructible
+  - Kobold.Core.Components.DestructionReason
+  - Kobold.Core.Components.Drag
+  - Kobold.Core.Components.Dynamic
+  - Kobold.Core.Components.Enemy
+  - Kobold.Core.Components.GameState`1
+  - Kobold.Core.Components.Gravity
+  - Kobold.Core.Components.IRenderable
+  - Kobold.Core.Components.MaxSpeed
+  - Kobold.Core.Components.PendingDestruction
+  - Kobold.Core.Components.Physics
+  - Kobold.Core.Components.Player
+  - Kobold.Core.Components.PlayerControlled
+  - Kobold.Core.Components.PowerUp
+  - Kobold.Core.Components.Projectile
+  - Kobold.Core.Components.RectangleRenderer
+  - Kobold.Core.Components.RenderLayers
+  - Kobold.Core.Components.ScreenBounds
+  - Kobold.Core.Components.SpriteRenderer
+  - Kobold.Core.Components.StandardGameState
+  - Kobold.Core.Components.Static
+  - Kobold.Core.Components.TextRenderer
+  - Kobold.Core.Components.Thruster
+  - Kobold.Core.Components.Transform
+  - Kobold.Core.Components.TriangleRenderer
+  - Kobold.Core.Components.Trigger
+  - Kobold.Core.Components.UI
+  - Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  type: Namespace
+  assemblies:
+  - Kobold.Core
+references:
+- uid: Kobold.Core.Components.Camera
+  commentId: T:Kobold.Core.Components.Camera
+  href: Kobold.Core.Components.Camera.html
+  name: Camera
+  nameWithType: Camera
+  fullName: Kobold.Core.Components.Camera
+- uid: Kobold.Core.Components.GameState`1
+  commentId: T:Kobold.Core.Components.GameState`1
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.GameState-1.html
+  name: GameState<TState>
+  nameWithType: GameState<TState>
+  fullName: Kobold.Core.Components.GameState<TState>
+  nameWithType.vb: GameState(Of TState)
+  fullName.vb: Kobold.Core.Components.GameState(Of TState)
+  name.vb: GameState(Of TState)
+  spec.csharp:
+  - uid: Kobold.Core.Components.GameState`1
+    name: GameState
+    href: Kobold.Core.Components.GameState-1.html
+  - name: <
+  - name: TState
+  - name: '>'
+  spec.vb:
+  - uid: Kobold.Core.Components.GameState`1
+    name: GameState
+    href: Kobold.Core.Components.GameState-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TState
+  - name: )
+- uid: Kobold.Core.Components.StandardGameState
+  commentId: T:Kobold.Core.Components.StandardGameState
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.StandardGameState.html
+  name: StandardGameState
+  nameWithType: StandardGameState
+  fullName: Kobold.Core.Components.StandardGameState
+- uid: Kobold.Core.Components.CoreGameState
+  commentId: T:Kobold.Core.Components.CoreGameState
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.CoreGameState.html
+  name: CoreGameState
+  nameWithType: CoreGameState
+  fullName: Kobold.Core.Components.CoreGameState
+- uid: Kobold.Core.Components.Player
+  commentId: T:Kobold.Core.Components.Player
+  href: Kobold.Core.Components.Player.html
+  name: Player
+  nameWithType: Player
+  fullName: Kobold.Core.Components.Player
+- uid: Kobold.Core.Components.Enemy
+  commentId: T:Kobold.Core.Components.Enemy
+  href: Kobold.Core.Components.Enemy.html
+  name: Enemy
+  nameWithType: Enemy
+  fullName: Kobold.Core.Components.Enemy
+- uid: Kobold.Core.Components.Static
+  commentId: T:Kobold.Core.Components.Static
+  href: Kobold.Core.Components.Static.html
+  name: Static
+  nameWithType: Static
+  fullName: Kobold.Core.Components.Static
+- uid: Kobold.Core.Components.Dynamic
+  commentId: T:Kobold.Core.Components.Dynamic
+  href: Kobold.Core.Components.Dynamic.html
+  name: Dynamic
+  nameWithType: Dynamic
+  fullName: Kobold.Core.Components.Dynamic
+- uid: Kobold.Core.Components.Projectile
+  commentId: T:Kobold.Core.Components.Projectile
+  href: Kobold.Core.Components.Projectile.html
+  name: Projectile
+  nameWithType: Projectile
+  fullName: Kobold.Core.Components.Projectile
+- uid: Kobold.Core.Components.PowerUp
+  commentId: T:Kobold.Core.Components.PowerUp
+  href: Kobold.Core.Components.PowerUp.html
+  name: PowerUp
+  nameWithType: PowerUp
+  fullName: Kobold.Core.Components.PowerUp
+- uid: Kobold.Core.Components.Trigger
+  commentId: T:Kobold.Core.Components.Trigger
+  href: Kobold.Core.Components.Trigger.html
+  name: Trigger
+  nameWithType: Trigger
+  fullName: Kobold.Core.Components.Trigger
+- uid: Kobold.Core.Components.Destructible
+  commentId: T:Kobold.Core.Components.Destructible
+  href: Kobold.Core.Components.Destructible.html
+  name: Destructible
+  nameWithType: Destructible
+  fullName: Kobold.Core.Components.Destructible
+- uid: Kobold.Core.Components.UI
+  commentId: T:Kobold.Core.Components.UI
+  href: Kobold.Core.Components.UI.html
+  name: UI
+  nameWithType: UI
+  fullName: Kobold.Core.Components.UI
+- uid: Kobold.Core.Components.Debug
+  commentId: T:Kobold.Core.Components.Debug
+  href: Kobold.Core.Components.Debug.html
+  name: Debug
+  nameWithType: Debug
+  fullName: Kobold.Core.Components.Debug
+- uid: Kobold.Core.Components.Transform
+  commentId: T:Kobold.Core.Components.Transform
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.Transform.html
+  name: Transform
+  nameWithType: Transform
+  fullName: Kobold.Core.Components.Transform
+- uid: Kobold.Core.Components.PendingDestruction
+  commentId: T:Kobold.Core.Components.PendingDestruction
+  href: Kobold.Core.Components.PendingDestruction.html
+  name: PendingDestruction
+  nameWithType: PendingDestruction
+  fullName: Kobold.Core.Components.PendingDestruction
+- uid: Kobold.Core.Components.DestructionReason
+  commentId: T:Kobold.Core.Components.DestructionReason
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.DestructionReason.html
+  name: DestructionReason
+  nameWithType: DestructionReason
+  fullName: Kobold.Core.Components.DestructionReason
+- uid: Kobold.Core.Components.BoxCollider
+  commentId: T:Kobold.Core.Components.BoxCollider
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.BoxCollider.html
+  name: BoxCollider
+  nameWithType: BoxCollider
+  fullName: Kobold.Core.Components.BoxCollider
+- uid: Kobold.Core.Components.AngularVelocity
+  commentId: T:Kobold.Core.Components.AngularVelocity
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.AngularVelocity.html
+  name: AngularVelocity
+  nameWithType: AngularVelocity
+  fullName: Kobold.Core.Components.AngularVelocity
+- uid: Kobold.Core.Components.Thruster
+  commentId: T:Kobold.Core.Components.Thruster
+  href: Kobold.Core.Components.Thruster.html
+  name: Thruster
+  nameWithType: Thruster
+  fullName: Kobold.Core.Components.Thruster
+- uid: Kobold.Core.Components.Drag
+  commentId: T:Kobold.Core.Components.Drag
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.Drag.html
+  name: Drag
+  nameWithType: Drag
+  fullName: Kobold.Core.Components.Drag
+- uid: Kobold.Core.Components.MaxSpeed
+  commentId: T:Kobold.Core.Components.MaxSpeed
+  href: Kobold.Core.Components.MaxSpeed.html
+  name: MaxSpeed
+  nameWithType: MaxSpeed
+  fullName: Kobold.Core.Components.MaxSpeed
+- uid: Kobold.Core.Components.Physics
+  commentId: T:Kobold.Core.Components.Physics
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.Physics.html
+  name: Physics
+  nameWithType: Physics
+  fullName: Kobold.Core.Components.Physics
+- uid: Kobold.Core.Components.Acceleration
+  commentId: T:Kobold.Core.Components.Acceleration
+  href: Kobold.Core.Components.Acceleration.html
+  name: Acceleration
+  nameWithType: Acceleration
+  fullName: Kobold.Core.Components.Acceleration
+- uid: Kobold.Core.Components.AngularAcceleration
+  commentId: T:Kobold.Core.Components.AngularAcceleration
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.AngularAcceleration.html
+  name: AngularAcceleration
+  nameWithType: AngularAcceleration
+  fullName: Kobold.Core.Components.AngularAcceleration
+- uid: Kobold.Core.Components.Gravity
+  commentId: T:Kobold.Core.Components.Gravity
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.Gravity.html
+  name: Gravity
+  nameWithType: Gravity
+  fullName: Kobold.Core.Components.Gravity
+- uid: Kobold.Core.Components.Velocity
+  commentId: T:Kobold.Core.Components.Velocity
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.Velocity.html
+  name: Velocity
+  nameWithType: Velocity
+  fullName: Kobold.Core.Components.Velocity
+- uid: Kobold.Core.Components.PlayerControlled
+  commentId: T:Kobold.Core.Components.PlayerControlled
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.PlayerControlled.html
+  name: PlayerControlled
+  nameWithType: PlayerControlled
+  fullName: Kobold.Core.Components.PlayerControlled
+- uid: Kobold.Core.Components.AnimationClip
+  commentId: T:Kobold.Core.Components.AnimationClip
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.AnimationClip.html
+  name: AnimationClip
+  nameWithType: AnimationClip
+  fullName: Kobold.Core.Components.AnimationClip
+- uid: Kobold.Core.Components.Animation
+  commentId: T:Kobold.Core.Components.Animation
+  href: Kobold.Core.Components.Animation.html
+  name: Animation
+  nameWithType: Animation
+  fullName: Kobold.Core.Components.Animation
+- uid: Kobold.Core.Components.IRenderable
+  commentId: T:Kobold.Core.Components.IRenderable
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.IRenderable.html
+  name: IRenderable
+  nameWithType: IRenderable
+  fullName: Kobold.Core.Components.IRenderable
+- uid: Kobold.Core.Components.RectangleRenderer
+  commentId: T:Kobold.Core.Components.RectangleRenderer
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.RectangleRenderer.html
+  name: RectangleRenderer
+  nameWithType: RectangleRenderer
+  fullName: Kobold.Core.Components.RectangleRenderer
+- uid: Kobold.Core.Components.TextRenderer
+  commentId: T:Kobold.Core.Components.TextRenderer
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.TextRenderer.html
+  name: TextRenderer
+  nameWithType: TextRenderer
+  fullName: Kobold.Core.Components.TextRenderer
+- uid: Kobold.Core.Components.TriangleRenderer
+  commentId: T:Kobold.Core.Components.TriangleRenderer
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.TriangleRenderer.html
+  name: TriangleRenderer
+  nameWithType: TriangleRenderer
+  fullName: Kobold.Core.Components.TriangleRenderer
+- uid: Kobold.Core.Components.RenderLayers
+  commentId: T:Kobold.Core.Components.RenderLayers
+  href: Kobold.Core.Components.RenderLayers.html
+  name: RenderLayers
+  nameWithType: RenderLayers
+  fullName: Kobold.Core.Components.RenderLayers
+- uid: Kobold.Core.Components.SpriteRenderer
+  commentId: T:Kobold.Core.Components.SpriteRenderer
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.SpriteRenderer.html
+  name: SpriteRenderer
+  nameWithType: SpriteRenderer
+  fullName: Kobold.Core.Components.SpriteRenderer
+- uid: Kobold.Core.Components.ScreenBounds
+  commentId: T:Kobold.Core.Components.ScreenBounds
+  href: Kobold.Core.Components.ScreenBounds.html
+  name: ScreenBounds
+  nameWithType: ScreenBounds
+  fullName: Kobold.Core.Components.ScreenBounds
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html

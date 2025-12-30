@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace Kobold.Core.Components | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace Kobold.Core.Components | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Kobold.Core.Components">
+
+  <h1 id="Kobold_Core_Components" data-uid="Kobold.Core.Components" class="text-break">Namespace Kobold.Core.Components</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.AnimationClip.html">AnimationClip</a></dt>
+      <dd><p>Defines a sequence of frames for an animation</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.RenderLayers.html">RenderLayers</a></dt>
+      <dd><p>Standard rendering layer values
+Lower values render first (behind), higher values render last (on top)</p>
+</dd>
+    </dl>
+    <h3 id="structs">
+Structs
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Acceleration.html">Acceleration</a></dt>
+      <dd><p>Acceleration component for entities that need forces applied over time</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.AngularAcceleration.html">AngularAcceleration</a></dt>
+      <dd><p>Angular acceleration component</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.AngularVelocity.html">AngularVelocity</a></dt>
+      <dd><p>Angular velocity component for rotating entities</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Animation.html">Animation</a></dt>
+      <dd><p>Component that manages sprite animation state</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.BoxCollider.html">BoxCollider</a></dt>
+      <dd><p>Component defining a rectangular collision boundary for an entity.
+This creates an axis-aligned bounding box (AABB) used by collision detection systems
+to determine when entities are overlapping or touching.</p>
+<p>The collision box is positioned relative to the entity's Transform.Position,
+with an optional offset to fine-tune the collision area. The box doesn't rotate
+with the entity - it's always axis-aligned for performance.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Camera.html">Camera</a></dt>
+      <dd><p>Camera component that defines the viewport and follows a target.
+When present, the RenderSystem will automatically transform world coordinates to screen coordinates.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.CoreGameState.html">CoreGameState</a></dt>
+      <dd><p>Convenience wrapper for games that use the standard core game states.
+This provides a simpler API than the full generic GameState&lt;TState&gt; for common cases.
+Most simple games can just use this instead of defining their own state enum.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Debug.html">Debug</a></dt>
+      <dd><p>Tag component marking an entity as debug/development-only content.
+Used by systems to show diagnostic information, development tools,
+or testing content that should be hidden in production builds.</p>
+<p>Examples:</p>
+<ul>
+<li>RenderSystem: Only renders Debug entities in development builds</li>
+<li>InputSystem: Debug entities might respond to special key combinations</li>
+<li>LoggingSystem: Extra verbose logging for Debug entities</li>
+<li>ProfilerSystem: Performance monitoring for Debug entities</li>
+</ul>
+<p>Debug entities might include:</p>
+<ul>
+<li>Collision visualization (showing hitboxes)</li>
+<li>Performance counters and framerate displays</li>
+<li>AI pathfinding visualization</li>
+<li>Physics force indicators</li>
+<li>Entity inspector tools</li>
+<li>Cheat/testing controls</li>
+</ul>
+<p>Should be easily disabled for release builds via preprocessor directives
+or build configuration flags.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Destructible.html">Destructible</a></dt>
+      <dd><p>Tag component marking an entity as destructible environment.
+Used by systems to handle breakable objects that can be damaged
+but aren't enemies (don't move, don't fight back).</p>
+<p>Examples:</p>
+<ul>
+<li>CollisionSystem: Takes damage from projectiles/explosions</li>
+<li>HealthSystem: Has hit points and can be destroyed</li>
+<li>EffectSystem: Shows damage effects, debris when destroyed</li>
+<li>ScoringSystem: May award points when destroyed</li>
+</ul>
+<p>Destructible entities typically also have:</p>
+<ul>
+<li>Health component (hit points)</li>
+<li>Collider (for damage detection)</li>
+<li>DropTable (what items spawn when destroyed)</li>
+</ul>
+<p>Examples: crates, barrels, walls, barriers, destructible terrain
+This is different from Static (can't be damaged) and Enemy (actively hostile).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Drag.html">Drag</a></dt>
+      <dd><p>Drag/friction component for air/space resistance</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Dynamic.html">Dynamic</a></dt>
+      <dd><p>Tag component marking an entity as movable/physics-affected.
+Opposite of Static - indicates this entity should be processed by
+movement, physics, and dynamic collision systems.</p>
+<p>Examples:</p>
+<ul>
+<li>PhysicsSystem: Applies velocity, acceleration, and forces</li>
+<li>CollisionSystem: Full collision detection and response</li>
+<li>BoundarySystem: Handles boundary collisions (wrap, clamp, bounce)</li>
+<li>AISystem: Updates movement for dynamic AI entities</li>
+</ul>
+<p>Most game entities are Dynamic:</p>
+<ul>
+<li>Players, enemies, NPCs</li>
+<li>Projectiles, particles</li>
+<li>Moving platforms, elevators</li>
+<li>Physics objects like crates, balls</li>
+</ul>
+<p>Note: You don't usually need both Static and Dynamic tags in the same game.
+Choose one approach - either tag the minority case, or use presence/absence of Physics components.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Enemy.html">Enemy</a></dt>
+      <dd><p>Tag component marking an entity as an enemy/hostile unit.
+Used by systems to identify entities that should attack the player,
+be targeted by player weapons, or follow enemy-specific behavior patterns.</p>
+<p>Examples:</p>
+<ul>
+<li>AISystem: Entities with Enemy tag use hostile AI behaviors</li>
+<li>CollisionSystem: Enemy vs Player projectile collision detection</li>
+<li>ScoringSystem: Award points when Enemy entities are destroyed</li>
+<li>FormationSystem: Enemy entities move in coordinated patterns</li>
+<li>SpawningSystem: Creates entities with Enemy tag during waves</li>
+</ul>
+<p>Often combined with other components like Health, Weapon, AIBehavior
+to create complete enemy entities with different capabilities.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.GameState-1.html">GameState&lt;TState&gt;</a></dt>
+      <dd><p>Core game state component that represents the current high-level state of the game.
+This is used by the SystemManager to determine which systems should be active,
+and by game-specific systems to control flow and behavior.</p>
+<p>The core engine provides basic states (Playing, Paused, GameOver), but games
+can extend this with their own state enums by implementing IGameState.</p>
+<p>Only one GameState component should exist per game - it's typically attached
+to a singleton entity that represents the overall game session.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Gravity.html">Gravity</a></dt>
+      <dd><p>Adds gravity to an entity</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.MaxSpeed.html">MaxSpeed</a></dt>
+      <dd><p>Maximum speed constraint for entities</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.PendingDestruction.html">PendingDestruction</a></dt>
+      <dd><p>Component to mark entities for destruction at the end of the frame
+This prevents mid-frame destruction issues with collision detection</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Physics.html">Physics</a></dt>
+      <dd><p>Enhanced physics properties</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Player.html">Player</a></dt>
+      <dd><p>Tag component marking an entity as player-controlled.
+Used by systems to identify which entities should respond to player input,
+be affected by player-specific rules, or be treated specially by AI.</p>
+<p>Examples:</p>
+<ul>
+<li>InputSystem: Only moves entities with Player tag</li>
+<li>CameraSystem: Follows entities with Player tag</li>
+<li>CollisionSystem: Player vs Enemy collision rules</li>
+<li>UISystem: Updates health bars for Player entities</li>
+</ul>
+<p>In multiplayer games, you might have Player1, Player2 tags instead,
+or use a PlayerID component for more complex player management.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.PlayerControlled.html">PlayerControlled</a></dt>
+      <dd><p>Component for entities controlled by player input</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.PowerUp.html">PowerUp</a></dt>
+      <dd><p>Tag component marking an entity as a collectible power-up or item.
+Used by systems to handle pickup mechanics, temporary effects, and inventory management.</p>
+<p>Examples:</p>
+<ul>
+<li>CollisionSystem: Player touching PowerUp triggers collection</li>
+<li>EffectSystem: Applies temporary bonuses when collected</li>
+<li>ScoringSystem: Awards points for collecting power-ups</li>
+<li>SpawningSystem: Creates PowerUp entities at specific locations/times</li>
+<li>RenderSystem: PowerUps might pulse, glow, or rotate for visibility</li>
+</ul>
+<p>PowerUp entities typically also have:</p>
+<ul>
+<li>PowerUpType component (what effect it provides)</li>
+<li>EffectDuration (how long the bonus lasts)</li>
+<li>CollectionValue (points awarded)</li>
+<li>Lifetime (despawn if not collected)</li>
+</ul>
+<p>Examples: health packs, weapon upgrades, speed boosts, shields, extra lives</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Projectile.html">Projectile</a></dt>
+      <dd><p>Tag component marking an entity as a projectile (bullet, missile, laser, etc.).
+Used by systems to apply projectile-specific behaviors like automatic movement,
+collision damage, and lifetime management.</p>
+<p>Examples:</p>
+<ul>
+<li>CollisionSystem: Projectiles damage targets and may be destroyed on impact</li>
+<li>BoundarySystem: Projectiles are usually destroyed when leaving screen bounds</li>
+<li>LifetimeSystem: Projectiles often have limited range/duration</li>
+<li>PhysicsSystem: Projectiles may ignore certain physics (like gravity)</li>
+<li>RenderSystem: Projectiles might use additive blending or special effects</li>
+</ul>
+<p>Projectile entities typically also have:</p>
+<ul>
+<li>Velocity (for movement)</li>
+<li>Lifetime (for range limiting)</li>
+<li>Damage (for collision effects)</li>
+<li>Owner (to prevent self-damage)</li>
+</ul>
+<p>Different projectile types can be distinguished using additional components
+or by having specific projectile tags (PlayerProjectile, EnemyProjectile).</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.RectangleRenderer.html">RectangleRenderer</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.ScreenBounds.html">ScreenBounds</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.SpriteRenderer.html">SpriteRenderer</a></dt>
+      <dd><p>Renders a sprite from a texture or sprite sheet</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Static.html">Static</a></dt>
+      <dd><p>Tag component marking an entity as non-moving/immovable.
+Used by physics and collision systems to optimize processing -
+static entities don't need velocity updates or complex collision resolution.</p>
+<p>Examples:</p>
+<ul>
+<li>PhysicsSystem: Skips velocity/acceleration updates for Static entities</li>
+<li>CollisionSystem: Uses simplified collision math (only other object moves)</li>
+<li>BoundarySystem: May skip boundary checking for Static entities</li>
+<li>RenderSystem: Can use different rendering optimizations for static sprites</li>
+</ul>
+<p>Common static entities:</p>
+<ul>
+<li>Walls, barriers, platforms</li>
+<li>Background decorations</li>
+<li>Fixed turrets or defensive structures</li>
+<li>UI elements positioned in world space</li>
+</ul>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.TextRenderer.html">TextRenderer</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Thruster.html">Thruster</a></dt>
+      <dd><p>Thruster component for entities that can apply thrust</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Transform.html">Transform</a></dt>
+      <dd><p>Core component representing an entity's position, rotation, and scale in 2D world space.
+This is the fundamental spatial component that most other systems depend on - rendering,
+physics, collision detection, etc. all use Transform to determine where things are.</p>
+<p>Position is in world coordinates (pixels), rotation is in radians, and scale is a multiplier
+where Vector2.One (1,1) represents normal size.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.TriangleRenderer.html">TriangleRenderer</a></dt>
+      <dd><p>Triangle renderer component</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Trigger.html">Trigger</a></dt>
+      <dd><p>Tag component marking an entity as a non-solid trigger area.
+Used by systems to detect when other entities enter/exit specific regions
+without causing physical collision responses.</p>
+<p>Examples:</p>
+<ul>
+<li>CollisionSystem: Detects overlap but doesn't stop movement</li>
+<li>TriggerSystem: Activates events when entities enter trigger zones</li>
+<li>GameLogicSystem: Checkpoints, level transitions, cutscene triggers</li>
+<li>AudioSystem: Plays ambient sounds when player enters area</li>
+</ul>
+<p>Trigger entities typically also have:</p>
+<ul>
+<li>BoxCollider or other collision shape (defines the trigger area)</li>
+<li>TriggerAction component (what happens when triggered)</li>
+<li>TriggerFilter (which entity types can activate it)</li>
+</ul>
+<p>Common uses:</p>
+<ul>
+<li>Level exit portals</li>
+<li>Checkpoint save points</li>
+<li>Cutscene activation zones</li>
+<li>Environmental effect areas (damage zones, speed boosts)</li>
+<li>Audio cue regions</li>
+</ul>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.UI.html">UI</a></dt>
+      <dd><p>Tag component marking an entity as a user interface element.
+Used by systems to handle UI-specific rendering, input, and layout behaviors.
+UI entities exist in screen space rather than world space.</p>
+<p>Examples:</p>
+<ul>
+<li>RenderSystem: Renders in screen coordinates with UI camera/layer</li>
+<li>InputSystem: Uses screen-space mouse coordinates for interaction</li>
+<li>LayoutSystem: Handles UI positioning, anchoring, scaling</li>
+<li>UISystem: Manages visibility based on game state</li>
+</ul>
+<p>UI entities typically also have:</p>
+<ul>
+<li>UITransform (screen position, anchoring)</li>
+<li>UIRenderer (text, images, buttons)</li>
+<li>UIInteractable (clickable, hoverable)</li>
+</ul>
+<p>Examples: buttons, text labels, health bars, menus, HUD elements
+These should generally be processed separately from world entities.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.Velocity.html">Velocity</a></dt>
+      <dd><p>Component representing an entity's velocity (speed and direction) in 2D space.
+This is the rate of change of position - how fast and in what direction
+the entity is moving per second.</p>
+<p>Used by physics systems to update an entity's Transform.Position each frame.
+The basic movement equation is: newPosition = oldPosition + (velocity * deltaTime)</p>
+<p>Velocity is measured in pixels per second in the same coordinate system as Transform.Position.
+Positive X = moving right, Positive Y = moving down (standard screen coordinates).</p>
+</dd>
+    </dl>
+    <h3 id="interfaces">
+Interfaces
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.IRenderable.html">IRenderable</a></dt>
+      <dd></dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.DestructionReason.html">DestructionReason</a></dt>
+      <dd></dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Kobold.Core.Components.StandardGameState.html">StandardGameState</a></dt>
+      <dd><p>Standard game states that most games will need.
+Games can use this directly or create their own enum with these values included.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

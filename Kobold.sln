@@ -23,13 +23,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kobold.Extensions", "Kobold.Extensions\Kobold.Extensions.csproj", "{026D360D-B6EC-42C6-8186-C3E43545AB6C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Procedural", "Kobold.Procedural\Procedural.csproj", "{B86A79A2-8636-4570-B24D-8BBA72179F47}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Experiments", "Kobold.Experiments\Experiments.csproj", "{ECD54E24-EF14-4070-892B-CFB48B50D67C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaveExplorer", "CaveExplorer\CaveExplorer.csproj", "{9C2665E5-87C3-4F25-8995-A760DC1FE635}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpriteSheetEditor", "Kobold.SpriteSheetEditor\SpriteSheetEditor.csproj", "{5D9704FB-2C82-4902-BDC4-D7F884159566}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kobold.Documentation", "Kobold.Documentation\Kobold.Documentation.csproj", "{41DB0EE9-C5D1-45FB-B8C9-1D218B3DBFB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,10 +61,6 @@ Global
 		{026D360D-B6EC-42C6-8186-C3E43545AB6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{026D360D-B6EC-42C6-8186-C3E43545AB6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{026D360D-B6EC-42C6-8186-C3E43545AB6C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B86A79A2-8636-4570-B24D-8BBA72179F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B86A79A2-8636-4570-B24D-8BBA72179F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B86A79A2-8636-4570-B24D-8BBA72179F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B86A79A2-8636-4570-B24D-8BBA72179F47}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ECD54E24-EF14-4070-892B-CFB48B50D67C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ECD54E24-EF14-4070-892B-CFB48B50D67C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECD54E24-EF14-4070-892B-CFB48B50D67C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -77,6 +73,10 @@ Global
 		{5D9704FB-2C82-4902-BDC4-D7F884159566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D9704FB-2C82-4902-BDC4-D7F884159566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D9704FB-2C82-4902-BDC4-D7F884159566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41DB0EE9-C5D1-45FB-B8C9-1D218B3DBFB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41DB0EE9-C5D1-45FB-B8C9-1D218B3DBFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41DB0EE9-C5D1-45FB-B8C9-1D218B3DBFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41DB0EE9-C5D1-45FB-B8C9-1D218B3DBFB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Kobold.Extensions - Optional Framework Features | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Kobold.Extensions - Optional Framework Features | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/extensions/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="koboldextensions---optional-framework-features">Kobold.Extensions - Optional Framework Features</h1>
+
+<p><strong>Kobold.Extensions</strong> provides specialized systems and components that are common in many games but not universally required.</p>
+<h2 id="philosophy">Philosophy</h2>
+<p>The core Kobold framework (Kobold.Core) is intentionally minimal. Extensions provide optional features that would bloat the core but are useful for specific game types.</p>
+<h2 id="current-extensions">Current Extensions</h2>
+<h3 id="tilemaps"><a href="tilemaps.html">Tilemaps</a></h3>
+<p>Grid-based level design and rendering system.</p>
+<p><strong>Use for:</strong></p>
+<ul>
+<li>Platformers</li>
+<li>RPGs and roguelikes</li>
+<li>Puzzle games</li>
+<li>Top-down games</li>
+<li>Strategy games</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Multi-layer tilemaps</li>
+<li>Tile properties (solid, animated, damage, etc.)</li>
+<li>Tilemap collision system</li>
+<li>Viewport culling for performance</li>
+<li>Integration with procedural generation</li>
+</ul>
+<p><strong>Quick Example:</strong></p>
+<pre><code class="lang-csharp">var tileMap = new TileMap(width: 32, height: 24, tileWidth: 32, tileHeight: 32);
+var tileSet = TileSet.FromTexture(texture, 32, 32);
+
+// Set tiles
+tileMap.SetTile(layer: 0, x: 5, y: 10, tileId: 1);
+
+// Create tilemap entity
+World.Create(new TilemapComponent(tileMap, tileSet, texture));
+
+// Add tilemap systems
+Systems.AddSystem(new TilemapSystem(), 100, true);
+Systems.AddSystem(new TilemapCollisionSystem(), 310, true);
+</code></pre>
+<h2 id="future-extensions">Future Extensions</h2>
+<p>Potential future extensions (not yet implemented):</p>
+<ul>
+<li>Particle systems</li>
+<li>UI framework</li>
+<li>Pathfinding/navigation</li>
+<li>AI behavior trees</li>
+<li>Audio management</li>
+<li>Save/load system</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<pre><code class="lang-bash">dotnet add package Kobold.Extensions
+</code></pre>
+<p>Or reference the project:</p>
+<pre><code class="lang-xml">&lt;ProjectReference Include=&quot;..\Kobold.Extensions\Kobold.Extensions.csproj&quot; /&gt;
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong><a href="tilemaps.html">Tilemaps Guide</a></strong> - Complete tilemap documentation</li>
+<li><strong><a href="../procedural/">Procedural Generation</a></strong> - Works great with tilemaps</li>
+</ul>
+<hr>
+<p><strong>Next:</strong> <a href="tilemaps.html">Tilemaps</a> - Grid-based level design →</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/extensions/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

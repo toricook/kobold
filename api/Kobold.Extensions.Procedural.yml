@@ -1,0 +1,61 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Extensions.Procedural
+  commentId: N:Kobold.Extensions.Procedural
+  id: Kobold.Extensions.Procedural
+  children:
+  - Kobold.Extensions.Procedural.CellularAutomataConfig
+  - Kobold.Extensions.Procedural.CellularAutomataGenerator
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Extensions.Procedural
+  nameWithType: Kobold.Extensions.Procedural
+  fullName: Kobold.Extensions.Procedural
+  type: Namespace
+  assemblies:
+  - Kobold.Extensions
+references:
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig
+  commentId: T:Kobold.Extensions.Procedural.CellularAutomataConfig
+  parent: Kobold.Extensions.Procedural
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html
+  name: CellularAutomataConfig
+  nameWithType: CellularAutomataConfig
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig
+- uid: Kobold.Extensions.Procedural.CellularAutomataGenerator
+  commentId: T:Kobold.Extensions.Procedural.CellularAutomataGenerator
+  href: Kobold.Extensions.Procedural.CellularAutomataGenerator.html
+  name: CellularAutomataGenerator
+  nameWithType: CellularAutomataGenerator
+  fullName: Kobold.Extensions.Procedural.CellularAutomataGenerator
+- uid: Kobold.Extensions.Procedural
+  commentId: N:Kobold.Extensions.Procedural
+  href: Kobold.html
+  name: Kobold.Extensions.Procedural
+  nameWithType: Kobold.Extensions.Procedural
+  fullName: Kobold.Extensions.Procedural
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Procedural
+    name: Procedural
+    href: Kobold.Extensions.Procedural.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Procedural
+    name: Procedural
+    href: Kobold.Extensions.Procedural.html

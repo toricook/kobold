@@ -1,0 +1,1096 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Assets.SpriteSheet
+  commentId: T:Kobold.Core.Assets.SpriteSheet
+  id: SpriteSheet
+  parent: Kobold.Core.Assets
+  children:
+  - Kobold.Core.Assets.SpriteSheet.#ctor(Kobold.Core.Abstractions.Rendering.ITexture,Kobold.Core.Assets.SpriteSheetConfig)
+  - Kobold.Core.Assets.SpriteSheet.Config
+  - Kobold.Core.Assets.SpriteSheet.CreateAllAnimations
+  - Kobold.Core.Assets.SpriteSheet.CreateAnimationClip(System.String)
+  - Kobold.Core.Assets.SpriteSheet.GetAnimationFrames(Kobold.Core.Assets.AnimationData)
+  - Kobold.Core.Assets.SpriteSheet.GetAnimationFrames(System.String)
+  - Kobold.Core.Assets.SpriteSheet.GetFrame(System.Int32)
+  - Kobold.Core.Assets.SpriteSheet.GetFrameByRowCol(System.Int32,System.Int32)
+  - Kobold.Core.Assets.SpriteSheet.GetNamedRegion(System.String)
+  - Kobold.Core.Assets.SpriteSheet.HasNamedRegion(System.String)
+  - Kobold.Core.Assets.SpriteSheet.Texture
+  - Kobold.Core.Assets.SpriteSheet.TotalFrames
+  langs:
+  - csharp
+  - vb
+  name: SpriteSheet
+  nameWithType: SpriteSheet
+  fullName: Kobold.Core.Assets.SpriteSheet
+  type: Class
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: SpriteSheet
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 11
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  summary: Represents a sprite sheet with its texture and configuration
+  example: []
+  syntax:
+    content: public class SpriteSheet
+    content.vb: Public Class SpriteSheet
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Core.Assets.SpriteSheet.Texture
+  commentId: P:Kobold.Core.Assets.SpriteSheet.Texture
+  id: Texture
+  parent: Kobold.Core.Assets.SpriteSheet
+  langs:
+  - csharp
+  - vb
+  name: Texture
+  nameWithType: SpriteSheet.Texture
+  fullName: Kobold.Core.Assets.SpriteSheet.Texture
+  type: Property
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Texture
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 13
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  syntax:
+    content: public ITexture Texture { get; }
+    parameters: []
+    return:
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+    content.vb: Public ReadOnly Property Texture As ITexture
+  overload: Kobold.Core.Assets.SpriteSheet.Texture*
+- uid: Kobold.Core.Assets.SpriteSheet.Config
+  commentId: P:Kobold.Core.Assets.SpriteSheet.Config
+  id: Config
+  parent: Kobold.Core.Assets.SpriteSheet
+  langs:
+  - csharp
+  - vb
+  name: Config
+  nameWithType: SpriteSheet.Config
+  fullName: Kobold.Core.Assets.SpriteSheet.Config
+  type: Property
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Config
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 14
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  syntax:
+    content: public SpriteSheetConfig Config { get; }
+    parameters: []
+    return:
+      type: Kobold.Core.Assets.SpriteSheetConfig
+    content.vb: Public ReadOnly Property Config As SpriteSheetConfig
+  overload: Kobold.Core.Assets.SpriteSheet.Config*
+- uid: Kobold.Core.Assets.SpriteSheet.#ctor(Kobold.Core.Abstractions.Rendering.ITexture,Kobold.Core.Assets.SpriteSheetConfig)
+  commentId: M:Kobold.Core.Assets.SpriteSheet.#ctor(Kobold.Core.Abstractions.Rendering.ITexture,Kobold.Core.Assets.SpriteSheetConfig)
+  id: '#ctor(Kobold.Core.Abstractions.Rendering.ITexture,Kobold.Core.Assets.SpriteSheetConfig)'
+  parent: Kobold.Core.Assets.SpriteSheet
+  langs:
+  - csharp
+  - vb
+  name: SpriteSheet(ITexture, SpriteSheetConfig)
+  nameWithType: SpriteSheet.SpriteSheet(ITexture, SpriteSheetConfig)
+  fullName: Kobold.Core.Assets.SpriteSheet.SpriteSheet(Kobold.Core.Abstractions.Rendering.ITexture, Kobold.Core.Assets.SpriteSheetConfig)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 16
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  syntax:
+    content: public SpriteSheet(ITexture texture, SpriteSheetConfig config)
+    parameters:
+    - id: texture
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+    - id: config
+      type: Kobold.Core.Assets.SpriteSheetConfig
+    content.vb: Public Sub New(texture As ITexture, config As SpriteSheetConfig)
+  overload: Kobold.Core.Assets.SpriteSheet.#ctor*
+  nameWithType.vb: SpriteSheet.New(ITexture, SpriteSheetConfig)
+  fullName.vb: Kobold.Core.Assets.SpriteSheet.New(Kobold.Core.Abstractions.Rendering.ITexture, Kobold.Core.Assets.SpriteSheetConfig)
+  name.vb: New(ITexture, SpriteSheetConfig)
+- uid: Kobold.Core.Assets.SpriteSheet.GetFrame(System.Int32)
+  commentId: M:Kobold.Core.Assets.SpriteSheet.GetFrame(System.Int32)
+  id: GetFrame(System.Int32)
+  parent: Kobold.Core.Assets.SpriteSheet
+  langs:
+  - csharp
+  - vb
+  name: GetFrame(int)
+  nameWithType: SpriteSheet.GetFrame(int)
+  fullName: Kobold.Core.Assets.SpriteSheet.GetFrame(int)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetFrame
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 25
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  summary: Get a sprite frame by grid index (0-based, left-to-right, top-to-bottom)
+  example: []
+  syntax:
+    content: public Rectangle GetFrame(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+    return:
+      type: System.Drawing.Rectangle
+    content.vb: Public Function GetFrame(index As Integer) As Rectangle
+  overload: Kobold.Core.Assets.SpriteSheet.GetFrame*
+  nameWithType.vb: SpriteSheet.GetFrame(Integer)
+  fullName.vb: Kobold.Core.Assets.SpriteSheet.GetFrame(Integer)
+  name.vb: GetFrame(Integer)
+- uid: Kobold.Core.Assets.SpriteSheet.GetFrameByRowCol(System.Int32,System.Int32)
+  commentId: M:Kobold.Core.Assets.SpriteSheet.GetFrameByRowCol(System.Int32,System.Int32)
+  id: GetFrameByRowCol(System.Int32,System.Int32)
+  parent: Kobold.Core.Assets.SpriteSheet
+  langs:
+  - csharp
+  - vb
+  name: GetFrameByRowCol(int, int)
+  nameWithType: SpriteSheet.GetFrameByRowCol(int, int)
+  fullName: Kobold.Core.Assets.SpriteSheet.GetFrameByRowCol(int, int)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetFrameByRowCol
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 42
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  summary: Get a sprite frame by row and column
+  example: []
+  syntax:
+    content: public Rectangle GetFrameByRowCol(int row, int col)
+    parameters:
+    - id: row
+      type: System.Int32
+    - id: col
+      type: System.Int32
+    return:
+      type: System.Drawing.Rectangle
+    content.vb: Public Function GetFrameByRowCol(row As Integer, col As Integer) As Rectangle
+  overload: Kobold.Core.Assets.SpriteSheet.GetFrameByRowCol*
+  nameWithType.vb: SpriteSheet.GetFrameByRowCol(Integer, Integer)
+  fullName.vb: Kobold.Core.Assets.SpriteSheet.GetFrameByRowCol(Integer, Integer)
+  name.vb: GetFrameByRowCol(Integer, Integer)
+- uid: Kobold.Core.Assets.SpriteSheet.GetNamedRegion(System.String)
+  commentId: M:Kobold.Core.Assets.SpriteSheet.GetNamedRegion(System.String)
+  id: GetNamedRegion(System.String)
+  parent: Kobold.Core.Assets.SpriteSheet
+  langs:
+  - csharp
+  - vb
+  name: GetNamedRegion(string)
+  nameWithType: SpriteSheet.GetNamedRegion(string)
+  fullName: Kobold.Core.Assets.SpriteSheet.GetNamedRegion(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetNamedRegion
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 58
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  summary: Get a named region from the sprite sheet
+  example: []
+  syntax:
+    content: public Rectangle GetNamedRegion(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Drawing.Rectangle
+    content.vb: Public Function GetNamedRegion(name As String) As Rectangle
+  overload: Kobold.Core.Assets.SpriteSheet.GetNamedRegion*
+  nameWithType.vb: SpriteSheet.GetNamedRegion(String)
+  fullName.vb: Kobold.Core.Assets.SpriteSheet.GetNamedRegion(String)
+  name.vb: GetNamedRegion(String)
+- uid: Kobold.Core.Assets.SpriteSheet.HasNamedRegion(System.String)
+  commentId: M:Kobold.Core.Assets.SpriteSheet.HasNamedRegion(System.String)
+  id: HasNamedRegion(System.String)
+  parent: Kobold.Core.Assets.SpriteSheet
+  langs:
+  - csharp
+  - vb
+  name: HasNamedRegion(string)
+  nameWithType: SpriteSheet.HasNamedRegion(string)
+  fullName: Kobold.Core.Assets.SpriteSheet.HasNamedRegion(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: HasNamedRegion
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 71
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  summary: Check if a named region exists
+  example: []
+  syntax:
+    content: public bool HasNamedRegion(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.Boolean
+    content.vb: Public Function HasNamedRegion(name As String) As Boolean
+  overload: Kobold.Core.Assets.SpriteSheet.HasNamedRegion*
+  nameWithType.vb: SpriteSheet.HasNamedRegion(String)
+  fullName.vb: Kobold.Core.Assets.SpriteSheet.HasNamedRegion(String)
+  name.vb: HasNamedRegion(String)
+- uid: Kobold.Core.Assets.SpriteSheet.GetAnimationFrames(System.String)
+  commentId: M:Kobold.Core.Assets.SpriteSheet.GetAnimationFrames(System.String)
+  id: GetAnimationFrames(System.String)
+  parent: Kobold.Core.Assets.SpriteSheet
+  langs:
+  - csharp
+  - vb
+  name: GetAnimationFrames(string)
+  nameWithType: SpriteSheet.GetAnimationFrames(string)
+  fullName: Kobold.Core.Assets.SpriteSheet.GetAnimationFrames(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetAnimationFrames
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 79
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  summary: Get all frames for an animation as rectangles
+  example: []
+  syntax:
+    content: public Rectangle[] GetAnimationFrames(string animationName)
+    parameters:
+    - id: animationName
+      type: System.String
+    return:
+      type: System.Drawing.Rectangle[]
+    content.vb: Public Function GetAnimationFrames(animationName As String) As Rectangle()
+  overload: Kobold.Core.Assets.SpriteSheet.GetAnimationFrames*
+  nameWithType.vb: SpriteSheet.GetAnimationFrames(String)
+  fullName.vb: Kobold.Core.Assets.SpriteSheet.GetAnimationFrames(String)
+  name.vb: GetAnimationFrames(String)
+- uid: Kobold.Core.Assets.SpriteSheet.GetAnimationFrames(Kobold.Core.Assets.AnimationData)
+  commentId: M:Kobold.Core.Assets.SpriteSheet.GetAnimationFrames(Kobold.Core.Assets.AnimationData)
+  id: GetAnimationFrames(Kobold.Core.Assets.AnimationData)
+  parent: Kobold.Core.Assets.SpriteSheet
+  langs:
+  - csharp
+  - vb
+  name: GetAnimationFrames(AnimationData)
+  nameWithType: SpriteSheet.GetAnimationFrames(AnimationData)
+  fullName: Kobold.Core.Assets.SpriteSheet.GetAnimationFrames(Kobold.Core.Assets.AnimationData)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetAnimationFrames
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 92
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  summary: Get all frames for an animation from AnimationData
+  example: []
+  syntax:
+    content: public Rectangle[] GetAnimationFrames(AnimationData animData)
+    parameters:
+    - id: animData
+      type: Kobold.Core.Assets.AnimationData
+    return:
+      type: System.Drawing.Rectangle[]
+    content.vb: Public Function GetAnimationFrames(animData As AnimationData) As Rectangle()
+  overload: Kobold.Core.Assets.SpriteSheet.GetAnimationFrames*
+- uid: Kobold.Core.Assets.SpriteSheet.CreateAnimationClip(System.String)
+  commentId: M:Kobold.Core.Assets.SpriteSheet.CreateAnimationClip(System.String)
+  id: CreateAnimationClip(System.String)
+  parent: Kobold.Core.Assets.SpriteSheet
+  langs:
+  - csharp
+  - vb
+  name: CreateAnimationClip(string)
+  nameWithType: SpriteSheet.CreateAnimationClip(string)
+  fullName: Kobold.Core.Assets.SpriteSheet.CreateAnimationClip(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CreateAnimationClip
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 133
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  summary: Create an AnimationClip from a configured animation
+  example: []
+  syntax:
+    content: public AnimationClip CreateAnimationClip(string animationName)
+    parameters:
+    - id: animationName
+      type: System.String
+    return:
+      type: Kobold.Core.Components.AnimationClip
+    content.vb: Public Function CreateAnimationClip(animationName As String) As AnimationClip
+  overload: Kobold.Core.Assets.SpriteSheet.CreateAnimationClip*
+  nameWithType.vb: SpriteSheet.CreateAnimationClip(String)
+  fullName.vb: Kobold.Core.Assets.SpriteSheet.CreateAnimationClip(String)
+  name.vb: CreateAnimationClip(String)
+- uid: Kobold.Core.Assets.SpriteSheet.CreateAllAnimations
+  commentId: M:Kobold.Core.Assets.SpriteSheet.CreateAllAnimations
+  id: CreateAllAnimations
+  parent: Kobold.Core.Assets.SpriteSheet
+  langs:
+  - csharp
+  - vb
+  name: CreateAllAnimations()
+  nameWithType: SpriteSheet.CreateAllAnimations()
+  fullName: Kobold.Core.Assets.SpriteSheet.CreateAllAnimations()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CreateAllAnimations
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 149
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  summary: Create all configured animations as AnimationClips
+  example: []
+  syntax:
+    content: public Dictionary<string, AnimationClip> CreateAllAnimations()
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,Kobold.Core.Components.AnimationClip}
+    content.vb: Public Function CreateAllAnimations() As Dictionary(Of String, AnimationClip)
+  overload: Kobold.Core.Assets.SpriteSheet.CreateAllAnimations*
+- uid: Kobold.Core.Assets.SpriteSheet.TotalFrames
+  commentId: P:Kobold.Core.Assets.SpriteSheet.TotalFrames
+  id: TotalFrames
+  parent: Kobold.Core.Assets.SpriteSheet
+  langs:
+  - csharp
+  - vb
+  name: TotalFrames
+  nameWithType: SpriteSheet.TotalFrames
+  fullName: Kobold.Core.Assets.SpriteSheet.TotalFrames
+  type: Property
+  source:
+    remote:
+      path: Kobold/Assets/SpriteSheet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TotalFrames
+    path: Kobold/Assets/SpriteSheet.cs
+    startLine: 164
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Assets
+  summary: Get total number of frames in the sprite sheet
+  example: []
+  syntax:
+    content: public int TotalFrames { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property TotalFrames As Integer
+  overload: Kobold.Core.Assets.SpriteSheet.TotalFrames*
+references:
+- uid: Kobold.Core.Assets
+  commentId: N:Kobold.Core.Assets
+  href: Kobold.html
+  name: Kobold.Core.Assets
+  nameWithType: Kobold.Core.Assets
+  fullName: Kobold.Core.Assets
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Assets
+    name: Assets
+    href: Kobold.Core.Assets.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Assets
+    name: Assets
+    href: Kobold.Core.Assets.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Assets.SpriteSheet.Texture*
+  commentId: Overload:Kobold.Core.Assets.SpriteSheet.Texture
+  href: Kobold.Core.Assets.SpriteSheet.html#Kobold_Core_Assets_SpriteSheet_Texture
+  name: Texture
+  nameWithType: SpriteSheet.Texture
+  fullName: Kobold.Core.Assets.SpriteSheet.Texture
+- uid: Kobold.Core.Abstractions.Rendering.ITexture
+  commentId: T:Kobold.Core.Abstractions.Rendering.ITexture
+  parent: Kobold.Core.Abstractions.Rendering
+  href: Kobold.Core.Abstractions.Rendering.ITexture.html
+  name: ITexture
+  nameWithType: ITexture
+  fullName: Kobold.Core.Abstractions.Rendering.ITexture
+- uid: Kobold.Core.Abstractions.Rendering
+  commentId: N:Kobold.Core.Abstractions.Rendering
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Rendering
+  nameWithType: Kobold.Core.Abstractions.Rendering
+  fullName: Kobold.Core.Abstractions.Rendering
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+- uid: Kobold.Core.Assets.SpriteSheet.Config*
+  commentId: Overload:Kobold.Core.Assets.SpriteSheet.Config
+  href: Kobold.Core.Assets.SpriteSheet.html#Kobold_Core_Assets_SpriteSheet_Config
+  name: Config
+  nameWithType: SpriteSheet.Config
+  fullName: Kobold.Core.Assets.SpriteSheet.Config
+- uid: Kobold.Core.Assets.SpriteSheetConfig
+  commentId: T:Kobold.Core.Assets.SpriteSheetConfig
+  parent: Kobold.Core.Assets
+  href: Kobold.Core.Assets.SpriteSheetConfig.html
+  name: SpriteSheetConfig
+  nameWithType: SpriteSheetConfig
+  fullName: Kobold.Core.Assets.SpriteSheetConfig
+- uid: Kobold.Core.Assets.SpriteSheet.#ctor*
+  commentId: Overload:Kobold.Core.Assets.SpriteSheet.#ctor
+  href: Kobold.Core.Assets.SpriteSheet.html#Kobold_Core_Assets_SpriteSheet__ctor_Kobold_Core_Abstractions_Rendering_ITexture_Kobold_Core_Assets_SpriteSheetConfig_
+  name: SpriteSheet
+  nameWithType: SpriteSheet.SpriteSheet
+  fullName: Kobold.Core.Assets.SpriteSheet.SpriteSheet
+  nameWithType.vb: SpriteSheet.New
+  fullName.vb: Kobold.Core.Assets.SpriteSheet.New
+  name.vb: New
+- uid: Kobold.Core.Assets.SpriteSheet.GetFrame*
+  commentId: Overload:Kobold.Core.Assets.SpriteSheet.GetFrame
+  href: Kobold.Core.Assets.SpriteSheet.html#Kobold_Core_Assets_SpriteSheet_GetFrame_System_Int32_
+  name: GetFrame
+  nameWithType: SpriteSheet.GetFrame
+  fullName: Kobold.Core.Assets.SpriteSheet.GetFrame
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Drawing.Rectangle
+  commentId: T:System.Drawing.Rectangle
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
+  name: Rectangle
+  nameWithType: Rectangle
+  fullName: System.Drawing.Rectangle
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: Kobold.Core.Assets.SpriteSheet.GetFrameByRowCol*
+  commentId: Overload:Kobold.Core.Assets.SpriteSheet.GetFrameByRowCol
+  href: Kobold.Core.Assets.SpriteSheet.html#Kobold_Core_Assets_SpriteSheet_GetFrameByRowCol_System_Int32_System_Int32_
+  name: GetFrameByRowCol
+  nameWithType: SpriteSheet.GetFrameByRowCol
+  fullName: Kobold.Core.Assets.SpriteSheet.GetFrameByRowCol
+- uid: Kobold.Core.Assets.SpriteSheet.GetNamedRegion*
+  commentId: Overload:Kobold.Core.Assets.SpriteSheet.GetNamedRegion
+  href: Kobold.Core.Assets.SpriteSheet.html#Kobold_Core_Assets_SpriteSheet_GetNamedRegion_System_String_
+  name: GetNamedRegion
+  nameWithType: SpriteSheet.GetNamedRegion
+  fullName: Kobold.Core.Assets.SpriteSheet.GetNamedRegion
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Kobold.Core.Assets.SpriteSheet.HasNamedRegion*
+  commentId: Overload:Kobold.Core.Assets.SpriteSheet.HasNamedRegion
+  href: Kobold.Core.Assets.SpriteSheet.html#Kobold_Core_Assets_SpriteSheet_HasNamedRegion_System_String_
+  name: HasNamedRegion
+  nameWithType: SpriteSheet.HasNamedRegion
+  fullName: Kobold.Core.Assets.SpriteSheet.HasNamedRegion
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Kobold.Core.Assets.SpriteSheet.GetAnimationFrames*
+  commentId: Overload:Kobold.Core.Assets.SpriteSheet.GetAnimationFrames
+  href: Kobold.Core.Assets.SpriteSheet.html#Kobold_Core_Assets_SpriteSheet_GetAnimationFrames_System_String_
+  name: GetAnimationFrames
+  nameWithType: SpriteSheet.GetAnimationFrames
+  fullName: Kobold.Core.Assets.SpriteSheet.GetAnimationFrames
+- uid: System.Drawing.Rectangle[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
+  name: Rectangle[]
+  nameWithType: Rectangle[]
+  fullName: System.Drawing.Rectangle[]
+  nameWithType.vb: Rectangle()
+  fullName.vb: System.Drawing.Rectangle()
+  name.vb: Rectangle()
+  spec.csharp:
+  - uid: System.Drawing.Rectangle
+    name: Rectangle
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Drawing.Rectangle
+    name: Rectangle
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
+  - name: (
+  - name: )
+- uid: Kobold.Core.Assets.AnimationData
+  commentId: T:Kobold.Core.Assets.AnimationData
+  parent: Kobold.Core.Assets
+  href: Kobold.Core.Assets.AnimationData.html
+  name: AnimationData
+  nameWithType: AnimationData
+  fullName: Kobold.Core.Assets.AnimationData
+- uid: Kobold.Core.Assets.SpriteSheet.CreateAnimationClip*
+  commentId: Overload:Kobold.Core.Assets.SpriteSheet.CreateAnimationClip
+  href: Kobold.Core.Assets.SpriteSheet.html#Kobold_Core_Assets_SpriteSheet_CreateAnimationClip_System_String_
+  name: CreateAnimationClip
+  nameWithType: SpriteSheet.CreateAnimationClip
+  fullName: Kobold.Core.Assets.SpriteSheet.CreateAnimationClip
+- uid: Kobold.Core.Components.AnimationClip
+  commentId: T:Kobold.Core.Components.AnimationClip
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.AnimationClip.html
+  name: AnimationClip
+  nameWithType: AnimationClip
+  fullName: Kobold.Core.Components.AnimationClip
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: Kobold.Core.Assets.SpriteSheet.CreateAllAnimations*
+  commentId: Overload:Kobold.Core.Assets.SpriteSheet.CreateAllAnimations
+  href: Kobold.Core.Assets.SpriteSheet.html#Kobold_Core_Assets_SpriteSheet_CreateAllAnimations
+  name: CreateAllAnimations
+  nameWithType: SpriteSheet.CreateAllAnimations
+  fullName: Kobold.Core.Assets.SpriteSheet.CreateAllAnimations
+- uid: System.Collections.Generic.Dictionary{System.String,Kobold.Core.Components.AnimationClip}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,Kobold.Core.Components.AnimationClip}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, AnimationClip>
+  nameWithType: Dictionary<string, AnimationClip>
+  fullName: System.Collections.Generic.Dictionary<string, Kobold.Core.Components.AnimationClip>
+  nameWithType.vb: Dictionary(Of String, AnimationClip)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Kobold.Core.Components.AnimationClip)
+  name.vb: Dictionary(Of String, AnimationClip)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Kobold.Core.Components.AnimationClip
+    name: AnimationClip
+    href: Kobold.Core.Components.AnimationClip.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: Kobold.Core.Components.AnimationClip
+    name: AnimationClip
+    href: Kobold.Core.Components.AnimationClip.html
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Kobold.Core.Assets.SpriteSheet.TotalFrames*
+  commentId: Overload:Kobold.Core.Assets.SpriteSheet.TotalFrames
+  href: Kobold.Core.Assets.SpriteSheet.html#Kobold_Core_Assets_SpriteSheet_TotalFrames
+  name: TotalFrames
+  nameWithType: SpriteSheet.TotalFrames
+  fullName: Kobold.Core.Assets.SpriteSheet.TotalFrames

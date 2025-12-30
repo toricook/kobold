@@ -1,0 +1,680 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.TextRenderer
+  commentId: T:Kobold.Core.Components.TextRenderer
+  id: TextRenderer
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.TextRenderer.#ctor(System.String,System.Drawing.Color,System.Single,System.Int32)
+  - Kobold.Core.Components.TextRenderer.Color
+  - Kobold.Core.Components.TextRenderer.DebugText(System.String,System.Drawing.Color,System.Single)
+  - Kobold.Core.Components.TextRenderer.FontSize
+  - Kobold.Core.Components.TextRenderer.GameText(System.String,System.Drawing.Color,System.Single)
+  - Kobold.Core.Components.TextRenderer.Layer
+  - Kobold.Core.Components.TextRenderer.Text
+  - Kobold.Core.Components.TextRenderer.UIText(System.String,System.Drawing.Color,System.Single)
+  langs:
+  - csharp
+  - vb
+  name: TextRenderer
+  nameWithType: TextRenderer
+  fullName: Kobold.Core.Components.TextRenderer
+  type: Struct
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Renderable.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TextRenderer
+    path: Kobold/Components/Rendering/Renderable.cs
+    startLine: 40
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: 'public struct TextRenderer : IRenderable'
+    content.vb: Public Structure TextRenderer Implements IRenderable
+  implements:
+  - Kobold.Core.Components.IRenderable
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Kobold.Core.Components.TextRenderer.Text
+  commentId: F:Kobold.Core.Components.TextRenderer.Text
+  id: Text
+  parent: Kobold.Core.Components.TextRenderer
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: TextRenderer.Text
+  fullName: Kobold.Core.Components.TextRenderer.Text
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Renderable.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Text
+    path: Kobold/Components/Rendering/Renderable.cs
+    startLine: 42
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public string Text
+    return:
+      type: System.String
+    content.vb: Public Text As String
+- uid: Kobold.Core.Components.TextRenderer.Color
+  commentId: F:Kobold.Core.Components.TextRenderer.Color
+  id: Color
+  parent: Kobold.Core.Components.TextRenderer
+  langs:
+  - csharp
+  - vb
+  name: Color
+  nameWithType: TextRenderer.Color
+  fullName: Kobold.Core.Components.TextRenderer.Color
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Renderable.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Color
+    path: Kobold/Components/Rendering/Renderable.cs
+    startLine: 43
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public Color Color
+    return:
+      type: System.Drawing.Color
+    content.vb: Public Color As Color
+- uid: Kobold.Core.Components.TextRenderer.FontSize
+  commentId: F:Kobold.Core.Components.TextRenderer.FontSize
+  id: FontSize
+  parent: Kobold.Core.Components.TextRenderer
+  langs:
+  - csharp
+  - vb
+  name: FontSize
+  nameWithType: TextRenderer.FontSize
+  fullName: Kobold.Core.Components.TextRenderer.FontSize
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Renderable.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: FontSize
+    path: Kobold/Components/Rendering/Renderable.cs
+    startLine: 44
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public float FontSize
+    return:
+      type: System.Single
+    content.vb: Public FontSize As Single
+- uid: Kobold.Core.Components.TextRenderer.Layer
+  commentId: P:Kobold.Core.Components.TextRenderer.Layer
+  id: Layer
+  parent: Kobold.Core.Components.TextRenderer
+  langs:
+  - csharp
+  - vb
+  name: Layer
+  nameWithType: TextRenderer.Layer
+  fullName: Kobold.Core.Components.TextRenderer.Layer
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Renderable.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Layer
+    path: Kobold/Components/Rendering/Renderable.cs
+    startLine: 45
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  example: []
+  syntax:
+    content: public readonly int Layer { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Layer As Integer
+  overload: Kobold.Core.Components.TextRenderer.Layer*
+  implements:
+  - Kobold.Core.Components.IRenderable.Layer
+- uid: Kobold.Core.Components.TextRenderer.#ctor(System.String,System.Drawing.Color,System.Single,System.Int32)
+  commentId: M:Kobold.Core.Components.TextRenderer.#ctor(System.String,System.Drawing.Color,System.Single,System.Int32)
+  id: '#ctor(System.String,System.Drawing.Color,System.Single,System.Int32)'
+  parent: Kobold.Core.Components.TextRenderer
+  langs:
+  - csharp
+  - vb
+  name: TextRenderer(string, Color, float, int)
+  nameWithType: TextRenderer.TextRenderer(string, Color, float, int)
+  fullName: Kobold.Core.Components.TextRenderer.TextRenderer(string, System.Drawing.Color, float, int)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Renderable.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Components/Rendering/Renderable.cs
+    startLine: 47
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public TextRenderer(string text, Color color, float fontSize = 16, int layer = 100)
+    parameters:
+    - id: text
+      type: System.String
+    - id: color
+      type: System.Drawing.Color
+    - id: fontSize
+      type: System.Single
+    - id: layer
+      type: System.Int32
+    content.vb: Public Sub New(text As String, color As Color, fontSize As Single = 16, layer As Integer = 100)
+  overload: Kobold.Core.Components.TextRenderer.#ctor*
+  nameWithType.vb: TextRenderer.New(String, Color, Single, Integer)
+  fullName.vb: Kobold.Core.Components.TextRenderer.New(String, System.Drawing.Color, Single, Integer)
+  name.vb: New(String, Color, Single, Integer)
+- uid: Kobold.Core.Components.TextRenderer.GameText(System.String,System.Drawing.Color,System.Single)
+  commentId: M:Kobold.Core.Components.TextRenderer.GameText(System.String,System.Drawing.Color,System.Single)
+  id: GameText(System.String,System.Drawing.Color,System.Single)
+  parent: Kobold.Core.Components.TextRenderer
+  langs:
+  - csharp
+  - vb
+  name: GameText(string, Color, float)
+  nameWithType: TextRenderer.GameText(string, Color, float)
+  fullName: Kobold.Core.Components.TextRenderer.GameText(string, System.Drawing.Color, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Renderable.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GameText
+    path: Kobold/Components/Rendering/Renderable.cs
+    startLine: 56
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public static TextRenderer GameText(string text, Color color, float fontSize = 16)
+    parameters:
+    - id: text
+      type: System.String
+    - id: color
+      type: System.Drawing.Color
+    - id: fontSize
+      type: System.Single
+    return:
+      type: Kobold.Core.Components.TextRenderer
+    content.vb: Public Shared Function GameText(text As String, color As Color, fontSize As Single = 16) As TextRenderer
+  overload: Kobold.Core.Components.TextRenderer.GameText*
+  nameWithType.vb: TextRenderer.GameText(String, Color, Single)
+  fullName.vb: Kobold.Core.Components.TextRenderer.GameText(String, System.Drawing.Color, Single)
+  name.vb: GameText(String, Color, Single)
+- uid: Kobold.Core.Components.TextRenderer.UIText(System.String,System.Drawing.Color,System.Single)
+  commentId: M:Kobold.Core.Components.TextRenderer.UIText(System.String,System.Drawing.Color,System.Single)
+  id: UIText(System.String,System.Drawing.Color,System.Single)
+  parent: Kobold.Core.Components.TextRenderer
+  langs:
+  - csharp
+  - vb
+  name: UIText(string, Color, float)
+  nameWithType: TextRenderer.UIText(string, Color, float)
+  fullName: Kobold.Core.Components.TextRenderer.UIText(string, System.Drawing.Color, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Renderable.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: UIText
+    path: Kobold/Components/Rendering/Renderable.cs
+    startLine: 59
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public static TextRenderer UIText(string text, Color color, float fontSize = 16)
+    parameters:
+    - id: text
+      type: System.String
+    - id: color
+      type: System.Drawing.Color
+    - id: fontSize
+      type: System.Single
+    return:
+      type: Kobold.Core.Components.TextRenderer
+    content.vb: Public Shared Function UIText(text As String, color As Color, fontSize As Single = 16) As TextRenderer
+  overload: Kobold.Core.Components.TextRenderer.UIText*
+  nameWithType.vb: TextRenderer.UIText(String, Color, Single)
+  fullName.vb: Kobold.Core.Components.TextRenderer.UIText(String, System.Drawing.Color, Single)
+  name.vb: UIText(String, Color, Single)
+- uid: Kobold.Core.Components.TextRenderer.DebugText(System.String,System.Drawing.Color,System.Single)
+  commentId: M:Kobold.Core.Components.TextRenderer.DebugText(System.String,System.Drawing.Color,System.Single)
+  id: DebugText(System.String,System.Drawing.Color,System.Single)
+  parent: Kobold.Core.Components.TextRenderer
+  langs:
+  - csharp
+  - vb
+  name: DebugText(string, Color, float)
+  nameWithType: TextRenderer.DebugText(string, Color, float)
+  fullName: Kobold.Core.Components.TextRenderer.DebugText(string, System.Drawing.Color, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Renderable.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DebugText
+    path: Kobold/Components/Rendering/Renderable.cs
+    startLine: 62
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public static TextRenderer DebugText(string text, Color color, float fontSize = 12)
+    parameters:
+    - id: text
+      type: System.String
+    - id: color
+      type: System.Drawing.Color
+    - id: fontSize
+      type: System.Single
+    return:
+      type: Kobold.Core.Components.TextRenderer
+    content.vb: Public Shared Function DebugText(text As String, color As Color, fontSize As Single = 12) As TextRenderer
+  overload: Kobold.Core.Components.TextRenderer.DebugText*
+  nameWithType.vb: TextRenderer.DebugText(String, Color, Single)
+  fullName.vb: Kobold.Core.Components.TextRenderer.DebugText(String, System.Drawing.Color, Single)
+  name.vb: DebugText(String, Color, Single)
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: Kobold.Core.Components.IRenderable
+  commentId: T:Kobold.Core.Components.IRenderable
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.IRenderable.html
+  name: IRenderable
+  nameWithType: IRenderable
+  fullName: Kobold.Core.Components.IRenderable
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Drawing.Color
+  commentId: T:System.Drawing.Color
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  name: Color
+  nameWithType: Color
+  fullName: System.Drawing.Color
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Core.Components.TextRenderer.Layer*
+  commentId: Overload:Kobold.Core.Components.TextRenderer.Layer
+  href: Kobold.Core.Components.TextRenderer.html#Kobold_Core_Components_TextRenderer_Layer
+  name: Layer
+  nameWithType: TextRenderer.Layer
+  fullName: Kobold.Core.Components.TextRenderer.Layer
+- uid: Kobold.Core.Components.IRenderable.Layer
+  commentId: P:Kobold.Core.Components.IRenderable.Layer
+  parent: Kobold.Core.Components.IRenderable
+  href: Kobold.Core.Components.IRenderable.html#Kobold_Core_Components_IRenderable_Layer
+  name: Layer
+  nameWithType: IRenderable.Layer
+  fullName: Kobold.Core.Components.IRenderable.Layer
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Kobold.Core.Components.TextRenderer.#ctor*
+  commentId: Overload:Kobold.Core.Components.TextRenderer.#ctor
+  href: Kobold.Core.Components.TextRenderer.html#Kobold_Core_Components_TextRenderer__ctor_System_String_System_Drawing_Color_System_Single_System_Int32_
+  name: TextRenderer
+  nameWithType: TextRenderer.TextRenderer
+  fullName: Kobold.Core.Components.TextRenderer.TextRenderer
+  nameWithType.vb: TextRenderer.New
+  fullName.vb: Kobold.Core.Components.TextRenderer.New
+  name.vb: New
+- uid: Kobold.Core.Components.TextRenderer.GameText*
+  commentId: Overload:Kobold.Core.Components.TextRenderer.GameText
+  href: Kobold.Core.Components.TextRenderer.html#Kobold_Core_Components_TextRenderer_GameText_System_String_System_Drawing_Color_System_Single_
+  name: GameText
+  nameWithType: TextRenderer.GameText
+  fullName: Kobold.Core.Components.TextRenderer.GameText
+- uid: Kobold.Core.Components.TextRenderer
+  commentId: T:Kobold.Core.Components.TextRenderer
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.TextRenderer.html
+  name: TextRenderer
+  nameWithType: TextRenderer
+  fullName: Kobold.Core.Components.TextRenderer
+- uid: Kobold.Core.Components.TextRenderer.UIText*
+  commentId: Overload:Kobold.Core.Components.TextRenderer.UIText
+  href: Kobold.Core.Components.TextRenderer.html#Kobold_Core_Components_TextRenderer_UIText_System_String_System_Drawing_Color_System_Single_
+  name: UIText
+  nameWithType: TextRenderer.UIText
+  fullName: Kobold.Core.Components.TextRenderer.UIText
+- uid: Kobold.Core.Components.TextRenderer.DebugText*
+  commentId: Overload:Kobold.Core.Components.TextRenderer.DebugText
+  href: Kobold.Core.Components.TextRenderer.html#Kobold_Core_Components_TextRenderer_DebugText_System_String_System_Drawing_Color_System_Single_
+  name: DebugText
+  nameWithType: TextRenderer.DebugText
+  fullName: Kobold.Core.Components.TextRenderer.DebugText

@@ -1,0 +1,588 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.Physics
+  commentId: T:Kobold.Core.Components.Physics
+  id: Physics
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.Physics.#ctor(System.Single,System.Single,System.Boolean,System.Single)
+  - Kobold.Core.Components.Physics.Damping
+  - Kobold.Core.Components.Physics.Heavy
+  - Kobold.Core.Components.Physics.IsStatic
+  - Kobold.Core.Components.Physics.Light
+  - Kobold.Core.Components.Physics.Mass
+  - Kobold.Core.Components.Physics.Restitution
+  - Kobold.Core.Components.Physics.Static
+  langs:
+  - csharp
+  - vb
+  name: Physics
+  nameWithType: Physics
+  fullName: Kobold.Core.Components.Physics
+  type: Struct
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Physics
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 99
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Enhanced physics properties
+  example: []
+  syntax:
+    content: public struct Physics
+    content.vb: Public Structure Physics
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Kobold.Core.Components.Physics.Mass
+  commentId: F:Kobold.Core.Components.Physics.Mass
+  id: Mass
+  parent: Kobold.Core.Components.Physics
+  langs:
+  - csharp
+  - vb
+  name: Mass
+  nameWithType: Physics.Mass
+  fullName: Kobold.Core.Components.Physics.Mass
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Mass
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 101
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public float Mass
+    return:
+      type: System.Single
+    content.vb: Public Mass As Single
+- uid: Kobold.Core.Components.Physics.Damping
+  commentId: F:Kobold.Core.Components.Physics.Damping
+  id: Damping
+  parent: Kobold.Core.Components.Physics
+  langs:
+  - csharp
+  - vb
+  name: Damping
+  nameWithType: Physics.Damping
+  fullName: Kobold.Core.Components.Physics.Damping
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Damping
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 102
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public float Damping
+    return:
+      type: System.Single
+    content.vb: Public Damping As Single
+- uid: Kobold.Core.Components.Physics.IsStatic
+  commentId: F:Kobold.Core.Components.Physics.IsStatic
+  id: IsStatic
+  parent: Kobold.Core.Components.Physics
+  langs:
+  - csharp
+  - vb
+  name: IsStatic
+  nameWithType: Physics.IsStatic
+  fullName: Kobold.Core.Components.Physics.IsStatic
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IsStatic
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 103
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public bool IsStatic
+    return:
+      type: System.Boolean
+    content.vb: Public IsStatic As Boolean
+- uid: Kobold.Core.Components.Physics.Restitution
+  commentId: F:Kobold.Core.Components.Physics.Restitution
+  id: Restitution
+  parent: Kobold.Core.Components.Physics
+  langs:
+  - csharp
+  - vb
+  name: Restitution
+  nameWithType: Physics.Restitution
+  fullName: Kobold.Core.Components.Physics.Restitution
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Restitution
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 104
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public float Restitution
+    return:
+      type: System.Single
+    content.vb: Public Restitution As Single
+- uid: Kobold.Core.Components.Physics.#ctor(System.Single,System.Single,System.Boolean,System.Single)
+  commentId: M:Kobold.Core.Components.Physics.#ctor(System.Single,System.Single,System.Boolean,System.Single)
+  id: '#ctor(System.Single,System.Single,System.Boolean,System.Single)'
+  parent: Kobold.Core.Components.Physics
+  langs:
+  - csharp
+  - vb
+  name: Physics(float, float, bool, float)
+  nameWithType: Physics.Physics(float, float, bool, float)
+  fullName: Kobold.Core.Components.Physics.Physics(float, float, bool, float)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 106
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public Physics(float mass = 1, float damping = 0, bool isStatic = false, float restitution = 0)
+    parameters:
+    - id: mass
+      type: System.Single
+    - id: damping
+      type: System.Single
+    - id: isStatic
+      type: System.Boolean
+    - id: restitution
+      type: System.Single
+    content.vb: Public Sub New(mass As Single = 1, damping As Single = 0, isStatic As Boolean = False, restitution As Single = 0)
+  overload: Kobold.Core.Components.Physics.#ctor*
+  nameWithType.vb: Physics.New(Single, Single, Boolean, Single)
+  fullName.vb: Kobold.Core.Components.Physics.New(Single, Single, Boolean, Single)
+  name.vb: New(Single, Single, Boolean, Single)
+- uid: Kobold.Core.Components.Physics.Static
+  commentId: P:Kobold.Core.Components.Physics.Static
+  id: Static
+  parent: Kobold.Core.Components.Physics
+  langs:
+  - csharp
+  - vb
+  name: Static
+  nameWithType: Physics.Static
+  fullName: Kobold.Core.Components.Physics.Static
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Static
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 117
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Static object (infinite mass, doesn't move)
+  example: []
+  syntax:
+    content: public static Physics Static { get; }
+    parameters: []
+    return:
+      type: Kobold.Core.Components.Physics
+    content.vb: Public Shared ReadOnly Property [Static] As Physics
+  overload: Kobold.Core.Components.Physics.Static*
+- uid: Kobold.Core.Components.Physics.Light
+  commentId: P:Kobold.Core.Components.Physics.Light
+  id: Light
+  parent: Kobold.Core.Components.Physics
+  langs:
+  - csharp
+  - vb
+  name: Light
+  nameWithType: Physics.Light
+  fullName: Kobold.Core.Components.Physics.Light
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Light
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 122
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Light object (moves easily)
+  example: []
+  syntax:
+    content: public static Physics Light { get; }
+    parameters: []
+    return:
+      type: Kobold.Core.Components.Physics
+    content.vb: Public Shared ReadOnly Property Light As Physics
+  overload: Kobold.Core.Components.Physics.Light*
+- uid: Kobold.Core.Components.Physics.Heavy
+  commentId: P:Kobold.Core.Components.Physics.Heavy
+  id: Heavy
+  parent: Kobold.Core.Components.Physics
+  langs:
+  - csharp
+  - vb
+  name: Heavy
+  nameWithType: Physics.Heavy
+  fullName: Kobold.Core.Components.Physics.Heavy
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Heavy
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 127
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Heavy object (harder to move)
+  example: []
+  syntax:
+    content: public static Physics Heavy { get; }
+    parameters: []
+    return:
+      type: Kobold.Core.Components.Physics
+    content.vb: Public Shared ReadOnly Property Heavy As Physics
+  overload: Kobold.Core.Components.Physics.Heavy*
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Kobold.Core.Components.Physics.#ctor*
+  commentId: Overload:Kobold.Core.Components.Physics.#ctor
+  href: Kobold.Core.Components.Physics.html#Kobold_Core_Components_Physics__ctor_System_Single_System_Single_System_Boolean_System_Single_
+  name: Physics
+  nameWithType: Physics.Physics
+  fullName: Kobold.Core.Components.Physics.Physics
+  nameWithType.vb: Physics.New
+  fullName.vb: Kobold.Core.Components.Physics.New
+  name.vb: New
+- uid: Kobold.Core.Components.Physics.Static*
+  commentId: Overload:Kobold.Core.Components.Physics.Static
+  href: Kobold.Core.Components.Physics.html#Kobold_Core_Components_Physics_Static
+  name: Static
+  nameWithType: Physics.Static
+  fullName: Kobold.Core.Components.Physics.Static
+- uid: Kobold.Core.Components.Physics
+  commentId: T:Kobold.Core.Components.Physics
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.Physics.html
+  name: Physics
+  nameWithType: Physics
+  fullName: Kobold.Core.Components.Physics
+- uid: Kobold.Core.Components.Physics.Light*
+  commentId: Overload:Kobold.Core.Components.Physics.Light
+  href: Kobold.Core.Components.Physics.html#Kobold_Core_Components_Physics_Light
+  name: Light
+  nameWithType: Physics.Light
+  fullName: Kobold.Core.Components.Physics.Light
+- uid: Kobold.Core.Components.Physics.Heavy*
+  commentId: Overload:Kobold.Core.Components.Physics.Heavy
+  href: Kobold.Core.Components.Physics.html#Kobold_Core_Components_Physics_Heavy
+  name: Heavy
+  nameWithType: Physics.Heavy
+  fullName: Kobold.Core.Components.Physics.Heavy

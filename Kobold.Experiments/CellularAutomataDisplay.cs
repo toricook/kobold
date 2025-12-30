@@ -6,7 +6,7 @@ using Kobold.Core.Components;
 using Kobold.Core.Configuration;
 using Kobold.Core.Systems;
 using Kobold.Extensions.Tilemaps;
-using Procedural;
+using Kobold.Extensions.Procedural;
 using System.Drawing;
 using System.Numerics;
 
@@ -127,8 +127,7 @@ namespace Experiments
 
         public override void Render()
         {
-            var renderSystem = SystemManager.GetSystem<RenderSystem>();
-            renderSystem?.Render();
+            base.Render();
         }
 
         public static GameConfig CreateConfig(int width, int height)

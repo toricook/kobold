@@ -1,0 +1,121 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Extensions.Tilemaps
+  commentId: N:Kobold.Extensions.Tilemaps
+  id: Kobold.Extensions.Tilemaps
+  children:
+  - Kobold.Extensions.Tilemaps.TileCollisionLayer
+  - Kobold.Extensions.Tilemaps.TileDamageEvent
+  - Kobold.Extensions.Tilemaps.TileMap
+  - Kobold.Extensions.Tilemaps.TileProperties
+  - Kobold.Extensions.Tilemaps.TileSet
+  - Kobold.Extensions.Tilemaps.TileTriggerEvent
+  - Kobold.Extensions.Tilemaps.TilemapCollisionConfig
+  - Kobold.Extensions.Tilemaps.TilemapCollisionSystem
+  - Kobold.Extensions.Tilemaps.TilemapComponent
+  - Kobold.Extensions.Tilemaps.TilemapSystem
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Extensions.Tilemaps
+  nameWithType: Kobold.Extensions.Tilemaps
+  fullName: Kobold.Extensions.Tilemaps
+  type: Namespace
+  assemblies:
+  - Kobold.Extensions
+references:
+- uid: Kobold.Extensions.Tilemaps.TileMap
+  commentId: T:Kobold.Extensions.Tilemaps.TileMap
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TileMap.html
+  name: TileMap
+  nameWithType: TileMap
+  fullName: Kobold.Extensions.Tilemaps.TileMap
+- uid: Kobold.Extensions.Tilemaps.TilemapCollisionSystem
+  commentId: T:Kobold.Extensions.Tilemaps.TilemapCollisionSystem
+  href: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.html
+  name: TilemapCollisionSystem
+  nameWithType: TilemapCollisionSystem
+  fullName: Kobold.Extensions.Tilemaps.TilemapCollisionSystem
+- uid: Kobold.Extensions.Tilemaps.TilemapCollisionConfig
+  commentId: T:Kobold.Extensions.Tilemaps.TilemapCollisionConfig
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TilemapCollisionConfig.html
+  name: TilemapCollisionConfig
+  nameWithType: TilemapCollisionConfig
+  fullName: Kobold.Extensions.Tilemaps.TilemapCollisionConfig
+- uid: Kobold.Extensions.Tilemaps.TileTriggerEvent
+  commentId: T:Kobold.Extensions.Tilemaps.TileTriggerEvent
+  href: Kobold.Extensions.Tilemaps.TileTriggerEvent.html
+  name: TileTriggerEvent
+  nameWithType: TileTriggerEvent
+  fullName: Kobold.Extensions.Tilemaps.TileTriggerEvent
+- uid: Kobold.Extensions.Tilemaps.TileDamageEvent
+  commentId: T:Kobold.Extensions.Tilemaps.TileDamageEvent
+  href: Kobold.Extensions.Tilemaps.TileDamageEvent.html
+  name: TileDamageEvent
+  nameWithType: TileDamageEvent
+  fullName: Kobold.Extensions.Tilemaps.TileDamageEvent
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent
+  commentId: T:Kobold.Extensions.Tilemaps.TilemapComponent
+  href: Kobold.Extensions.Tilemaps.TilemapComponent.html
+  name: TilemapComponent
+  nameWithType: TilemapComponent
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent
+- uid: Kobold.Extensions.Tilemaps.TilemapSystem
+  commentId: T:Kobold.Extensions.Tilemaps.TilemapSystem
+  href: Kobold.Extensions.Tilemaps.TilemapSystem.html
+  name: TilemapSystem
+  nameWithType: TilemapSystem
+  fullName: Kobold.Extensions.Tilemaps.TilemapSystem
+- uid: Kobold.Extensions.Tilemaps.TileSet
+  commentId: T:Kobold.Extensions.Tilemaps.TileSet
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TileSet.html
+  name: TileSet
+  nameWithType: TileSet
+  fullName: Kobold.Extensions.Tilemaps.TileSet
+- uid: Kobold.Extensions.Tilemaps.TileProperties
+  commentId: T:Kobold.Extensions.Tilemaps.TileProperties
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TileProperties.html
+  name: TileProperties
+  nameWithType: TileProperties
+  fullName: Kobold.Extensions.Tilemaps.TileProperties
+- uid: Kobold.Extensions.Tilemaps.TileCollisionLayer
+  commentId: T:Kobold.Extensions.Tilemaps.TileCollisionLayer
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TileCollisionLayer.html
+  name: TileCollisionLayer
+  nameWithType: TileCollisionLayer
+  fullName: Kobold.Extensions.Tilemaps.TileCollisionLayer
+- uid: Kobold.Extensions.Tilemaps
+  commentId: N:Kobold.Extensions.Tilemaps
+  href: Kobold.html
+  name: Kobold.Extensions.Tilemaps
+  nameWithType: Kobold.Extensions.Tilemaps
+  fullName: Kobold.Extensions.Tilemaps
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Tilemaps
+    name: Tilemaps
+    href: Kobold.Extensions.Tilemaps.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Tilemaps
+    name: Tilemaps
+    href: Kobold.Extensions.Tilemaps.html

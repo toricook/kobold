@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Utilities - Helper Functions | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Utilities - Helper Functions | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/core/utilities.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="utilities---helper-functions">Utilities - Helper Functions</h1>
+
+<p>Kobold provides various utility classes and functions for common game development tasks.</p>
+<h2 id="mathutils">MathUtils</h2>
+<p>Static utility class with math helper functions.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.MathUtils</code></p>
+<h3 id="clamping">Clamping</h3>
+<p><strong>Clamp(value, min, max)</strong> - Constrains a value within a range</p>
+<pre><code class="lang-csharp">public static float Clamp(float value, float min, float max)
+public static int Clamp(int value, int min, int max)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Keep player within screen bounds
+var x = MathUtils.Clamp(playerX, 0, 800);
+var y = MathUtils.Clamp(playerY, 0, 600);
+</code></pre>
+<h3 id="random">Random</h3>
+<p><strong>RandomRange(min, max)</strong> - Random number in range</p>
+<pre><code class="lang-csharp">public static float RandomRange(float min, float max)
+public static int RandomRange(int min, int max)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Spawn enemy at random X position
+var x = MathUtils.RandomRange(0, 800);
+var y = 50;
+</code></pre>
+<p><strong>RandomDirection()</strong> - Random unit vector</p>
+<pre><code class="lang-csharp">public static Vector2 RandomDirection()
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Particle with random direction
+var direction = MathUtils.RandomDirection();
+var velocity = direction * 150f;
+</code></pre>
+<h3 id="interpolation">Interpolation</h3>
+<p><strong>Lerp(a, b, t)</strong> - Linear interpolation</p>
+<pre><code class="lang-csharp">public static float Lerp(float a, float b, float t)
+public static Vector2 Lerp(Vector2 a, Vector2 b, float t)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Smooth camera follow
+cameraPos = MathUtils.Lerp(cameraPos, targetPos, 0.1f * deltaTime);
+</code></pre>
+<p><strong>MoveTowards(current, target, maxDelta)</strong> - Move towards target</p>
+<pre><code class="lang-csharp">public static float MoveTowards(float current, float target, float maxDelta)
+public static Vector2 MoveTowards(Vector2 current, Vector2 target, float maxDelta)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Move towards target at fixed speed
+transform.Position = MathUtils.MoveTowards(
+    transform.Position,
+    targetPosition,
+    speed * deltaTime
+);
+</code></pre>
+<h3 id="angles">Angles</h3>
+<p><strong>DegreesToRadians(degrees)</strong> - Convert degrees to radians</p>
+<pre><code class="lang-csharp">public static float DegreesToRadians(float degrees)
+</code></pre>
+<p><strong>RadiansToDegrees(radians)</strong> - Convert radians to degrees</p>
+<pre><code class="lang-csharp">public static float RadiansToDegrees(float radians)
+</code></pre>
+<p><strong>WrapAngle(radians)</strong> - Wrap angle to -π to π range</p>
+<pre><code class="lang-csharp">public static float WrapAngle(float radians)
+</code></pre>
+<p><strong>AngleDifference(from, to)</strong> - Shortest angle between two angles</p>
+<pre><code class="lang-csharp">public static float AngleDifference(float from, float to)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Rotate towards target
+var currentAngle = transform.Rotation;
+var targetAngle = MathF.Atan2(target.Y - pos.Y, target.X - pos.X);
+var angleDiff = MathUtils.AngleDifference(currentAngle, targetAngle);
+
+if (MathF.Abs(angleDiff) &gt; 0.01f)
+{
+    transform.Rotation += MathF.Sign(angleDiff) * rotSpeed * deltaTime;
+}
+</code></pre>
+<h2 id="entityfactory">EntityFactory</h2>
+<p>Helper class for quickly creating common entity patterns.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Factories.EntityFactory</code></p>
+<h3 id="createrectangle">CreateRectangle</h3>
+<pre><code class="lang-csharp">public Entity CreateRectangle(World world, Vector2 position, Vector2 size, Color color)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">var rect = EntityFactory.CreateRectangle(
+    World,
+    new Vector2(100, 100),
+    new Vector2(50, 50),
+    Color.Blue
+);
+</code></pre>
+<h3 id="createmovingrectangle">CreateMovingRectangle</h3>
+<pre><code class="lang-csharp">public Entity CreateMovingRectangle(
+    World world,
+    Vector2 position,
+    Vector2 size,
+    Color color,
+    Vector2 velocity
+)
+</code></pre>
+<h3 id="createtext">CreateText</h3>
+<pre><code class="lang-csharp">public Entity CreateText(
+    World world,
+    Vector2 position,
+    string text,
+    Color color,
+    float fontSize = 16
+)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">var scoreText = EntityFactory.CreateText(
+    World,
+    new Vector2(10, 10),
+    &quot;Score: 0&quot;,
+    Color.White,
+    24
+);
+</code></pre>
+<h2 id="configuration-classes">Configuration Classes</h2>
+<h3 id="gameconfig">GameConfig</h3>
+<p>Configure game window and settings.</p>
+<pre><code class="lang-csharp">public class GameConfig
+{
+    public int WindowWidth = 800;
+    public int WindowHeight = 600;
+    public string WindowTitle = &quot;Kobold Game&quot;;
+    public Color BackgroundColor = Color.Black;
+    public int TargetFPS = 60;
+}
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">var config = new GameConfig
+{
+    WindowWidth = 1024,
+    WindowHeight = 768,
+    WindowTitle = &quot;My Game&quot;,
+    BackgroundColor = Color.FromArgb(255, 20, 20, 40)
+};
+
+MonoGameHost.Run(new MyGame(), config);
+</code></pre>
+<h3 id="physicsconfig">PhysicsConfig</h3>
+<p>Configure physics simulation.</p>
+<pre><code class="lang-csharp">public class PhysicsConfig
+{
+    public bool EnableGravity = false;
+    public Vector2 GlobalGravity = new Vector2(0, 980);
+    public bool EnableDamping = false;
+    public float GlobalDamping = 0.99f;
+}
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Platformer physics
+var config = new PhysicsConfig
+{
+    EnableGravity = true,
+    GlobalGravity = new Vector2(0, 500),
+    EnableDamping = true,
+    GlobalDamping = 0.98f
+};
+
+Systems.AddSystem(new PhysicsSystem(config), 100, true);
+</code></pre>
+<h3 id="collisionmatrix">CollisionMatrix</h3>
+<p>Configure which layers collide.</p>
+<pre><code class="lang-csharp">public class CollisionMatrix
+{
+    public void SetCollision(CollisionLayer a, CollisionLayer b, bool collides);
+    public bool ShouldCollide(CollisionLayer a, CollisionLayer b);
+}
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">var matrix = new CollisionMatrix();
+matrix.SetCollision(CollisionLayer.Player, CollisionLayer.Enemy, true);
+matrix.SetCollision(CollisionLayer.Player, CollisionLayer.Pickup, true);
+matrix.SetCollision(CollisionLayer.Projectile, CollisionLayer.Enemy, true);
+
+Systems.AddSystem(new CollisionSystem(matrix), 300, true);
+</code></pre>
+<h2 id="extension-methods">Extension Methods</h2>
+<p>Kobold may include extension methods for common operations (check current implementation).</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong><a href="../examples/code-snippets.html">Code Snippets</a></strong> - Practical usage examples</li>
+<li><strong><a href="../guides/physics.html">MathUtils in action</a></strong> - Using math utilities</li>
+</ul>
+<hr>
+<p><strong>You've completed the Core documentation!</strong> Continue to <a href="../monogame/">MonoGame Integration</a> →</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/core/utilities.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

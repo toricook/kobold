@@ -1,0 +1,61 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core
+  commentId: N:Kobold.Core
+  id: Kobold.Core
+  children:
+  - Kobold.Core.AssetManager
+  - Kobold.Core.GameEngineBase
+  - Kobold.Core.MathUtils
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Core
+  nameWithType: Kobold.Core
+  fullName: Kobold.Core
+  type: Namespace
+  assemblies:
+  - Kobold.Core
+references:
+- uid: Kobold.Core.AssetManager
+  commentId: T:Kobold.Core.AssetManager
+  parent: Kobold.Core
+  href: Kobold.Core.AssetManager.html
+  name: AssetManager
+  nameWithType: AssetManager
+  fullName: Kobold.Core.AssetManager
+- uid: Kobold.Core.GameEngineBase
+  commentId: T:Kobold.Core.GameEngineBase
+  parent: Kobold.Core
+  href: Kobold.Core.GameEngineBase.html
+  name: GameEngineBase
+  nameWithType: GameEngineBase
+  fullName: Kobold.Core.GameEngineBase
+- uid: Kobold.Core.MathUtils
+  commentId: T:Kobold.Core.MathUtils
+  href: Kobold.Core.MathUtils.html
+  name: MathUtils
+  nameWithType: MathUtils
+  fullName: Kobold.Core.MathUtils
+- uid: Kobold.Core
+  commentId: N:Kobold.Core
+  href: Kobold.html
+  name: Kobold.Core
+  nameWithType: Kobold.Core
+  fullName: Kobold.Core
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html

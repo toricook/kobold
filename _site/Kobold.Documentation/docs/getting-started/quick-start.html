@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Quick Start - 5 Minutes to Your First Game | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Quick Start - 5 Minutes to Your First Game | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/getting-started/quick-start.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="quick-start---5-minutes-to-your-first-game">Quick Start - 5 Minutes to Your First Game</h1>
+
+<p>This guide will get you up and running with Kobold in about 5 minutes. We'll create a simple game with a moving, bouncing sprite.</p>
+<h2 id="step-1-create-a-new-project-1-minute">Step 1: Create a New Project (1 minute)</h2>
+<pre><code class="lang-bash"># Create a new console application
+dotnet new console -n MyKoboldGame
+cd MyKoboldGame
+
+# Add required packages (if using NuGet)
+dotnet add package Kobold.Core
+dotnet add package Kobold.Monogame
+dotnet add package MonoGame.Framework.DesktopGL
+</code></pre>
+<p>Or if working from the Kobold source repository, add project references instead.</p>
+<h2 id="step-2-create-your-game-class-2-minutes">Step 2: Create Your Game Class (2 minutes)</h2>
+<p>Replace the contents of <code>Program.cs</code> with:</p>
+<pre><code class="lang-csharp">using Kobold.Core;
+using Kobold.Core.Components;
+using Kobold.Core.Systems;
+using Kobold.Core.Configuration;
+using Kobold.Monogame;
+using System.Numerics;
+using System.Drawing;
+
+public class MyGame : GameEngineBase
+{
+    protected override void Initialize()
+    {
+        base.Initialize();
+
+        // Create a screen bounds entity
+        World.Create(
+            new ScreenBounds
+            {
+                MinX = 0,
+                MaxX = 800,
+                MinY = 0,
+                MaxY = 600
+            }
+        );
+
+        // Create a bouncing ball
+        World.Create(
+            new Transform { Position = new Vector2(400, 300) },
+            new RectangleRenderer
+            {
+                Size = new Vector2(30, 30),
+                Color = Color.Blue,
+                Layer = 100
+            },
+            new Velocity { Value = new Vector2(200, 150) }
+        );
+
+        // Add systems
+        var physicsConfig = new PhysicsConfig
+        {
+            EnableGravity = false
+        };
+        Systems.AddSystem(new PhysicsSystem(physicsConfig), 100, true);
+        Systems.AddSystem(new BoundarySystem(BoundaryBehavior.Bounce), 200, true);
+        Systems.AddRenderSystem(new RenderSystem(Renderer));
+    }
+}
+
+// Entry point
+MonoGameHost.Run(new MyGame(), new GameConfig
+{
+    WindowWidth = 800,
+    WindowHeight = 600,
+    WindowTitle = &quot;My Kobold Game&quot;,
+    BackgroundColor = Color.Black
+});
+</code></pre>
+<h2 id="step-3-run-your-game-30-seconds">Step 3: Run Your Game (30 seconds)</h2>
+<pre><code class="lang-bash">dotnet run
+</code></pre>
+<p>You should see a window with a blue square bouncing around the screen!</p>
+<h2 id="whats-happening">What's Happening?</h2>
+<p>Let's break down what this code does:</p>
+<h3 id="entities-and-components">Entities and Components</h3>
+<pre><code class="lang-csharp">World.Create(
+    new Transform { Position = new Vector2(400, 300) },
+    new RectangleRenderer { Size = new Vector2(30, 30), Color = Color.Blue },
+    new Velocity { Value = new Vector2(200, 150) }
+);
+</code></pre>
+<p>This creates an entity (the blue square) with three components:</p>
+<ul>
+<li><strong>Transform</strong> - Position in the world (center of screen)</li>
+<li><strong>RectangleRenderer</strong> - Visual representation (30x30 blue square)</li>
+<li><strong>Velocity</strong> - Movement direction and speed (200 pixels/sec right, 150 down)</li>
+</ul>
+<h3 id="systems">Systems</h3>
+<pre><code class="lang-csharp">Systems.AddSystem(new PhysicsSystem(physicsConfig), 100, true);
+Systems.AddSystem(new BoundarySystem(BoundaryBehavior.Bounce), 200, true);
+Systems.AddRenderSystem(new RenderSystem(Renderer));
+</code></pre>
+<p>Systems process entities each frame:</p>
+<ul>
+<li><strong>PhysicsSystem</strong> (order 100) - Moves entities based on their Velocity</li>
+<li><strong>BoundarySystem</strong> (order 200) - Bounces entities off screen edges</li>
+<li><strong>RenderSystem</strong> - Draws entities to the screen</li>
+</ul>
+<p>The order matters - physics runs first, then boundary checking, then rendering.</p>
+<h2 id="next-steps---add-interactivity">Next Steps - Add Interactivity</h2>
+<p>Let's make the ball respond to keyboard input. Add this method to your <code>MyGame</code> class:</p>
+<pre><code class="lang-csharp">protected override void Update(float deltaTime)
+{
+    base.Update(deltaTime);
+
+    // Query for entities with Transform and Velocity
+    var query = World.Query&lt;Transform, Velocity&gt;();
+    foreach (var entity in query)
+    {
+        ref var velocity = ref entity.Get&lt;Velocity&gt;();
+
+        // Arrow keys to control direction
+        if (InputManager.IsKeyDown(KeyCode.Left))
+            velocity.Value = new Vector2(-200, velocity.Value.Y);
+        if (InputManager.IsKeyDown(KeyCode.Right))
+            velocity.Value = new Vector2(200, velocity.Value.Y);
+        if (InputManager.IsKeyDown(KeyCode.Up))
+            velocity.Value = new Vector2(velocity.Value.X, -200);
+        if (InputManager.IsKeyDown(KeyCode.Down))
+            velocity.Value = new Vector2(velocity.Value.X, 200);
+    }
+}
+</code></pre>
+<p>Now you can control the ball's direction with arrow keys while it bounces!</p>
+<h2 id="experiment-further">Experiment Further</h2>
+<p>Try these modifications:</p>
+<p><strong>Change colors:</strong></p>
+<pre><code class="lang-csharp">Color = Color.Red  // or Green, Yellow, etc.
+</code></pre>
+<p><strong>Add more balls:</strong></p>
+<pre><code class="lang-csharp">// Create multiple entities in a loop
+for (int i = 0; i &lt; 10; i++)
+{
+    World.Create(
+        new Transform { Position = new Vector2(100 + i * 60, 300) },
+        new RectangleRenderer { Size = new Vector2(20, 20), Color = Color.FromArgb(255, i * 25, 100) },
+        new Velocity { Value = MathUtils.RandomDirection() * 150 }
+    );
+}
+</code></pre>
+<p><strong>Add gravity:</strong></p>
+<pre><code class="lang-csharp">var physicsConfig = new PhysicsConfig
+{
+    EnableGravity = true,
+    GlobalGravity = new Vector2(0, 500)  // Downward gravity
+};
+</code></pre>
+<p><strong>Wrap instead of bounce:</strong></p>
+<pre><code class="lang-csharp">Systems.AddSystem(new BoundarySystem(BoundaryBehavior.Wrap), 200, true);
+</code></pre>
+<h2 id="what-youve-learned">What You've Learned</h2>
+<p>In just 5 minutes, you've learned:</p>
+<ul>
+<li>How to create a Kobold project</li>
+<li>The Entity Component System pattern</li>
+<li>Creating entities with components</li>
+<li>Adding and configuring systems</li>
+<li>The game lifecycle (Initialize, Update, Render)</li>
+<li>Querying and modifying entities</li>
+</ul>
+<h2 id="where-to-go-next">Where to Go Next</h2>
+<ul>
+<li><strong><a href="your-first-game.html">Your First Game</a></strong> - Build a complete game with more features</li>
+<li><strong><a href="../core/architecture.html">Core Architecture</a></strong> - Deep dive into ECS concepts</li>
+<li><strong><a href="../core/components.html">Components Reference</a></strong> - All available components</li>
+<li><strong><a href="../core/systems.html">Systems Reference</a></strong> - All available systems</li>
+<li><strong><a href="../examples/code-snippets.html">Code Snippets</a></strong> - Common patterns and recipes</li>
+</ul>
+<h2 id="common-issues">Common Issues</h2>
+<p><strong>&quot;Could not load file or assembly 'MonoGame.Framework'&quot;</strong></p>
+<ul>
+<li>Make sure you added the MonoGame.Framework.DesktopGL package</li>
+</ul>
+<p><strong>Window doesn't appear:</strong></p>
+<ul>
+<li>Check that you're calling <code>MonoGameHost.Run()</code> at the program entry point</li>
+<li>Ensure your project type is an executable (not a library)</li>
+</ul>
+<p><strong>Nothing is rendering:</strong></p>
+<ul>
+<li>Verify you added <code>RenderSystem</code> to the Systems</li>
+<li>Check that entities have both <code>Transform</code> and a renderer component (<code>SpriteRenderer</code>, <code>RectangleRenderer</code>, etc.)</li>
+</ul>
+<hr>
+<p><strong>Having issues?</strong> Check the <a href="installation.html">full installation guide</a> or see <a href="../guides/">troubleshooting tips</a>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/getting-started/quick-start.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

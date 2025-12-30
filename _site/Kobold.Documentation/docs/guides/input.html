@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Input Handling Guide | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Input Handling Guide | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/guides/input.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="input-handling-guide">Input Handling Guide</h1>
+
+<p>Keyboard and mouse input patterns for player controls.</p>
+<h2 id="basic-input">Basic Input</h2>
+<pre><code class="lang-csharp">protected override void Update(float deltaTime)
+{
+    base.Update(deltaTime);
+
+    // Key pressed (once per press)
+    if (InputManager.IsKeyPressed(KeyCode.Space))
+    {
+        FireWeapon();
+    }
+
+    // Key held (continuous)
+    if (InputManager.IsKeyDown(KeyCode.W))
+    {
+        MoveForward();
+    }
+}
+</code></pre>
+<h2 id="player-movement-patterns">Player Movement Patterns</h2>
+<h3 id="8-direction-movement-top-down">8-Direction Movement (Top-Down)</h3>
+<pre><code class="lang-csharp">var players = World.Query&lt;Transform, Velocity, PlayerControlled&gt;();
+foreach (var player in players)
+{
+    ref var velocity = ref player.Get&lt;Velocity&gt;();
+
+    var moveDir = Vector2.Zero;
+    if (InputManager.IsKeyDown(KeyCode.W)) moveDir.Y -= 1;
+    if (InputManager.IsKeyDown(KeyCode.S)) moveDir.Y += 1;
+    if (InputManager.IsKeyDown(KeyCode.A)) moveDir.X -= 1;
+    if (InputManager.IsKeyDown(KeyCode.D)) moveDir.X += 1;
+
+    if (moveDir != Vector2.Zero)
+    {
+        velocity.Value = Vector2.Normalize(moveDir) * 200f;
+    }
+    else
+    {
+        velocity.Value = Vector2.Zero;
+    }
+}
+</code></pre>
+<h3 id="platformer-controls">Platformer Controls</h3>
+<pre><code class="lang-csharp">var moveSpeed = 200f;
+var jumpForce = -400f;
+
+if (InputManager.IsKeyDown(KeyCode.A))
+    velocity.Value = new Vector2(-moveSpeed, velocity.Value.Y);
+else if (InputManager.IsKeyDown(KeyCode.D))
+    velocity.Value = new Vector2(moveSpeed, velocity.Value.Y);
+else
+    velocity.Value = new Vector2(0, velocity.Value.Y);  // Stop horizontal
+
+if (InputManager.IsKeyPressed(KeyCode.Space) &amp;&amp; isGrounded)
+{
+    velocity.Value = new Vector2(velocity.Value.X, jumpForce);
+}
+</code></pre>
+<h3 id="tank-controls-rotation--thrust">Tank Controls (Rotation + Thrust)</h3>
+<pre><code class="lang-csharp">ref var transform = ref player.Get&lt;Transform&gt;();
+ref var velocity = ref player.Get&lt;Velocity&gt;();
+
+var rotSpeed = 3f;
+var thrustForce = 300f;
+
+// Rotate
+if (InputManager.IsKeyDown(KeyCode.A))
+    transform.Rotation -= rotSpeed * deltaTime;
+if (InputManager.IsKeyDown(KeyCode.D))
+    transform.Rotation += rotSpeed * deltaTime;
+
+// Thrust forward
+if (InputManager.IsKeyDown(KeyCode.W))
+{
+    velocity.Value += transform.Forward * thrustForce * deltaTime;
+}
+</code></pre>
+<h2 id="mouse-input">Mouse Input</h2>
+<h3 id="click-to-spawn">Click to Spawn</h3>
+<pre><code class="lang-csharp">if (InputManager.IsMouseButtonPressed(MouseButton.Left))
+{
+    var mousePos = InputManager.GetMousePosition();
+    SpawnEntityAt(mousePos);
+}
+</code></pre>
+<h3 id="aim-at-mouse">Aim at Mouse</h3>
+<pre><code class="lang-csharp">var mousePos = InputManager.GetMousePosition();
+var playerPos = transform.Position;
+
+var direction = Vector2.Normalize(mousePos - playerPos);
+transform.Rotation = MathF.Atan2(direction.Y, direction.X);
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong><a href="../core/game-engine.html#platform-implementations">InputManager</a></strong> - API reference</li>
+<li><strong><a href="../core/systems.html#inputsystem">Input System</a></strong> - Custom input systems</li>
+</ul>
+<hr>
+<p><strong>Back:</strong> <a href="index.html">Guides</a> ←</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/guides/input.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

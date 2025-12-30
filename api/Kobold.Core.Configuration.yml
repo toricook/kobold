@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Configuration
+  commentId: N:Kobold.Core.Configuration
+  id: Kobold.Core.Configuration
+  children:
+  - Kobold.Core.Configuration.GameConfig
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Core.Configuration
+  nameWithType: Kobold.Core.Configuration
+  fullName: Kobold.Core.Configuration
+  type: Namespace
+  assemblies:
+  - Kobold.Core
+references:
+- uid: Kobold.Core.Configuration.GameConfig
+  commentId: T:Kobold.Core.Configuration.GameConfig
+  parent: Kobold.Core.Configuration
+  href: Kobold.Core.Configuration.GameConfig.html
+  name: GameConfig
+  nameWithType: GameConfig
+  fullName: Kobold.Core.Configuration.GameConfig
+- uid: Kobold.Core.Configuration
+  commentId: N:Kobold.Core.Configuration
+  href: Kobold.html
+  name: Kobold.Core.Configuration
+  nameWithType: Kobold.Core.Configuration
+  fullName: Kobold.Core.Configuration
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Configuration
+    name: Configuration
+    href: Kobold.Core.Configuration.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Configuration
+    name: Configuration
+    href: Kobold.Core.Configuration.html

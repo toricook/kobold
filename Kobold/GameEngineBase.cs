@@ -83,7 +83,7 @@ namespace Kobold.Core
             if (!_isInitialized)
                 throw new InvalidOperationException("Game engine must be initialized before rendering");
             Renderer.Begin();
-            // Override in derived classes
+            SystemManager.RenderAll();
             Renderer.End();
         }
 

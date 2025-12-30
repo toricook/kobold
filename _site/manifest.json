@@ -1,0 +1,2195 @@
+{
+  "source_base_path": "C:/Code/Kobold",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/core/architecture.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/core/architecture.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/core/asset-manager.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/core/asset-manager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/core/components.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/core/components.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/core/event-bus.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/core/event-bus.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/core/game-engine.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/core/game-engine.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/core/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/core/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/core/systems.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/core/systems.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/core/utilities.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/core/utilities.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/examples/code-snippets.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/examples/code-snippets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/examples/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/examples/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/explainers/entity-component-system.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/explainers/entity-component-system.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/explainers/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/explainers/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/extensions/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/extensions/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/extensions/tilemaps.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/extensions/tilemaps.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/getting-started/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/getting-started/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/getting-started/installation.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/getting-started/installation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/getting-started/quick-start.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/getting-started/quick-start.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/getting-started/your-first-game.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/getting-started/your-first-game.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/guides/camera.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/guides/camera.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/guides/collision.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/guides/collision.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/guides/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/guides/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/guides/input.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/guides/input.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/guides/physics.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/guides/physics.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/monogame/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/monogame/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/monogame/setup.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/monogame/setup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/procedural/cave-generation.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/procedural/cave-generation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/procedural/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/procedural/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/tools/experiments.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/tools/experiments.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/tools/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/tools/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Kobold.Documentation/docs/tools/sprite-sheet-editor.md",
+      "output": {
+        ".html": {
+          "relative_path": "Kobold.Documentation/docs/tools/sprite-sheet-editor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Experiments.CellularAutomataDisplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Experiments.CellularAutomataDisplay.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Experiments.CellularAutomataDisplay",
+      "Summary": "<p sourcefile=\"api/Experiments.CellularAutomataDisplay.yml\" sourcestartlinenumber=\"1\">Game that displays a cellular automata generated tilemap.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Experiments.CellularAutomataScript.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Experiments.CellularAutomataScript.Config.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Experiments.CellularAutomataScript.Config",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Experiments.CellularAutomataScript.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Experiments.CellularAutomataScript.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Experiments.CellularAutomataScript",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Experiments.Program.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Experiments.Program.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Experiments.Program",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Experiments.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Experiments.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Experiments",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.Core.IContentLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.Core.IContentLoader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions.Core.IContentLoader",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Abstractions.Core.IContentLoader.yml\" sourcestartlinenumber=\"1\">Interface for loading game content (textures, sounds, etc.)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.Core.IGameEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.Core.IGameEngine.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions.Core.IGameEngine",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Abstractions.Core.IGameEngine.yml\" sourcestartlinenumber=\"1\">The basic definition of what makes a game. A game is initialized once at the beginning and shut down once at the end,\nand in between, the game runs. While it runs, there is a loop. In every iteration of the loop, the state of everything that\nexists in the game (the &quot;entities&quot;) is updated and then the current state of the game is rendered. The update loop\nrequires knowledge of how much time has passed since the last update was called (the &quot;delta time&quot;) since update loops\nmay run at different rates on different hardware.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.Core.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions.Core",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.IRenderSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.IRenderSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions.IRenderSystem",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Abstractions.IRenderSystem.yml\" sourcestartlinenumber=\"1\">Interface for systems that only need to render.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.ISystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.ISystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions.ISystem",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Abstractions.ISystem.yml\" sourcestartlinenumber=\"1\">At its core, a system is just a thing that is reponsible for applying updates to entities.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.Input.IInputManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.Input.IInputManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions.Input.IInputManager",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Abstractions.Input.IInputManager.yml\" sourcestartlinenumber=\"1\">The input manager is responsible for getting input from the hardware</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.Input.KeyCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.Input.KeyCode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions.Input.KeyCode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.Input.MouseButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.Input.MouseButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions.Input.MouseButton",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.Input.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.Input.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions.Input",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.Rendering.IRenderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.Rendering.IRenderer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions.Rendering.IRenderer",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Abstractions.Rendering.IRenderer.yml\" sourcestartlinenumber=\"1\">The renderer defines how stuff actually gets drawn to the screen</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.Rendering.ITexture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.Rendering.ITexture.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions.Rendering.ITexture",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Abstractions.Rendering.ITexture.yml\" sourcestartlinenumber=\"1\">An abstraction for an image that can be rendered by the graphics backend</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.Rendering.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.Rendering.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions.Rendering",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Abstractions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Abstractions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Abstractions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.AssetManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.AssetManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.AssetManager",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.AssetManager.yml\" sourcestartlinenumber=\"1\">Manages loading and caching of game assets (textures, sprite sheets, etc.)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Assets.AnimationData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Assets.AnimationData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Assets.AnimationData",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Assets.AnimationData.yml\" sourcestartlinenumber=\"1\">Animation configuration data</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Assets.RectangleData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Assets.RectangleData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Assets.RectangleData",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Assets.RectangleData.yml\" sourcestartlinenumber=\"1\">Rectangle data for JSON serialization</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Assets.SpriteSheet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Assets.SpriteSheet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Assets.SpriteSheet",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Assets.SpriteSheet.yml\" sourcestartlinenumber=\"1\">Represents a sprite sheet with its texture and configuration</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Assets.SpriteSheetConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Assets.SpriteSheetConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Assets.SpriteSheetConfig",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Assets.SpriteSheetConfig.yml\" sourcestartlinenumber=\"1\">Configuration for how a sprite sheet should be divided</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Assets.Vector2Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Assets.Vector2Data.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Assets.Vector2Data",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Assets.Vector2Data.yml\" sourcestartlinenumber=\"1\">Vector2 data for JSON serialization</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Assets.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Assets.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Assets",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Acceleration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Acceleration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Acceleration",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Acceleration.yml\" sourcestartlinenumber=\"1\">Acceleration component for entities that need forces applied over time</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.AngularAcceleration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.AngularAcceleration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.AngularAcceleration",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.AngularAcceleration.yml\" sourcestartlinenumber=\"1\">Angular acceleration component</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.AngularVelocity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.AngularVelocity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.AngularVelocity",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.AngularVelocity.yml\" sourcestartlinenumber=\"1\">Angular velocity component for rotating entities</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Animation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Animation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Animation",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Animation.yml\" sourcestartlinenumber=\"1\">Component that manages sprite animation state</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.AnimationClip.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.AnimationClip.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.AnimationClip",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.AnimationClip.yml\" sourcestartlinenumber=\"1\">Defines a sequence of frames for an animation</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.BoxCollider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.BoxCollider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.BoxCollider",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.BoxCollider.yml\" sourcestartlinenumber=\"1\">Component defining a rectangular collision boundary for an entity.\nThis creates an axis-aligned bounding box (AABB) used by collision detection systems\nto determine when entities are overlapping or touching.</p>\n<p sourcefile=\"api/Kobold.Core.Components.BoxCollider.yml\" sourcestartlinenumber=\"5\">The collision box is positioned relative to the entity's Transform.Position,\nwith an optional offset to fine-tune the collision area. The box doesn't rotate\nwith the entity - it's always axis-aligned for performance.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Camera.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Camera.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Camera",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Camera.yml\" sourcestartlinenumber=\"1\">Camera component that defines the viewport and follows a target.\nWhen present, the RenderSystem will automatically transform world coordinates to screen coordinates.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.CoreGameState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.CoreGameState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.CoreGameState",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.CoreGameState.yml\" sourcestartlinenumber=\"1\">Convenience wrapper for games that use the standard core game states.\nThis provides a simpler API than the full generic GameState&lt;TState&gt; for common cases.\nMost simple games can just use this instead of defining their own state enum.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Debug.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Debug.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Debug",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"1\">Tag component marking an entity as debug/development-only content.\nUsed by systems to show diagnostic information, development tools,\nor testing content that should be hidden in production builds.</p>\n<p sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"5\">Examples:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"6\">\n<li sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"6\">RenderSystem: Only renders Debug entities in development builds</li>\n<li sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"7\">InputSystem: Debug entities might respond to special key combinations</li>\n<li sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"8\">LoggingSystem: Extra verbose logging for Debug entities</li>\n<li sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"9\">ProfilerSystem: Performance monitoring for Debug entities</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"11\">Debug entities might include:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"12\">\n<li sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"12\">Collision visualization (showing hitboxes)</li>\n<li sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"13\">Performance counters and framerate displays</li>\n<li sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"14\">AI pathfinding visualization</li>\n<li sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"15\">Physics force indicators</li>\n<li sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"16\">Entity inspector tools</li>\n<li sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"17\">Cheat/testing controls</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Debug.yml\" sourcestartlinenumber=\"19\">Should be easily disabled for release builds via preprocessor directives\nor build configuration flags.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Destructible.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Destructible.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Destructible",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"1\">Tag component marking an entity as destructible environment.\nUsed by systems to handle breakable objects that can be damaged\nbut aren't enemies (don't move, don't fight back).</p>\n<p sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"5\">Examples:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"6\">\n<li sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"6\">CollisionSystem: Takes damage from projectiles/explosions</li>\n<li sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"7\">HealthSystem: Has hit points and can be destroyed</li>\n<li sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"8\">EffectSystem: Shows damage effects, debris when destroyed</li>\n<li sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"9\">ScoringSystem: May award points when destroyed</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"11\">Destructible entities typically also have:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"12\">\n<li sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"12\">Health component (hit points)</li>\n<li sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"13\">Collider (for damage detection)</li>\n<li sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"14\">DropTable (what items spawn when destroyed)</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Destructible.yml\" sourcestartlinenumber=\"16\">Examples: crates, barrels, walls, barriers, destructible terrain\nThis is different from Static (can't be damaged) and Enemy (actively hostile).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.DestructionReason.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.DestructionReason.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.DestructionReason",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Drag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Drag.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Drag",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Drag.yml\" sourcestartlinenumber=\"1\">Drag/friction component for air/space resistance</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Dynamic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Dynamic.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Dynamic",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"1\">Tag component marking an entity as movable/physics-affected.\nOpposite of Static - indicates this entity should be processed by\nmovement, physics, and dynamic collision systems.</p>\n<p sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"5\">Examples:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"6\">\n<li sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"6\">PhysicsSystem: Applies velocity, acceleration, and forces</li>\n<li sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"7\">CollisionSystem: Full collision detection and response</li>\n<li sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"8\">BoundarySystem: Handles boundary collisions (wrap, clamp, bounce)</li>\n<li sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"9\">AISystem: Updates movement for dynamic AI entities</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"11\">Most game entities are Dynamic:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"12\">\n<li sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"12\">Players, enemies, NPCs</li>\n<li sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"13\">Projectiles, particles</li>\n<li sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"14\">Moving platforms, elevators</li>\n<li sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"15\">Physics objects like crates, balls</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Dynamic.yml\" sourcestartlinenumber=\"17\">Note: You don't usually need both Static and Dynamic tags in the same game.\nChoose one approach - either tag the minority case, or use presence/absence of Physics components.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Enemy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Enemy.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Enemy",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Enemy.yml\" sourcestartlinenumber=\"1\">Tag component marking an entity as an enemy/hostile unit.\nUsed by systems to identify entities that should attack the player,\nbe targeted by player weapons, or follow enemy-specific behavior patterns.</p>\n<p sourcefile=\"api/Kobold.Core.Components.Enemy.yml\" sourcestartlinenumber=\"5\">Examples:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Enemy.yml\" sourcestartlinenumber=\"6\">\n<li sourcefile=\"api/Kobold.Core.Components.Enemy.yml\" sourcestartlinenumber=\"6\">AISystem: Entities with Enemy tag use hostile AI behaviors</li>\n<li sourcefile=\"api/Kobold.Core.Components.Enemy.yml\" sourcestartlinenumber=\"7\">CollisionSystem: Enemy vs Player projectile collision detection</li>\n<li sourcefile=\"api/Kobold.Core.Components.Enemy.yml\" sourcestartlinenumber=\"8\">ScoringSystem: Award points when Enemy entities are destroyed</li>\n<li sourcefile=\"api/Kobold.Core.Components.Enemy.yml\" sourcestartlinenumber=\"9\">FormationSystem: Enemy entities move in coordinated patterns</li>\n<li sourcefile=\"api/Kobold.Core.Components.Enemy.yml\" sourcestartlinenumber=\"10\">SpawningSystem: Creates entities with Enemy tag during waves</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Enemy.yml\" sourcestartlinenumber=\"12\">Often combined with other components like Health, Weapon, AIBehavior\nto create complete enemy entities with different capabilities.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.GameState-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.GameState-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.GameState<TState>",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.GameState-1.yml\" sourcestartlinenumber=\"1\">Core game state component that represents the current high-level state of the game.\nThis is used by the SystemManager to determine which systems should be active,\nand by game-specific systems to control flow and behavior.</p>\n<p sourcefile=\"api/Kobold.Core.Components.GameState-1.yml\" sourcestartlinenumber=\"5\">The core engine provides basic states (Playing, Paused, GameOver), but games\ncan extend this with their own state enums by implementing IGameState.</p>\n<p sourcefile=\"api/Kobold.Core.Components.GameState-1.yml\" sourcestartlinenumber=\"8\">Only one GameState component should exist per game - it's typically attached\nto a singleton entity that represents the overall game session.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Gameplay.CustomBoundaryBehavior.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Gameplay.CustomBoundaryBehavior.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Gameplay.CustomBoundaryBehavior",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Gameplay.CustomBoundaryBehavior.yml\" sourcestartlinenumber=\"1\">Component that allows an entity to have custom boundary behavior that overrides the default</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Gameplay.Lifetime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Gameplay.Lifetime.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Gameplay.Lifetime",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Gameplay.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Gameplay.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Gameplay",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Gravity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Gravity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Gravity",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Gravity.yml\" sourcestartlinenumber=\"1\">Adds gravity to an entity</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.IRenderable.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.IRenderable.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.IRenderable",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.MaxSpeed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.MaxSpeed.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.MaxSpeed",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.MaxSpeed.yml\" sourcestartlinenumber=\"1\">Maximum speed constraint for entities</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.PendingDestruction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.PendingDestruction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.PendingDestruction",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.PendingDestruction.yml\" sourcestartlinenumber=\"1\">Component to mark entities for destruction at the end of the frame\nThis prevents mid-frame destruction issues with collision detection</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Physics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Physics.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Physics",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Physics.yml\" sourcestartlinenumber=\"1\">Enhanced physics properties</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Player.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Player.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Player",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Player.yml\" sourcestartlinenumber=\"1\">Tag component marking an entity as player-controlled.\nUsed by systems to identify which entities should respond to player input,\nbe affected by player-specific rules, or be treated specially by AI.</p>\n<p sourcefile=\"api/Kobold.Core.Components.Player.yml\" sourcestartlinenumber=\"5\">Examples:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Player.yml\" sourcestartlinenumber=\"6\">\n<li sourcefile=\"api/Kobold.Core.Components.Player.yml\" sourcestartlinenumber=\"6\">InputSystem: Only moves entities with Player tag</li>\n<li sourcefile=\"api/Kobold.Core.Components.Player.yml\" sourcestartlinenumber=\"7\">CameraSystem: Follows entities with Player tag</li>\n<li sourcefile=\"api/Kobold.Core.Components.Player.yml\" sourcestartlinenumber=\"8\">CollisionSystem: Player vs Enemy collision rules</li>\n<li sourcefile=\"api/Kobold.Core.Components.Player.yml\" sourcestartlinenumber=\"9\">UISystem: Updates health bars for Player entities</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Player.yml\" sourcestartlinenumber=\"11\">In multiplayer games, you might have Player1, Player2 tags instead,\nor use a PlayerID component for more complex player management.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.PlayerControlled.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.PlayerControlled.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.PlayerControlled",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.PlayerControlled.yml\" sourcestartlinenumber=\"1\">Component for entities controlled by player input</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.PowerUp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.PowerUp.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.PowerUp",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"1\">Tag component marking an entity as a collectible power-up or item.\nUsed by systems to handle pickup mechanics, temporary effects, and inventory management.</p>\n<p sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"4\">Examples:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"5\">\n<li sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"5\">CollisionSystem: Player touching PowerUp triggers collection</li>\n<li sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"6\">EffectSystem: Applies temporary bonuses when collected</li>\n<li sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"7\">ScoringSystem: Awards points for collecting power-ups</li>\n<li sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"8\">SpawningSystem: Creates PowerUp entities at specific locations/times</li>\n<li sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"9\">RenderSystem: PowerUps might pulse, glow, or rotate for visibility</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"11\">PowerUp entities typically also have:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"12\">\n<li sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"12\">PowerUpType component (what effect it provides)</li>\n<li sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"13\">EffectDuration (how long the bonus lasts)</li>\n<li sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"14\">CollectionValue (points awarded)</li>\n<li sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"15\">Lifetime (despawn if not collected)</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.PowerUp.yml\" sourcestartlinenumber=\"17\">Examples: health packs, weapon upgrades, speed boosts, shields, extra lives</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Projectile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Projectile.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Projectile",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"1\">Tag component marking an entity as a projectile (bullet, missile, laser, etc.).\nUsed by systems to apply projectile-specific behaviors like automatic movement,\ncollision damage, and lifetime management.</p>\n<p sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"5\">Examples:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"6\">\n<li sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"6\">CollisionSystem: Projectiles damage targets and may be destroyed on impact</li>\n<li sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"7\">BoundarySystem: Projectiles are usually destroyed when leaving screen bounds</li>\n<li sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"8\">LifetimeSystem: Projectiles often have limited range/duration</li>\n<li sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"9\">PhysicsSystem: Projectiles may ignore certain physics (like gravity)</li>\n<li sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"10\">RenderSystem: Projectiles might use additive blending or special effects</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"12\">Projectile entities typically also have:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"13\">\n<li sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"13\">Velocity (for movement)</li>\n<li sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"14\">Lifetime (for range limiting)</li>\n<li sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"15\">Damage (for collision effects)</li>\n<li sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"16\">Owner (to prevent self-damage)</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Projectile.yml\" sourcestartlinenumber=\"18\">Different projectile types can be distinguished using additional components\nor by having specific projectile tags (PlayerProjectile, EnemyProjectile).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.RectangleRenderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.RectangleRenderer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.RectangleRenderer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.RenderLayers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.RenderLayers.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.RenderLayers",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.RenderLayers.yml\" sourcestartlinenumber=\"1\">Standard rendering layer values\nLower values render first (behind), higher values render last (on top)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.ScreenBounds.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.ScreenBounds.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.ScreenBounds",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.SpriteRenderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.SpriteRenderer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.SpriteRenderer",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.SpriteRenderer.yml\" sourcestartlinenumber=\"1\">Renders a sprite from a texture or sprite sheet</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.StandardGameState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.StandardGameState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.StandardGameState",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.StandardGameState.yml\" sourcestartlinenumber=\"1\">Standard game states that most games will need.\nGames can use this directly or create their own enum with these values included.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Static.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Static.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Static",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"1\">Tag component marking an entity as non-moving/immovable.\nUsed by physics and collision systems to optimize processing -\nstatic entities don't need velocity updates or complex collision resolution.</p>\n<p sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"5\">Examples:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"6\">\n<li sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"6\">PhysicsSystem: Skips velocity/acceleration updates for Static entities</li>\n<li sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"7\">CollisionSystem: Uses simplified collision math (only other object moves)</li>\n<li sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"8\">BoundarySystem: May skip boundary checking for Static entities</li>\n<li sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"9\">RenderSystem: Can use different rendering optimizations for static sprites</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"11\">Common static entities:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"12\">\n<li sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"12\">Walls, barriers, platforms</li>\n<li sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"13\">Background decorations</li>\n<li sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"14\">Fixed turrets or defensive structures</li>\n<li sourcefile=\"api/Kobold.Core.Components.Static.yml\" sourcestartlinenumber=\"15\">UI elements positioned in world space</li>\n</ul>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.TextRenderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.TextRenderer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.TextRenderer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Thruster.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Thruster.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Thruster",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Thruster.yml\" sourcestartlinenumber=\"1\">Thruster component for entities that can apply thrust</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Transform.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Transform.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Transform",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Transform.yml\" sourcestartlinenumber=\"1\">Core component representing an entity's position, rotation, and scale in 2D world space.\nThis is the fundamental spatial component that most other systems depend on - rendering,\nphysics, collision detection, etc. all use Transform to determine where things are.</p>\n<p sourcefile=\"api/Kobold.Core.Components.Transform.yml\" sourcestartlinenumber=\"5\">Position is in world coordinates (pixels), rotation is in radians, and scale is a multiplier\nwhere Vector2.One (1,1) represents normal size.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.TriangleRenderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.TriangleRenderer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.TriangleRenderer",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.TriangleRenderer.yml\" sourcestartlinenumber=\"1\">Triangle renderer component</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Trigger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Trigger.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Trigger",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"1\">Tag component marking an entity as a non-solid trigger area.\nUsed by systems to detect when other entities enter/exit specific regions\nwithout causing physical collision responses.</p>\n<p sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"5\">Examples:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"6\">\n<li sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"6\">CollisionSystem: Detects overlap but doesn't stop movement</li>\n<li sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"7\">TriggerSystem: Activates events when entities enter trigger zones</li>\n<li sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"8\">GameLogicSystem: Checkpoints, level transitions, cutscene triggers</li>\n<li sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"9\">AudioSystem: Plays ambient sounds when player enters area</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"11\">Trigger entities typically also have:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"12\">\n<li sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"12\">BoxCollider or other collision shape (defines the trigger area)</li>\n<li sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"13\">TriggerAction component (what happens when triggered)</li>\n<li sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"14\">TriggerFilter (which entity types can activate it)</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"16\">Common uses:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"17\">\n<li sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"17\">Level exit portals</li>\n<li sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"18\">Checkpoint save points</li>\n<li sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"19\">Cutscene activation zones</li>\n<li sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"20\">Environmental effect areas (damage zones, speed boosts)</li>\n<li sourcefile=\"api/Kobold.Core.Components.Trigger.yml\" sourcestartlinenumber=\"21\">Audio cue regions</li>\n</ul>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.UI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.UI.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.UI",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"1\">Tag component marking an entity as a user interface element.\nUsed by systems to handle UI-specific rendering, input, and layout behaviors.\nUI entities exist in screen space rather than world space.</p>\n<p sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"5\">Examples:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"6\">\n<li sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"6\">RenderSystem: Renders in screen coordinates with UI camera/layer</li>\n<li sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"7\">InputSystem: Uses screen-space mouse coordinates for interaction</li>\n<li sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"8\">LayoutSystem: Handles UI positioning, anchoring, scaling</li>\n<li sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"9\">UISystem: Manages visibility based on game state</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"11\">UI entities typically also have:</p>\n<ul sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"12\">\n<li sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"12\">UITransform (screen position, anchoring)</li>\n<li sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"13\">UIRenderer (text, images, buttons)</li>\n<li sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"14\">UIInteractable (clickable, hoverable)</li>\n</ul>\n<p sourcefile=\"api/Kobold.Core.Components.UI.yml\" sourcestartlinenumber=\"16\">Examples: buttons, text labels, health bars, menus, HUD elements\nThese should generally be processed separately from world entities.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.Velocity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.Velocity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components.Velocity",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Components.Velocity.yml\" sourcestartlinenumber=\"1\">Component representing an entity's velocity (speed and direction) in 2D space.\nThis is the rate of change of position - how fast and in what direction\nthe entity is moving per second.</p>\n<p sourcefile=\"api/Kobold.Core.Components.Velocity.yml\" sourcestartlinenumber=\"5\">Used by physics systems to update an entity's Transform.Position each frame.\nThe basic movement equation is: newPosition = oldPosition + (velocity * deltaTime)</p>\n<p sourcefile=\"api/Kobold.Core.Components.Velocity.yml\" sourcestartlinenumber=\"8\">Velocity is measured in pixels per second in the same coordinate system as Transform.Position.\nPositive X = moving right, Positive Y = moving down (standard screen coordinates).</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Components.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Components.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Components",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Configuration.GameConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Configuration.GameConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Configuration.GameConfig",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Configuration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Configuration.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Configuration",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Events.BaseEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Events.BaseEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Events.BaseEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Events.EventBus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Events.EventBus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Events.EventBus",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Events.GameRestartEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Events.GameRestartEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Events.GameRestartEvent",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Events.GameRestartEvent.yml\" sourcestartlinenumber=\"1\">Event published when the game is restarted</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Events.GameStateChangedEvent-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Events.GameStateChangedEvent-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Events.GameStateChangedEvent<TGameState>",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Events.GameStateChangedEvent-1.yml\" sourcestartlinenumber=\"1\">Event published when the game state changes</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Events.IEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Events.IEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Events.IEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Events.IEventHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Events.IEventHandler-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Events.IEventHandler<T>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Events.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Events",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Factories.EntityFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Factories.EntityFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Factories.EntityFactory",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Factories.EntityFactory.yml\" sourcestartlinenumber=\"1\">Factory for creating common entites</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Factories.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Factories.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Factories",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.GameEngineBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.GameEngineBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.GameEngineBase",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.MathUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.MathUtils.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.MathUtils",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.AnimationSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.AnimationSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.AnimationSystem",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.AnimationSystem.yml\" sourcestartlinenumber=\"1\">System that updates sprite animations</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.BoundaryBehavior.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.BoundaryBehavior.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.BoundaryBehavior",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.BoundaryCollisionEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.BoundaryCollisionEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.BoundaryCollisionEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.BoundaryConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.BoundaryConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.BoundaryConfig",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.BoundarySystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.BoundarySystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.BoundarySystem",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.BoundarySystem.yml\" sourcestartlinenumber=\"1\">Handles boundary collisions and wrapping</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.BoundaryType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.BoundaryType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.BoundaryType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.CollisionConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.CollisionConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.CollisionConfig",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.CollisionConfig.yml\" sourcestartlinenumber=\"1\">Configuration for collision detection and response</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.CollisionEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.CollisionEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.CollisionEvent",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.CollisionEvent.yml\" sourcestartlinenumber=\"1\">Enhanced collision event with detailed information</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.CollisionLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.CollisionLayer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.CollisionLayer",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.CollisionLayer.yml\" sourcestartlinenumber=\"1\">Collision layers for filtering</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.CollisionLayerComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.CollisionLayerComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.CollisionLayerComponent",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.CollisionLayerComponent.yml\" sourcestartlinenumber=\"1\">Component to assign collision layers to entities</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.CollisionMatrix.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.CollisionMatrix.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.CollisionMatrix",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.CollisionMatrix.yml\" sourcestartlinenumber=\"1\">Matrix defining which layers can collide with each other</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.CollisionSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.CollisionSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.CollisionSystem",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.CollisionSystem.yml\" sourcestartlinenumber=\"1\">Enhanced collision system with filtering, layers, and circle collision support</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.DestructionStats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.DestructionStats.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.DestructionStats",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.DestructionStats.yml\" sourcestartlinenumber=\"1\">Debug information about the destruction system</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.DestructionSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.DestructionSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.DestructionSystem",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.DestructionSystem.yml\" sourcestartlinenumber=\"1\">Unified system that handles both lifetime expiration and pending destruction\nProcesses all entity destruction at the end of the frame for safety</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.EntityDestroyedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.EntityDestroyedEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.EntityDestroyedEvent",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.EntityDestroyedEvent.yml\" sourcestartlinenumber=\"1\">Enhanced destruction event with position information</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.GameStateSystem-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.GameStateSystem-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.GameStateSystem<TGameState>",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.GameStateSystem-1.yml\" sourcestartlinenumber=\"1\">Generic game state management system. Configure states with callbacks and an input that should trigger a transition out of this state\nif applicable. Then calling ChangeState will handle performing the callbacks and publishing a GameStateChangedEvent.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.InputSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.InputSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.InputSystem",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.InputSystem.yml\" sourcestartlinenumber=\"1\">Generic input system that handles PlayerControlled entities\nCan be used directly or extended for custom input handling</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.InputTransition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.InputTransition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.InputTransition",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.PhysicsConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.PhysicsConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.PhysicsConfig",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.PhysicsConfig.yml\" sourcestartlinenumber=\"1\">Configuration for physics simulation</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.PhysicsSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.PhysicsSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.PhysicsSystem",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.PhysicsSystem.yml\" sourcestartlinenumber=\"1\">Handles basic physics simulation including position, velocity, and acceleration</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.RenderSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.RenderSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.RenderSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.StateConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.StateConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.StateConfig",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.SystemInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.SystemInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.SystemInfo",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.SystemInfo.yml\" sourcestartlinenumber=\"1\">Information about a system for management</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.SystemManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.SystemManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.SystemManager",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.SystemManager.yml\" sourcestartlinenumber=\"1\">Enhanced system manager with ordering and render system support</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.SystemManagerInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.SystemManagerInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.SystemManagerInfo",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.SystemManagerInfo.yml\" sourcestartlinenumber=\"1\">Debug information about the system manager</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.SystemUpdateOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.SystemUpdateOrder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems.SystemUpdateOrder",
+      "Summary": "<p sourcefile=\"api/Kobold.Core.Systems.SystemUpdateOrder.yml\" sourcestartlinenumber=\"1\">System execution order constants</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.Systems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.Systems.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core.Systems",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Core.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Core",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Procedural.CellularAutomataConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Procedural.CellularAutomataConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Procedural.CellularAutomataConfig",
+      "Summary": "<p sourcefile=\"api/Kobold.Extensions.Procedural.CellularAutomataConfig.yml\" sourcestartlinenumber=\"1\">Configuration options for cellular automata generation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Procedural.CellularAutomataGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Procedural.CellularAutomataGenerator.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Procedural.CellularAutomataGenerator",
+      "Summary": "<p sourcefile=\"api/Kobold.Extensions.Procedural.CellularAutomataGenerator.yml\" sourcestartlinenumber=\"1\">Generates tilemaps using cellular automata algorithms.\nUseful for creating organic cave-like structures and procedural dungeons.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Procedural.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Procedural.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Procedural",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Tilemaps.TileCollisionLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Tilemaps.TileCollisionLayer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Tilemaps.TileCollisionLayer",
+      "Summary": "<p sourcefile=\"api/Kobold.Extensions.Tilemaps.TileCollisionLayer.yml\" sourcestartlinenumber=\"1\">Collision layers for tiles.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Tilemaps.TileDamageEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Tilemaps.TileDamageEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Tilemaps.TileDamageEvent",
+      "Summary": "<p sourcefile=\"api/Kobold.Extensions.Tilemaps.TileDamageEvent.yml\" sourcestartlinenumber=\"1\">Event published when an entity takes damage from a tile.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Tilemaps.TileMap.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Tilemaps.TileMap.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Tilemaps.TileMap",
+      "Summary": "<p sourcefile=\"api/Kobold.Extensions.Tilemaps.TileMap.yml\" sourcestartlinenumber=\"1\">Represents a grid-based tilemap with support for multiple layers.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Tilemaps.TileProperties.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Tilemaps.TileProperties.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Tilemaps.TileProperties",
+      "Summary": "<p sourcefile=\"api/Kobold.Extensions.Tilemaps.TileProperties.yml\" sourcestartlinenumber=\"1\">Properties associated with a tile.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Tilemaps.TileSet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Tilemaps.TileSet.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Tilemaps.TileSet",
+      "Summary": "<p sourcefile=\"api/Kobold.Extensions.Tilemaps.TileSet.yml\" sourcestartlinenumber=\"1\">Represents a collection of tiles with their properties.\nMaps tile IDs to their visual and gameplay properties.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Tilemaps.TileTriggerEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Tilemaps.TileTriggerEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Tilemaps.TileTriggerEvent",
+      "Summary": "<p sourcefile=\"api/Kobold.Extensions.Tilemaps.TileTriggerEvent.yml\" sourcestartlinenumber=\"1\">Event published when an entity triggers a tile.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Tilemaps.TilemapCollisionConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Tilemaps.TilemapCollisionConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Tilemaps.TilemapCollisionConfig",
+      "Summary": "<p sourcefile=\"api/Kobold.Extensions.Tilemaps.TilemapCollisionConfig.yml\" sourcestartlinenumber=\"1\">Configuration for tilemap collision system.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Tilemaps.TilemapCollisionSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Tilemaps.TilemapCollisionSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Tilemaps.TilemapCollisionSystem",
+      "Summary": "<p sourcefile=\"api/Kobold.Extensions.Tilemaps.TilemapCollisionSystem.yml\" sourcestartlinenumber=\"1\">System that handles collision detection between entities and tilemap tiles.\nIntegrates with Kobold.Core's physics and collision systems.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Tilemaps.TilemapComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Tilemaps.TilemapComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Tilemaps.TilemapComponent",
+      "Summary": "<p sourcefile=\"api/Kobold.Extensions.Tilemaps.TilemapComponent.yml\" sourcestartlinenumber=\"1\">ECS component that attaches a tilemap to an entity.\nUsed with TilemapSystem for rendering and collision.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Tilemaps.TilemapSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Tilemaps.TilemapSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Tilemaps.TilemapSystem",
+      "Summary": "<p sourcefile=\"api/Kobold.Extensions.Tilemaps.TilemapSystem.yml\" sourcestartlinenumber=\"1\">System that manages tilemap updates and animated tiles.\nRendering is handled by platform-specific renderers that query TilemapComponent.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Extensions.Tilemaps.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Extensions.Tilemaps.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Extensions.Tilemaps",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Monogame.MonoGameFileContentLoader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Monogame.MonoGameFileContentLoader.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Monogame.MonoGameFileContentLoader",
+      "Summary": "<p sourcefile=\"api/Kobold.Monogame.MonoGameFileContentLoader.yml\" sourcestartlinenumber=\"1\">MonoGame implementation of content loading that loads raw files directly from the file system.\nLoads PNG textures at runtime using Texture2D.FromStream, bypassing the MonoGame Content Pipeline.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Monogame.MonoGameHost.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Monogame.MonoGameHost.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Monogame.MonoGameHost",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Monogame.MonoGameInputManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Monogame.MonoGameInputManager.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Monogame.MonoGameInputManager",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Monogame.MonoGameRenderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Monogame.MonoGameRenderer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Monogame.MonoGameRenderer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Monogame.MonoGameTexture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Monogame.MonoGameTexture.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Monogame.MonoGameTexture",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Monogame.PixelFont.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Monogame.PixelFont.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Monogame.PixelFont",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Kobold.Monogame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Kobold.Monogame.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Kobold.Monogame",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteSheetEditor.SpriteSheetEditorGame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteSheetEditor.SpriteSheetEditorGame.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SpriteSheetEditor.SpriteSheetEditorGame",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SpriteSheetEditor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SpriteSheetEditor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SpriteSheetEditor",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

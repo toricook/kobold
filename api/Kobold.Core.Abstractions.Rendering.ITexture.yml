@@ -1,0 +1,159 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Abstractions.Rendering.ITexture
+  commentId: T:Kobold.Core.Abstractions.Rendering.ITexture
+  id: ITexture
+  parent: Kobold.Core.Abstractions.Rendering
+  children:
+  - Kobold.Core.Abstractions.Rendering.ITexture.Height
+  - Kobold.Core.Abstractions.Rendering.ITexture.Width
+  langs:
+  - csharp
+  - vb
+  name: ITexture
+  nameWithType: ITexture
+  fullName: Kobold.Core.Abstractions.Rendering.ITexture
+  type: Interface
+  source:
+    remote:
+      path: Kobold/Abstractions/Rendering/ITexture.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ITexture
+    path: Kobold/Abstractions/Rendering/ITexture.cs
+    startLine: 11
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Rendering
+  summary: An abstraction for an image that can be rendered by the graphics backend
+  example: []
+  syntax:
+    content: public interface ITexture
+    content.vb: Public Interface ITexture
+- uid: Kobold.Core.Abstractions.Rendering.ITexture.Width
+  commentId: P:Kobold.Core.Abstractions.Rendering.ITexture.Width
+  id: Width
+  parent: Kobold.Core.Abstractions.Rendering.ITexture
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: ITexture.Width
+  fullName: Kobold.Core.Abstractions.Rendering.ITexture.Width
+  type: Property
+  source:
+    remote:
+      path: Kobold/Abstractions/Rendering/ITexture.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Width
+    path: Kobold/Abstractions/Rendering/ITexture.cs
+    startLine: 13
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Rendering
+  syntax:
+    content: int Width { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property Width As Integer
+  overload: Kobold.Core.Abstractions.Rendering.ITexture.Width*
+- uid: Kobold.Core.Abstractions.Rendering.ITexture.Height
+  commentId: P:Kobold.Core.Abstractions.Rendering.ITexture.Height
+  id: Height
+  parent: Kobold.Core.Abstractions.Rendering.ITexture
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: ITexture.Height
+  fullName: Kobold.Core.Abstractions.Rendering.ITexture.Height
+  type: Property
+  source:
+    remote:
+      path: Kobold/Abstractions/Rendering/ITexture.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Height
+    path: Kobold/Abstractions/Rendering/ITexture.cs
+    startLine: 14
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Rendering
+  syntax:
+    content: int Height { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property Height As Integer
+  overload: Kobold.Core.Abstractions.Rendering.ITexture.Height*
+references:
+- uid: Kobold.Core.Abstractions.Rendering
+  commentId: N:Kobold.Core.Abstractions.Rendering
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Rendering
+  nameWithType: Kobold.Core.Abstractions.Rendering
+  fullName: Kobold.Core.Abstractions.Rendering
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+- uid: Kobold.Core.Abstractions.Rendering.ITexture.Width*
+  commentId: Overload:Kobold.Core.Abstractions.Rendering.ITexture.Width
+  href: Kobold.Core.Abstractions.Rendering.ITexture.html#Kobold_Core_Abstractions_Rendering_ITexture_Width
+  name: Width
+  nameWithType: ITexture.Width
+  fullName: Kobold.Core.Abstractions.Rendering.ITexture.Width
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Abstractions.Rendering.ITexture.Height*
+  commentId: Overload:Kobold.Core.Abstractions.Rendering.ITexture.Height
+  href: Kobold.Core.Abstractions.Rendering.ITexture.html#Kobold_Core_Abstractions_Rendering_ITexture_Height
+  name: Height
+  nameWithType: ITexture.Height
+  fullName: Kobold.Core.Abstractions.Rendering.ITexture.Height

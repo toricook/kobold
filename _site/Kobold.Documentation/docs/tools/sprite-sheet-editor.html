@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sprite Sheet Editor | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sprite Sheet Editor | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/tools/sprite-sheet-editor.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sprite-sheet-editor">Sprite Sheet Editor</h1>
+
+<p>Visual tool for creating sprite sheet configuration JSON files used by Kobold's asset system.</p>
+<h2 id="overview">Overview</h2>
+<p>The Sprite Sheet Editor helps you:</p>
+<ol>
+<li>Load a sprite sheet image (PNG)</li>
+<li>Define the grid layout (width, height, spacing, margin)</li>
+<li>Visually verify the grid aligns with your sprites</li>
+<li>Export a JSON configuration file</li>
+</ol>
+<h2 id="usage">Usage</h2>
+<h3 id="1-run-the-editor">1. Run the Editor</h3>
+<pre><code class="lang-bash">cd Kobold.SpriteSheetEditor
+dotnet run
+</code></pre>
+<h3 id="2-load-image">2. Load Image</h3>
+<p>Place your sprite sheet PNG in the project directory or provide the full path.</p>
+<p>Edit <code>SpriteSheetEditorGame.cs</code> to change the default image:</p>
+<pre><code class="lang-csharp">var texturePath = &quot;your_spritesheet.png&quot;;
+</code></pre>
+<h3 id="3-adjust-grid">3. Adjust Grid</h3>
+<p><strong>Keyboard Controls:</strong></p>
+<ul>
+<li><strong>Arrow Keys</strong> - Adjust grid cell size</li>
+<li><strong>G</strong> - Toggle grid visibility</li>
+<li><strong>W/A/S/D</strong> - Pan camera</li>
+<li><strong>Q/E</strong> - Zoom out/in</li>
+<li><strong>0</strong> - Reset zoom</li>
+<li><strong>Ctrl+S</strong> - Save configuration (future feature)</li>
+</ul>
+<h3 id="4-configure-parameters">4. Configure Parameters</h3>
+<p>Edit the code to set:</p>
+<ul>
+<li><code>spriteWidth</code>, <code>spriteHeight</code> - Size of each sprite in pixels</li>
+<li><code>columns</code>, <code>rows</code> - Grid dimensions</li>
+<li><code>spacing</code> - Gap between sprites</li>
+<li><code>margin</code> - Border around the sprite sheet</li>
+</ul>
+<h3 id="5-export-configuration">5. Export Configuration</h3>
+<p>The editor displays the configuration in the window title. Create a JSON file manually:</p>
+<pre><code class="lang-json">{
+  &quot;texture&quot;: &quot;player.png&quot;,
+  &quot;spriteWidth&quot;: 32,
+  &quot;spriteHeight&quot;: 32,
+  &quot;columns&quot;: 8,
+  &quot;rows&quot;: 4,
+  &quot;spacing&quot;: 0,
+  &quot;margin&quot;: 0
+}
+</code></pre>
+<p>Save as <code>player.json</code> in your Content directory.</p>
+<h2 id="tips">Tips</h2>
+<ul>
+<li>Use a checkerboard background to verify transparency</li>
+<li>Zoom in to verify pixel-perfect alignment</li>
+<li>Common sprite sizes: 16x16, 32x32, 64x64</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong><a href="../core/asset-manager.html">Asset Manager</a></strong> - Using sprite sheet configs</li>
+<li><strong><a href="../core/components.html#animation">Animation</a></strong> - Sprite animation</li>
+</ul>
+<hr>
+<p><strong>Back:</strong> <a href="index.html">Tools Overview</a> ←</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/tools/sprite-sheet-editor.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

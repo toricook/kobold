@@ -1,0 +1,737 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Systems.CollisionEvent
+  commentId: T:Kobold.Core.Systems.CollisionEvent
+  id: CollisionEvent
+  parent: Kobold.Core.Systems
+  children:
+  - Kobold.Core.Systems.CollisionEvent.#ctor(Arch.Core.Entity,Arch.Core.Entity)
+  - Kobold.Core.Systems.CollisionEvent.#ctor(Arch.Core.Entity,Arch.Core.Entity,System.Numerics.Vector2,System.Numerics.Vector2,Kobold.Core.Systems.CollisionLayer,Kobold.Core.Systems.CollisionLayer)
+  - Kobold.Core.Systems.CollisionEvent.CollisionNormal
+  - Kobold.Core.Systems.CollisionEvent.CollisionPoint
+  - Kobold.Core.Systems.CollisionEvent.Entity1
+  - Kobold.Core.Systems.CollisionEvent.Entity2
+  - Kobold.Core.Systems.CollisionEvent.Layer1
+  - Kobold.Core.Systems.CollisionEvent.Layer2
+  langs:
+  - csharp
+  - vb
+  name: CollisionEvent
+  nameWithType: CollisionEvent
+  fullName: Kobold.Core.Systems.CollisionEvent
+  type: Class
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CollisionEvent
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 339
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  summary: Enhanced collision event with detailed information
+  example: []
+  syntax:
+    content: 'public class CollisionEvent : BaseEvent, IEvent'
+    content.vb: Public Class CollisionEvent Inherits BaseEvent Implements IEvent
+  inheritance:
+  - System.Object
+  - Kobold.Core.Events.BaseEvent
+  implements:
+  - Kobold.Core.Events.IEvent
+  inheritedMembers:
+  - Kobold.Core.Events.BaseEvent.Timestamp
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Core.Systems.CollisionEvent.Entity1
+  commentId: P:Kobold.Core.Systems.CollisionEvent.Entity1
+  id: Entity1
+  parent: Kobold.Core.Systems.CollisionEvent
+  langs:
+  - csharp
+  - vb
+  name: Entity1
+  nameWithType: CollisionEvent.Entity1
+  fullName: Kobold.Core.Systems.CollisionEvent.Entity1
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Entity1
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 341
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public Entity Entity1 { get; }
+    parameters: []
+    return:
+      type: Arch.Core.Entity
+    content.vb: Public ReadOnly Property Entity1 As Entity
+  overload: Kobold.Core.Systems.CollisionEvent.Entity1*
+- uid: Kobold.Core.Systems.CollisionEvent.Entity2
+  commentId: P:Kobold.Core.Systems.CollisionEvent.Entity2
+  id: Entity2
+  parent: Kobold.Core.Systems.CollisionEvent
+  langs:
+  - csharp
+  - vb
+  name: Entity2
+  nameWithType: CollisionEvent.Entity2
+  fullName: Kobold.Core.Systems.CollisionEvent.Entity2
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Entity2
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 342
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public Entity Entity2 { get; }
+    parameters: []
+    return:
+      type: Arch.Core.Entity
+    content.vb: Public ReadOnly Property Entity2 As Entity
+  overload: Kobold.Core.Systems.CollisionEvent.Entity2*
+- uid: Kobold.Core.Systems.CollisionEvent.CollisionPoint
+  commentId: P:Kobold.Core.Systems.CollisionEvent.CollisionPoint
+  id: CollisionPoint
+  parent: Kobold.Core.Systems.CollisionEvent
+  langs:
+  - csharp
+  - vb
+  name: CollisionPoint
+  nameWithType: CollisionEvent.CollisionPoint
+  fullName: Kobold.Core.Systems.CollisionEvent.CollisionPoint
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CollisionPoint
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 343
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public Vector2 CollisionPoint { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property CollisionPoint As Vector2
+  overload: Kobold.Core.Systems.CollisionEvent.CollisionPoint*
+- uid: Kobold.Core.Systems.CollisionEvent.CollisionNormal
+  commentId: P:Kobold.Core.Systems.CollisionEvent.CollisionNormal
+  id: CollisionNormal
+  parent: Kobold.Core.Systems.CollisionEvent
+  langs:
+  - csharp
+  - vb
+  name: CollisionNormal
+  nameWithType: CollisionEvent.CollisionNormal
+  fullName: Kobold.Core.Systems.CollisionEvent.CollisionNormal
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CollisionNormal
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 344
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public Vector2 CollisionNormal { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property CollisionNormal As Vector2
+  overload: Kobold.Core.Systems.CollisionEvent.CollisionNormal*
+- uid: Kobold.Core.Systems.CollisionEvent.Layer1
+  commentId: P:Kobold.Core.Systems.CollisionEvent.Layer1
+  id: Layer1
+  parent: Kobold.Core.Systems.CollisionEvent
+  langs:
+  - csharp
+  - vb
+  name: Layer1
+  nameWithType: CollisionEvent.Layer1
+  fullName: Kobold.Core.Systems.CollisionEvent.Layer1
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Layer1
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 345
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public CollisionLayer Layer1 { get; }
+    parameters: []
+    return:
+      type: Kobold.Core.Systems.CollisionLayer
+    content.vb: Public ReadOnly Property Layer1 As CollisionLayer
+  overload: Kobold.Core.Systems.CollisionEvent.Layer1*
+- uid: Kobold.Core.Systems.CollisionEvent.Layer2
+  commentId: P:Kobold.Core.Systems.CollisionEvent.Layer2
+  id: Layer2
+  parent: Kobold.Core.Systems.CollisionEvent
+  langs:
+  - csharp
+  - vb
+  name: Layer2
+  nameWithType: CollisionEvent.Layer2
+  fullName: Kobold.Core.Systems.CollisionEvent.Layer2
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Layer2
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 346
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public CollisionLayer Layer2 { get; }
+    parameters: []
+    return:
+      type: Kobold.Core.Systems.CollisionLayer
+    content.vb: Public ReadOnly Property Layer2 As CollisionLayer
+  overload: Kobold.Core.Systems.CollisionEvent.Layer2*
+- uid: Kobold.Core.Systems.CollisionEvent.#ctor(Arch.Core.Entity,Arch.Core.Entity,System.Numerics.Vector2,System.Numerics.Vector2,Kobold.Core.Systems.CollisionLayer,Kobold.Core.Systems.CollisionLayer)
+  commentId: M:Kobold.Core.Systems.CollisionEvent.#ctor(Arch.Core.Entity,Arch.Core.Entity,System.Numerics.Vector2,System.Numerics.Vector2,Kobold.Core.Systems.CollisionLayer,Kobold.Core.Systems.CollisionLayer)
+  id: '#ctor(Arch.Core.Entity,Arch.Core.Entity,System.Numerics.Vector2,System.Numerics.Vector2,Kobold.Core.Systems.CollisionLayer,Kobold.Core.Systems.CollisionLayer)'
+  parent: Kobold.Core.Systems.CollisionEvent
+  langs:
+  - csharp
+  - vb
+  name: CollisionEvent(Entity, Entity, Vector2, Vector2, CollisionLayer, CollisionLayer)
+  nameWithType: CollisionEvent.CollisionEvent(Entity, Entity, Vector2, Vector2, CollisionLayer, CollisionLayer)
+  fullName: Kobold.Core.Systems.CollisionEvent.CollisionEvent(Arch.Core.Entity, Arch.Core.Entity, System.Numerics.Vector2, System.Numerics.Vector2, Kobold.Core.Systems.CollisionLayer, Kobold.Core.Systems.CollisionLayer)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 348
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public CollisionEvent(Entity entity1, Entity entity2, Vector2 collisionPoint, Vector2 collisionNormal, CollisionLayer layer1, CollisionLayer layer2)
+    parameters:
+    - id: entity1
+      type: Arch.Core.Entity
+    - id: entity2
+      type: Arch.Core.Entity
+    - id: collisionPoint
+      type: System.Numerics.Vector2
+    - id: collisionNormal
+      type: System.Numerics.Vector2
+    - id: layer1
+      type: Kobold.Core.Systems.CollisionLayer
+    - id: layer2
+      type: Kobold.Core.Systems.CollisionLayer
+    content.vb: Public Sub New(entity1 As Entity, entity2 As Entity, collisionPoint As Vector2, collisionNormal As Vector2, layer1 As CollisionLayer, layer2 As CollisionLayer)
+  overload: Kobold.Core.Systems.CollisionEvent.#ctor*
+  nameWithType.vb: CollisionEvent.New(Entity, Entity, Vector2, Vector2, CollisionLayer, CollisionLayer)
+  fullName.vb: Kobold.Core.Systems.CollisionEvent.New(Arch.Core.Entity, Arch.Core.Entity, System.Numerics.Vector2, System.Numerics.Vector2, Kobold.Core.Systems.CollisionLayer, Kobold.Core.Systems.CollisionLayer)
+  name.vb: New(Entity, Entity, Vector2, Vector2, CollisionLayer, CollisionLayer)
+- uid: Kobold.Core.Systems.CollisionEvent.#ctor(Arch.Core.Entity,Arch.Core.Entity)
+  commentId: M:Kobold.Core.Systems.CollisionEvent.#ctor(Arch.Core.Entity,Arch.Core.Entity)
+  id: '#ctor(Arch.Core.Entity,Arch.Core.Entity)'
+  parent: Kobold.Core.Systems.CollisionEvent
+  langs:
+  - csharp
+  - vb
+  name: CollisionEvent(Entity, Entity)
+  nameWithType: CollisionEvent.CollisionEvent(Entity, Entity)
+  fullName: Kobold.Core.Systems.CollisionEvent.CollisionEvent(Arch.Core.Entity, Arch.Core.Entity)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 360
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public CollisionEvent(Entity entity1, Entity entity2)
+    parameters:
+    - id: entity1
+      type: Arch.Core.Entity
+    - id: entity2
+      type: Arch.Core.Entity
+    content.vb: Public Sub New(entity1 As Entity, entity2 As Entity)
+  overload: Kobold.Core.Systems.CollisionEvent.#ctor*
+  nameWithType.vb: CollisionEvent.New(Entity, Entity)
+  fullName.vb: Kobold.Core.Systems.CollisionEvent.New(Arch.Core.Entity, Arch.Core.Entity)
+  name.vb: New(Entity, Entity)
+references:
+- uid: Kobold.Core.Systems
+  commentId: N:Kobold.Core.Systems
+  href: Kobold.html
+  name: Kobold.Core.Systems
+  nameWithType: Kobold.Core.Systems
+  fullName: Kobold.Core.Systems
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Kobold.Core.Events.BaseEvent
+  commentId: T:Kobold.Core.Events.BaseEvent
+  parent: Kobold.Core.Events
+  href: Kobold.Core.Events.BaseEvent.html
+  name: BaseEvent
+  nameWithType: BaseEvent
+  fullName: Kobold.Core.Events.BaseEvent
+- uid: Kobold.Core.Events.IEvent
+  commentId: T:Kobold.Core.Events.IEvent
+  parent: Kobold.Core.Events
+  href: Kobold.Core.Events.IEvent.html
+  name: IEvent
+  nameWithType: IEvent
+  fullName: Kobold.Core.Events.IEvent
+- uid: Kobold.Core.Events.BaseEvent.Timestamp
+  commentId: P:Kobold.Core.Events.BaseEvent.Timestamp
+  parent: Kobold.Core.Events.BaseEvent
+  href: Kobold.Core.Events.BaseEvent.html#Kobold_Core_Events_BaseEvent_Timestamp
+  name: Timestamp
+  nameWithType: BaseEvent.Timestamp
+  fullName: Kobold.Core.Events.BaseEvent.Timestamp
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Events
+  commentId: N:Kobold.Core.Events
+  href: Kobold.html
+  name: Kobold.Core.Events
+  nameWithType: Kobold.Core.Events
+  fullName: Kobold.Core.Events
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+- uid: Kobold.Core.Systems.CollisionEvent.Entity1*
+  commentId: Overload:Kobold.Core.Systems.CollisionEvent.Entity1
+  href: Kobold.Core.Systems.CollisionEvent.html#Kobold_Core_Systems_CollisionEvent_Entity1
+  name: Entity1
+  nameWithType: CollisionEvent.Entity1
+  fullName: Kobold.Core.Systems.CollisionEvent.Entity1
+- uid: Arch.Core.Entity
+  commentId: T:Arch.Core.Entity
+  parent: Arch.Core
+  isExternal: true
+  name: Entity
+  nameWithType: Entity
+  fullName: Arch.Core.Entity
+- uid: Arch.Core
+  commentId: N:Arch.Core
+  isExternal: true
+  name: Arch.Core
+  nameWithType: Arch.Core
+  fullName: Arch.Core
+  spec.csharp:
+  - uid: Arch
+    name: Arch
+    isExternal: true
+  - name: .
+  - uid: Arch.Core
+    name: Core
+    isExternal: true
+  spec.vb:
+  - uid: Arch
+    name: Arch
+    isExternal: true
+  - name: .
+  - uid: Arch.Core
+    name: Core
+    isExternal: true
+- uid: Kobold.Core.Systems.CollisionEvent.Entity2*
+  commentId: Overload:Kobold.Core.Systems.CollisionEvent.Entity2
+  href: Kobold.Core.Systems.CollisionEvent.html#Kobold_Core_Systems_CollisionEvent_Entity2
+  name: Entity2
+  nameWithType: CollisionEvent.Entity2
+  fullName: Kobold.Core.Systems.CollisionEvent.Entity2
+- uid: Kobold.Core.Systems.CollisionEvent.CollisionPoint*
+  commentId: Overload:Kobold.Core.Systems.CollisionEvent.CollisionPoint
+  href: Kobold.Core.Systems.CollisionEvent.html#Kobold_Core_Systems_CollisionEvent_CollisionPoint
+  name: CollisionPoint
+  nameWithType: CollisionEvent.CollisionPoint
+  fullName: Kobold.Core.Systems.CollisionEvent.CollisionPoint
+- uid: System.Numerics.Vector2
+  commentId: T:System.Numerics.Vector2
+  parent: System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  name: Vector2
+  nameWithType: Vector2
+  fullName: System.Numerics.Vector2
+- uid: System.Numerics
+  commentId: N:System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Numerics
+  nameWithType: System.Numerics
+  fullName: System.Numerics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+- uid: Kobold.Core.Systems.CollisionEvent.CollisionNormal*
+  commentId: Overload:Kobold.Core.Systems.CollisionEvent.CollisionNormal
+  href: Kobold.Core.Systems.CollisionEvent.html#Kobold_Core_Systems_CollisionEvent_CollisionNormal
+  name: CollisionNormal
+  nameWithType: CollisionEvent.CollisionNormal
+  fullName: Kobold.Core.Systems.CollisionEvent.CollisionNormal
+- uid: Kobold.Core.Systems.CollisionEvent.Layer1*
+  commentId: Overload:Kobold.Core.Systems.CollisionEvent.Layer1
+  href: Kobold.Core.Systems.CollisionEvent.html#Kobold_Core_Systems_CollisionEvent_Layer1
+  name: Layer1
+  nameWithType: CollisionEvent.Layer1
+  fullName: Kobold.Core.Systems.CollisionEvent.Layer1
+- uid: Kobold.Core.Systems.CollisionLayer
+  commentId: T:Kobold.Core.Systems.CollisionLayer
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.CollisionLayer.html
+  name: CollisionLayer
+  nameWithType: CollisionLayer
+  fullName: Kobold.Core.Systems.CollisionLayer
+- uid: Kobold.Core.Systems.CollisionEvent.Layer2*
+  commentId: Overload:Kobold.Core.Systems.CollisionEvent.Layer2
+  href: Kobold.Core.Systems.CollisionEvent.html#Kobold_Core_Systems_CollisionEvent_Layer2
+  name: Layer2
+  nameWithType: CollisionEvent.Layer2
+  fullName: Kobold.Core.Systems.CollisionEvent.Layer2
+- uid: Kobold.Core.Systems.CollisionEvent.#ctor*
+  commentId: Overload:Kobold.Core.Systems.CollisionEvent.#ctor
+  href: Kobold.Core.Systems.CollisionEvent.html#Kobold_Core_Systems_CollisionEvent__ctor_Arch_Core_Entity_Arch_Core_Entity_System_Numerics_Vector2_System_Numerics_Vector2_Kobold_Core_Systems_CollisionLayer_Kobold_Core_Systems_CollisionLayer_
+  name: CollisionEvent
+  nameWithType: CollisionEvent.CollisionEvent
+  fullName: Kobold.Core.Systems.CollisionEvent.CollisionEvent
+  nameWithType.vb: CollisionEvent.New
+  fullName.vb: Kobold.Core.Systems.CollisionEvent.New
+  name.vb: New

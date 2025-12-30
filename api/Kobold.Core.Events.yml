@@ -1,0 +1,129 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Events
+  commentId: N:Kobold.Core.Events
+  id: Kobold.Core.Events
+  children:
+  - Kobold.Core.Events.BaseEvent
+  - Kobold.Core.Events.EventBus
+  - Kobold.Core.Events.GameRestartEvent
+  - Kobold.Core.Events.GameStateChangedEvent`1
+  - Kobold.Core.Events.IEvent
+  - Kobold.Core.Events.IEventHandler`1
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Core.Events
+  nameWithType: Kobold.Core.Events
+  fullName: Kobold.Core.Events
+  type: Namespace
+  assemblies:
+  - Kobold.Core
+references:
+- uid: Kobold.Core.Events.BaseEvent
+  commentId: T:Kobold.Core.Events.BaseEvent
+  parent: Kobold.Core.Events
+  href: Kobold.Core.Events.BaseEvent.html
+  name: BaseEvent
+  nameWithType: BaseEvent
+  fullName: Kobold.Core.Events.BaseEvent
+- uid: Kobold.Core.Events.EventBus
+  commentId: T:Kobold.Core.Events.EventBus
+  parent: Kobold.Core.Events
+  href: Kobold.Core.Events.EventBus.html
+  name: EventBus
+  nameWithType: EventBus
+  fullName: Kobold.Core.Events.EventBus
+- uid: Kobold.Core.Events.GameRestartEvent
+  commentId: T:Kobold.Core.Events.GameRestartEvent
+  href: Kobold.Core.Events.GameRestartEvent.html
+  name: GameRestartEvent
+  nameWithType: GameRestartEvent
+  fullName: Kobold.Core.Events.GameRestartEvent
+- uid: Kobold.Core.Events.GameStateChangedEvent`1
+  commentId: T:Kobold.Core.Events.GameStateChangedEvent`1
+  href: Kobold.Core.Events.GameStateChangedEvent-1.html
+  name: GameStateChangedEvent<TGameState>
+  nameWithType: GameStateChangedEvent<TGameState>
+  fullName: Kobold.Core.Events.GameStateChangedEvent<TGameState>
+  nameWithType.vb: GameStateChangedEvent(Of TGameState)
+  fullName.vb: Kobold.Core.Events.GameStateChangedEvent(Of TGameState)
+  name.vb: GameStateChangedEvent(Of TGameState)
+  spec.csharp:
+  - uid: Kobold.Core.Events.GameStateChangedEvent`1
+    name: GameStateChangedEvent
+    href: Kobold.Core.Events.GameStateChangedEvent-1.html
+  - name: <
+  - name: TGameState
+  - name: '>'
+  spec.vb:
+  - uid: Kobold.Core.Events.GameStateChangedEvent`1
+    name: GameStateChangedEvent
+    href: Kobold.Core.Events.GameStateChangedEvent-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TGameState
+  - name: )
+- uid: Kobold.Core.Events.IEvent
+  commentId: T:Kobold.Core.Events.IEvent
+  parent: Kobold.Core.Events
+  href: Kobold.Core.Events.IEvent.html
+  name: IEvent
+  nameWithType: IEvent
+  fullName: Kobold.Core.Events.IEvent
+- uid: Kobold.Core.Events.IEventHandler`1
+  commentId: T:Kobold.Core.Events.IEventHandler`1
+  href: Kobold.Core.Events.IEventHandler-1.html
+  name: IEventHandler<T>
+  nameWithType: IEventHandler<T>
+  fullName: Kobold.Core.Events.IEventHandler<T>
+  nameWithType.vb: IEventHandler(Of T)
+  fullName.vb: Kobold.Core.Events.IEventHandler(Of T)
+  name.vb: IEventHandler(Of T)
+  spec.csharp:
+  - uid: Kobold.Core.Events.IEventHandler`1
+    name: IEventHandler
+    href: Kobold.Core.Events.IEventHandler-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: Kobold.Core.Events.IEventHandler`1
+    name: IEventHandler
+    href: Kobold.Core.Events.IEventHandler-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Kobold.Core.Events
+  commentId: N:Kobold.Core.Events
+  href: Kobold.html
+  name: Kobold.Core.Events
+  nameWithType: Kobold.Core.Events
+  fullName: Kobold.Core.Events
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html

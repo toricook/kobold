@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class CellularAutomataConfig | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CellularAutomataConfig | Kobold Game Framework ">
+      
+      <meta name="description" content="Configuration options for cellular automata generation.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/new/docs/apiSpec/new?filename=Kobold_Extensions_Procedural_CellularAutomataConfig.md&amp;value=---%0Auid%3A%20Kobold.Extensions.Procedural.CellularAutomataConfig%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig">
+
+
+
+  <h1 id="Kobold_Extensions_Procedural_CellularAutomataConfig" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig" class="text-break">
+Class CellularAutomataConfig  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Kobold.html">Kobold</a>.<a class="xref" href="Kobold.Extensions.html">Extensions</a>.<a class="xref" href="Kobold.Extensions.Procedural.html">Procedural</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Kobold.Extensions.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Configuration options for cellular automata generation.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CellularAutomataConfig</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CellularAutomataConfig</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_BirthThreshold_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.BirthThreshold*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_BirthThreshold" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.BirthThreshold">
+  BirthThreshold
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Minimum number of neighboring walls for a cell to become/remain a wall.
+Used during smoothing iterations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int BirthThreshold { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_ConnectCaves_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.ConnectCaves*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_ConnectCaves" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.ConnectCaves">
+  ConnectCaves
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether to connect all cave regions with corridors.
+When true, uses flood fill + MST to ensure all caves are reachable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ConnectCaves { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_DeathThreshold_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.DeathThreshold*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_DeathThreshold" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.DeathThreshold">
+  DeathThreshold
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Maximum number of neighboring walls for a cell to remain alive.
+If neighbors exceed this, the cell dies (becomes floor).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DeathThreshold { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_EdgeIsWall_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.EdgeIsWall*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_EdgeIsWall" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.EdgeIsWall">
+  EdgeIsWall
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether to treat edges of the map as walls.
+When true, out-of-bounds cells count as walls for neighbor calculations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool EdgeIsWall { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_FloorTileId_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.FloorTileId*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_FloorTileId" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.FloorTileId">
+  FloorTileId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tile ID to use for floor/empty tiles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FloorTileId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_Height_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.Height*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_Height" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.Height">
+  Height
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Height of the map in tiles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Height { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_InitialWallProbability_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.InitialWallProbability*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_InitialWallProbability" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.InitialWallProbability">
+  InitialWallProbability
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initial chance (0.0 to 1.0) that a cell is a wall.
+Higher values create more walls/obstacles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float InitialWallProbability { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_Iterations_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.Iterations*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_Iterations" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.Iterations">
+  Iterations
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Number of smoothing iterations to perform.
+Higher values create smoother, more organic shapes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Iterations { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_MinCaveSize_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.MinCaveSize*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_MinCaveSize" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.MinCaveSize">
+  MinCaveSize
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Minimum size (in tiles) for a cave region to be kept.
+Smaller regions are filled in as walls.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MinCaveSize { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_Seed_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.Seed*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_Seed" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.Seed">
+  Seed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Random seed for deterministic generation.
+If null, a random seed is used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int? Seed { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_TileHeight_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.TileHeight*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_TileHeight" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.TileHeight">
+  TileHeight
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Height of each tile in pixels (for TileMap creation).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TileHeight { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_TileWidth_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.TileWidth*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_TileWidth" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.TileWidth">
+  TileWidth
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Width of each tile in pixels (for TileMap creation).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TileWidth { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_WallTileId_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.WallTileId*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_WallTileId" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.WallTileId">
+  WallTileId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Tile ID to use for wall tiles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int WallTileId { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_Width_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.Width*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_Width" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.Width">
+  Width
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Width of the map in tiles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Width { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_Cave_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.Cave*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_Cave" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.Cave">
+  Cave()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a default configuration for cave-like generation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CellularAutomataConfig Cave()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Extensions.Procedural.CellularAutomataConfig.html">CellularAutomataConfig</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_Maze_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.Maze*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_Maze" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.Maze">
+  Maze()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L123"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a configuration for dense maze-like structures.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CellularAutomataConfig Maze()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Extensions.Procedural.CellularAutomataConfig.html">CellularAutomataConfig</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Procedural_CellularAutomataConfig_OpenArea_" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.OpenArea*"></a>
+
+  <h3 id="Kobold_Extensions_Procedural_CellularAutomataConfig_OpenArea" data-uid="Kobold.Extensions.Procedural.CellularAutomataConfig.OpenArea">
+  OpenArea()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a configuration for more open areas with scattered obstacles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CellularAutomataConfig OpenArea()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Extensions.Procedural.CellularAutomataConfig.html">CellularAutomataConfig</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Procedural/CellularAutomataConfig.cs/#L6" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

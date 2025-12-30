@@ -1,0 +1,1562 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Monogame.MonoGameRenderer
+  commentId: T:Kobold.Monogame.MonoGameRenderer
+  id: MonoGameRenderer
+  parent: Kobold.Monogame
+  children:
+  - Kobold.Monogame.MonoGameRenderer.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Graphics.SpriteFont)
+  - Kobold.Monogame.MonoGameRenderer.Begin
+  - Kobold.Monogame.MonoGameRenderer.DrawLine(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  - Kobold.Monogame.MonoGameRenderer.DrawRectangle(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color)
+  - Kobold.Monogame.MonoGameRenderer.DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  - Kobold.Monogame.MonoGameRenderer.DrawText(System.String,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  - Kobold.Monogame.MonoGameRenderer.DrawTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Numerics.Vector2)
+  - Kobold.Monogame.MonoGameRenderer.DrawTriangle(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  - Kobold.Monogame.MonoGameRenderer.DrawTriangleFilled(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  - Kobold.Monogame.MonoGameRenderer.End
+  - Kobold.Monogame.MonoGameRenderer.ToXnaColor(System.Drawing.Color)
+  langs:
+  - csharp
+  - vb
+  name: MonoGameRenderer
+  nameWithType: MonoGameRenderer
+  fullName: Kobold.Monogame.MonoGameRenderer
+  type: Class
+  source:
+    remote:
+      path: Kobold.Monogame/MonogameRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: MonoGameRenderer
+    path: Kobold.Monogame/MonogameRenderer.cs
+    startLine: 8
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  syntax:
+    content: 'public class MonoGameRenderer : IRenderer'
+    content.vb: Public Class MonoGameRenderer Implements IRenderer
+  inheritance:
+  - System.Object
+  implements:
+  - Kobold.Core.Abstractions.Rendering.IRenderer
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Monogame.MonoGameRenderer.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Graphics.SpriteFont)
+  commentId: M:Kobold.Monogame.MonoGameRenderer.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Graphics.SpriteFont)
+  id: '#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,Microsoft.Xna.Framework.Graphics.SpriteBatch,Microsoft.Xna.Framework.Graphics.SpriteFont)'
+  parent: Kobold.Monogame.MonoGameRenderer
+  langs:
+  - csharp
+  - vb
+  name: MonoGameRenderer(GraphicsDevice, SpriteBatch, SpriteFont)
+  nameWithType: MonoGameRenderer.MonoGameRenderer(GraphicsDevice, SpriteBatch, SpriteFont)
+  fullName: Kobold.Monogame.MonoGameRenderer.MonoGameRenderer(Microsoft.Xna.Framework.Graphics.GraphicsDevice, Microsoft.Xna.Framework.Graphics.SpriteBatch, Microsoft.Xna.Framework.Graphics.SpriteFont)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold.Monogame/MonogameRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold.Monogame/MonogameRenderer.cs
+    startLine: 15
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  syntax:
+    content: public MonoGameRenderer(GraphicsDevice graphicsDevice, SpriteBatch spriteBatch, SpriteFont defaultFont)
+    parameters:
+    - id: graphicsDevice
+      type: Microsoft.Xna.Framework.Graphics.GraphicsDevice
+    - id: spriteBatch
+      type: Microsoft.Xna.Framework.Graphics.SpriteBatch
+    - id: defaultFont
+      type: Microsoft.Xna.Framework.Graphics.SpriteFont
+    content.vb: Public Sub New(graphicsDevice As GraphicsDevice, spriteBatch As SpriteBatch, defaultFont As SpriteFont)
+  overload: Kobold.Monogame.MonoGameRenderer.#ctor*
+  nameWithType.vb: MonoGameRenderer.New(GraphicsDevice, SpriteBatch, SpriteFont)
+  fullName.vb: Kobold.Monogame.MonoGameRenderer.New(Microsoft.Xna.Framework.Graphics.GraphicsDevice, Microsoft.Xna.Framework.Graphics.SpriteBatch, Microsoft.Xna.Framework.Graphics.SpriteFont)
+  name.vb: New(GraphicsDevice, SpriteBatch, SpriteFont)
+- uid: Kobold.Monogame.MonoGameRenderer.Begin
+  commentId: M:Kobold.Monogame.MonoGameRenderer.Begin
+  id: Begin
+  parent: Kobold.Monogame.MonoGameRenderer
+  langs:
+  - csharp
+  - vb
+  name: Begin()
+  nameWithType: MonoGameRenderer.Begin()
+  fullName: Kobold.Monogame.MonoGameRenderer.Begin()
+  type: Method
+  source:
+    remote:
+      path: Kobold.Monogame/MonogameRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Begin
+    path: Kobold.Monogame/MonogameRenderer.cs
+    startLine: 26
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  example: []
+  syntax:
+    content: public void Begin()
+    content.vb: Public Sub Begin()
+  overload: Kobold.Monogame.MonoGameRenderer.Begin*
+  implements:
+  - Kobold.Core.Abstractions.Rendering.IRenderer.Begin
+- uid: Kobold.Monogame.MonoGameRenderer.End
+  commentId: M:Kobold.Monogame.MonoGameRenderer.End
+  id: End
+  parent: Kobold.Monogame.MonoGameRenderer
+  langs:
+  - csharp
+  - vb
+  name: End()
+  nameWithType: MonoGameRenderer.End()
+  fullName: Kobold.Monogame.MonoGameRenderer.End()
+  type: Method
+  source:
+    remote:
+      path: Kobold.Monogame/MonogameRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: End
+    path: Kobold.Monogame/MonogameRenderer.cs
+    startLine: 31
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  example: []
+  syntax:
+    content: public void End()
+    content.vb: Public Sub [End]()
+  overload: Kobold.Monogame.MonoGameRenderer.End*
+  implements:
+  - Kobold.Core.Abstractions.Rendering.IRenderer.End
+- uid: Kobold.Monogame.MonoGameRenderer.DrawRectangle(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color)
+  commentId: M:Kobold.Monogame.MonoGameRenderer.DrawRectangle(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color)
+  id: DrawRectangle(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color)
+  parent: Kobold.Monogame.MonoGameRenderer
+  langs:
+  - csharp
+  - vb
+  name: DrawRectangle(Vector2, Vector2, Color)
+  nameWithType: MonoGameRenderer.DrawRectangle(Vector2, Vector2, Color)
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawRectangle(System.Numerics.Vector2, System.Numerics.Vector2, System.Drawing.Color)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Monogame/MonogameRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DrawRectangle
+    path: Kobold.Monogame/MonogameRenderer.cs
+    startLine: 36
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  example: []
+  syntax:
+    content: public void DrawRectangle(Vector2 position, Vector2 size, Color color)
+    parameters:
+    - id: position
+      type: System.Numerics.Vector2
+    - id: size
+      type: System.Numerics.Vector2
+    - id: color
+      type: System.Drawing.Color
+    content.vb: Public Sub DrawRectangle(position As Vector2, size As Vector2, color As Color)
+  overload: Kobold.Monogame.MonoGameRenderer.DrawRectangle*
+  implements:
+  - Kobold.Core.Abstractions.Rendering.IRenderer.DrawRectangle(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color)
+- uid: Kobold.Monogame.MonoGameRenderer.DrawTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Numerics.Vector2)
+  commentId: M:Kobold.Monogame.MonoGameRenderer.DrawTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Numerics.Vector2)
+  id: DrawTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Numerics.Vector2)
+  parent: Kobold.Monogame.MonoGameRenderer
+  langs:
+  - csharp
+  - vb
+  name: DrawTexture(ITexture, Vector2, Vector2)
+  nameWithType: MonoGameRenderer.DrawTexture(ITexture, Vector2, Vector2)
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawTexture(Kobold.Core.Abstractions.Rendering.ITexture, System.Numerics.Vector2, System.Numerics.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Monogame/MonogameRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DrawTexture
+    path: Kobold.Monogame/MonogameRenderer.cs
+    startLine: 42
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  example: []
+  syntax:
+    content: public void DrawTexture(ITexture texture, Vector2 position, Vector2 scale = default)
+    parameters:
+    - id: texture
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+    - id: position
+      type: System.Numerics.Vector2
+    - id: scale
+      type: System.Numerics.Vector2
+    content.vb: Public Sub DrawTexture(texture As ITexture, position As Vector2, scale As Vector2 = Nothing)
+  overload: Kobold.Monogame.MonoGameRenderer.DrawTexture*
+  implements:
+  - Kobold.Core.Abstractions.Rendering.IRenderer.DrawTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Numerics.Vector2)
+- uid: Kobold.Monogame.MonoGameRenderer.DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  commentId: M:Kobold.Monogame.MonoGameRenderer.DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  id: DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  parent: Kobold.Monogame.MonoGameRenderer
+  langs:
+  - csharp
+  - vb
+  name: DrawSprite(ITexture, Vector2, Rectangle, Vector2, float, Color)
+  nameWithType: MonoGameRenderer.DrawSprite(ITexture, Vector2, Rectangle, Vector2, float, Color)
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture, System.Numerics.Vector2, System.Drawing.Rectangle, System.Numerics.Vector2, float, System.Drawing.Color)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Monogame/MonogameRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DrawSprite
+    path: Kobold.Monogame/MonogameRenderer.cs
+    startLine: 51
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  example: []
+  syntax:
+    content: public void DrawSprite(ITexture texture, Vector2 position, Rectangle sourceRect, Vector2 scale, float rotation, Color tint)
+    parameters:
+    - id: texture
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+    - id: position
+      type: System.Numerics.Vector2
+    - id: sourceRect
+      type: System.Drawing.Rectangle
+    - id: scale
+      type: System.Numerics.Vector2
+    - id: rotation
+      type: System.Single
+    - id: tint
+      type: System.Drawing.Color
+    content.vb: Public Sub DrawSprite(texture As ITexture, position As Vector2, sourceRect As Rectangle, scale As Vector2, rotation As Single, tint As Color)
+  overload: Kobold.Monogame.MonoGameRenderer.DrawSprite*
+  implements:
+  - Kobold.Core.Abstractions.Rendering.IRenderer.DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  nameWithType.vb: MonoGameRenderer.DrawSprite(ITexture, Vector2, Rectangle, Vector2, Single, Color)
+  fullName.vb: Kobold.Monogame.MonoGameRenderer.DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture, System.Numerics.Vector2, System.Drawing.Rectangle, System.Numerics.Vector2, Single, System.Drawing.Color)
+  name.vb: DrawSprite(ITexture, Vector2, Rectangle, Vector2, Single, Color)
+- uid: Kobold.Monogame.MonoGameRenderer.DrawText(System.String,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  commentId: M:Kobold.Monogame.MonoGameRenderer.DrawText(System.String,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  id: DrawText(System.String,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  parent: Kobold.Monogame.MonoGameRenderer
+  langs:
+  - csharp
+  - vb
+  name: DrawText(string, Vector2, Color, float)
+  nameWithType: MonoGameRenderer.DrawText(string, Vector2, Color, float)
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawText(string, System.Numerics.Vector2, System.Drawing.Color, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Monogame/MonogameRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DrawText
+    path: Kobold.Monogame/MonogameRenderer.cs
+    startLine: 73
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  example: []
+  syntax:
+    content: public void DrawText(string text, Vector2 position, Color color, float fontSize = 16)
+    parameters:
+    - id: text
+      type: System.String
+    - id: position
+      type: System.Numerics.Vector2
+    - id: color
+      type: System.Drawing.Color
+    - id: fontSize
+      type: System.Single
+    content.vb: Public Sub DrawText(text As String, position As Vector2, color As Color, fontSize As Single = 16)
+  overload: Kobold.Monogame.MonoGameRenderer.DrawText*
+  implements:
+  - Kobold.Core.Abstractions.Rendering.IRenderer.DrawText(System.String,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  nameWithType.vb: MonoGameRenderer.DrawText(String, Vector2, Color, Single)
+  fullName.vb: Kobold.Monogame.MonoGameRenderer.DrawText(String, System.Numerics.Vector2, System.Drawing.Color, Single)
+  name.vb: DrawText(String, Vector2, Color, Single)
+- uid: Kobold.Monogame.MonoGameRenderer.DrawTriangle(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  commentId: M:Kobold.Monogame.MonoGameRenderer.DrawTriangle(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  id: DrawTriangle(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  parent: Kobold.Monogame.MonoGameRenderer
+  langs:
+  - csharp
+  - vb
+  name: DrawTriangle(Vector2[], Vector2, float, Color)
+  nameWithType: MonoGameRenderer.DrawTriangle(Vector2[], Vector2, float, Color)
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawTriangle(System.Numerics.Vector2[], System.Numerics.Vector2, float, System.Drawing.Color)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Monogame/MonogameRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DrawTriangle
+    path: Kobold.Monogame/MonogameRenderer.cs
+    startLine: 90
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  example: []
+  syntax:
+    content: public void DrawTriangle(Vector2[] points, Vector2 position, float rotation, Color color)
+    parameters:
+    - id: points
+      type: System.Numerics.Vector2[]
+    - id: position
+      type: System.Numerics.Vector2
+    - id: rotation
+      type: System.Single
+    - id: color
+      type: System.Drawing.Color
+    content.vb: Public Sub DrawTriangle(points As Vector2(), position As Vector2, rotation As Single, color As Color)
+  overload: Kobold.Monogame.MonoGameRenderer.DrawTriangle*
+  implements:
+  - Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangle(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  nameWithType.vb: MonoGameRenderer.DrawTriangle(Vector2(), Vector2, Single, Color)
+  fullName.vb: Kobold.Monogame.MonoGameRenderer.DrawTriangle(System.Numerics.Vector2(), System.Numerics.Vector2, Single, System.Drawing.Color)
+  name.vb: DrawTriangle(Vector2(), Vector2, Single, Color)
+- uid: Kobold.Monogame.MonoGameRenderer.DrawTriangleFilled(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  commentId: M:Kobold.Monogame.MonoGameRenderer.DrawTriangleFilled(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  id: DrawTriangleFilled(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  parent: Kobold.Monogame.MonoGameRenderer
+  langs:
+  - csharp
+  - vb
+  name: DrawTriangleFilled(Vector2[], Vector2, float, Color)
+  nameWithType: MonoGameRenderer.DrawTriangleFilled(Vector2[], Vector2, float, Color)
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawTriangleFilled(System.Numerics.Vector2[], System.Numerics.Vector2, float, System.Drawing.Color)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Monogame/MonogameRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DrawTriangleFilled
+    path: Kobold.Monogame/MonogameRenderer.cs
+    startLine: 101
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  example: []
+  syntax:
+    content: public void DrawTriangleFilled(Vector2[] points, Vector2 position, float rotation, Color color)
+    parameters:
+    - id: points
+      type: System.Numerics.Vector2[]
+    - id: position
+      type: System.Numerics.Vector2
+    - id: rotation
+      type: System.Single
+    - id: color
+      type: System.Drawing.Color
+    content.vb: Public Sub DrawTriangleFilled(points As Vector2(), position As Vector2, rotation As Single, color As Color)
+  overload: Kobold.Monogame.MonoGameRenderer.DrawTriangleFilled*
+  implements:
+  - Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangleFilled(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  nameWithType.vb: MonoGameRenderer.DrawTriangleFilled(Vector2(), Vector2, Single, Color)
+  fullName.vb: Kobold.Monogame.MonoGameRenderer.DrawTriangleFilled(System.Numerics.Vector2(), System.Numerics.Vector2, Single, System.Drawing.Color)
+  name.vb: DrawTriangleFilled(Vector2(), Vector2, Single, Color)
+- uid: Kobold.Monogame.MonoGameRenderer.DrawLine(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  commentId: M:Kobold.Monogame.MonoGameRenderer.DrawLine(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  id: DrawLine(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  parent: Kobold.Monogame.MonoGameRenderer
+  langs:
+  - csharp
+  - vb
+  name: DrawLine(Vector2, Vector2, Color, float)
+  nameWithType: MonoGameRenderer.DrawLine(Vector2, Vector2, Color, float)
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawLine(System.Numerics.Vector2, System.Numerics.Vector2, System.Drawing.Color, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Monogame/MonogameRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DrawLine
+    path: Kobold.Monogame/MonogameRenderer.cs
+    startLine: 107
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  example: []
+  syntax:
+    content: public void DrawLine(Vector2 start, Vector2 end, Color color, float thickness = 1)
+    parameters:
+    - id: start
+      type: System.Numerics.Vector2
+    - id: end
+      type: System.Numerics.Vector2
+    - id: color
+      type: System.Drawing.Color
+    - id: thickness
+      type: System.Single
+    content.vb: Public Sub DrawLine(start As Vector2, [end] As Vector2, color As Color, thickness As Single = 1)
+  overload: Kobold.Monogame.MonoGameRenderer.DrawLine*
+  implements:
+  - Kobold.Core.Abstractions.Rendering.IRenderer.DrawLine(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  nameWithType.vb: MonoGameRenderer.DrawLine(Vector2, Vector2, Color, Single)
+  fullName.vb: Kobold.Monogame.MonoGameRenderer.DrawLine(System.Numerics.Vector2, System.Numerics.Vector2, System.Drawing.Color, Single)
+  name.vb: DrawLine(Vector2, Vector2, Color, Single)
+- uid: Kobold.Monogame.MonoGameRenderer.ToXnaColor(System.Drawing.Color)
+  commentId: M:Kobold.Monogame.MonoGameRenderer.ToXnaColor(System.Drawing.Color)
+  id: ToXnaColor(System.Drawing.Color)
+  parent: Kobold.Monogame.MonoGameRenderer
+  langs:
+  - csharp
+  - vb
+  name: ToXnaColor(Color)
+  nameWithType: MonoGameRenderer.ToXnaColor(Color)
+  fullName: Kobold.Monogame.MonoGameRenderer.ToXnaColor(System.Drawing.Color)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Monogame/MonogameRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ToXnaColor
+    path: Kobold.Monogame/MonogameRenderer.cs
+    startLine: 125
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  syntax:
+    content: public static Color ToXnaColor(Color color)
+    parameters:
+    - id: color
+      type: System.Drawing.Color
+    return:
+      type: Microsoft.Xna.Framework.Color
+    content.vb: Public Shared Function ToXnaColor(color As Color) As Color
+  overload: Kobold.Monogame.MonoGameRenderer.ToXnaColor*
+references:
+- uid: Kobold.Monogame
+  commentId: N:Kobold.Monogame
+  href: Kobold.html
+  name: Kobold.Monogame
+  nameWithType: Kobold.Monogame
+  fullName: Kobold.Monogame
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Monogame
+    name: Monogame
+    href: Kobold.Monogame.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Monogame
+    name: Monogame
+    href: Kobold.Monogame.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Kobold.Core.Abstractions.Rendering.IRenderer
+  commentId: T:Kobold.Core.Abstractions.Rendering.IRenderer
+  parent: Kobold.Core.Abstractions.Rendering
+  href: Kobold.Core.Abstractions.Rendering.IRenderer.html
+  name: IRenderer
+  nameWithType: IRenderer
+  fullName: Kobold.Core.Abstractions.Rendering.IRenderer
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Abstractions.Rendering
+  commentId: N:Kobold.Core.Abstractions.Rendering
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Rendering
+  nameWithType: Kobold.Core.Abstractions.Rendering
+  fullName: Kobold.Core.Abstractions.Rendering
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+- uid: Kobold.Monogame.MonoGameRenderer.#ctor*
+  commentId: Overload:Kobold.Monogame.MonoGameRenderer.#ctor
+  href: Kobold.Monogame.MonoGameRenderer.html#Kobold_Monogame_MonoGameRenderer__ctor_Microsoft_Xna_Framework_Graphics_GraphicsDevice_Microsoft_Xna_Framework_Graphics_SpriteBatch_Microsoft_Xna_Framework_Graphics_SpriteFont_
+  name: MonoGameRenderer
+  nameWithType: MonoGameRenderer.MonoGameRenderer
+  fullName: Kobold.Monogame.MonoGameRenderer.MonoGameRenderer
+  nameWithType.vb: MonoGameRenderer.New
+  fullName.vb: Kobold.Monogame.MonoGameRenderer.New
+  name.vb: New
+- uid: Microsoft.Xna.Framework.Graphics.GraphicsDevice
+  commentId: T:Microsoft.Xna.Framework.Graphics.GraphicsDevice
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: GraphicsDevice
+  nameWithType: GraphicsDevice
+  fullName: Microsoft.Xna.Framework.Graphics.GraphicsDevice
+- uid: Microsoft.Xna.Framework.Graphics.SpriteBatch
+  commentId: T:Microsoft.Xna.Framework.Graphics.SpriteBatch
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: SpriteBatch
+  nameWithType: SpriteBatch
+  fullName: Microsoft.Xna.Framework.Graphics.SpriteBatch
+- uid: Microsoft.Xna.Framework.Graphics.SpriteFont
+  commentId: T:Microsoft.Xna.Framework.Graphics.SpriteFont
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: SpriteFont
+  nameWithType: SpriteFont
+  fullName: Microsoft.Xna.Framework.Graphics.SpriteFont
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: Kobold.Monogame.MonoGameRenderer.Begin*
+  commentId: Overload:Kobold.Monogame.MonoGameRenderer.Begin
+  href: Kobold.Monogame.MonoGameRenderer.html#Kobold_Monogame_MonoGameRenderer_Begin
+  name: Begin
+  nameWithType: MonoGameRenderer.Begin
+  fullName: Kobold.Monogame.MonoGameRenderer.Begin
+- uid: Kobold.Core.Abstractions.Rendering.IRenderer.Begin
+  commentId: M:Kobold.Core.Abstractions.Rendering.IRenderer.Begin
+  parent: Kobold.Core.Abstractions.Rendering.IRenderer
+  href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_Begin
+  name: Begin()
+  nameWithType: IRenderer.Begin()
+  fullName: Kobold.Core.Abstractions.Rendering.IRenderer.Begin()
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.Begin
+    name: Begin
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_Begin
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.Begin
+    name: Begin
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_Begin
+  - name: (
+  - name: )
+- uid: Kobold.Monogame.MonoGameRenderer.End*
+  commentId: Overload:Kobold.Monogame.MonoGameRenderer.End
+  href: Kobold.Monogame.MonoGameRenderer.html#Kobold_Monogame_MonoGameRenderer_End
+  name: End
+  nameWithType: MonoGameRenderer.End
+  fullName: Kobold.Monogame.MonoGameRenderer.End
+- uid: Kobold.Core.Abstractions.Rendering.IRenderer.End
+  commentId: M:Kobold.Core.Abstractions.Rendering.IRenderer.End
+  parent: Kobold.Core.Abstractions.Rendering.IRenderer
+  href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_End
+  name: End()
+  nameWithType: IRenderer.End()
+  fullName: Kobold.Core.Abstractions.Rendering.IRenderer.End()
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.End
+    name: End
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_End
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.End
+    name: End
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_End
+  - name: (
+  - name: )
+- uid: Kobold.Monogame.MonoGameRenderer.DrawRectangle*
+  commentId: Overload:Kobold.Monogame.MonoGameRenderer.DrawRectangle
+  href: Kobold.Monogame.MonoGameRenderer.html#Kobold_Monogame_MonoGameRenderer_DrawRectangle_System_Numerics_Vector2_System_Numerics_Vector2_System_Drawing_Color_
+  name: DrawRectangle
+  nameWithType: MonoGameRenderer.DrawRectangle
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawRectangle
+- uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawRectangle(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color)
+  commentId: M:Kobold.Core.Abstractions.Rendering.IRenderer.DrawRectangle(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color)
+  parent: Kobold.Core.Abstractions.Rendering.IRenderer
+  isExternal: true
+  href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawRectangle_System_Numerics_Vector2_System_Numerics_Vector2_System_Drawing_Color_
+  name: DrawRectangle(Vector2, Vector2, Color)
+  nameWithType: IRenderer.DrawRectangle(Vector2, Vector2, Color)
+  fullName: Kobold.Core.Abstractions.Rendering.IRenderer.DrawRectangle(System.Numerics.Vector2, System.Numerics.Vector2, System.Drawing.Color)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawRectangle(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color)
+    name: DrawRectangle
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawRectangle_System_Numerics_Vector2_System_Numerics_Vector2_System_Drawing_Color_
+  - name: (
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawRectangle(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color)
+    name: DrawRectangle
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawRectangle_System_Numerics_Vector2_System_Numerics_Vector2_System_Drawing_Color_
+  - name: (
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: )
+- uid: System.Numerics.Vector2
+  commentId: T:System.Numerics.Vector2
+  parent: System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  name: Vector2
+  nameWithType: Vector2
+  fullName: System.Numerics.Vector2
+- uid: System.Drawing.Color
+  commentId: T:System.Drawing.Color
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  name: Color
+  nameWithType: Color
+  fullName: System.Drawing.Color
+- uid: System.Numerics
+  commentId: N:System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Numerics
+  nameWithType: System.Numerics
+  fullName: System.Numerics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: Kobold.Monogame.MonoGameRenderer.DrawTexture*
+  commentId: Overload:Kobold.Monogame.MonoGameRenderer.DrawTexture
+  href: Kobold.Monogame.MonoGameRenderer.html#Kobold_Monogame_MonoGameRenderer_DrawTexture_Kobold_Core_Abstractions_Rendering_ITexture_System_Numerics_Vector2_System_Numerics_Vector2_
+  name: DrawTexture
+  nameWithType: MonoGameRenderer.DrawTexture
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawTexture
+- uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Abstractions.Rendering.IRenderer.DrawTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Numerics.Vector2)
+  parent: Kobold.Core.Abstractions.Rendering.IRenderer
+  isExternal: true
+  href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawTexture_Kobold_Core_Abstractions_Rendering_ITexture_System_Numerics_Vector2_System_Numerics_Vector2_
+  name: DrawTexture(ITexture, Vector2, Vector2)
+  nameWithType: IRenderer.DrawTexture(ITexture, Vector2, Vector2)
+  fullName: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTexture(Kobold.Core.Abstractions.Rendering.ITexture, System.Numerics.Vector2, System.Numerics.Vector2)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Numerics.Vector2)
+    name: DrawTexture
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawTexture_Kobold_Core_Abstractions_Rendering_ITexture_System_Numerics_Vector2_System_Numerics_Vector2_
+  - name: (
+  - uid: Kobold.Core.Abstractions.Rendering.ITexture
+    name: ITexture
+    href: Kobold.Core.Abstractions.Rendering.ITexture.html
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Numerics.Vector2)
+    name: DrawTexture
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawTexture_Kobold_Core_Abstractions_Rendering_ITexture_System_Numerics_Vector2_System_Numerics_Vector2_
+  - name: (
+  - uid: Kobold.Core.Abstractions.Rendering.ITexture
+    name: ITexture
+    href: Kobold.Core.Abstractions.Rendering.ITexture.html
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: )
+- uid: Kobold.Core.Abstractions.Rendering.ITexture
+  commentId: T:Kobold.Core.Abstractions.Rendering.ITexture
+  parent: Kobold.Core.Abstractions.Rendering
+  href: Kobold.Core.Abstractions.Rendering.ITexture.html
+  name: ITexture
+  nameWithType: ITexture
+  fullName: Kobold.Core.Abstractions.Rendering.ITexture
+- uid: Kobold.Monogame.MonoGameRenderer.DrawSprite*
+  commentId: Overload:Kobold.Monogame.MonoGameRenderer.DrawSprite
+  href: Kobold.Monogame.MonoGameRenderer.html#Kobold_Monogame_MonoGameRenderer_DrawSprite_Kobold_Core_Abstractions_Rendering_ITexture_System_Numerics_Vector2_System_Drawing_Rectangle_System_Numerics_Vector2_System_Single_System_Drawing_Color_
+  name: DrawSprite
+  nameWithType: MonoGameRenderer.DrawSprite
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawSprite
+- uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  commentId: M:Kobold.Core.Abstractions.Rendering.IRenderer.DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  parent: Kobold.Core.Abstractions.Rendering.IRenderer
+  isExternal: true
+  href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawSprite_Kobold_Core_Abstractions_Rendering_ITexture_System_Numerics_Vector2_System_Drawing_Rectangle_System_Numerics_Vector2_System_Single_System_Drawing_Color_
+  name: DrawSprite(ITexture, Vector2, Rectangle, Vector2, float, Color)
+  nameWithType: IRenderer.DrawSprite(ITexture, Vector2, Rectangle, Vector2, float, Color)
+  fullName: Kobold.Core.Abstractions.Rendering.IRenderer.DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture, System.Numerics.Vector2, System.Drawing.Rectangle, System.Numerics.Vector2, float, System.Drawing.Color)
+  nameWithType.vb: IRenderer.DrawSprite(ITexture, Vector2, Rectangle, Vector2, Single, Color)
+  fullName.vb: Kobold.Core.Abstractions.Rendering.IRenderer.DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture, System.Numerics.Vector2, System.Drawing.Rectangle, System.Numerics.Vector2, Single, System.Drawing.Color)
+  name.vb: DrawSprite(ITexture, Vector2, Rectangle, Vector2, Single, Color)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Drawing.Color)
+    name: DrawSprite
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawSprite_Kobold_Core_Abstractions_Rendering_ITexture_System_Numerics_Vector2_System_Drawing_Rectangle_System_Numerics_Vector2_System_Single_System_Drawing_Color_
+  - name: (
+  - uid: Kobold.Core.Abstractions.Rendering.ITexture
+    name: ITexture
+    href: Kobold.Core.Abstractions.Rendering.ITexture.html
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Rectangle
+    name: Rectangle
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawSprite(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Drawing.Color)
+    name: DrawSprite
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawSprite_Kobold_Core_Abstractions_Rendering_ITexture_System_Numerics_Vector2_System_Drawing_Rectangle_System_Numerics_Vector2_System_Single_System_Drawing_Color_
+  - name: (
+  - uid: Kobold.Core.Abstractions.Rendering.ITexture
+    name: ITexture
+    href: Kobold.Core.Abstractions.Rendering.ITexture.html
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Rectangle
+    name: Rectangle
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: )
+- uid: System.Drawing.Rectangle
+  commentId: T:System.Drawing.Rectangle
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
+  name: Rectangle
+  nameWithType: Rectangle
+  fullName: System.Drawing.Rectangle
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Monogame.MonoGameRenderer.DrawText*
+  commentId: Overload:Kobold.Monogame.MonoGameRenderer.DrawText
+  href: Kobold.Monogame.MonoGameRenderer.html#Kobold_Monogame_MonoGameRenderer_DrawText_System_String_System_Numerics_Vector2_System_Drawing_Color_System_Single_
+  name: DrawText
+  nameWithType: MonoGameRenderer.DrawText
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawText
+- uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawText(System.String,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  commentId: M:Kobold.Core.Abstractions.Rendering.IRenderer.DrawText(System.String,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  parent: Kobold.Core.Abstractions.Rendering.IRenderer
+  isExternal: true
+  href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawText_System_String_System_Numerics_Vector2_System_Drawing_Color_System_Single_
+  name: DrawText(string, Vector2, Color, float)
+  nameWithType: IRenderer.DrawText(string, Vector2, Color, float)
+  fullName: Kobold.Core.Abstractions.Rendering.IRenderer.DrawText(string, System.Numerics.Vector2, System.Drawing.Color, float)
+  nameWithType.vb: IRenderer.DrawText(String, Vector2, Color, Single)
+  fullName.vb: Kobold.Core.Abstractions.Rendering.IRenderer.DrawText(String, System.Numerics.Vector2, System.Drawing.Color, Single)
+  name.vb: DrawText(String, Vector2, Color, Single)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawText(System.String,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+    name: DrawText
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawText_System_String_System_Numerics_Vector2_System_Drawing_Color_System_Single_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawText(System.String,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+    name: DrawText
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawText_System_String_System_Numerics_Vector2_System_Drawing_Color_System_Single_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Kobold.Monogame.MonoGameRenderer.DrawTriangle*
+  commentId: Overload:Kobold.Monogame.MonoGameRenderer.DrawTriangle
+  href: Kobold.Monogame.MonoGameRenderer.html#Kobold_Monogame_MonoGameRenderer_DrawTriangle_System_Numerics_Vector2___System_Numerics_Vector2_System_Single_System_Drawing_Color_
+  name: DrawTriangle
+  nameWithType: MonoGameRenderer.DrawTriangle
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawTriangle
+- uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangle(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  commentId: M:Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangle(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  parent: Kobold.Core.Abstractions.Rendering.IRenderer
+  isExternal: true
+  href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawTriangle_System_Numerics_Vector2___System_Numerics_Vector2_System_Single_System_Drawing_Color_
+  name: DrawTriangle(Vector2[], Vector2, float, Color)
+  nameWithType: IRenderer.DrawTriangle(Vector2[], Vector2, float, Color)
+  fullName: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangle(System.Numerics.Vector2[], System.Numerics.Vector2, float, System.Drawing.Color)
+  nameWithType.vb: IRenderer.DrawTriangle(Vector2(), Vector2, Single, Color)
+  fullName.vb: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangle(System.Numerics.Vector2(), System.Numerics.Vector2, Single, System.Drawing.Color)
+  name.vb: DrawTriangle(Vector2(), Vector2, Single, Color)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangle(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+    name: DrawTriangle
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawTriangle_System_Numerics_Vector2___System_Numerics_Vector2_System_Single_System_Drawing_Color_
+  - name: (
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangle(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+    name: DrawTriangle
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawTriangle_System_Numerics_Vector2___System_Numerics_Vector2_System_Single_System_Drawing_Color_
+  - name: (
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: )
+- uid: System.Numerics.Vector2[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  name: Vector2[]
+  nameWithType: Vector2[]
+  fullName: System.Numerics.Vector2[]
+  nameWithType.vb: Vector2()
+  fullName.vb: System.Numerics.Vector2()
+  name.vb: Vector2()
+  spec.csharp:
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: (
+  - name: )
+- uid: Kobold.Monogame.MonoGameRenderer.DrawTriangleFilled*
+  commentId: Overload:Kobold.Monogame.MonoGameRenderer.DrawTriangleFilled
+  href: Kobold.Monogame.MonoGameRenderer.html#Kobold_Monogame_MonoGameRenderer_DrawTriangleFilled_System_Numerics_Vector2___System_Numerics_Vector2_System_Single_System_Drawing_Color_
+  name: DrawTriangleFilled
+  nameWithType: MonoGameRenderer.DrawTriangleFilled
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawTriangleFilled
+- uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangleFilled(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  commentId: M:Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangleFilled(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+  parent: Kobold.Core.Abstractions.Rendering.IRenderer
+  isExternal: true
+  href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawTriangleFilled_System_Numerics_Vector2___System_Numerics_Vector2_System_Single_System_Drawing_Color_
+  name: DrawTriangleFilled(Vector2[], Vector2, float, Color)
+  nameWithType: IRenderer.DrawTriangleFilled(Vector2[], Vector2, float, Color)
+  fullName: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangleFilled(System.Numerics.Vector2[], System.Numerics.Vector2, float, System.Drawing.Color)
+  nameWithType.vb: IRenderer.DrawTriangleFilled(Vector2(), Vector2, Single, Color)
+  fullName.vb: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangleFilled(System.Numerics.Vector2(), System.Numerics.Vector2, Single, System.Drawing.Color)
+  name.vb: DrawTriangleFilled(Vector2(), Vector2, Single, Color)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangleFilled(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+    name: DrawTriangleFilled
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawTriangleFilled_System_Numerics_Vector2___System_Numerics_Vector2_System_Single_System_Drawing_Color_
+  - name: (
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: '['
+  - name: ']'
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawTriangleFilled(System.Numerics.Vector2[],System.Numerics.Vector2,System.Single,System.Drawing.Color)
+    name: DrawTriangleFilled
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawTriangleFilled_System_Numerics_Vector2___System_Numerics_Vector2_System_Single_System_Drawing_Color_
+  - name: (
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: (
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: )
+- uid: Kobold.Monogame.MonoGameRenderer.DrawLine*
+  commentId: Overload:Kobold.Monogame.MonoGameRenderer.DrawLine
+  href: Kobold.Monogame.MonoGameRenderer.html#Kobold_Monogame_MonoGameRenderer_DrawLine_System_Numerics_Vector2_System_Numerics_Vector2_System_Drawing_Color_System_Single_
+  name: DrawLine
+  nameWithType: MonoGameRenderer.DrawLine
+  fullName: Kobold.Monogame.MonoGameRenderer.DrawLine
+- uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawLine(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  commentId: M:Kobold.Core.Abstractions.Rendering.IRenderer.DrawLine(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+  parent: Kobold.Core.Abstractions.Rendering.IRenderer
+  isExternal: true
+  href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawLine_System_Numerics_Vector2_System_Numerics_Vector2_System_Drawing_Color_System_Single_
+  name: DrawLine(Vector2, Vector2, Color, float)
+  nameWithType: IRenderer.DrawLine(Vector2, Vector2, Color, float)
+  fullName: Kobold.Core.Abstractions.Rendering.IRenderer.DrawLine(System.Numerics.Vector2, System.Numerics.Vector2, System.Drawing.Color, float)
+  nameWithType.vb: IRenderer.DrawLine(Vector2, Vector2, Color, Single)
+  fullName.vb: Kobold.Core.Abstractions.Rendering.IRenderer.DrawLine(System.Numerics.Vector2, System.Numerics.Vector2, System.Drawing.Color, Single)
+  name.vb: DrawLine(Vector2, Vector2, Color, Single)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawLine(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+    name: DrawLine
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawLine_System_Numerics_Vector2_System_Numerics_Vector2_System_Drawing_Color_System_Single_
+  - name: (
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer.DrawLine(System.Numerics.Vector2,System.Numerics.Vector2,System.Drawing.Color,System.Single)
+    name: DrawLine
+    href: Kobold.Core.Abstractions.Rendering.IRenderer.html#Kobold_Core_Abstractions_Rendering_IRenderer_DrawLine_System_Numerics_Vector2_System_Numerics_Vector2_System_Drawing_Color_System_Single_
+  - name: (
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: ','
+  - name: " "
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: Kobold.Monogame.MonoGameRenderer.ToXnaColor*
+  commentId: Overload:Kobold.Monogame.MonoGameRenderer.ToXnaColor
+  href: Kobold.Monogame.MonoGameRenderer.html#Kobold_Monogame_MonoGameRenderer_ToXnaColor_System_Drawing_Color_
+  name: ToXnaColor
+  nameWithType: MonoGameRenderer.ToXnaColor
+  fullName: Kobold.Monogame.MonoGameRenderer.ToXnaColor
+- uid: Microsoft.Xna.Framework.Color
+  commentId: T:Microsoft.Xna.Framework.Color
+  parent: Microsoft.Xna.Framework
+  isExternal: true
+  name: Color
+  nameWithType: Color
+  fullName: Microsoft.Xna.Framework.Color
+- uid: Microsoft.Xna.Framework
+  commentId: N:Microsoft.Xna.Framework
+  isExternal: true
+  name: Microsoft.Xna.Framework
+  nameWithType: Microsoft.Xna.Framework
+  fullName: Microsoft.Xna.Framework
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true

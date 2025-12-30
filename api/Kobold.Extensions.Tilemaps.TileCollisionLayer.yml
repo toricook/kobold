@@ -1,0 +1,271 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Extensions.Tilemaps.TileCollisionLayer
+  commentId: T:Kobold.Extensions.Tilemaps.TileCollisionLayer
+  id: TileCollisionLayer
+  parent: Kobold.Extensions.Tilemaps
+  children:
+  - Kobold.Extensions.Tilemaps.TileCollisionLayer.Ice
+  - Kobold.Extensions.Tilemaps.TileCollisionLayer.Ladder
+  - Kobold.Extensions.Tilemaps.TileCollisionLayer.None
+  - Kobold.Extensions.Tilemaps.TileCollisionLayer.Platform
+  - Kobold.Extensions.Tilemaps.TileCollisionLayer.Solid
+  - Kobold.Extensions.Tilemaps.TileCollisionLayer.Trigger
+  - Kobold.Extensions.Tilemaps.TileCollisionLayer.Water
+  langs:
+  - csharp
+  - vb
+  name: TileCollisionLayer
+  nameWithType: TileCollisionLayer
+  fullName: Kobold.Extensions.Tilemaps.TileCollisionLayer
+  type: Enum
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TileCollisionLayer
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 274
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Collision layers for tiles.
+  example: []
+  syntax:
+    content: public enum TileCollisionLayer
+    content.vb: Public Enum TileCollisionLayer
+- uid: Kobold.Extensions.Tilemaps.TileCollisionLayer.None
+  commentId: F:Kobold.Extensions.Tilemaps.TileCollisionLayer.None
+  id: None
+  parent: Kobold.Extensions.Tilemaps.TileCollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: TileCollisionLayer.None
+  fullName: Kobold.Extensions.Tilemaps.TileCollisionLayer.None
+  type: Field
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: None
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 277
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: No collision
+  example: []
+  syntax:
+    content: None = 0
+    return:
+      type: Kobold.Extensions.Tilemaps.TileCollisionLayer
+- uid: Kobold.Extensions.Tilemaps.TileCollisionLayer.Solid
+  commentId: F:Kobold.Extensions.Tilemaps.TileCollisionLayer.Solid
+  id: Solid
+  parent: Kobold.Extensions.Tilemaps.TileCollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Solid
+  nameWithType: TileCollisionLayer.Solid
+  fullName: Kobold.Extensions.Tilemaps.TileCollisionLayer.Solid
+  type: Field
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Solid
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 280
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Solid tile (blocks from all directions)
+  example: []
+  syntax:
+    content: Solid = 1
+    return:
+      type: Kobold.Extensions.Tilemaps.TileCollisionLayer
+- uid: Kobold.Extensions.Tilemaps.TileCollisionLayer.Platform
+  commentId: F:Kobold.Extensions.Tilemaps.TileCollisionLayer.Platform
+  id: Platform
+  parent: Kobold.Extensions.Tilemaps.TileCollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Platform
+  nameWithType: TileCollisionLayer.Platform
+  fullName: Kobold.Extensions.Tilemaps.TileCollisionLayer.Platform
+  type: Field
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Platform
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 283
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Platform (one-way collision from above)
+  example: []
+  syntax:
+    content: Platform = 2
+    return:
+      type: Kobold.Extensions.Tilemaps.TileCollisionLayer
+- uid: Kobold.Extensions.Tilemaps.TileCollisionLayer.Trigger
+  commentId: F:Kobold.Extensions.Tilemaps.TileCollisionLayer.Trigger
+  id: Trigger
+  parent: Kobold.Extensions.Tilemaps.TileCollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Trigger
+  nameWithType: TileCollisionLayer.Trigger
+  fullName: Kobold.Extensions.Tilemaps.TileCollisionLayer.Trigger
+  type: Field
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Trigger
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 286
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Trigger/sensor (detects but doesn't block)
+  example: []
+  syntax:
+    content: Trigger = 3
+    return:
+      type: Kobold.Extensions.Tilemaps.TileCollisionLayer
+- uid: Kobold.Extensions.Tilemaps.TileCollisionLayer.Water
+  commentId: F:Kobold.Extensions.Tilemaps.TileCollisionLayer.Water
+  id: Water
+  parent: Kobold.Extensions.Tilemaps.TileCollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Water
+  nameWithType: TileCollisionLayer.Water
+  fullName: Kobold.Extensions.Tilemaps.TileCollisionLayer.Water
+  type: Field
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Water
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 289
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Water (special movement behavior)
+  example: []
+  syntax:
+    content: Water = 4
+    return:
+      type: Kobold.Extensions.Tilemaps.TileCollisionLayer
+- uid: Kobold.Extensions.Tilemaps.TileCollisionLayer.Ice
+  commentId: F:Kobold.Extensions.Tilemaps.TileCollisionLayer.Ice
+  id: Ice
+  parent: Kobold.Extensions.Tilemaps.TileCollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Ice
+  nameWithType: TileCollisionLayer.Ice
+  fullName: Kobold.Extensions.Tilemaps.TileCollisionLayer.Ice
+  type: Field
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Ice
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 292
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Ice (reduced friction)
+  example: []
+  syntax:
+    content: Ice = 5
+    return:
+      type: Kobold.Extensions.Tilemaps.TileCollisionLayer
+- uid: Kobold.Extensions.Tilemaps.TileCollisionLayer.Ladder
+  commentId: F:Kobold.Extensions.Tilemaps.TileCollisionLayer.Ladder
+  id: Ladder
+  parent: Kobold.Extensions.Tilemaps.TileCollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Ladder
+  nameWithType: TileCollisionLayer.Ladder
+  fullName: Kobold.Extensions.Tilemaps.TileCollisionLayer.Ladder
+  type: Field
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Ladder
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 295
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Ladder (climbable)
+  example: []
+  syntax:
+    content: Ladder = 6
+    return:
+      type: Kobold.Extensions.Tilemaps.TileCollisionLayer
+references:
+- uid: Kobold.Extensions.Tilemaps
+  commentId: N:Kobold.Extensions.Tilemaps
+  href: Kobold.html
+  name: Kobold.Extensions.Tilemaps
+  nameWithType: Kobold.Extensions.Tilemaps
+  fullName: Kobold.Extensions.Tilemaps
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Tilemaps
+    name: Tilemaps
+    href: Kobold.Extensions.Tilemaps.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Tilemaps
+    name: Tilemaps
+    href: Kobold.Extensions.Tilemaps.html
+- uid: Kobold.Extensions.Tilemaps.TileCollisionLayer
+  commentId: T:Kobold.Extensions.Tilemaps.TileCollisionLayer
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TileCollisionLayer.html
+  name: TileCollisionLayer
+  nameWithType: TileCollisionLayer
+  fullName: Kobold.Extensions.Tilemaps.TileCollisionLayer

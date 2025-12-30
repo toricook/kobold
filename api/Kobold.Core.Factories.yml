@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Factories
+  commentId: N:Kobold.Core.Factories
+  id: Kobold.Core.Factories
+  children:
+  - Kobold.Core.Factories.EntityFactory
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Core.Factories
+  nameWithType: Kobold.Core.Factories
+  fullName: Kobold.Core.Factories
+  type: Namespace
+  assemblies:
+  - Kobold.Core
+references:
+- uid: Kobold.Core.Factories.EntityFactory
+  commentId: T:Kobold.Core.Factories.EntityFactory
+  href: Kobold.Core.Factories.EntityFactory.html
+  name: EntityFactory
+  nameWithType: EntityFactory
+  fullName: Kobold.Core.Factories.EntityFactory

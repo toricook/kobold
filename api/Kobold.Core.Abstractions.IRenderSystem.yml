@@ -1,0 +1,94 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Abstractions.IRenderSystem
+  commentId: T:Kobold.Core.Abstractions.IRenderSystem
+  id: IRenderSystem
+  parent: Kobold.Core.Abstractions
+  children:
+  - Kobold.Core.Abstractions.IRenderSystem.Render
+  langs:
+  - csharp
+  - vb
+  name: IRenderSystem
+  nameWithType: IRenderSystem
+  fullName: Kobold.Core.Abstractions.IRenderSystem
+  type: Interface
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/IRenderSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IRenderSystem
+    path: Kobold/Abstractions/Core/IRenderSystem.cs
+    startLine: 11
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions
+  summary: Interface for systems that only need to render.
+  example: []
+  syntax:
+    content: public interface IRenderSystem
+    content.vb: Public Interface IRenderSystem
+- uid: Kobold.Core.Abstractions.IRenderSystem.Render
+  commentId: M:Kobold.Core.Abstractions.IRenderSystem.Render
+  id: Render
+  parent: Kobold.Core.Abstractions.IRenderSystem
+  langs:
+  - csharp
+  - vb
+  name: Render()
+  nameWithType: IRenderSystem.Render()
+  fullName: Kobold.Core.Abstractions.IRenderSystem.Render()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/IRenderSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Render
+    path: Kobold/Abstractions/Core/IRenderSystem.cs
+    startLine: 13
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions
+  syntax:
+    content: void Render()
+    content.vb: Sub Render()
+  overload: Kobold.Core.Abstractions.IRenderSystem.Render*
+references:
+- uid: Kobold.Core.Abstractions
+  commentId: N:Kobold.Core.Abstractions
+  href: Kobold.html
+  name: Kobold.Core.Abstractions
+  nameWithType: Kobold.Core.Abstractions
+  fullName: Kobold.Core.Abstractions
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+- uid: Kobold.Core.Abstractions.IRenderSystem.Render*
+  commentId: Overload:Kobold.Core.Abstractions.IRenderSystem.Render
+  href: Kobold.Core.Abstractions.IRenderSystem.html#Kobold_Core_Abstractions_IRenderSystem_Render
+  name: Render
+  nameWithType: IRenderSystem.Render
+  fullName: Kobold.Core.Abstractions.IRenderSystem.Render

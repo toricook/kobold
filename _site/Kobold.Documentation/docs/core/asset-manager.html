@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Asset Manager - Loading and Managing Assets | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Asset Manager - Loading and Managing Assets | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/core/asset-manager.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="asset-manager---loading-and-managing-assets">Asset Manager - Loading and Managing Assets</h1>
+
+<p>The <code>AssetManager</code> class handles loading, caching, and managing textures and sprite sheets in Kobold. It's accessible via <code>GameEngineBase.Assets</code>.</p>
+<h2 id="overview">Overview</h2>
+<p>AssetManager provides:</p>
+<ul>
+<li>Automatic texture caching (loads each texture only once)</li>
+<li>Sprite sheet support with JSON configuration files</li>
+<li>Preloading for loading screens</li>
+<li>Memory management (unload unused assets)</li>
+</ul>
+<h2 id="loading-textures">Loading Textures</h2>
+<h3 id="loadtexture">LoadTexture()</h3>
+<p>Loads a texture from file. Automatically caches so subsequent loads return the same instance.</p>
+<pre><code class="lang-csharp">ITexture LoadTexture(string path)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">protected override void Initialize()
+{
+    base.Initialize();
+
+    // Load texture (relative to content root)
+    var playerTexture = Assets.LoadTexture(&quot;player.png&quot;);
+
+    // Create entity with texture
+    World.Create(
+        new Transform { Position = new Vector2(400, 300) },
+        SpriteRenderer.FullTexture(playerTexture)
+    );
+
+    // Load again - returns cached instance (fast!)
+    var sameTexture = Assets.LoadTexture(&quot;player.png&quot;);
+}
+</code></pre>
+<p><strong>Caching:</strong> Once loaded, textures stay in memory until explicitly unloaded. Loading the same path multiple times returns the cached texture.</p>
+<h3 id="gettexture">GetTexture()</h3>
+<p>Gets a previously loaded texture without loading from disk.</p>
+<pre><code class="lang-csharp">ITexture? GetTexture(string path)
+</code></pre>
+<p>Returns <code>null</code> if the texture hasn't been loaded yet.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">var texture = Assets.GetTexture(&quot;player.png&quot;);
+if (texture != null)
+{
+    // Texture is already loaded
+}
+</code></pre>
+<h3 id="istextureloaded">IsTextureLoaded()</h3>
+<p>Checks if a texture is in the cache.</p>
+<pre><code class="lang-csharp">bool IsTextureLoaded(string path)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">if (!Assets.IsTextureLoaded(&quot;enemy.png&quot;))
+{
+    Assets.LoadTexture(&quot;enemy.png&quot;);
+}
+</code></pre>
+<h2 id="sprite-sheets">Sprite Sheets</h2>
+<p>Sprite sheets pack multiple sprites into a single texture, improving performance and simplifying asset management.</p>
+<h3 id="spritesheet-json-format">SpriteSheet JSON Format</h3>
+<p>Kobold uses JSON files to define sprite sheet layouts:</p>
+<pre><code class="lang-json">{
+  &quot;texture&quot;: &quot;characters.png&quot;,
+  &quot;spriteWidth&quot;: 32,
+  &quot;spriteHeight&quot;: 32,
+  &quot;columns&quot;: 8,
+  &quot;rows&quot;: 4,
+  &quot;spacing&quot;: 0,
+  &quot;margin&quot;: 0,
+  &quot;namedRegions&quot;: {
+    &quot;player_idle&quot;: { &quot;x&quot;: 0, &quot;y&quot;: 0, &quot;width&quot;: 32, &quot;height&quot;: 32 },
+    &quot;player_walk_1&quot;: { &quot;x&quot;: 32, &quot;y&quot;: 0, &quot;width&quot;: 32, &quot;height&quot;: 32 },
+    &quot;player_walk_2&quot;: { &quot;x&quot;: 64, &quot;y&quot;: 0, &quot;width&quot;: 32, &quot;height&quot;: 32 }
+  },
+  &quot;animations&quot;: {
+    &quot;walk&quot;: {
+      &quot;frames&quot;: [1, 2, 3, 2],
+      &quot;frameDuration&quot;: 0.1,
+      &quot;loop&quot;: true
+    },
+    &quot;idle&quot;: {
+      &quot;frames&quot;: [0],
+      &quot;frameDuration&quot;: 0.5,
+      &quot;loop&quot;: true
+    }
+  }
+}
+</code></pre>
+<h3 id="loadspritesheet">LoadSpriteSheet()</h3>
+<p>Loads a sprite sheet configuration and the associated texture.</p>
+<pre><code class="lang-csharp">SpriteSheet LoadSpriteSheet(string path)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Load sprite sheet
+var spriteSheet = Assets.LoadSpriteSheet(&quot;characters.json&quot;);
+var texture = Assets.LoadTexture(&quot;characters.png&quot;);
+
+// Get a specific frame
+Rectangle frame0 = spriteSheet.GetFrame(0);
+Rectangle frame5 = spriteSheet.GetFrame(5);
+
+// Get by row/column
+Rectangle topLeft = spriteSheet.GetFrameByRowCol(row: 0, col: 0);
+
+// Get named region
+Rectangle playerIdle = spriteSheet.GetNamedRegion(&quot;player_idle&quot;);
+
+// Create entity with sprite
+World.Create(
+    new Transform { Position = new Vector2(200, 200) },
+    SpriteRenderer.FromSpriteSheet(texture, frame0)
+);
+</code></pre>
+<h3 id="spritesheet-methods">SpriteSheet Methods</h3>
+<p><strong>GetFrame(index)</strong> - Get frame by index (left-to-right, top-to-bottom)</p>
+<pre><code class="lang-csharp">Rectangle GetFrame(int index)
+</code></pre>
+<p><strong>GetFrameByRowCol(row, col)</strong> - Get frame by grid position</p>
+<pre><code class="lang-csharp">Rectangle GetFrameByRowCol(int row, int col)
+</code></pre>
+<p><strong>GetNamedRegion(name)</strong> - Get frame by name</p>
+<pre><code class="lang-csharp">Rectangle GetNamedRegion(string name)
+</code></pre>
+<p><strong>GetAnimationFrames(animationName)</strong> - Get all frames for an animation</p>
+<pre><code class="lang-csharp">Rectangle[] GetAnimationFrames(string animationName)
+</code></pre>
+<p><strong>CreateAnimationClip(animationName)</strong> - Create AnimationClip from config</p>
+<pre><code class="lang-csharp">AnimationClip CreateAnimationClip(string animationName)
+</code></pre>
+<p><strong>CreateAllAnimations()</strong> - Create all animations as dictionary</p>
+<pre><code class="lang-csharp">Dictionary&lt;string, AnimationClip&gt; CreateAllAnimations()
+</code></pre>
+<h3 id="animation-example">Animation Example</h3>
+<pre><code class="lang-csharp">var spriteSheet = Assets.LoadSpriteSheet(&quot;player.json&quot;);
+var texture = Assets.LoadTexture(&quot;player.png&quot;);
+
+// Create all animations from sprite sheet
+var animation = new Animation
+{
+    Clips = spriteSheet.CreateAllAnimations()
+};
+animation.Play(&quot;idle&quot;);
+
+World.Create(
+    new Transform { Position = new Vector2(400, 300) },
+    SpriteRenderer.FromSpriteSheet(texture, spriteSheet.GetFrame(0)),
+    animation
+);
+</code></pre>
+<h2 id="preloading">Preloading</h2>
+<p>Preload textures during a loading screen to avoid hitches during gameplay.</p>
+<h3 id="preloadtextures">PreloadTextures()</h3>
+<p>Loads multiple textures at once.</p>
+<pre><code class="lang-csharp">void PreloadTextures(params string[] paths)
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">protected override void Initialize()
+{
+    base.Initialize();
+
+    // Preload all game textures
+    Assets.PreloadTextures(
+        &quot;player.png&quot;,
+        &quot;enemy1.png&quot;,
+        &quot;enemy2.png&quot;,
+        &quot;projectile.png&quot;,
+        &quot;background.png&quot;
+    );
+
+    // Now all textures are cached and ready to use
+    var player = Assets.GetTexture(&quot;player.png&quot;);  // Instant!
+}
+</code></pre>
+<h2 id="unloading">Unloading</h2>
+<p>Free memory by unloading unused textures.</p>
+<h3 id="unloadtexture">UnloadTexture()</h3>
+<p>Unloads a specific texture from the cache.</p>
+<pre><code class="lang-csharp">bool UnloadTexture(string path)
+</code></pre>
+<p>Returns <code>true</code> if the texture was unloaded, <code>false</code> if it wasn't loaded.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Unload unused boss texture after boss fight
+Assets.UnloadTexture(&quot;boss.png&quot;);
+</code></pre>
+<h3 id="unloadall">UnloadAll()</h3>
+<p>Unloads all textures from the cache.</p>
+<pre><code class="lang-csharp">void UnloadAll()
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// When transitioning between levels
+Assets.UnloadAll();
+// Then load new level's assets
+Assets.PreloadTextures(&quot;level2_bg.png&quot;, &quot;level2_tiles.png&quot;);
+</code></pre>
+<h2 id="content-root">Content Root</h2>
+<p>The content root is set by the <code>IContentLoader</code> implementation (usually via MonoGameFileContentLoader).</p>
+<pre><code class="lang-csharp">// MonoGameFileContentLoader sets this
+var loader = new MonoGameFileContentLoader(graphicsDevice, &quot;Content&quot;);  // Content root directory
+</code></pre>
+<p>All asset paths are relative to this root:</p>
+<pre><code class="lang-csharp">// Loads from &quot;Content/player.png&quot;
+Assets.LoadTexture(&quot;player.png&quot;);
+
+// Loads from &quot;Content/sprites/enemy.png&quot;
+Assets.LoadTexture(&quot;sprites/enemy.png&quot;);
+</code></pre>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-preload-during-initialize">1. Preload During Initialize</h3>
+<pre><code class="lang-csharp">protected override void Initialize()
+{
+    base.Initialize();
+
+    // Load all assets upfront
+    Assets.PreloadTextures(
+        &quot;player.png&quot;,
+        &quot;enemy.png&quot;,
+        &quot;background.png&quot;
+    );
+
+    // Create entities after assets are loaded
+    var playerTexture = Assets.GetTexture(&quot;player.png&quot;);
+    // ...
+}
+</code></pre>
+<h3 id="2-organize-assets-in-folders">2. Organize Assets in Folders</h3>
+<pre><code>Content/
+├── characters/
+│   ├── player.png
+│   └── enemies.png
+├── environment/
+│   ├── tiles.png
+│   └── background.png
+└── ui/
+    └── icons.png
+</code></pre>
+<pre><code class="lang-csharp">Assets.LoadTexture(&quot;characters/player.png&quot;);
+Assets.LoadTexture(&quot;environment/tiles.png&quot;);
+</code></pre>
+<h3 id="3-use-sprite-sheets-for-related-sprites">3. Use Sprite Sheets for Related Sprites</h3>
+<p>Instead of:</p>
+<pre><code>Content/
+├── player_idle.png
+├── player_walk1.png
+├── player_walk2.png
+├── player_jump.png
+└── ...
+</code></pre>
+<p>Use a single sprite sheet:</p>
+<pre><code>Content/
+├── player.png          (single texture with all frames)
+└── player.json         (sprite sheet config)
+</code></pre>
+<p>Benefits:</p>
+<ul>
+<li>Fewer texture loads</li>
+<li>Better GPU performance (fewer texture switches)</li>
+<li>Easier to manage animations</li>
+</ul>
+<h3 id="4-unload-between-levels">4. Unload Between Levels</h3>
+<pre><code class="lang-csharp">void LoadLevel(int levelNumber)
+{
+    // Clear old level assets
+    Assets.UnloadAll();
+
+    // Load new level assets
+    Assets.PreloadTextures($&quot;level{levelNumber}_bg.png&quot;, /* ... */);
+}
+</code></pre>
+<h3 id="5-check-loaded-state-when-needed">5. Check Loaded State When Needed</h3>
+<pre><code class="lang-csharp">void SpawnEnemy()
+{
+    if (!Assets.IsTextureLoaded(&quot;enemy.png&quot;))
+    {
+        Assets.LoadTexture(&quot;enemy.png&quot;);
+    }
+
+    var texture = Assets.GetTexture(&quot;enemy.png&quot;);
+    // Create enemy entity...
+}
+</code></pre>
+<h2 id="complete-example">Complete Example</h2>
+<pre><code class="lang-csharp">public class MyGame : GameEngineBase
+{
+    protected override void Initialize()
+    {
+        base.Initialize();
+
+        // Preload all assets
+        Assets.PreloadTextures(
+            &quot;player.png&quot;,
+            &quot;enemy.png&quot;,
+            &quot;projectile.png&quot;,
+            &quot;background.png&quot;
+        );
+
+        // Load sprite sheet
+        var playerSheet = Assets.LoadSpriteSheet(&quot;player.json&quot;);
+        var playerTexture = Assets.GetTexture(&quot;player.png&quot;);
+
+        // Create player with animation
+        var animation = new Animation
+        {
+            Clips = playerSheet.CreateAllAnimations()
+        };
+        animation.Play(&quot;idle&quot;);
+
+        World.Create(
+            new Transform { Position = new Vector2(400, 300) },
+            SpriteRenderer.FromSpriteSheet(
+                playerTexture,
+                playerSheet.GetFrame(0)
+            ),
+            animation,
+            new PlayerControlled()
+        );
+
+        // Create background
+        var bgTexture = Assets.GetTexture(&quot;background.png&quot;);
+        World.Create(
+            new Transform { Position = Vector2.Zero },
+            SpriteRenderer.Background(bgTexture)
+        );
+    }
+
+    protected override void Shutdown()
+    {
+        // Clean up (optional - Kobold does this automatically)
+        Assets.UnloadAll();
+        base.Shutdown();
+    }
+}
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong><a href="components.html#spriterenderer">SpriteRenderer Component</a></strong> - Using loaded textures</li>
+<li><strong><a href="components.html#animation">Animation</a></strong> - Sprite animation</li>
+<li><strong><a href="../tools/sprite-sheet-editor.html">Sprite Sheet Editor</a></strong> - Creating sprite sheet configs</li>
+</ul>
+<hr>
+<p><strong>Next:</strong> Learn about the <a href="event-bus.html">Event Bus</a> →</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/core/asset-manager.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

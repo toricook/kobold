@@ -1,0 +1,1477 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.GameState`1
+  commentId: T:Kobold.Core.Components.GameState`1
+  id: GameState`1
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.GameState`1.#ctor(`0,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})
+  - Kobold.Core.Components.GameState`1.Equals(Kobold.Core.Components.GameState{`0})
+  - Kobold.Core.Components.GameState`1.Equals(System.Object)
+  - Kobold.Core.Components.GameState`1.GetHashCode
+  - Kobold.Core.Components.GameState`1.GetStateData``1(System.String)
+  - Kobold.Core.Components.GameState`1.GetTimeInState
+  - Kobold.Core.Components.GameState`1.Message
+  - Kobold.Core.Components.GameState`1.SetStateData(System.String,System.Object)
+  - Kobold.Core.Components.GameState`1.State
+  - Kobold.Core.Components.GameState`1.StateData
+  - Kobold.Core.Components.GameState`1.StateEnteredAt
+  - Kobold.Core.Components.GameState`1.ToDetailedString
+  - Kobold.Core.Components.GameState`1.ToString
+  - Kobold.Core.Components.GameState`1.WithMessage(System.String)
+  - Kobold.Core.Components.GameState`1.WithState(`0,System.String)
+  - Kobold.Core.Components.GameState`1.op_Equality(Kobold.Core.Components.GameState{`0},Kobold.Core.Components.GameState{`0})
+  - Kobold.Core.Components.GameState`1.op_Inequality(Kobold.Core.Components.GameState{`0},Kobold.Core.Components.GameState{`0})
+  langs:
+  - csharp
+  - vb
+  name: GameState<TState>
+  nameWithType: GameState<TState>
+  fullName: Kobold.Core.Components.GameState<TState>
+  type: Struct
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GameState
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 20
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Core game state component that represents the current high-level state of the game.
+
+    This is used by the SystemManager to determine which systems should be active,
+
+    and by game-specific systems to control flow and behavior.
+
+
+    The core engine provides basic states (Playing, Paused, GameOver), but games
+
+    can extend this with their own state enums by implementing IGameState.
+
+
+    Only one GameState component should exist per game - it's typically attached
+
+    to a singleton entity that represents the overall game session.
+  example: []
+  syntax:
+    content: 'public struct GameState<TState> : IEquatable<GameState<TState>> where TState : struct, Enum'
+    typeParameters:
+    - id: TState
+      description: The state enum type (e.g., PongGameState, SpaceInvadersState)
+    content.vb: Public Structure GameState(Of TState As {Structure, [Enum]}) Implements IEquatable(Of GameState(Of TState))
+  implements:
+  - System.IEquatable{Kobold.Core.Components.GameState`1}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  nameWithType.vb: GameState(Of TState)
+  fullName.vb: Kobold.Core.Components.GameState(Of TState)
+  name.vb: GameState(Of TState)
+- uid: Kobold.Core.Components.GameState`1.State
+  commentId: P:Kobold.Core.Components.GameState`1.State
+  id: State
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: GameState<TState>.State
+  fullName: Kobold.Core.Components.GameState<TState>.State
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: State
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 29
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    The current state of the game. This determines which systems are active
+
+    and how the game behaves. For example:
+
+    - Playing: All gameplay systems active
+
+    - Paused: Only UI and input systems active
+
+    - GameOver: Only UI systems active, waiting for restart
+  example: []
+  syntax:
+    content: public TState State { readonly get; set; }
+    parameters: []
+    return:
+      type: '{TState}'
+    content.vb: Public Property State As TState
+  overload: Kobold.Core.Components.GameState`1.State*
+  nameWithType.vb: GameState(Of TState).State
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).State
+- uid: Kobold.Core.Components.GameState`1.Message
+  commentId: P:Kobold.Core.Components.GameState`1.Message
+  id: Message
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: GameState<TState>.Message
+  fullName: Kobold.Core.Components.GameState<TState>.Message
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Message
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 40
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Optional message associated with the current state.
+
+    Examples:
+
+    - "Player 1 Wins!" for GameOver state
+
+    - "Wave 3 Starting..." for Playing state
+
+    - "Game Paused" for Paused state
+
+
+    Used primarily by UI systems for displaying state-specific text.
+  example: []
+  syntax:
+    content: public string Message { readonly get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Message As String
+  overload: Kobold.Core.Components.GameState`1.Message*
+  nameWithType.vb: GameState(Of TState).Message
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).Message
+- uid: Kobold.Core.Components.GameState`1.StateData
+  commentId: P:Kobold.Core.Components.GameState`1.StateData
+  id: StateData
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: StateData
+  nameWithType: GameState<TState>.StateData
+  fullName: Kobold.Core.Components.GameState<TState>.StateData
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: StateData
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 50
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Additional contextual data for the current state.
+
+    This is a flexible dictionary for state-specific information that doesn't
+
+    warrant its own field. Examples:
+
+    - "WinningPlayerId" -&gt; "1" for GameOver state
+
+    - "WaveNumber" -&gt; "5" for Playing state
+
+    - "PauseReason" -&gt; "PlayerInput" vs "LostFocus" for Paused state
+  example: []
+  syntax:
+    content: public Dictionary<string, object> StateData { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+    content.vb: Public Property StateData As Dictionary(Of String, Object)
+  overload: Kobold.Core.Components.GameState`1.StateData*
+  nameWithType.vb: GameState(Of TState).StateData
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).StateData
+- uid: Kobold.Core.Components.GameState`1.StateEnteredAt
+  commentId: P:Kobold.Core.Components.GameState`1.StateEnteredAt
+  id: StateEnteredAt
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: StateEnteredAt
+  nameWithType: GameState<TState>.StateEnteredAt
+  fullName: Kobold.Core.Components.GameState<TState>.StateEnteredAt
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: StateEnteredAt
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 57
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Timestamp when this state was entered.
+
+    Useful for tracking how long the game has been in a particular state,
+
+    implementing time-based state transitions, or analytics.
+  example: []
+  syntax:
+    content: public DateTime StateEnteredAt { readonly get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property StateEnteredAt As Date
+  overload: Kobold.Core.Components.GameState`1.StateEnteredAt*
+  nameWithType.vb: GameState(Of TState).StateEnteredAt
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).StateEnteredAt
+- uid: Kobold.Core.Components.GameState`1.#ctor(`0,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})
+  commentId: M:Kobold.Core.Components.GameState`1.#ctor(`0,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})
+  id: '#ctor(`0,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})'
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: GameState(TState, string, Dictionary<string, object>)
+  nameWithType: GameState<TState>.GameState(TState, string, Dictionary<string, object>)
+  fullName: Kobold.Core.Components.GameState<TState>.GameState(TState, string, System.Collections.Generic.Dictionary<string, object>)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 65
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Creates a new GameState with the specified state and optional message.
+  example: []
+  syntax:
+    content: public GameState(TState state, string message = "", Dictionary<string, object> stateData = null)
+    parameters:
+    - id: state
+      type: '{TState}'
+      description: The game state enum value
+    - id: message
+      type: System.String
+      description: Optional descriptive message
+    - id: stateData
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+      description: Optional additional state data
+    content.vb: Public Sub New(state As TState, message As String = "", stateData As Dictionary(Of String, Object) = Nothing)
+  overload: Kobold.Core.Components.GameState`1.#ctor*
+  nameWithType.vb: GameState(Of TState).New(TState, String, Dictionary(Of String, Object))
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).New(TState, String, System.Collections.Generic.Dictionary(Of String, Object))
+  name.vb: New(TState, String, Dictionary(Of String, Object))
+- uid: Kobold.Core.Components.GameState`1.GetStateData``1(System.String)
+  commentId: M:Kobold.Core.Components.GameState`1.GetStateData``1(System.String)
+  id: GetStateData``1(System.String)
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: GetStateData<T>(string)
+  nameWithType: GameState<TState>.GetStateData<T>(string)
+  fullName: Kobold.Core.Components.GameState<TState>.GetStateData<T>(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetStateData
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 80
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Gets a typed value from the StateData dictionary.
+
+    Returns the default value for the type if the key doesn't exist or can't be cast.
+  example: []
+  syntax:
+    content: public readonly T GetStateData<T>(string key)
+    parameters:
+    - id: key
+      type: System.String
+      description: The key to look up
+    typeParameters:
+    - id: T
+      description: The type to cast the value to
+    return:
+      type: '{T}'
+      description: The typed value or default(T)
+    content.vb: Public Function GetStateData(Of T)(key As String) As T
+  overload: Kobold.Core.Components.GameState`1.GetStateData*
+  nameWithType.vb: GameState(Of TState).GetStateData(Of T)(String)
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).GetStateData(Of T)(String)
+  name.vb: GetStateData(Of T)(String)
+- uid: Kobold.Core.Components.GameState`1.SetStateData(System.String,System.Object)
+  commentId: M:Kobold.Core.Components.GameState`1.SetStateData(System.String,System.Object)
+  id: SetStateData(System.String,System.Object)
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: SetStateData(string, object)
+  nameWithType: GameState<TState>.SetStateData(string, object)
+  fullName: Kobold.Core.Components.GameState<TState>.SetStateData(string, object)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: SetStateData
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 105
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Sets a value in the StateData dictionary.
+  example: []
+  syntax:
+    content: public void SetStateData(string key, object value)
+    parameters:
+    - id: key
+      type: System.String
+      description: The key to set
+    - id: value
+      type: System.Object
+      description: The value to store
+    content.vb: Public Sub SetStateData(key As String, value As Object)
+  overload: Kobold.Core.Components.GameState`1.SetStateData*
+  nameWithType.vb: GameState(Of TState).SetStateData(String, Object)
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).SetStateData(String, Object)
+  name.vb: SetStateData(String, Object)
+- uid: Kobold.Core.Components.GameState`1.GetTimeInState
+  commentId: M:Kobold.Core.Components.GameState`1.GetTimeInState
+  id: GetTimeInState
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: GetTimeInState()
+  nameWithType: GameState<TState>.GetTimeInState()
+  fullName: Kobold.Core.Components.GameState<TState>.GetTimeInState()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetTimeInState
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 115
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Gets how long the game has been in this current state.
+  example: []
+  syntax:
+    content: public readonly TimeSpan GetTimeInState()
+    return:
+      type: System.TimeSpan
+      description: Time elapsed since entering this state
+    content.vb: Public Function GetTimeInState() As TimeSpan
+  overload: Kobold.Core.Components.GameState`1.GetTimeInState*
+  nameWithType.vb: GameState(Of TState).GetTimeInState()
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).GetTimeInState()
+- uid: Kobold.Core.Components.GameState`1.WithState(`0,System.String)
+  commentId: M:Kobold.Core.Components.GameState`1.WithState(`0,System.String)
+  id: WithState(`0,System.String)
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: WithState(TState, string)
+  nameWithType: GameState<TState>.WithState(TState, string)
+  fullName: Kobold.Core.Components.GameState<TState>.WithState(TState, string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: WithState
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 127
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Creates a new GameState with a different state but preserving other data.
+
+    Useful for state transitions where you want to keep context.
+  example: []
+  syntax:
+    content: public readonly GameState<TState> WithState(TState newState, string newMessage = null)
+    parameters:
+    - id: newState
+      type: '{TState}'
+      description: The new state to transition to
+    - id: newMessage
+      type: System.String
+      description: Optional new message (null keeps current message)
+    return:
+      type: Kobold.Core.Components.GameState`1
+      description: New GameState with updated state
+    content.vb: Public Function WithState(newState As TState, newMessage As String = Nothing) As GameState(Of TState)
+  overload: Kobold.Core.Components.GameState`1.WithState*
+  nameWithType.vb: GameState(Of TState).WithState(TState, String)
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).WithState(TState, String)
+  name.vb: WithState(TState, String)
+- uid: Kobold.Core.Components.GameState`1.WithMessage(System.String)
+  commentId: M:Kobold.Core.Components.GameState`1.WithMessage(System.String)
+  id: WithMessage(System.String)
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: WithMessage(string)
+  nameWithType: GameState<TState>.WithMessage(string)
+  fullName: Kobold.Core.Components.GameState<TState>.WithMessage(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: WithMessage
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 137
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Creates a new GameState with updated message but same state.
+  example: []
+  syntax:
+    content: public readonly GameState<TState> WithMessage(string newMessage)
+    parameters:
+    - id: newMessage
+      type: System.String
+      description: The new message
+    return:
+      type: Kobold.Core.Components.GameState`1
+      description: New GameState with updated message
+    content.vb: Public Function WithMessage(newMessage As String) As GameState(Of TState)
+  overload: Kobold.Core.Components.GameState`1.WithMessage*
+  nameWithType.vb: GameState(Of TState).WithMessage(String)
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).WithMessage(String)
+  name.vb: WithMessage(String)
+- uid: Kobold.Core.Components.GameState`1.Equals(Kobold.Core.Components.GameState{`0})
+  commentId: M:Kobold.Core.Components.GameState`1.Equals(Kobold.Core.Components.GameState{`0})
+  id: Equals(Kobold.Core.Components.GameState{`0})
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: Equals(GameState<TState>)
+  nameWithType: GameState<TState>.Equals(GameState<TState>)
+  fullName: Kobold.Core.Components.GameState<TState>.Equals(Kobold.Core.Components.GameState<TState>)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Equals
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 143
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Indicates whether the current object is equal to another object of the same type.
+  example: []
+  syntax:
+    content: public readonly bool Equals(GameState<TState> other)
+    parameters:
+    - id: other
+      type: Kobold.Core.Components.GameState`1
+      description: An object to compare with this object.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current object is equal to the <code class="paramref">other</code> parameter; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Function Equals(other As GameState(Of TState)) As Boolean
+  overload: Kobold.Core.Components.GameState`1.Equals*
+  implements:
+  - System.IEquatable{Kobold.Core.Components.GameState`1}.Equals(Kobold.Core.Components.GameState{{TState}})
+  nameWithType.vb: GameState(Of TState).Equals(GameState(Of TState))
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).Equals(Kobold.Core.Components.GameState(Of TState))
+  name.vb: Equals(GameState(Of TState))
+- uid: Kobold.Core.Components.GameState`1.Equals(System.Object)
+  commentId: M:Kobold.Core.Components.GameState`1.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: Equals(object)
+  nameWithType: GameState<TState>.Equals(object)
+  fullName: Kobold.Core.Components.GameState<TState>.Equals(object)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Equals
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 148
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Indicates whether this instance and a specified object are equal.
+  example: []
+  syntax:
+    content: public override readonly bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to compare with the current instance.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">obj</code> and this instance are the same type and represent the same value; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: Kobold.Core.Components.GameState`1.Equals*
+  nameWithType.vb: GameState(Of TState).Equals(Object)
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).Equals(Object)
+  name.vb: Equals(Object)
+- uid: Kobold.Core.Components.GameState`1.GetHashCode
+  commentId: M:Kobold.Core.Components.GameState`1.GetHashCode
+  id: GetHashCode
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: GameState<TState>.GetHashCode()
+  fullName: Kobold.Core.Components.GameState<TState>.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetHashCode
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 153
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Returns the hash code for this instance.
+  example: []
+  syntax:
+    content: public override readonly int GetHashCode()
+    return:
+      type: System.Int32
+      description: A 32-bit signed integer that is the hash code for this instance.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: Kobold.Core.Components.GameState`1.GetHashCode*
+  nameWithType.vb: GameState(Of TState).GetHashCode()
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).GetHashCode()
+- uid: Kobold.Core.Components.GameState`1.op_Equality(Kobold.Core.Components.GameState{`0},Kobold.Core.Components.GameState{`0})
+  commentId: M:Kobold.Core.Components.GameState`1.op_Equality(Kobold.Core.Components.GameState{`0},Kobold.Core.Components.GameState{`0})
+  id: op_Equality(Kobold.Core.Components.GameState{`0},Kobold.Core.Components.GameState{`0})
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: operator ==(GameState<TState>, GameState<TState>)
+  nameWithType: GameState<TState>.operator ==(GameState<TState>, GameState<TState>)
+  fullName: Kobold.Core.Components.GameState<TState>.operator ==(Kobold.Core.Components.GameState<TState>, Kobold.Core.Components.GameState<TState>)
+  type: Operator
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: op_Equality
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 158
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public static bool operator ==(GameState<TState> left, GameState<TState> right)
+    parameters:
+    - id: left
+      type: Kobold.Core.Components.GameState`1
+    - id: right
+      type: Kobold.Core.Components.GameState`1
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As GameState(Of TState), right As GameState(Of TState)) As Boolean
+  overload: Kobold.Core.Components.GameState`1.op_Equality*
+  nameWithType.vb: GameState(Of TState).=(GameState(Of TState), GameState(Of TState))
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).=(Kobold.Core.Components.GameState(Of TState), Kobold.Core.Components.GameState(Of TState))
+  name.vb: =(GameState(Of TState), GameState(Of TState))
+- uid: Kobold.Core.Components.GameState`1.op_Inequality(Kobold.Core.Components.GameState{`0},Kobold.Core.Components.GameState{`0})
+  commentId: M:Kobold.Core.Components.GameState`1.op_Inequality(Kobold.Core.Components.GameState{`0},Kobold.Core.Components.GameState{`0})
+  id: op_Inequality(Kobold.Core.Components.GameState{`0},Kobold.Core.Components.GameState{`0})
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: operator !=(GameState<TState>, GameState<TState>)
+  nameWithType: GameState<TState>.operator !=(GameState<TState>, GameState<TState>)
+  fullName: Kobold.Core.Components.GameState<TState>.operator !=(Kobold.Core.Components.GameState<TState>, Kobold.Core.Components.GameState<TState>)
+  type: Operator
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: op_Inequality
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 163
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public static bool operator !=(GameState<TState> left, GameState<TState> right)
+    parameters:
+    - id: left
+      type: Kobold.Core.Components.GameState`1
+    - id: right
+      type: Kobold.Core.Components.GameState`1
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As GameState(Of TState), right As GameState(Of TState)) As Boolean
+  overload: Kobold.Core.Components.GameState`1.op_Inequality*
+  nameWithType.vb: GameState(Of TState).<>(GameState(Of TState), GameState(Of TState))
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).<>(Kobold.Core.Components.GameState(Of TState), Kobold.Core.Components.GameState(Of TState))
+  name.vb: <>(GameState(Of TState), GameState(Of TState))
+- uid: Kobold.Core.Components.GameState`1.ToString
+  commentId: M:Kobold.Core.Components.GameState`1.ToString
+  id: ToString
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: GameState<TState>.ToString()
+  fullName: Kobold.Core.Components.GameState<TState>.ToString()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ToString
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 172
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Returns the state as a string for debugging and logging.
+
+    Only uses the State enum for string representation to ensure consistency.
+  example: []
+  syntax:
+    content: public override readonly string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: Kobold.Core.Components.GameState`1.ToString*
+  nameWithType.vb: GameState(Of TState).ToString()
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).ToString()
+- uid: Kobold.Core.Components.GameState`1.ToDetailedString
+  commentId: M:Kobold.Core.Components.GameState`1.ToDetailedString
+  id: ToDetailedString
+  parent: Kobold.Core.Components.GameState`1
+  langs:
+  - csharp
+  - vb
+  name: ToDetailedString()
+  nameWithType: GameState<TState>.ToDetailedString()
+  fullName: Kobold.Core.Components.GameState<TState>.ToDetailedString()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ToDetailedString
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 181
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Returns a detailed string representation including message and state data.
+
+    Useful for debugging and detailed logging.
+  example: []
+  syntax:
+    content: public readonly string ToDetailedString()
+    return:
+      type: System.String
+    content.vb: Public Function ToDetailedString() As String
+  overload: Kobold.Core.Components.GameState`1.ToDetailedString*
+  nameWithType.vb: GameState(Of TState).ToDetailedString()
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).ToDetailedString()
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: System.IEquatable{Kobold.Core.Components.GameState`1}
+  commentId: T:System.IEquatable{Kobold.Core.Components.GameState`1}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<GameState<TState>>
+  nameWithType: IEquatable<GameState<TState>>
+  fullName: System.IEquatable<Kobold.Core.Components.GameState<TState>>
+  nameWithType.vb: IEquatable(Of GameState(Of TState))
+  fullName.vb: System.IEquatable(Of Kobold.Core.Components.GameState(Of TState))
+  name.vb: IEquatable(Of GameState(Of TState))
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: Kobold.Core.Components.GameState`1
+    name: GameState
+    href: Kobold.Core.Components.GameState-1.html
+  - name: <
+  - name: TState
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Kobold.Core.Components.GameState`1
+    name: GameState
+    href: Kobold.Core.Components.GameState-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TState
+  - name: )
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Kobold.Core.Components.GameState`1.State*
+  commentId: Overload:Kobold.Core.Components.GameState`1.State
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_State
+  name: State
+  nameWithType: GameState<TState>.State
+  fullName: Kobold.Core.Components.GameState<TState>.State
+  nameWithType.vb: GameState(Of TState).State
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).State
+- uid: '{TState}'
+  commentId: '!:TState'
+  definition: TState
+  name: TState
+  nameWithType: TState
+  fullName: TState
+- uid: TState
+  name: TState
+  nameWithType: TState
+  fullName: TState
+- uid: Kobold.Core.Components.GameState`1.Message*
+  commentId: Overload:Kobold.Core.Components.GameState`1.Message
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_Message
+  name: Message
+  nameWithType: GameState<TState>.Message
+  fullName: Kobold.Core.Components.GameState<TState>.Message
+  nameWithType.vb: GameState(Of TState).Message
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).Message
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Kobold.Core.Components.GameState`1.StateData*
+  commentId: Overload:Kobold.Core.Components.GameState`1.StateData
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_StateData
+  name: StateData
+  nameWithType: GameState<TState>.StateData
+  fullName: Kobold.Core.Components.GameState<TState>.StateData
+  nameWithType.vb: GameState(Of TState).StateData
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).StateData
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, object>
+  nameWithType: Dictionary<string, object>
+  fullName: System.Collections.Generic.Dictionary<string, object>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Kobold.Core.Components.GameState`1.StateEnteredAt*
+  commentId: Overload:Kobold.Core.Components.GameState`1.StateEnteredAt
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_StateEnteredAt
+  name: StateEnteredAt
+  nameWithType: GameState<TState>.StateEnteredAt
+  fullName: Kobold.Core.Components.GameState<TState>.StateEnteredAt
+  nameWithType.vb: GameState(Of TState).StateEnteredAt
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).StateEnteredAt
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: Kobold.Core.Components.GameState`1.#ctor*
+  commentId: Overload:Kobold.Core.Components.GameState`1.#ctor
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1__ctor__0_System_String_System_Collections_Generic_Dictionary_System_String_System_Object__
+  name: GameState
+  nameWithType: GameState<TState>.GameState
+  fullName: Kobold.Core.Components.GameState<TState>.GameState
+  nameWithType.vb: GameState(Of TState).New
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).New
+  name.vb: New
+- uid: Kobold.Core.Components.GameState`1.GetStateData*
+  commentId: Overload:Kobold.Core.Components.GameState`1.GetStateData
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_GetStateData__1_System_String_
+  name: GetStateData
+  nameWithType: GameState<TState>.GetStateData
+  fullName: Kobold.Core.Components.GameState<TState>.GetStateData
+  nameWithType.vb: GameState(Of TState).GetStateData
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).GetStateData
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Kobold.Core.Components.GameState`1.SetStateData*
+  commentId: Overload:Kobold.Core.Components.GameState`1.SetStateData
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_SetStateData_System_String_System_Object_
+  name: SetStateData
+  nameWithType: GameState<TState>.SetStateData
+  fullName: Kobold.Core.Components.GameState<TState>.SetStateData
+  nameWithType.vb: GameState(Of TState).SetStateData
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).SetStateData
+- uid: Kobold.Core.Components.GameState`1.GetTimeInState*
+  commentId: Overload:Kobold.Core.Components.GameState`1.GetTimeInState
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_GetTimeInState
+  name: GetTimeInState
+  nameWithType: GameState<TState>.GetTimeInState
+  fullName: Kobold.Core.Components.GameState<TState>.GetTimeInState
+  nameWithType.vb: GameState(Of TState).GetTimeInState
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).GetTimeInState
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.timespan
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: Kobold.Core.Components.GameState`1.WithState*
+  commentId: Overload:Kobold.Core.Components.GameState`1.WithState
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_WithState__0_System_String_
+  name: WithState
+  nameWithType: GameState<TState>.WithState
+  fullName: Kobold.Core.Components.GameState<TState>.WithState
+  nameWithType.vb: GameState(Of TState).WithState
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).WithState
+- uid: Kobold.Core.Components.GameState`1
+  commentId: T:Kobold.Core.Components.GameState`1
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.GameState-1.html
+  name: GameState<TState>
+  nameWithType: GameState<TState>
+  fullName: Kobold.Core.Components.GameState<TState>
+  nameWithType.vb: GameState(Of TState)
+  fullName.vb: Kobold.Core.Components.GameState(Of TState)
+  name.vb: GameState(Of TState)
+  spec.csharp:
+  - uid: Kobold.Core.Components.GameState`1
+    name: GameState
+    href: Kobold.Core.Components.GameState-1.html
+  - name: <
+  - name: TState
+  - name: '>'
+  spec.vb:
+  - uid: Kobold.Core.Components.GameState`1
+    name: GameState
+    href: Kobold.Core.Components.GameState-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TState
+  - name: )
+- uid: Kobold.Core.Components.GameState`1.WithMessage*
+  commentId: Overload:Kobold.Core.Components.GameState`1.WithMessage
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_WithMessage_System_String_
+  name: WithMessage
+  nameWithType: GameState<TState>.WithMessage
+  fullName: Kobold.Core.Components.GameState<TState>.WithMessage
+  nameWithType.vb: GameState(Of TState).WithMessage
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).WithMessage
+- uid: Kobold.Core.Components.GameState`1.Equals*
+  commentId: Overload:Kobold.Core.Components.GameState`1.Equals
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_Equals_Kobold_Core_Components_GameState__0__
+  name: Equals
+  nameWithType: GameState<TState>.Equals
+  fullName: Kobold.Core.Components.GameState<TState>.Equals
+  nameWithType.vb: GameState(Of TState).Equals
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).Equals
+- uid: System.IEquatable{Kobold.Core.Components.GameState`1}.Equals(Kobold.Core.Components.GameState{{TState}})
+  commentId: M:System.IEquatable{Kobold.Core.Components.GameState`1}.Equals(Kobold.Core.Components.GameState{`0})
+  parent: System.IEquatable{Kobold.Core.Components.GameState`1}
+  definition: System.IEquatable`1.Equals(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(GameState<TState>)
+  nameWithType: IEquatable<GameState<TState>>.Equals(GameState<TState>)
+  fullName: System.IEquatable<Kobold.Core.Components.GameState<TState>>.Equals(Kobold.Core.Components.GameState<TState>)
+  nameWithType.vb: IEquatable(Of GameState(Of TState)).Equals(GameState(Of TState))
+  fullName.vb: System.IEquatable(Of Kobold.Core.Components.GameState(Of TState)).Equals(Kobold.Core.Components.GameState(Of TState))
+  name.vb: Equals(GameState(Of TState))
+  spec.csharp:
+  - uid: System.IEquatable{Kobold.Core.Components.GameState`1}.Equals(Kobold.Core.Components.GameState{`0})
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: Kobold.Core.Components.GameState`1
+    name: GameState
+    href: Kobold.Core.Components.GameState-1.html
+  - name: <
+  - name: TState
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable{Kobold.Core.Components.GameState`1}.Equals(Kobold.Core.Components.GameState{`0})
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: Kobold.Core.Components.GameState`1
+    name: GameState
+    href: Kobold.Core.Components.GameState-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TState
+  - name: )
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: Kobold.Core.Components.GameState`1.GetHashCode*
+  commentId: Overload:Kobold.Core.Components.GameState`1.GetHashCode
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_GetHashCode
+  name: GetHashCode
+  nameWithType: GameState<TState>.GetHashCode
+  fullName: Kobold.Core.Components.GameState<TState>.GetHashCode
+  nameWithType.vb: GameState(Of TState).GetHashCode
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Kobold.Core.Components.GameState`1.op_Equality*
+  commentId: Overload:Kobold.Core.Components.GameState`1.op_Equality
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_op_Equality_Kobold_Core_Components_GameState__0__Kobold_Core_Components_GameState__0__
+  name: operator ==
+  nameWithType: GameState<TState>.operator ==
+  fullName: Kobold.Core.Components.GameState<TState>.operator ==
+  nameWithType.vb: GameState(Of TState).=
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: Kobold.Core.Components.GameState`1.op_Equality*
+    name: ==
+    href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_op_Equality_Kobold_Core_Components_GameState__0__Kobold_Core_Components_GameState__0__
+- uid: Kobold.Core.Components.GameState`1.op_Inequality*
+  commentId: Overload:Kobold.Core.Components.GameState`1.op_Inequality
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_op_Inequality_Kobold_Core_Components_GameState__0__Kobold_Core_Components_GameState__0__
+  name: operator !=
+  nameWithType: GameState<TState>.operator !=
+  fullName: Kobold.Core.Components.GameState<TState>.operator !=
+  nameWithType.vb: GameState(Of TState).<>
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: Kobold.Core.Components.GameState`1.op_Inequality*
+    name: '!='
+    href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_op_Inequality_Kobold_Core_Components_GameState__0__Kobold_Core_Components_GameState__0__
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: Kobold.Core.Components.GameState`1.ToString*
+  commentId: Overload:Kobold.Core.Components.GameState`1.ToString
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_ToString
+  name: ToString
+  nameWithType: GameState<TState>.ToString
+  fullName: Kobold.Core.Components.GameState<TState>.ToString
+  nameWithType.vb: GameState(Of TState).ToString
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).ToString
+- uid: Kobold.Core.Components.GameState`1.ToDetailedString*
+  commentId: Overload:Kobold.Core.Components.GameState`1.ToDetailedString
+  href: Kobold.Core.Components.GameState-1.html#Kobold_Core_Components_GameState_1_ToDetailedString
+  name: ToDetailedString
+  nameWithType: GameState<TState>.ToDetailedString
+  fullName: Kobold.Core.Components.GameState<TState>.ToDetailedString
+  nameWithType.vb: GameState(Of TState).ToDetailedString
+  fullName.vb: Kobold.Core.Components.GameState(Of TState).ToDetailedString
