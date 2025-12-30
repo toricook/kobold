@@ -1,54 +1,24 @@
+using Kobold.Core.Abstractions.Rendering;
+using Kobold.Core.Assets;
+
 namespace Kobold.Extensions.Tilemaps
 {
     /// <summary>
-    /// ECS component that attaches a tilemap to an entity.
-    /// Used with TilemapSystem for rendering and collision.
+    /// Component that holds tilemap data for rendering and collision detection.
     /// </summary>
-    public struct TilemapComponent
+    public struct TileMapComponent
     {
-        /// <summary>
-        /// The tilemap data (tile layout).
-        /// </summary>
-        public TileMap TileMap { get; set; }
+        public TileMap TileMap;
+        public TileSet TileSet;
+        public ITexture Texture;        // Sprite sheet texture for rendering tiles
+        public SpriteSheet SpriteSheet; // For named region lookup
 
-        /// <summary>
-        /// The tileset (visual and property data for tiles).
-        /// </summary>
-        public TileSet TileSet { get; set; }
-
-        /// <summary>
-        /// Whether to generate collision for solid tiles.
-        /// </summary>
-        public bool EnableCollision { get; set; }
-
-        /// <summary>
-        /// Render layer priority (higher = rendered on top).
-        /// </summary>
-        public int RenderLayer { get; set; }
-
-        /// <summary>
-        /// Opacity for rendering (0.0 = transparent, 1.0 = opaque).
-        /// </summary>
-        public float Opacity { get; set; }
-
-        /// <summary>
-        /// Whether this tilemap is currently visible.
-        /// </summary>
-        public bool Visible { get; set; }
-
-        /// <summary>
-        /// Creates a new tilemap component.
-        /// </summary>
-        /// <param name="tileMap">The tilemap</param>
-        /// <param name="tileSet">The tileset</param>
-        public TilemapComponent(TileMap tileMap, TileSet tileSet)
+        public TileMapComponent(TileMap tileMap, TileSet tileSet, ITexture texture, SpriteSheet spriteSheet)
         {
             TileMap = tileMap;
             TileSet = tileSet;
-            EnableCollision = true;
-            RenderLayer = 0;
-            Opacity = 1.0f;
-            Visible = true;
+            Texture = texture;
+            SpriteSheet = spriteSheet;
         }
     }
 }

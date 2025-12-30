@@ -26,6 +26,7 @@ namespace Kobold.Monogame
             { KeyCode.Left, XnaKeys.Left },
             { KeyCode.Right, XnaKeys.Right },
             { KeyCode.P, XnaKeys.P },
+            { KeyCode.E, XnaKeys.E },
         };
 
         public void Update()

@@ -28,12 +28,13 @@ namespace Kobold.Extensions.Tilemaps
         public void Update(float deltaTime)
         {
             // Get all tilemaps with collision enabled
-            var tilemapQuery = new QueryDescription().WithAll<TilemapComponent, Transform>();
+            var tilemapQuery = new QueryDescription().WithAll<TileMapComponent, Transform>();
 
-            _world.Query(in tilemapQuery, (Entity tilemapEntity, ref TilemapComponent tilemapComp, ref Transform tilemapTransform) =>
+            _world.Query(in tilemapQuery, (Entity tilemapEntity, ref TileMapComponent tilemapComp, ref Transform tilemapTransform) =>
             {
-                if (!tilemapComp.EnableCollision)
-                    return;
+                // TODO: Add EnableCollision property to TileMapComponent if needed
+                // if (!tilemapComp.EnableCollision)
+                //     return;
 
                 var tileMap = tilemapComp.TileMap;
                 var tileSet = tilemapComp.TileSet;
