@@ -466,11 +466,128 @@ World.Create(
 
 Arch automatically pools component arrays for performance. You don't need to manage this.
 
+## Platform Abstraction
+
+One of Kobold's key design principles is **complete separation between game logic and platform-specific code**. This is achieved through interface-based abstractions.
+
+### Core is Platform-Agnostic
+
+**Kobold.Core** has zero dependencies on MonoGame, Unity, or any rendering engine. All platform-specific functionality is defined as interfaces:
+
+```csharp
+// From Kobold.Core - just interfaces
+public interface ITexture
+{
+    int Width { get; }
+    int Height { get; }
+}
+
+public interface IRenderer
+{
+    void DrawTexture(ITexture texture, Vector2 position, ...);
+    void Clear(Color color);
+}
+
+public interface IInputManager
+{
+    bool IsKeyDown(Keys key);
+    Vector2 MousePosition { get; }
+}
+```
+
+Your game logic works entirely with these abstractions, never touching MonoGame types directly.
+
+### MonoGame Implementation
+
+**Kobold.Monogame** implements these interfaces using MonoGame:
+
+```csharp
+// MonoGame-specific implementation
+public class MonoGameTexture : ITexture
+{
+    private readonly Texture2D _texture;  // MonoGame type
+
+    public int Width => _texture.Width;
+    public int Height => _texture.Height;
+}
+
+public class MonoGameRenderer : IRenderer
+{
+    private readonly SpriteBatch _spriteBatch;  // MonoGame type
+
+    public void DrawTexture(ITexture texture, Vector2 position, ...)
+    {
+        var mgTexture = ((MonoGameTexture)texture)._texture;
+        _spriteBatch.Draw(mgTexture, position, ...);
+    }
+}
+```
+
+### Why This Matters
+
+This architecture provides several benefits:
+
+**1. Alternative Platform Hosts**
+You could theoretically implement Kobold hosts for:
+- Custom rendering engines (Raylib, FNA, SDL2)
+- Other game engines (Unity, potentially with adapters)
+- Headless servers (for game logic testing or multiplayer servers)
+
+**2. Clean Code Boundaries**
+Your game logic lives in the ECS layer and knows nothing about rendering:
+```csharp
+// Game logic - platform agnostic
+public class PlayerMovementSystem : ISystem
+{
+    public void Update(float deltaTime, World world)
+    {
+        var query = world.Query<Transform, Velocity, PlayerControlled>();
+        foreach (var entity in query)
+        {
+            ref var transform = ref entity.Get<Transform>();
+            ref var velocity = ref entity.Get<Velocity>();
+            transform.Position += velocity.Value * deltaTime;
+            // No MonoGame types here!
+        }
+    }
+}
+```
+
+**3. Testability**
+You can test game logic without initializing a graphics device:
+```csharp
+[Test]
+public void PlayerMovement_UpdatesPosition()
+{
+    var world = World.Create();
+    var player = world.Create(
+        new Transform { Position = Vector2.Zero },
+        new Velocity { Value = new Vector2(100, 0) }
+    );
+
+    var system = new PlayerMovementSystem();
+    system.Update(1.0f, world);  // No rendering needed
+
+    var transform = world.Get<Transform>(player);
+    Assert.AreEqual(new Vector2(100, 0), transform.Position);
+}
+```
+
+**4. Future Flexibility**
+If MonoGame development stalls or new platforms emerge, the framework can adapt without rewriting game code.
+
+### Current Recommendation
+
+While the architecture supports alternative hosts, **Kobold.Monogame is the recommended and best-supported implementation**. It's thoroughly tested, well-integrated, and provides the best developer experience.
+
+Custom platform hosts are possible but require implementing all the platform interfaces (`IRenderer`, `ITexture`, `IInputManager`, etc.) and thorough testing.
+
 ## Learn More
 
 - **[Game Engine](game-engine.md)** - How GameEngineBase manages the World
 - **[Components Reference](components.md)** - All built-in components
 - **[Systems Reference](systems.md)** - All built-in systems
+- **[MonoGame Integration](../monogame/)** - How the MonoGame host works
 - **[Arch Library](https://github.com/genaray/Arch)** - The underlying ECS library
 
 ---

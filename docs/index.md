@@ -1,11 +1,12 @@
 # Kobold Game Framework
 
-**Kobold** is a lightweight, high-performance 2D game framework built on the Entity Component System (ECS) architecture and MonoGame. It provides a solid foundation for building games with clean separation of concerns, data-oriented design, and platform abstraction.
+**Kobold** is a lightweight, high-performance 2D game framework built on the Entity Component System (ECS) architecture. The core framework is **platform-agnostic**, with rendering and platform-specific functionality abstracted behind interfaces. While MonoGame is the primary and recommended platform host, the architecture allows for alternative implementations or even integration with other engines.
 
 ## Key Features
 
 - **Entity Component System (ECS)** - Built on the high-performance [Arch](https://github.com/genaray/Arch) library for fast, cache-friendly game logic
-- **MonoGame Integration** - First-class support for MonoGame with clean platform abstractions
+- **Platform-Agnostic Core** - Zero platform dependencies in Kobold.Core. All rendering and platform functionality abstracted behind interfaces (`ITexture`, `IRenderer`)
+- **MonoGame Integration** - Complete MonoGame host implementation (Kobold.Monogame) provides first-class support with clean platform abstractions
 - **Physics & Collision** - Built-in 2D physics system with AABB collision detection and configurable collision layers
 - **Tilemap Support** - Complete tilemap system for grid-based games (platformers, RPGs, roguelikes)
 - **Procedural Generation** - Cellular automata-based cave and level generation
@@ -102,12 +103,25 @@ Working examples and code snippets.
 
 ## Framework Architecture
 
-Kobold is organized into several NuGet packages:
+Kobold is designed around a **platform-agnostic core** that abstracts rendering and platform-specific functionality. While MonoGame is the current (and primary) implementation, the architecture allows for alternative platform hosts.
+
+### Design Vision: Platform Abstraction
+
+**Kobold.Core** defines interfaces and abstractions for rendering, input, and content loading - it has no dependencies on any specific platform or rendering engine. This means:
+
+- The core ECS framework, components, and game logic are **completely platform-independent**
+- Rendering uses abstract interfaces (`ITexture`, `IRenderer`) rather than concrete platform types
+- In theory, you could implement a custom platform host (Raylib, custom renderer, etc.) or potentially even Unity
+- The framework forces clean separation between game logic (platform-agnostic) and rendering (platform-specific)
+
+**Kobold.Monogame** is the reference implementation that provides MonoGame-specific rendering, input, and content loading. It's well-tested and recommended for most projects, but it's just one possible host.
+
+### Package Structure
 
 ```
-Kobold.Core           (Required)
+Kobold.Core           (Platform-agnostic foundation)
     │
-    ├── Kobold.Monogame      (Platform implementation)
+    ├── Kobold.Monogame      (MonoGame platform host)
     │
     ├── Kobold.Extensions    (Optional features)
     │   └── Tilemaps
@@ -120,9 +134,9 @@ Tools:
     └── Kobold.Experiments
 ```
 
-**Kobold.Core** provides the essential framework - ECS, components, systems, abstractions, and utilities. It's platform-agnostic.
+**Kobold.Core** provides the essential framework - ECS, components, systems, platform abstractions (`ITexture`, `IRenderer`), and utilities. Zero platform dependencies.
 
-**Kobold.Monogame** implements the platform-specific parts (rendering, input, content loading) using MonoGame.
+**Kobold.Monogame** implements the platform layer (`ITexture`, `IRenderer`, input, content loading) using MonoGame. This is the standard way to use Kobold.
 
 **Kobold.Extensions** contains optional systems like tilemaps that are common but not universally needed.
 
@@ -134,9 +148,11 @@ Tools:
 
 **Simplicity** - Clean APIs and sensible defaults let you focus on your game, not boilerplate.
 
-**Flexibility** - Platform abstractions make it easy to extend or replace components. Core/Extensions split keeps the framework lean.
+**Platform Abstraction** - Core framework has zero platform dependencies. Rendering, input, and content loading are abstracted behind interfaces (`ITexture`, `IRenderer`), allowing custom platform implementations beyond MonoGame.
 
-**MonoGame Native** - Built specifically for MonoGame, not a generic engine port. Feels natural to MonoGame developers.
+**Flexibility** - Clean separation between platform-agnostic game logic and platform-specific rendering. Core/Extensions split keeps the framework lean. Easy to extend or replace components.
+
+**MonoGame Ready** - Kobold.Monogame provides a complete, well-tested MonoGame implementation that feels natural to MonoGame developers.
 
 **Modern C#** - Uses .NET 8 and modern C# features for clean, expressive code.
 

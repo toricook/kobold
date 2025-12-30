@@ -16,4 +16,6 @@ kramdown:
 # Exclude files from processing
 exclude:
   - README.md
-  - .nojekyll
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
