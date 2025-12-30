@@ -1,0 +1,19 @@
+title: Kobold Game Framework
+description: A lightweight ECS game framework built on MonoGame
+theme: jekyll-theme-cayman
+show_downloads: false
+
+# GitHub Pages configuration
+baseurl: "/Kobold"
+url: "https://toricook.github.io"
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - .nojekyll
