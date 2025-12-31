@@ -10,7 +10,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Kobold.Monogame\Kobold.Monogame.csproj" />
     <ProjectReference Include="..\Kobold\Kobold.Core.csproj" />
-    <ProjectReference Include="..\Kobold.Procedural\Procedural.csproj" />
     <ProjectReference Include="..\Kobold.Extensions\Kobold.Extensions.csproj" />
   </ItemGroup>
 

@@ -1,0 +1,58 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Monogame
+  commentId: N:Kobold.Monogame
+  id: Kobold.Monogame
+  children:
+  - Kobold.Monogame.MonoGameFileContentLoader
+  - Kobold.Monogame.MonoGameHost
+  - Kobold.Monogame.MonoGameInputManager
+  - Kobold.Monogame.MonoGameRenderer
+  - Kobold.Monogame.MonoGameTexture
+  - Kobold.Monogame.PixelFont
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Monogame
+  nameWithType: Kobold.Monogame
+  fullName: Kobold.Monogame
+  type: Namespace
+  assemblies:
+  - Kobold.Monogame
+references:
+- uid: Kobold.Monogame.MonoGameFileContentLoader
+  commentId: T:Kobold.Monogame.MonoGameFileContentLoader
+  href: Kobold.Monogame.MonoGameFileContentLoader.html
+  name: MonoGameFileContentLoader
+  nameWithType: MonoGameFileContentLoader
+  fullName: Kobold.Monogame.MonoGameFileContentLoader
+- uid: Kobold.Monogame.MonoGameHost
+  commentId: T:Kobold.Monogame.MonoGameHost
+  href: Kobold.Monogame.MonoGameHost.html
+  name: MonoGameHost
+  nameWithType: MonoGameHost
+  fullName: Kobold.Monogame.MonoGameHost
+- uid: Kobold.Monogame.MonoGameInputManager
+  commentId: T:Kobold.Monogame.MonoGameInputManager
+  href: Kobold.Monogame.MonoGameInputManager.html
+  name: MonoGameInputManager
+  nameWithType: MonoGameInputManager
+  fullName: Kobold.Monogame.MonoGameInputManager
+- uid: Kobold.Monogame.MonoGameRenderer
+  commentId: T:Kobold.Monogame.MonoGameRenderer
+  href: Kobold.Monogame.MonoGameRenderer.html
+  name: MonoGameRenderer
+  nameWithType: MonoGameRenderer
+  fullName: Kobold.Monogame.MonoGameRenderer
+- uid: Kobold.Monogame.MonoGameTexture
+  commentId: T:Kobold.Monogame.MonoGameTexture
+  href: Kobold.Monogame.MonoGameTexture.html
+  name: MonoGameTexture
+  nameWithType: MonoGameTexture
+  fullName: Kobold.Monogame.MonoGameTexture
+- uid: Kobold.Monogame.PixelFont
+  commentId: T:Kobold.Monogame.PixelFont
+  href: Kobold.Monogame.PixelFont.html
+  name: PixelFont
+  nameWithType: PixelFont
+  fullName: Kobold.Monogame.PixelFont

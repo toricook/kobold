@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.Gameplay
+  commentId: N:Kobold.Core.Components.Gameplay
+  id: Kobold.Core.Components.Gameplay
+  children:
+  - Kobold.Core.Components.Gameplay.CustomBoundaryBehavior
+  - Kobold.Core.Components.Gameplay.Lifetime
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Core.Components.Gameplay
+  nameWithType: Kobold.Core.Components.Gameplay
+  fullName: Kobold.Core.Components.Gameplay
+  type: Namespace
+  assemblies:
+  - Kobold.Core
+references:
+- uid: Kobold.Core.Components.Gameplay.CustomBoundaryBehavior
+  commentId: T:Kobold.Core.Components.Gameplay.CustomBoundaryBehavior
+  href: Kobold.Core.Components.Gameplay.CustomBoundaryBehavior.html
+  name: CustomBoundaryBehavior
+  nameWithType: CustomBoundaryBehavior
+  fullName: Kobold.Core.Components.Gameplay.CustomBoundaryBehavior
+- uid: Kobold.Core.Components.Gameplay.Lifetime
+  commentId: T:Kobold.Core.Components.Gameplay.Lifetime
+  href: Kobold.Core.Components.Gameplay.Lifetime.html
+  name: Lifetime
+  nameWithType: Lifetime
+  fullName: Kobold.Core.Components.Gameplay.Lifetime

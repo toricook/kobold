@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Components Reference | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Components Reference | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/core/components.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="components-reference">Components Reference</h1>
+
+<p>Components are data structs that you attach to entities. This page documents all built-in components in Kobold.Core.</p>
+<h2 id="core-components">Core Components</h2>
+<h3 id="transform">Transform</h3>
+<p>Position, rotation, and scale in 2D space. Every visible entity needs a Transform.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Core.Transform</code></p>
+<pre><code class="lang-csharp">public struct Transform
+{
+    public Vector2 Position;  // World position in pixels
+    public float Rotation;    // Rotation in radians
+    public Vector2 Scale;     // Scale multiplier (1,1 = normal size)
+}
+</code></pre>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><code>Translate(Vector2 delta)</code> - Move by offset</li>
+<li><code>Rotate(float radians)</code> - Rotate by angle</li>
+<li><code>LookAt(Vector2 target)</code> - Point towards target</li>
+<li><code>ToMatrix()</code> - Get transformation matrix</li>
+</ul>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><code>Forward</code> - Direction vector (based on rotation)</li>
+<li><code>Right</code> - Right vector (perpendicular to forward)</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">var entity = World.Create(
+    new Transform
+    {
+        Position = new Vector2(400, 300),
+        Rotation = 0,
+        Scale = new Vector2(1, 1)
+    }
+);
+
+// Rotate to face right
+ref var transform = ref entity.Get&lt;Transform&gt;();
+transform.LookAt(new Vector2(500, 300));
+</code></pre>
+<hr>
+<h3 id="velocity">Velocity</h3>
+<p>Movement vector in pixels per second.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Physics.Velocity</code></p>
+<pre><code class="lang-csharp">public struct Velocity
+{
+    public Vector2 Value;  // Pixels per second
+}
+</code></pre>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><code>Speed</code> - Magnitude of velocity</li>
+<li><code>Direction</code> - Normalized direction vector</li>
+<li><code>IsMoving</code> - True if speed &gt; 0</li>
+</ul>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><code>SetDirectionAndSpeed(Vector2 direction, float speed)</code></li>
+<li><code>Add(Vector2 delta)</code> - Add to velocity</li>
+<li><code>ClampToMaxSpeed(float maxSpeed)</code> - Limit speed</li>
+</ul>
+<p><strong>Static Factories:</strong></p>
+<ul>
+<li><code>FromDirectionAndSpeed(Vector2 direction, float speed)</code></li>
+<li><code>FromAngleAndSpeed(float radians, float speed)</code></li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">World.Create(
+    new Transform { Position = new Vector2(100, 100) },
+    new Velocity { Value = new Vector2(150, 0) }  // Move right at 150 px/s
+);
+
+// Or use factory
+var velocity = Velocity.FromAngleAndSpeed(MathF.PI / 4, 200); // 45°, 200 px/s
+</code></pre>
+<hr>
+<h3 id="physics">Physics</h3>
+<p>Physical properties for physics simulation.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Physics.Physics</code></p>
+<pre><code class="lang-csharp">public struct Physics
+{
+    public float Mass;         // kg (affects gravity)
+    public float Restitution;  // Bounciness (0-1)
+    public float Damping;      // Velocity decay (0-1)
+    public bool IsStatic;      // Immovable object
+}
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Bouncy ball
+World.Create(
+    new Transform { Position = new Vector2(400, 100) },
+    new Velocity { Value = Vector2.Zero },
+    new Physics
+    {
+        Mass = 1.0f,
+        Restitution = 0.9f,  // Very bouncy
+        Damping = 0.99f      // Minimal air resistance
+    }
+);
+</code></pre>
+<hr>
+<h3 id="boxcollider">BoxCollider</h3>
+<p>Axis-Aligned Bounding Box (AABB) collision shape.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Physics.BoxCollider</code></p>
+<pre><code class="lang-csharp">public struct BoxCollider
+{
+    public Vector2 Size;    // Width and height
+    public Vector2 Offset;  // Offset from Transform position
+}
+</code></pre>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><code>GetWorldPosition(Transform)</code> - Get world-space position</li>
+<li><code>GetWorldBounds(Transform)</code> - Get AABB bounds</li>
+<li><code>GetWorldCenter(Transform)</code> - Get center point</li>
+<li><code>Contains(Vector2)</code> - Point-in-box test</li>
+<li><code>Overlaps(BoxCollider, Transform, Transform)</code> - Box-box test</li>
+</ul>
+<p><strong>Static Factories:</strong></p>
+<ul>
+<li><code>FromRenderSize(int width, int height)</code> - Match sprite size</li>
+<li><code>Square(float size)</code> - Square collider</li>
+<li><code>Shrunken(int width, int height, int margin)</code> - Smaller than sprite</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Collider matching sprite size
+var texture = Assets.LoadTexture(&quot;player.png&quot;);
+World.Create(
+    new Transform { Position = new Vector2(200, 200) },
+    SpriteRenderer.FullTexture(texture),
+    BoxCollider.FromRenderSize(texture.Width, texture.Height)
+);
+
+// Custom sized collider
+World.Create(
+    new Transform { Position = new Vector2(300, 300) },
+    new RectangleRenderer { Size = new Vector2(64, 64), Color = Color.Blue },
+    BoxCollider.Square(64)
+);
+</code></pre>
+<hr>
+<h2 id="rendering-components">Rendering Components</h2>
+<h3 id="spriterenderer">SpriteRenderer</h3>
+<p>Renders a texture or sprite from a sprite sheet.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Rendering.SpriteRenderer</code></p>
+<pre><code class="lang-csharp">public struct SpriteRenderer
+{
+    public ITexture Texture;
+    public Rectangle? SourceRect;  // null = full texture
+    public Vector2 Scale;
+    public float Rotation;
+    public Color Tint;
+    public int Layer;
+    public Vector2 Pivot;  // Rotation/scale origin (0-1)
+}
+</code></pre>
+<p><strong>Static Factories:</strong></p>
+<ul>
+<li><code>FullTexture(ITexture, scale, tint, layer)</code> - Use entire texture</li>
+<li><code>FromSpriteSheet(ITexture, Rectangle sourceRect, ...)</code> - Single sprite</li>
+<li><code>Background(ITexture, layer)</code> - Background layer</li>
+<li><code>GameObject(ITexture, scale, layer)</code> - Game object layer</li>
+<li><code>UI(ITexture, layer)</code> - UI layer</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">var texture = Assets.LoadTexture(&quot;player.png&quot;);
+
+// Full texture
+World.Create(
+    new Transform { Position = new Vector2(100, 100) },
+    SpriteRenderer.FullTexture(texture, scale: 2.0f)
+);
+
+// From sprite sheet
+var spriteSheet = Assets.LoadSpriteSheet(&quot;characters.json&quot;);
+World.Create(
+    new Transform { Position = new Vector2(200, 200) },
+    SpriteRenderer.FromSpriteSheet(
+        texture,
+        spriteSheet.GetFrame(0),
+        scale: 1.5f,
+        tint: Color.Red
+    )
+);
+</code></pre>
+<hr>
+<h3 id="rectanglerenderer">RectangleRenderer</h3>
+<p>Renders a colored rectangle.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Rendering.RectangleRenderer</code></p>
+<pre><code class="lang-csharp">public struct RectangleRenderer
+{
+    public Vector2 Size;
+    public Color Color;
+    public int Layer;
+}
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">World.Create(
+    new Transform { Position = new Vector2(300, 300) },
+    new RectangleRenderer
+    {
+        Size = new Vector2(100, 50),
+        Color = Color.Green,
+        Layer = 100
+    }
+);
+</code></pre>
+<hr>
+<h3 id="textrenderer">TextRenderer</h3>
+<p>Renders text.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Rendering.TextRenderer</code></p>
+<pre><code class="lang-csharp">public struct TextRenderer
+{
+    public string Text;
+    public Color Color;
+    public float FontSize;
+    public int Layer;
+}
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">World.Create(
+    new Transform { Position = new Vector2(10, 10) },
+    new TextRenderer
+    {
+        Text = &quot;Score: 0&quot;,
+        Color = Color.White,
+        FontSize = 24,
+        Layer = RenderLayers.UI
+    }
+);
+</code></pre>
+<hr>
+<h3 id="trianglerenderer">TriangleRenderer</h3>
+<p>Renders a triangle.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Rendering.TriangleRenderer</code></p>
+<pre><code class="lang-csharp">public struct TriangleRenderer
+{
+    public Vector2[] Points;  // 3 points
+    public Color Color;
+    public int Layer;
+}
+</code></pre>
+<hr>
+<h3 id="animation">Animation</h3>
+<p>Sprite animation state.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Rendering.Animation</code></p>
+<pre><code class="lang-csharp">public struct Animation
+{
+    public Dictionary&lt;string, AnimationClip&gt; Clips;
+    public string CurrentClip;
+    public int CurrentFrame;
+    public float TimeInCurrentFrame;
+    public bool IsPlaying;
+}
+</code></pre>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><code>Play(string clipName)</code> - Start playing animation</li>
+<li><code>GetCurrentFrameRect()</code> - Get current frame's source rectangle</li>
+<li><code>GetCurrentClip()</code> - Get current AnimationClip</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">var spriteSheet = Assets.LoadSpriteSheet(&quot;player.json&quot;);
+
+var animation = new Animation();
+animation.Clips[&quot;walk&quot;] = spriteSheet.CreateAnimationClip(&quot;walk&quot;);
+animation.Clips[&quot;idle&quot;] = spriteSheet.CreateAnimationClip(&quot;idle&quot;);
+animation.Play(&quot;idle&quot;);
+
+World.Create(
+    new Transform { Position = new Vector2(400, 300) },
+    SpriteRenderer.FromSpriteSheet(texture, spriteSheet.GetFrame(0)),
+    animation
+);
+</code></pre>
+<hr>
+<h3 id="animationclip">AnimationClip</h3>
+<p>Animation definition (frames, timing, looping).</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Rendering.AnimationClip</code></p>
+<pre><code class="lang-csharp">public struct AnimationClip
+{
+    public string Name;
+    public Rectangle[] Frames;
+    public float FrameDuration;
+    public bool Loop;
+}
+</code></pre>
+<p><strong>Static Factories:</strong></p>
+<ul>
+<li><code>FromSpriteSheet(SpriteSheet, string animationName)</code></li>
+<li><code>FromGrid(gridWidth, gridHeight, frameWidth, frameHeight, ...)</code></li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">var walkClip = AnimationClip.FromGrid(
+    gridWidth: 8,
+    gridHeight: 1,
+    frameWidth: 32,
+    frameHeight: 32,
+    startFrame: 0,
+    frameCount: 8,
+    frameDuration: 0.1f,
+    loop: true
+);
+</code></pre>
+<hr>
+<h2 id="camera">Camera</h2>
+<p>Viewport camera for scrolling/following.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Core.Camera</code></p>
+<pre><code class="lang-csharp">public struct Camera
+{
+    public Vector2 Position;
+    public float ViewportWidth;
+    public float ViewportHeight;
+    public float SmoothSpeed;
+    public Vector2? MinBounds;
+    public Vector2? MaxBounds;
+    public Entity? FollowTarget;
+}
+</code></pre>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><code>WorldToScreen(Vector2)</code> - Convert world to screen coordinates</li>
+<li><code>ScreenToWorld(Vector2)</code> - Convert screen to world coordinates</li>
+<li><code>GetViewportBounds()</code> - Get camera bounds rectangle</li>
+<li><code>SetBounds(Vector2 min, Vector2 max)</code> - Constrain camera</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Camera that follows player
+var camera = World.Create(
+    new Camera
+    {
+        Position = Vector2.Zero,
+        ViewportWidth = 800,
+        ViewportHeight = 600,
+        SmoothSpeed = 5f,
+        FollowTarget = playerEntity,
+        MinBounds = new Vector2(0, 0),
+        MaxBounds = new Vector2(2000, 1500)
+    }
+);
+</code></pre>
+<hr>
+<h2 id="gameplay-components">Gameplay Components</h2>
+<h3 id="tags">Tags</h3>
+<p>String tags for categorizing entities.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Core.Tags</code></p>
+<pre><code class="lang-csharp">public struct Tags
+{
+    public string[] Values;
+}
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">World.Create(
+    new Transform { Position = new Vector2(100, 100) },
+    new Tags { Values = new[] { &quot;Enemy&quot;, &quot;Flying&quot;, &quot;Boss&quot; } }
+);
+
+// Query entities with tag
+var enemies = World.Query&lt;Transform, Tags&gt;()
+    .Where(e =&gt;
+    {
+        var tags = e.Get&lt;Tags&gt;();
+        return tags.Values.Contains(&quot;Enemy&quot;);
+    });
+</code></pre>
+<hr>
+<h3 id="lifetime">Lifetime</h3>
+<p>Automatically destroys entity after time expires.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Gameplay.Lifetime</code></p>
+<pre><code class="lang-csharp">public struct Lifetime
+{
+    public float TimeRemaining;  // Seconds
+}
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Particle that lives for 2 seconds
+World.Create(
+    new Transform { Position = new Vector2(300, 300) },
+    new RectangleRenderer { Size = new Vector2(5, 5), Color = Color.Yellow },
+    new Lifetime { TimeRemaining = 2.0f }
+);
+</code></pre>
+<hr>
+<h3 id="playercontrolled">PlayerControlled</h3>
+<p>Marker component for player-controlled entities.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Gameplay.PlayerControlled</code></p>
+<pre><code class="lang-csharp">public struct PlayerControlled { }
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">var player = World.Create(
+    new Transform { Position = new Vector2(400, 300) },
+    SpriteRenderer.FullTexture(texture),
+    new PlayerControlled()
+);
+
+// Query only player entities
+var players = World.Query&lt;Transform, Velocity, PlayerControlled&gt;();
+</code></pre>
+<hr>
+<h3 id="screenbounds">ScreenBounds</h3>
+<p>Defines screen boundaries for BoundarySystem.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Gameplay.ScreenBounds</code></p>
+<pre><code class="lang-csharp">public struct ScreenBounds
+{
+    public float MinX, MaxX, MinY, MaxY;
+}
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Usually created once at game start
+World.Create(new ScreenBounds
+{
+    MinX = 0,
+    MaxX = 800,
+    MinY = 0,
+    MaxY = 600
+});
+</code></pre>
+<hr>
+<h3 id="gamestate">GameState</h3>
+<p>Global game state storage.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Core.GameState</code></p>
+<pre><code class="lang-csharp">public struct GameState
+{
+    public GameStateType State;
+    // Add your game-specific fields
+}
+
+public enum GameStateType
+{
+    Menu,
+    Playing,
+    Paused,
+    GameOver
+}
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Create singleton game state entity
+var gameState = World.Create(new GameState
+{
+    State = GameStateType.Playing
+});
+
+// Access from anywhere
+var query = World.Query&lt;GameState&gt;();
+ref var state = ref query.First().Get&lt;GameState&gt;();
+state.State = GameStateType.Paused;
+</code></pre>
+<hr>
+<h3 id="pendingdestruction">PendingDestruction</h3>
+<p>Marks entity for removal at end of frame.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Gameplay.PendingDestruction</code></p>
+<pre><code class="lang-csharp">public struct PendingDestruction { }
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Mark for destruction (safer than immediate World.Destroy)
+World.Add(entity, new PendingDestruction());
+// DestructionSystem will remove it at the end of the frame
+</code></pre>
+<hr>
+<h3 id="customboundarybehavior">CustomBoundaryBehavior</h3>
+<p>Custom screen boundary handling.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Components.Gameplay.CustomBoundaryBehavior</code></p>
+<pre><code class="lang-csharp">public struct CustomBoundaryBehavior
+{
+    public BoundaryBehavior Behavior;
+}
+
+public enum BoundaryBehavior
+{
+    None,     // Do nothing
+    Wrap,     // Wrap to opposite side
+    Clamp,    // Stop at edge
+    Bounce,   // Bounce off edge
+    Destroy   // Destroy entity
+}
+</code></pre>
+<hr>
+<h2 id="render-layers">Render Layers</h2>
+<p>Constants for layered rendering:</p>
+<pre><code class="lang-csharp">public static class RenderLayers
+{
+    public const int Background = 0;
+    public const int GameObjects = 100;
+    public const int UI = 200;
+    public const int Debug = 300;
+}
+</code></pre>
+<p>Lower numbers render first (behind).</p>
+<hr>
+<h2 id="collision-layers">Collision Layers</h2>
+<p>Enum for collision filtering:</p>
+<pre><code class="lang-csharp">public enum CollisionLayer
+{
+    Default = 0,
+    Player = 1,
+    Enemy = 2,
+    Projectile = 3,
+    Environment = 4,
+    PlayerProjectile = 5,
+    EnemyProjectile = 6,
+    Pickup = 7,
+    Trigger = 8
+}
+</code></pre>
+<p>Use with CollisionSystem and CollisionMatrix.</p>
+<hr>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong><a href="systems.html">Systems</a></strong> - Systems that use these components</li>
+<li><strong><a href="architecture.html">Architecture</a></strong> - Understanding ECS</li>
+<li><strong><a href="../examples/code-snippets.html">Code Snippets</a></strong> - Component usage examples</li>
+</ul>
+<hr>
+<p><strong>Next:</strong> Learn about <a href="systems.html">Systems</a> that process these components →</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/core/components.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

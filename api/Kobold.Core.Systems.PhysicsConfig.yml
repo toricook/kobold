@@ -1,0 +1,761 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Systems.PhysicsConfig
+  commentId: T:Kobold.Core.Systems.PhysicsConfig
+  id: PhysicsConfig
+  parent: Kobold.Core.Systems
+  children:
+  - Kobold.Core.Systems.PhysicsConfig.DefaultAngularDamping
+  - Kobold.Core.Systems.PhysicsConfig.DefaultDamping
+  - Kobold.Core.Systems.PhysicsConfig.DefaultLinearDamping
+  - Kobold.Core.Systems.PhysicsConfig.EnableDamping
+  - Kobold.Core.Systems.PhysicsConfig.EnableGravity
+  - Kobold.Core.Systems.PhysicsConfig.EnableRotationalPhysics
+  - Kobold.Core.Systems.PhysicsConfig.EnableSpeedLimits
+  - Kobold.Core.Systems.PhysicsConfig.EnableThrust
+  - Kobold.Core.Systems.PhysicsConfig.GlobalGravity
+  - Kobold.Core.Systems.PhysicsConfig.MinVelocityThreshold
+  - Kobold.Core.Systems.PhysicsConfig.UseMultiplicativeDamping
+  langs:
+  - csharp
+  - vb
+  name: PhysicsConfig
+  nameWithType: PhysicsConfig
+  fullName: Kobold.Core.Systems.PhysicsConfig
+  type: Class
+  source:
+    remote:
+      path: Kobold/Systems/PhysicsSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: PhysicsConfig
+    path: Kobold/Systems/PhysicsSystem.cs
+    startLine: 110
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  summary: Configuration for physics simulation
+  example: []
+  syntax:
+    content: public class PhysicsConfig
+    content.vb: Public Class PhysicsConfig
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Core.Systems.PhysicsConfig.EnableGravity
+  commentId: P:Kobold.Core.Systems.PhysicsConfig.EnableGravity
+  id: EnableGravity
+  parent: Kobold.Core.Systems.PhysicsConfig
+  langs:
+  - csharp
+  - vb
+  name: EnableGravity
+  nameWithType: PhysicsConfig.EnableGravity
+  fullName: Kobold.Core.Systems.PhysicsConfig.EnableGravity
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/PhysicsSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: EnableGravity
+    path: Kobold/Systems/PhysicsSystem.cs
+    startLine: 112
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public bool EnableGravity { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EnableGravity As Boolean
+  overload: Kobold.Core.Systems.PhysicsConfig.EnableGravity*
+- uid: Kobold.Core.Systems.PhysicsConfig.EnableDamping
+  commentId: P:Kobold.Core.Systems.PhysicsConfig.EnableDamping
+  id: EnableDamping
+  parent: Kobold.Core.Systems.PhysicsConfig
+  langs:
+  - csharp
+  - vb
+  name: EnableDamping
+  nameWithType: PhysicsConfig.EnableDamping
+  fullName: Kobold.Core.Systems.PhysicsConfig.EnableDamping
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/PhysicsSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: EnableDamping
+    path: Kobold/Systems/PhysicsSystem.cs
+    startLine: 113
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public bool EnableDamping { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EnableDamping As Boolean
+  overload: Kobold.Core.Systems.PhysicsConfig.EnableDamping*
+- uid: Kobold.Core.Systems.PhysicsConfig.EnableRotationalPhysics
+  commentId: P:Kobold.Core.Systems.PhysicsConfig.EnableRotationalPhysics
+  id: EnableRotationalPhysics
+  parent: Kobold.Core.Systems.PhysicsConfig
+  langs:
+  - csharp
+  - vb
+  name: EnableRotationalPhysics
+  nameWithType: PhysicsConfig.EnableRotationalPhysics
+  fullName: Kobold.Core.Systems.PhysicsConfig.EnableRotationalPhysics
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/PhysicsSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: EnableRotationalPhysics
+    path: Kobold/Systems/PhysicsSystem.cs
+    startLine: 114
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public bool EnableRotationalPhysics { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EnableRotationalPhysics As Boolean
+  overload: Kobold.Core.Systems.PhysicsConfig.EnableRotationalPhysics*
+- uid: Kobold.Core.Systems.PhysicsConfig.EnableThrust
+  commentId: P:Kobold.Core.Systems.PhysicsConfig.EnableThrust
+  id: EnableThrust
+  parent: Kobold.Core.Systems.PhysicsConfig
+  langs:
+  - csharp
+  - vb
+  name: EnableThrust
+  nameWithType: PhysicsConfig.EnableThrust
+  fullName: Kobold.Core.Systems.PhysicsConfig.EnableThrust
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/PhysicsSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: EnableThrust
+    path: Kobold/Systems/PhysicsSystem.cs
+    startLine: 115
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public bool EnableThrust { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EnableThrust As Boolean
+  overload: Kobold.Core.Systems.PhysicsConfig.EnableThrust*
+- uid: Kobold.Core.Systems.PhysicsConfig.EnableSpeedLimits
+  commentId: P:Kobold.Core.Systems.PhysicsConfig.EnableSpeedLimits
+  id: EnableSpeedLimits
+  parent: Kobold.Core.Systems.PhysicsConfig
+  langs:
+  - csharp
+  - vb
+  name: EnableSpeedLimits
+  nameWithType: PhysicsConfig.EnableSpeedLimits
+  fullName: Kobold.Core.Systems.PhysicsConfig.EnableSpeedLimits
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/PhysicsSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: EnableSpeedLimits
+    path: Kobold/Systems/PhysicsSystem.cs
+    startLine: 116
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public bool EnableSpeedLimits { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EnableSpeedLimits As Boolean
+  overload: Kobold.Core.Systems.PhysicsConfig.EnableSpeedLimits*
+- uid: Kobold.Core.Systems.PhysicsConfig.GlobalGravity
+  commentId: P:Kobold.Core.Systems.PhysicsConfig.GlobalGravity
+  id: GlobalGravity
+  parent: Kobold.Core.Systems.PhysicsConfig
+  langs:
+  - csharp
+  - vb
+  name: GlobalGravity
+  nameWithType: PhysicsConfig.GlobalGravity
+  fullName: Kobold.Core.Systems.PhysicsConfig.GlobalGravity
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/PhysicsSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GlobalGravity
+    path: Kobold/Systems/PhysicsSystem.cs
+    startLine: 117
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public Vector2 GlobalGravity { get; set; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public Property GlobalGravity As Vector2
+  overload: Kobold.Core.Systems.PhysicsConfig.GlobalGravity*
+- uid: Kobold.Core.Systems.PhysicsConfig.DefaultDamping
+  commentId: P:Kobold.Core.Systems.PhysicsConfig.DefaultDamping
+  id: DefaultDamping
+  parent: Kobold.Core.Systems.PhysicsConfig
+  langs:
+  - csharp
+  - vb
+  name: DefaultDamping
+  nameWithType: PhysicsConfig.DefaultDamping
+  fullName: Kobold.Core.Systems.PhysicsConfig.DefaultDamping
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/PhysicsSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DefaultDamping
+    path: Kobold/Systems/PhysicsSystem.cs
+    startLine: 118
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public float DefaultDamping { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property DefaultDamping As Single
+  overload: Kobold.Core.Systems.PhysicsConfig.DefaultDamping*
+- uid: Kobold.Core.Systems.PhysicsConfig.DefaultLinearDamping
+  commentId: P:Kobold.Core.Systems.PhysicsConfig.DefaultLinearDamping
+  id: DefaultLinearDamping
+  parent: Kobold.Core.Systems.PhysicsConfig
+  langs:
+  - csharp
+  - vb
+  name: DefaultLinearDamping
+  nameWithType: PhysicsConfig.DefaultLinearDamping
+  fullName: Kobold.Core.Systems.PhysicsConfig.DefaultLinearDamping
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/PhysicsSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DefaultLinearDamping
+    path: Kobold/Systems/PhysicsSystem.cs
+    startLine: 119
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public float DefaultLinearDamping { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property DefaultLinearDamping As Single
+  overload: Kobold.Core.Systems.PhysicsConfig.DefaultLinearDamping*
+- uid: Kobold.Core.Systems.PhysicsConfig.DefaultAngularDamping
+  commentId: P:Kobold.Core.Systems.PhysicsConfig.DefaultAngularDamping
+  id: DefaultAngularDamping
+  parent: Kobold.Core.Systems.PhysicsConfig
+  langs:
+  - csharp
+  - vb
+  name: DefaultAngularDamping
+  nameWithType: PhysicsConfig.DefaultAngularDamping
+  fullName: Kobold.Core.Systems.PhysicsConfig.DefaultAngularDamping
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/PhysicsSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DefaultAngularDamping
+    path: Kobold/Systems/PhysicsSystem.cs
+    startLine: 120
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public float DefaultAngularDamping { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property DefaultAngularDamping As Single
+  overload: Kobold.Core.Systems.PhysicsConfig.DefaultAngularDamping*
+- uid: Kobold.Core.Systems.PhysicsConfig.MinVelocityThreshold
+  commentId: P:Kobold.Core.Systems.PhysicsConfig.MinVelocityThreshold
+  id: MinVelocityThreshold
+  parent: Kobold.Core.Systems.PhysicsConfig
+  langs:
+  - csharp
+  - vb
+  name: MinVelocityThreshold
+  nameWithType: PhysicsConfig.MinVelocityThreshold
+  fullName: Kobold.Core.Systems.PhysicsConfig.MinVelocityThreshold
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/PhysicsSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: MinVelocityThreshold
+    path: Kobold/Systems/PhysicsSystem.cs
+    startLine: 121
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public float MinVelocityThreshold { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property MinVelocityThreshold As Single
+  overload: Kobold.Core.Systems.PhysicsConfig.MinVelocityThreshold*
+- uid: Kobold.Core.Systems.PhysicsConfig.UseMultiplicativeDamping
+  commentId: P:Kobold.Core.Systems.PhysicsConfig.UseMultiplicativeDamping
+  id: UseMultiplicativeDamping
+  parent: Kobold.Core.Systems.PhysicsConfig
+  langs:
+  - csharp
+  - vb
+  name: UseMultiplicativeDamping
+  nameWithType: PhysicsConfig.UseMultiplicativeDamping
+  fullName: Kobold.Core.Systems.PhysicsConfig.UseMultiplicativeDamping
+  type: Property
+  source:
+    remote:
+      path: Kobold/Systems/PhysicsSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: UseMultiplicativeDamping
+    path: Kobold/Systems/PhysicsSystem.cs
+    startLine: 122
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public bool UseMultiplicativeDamping { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property UseMultiplicativeDamping As Boolean
+  overload: Kobold.Core.Systems.PhysicsConfig.UseMultiplicativeDamping*
+references:
+- uid: Kobold.Core.Systems
+  commentId: N:Kobold.Core.Systems
+  href: Kobold.html
+  name: Kobold.Core.Systems
+  nameWithType: Kobold.Core.Systems
+  fullName: Kobold.Core.Systems
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Systems.PhysicsConfig.EnableGravity*
+  commentId: Overload:Kobold.Core.Systems.PhysicsConfig.EnableGravity
+  href: Kobold.Core.Systems.PhysicsConfig.html#Kobold_Core_Systems_PhysicsConfig_EnableGravity
+  name: EnableGravity
+  nameWithType: PhysicsConfig.EnableGravity
+  fullName: Kobold.Core.Systems.PhysicsConfig.EnableGravity
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Kobold.Core.Systems.PhysicsConfig.EnableDamping*
+  commentId: Overload:Kobold.Core.Systems.PhysicsConfig.EnableDamping
+  href: Kobold.Core.Systems.PhysicsConfig.html#Kobold_Core_Systems_PhysicsConfig_EnableDamping
+  name: EnableDamping
+  nameWithType: PhysicsConfig.EnableDamping
+  fullName: Kobold.Core.Systems.PhysicsConfig.EnableDamping
+- uid: Kobold.Core.Systems.PhysicsConfig.EnableRotationalPhysics*
+  commentId: Overload:Kobold.Core.Systems.PhysicsConfig.EnableRotationalPhysics
+  href: Kobold.Core.Systems.PhysicsConfig.html#Kobold_Core_Systems_PhysicsConfig_EnableRotationalPhysics
+  name: EnableRotationalPhysics
+  nameWithType: PhysicsConfig.EnableRotationalPhysics
+  fullName: Kobold.Core.Systems.PhysicsConfig.EnableRotationalPhysics
+- uid: Kobold.Core.Systems.PhysicsConfig.EnableThrust*
+  commentId: Overload:Kobold.Core.Systems.PhysicsConfig.EnableThrust
+  href: Kobold.Core.Systems.PhysicsConfig.html#Kobold_Core_Systems_PhysicsConfig_EnableThrust
+  name: EnableThrust
+  nameWithType: PhysicsConfig.EnableThrust
+  fullName: Kobold.Core.Systems.PhysicsConfig.EnableThrust
+- uid: Kobold.Core.Systems.PhysicsConfig.EnableSpeedLimits*
+  commentId: Overload:Kobold.Core.Systems.PhysicsConfig.EnableSpeedLimits
+  href: Kobold.Core.Systems.PhysicsConfig.html#Kobold_Core_Systems_PhysicsConfig_EnableSpeedLimits
+  name: EnableSpeedLimits
+  nameWithType: PhysicsConfig.EnableSpeedLimits
+  fullName: Kobold.Core.Systems.PhysicsConfig.EnableSpeedLimits
+- uid: Kobold.Core.Systems.PhysicsConfig.GlobalGravity*
+  commentId: Overload:Kobold.Core.Systems.PhysicsConfig.GlobalGravity
+  href: Kobold.Core.Systems.PhysicsConfig.html#Kobold_Core_Systems_PhysicsConfig_GlobalGravity
+  name: GlobalGravity
+  nameWithType: PhysicsConfig.GlobalGravity
+  fullName: Kobold.Core.Systems.PhysicsConfig.GlobalGravity
+- uid: System.Numerics.Vector2
+  commentId: T:System.Numerics.Vector2
+  parent: System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  name: Vector2
+  nameWithType: Vector2
+  fullName: System.Numerics.Vector2
+- uid: System.Numerics
+  commentId: N:System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Numerics
+  nameWithType: System.Numerics
+  fullName: System.Numerics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+- uid: Kobold.Core.Systems.PhysicsConfig.DefaultDamping*
+  commentId: Overload:Kobold.Core.Systems.PhysicsConfig.DefaultDamping
+  href: Kobold.Core.Systems.PhysicsConfig.html#Kobold_Core_Systems_PhysicsConfig_DefaultDamping
+  name: DefaultDamping
+  nameWithType: PhysicsConfig.DefaultDamping
+  fullName: Kobold.Core.Systems.PhysicsConfig.DefaultDamping
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Core.Systems.PhysicsConfig.DefaultLinearDamping*
+  commentId: Overload:Kobold.Core.Systems.PhysicsConfig.DefaultLinearDamping
+  href: Kobold.Core.Systems.PhysicsConfig.html#Kobold_Core_Systems_PhysicsConfig_DefaultLinearDamping
+  name: DefaultLinearDamping
+  nameWithType: PhysicsConfig.DefaultLinearDamping
+  fullName: Kobold.Core.Systems.PhysicsConfig.DefaultLinearDamping
+- uid: Kobold.Core.Systems.PhysicsConfig.DefaultAngularDamping*
+  commentId: Overload:Kobold.Core.Systems.PhysicsConfig.DefaultAngularDamping
+  href: Kobold.Core.Systems.PhysicsConfig.html#Kobold_Core_Systems_PhysicsConfig_DefaultAngularDamping
+  name: DefaultAngularDamping
+  nameWithType: PhysicsConfig.DefaultAngularDamping
+  fullName: Kobold.Core.Systems.PhysicsConfig.DefaultAngularDamping
+- uid: Kobold.Core.Systems.PhysicsConfig.MinVelocityThreshold*
+  commentId: Overload:Kobold.Core.Systems.PhysicsConfig.MinVelocityThreshold
+  href: Kobold.Core.Systems.PhysicsConfig.html#Kobold_Core_Systems_PhysicsConfig_MinVelocityThreshold
+  name: MinVelocityThreshold
+  nameWithType: PhysicsConfig.MinVelocityThreshold
+  fullName: Kobold.Core.Systems.PhysicsConfig.MinVelocityThreshold
+- uid: Kobold.Core.Systems.PhysicsConfig.UseMultiplicativeDamping*
+  commentId: Overload:Kobold.Core.Systems.PhysicsConfig.UseMultiplicativeDamping
+  href: Kobold.Core.Systems.PhysicsConfig.html#Kobold_Core_Systems_PhysicsConfig_UseMultiplicativeDamping
+  name: UseMultiplicativeDamping
+  nameWithType: PhysicsConfig.UseMultiplicativeDamping
+  fullName: Kobold.Core.Systems.PhysicsConfig.UseMultiplicativeDamping

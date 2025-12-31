@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class TileMap | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class TileMap | Kobold Game Framework ">
+      
+      <meta name="description" content="Represents a grid-based tilemap with support for multiple layers.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/new/docs/apiSpec/new?filename=Kobold_Extensions_Tilemaps_TileMap.md&amp;value=---%0Auid%3A%20Kobold.Extensions.Tilemaps.TileMap%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Kobold.Extensions.Tilemaps.TileMap">
+
+
+
+  <h1 id="Kobold_Extensions_Tilemaps_TileMap" data-uid="Kobold.Extensions.Tilemaps.TileMap" class="text-break">
+Class TileMap  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Kobold.html">Kobold</a>.<a class="xref" href="Kobold.Extensions.html">Extensions</a>.<a class="xref" href="Kobold.Extensions.Tilemaps.html">Tilemaps</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Kobold.Extensions.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents a grid-based tilemap with support for multiple layers.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class TileMap</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">TileMap</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap__ctor_" data-uid="Kobold.Extensions.Tilemaps.TileMap.#ctor*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap__ctor_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="Kobold.Extensions.Tilemaps.TileMap.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+  TileMap(int, int, int, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new tilemap with the specified dimensions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TileMap(int width, int height, int tileWidth, int tileHeight, int layerCount = 1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Width in tiles</p>
+</dd>
+    <dt><code>height</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Height in tiles</p>
+</dd>
+    <dt><code>tileWidth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Width of each tile in pixels</p>
+</dd>
+    <dt><code>tileHeight</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Height of each tile in pixels</p>
+</dd>
+    <dt><code>layerCount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Number of layers (default: 1)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_Height_" data-uid="Kobold.Extensions.Tilemaps.TileMap.Height*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_Height" data-uid="Kobold.Extensions.Tilemaps.TileMap.Height">
+  Height
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Height { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_LayerCount_" data-uid="Kobold.Extensions.Tilemaps.TileMap.LayerCount*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_LayerCount" data-uid="Kobold.Extensions.Tilemaps.TileMap.LayerCount">
+  LayerCount
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int LayerCount { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_TileHeight_" data-uid="Kobold.Extensions.Tilemaps.TileMap.TileHeight*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_TileHeight" data-uid="Kobold.Extensions.Tilemaps.TileMap.TileHeight">
+  TileHeight
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TileHeight { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_TileWidth_" data-uid="Kobold.Extensions.Tilemaps.TileMap.TileWidth*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_TileWidth" data-uid="Kobold.Extensions.Tilemaps.TileMap.TileWidth">
+  TileWidth
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int TileWidth { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_Width_" data-uid="Kobold.Extensions.Tilemaps.TileMap.Width*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_Width" data-uid="Kobold.Extensions.Tilemaps.TileMap.Width">
+  Width
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Width { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_Clear_" data-uid="Kobold.Extensions.Tilemaps.TileMap.Clear*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_Clear" data-uid="Kobold.Extensions.Tilemaps.TileMap.Clear">
+  Clear()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Clears all tiles on all layers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_ClearLayer_" data-uid="Kobold.Extensions.Tilemaps.TileMap.ClearLayer*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_ClearLayer_System_Int32_" data-uid="Kobold.Extensions.Tilemaps.TileMap.ClearLayer(System.Int32)">
+  ClearLayer(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Clears all tiles on the specified layer (sets them to -1).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearLayer(int layer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>layer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Layer index to clear</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_Clone_" data-uid="Kobold.Extensions.Tilemaps.TileMap.Clone*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_Clone" data-uid="Kobold.Extensions.Tilemaps.TileMap.Clone">
+  Clone()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a copy of this tilemap.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TileMap Clone()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Extensions.Tilemaps.TileMap.html">TileMap</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_Fill_" data-uid="Kobold.Extensions.Tilemaps.TileMap.Fill*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_Fill_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="Kobold.Extensions.Tilemaps.TileMap.Fill(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+  Fill(int, int, int, int, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L99"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Fills a rectangular region with the specified tile ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Fill(int layer, int x, int y, int width, int height, int tileId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>layer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Layer index (0-based)</p>
+</dd>
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Starting X coordinate</p>
+</dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Starting Y coordinate</p>
+</dd>
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Width in tiles</p>
+</dd>
+    <dt><code>height</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Height in tiles</p>
+</dd>
+    <dt><code>tileId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Tile ID to fill with</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_GetPixelSize_" data-uid="Kobold.Extensions.Tilemaps.TileMap.GetPixelSize*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_GetPixelSize" data-uid="Kobold.Extensions.Tilemaps.TileMap.GetPixelSize">
+  GetPixelSize()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L233"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the total size of the tilemap in pixels.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (int pixelWidth, int pixelHeight) GetPixelSize()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.tilex">tileX</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.tiley">tileY</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_GetTile_" data-uid="Kobold.Extensions.Tilemaps.TileMap.GetTile*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_GetTile_System_Int32_System_Int32_System_Int32_" data-uid="Kobold.Extensions.Tilemaps.TileMap.GetTile(System.Int32,System.Int32,System.Int32)">
+  GetTile(int, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the tile ID at the specified position and layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetTile(int layer, int x, int y)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>layer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Layer index (0-based)</p>
+</dd>
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>X coordinate in tile units</p>
+</dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Y coordinate in tile units</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Tile ID, or -1 if empty or out of bounds</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_GetTilesInBounds_" data-uid="Kobold.Extensions.Tilemaps.TileMap.GetTilesInBounds*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_GetTilesInBounds_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="Kobold.Extensions.Tilemaps.TileMap.GetTilesInBounds(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+  GetTilesInBounds(int, int, int, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L154"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets all tiles within the specified rectangular bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;(int x, int y, int tileId)&gt; GetTilesInBounds(int layer, int x, int y, int width, int height)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>layer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Layer index</p>
+</dd>
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Starting X coordinate</p>
+</dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Starting Y coordinate</p>
+</dd>
+    <dt><code>width</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Width in tiles</p>
+</dd>
+    <dt><code>height</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Height in tiles</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32-.x">x</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32-.y">y</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32,system.int32-.tileid">tileId</a>)&gt;</dt>
+    <dd><p>List of tile positions and IDs</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_IsValidLayer_" data-uid="Kobold.Extensions.Tilemaps.TileMap.IsValidLayer*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_IsValidLayer_System_Int32_" data-uid="Kobold.Extensions.Tilemaps.TileMap.IsValidLayer(System.Int32)">
+  IsValidLayer(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L225"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks if the specified layer index is valid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsValidLayer(int layer)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>layer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_IsValidPosition_" data-uid="Kobold.Extensions.Tilemaps.TileMap.IsValidPosition*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_IsValidPosition_System_Int32_System_Int32_" data-uid="Kobold.Extensions.Tilemaps.TileMap.IsValidPosition(System.Int32,System.Int32)">
+  IsValidPosition(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L217"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks if the specified tile coordinates are within bounds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsValidPosition(int x, int y)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_SetTile_" data-uid="Kobold.Extensions.Tilemaps.TileMap.SetTile*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_SetTile_System_Int32_System_Int32_System_Int32_System_Int32_" data-uid="Kobold.Extensions.Tilemaps.TileMap.SetTile(System.Int32,System.Int32,System.Int32,System.Int32)">
+  SetTile(int, int, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the tile ID at the specified position and layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetTile(int layer, int x, int y, int tileId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>layer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Layer index (0-based)</p>
+</dd>
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>X coordinate in tile units</p>
+</dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Y coordinate in tile units</p>
+</dd>
+    <dt><code>tileId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Tile ID to set (-1 for empty)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_TileToWorld_" data-uid="Kobold.Extensions.Tilemaps.TileMap.TileToWorld*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_TileToWorld_System_Int32_System_Int32_" data-uid="Kobold.Extensions.Tilemaps.TileMap.TileToWorld(System.Int32,System.Int32)">
+  TileToWorld(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts tile coordinates to world position (in pixels, top-left corner of tile).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (float worldX, float worldY) TileToWorld(int tileX, int tileY)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tileX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>X coordinate in tiles</p>
+</dd>
+    <dt><code>tileY</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Y coordinate in tiles</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single-.worldx">worldX</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single-.worldy">worldY</a>)</dt>
+    <dd><p>World position in pixels</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_TileToWorldCenter_" data-uid="Kobold.Extensions.Tilemaps.TileMap.TileToWorldCenter*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_TileToWorldCenter_System_Int32_System_Int32_" data-uid="Kobold.Extensions.Tilemaps.TileMap.TileToWorldCenter(System.Int32,System.Int32)">
+  TileToWorldCenter(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L208"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the center position of a tile in world coordinates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (float worldX, float worldY) TileToWorldCenter(int tileX, int tileY)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tileX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>tileY</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single-.worldx">worldX</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single-.worldy">worldY</a>)</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileMap_WorldToTile_" data-uid="Kobold.Extensions.Tilemaps.TileMap.WorldToTile*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileMap_WorldToTile_System_Single_System_Single_" data-uid="Kobold.Extensions.Tilemaps.TileMap.WorldToTile(System.Single,System.Single)">
+  WorldToTile(float, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L185"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Converts world position (in pixels) to tile coordinates.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public (int tileX, int tileY) WorldToTile(float worldX, float worldY)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>worldX</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>X position in pixels</p>
+</dd>
+    <dt><code>worldY</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Y position in pixels</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.tilex">tileX</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.tiley">tileY</a>)</dt>
+    <dd><p>Tile coordinates</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileMap.cs/#L9" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

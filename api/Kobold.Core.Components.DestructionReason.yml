@@ -1,0 +1,201 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.DestructionReason
+  commentId: T:Kobold.Core.Components.DestructionReason
+  id: DestructionReason
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.DestructionReason.BoundaryExit
+  - Kobold.Core.Components.DestructionReason.Collision
+  - Kobold.Core.Components.DestructionReason.GameRestart
+  - Kobold.Core.Components.DestructionReason.Lifetime
+  - Kobold.Core.Components.DestructionReason.Manual
+  langs:
+  - csharp
+  - vb
+  name: DestructionReason
+  nameWithType: DestructionReason
+  fullName: Kobold.Core.Components.DestructionReason
+  type: Enum
+  source:
+    remote:
+      path: Kobold/Components/PendingDestruction.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DestructionReason
+    path: Kobold/Components/PendingDestruction.cs
+    startLine: 24
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public enum DestructionReason
+    content.vb: Public Enum DestructionReason
+- uid: Kobold.Core.Components.DestructionReason.BoundaryExit
+  commentId: F:Kobold.Core.Components.DestructionReason.BoundaryExit
+  id: BoundaryExit
+  parent: Kobold.Core.Components.DestructionReason
+  langs:
+  - csharp
+  - vb
+  name: BoundaryExit
+  nameWithType: DestructionReason.BoundaryExit
+  fullName: Kobold.Core.Components.DestructionReason.BoundaryExit
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/PendingDestruction.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: BoundaryExit
+    path: Kobold/Components/PendingDestruction.cs
+    startLine: 26
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: BoundaryExit = 0
+    return:
+      type: Kobold.Core.Components.DestructionReason
+- uid: Kobold.Core.Components.DestructionReason.Collision
+  commentId: F:Kobold.Core.Components.DestructionReason.Collision
+  id: Collision
+  parent: Kobold.Core.Components.DestructionReason
+  langs:
+  - csharp
+  - vb
+  name: Collision
+  nameWithType: DestructionReason.Collision
+  fullName: Kobold.Core.Components.DestructionReason.Collision
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/PendingDestruction.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Collision
+    path: Kobold/Components/PendingDestruction.cs
+    startLine: 27
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: Collision = 1
+    return:
+      type: Kobold.Core.Components.DestructionReason
+- uid: Kobold.Core.Components.DestructionReason.Lifetime
+  commentId: F:Kobold.Core.Components.DestructionReason.Lifetime
+  id: Lifetime
+  parent: Kobold.Core.Components.DestructionReason
+  langs:
+  - csharp
+  - vb
+  name: Lifetime
+  nameWithType: DestructionReason.Lifetime
+  fullName: Kobold.Core.Components.DestructionReason.Lifetime
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/PendingDestruction.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Lifetime
+    path: Kobold/Components/PendingDestruction.cs
+    startLine: 28
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: Lifetime = 2
+    return:
+      type: Kobold.Core.Components.DestructionReason
+- uid: Kobold.Core.Components.DestructionReason.Manual
+  commentId: F:Kobold.Core.Components.DestructionReason.Manual
+  id: Manual
+  parent: Kobold.Core.Components.DestructionReason
+  langs:
+  - csharp
+  - vb
+  name: Manual
+  nameWithType: DestructionReason.Manual
+  fullName: Kobold.Core.Components.DestructionReason.Manual
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/PendingDestruction.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Manual
+    path: Kobold/Components/PendingDestruction.cs
+    startLine: 29
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: Manual = 3
+    return:
+      type: Kobold.Core.Components.DestructionReason
+- uid: Kobold.Core.Components.DestructionReason.GameRestart
+  commentId: F:Kobold.Core.Components.DestructionReason.GameRestart
+  id: GameRestart
+  parent: Kobold.Core.Components.DestructionReason
+  langs:
+  - csharp
+  - vb
+  name: GameRestart
+  nameWithType: DestructionReason.GameRestart
+  fullName: Kobold.Core.Components.DestructionReason.GameRestart
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/PendingDestruction.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GameRestart
+    path: Kobold/Components/PendingDestruction.cs
+    startLine: 30
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: GameRestart = 4
+    return:
+      type: Kobold.Core.Components.DestructionReason
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: Kobold.Core.Components.DestructionReason
+  commentId: T:Kobold.Core.Components.DestructionReason
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.DestructionReason.html
+  name: DestructionReason
+  nameWithType: DestructionReason
+  fullName: Kobold.Core.Components.DestructionReason

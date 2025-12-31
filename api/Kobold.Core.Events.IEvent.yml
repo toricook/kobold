@@ -1,0 +1,59 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Events.IEvent
+  commentId: T:Kobold.Core.Events.IEvent
+  id: IEvent
+  parent: Kobold.Core.Events
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IEvent
+  nameWithType: IEvent
+  fullName: Kobold.Core.Events.IEvent
+  type: Interface
+  source:
+    remote:
+      path: Kobold/Events/IEvent.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IEvent
+    path: Kobold/Events/IEvent.cs
+    startLine: 8
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Events
+  syntax:
+    content: public interface IEvent
+    content.vb: Public Interface IEvent
+references:
+- uid: Kobold.Core.Events
+  commentId: N:Kobold.Core.Events
+  href: Kobold.html
+  name: Kobold.Core.Events
+  nameWithType: Kobold.Core.Events
+  fullName: Kobold.Core.Events
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html

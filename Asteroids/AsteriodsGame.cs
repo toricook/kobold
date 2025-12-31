@@ -185,8 +185,7 @@ namespace Asteroids
 
         public override void Render()
         {
-            var renderSystem = SystemManager.GetSystem<RenderSystem>();
-            renderSystem?.Render();
+            base.Render();
         }
     }
 }

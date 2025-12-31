@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Kobold Architecture - Entity Component System | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Kobold Architecture - Entity Component System | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/core/architecture.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="kobold-architecture---entity-component-system">Kobold Architecture - Entity Component System</h1>
+
+<p>Kobold is built on the <strong>Entity Component System (ECS)</strong> architectural pattern, providing high-performance, data-oriented game development. This guide explains what ECS is, why Kobold uses it, and how it works.</p>
+<h2 id="what-is-entity-component-system">What is Entity Component System?</h2>
+<p>ECS is an architectural pattern that separates data (Components) from logic (Systems) and treats game objects as compositions of data (Entities).</p>
+<h3 id="the-three-pillars">The Three Pillars</h3>
+<p><strong>Entities</strong> - Unique identifiers for game objects</p>
+<ul>
+<li>Just an ID number (not a class or object)</li>
+<li>Created with <code>World.Create()</code></li>
+<li>Lightweight and fast to create/destroy</li>
+</ul>
+<p><strong>Components</strong> - Data containers (structs)</p>
+<ul>
+<li>Pure data, no logic</li>
+<li>Examples: <code>Transform</code>, <code>Velocity</code>, <code>SpriteRenderer</code></li>
+<li>Attached to entities to give them properties</li>
+</ul>
+<p><strong>Systems</strong> - Logic processors</p>
+<ul>
+<li>Contain all game logic</li>
+<li>Query entities with specific components</li>
+<li>Process matched entities each frame</li>
+</ul>
+<h3 id="traditional-oop-vs-ecs">Traditional OOP vs ECS</h3>
+<p><strong>Traditional Object-Oriented:</strong></p>
+<pre><code class="lang-csharp">class Player : GameObject
+{
+    Vector2 position;
+    Sprite sprite;
+    int health;
+
+    void Update() { /* update logic */ }
+    void Render() { /* render logic */ }
+}
+
+class Enemy : GameObject
+{
+    // Duplicate code from Player...
+}
+</code></pre>
+<p>Problems:</p>
+<ul>
+<li>Rigid inheritance hierarchies</li>
+<li>Code duplication</li>
+<li>Poor cache locality</li>
+<li>Difficult to extend</li>
+</ul>
+<p><strong>Entity Component System:</strong></p>
+<pre><code class="lang-csharp">// Components (data only)
+struct Transform { Vector2 Position; }
+struct Health { int Value; }
+struct SpriteRenderer { ITexture Texture; }
+
+// Entities (just IDs with components)
+var player = World.Create(
+    new Transform(), new Health(), new SpriteRenderer()
+);
+
+var enemy = World.Create(
+    new Transform(), new Health(), new SpriteRenderer(), new AI()
+);
+
+// Systems (logic only)
+class MovementSystem
+{
+    void Update()
+    {
+        // Process all entities with Transform + Velocity
+        var query = World.Query&lt;Transform, Velocity&gt;();
+        foreach (var entity in query) { /* move */ }
+    }
+}
+</code></pre>
+<p>Benefits:</p>
+<ul>
+<li>Composition over inheritance</li>
+<li>No code duplication</li>
+<li>Excellent cache performance</li>
+<li>Easy to add/remove behaviors</li>
+</ul>
+<h2 id="kobolds-ecs-implementation">Kobold's ECS Implementation</h2>
+<p>Kobold uses the <a href="https://github.com/genaray/Arch">Arch</a> library, a high-performance ECS implementation for C#.</p>
+<h3 id="the-world">The World</h3>
+<p>The <code>World</code> is the ECS container that holds all entities and components. Access it via <code>GameEngineBase.World</code>:</p>
+<pre><code class="lang-csharp">public class MyGame : GameEngineBase
+{
+    protected override void Initialize()
+    {
+        base.Initialize();
+
+        // World is automatically created by GameEngineBase
+        var entity = World.Create(new Transform(), new Velocity());
+    }
+}
+</code></pre>
+<h3 id="creating-entities">Creating Entities</h3>
+<p>Entities are created with <code>World.Create()</code> and one or more components:</p>
+<pre><code class="lang-csharp">// Entity with single component
+var entity1 = World.Create(new Transform { Position = new Vector2(100, 100) });
+
+// Entity with multiple components
+var entity2 = World.Create(
+    new Transform { Position = new Vector2(200, 200) },
+    new Velocity { Value = new Vector2(50, 0) },
+    SpriteRenderer.FullTexture(texture),
+    BoxCollider.Square(32)
+);
+</code></pre>
+<p>The return value is an <code>Entity</code> struct (from Arch) which you can store if you need to reference it later.</p>
+<h3 id="components">Components</h3>
+<p>Components are structs (value types) that store data. Kobold provides many built-in components:</p>
+<pre><code class="lang-csharp">// Core components
+public struct Transform
+{
+    public Vector2 Position;
+    public float Rotation;  // Radians
+    public Vector2 Scale;
+}
+
+public struct Velocity
+{
+    public Vector2 Value;  // Pixels per second
+}
+
+// Rendering components
+public struct SpriteRenderer
+{
+    public ITexture Texture;
+    public Rectangle? SourceRect;
+    public Vector2 Scale;
+    public Color Tint;
+    public int Layer;
+}
+</code></pre>
+<p><strong>Best Practices:</strong></p>
+<ul>
+<li>Keep components as simple data containers</li>
+<li>No methods (except static factories and simple helpers)</li>
+<li>Use <code>struct</code> not <code>class</code> for performance</li>
+<li>Make fields public for ECS access</li>
+</ul>
+<h3 id="querying-entities">Querying Entities</h3>
+<p>Systems query entities that have specific components:</p>
+<pre><code class="lang-csharp">// Query all entities with Transform and Velocity
+var query = World.Query&lt;Transform, Velocity&gt;();
+foreach (var entity in query)
+{
+    // Get component references
+    ref var transform = ref entity.Get&lt;Transform&gt;();
+    ref var velocity = ref entity.Get&lt;Velocity&gt;();
+
+    // Modify components
+    transform.Position += velocity.Value * deltaTime;
+}
+</code></pre>
+<p><strong>Query Types:</strong></p>
+<pre><code class="lang-csharp">// 1 component
+World.Query&lt;Transform&gt;();
+
+// 2 components
+World.Query&lt;Transform, Velocity&gt;();
+
+// 3+ components
+World.Query&lt;Transform, Velocity, SpriteRenderer&gt;();
+
+// With filters (entities that DON'T have a component)
+World.Query&lt;Transform&gt;().Where(e =&gt; !e.Has&lt;Velocity&gt;());
+</code></pre>
+<h3 id="addingremoving-components">Adding/Removing Components</h3>
+<p>Components can be added or removed from existing entities:</p>
+<pre><code class="lang-csharp">// Add component
+World.Add(entity, new Velocity { Value = new Vector2(100, 0) });
+
+// Remove component
+World.Remove&lt;Velocity&gt;(entity);
+
+// Check if has component
+bool hasVelocity = World.Has&lt;Velocity&gt;(entity);
+
+// Get component value
+if (World.TryGet&lt;Transform&gt;(entity, out var transform))
+{
+    Console.WriteLine($&quot;Position: {transform.Position}&quot;);
+}
+</code></pre>
+<h3 id="destroying-entities">Destroying Entities</h3>
+<pre><code class="lang-csharp">// Immediate destruction
+World.Destroy(entity);
+
+// Deferred destruction (preferred in systems)
+World.Add(entity, new PendingDestruction());
+// DestructionSystem will remove it at the end of the frame
+</code></pre>
+<h2 id="systems">Systems</h2>
+<p>Systems contain the logic that processes entities. Kobold provides many built-in systems and allows custom systems.</p>
+<h3 id="isystem-interface">ISystem Interface</h3>
+<pre><code class="lang-csharp">public interface ISystem
+{
+    void Update(float deltaTime, World world);
+}
+</code></pre>
+<h3 id="example-system">Example System</h3>
+<pre><code class="lang-csharp">public class GravitySystem : ISystem
+{
+    private readonly Vector2 _gravity;
+
+    public GravitySystem(Vector2 gravity)
+    {
+        _gravity = gravity;
+    }
+
+    public void Update(float deltaTime, World world)
+    {
+        var query = world.Query&lt;Velocity, Physics&gt;();
+        foreach (var entity in query)
+        {
+            ref var velocity = ref entity.Get&lt;Velocity&gt;();
+            ref var physics = ref entity.Get&lt;Physics&gt;();
+
+            if (!physics.IsStatic)
+            {
+                velocity.Value += _gravity * physics.Mass * deltaTime;
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="adding-systems">Adding Systems</h3>
+<p>Systems are added in <code>Initialize()</code> with an execution order:</p>
+<pre><code class="lang-csharp">protected override void Initialize()
+{
+    base.Initialize();
+
+    // Lower order = runs first
+    Systems.AddSystem(new InputSystem(InputManager), 0, true);
+    Systems.AddSystem(new PhysicsSystem(), 100, true);
+    Systems.AddSystem(new CollisionSystem(), 300, true);
+
+    // Render systems (called separately during Render)
+    Systems.AddRenderSystem(new RenderSystem(Renderer));
+}
+</code></pre>
+<p>The third parameter (<code>requiresGameplayState</code>) determines if the system should pause when the game is paused.</p>
+<h3 id="system-execution-order">System Execution Order</h3>
+<p>Kobold defines standard execution order constants:</p>
+<pre><code class="lang-csharp">public static class SystemOrder
+{
+    public const int INPUT = 0;
+    public const int PHYSICS = 100;
+    public const int AI = 200;
+    public const int COLLISION = 300;
+    public const int GAME_LOGIC = 400;
+    public const int UI = 500;
+    public const int CLEANUP = 600;
+}
+</code></pre>
+<p>Use these to ensure consistent system ordering.</p>
+<h2 id="data-oriented-design-benefits">Data-Oriented Design Benefits</h2>
+<p>ECS provides several performance advantages:</p>
+<h3 id="cache-locality">Cache Locality</h3>
+<p>Components are stored in contiguous memory arrays (archetypes in Arch), improving CPU cache hit rates:</p>
+<pre><code>Traditional OOP:
+[Player object] -&gt; scattered memory locations
+[Enemy object]  -&gt; different memory locations
+
+ECS:
+[Transform, Transform, Transform, ...] -&gt; contiguous array
+[Velocity, Velocity, Velocity, ...]    -&gt; contiguous array
+</code></pre>
+<h3 id="parallel-processing">Parallel Processing</h3>
+<p>Systems can process entity queries in parallel since components are independent:</p>
+<pre><code class="lang-csharp">// Future Kobold feature (Arch supports this)
+World.Query&lt;Transform, Velocity&gt;().ForEach((ref Transform t, ref Velocity v) =&gt;
+{
+    t.Position += v.Value * deltaTime;
+}).Run(); // Parallel execution
+</code></pre>
+<h3 id="no-virtual-calls">No Virtual Calls</h3>
+<p>Components are structs and systems query concrete types - no virtual method overhead.</p>
+<h2 id="composition-over-inheritance">Composition Over Inheritance</h2>
+<p>ECS makes it trivial to compose complex behaviors from simple components:</p>
+<pre><code class="lang-csharp">// Flying enemy
+World.Create(
+    new Transform(),
+    new Velocity(),
+    new AI { Type = AIType.Chase },
+    new SpriteRenderer(),
+    new Health { Value = 3 }
+);
+
+// Walking enemy (just add gravity)
+World.Create(
+    new Transform(),
+    new Velocity(),
+    new AI { Type = AIType.Patrol },
+    new SpriteRenderer(),
+    new Health { Value = 5 },
+    new Physics { Mass = 1.0f }  // PhysicsSystem will apply gravity
+);
+
+// Invincible flying enemy (remove Health)
+World.Create(
+    new Transform(),
+    new Velocity(),
+    new AI { Type = AIType.Boss },
+    new SpriteRenderer()
+    // No Health component = can't be damaged
+);
+</code></pre>
+<p>No inheritance hierarchies needed!</p>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-keep-components-small">1. Keep Components Small</h3>
+<pre><code class="lang-csharp">// Good - focused components
+struct Transform { Vector2 Position; float Rotation; }
+struct Velocity { Vector2 Value; }
+
+// Bad - kitchen sink component
+struct GameObject { Vector2 Position; Vector2 Velocity; Sprite Sprite; int Health; }
+</code></pre>
+<h3 id="2-use-tags-for-categorization">2. Use Tags for Categorization</h3>
+<pre><code class="lang-csharp">struct PlayerControlled { }  // Empty tag component
+struct Enemy { }
+
+// Query only player entities
+var query = World.Query&lt;Transform, PlayerControlled&gt;();
+</code></pre>
+<h3 id="3-favor-queries-over-entity-references">3. Favor Queries Over Entity References</h3>
+<pre><code class="lang-csharp">// Good - data-oriented
+var players = World.Query&lt;Transform, PlayerControlled&gt;();
+foreach (var player in players) { /* ... */ }
+
+// Okay for specific relationships
+Entity _followTarget;  // Camera follows this entity
+</code></pre>
+<h3 id="4-system-order-matters">4. System Order Matters</h3>
+<p>Always add systems in logical order:</p>
+<ol>
+<li>Input</li>
+<li>AI/Game Logic</li>
+<li>Physics</li>
+<li>Collision</li>
+<li>Destruction</li>
+<li>Rendering</li>
+</ol>
+<h3 id="5-use-deferred-destruction">5. Use Deferred Destruction</h3>
+<pre><code class="lang-csharp">// During system update - don't destroy immediately
+World.Add(entity, new PendingDestruction());
+
+// DestructionSystem cleans up at the end of the frame
+</code></pre>
+<h2 id="advanced-topics">Advanced Topics</h2>
+<h3 id="singleton-components">Singleton Components</h3>
+<p>For global game state, create a singleton entity:</p>
+<pre><code class="lang-csharp">var gameState = World.Create(new GameState { Score = 0, Lives = 3 });
+
+// Access anywhere
+var query = World.Query&lt;GameState&gt;();
+ref var state = ref query.First().Get&lt;GameState&gt;();
+state.Score += 100;
+</code></pre>
+<h3 id="entity-relationships">Entity Relationships</h3>
+<p>For parent-child or other relationships:</p>
+<pre><code class="lang-csharp">struct Parent { public Entity Value; }
+struct Child { public Entity ParentEntity; }
+
+// Create parent
+var parent = World.Create(new Transform());
+
+// Create children
+World.Create(
+    new Transform(),
+    new Child { ParentEntity = parent }
+);
+</code></pre>
+<h3 id="component-pools">Component Pools</h3>
+<p>Arch automatically pools component arrays for performance. You don't need to manage this.</p>
+<h2 id="platform-abstraction">Platform Abstraction</h2>
+<p>One of Kobold's key design principles is <strong>complete separation between game logic and platform-specific code</strong>. This is achieved through interface-based abstractions.</p>
+<h3 id="core-is-platform-agnostic">Core is Platform-Agnostic</h3>
+<p><strong>Kobold.Core</strong> has zero dependencies on MonoGame, Unity, or any rendering engine. All platform-specific functionality is defined as interfaces:</p>
+<pre><code class="lang-csharp">// From Kobold.Core - just interfaces
+public interface ITexture
+{
+    int Width { get; }
+    int Height { get; }
+}
+
+public interface IRenderer
+{
+    void DrawTexture(ITexture texture, Vector2 position, ...);
+    void Clear(Color color);
+}
+
+public interface IInputManager
+{
+    bool IsKeyDown(Keys key);
+    Vector2 MousePosition { get; }
+}
+</code></pre>
+<p>Your game logic works entirely with these abstractions, never touching MonoGame types directly.</p>
+<h3 id="monogame-implementation">MonoGame Implementation</h3>
+<p><strong>Kobold.Monogame</strong> implements these interfaces using MonoGame:</p>
+<pre><code class="lang-csharp">// MonoGame-specific implementation
+public class MonoGameTexture : ITexture
+{
+    private readonly Texture2D _texture;  // MonoGame type
+
+    public int Width =&gt; _texture.Width;
+    public int Height =&gt; _texture.Height;
+}
+
+public class MonoGameRenderer : IRenderer
+{
+    private readonly SpriteBatch _spriteBatch;  // MonoGame type
+
+    public void DrawTexture(ITexture texture, Vector2 position, ...)
+    {
+        var mgTexture = ((MonoGameTexture)texture)._texture;
+        _spriteBatch.Draw(mgTexture, position, ...);
+    }
+}
+</code></pre>
+<h3 id="why-this-matters">Why This Matters</h3>
+<p>This architecture provides several benefits:</p>
+<p><strong>1. Alternative Platform Hosts</strong>
+You could theoretically implement Kobold hosts for:</p>
+<ul>
+<li>Custom rendering engines (Raylib, FNA, SDL2)</li>
+<li>Other game engines (Unity, potentially with adapters)</li>
+<li>Headless servers (for game logic testing or multiplayer servers)</li>
+</ul>
+<p><strong>2. Clean Code Boundaries</strong>
+Your game logic lives in the ECS layer and knows nothing about rendering:</p>
+<pre><code class="lang-csharp">// Game logic - platform agnostic
+public class PlayerMovementSystem : ISystem
+{
+    public void Update(float deltaTime, World world)
+    {
+        var query = world.Query&lt;Transform, Velocity, PlayerControlled&gt;();
+        foreach (var entity in query)
+        {
+            ref var transform = ref entity.Get&lt;Transform&gt;();
+            ref var velocity = ref entity.Get&lt;Velocity&gt;();
+            transform.Position += velocity.Value * deltaTime;
+            // No MonoGame types here!
+        }
+    }
+}
+</code></pre>
+<p><strong>3. Testability</strong>
+You can test game logic without initializing a graphics device:</p>
+<pre><code class="lang-csharp">[Test]
+public void PlayerMovement_UpdatesPosition()
+{
+    var world = World.Create();
+    var player = world.Create(
+        new Transform { Position = Vector2.Zero },
+        new Velocity { Value = new Vector2(100, 0) }
+    );
+
+    var system = new PlayerMovementSystem();
+    system.Update(1.0f, world);  // No rendering needed
+
+    var transform = world.Get&lt;Transform&gt;(player);
+    Assert.AreEqual(new Vector2(100, 0), transform.Position);
+}
+</code></pre>
+<p><strong>4. Future Flexibility</strong>
+If MonoGame development stalls or new platforms emerge, the framework can adapt without rewriting game code.</p>
+<h3 id="current-recommendation">Current Recommendation</h3>
+<p>While the architecture supports alternative hosts, <strong>Kobold.Monogame is the recommended and best-supported implementation</strong>. It's thoroughly tested, well-integrated, and provides the best developer experience.</p>
+<p>Custom platform hosts are possible but require implementing all the platform interfaces (<code>IRenderer</code>, <code>ITexture</code>, <code>IInputManager</code>, etc.) and thorough testing.</p>
+<h2 id="learn-more">Learn More</h2>
+<ul>
+<li><strong><a href="game-engine.html">Game Engine</a></strong> - How GameEngineBase manages the World</li>
+<li><strong><a href="components.html">Components Reference</a></strong> - All built-in components</li>
+<li><strong><a href="systems.html">Systems Reference</a></strong> - All built-in systems</li>
+<li><strong><a href="../monogame/">MonoGame Integration</a></strong> - How the MonoGame host works</li>
+<li><strong><a href="https://github.com/genaray/Arch">Arch Library</a></strong> - The underlying ECS library</li>
+</ul>
+<hr>
+<p><strong>Next:</strong> Learn about <a href="game-engine.html">GameEngineBase</a> and the game lifecycle →</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/core/architecture.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

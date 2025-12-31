@@ -1,0 +1,398 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Abstractions.Input.KeyCode
+  commentId: T:Kobold.Core.Abstractions.Input.KeyCode
+  id: KeyCode
+  parent: Kobold.Core.Abstractions.Input
+  children:
+  - Kobold.Core.Abstractions.Input.KeyCode.A
+  - Kobold.Core.Abstractions.Input.KeyCode.D
+  - Kobold.Core.Abstractions.Input.KeyCode.Down
+  - Kobold.Core.Abstractions.Input.KeyCode.Enter
+  - Kobold.Core.Abstractions.Input.KeyCode.Escape
+  - Kobold.Core.Abstractions.Input.KeyCode.Left
+  - Kobold.Core.Abstractions.Input.KeyCode.P
+  - Kobold.Core.Abstractions.Input.KeyCode.Right
+  - Kobold.Core.Abstractions.Input.KeyCode.S
+  - Kobold.Core.Abstractions.Input.KeyCode.Space
+  - Kobold.Core.Abstractions.Input.KeyCode.Up
+  - Kobold.Core.Abstractions.Input.KeyCode.W
+  langs:
+  - csharp
+  - vb
+  name: KeyCode
+  nameWithType: KeyCode
+  fullName: Kobold.Core.Abstractions.Input.KeyCode
+  type: Enum
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: KeyCode
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 21
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: public enum KeyCode
+    content.vb: Public Enum KeyCode
+- uid: Kobold.Core.Abstractions.Input.KeyCode.W
+  commentId: F:Kobold.Core.Abstractions.Input.KeyCode.W
+  id: W
+  parent: Kobold.Core.Abstractions.Input.KeyCode
+  langs:
+  - csharp
+  - vb
+  name: W
+  nameWithType: KeyCode.W
+  fullName: Kobold.Core.Abstractions.Input.KeyCode.W
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: W
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 23
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: W = 0
+    return:
+      type: Kobold.Core.Abstractions.Input.KeyCode
+- uid: Kobold.Core.Abstractions.Input.KeyCode.A
+  commentId: F:Kobold.Core.Abstractions.Input.KeyCode.A
+  id: A
+  parent: Kobold.Core.Abstractions.Input.KeyCode
+  langs:
+  - csharp
+  - vb
+  name: A
+  nameWithType: KeyCode.A
+  fullName: Kobold.Core.Abstractions.Input.KeyCode.A
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: A
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 23
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: A = 1
+    return:
+      type: Kobold.Core.Abstractions.Input.KeyCode
+- uid: Kobold.Core.Abstractions.Input.KeyCode.S
+  commentId: F:Kobold.Core.Abstractions.Input.KeyCode.S
+  id: S
+  parent: Kobold.Core.Abstractions.Input.KeyCode
+  langs:
+  - csharp
+  - vb
+  name: S
+  nameWithType: KeyCode.S
+  fullName: Kobold.Core.Abstractions.Input.KeyCode.S
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: S
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 23
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: S = 2
+    return:
+      type: Kobold.Core.Abstractions.Input.KeyCode
+- uid: Kobold.Core.Abstractions.Input.KeyCode.D
+  commentId: F:Kobold.Core.Abstractions.Input.KeyCode.D
+  id: D
+  parent: Kobold.Core.Abstractions.Input.KeyCode
+  langs:
+  - csharp
+  - vb
+  name: D
+  nameWithType: KeyCode.D
+  fullName: Kobold.Core.Abstractions.Input.KeyCode.D
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: D
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 23
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: D = 3
+    return:
+      type: Kobold.Core.Abstractions.Input.KeyCode
+- uid: Kobold.Core.Abstractions.Input.KeyCode.Space
+  commentId: F:Kobold.Core.Abstractions.Input.KeyCode.Space
+  id: Space
+  parent: Kobold.Core.Abstractions.Input.KeyCode
+  langs:
+  - csharp
+  - vb
+  name: Space
+  nameWithType: KeyCode.Space
+  fullName: Kobold.Core.Abstractions.Input.KeyCode.Space
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Space
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 23
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: Space = 4
+    return:
+      type: Kobold.Core.Abstractions.Input.KeyCode
+- uid: Kobold.Core.Abstractions.Input.KeyCode.Enter
+  commentId: F:Kobold.Core.Abstractions.Input.KeyCode.Enter
+  id: Enter
+  parent: Kobold.Core.Abstractions.Input.KeyCode
+  langs:
+  - csharp
+  - vb
+  name: Enter
+  nameWithType: KeyCode.Enter
+  fullName: Kobold.Core.Abstractions.Input.KeyCode.Enter
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Enter
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 23
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: Enter = 5
+    return:
+      type: Kobold.Core.Abstractions.Input.KeyCode
+- uid: Kobold.Core.Abstractions.Input.KeyCode.Escape
+  commentId: F:Kobold.Core.Abstractions.Input.KeyCode.Escape
+  id: Escape
+  parent: Kobold.Core.Abstractions.Input.KeyCode
+  langs:
+  - csharp
+  - vb
+  name: Escape
+  nameWithType: KeyCode.Escape
+  fullName: Kobold.Core.Abstractions.Input.KeyCode.Escape
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Escape
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 23
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: Escape = 6
+    return:
+      type: Kobold.Core.Abstractions.Input.KeyCode
+- uid: Kobold.Core.Abstractions.Input.KeyCode.Up
+  commentId: F:Kobold.Core.Abstractions.Input.KeyCode.Up
+  id: Up
+  parent: Kobold.Core.Abstractions.Input.KeyCode
+  langs:
+  - csharp
+  - vb
+  name: Up
+  nameWithType: KeyCode.Up
+  fullName: Kobold.Core.Abstractions.Input.KeyCode.Up
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Up
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 24
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: Up = 7
+    return:
+      type: Kobold.Core.Abstractions.Input.KeyCode
+- uid: Kobold.Core.Abstractions.Input.KeyCode.Down
+  commentId: F:Kobold.Core.Abstractions.Input.KeyCode.Down
+  id: Down
+  parent: Kobold.Core.Abstractions.Input.KeyCode
+  langs:
+  - csharp
+  - vb
+  name: Down
+  nameWithType: KeyCode.Down
+  fullName: Kobold.Core.Abstractions.Input.KeyCode.Down
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Down
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 24
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: Down = 8
+    return:
+      type: Kobold.Core.Abstractions.Input.KeyCode
+- uid: Kobold.Core.Abstractions.Input.KeyCode.Left
+  commentId: F:Kobold.Core.Abstractions.Input.KeyCode.Left
+  id: Left
+  parent: Kobold.Core.Abstractions.Input.KeyCode
+  langs:
+  - csharp
+  - vb
+  name: Left
+  nameWithType: KeyCode.Left
+  fullName: Kobold.Core.Abstractions.Input.KeyCode.Left
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Left
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 24
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: Left = 9
+    return:
+      type: Kobold.Core.Abstractions.Input.KeyCode
+- uid: Kobold.Core.Abstractions.Input.KeyCode.Right
+  commentId: F:Kobold.Core.Abstractions.Input.KeyCode.Right
+  id: Right
+  parent: Kobold.Core.Abstractions.Input.KeyCode
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: KeyCode.Right
+  fullName: Kobold.Core.Abstractions.Input.KeyCode.Right
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Right
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 24
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: Right = 10
+    return:
+      type: Kobold.Core.Abstractions.Input.KeyCode
+- uid: Kobold.Core.Abstractions.Input.KeyCode.P
+  commentId: F:Kobold.Core.Abstractions.Input.KeyCode.P
+  id: P
+  parent: Kobold.Core.Abstractions.Input.KeyCode
+  langs:
+  - csharp
+  - vb
+  name: P
+  nameWithType: KeyCode.P
+  fullName: Kobold.Core.Abstractions.Input.KeyCode.P
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: P
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 25
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: P = 11
+    return:
+      type: Kobold.Core.Abstractions.Input.KeyCode
+references:
+- uid: Kobold.Core.Abstractions.Input
+  commentId: N:Kobold.Core.Abstractions.Input
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Input
+  nameWithType: Kobold.Core.Abstractions.Input
+  fullName: Kobold.Core.Abstractions.Input
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Input
+    name: Input
+    href: Kobold.Core.Abstractions.Input.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Input
+    name: Input
+    href: Kobold.Core.Abstractions.Input.html
+- uid: Kobold.Core.Abstractions.Input.KeyCode
+  commentId: T:Kobold.Core.Abstractions.Input.KeyCode
+  parent: Kobold.Core.Abstractions.Input
+  href: Kobold.Core.Abstractions.Input.KeyCode.html
+  name: KeyCode
+  nameWithType: KeyCode
+  fullName: Kobold.Core.Abstractions.Input.KeyCode

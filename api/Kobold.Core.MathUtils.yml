@@ -1,0 +1,839 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.MathUtils
+  commentId: T:Kobold.Core.MathUtils
+  id: MathUtils
+  parent: Kobold.Core
+  children:
+  - Kobold.Core.MathUtils.AngleDifference(System.Single,System.Single)
+  - Kobold.Core.MathUtils.Clamp(System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2)
+  - Kobold.Core.MathUtils.DegreesToRadians(System.Single)
+  - Kobold.Core.MathUtils.Lerp(System.Numerics.Vector2,System.Numerics.Vector2,System.Single)
+  - Kobold.Core.MathUtils.Lerp(System.Single,System.Single,System.Single)
+  - Kobold.Core.MathUtils.MoveTowards(System.Numerics.Vector2,System.Numerics.Vector2,System.Single)
+  - Kobold.Core.MathUtils.MoveTowards(System.Single,System.Single,System.Single)
+  - Kobold.Core.MathUtils.RadiansToDegrees(System.Single)
+  - Kobold.Core.MathUtils.RandomDirection
+  - Kobold.Core.MathUtils.RandomRange(System.Single,System.Single)
+  - Kobold.Core.MathUtils.WrapAngle(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: MathUtils
+  nameWithType: MathUtils
+  fullName: Kobold.Core.MathUtils
+  type: Class
+  source:
+    remote:
+      path: Kobold/MathUtils.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: MathUtils
+    path: Kobold/MathUtils.cs
+    startLine: 9
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: public static class MathUtils
+    content.vb: Public Module MathUtils
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Core.MathUtils.Clamp(System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2)
+  commentId: M:Kobold.Core.MathUtils.Clamp(System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2)
+  id: Clamp(System.Numerics.Vector2,System.Numerics.Vector2,System.Numerics.Vector2)
+  parent: Kobold.Core.MathUtils
+  langs:
+  - csharp
+  - vb
+  name: Clamp(Vector2, Vector2, Vector2)
+  nameWithType: MathUtils.Clamp(Vector2, Vector2, Vector2)
+  fullName: Kobold.Core.MathUtils.Clamp(System.Numerics.Vector2, System.Numerics.Vector2, System.Numerics.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Kobold/MathUtils.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Clamp
+    path: Kobold/MathUtils.cs
+    startLine: 11
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: public static Vector2 Clamp(Vector2 value, Vector2 min, Vector2 max)
+    parameters:
+    - id: value
+      type: System.Numerics.Vector2
+    - id: min
+      type: System.Numerics.Vector2
+    - id: max
+      type: System.Numerics.Vector2
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public Shared Function Clamp(value As Vector2, min As Vector2, max As Vector2) As Vector2
+  overload: Kobold.Core.MathUtils.Clamp*
+- uid: Kobold.Core.MathUtils.RandomRange(System.Single,System.Single)
+  commentId: M:Kobold.Core.MathUtils.RandomRange(System.Single,System.Single)
+  id: RandomRange(System.Single,System.Single)
+  parent: Kobold.Core.MathUtils
+  langs:
+  - csharp
+  - vb
+  name: RandomRange(float, float)
+  nameWithType: MathUtils.RandomRange(float, float)
+  fullName: Kobold.Core.MathUtils.RandomRange(float, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/MathUtils.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: RandomRange
+    path: Kobold/MathUtils.cs
+    startLine: 19
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: public static float RandomRange(float min, float max)
+    parameters:
+    - id: min
+      type: System.Single
+    - id: max
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Shared Function RandomRange(min As Single, max As Single) As Single
+  overload: Kobold.Core.MathUtils.RandomRange*
+  nameWithType.vb: MathUtils.RandomRange(Single, Single)
+  fullName.vb: Kobold.Core.MathUtils.RandomRange(Single, Single)
+  name.vb: RandomRange(Single, Single)
+- uid: Kobold.Core.MathUtils.RandomDirection
+  commentId: M:Kobold.Core.MathUtils.RandomDirection
+  id: RandomDirection
+  parent: Kobold.Core.MathUtils
+  langs:
+  - csharp
+  - vb
+  name: RandomDirection()
+  nameWithType: MathUtils.RandomDirection()
+  fullName: Kobold.Core.MathUtils.RandomDirection()
+  type: Method
+  source:
+    remote:
+      path: Kobold/MathUtils.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: RandomDirection
+    path: Kobold/MathUtils.cs
+    startLine: 24
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: public static Vector2 RandomDirection()
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public Shared Function RandomDirection() As Vector2
+  overload: Kobold.Core.MathUtils.RandomDirection*
+- uid: Kobold.Core.MathUtils.MoveTowards(System.Single,System.Single,System.Single)
+  commentId: M:Kobold.Core.MathUtils.MoveTowards(System.Single,System.Single,System.Single)
+  id: MoveTowards(System.Single,System.Single,System.Single)
+  parent: Kobold.Core.MathUtils
+  langs:
+  - csharp
+  - vb
+  name: MoveTowards(float, float, float)
+  nameWithType: MathUtils.MoveTowards(float, float, float)
+  fullName: Kobold.Core.MathUtils.MoveTowards(float, float, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/MathUtils.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: MoveTowards
+    path: Kobold/MathUtils.cs
+    startLine: 37
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Moves a value towards a target by a maximum distance
+  example: []
+  syntax:
+    content: public static float MoveTowards(float current, float target, float maxDistanceDelta)
+    parameters:
+    - id: current
+      type: System.Single
+      description: Current value
+    - id: target
+      type: System.Single
+      description: Target value
+    - id: maxDistanceDelta
+      type: System.Single
+      description: Maximum distance to move
+    return:
+      type: System.Single
+      description: New value moved towards target
+    content.vb: Public Shared Function MoveTowards(current As Single, target As Single, maxDistanceDelta As Single) As Single
+  overload: Kobold.Core.MathUtils.MoveTowards*
+  nameWithType.vb: MathUtils.MoveTowards(Single, Single, Single)
+  fullName.vb: Kobold.Core.MathUtils.MoveTowards(Single, Single, Single)
+  name.vb: MoveTowards(Single, Single, Single)
+- uid: Kobold.Core.MathUtils.MoveTowards(System.Numerics.Vector2,System.Numerics.Vector2,System.Single)
+  commentId: M:Kobold.Core.MathUtils.MoveTowards(System.Numerics.Vector2,System.Numerics.Vector2,System.Single)
+  id: MoveTowards(System.Numerics.Vector2,System.Numerics.Vector2,System.Single)
+  parent: Kobold.Core.MathUtils
+  langs:
+  - csharp
+  - vb
+  name: MoveTowards(Vector2, Vector2, float)
+  nameWithType: MathUtils.MoveTowards(Vector2, Vector2, float)
+  fullName: Kobold.Core.MathUtils.MoveTowards(System.Numerics.Vector2, System.Numerics.Vector2, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/MathUtils.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: MoveTowards
+    path: Kobold/MathUtils.cs
+    startLine: 56
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Moves a Vector2 towards a target by a maximum distance
+  example: []
+  syntax:
+    content: public static Vector2 MoveTowards(Vector2 current, Vector2 target, float maxDistanceDelta)
+    parameters:
+    - id: current
+      type: System.Numerics.Vector2
+      description: Current position
+    - id: target
+      type: System.Numerics.Vector2
+      description: Target position
+    - id: maxDistanceDelta
+      type: System.Single
+      description: Maximum distance to move
+    return:
+      type: System.Numerics.Vector2
+      description: New position moved towards target
+    content.vb: Public Shared Function MoveTowards(current As Vector2, target As Vector2, maxDistanceDelta As Single) As Vector2
+  overload: Kobold.Core.MathUtils.MoveTowards*
+  nameWithType.vb: MathUtils.MoveTowards(Vector2, Vector2, Single)
+  fullName.vb: Kobold.Core.MathUtils.MoveTowards(System.Numerics.Vector2, System.Numerics.Vector2, Single)
+  name.vb: MoveTowards(Vector2, Vector2, Single)
+- uid: Kobold.Core.MathUtils.Lerp(System.Single,System.Single,System.Single)
+  commentId: M:Kobold.Core.MathUtils.Lerp(System.Single,System.Single,System.Single)
+  id: Lerp(System.Single,System.Single,System.Single)
+  parent: Kobold.Core.MathUtils
+  langs:
+  - csharp
+  - vb
+  name: Lerp(float, float, float)
+  nameWithType: MathUtils.Lerp(float, float, float)
+  fullName: Kobold.Core.MathUtils.Lerp(float, float, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/MathUtils.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Lerp
+    path: Kobold/MathUtils.cs
+    startLine: 76
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Linearly interpolates between two values
+  example: []
+  syntax:
+    content: public static float Lerp(float a, float b, float t)
+    parameters:
+    - id: a
+      type: System.Single
+      description: Start value
+    - id: b
+      type: System.Single
+      description: End value
+    - id: t
+      type: System.Single
+      description: Interpolation factor (0-1)
+    return:
+      type: System.Single
+      description: Interpolated value
+    content.vb: Public Shared Function Lerp(a As Single, b As Single, t As Single) As Single
+  overload: Kobold.Core.MathUtils.Lerp*
+  nameWithType.vb: MathUtils.Lerp(Single, Single, Single)
+  fullName.vb: Kobold.Core.MathUtils.Lerp(Single, Single, Single)
+  name.vb: Lerp(Single, Single, Single)
+- uid: Kobold.Core.MathUtils.Lerp(System.Numerics.Vector2,System.Numerics.Vector2,System.Single)
+  commentId: M:Kobold.Core.MathUtils.Lerp(System.Numerics.Vector2,System.Numerics.Vector2,System.Single)
+  id: Lerp(System.Numerics.Vector2,System.Numerics.Vector2,System.Single)
+  parent: Kobold.Core.MathUtils
+  langs:
+  - csharp
+  - vb
+  name: Lerp(Vector2, Vector2, float)
+  nameWithType: MathUtils.Lerp(Vector2, Vector2, float)
+  fullName: Kobold.Core.MathUtils.Lerp(System.Numerics.Vector2, System.Numerics.Vector2, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/MathUtils.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Lerp
+    path: Kobold/MathUtils.cs
+    startLine: 88
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Linearly interpolates between two Vector2 values
+  example: []
+  syntax:
+    content: public static Vector2 Lerp(Vector2 a, Vector2 b, float t)
+    parameters:
+    - id: a
+      type: System.Numerics.Vector2
+      description: Start value
+    - id: b
+      type: System.Numerics.Vector2
+      description: End value
+    - id: t
+      type: System.Single
+      description: Interpolation factor (0-1)
+    return:
+      type: System.Numerics.Vector2
+      description: Interpolated value
+    content.vb: Public Shared Function Lerp(a As Vector2, b As Vector2, t As Single) As Vector2
+  overload: Kobold.Core.MathUtils.Lerp*
+  nameWithType.vb: MathUtils.Lerp(Vector2, Vector2, Single)
+  fullName.vb: Kobold.Core.MathUtils.Lerp(System.Numerics.Vector2, System.Numerics.Vector2, Single)
+  name.vb: Lerp(Vector2, Vector2, Single)
+- uid: Kobold.Core.MathUtils.DegreesToRadians(System.Single)
+  commentId: M:Kobold.Core.MathUtils.DegreesToRadians(System.Single)
+  id: DegreesToRadians(System.Single)
+  parent: Kobold.Core.MathUtils
+  langs:
+  - csharp
+  - vb
+  name: DegreesToRadians(float)
+  nameWithType: MathUtils.DegreesToRadians(float)
+  fullName: Kobold.Core.MathUtils.DegreesToRadians(float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/MathUtils.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DegreesToRadians
+    path: Kobold/MathUtils.cs
+    startLine: 102
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Converts degrees to radians
+  example: []
+  syntax:
+    content: public static float DegreesToRadians(float degrees)
+    parameters:
+    - id: degrees
+      type: System.Single
+      description: Angle in degrees
+    return:
+      type: System.Single
+      description: Angle in radians
+    content.vb: Public Shared Function DegreesToRadians(degrees As Single) As Single
+  overload: Kobold.Core.MathUtils.DegreesToRadians*
+  nameWithType.vb: MathUtils.DegreesToRadians(Single)
+  fullName.vb: Kobold.Core.MathUtils.DegreesToRadians(Single)
+  name.vb: DegreesToRadians(Single)
+- uid: Kobold.Core.MathUtils.RadiansToDegrees(System.Single)
+  commentId: M:Kobold.Core.MathUtils.RadiansToDegrees(System.Single)
+  id: RadiansToDegrees(System.Single)
+  parent: Kobold.Core.MathUtils
+  langs:
+  - csharp
+  - vb
+  name: RadiansToDegrees(float)
+  nameWithType: MathUtils.RadiansToDegrees(float)
+  fullName: Kobold.Core.MathUtils.RadiansToDegrees(float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/MathUtils.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: RadiansToDegrees
+    path: Kobold/MathUtils.cs
+    startLine: 112
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Converts radians to degrees
+  example: []
+  syntax:
+    content: public static float RadiansToDegrees(float radians)
+    parameters:
+    - id: radians
+      type: System.Single
+      description: Angle in radians
+    return:
+      type: System.Single
+      description: Angle in degrees
+    content.vb: Public Shared Function RadiansToDegrees(radians As Single) As Single
+  overload: Kobold.Core.MathUtils.RadiansToDegrees*
+  nameWithType.vb: MathUtils.RadiansToDegrees(Single)
+  fullName.vb: Kobold.Core.MathUtils.RadiansToDegrees(Single)
+  name.vb: RadiansToDegrees(Single)
+- uid: Kobold.Core.MathUtils.WrapAngle(System.Single)
+  commentId: M:Kobold.Core.MathUtils.WrapAngle(System.Single)
+  id: WrapAngle(System.Single)
+  parent: Kobold.Core.MathUtils
+  langs:
+  - csharp
+  - vb
+  name: WrapAngle(float)
+  nameWithType: MathUtils.WrapAngle(float)
+  fullName: Kobold.Core.MathUtils.WrapAngle(float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/MathUtils.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: WrapAngle
+    path: Kobold/MathUtils.cs
+    startLine: 122
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Wraps an angle to be within -PI to PI range
+  example: []
+  syntax:
+    content: public static float WrapAngle(float angle)
+    parameters:
+    - id: angle
+      type: System.Single
+      description: Angle in radians
+    return:
+      type: System.Single
+      description: Wrapped angle in range (-PI, PI]
+    content.vb: Public Shared Function WrapAngle(angle As Single) As Single
+  overload: Kobold.Core.MathUtils.WrapAngle*
+  nameWithType.vb: MathUtils.WrapAngle(Single)
+  fullName.vb: Kobold.Core.MathUtils.WrapAngle(Single)
+  name.vb: WrapAngle(Single)
+- uid: Kobold.Core.MathUtils.AngleDifference(System.Single,System.Single)
+  commentId: M:Kobold.Core.MathUtils.AngleDifference(System.Single,System.Single)
+  id: AngleDifference(System.Single,System.Single)
+  parent: Kobold.Core.MathUtils
+  langs:
+  - csharp
+  - vb
+  name: AngleDifference(float, float)
+  nameWithType: MathUtils.AngleDifference(float, float)
+  fullName: Kobold.Core.MathUtils.AngleDifference(float, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/MathUtils.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: AngleDifference
+    path: Kobold/MathUtils.cs
+    startLine: 137
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Gets the shortest angle difference between two angles.
+  example: []
+  syntax:
+    content: public static float AngleDifference(float from, float to)
+    parameters:
+    - id: from
+      type: System.Single
+      description: From angle in radians
+    - id: to
+      type: System.Single
+      description: To angle in radians
+    return:
+      type: System.Single
+      description: Shortest angle difference in range [-PI, PI]
+    content.vb: Public Shared Function AngleDifference(from As Single, [to] As Single) As Single
+  overload: Kobold.Core.MathUtils.AngleDifference*
+  nameWithType.vb: MathUtils.AngleDifference(Single, Single)
+  fullName.vb: Kobold.Core.MathUtils.AngleDifference(Single, Single)
+  name.vb: AngleDifference(Single, Single)
+references:
+- uid: Kobold.Core
+  commentId: N:Kobold.Core
+  href: Kobold.html
+  name: Kobold.Core
+  nameWithType: Kobold.Core
+  fullName: Kobold.Core
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.MathUtils.Clamp*
+  commentId: Overload:Kobold.Core.MathUtils.Clamp
+  href: Kobold.Core.MathUtils.html#Kobold_Core_MathUtils_Clamp_System_Numerics_Vector2_System_Numerics_Vector2_System_Numerics_Vector2_
+  name: Clamp
+  nameWithType: MathUtils.Clamp
+  fullName: Kobold.Core.MathUtils.Clamp
+- uid: System.Numerics.Vector2
+  commentId: T:System.Numerics.Vector2
+  parent: System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  name: Vector2
+  nameWithType: Vector2
+  fullName: System.Numerics.Vector2
+- uid: System.Numerics
+  commentId: N:System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Numerics
+  nameWithType: System.Numerics
+  fullName: System.Numerics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+- uid: Kobold.Core.MathUtils.RandomRange*
+  commentId: Overload:Kobold.Core.MathUtils.RandomRange
+  href: Kobold.Core.MathUtils.html#Kobold_Core_MathUtils_RandomRange_System_Single_System_Single_
+  name: RandomRange
+  nameWithType: MathUtils.RandomRange
+  fullName: Kobold.Core.MathUtils.RandomRange
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Core.MathUtils.RandomDirection*
+  commentId: Overload:Kobold.Core.MathUtils.RandomDirection
+  href: Kobold.Core.MathUtils.html#Kobold_Core_MathUtils_RandomDirection
+  name: RandomDirection
+  nameWithType: MathUtils.RandomDirection
+  fullName: Kobold.Core.MathUtils.RandomDirection
+- uid: Kobold.Core.MathUtils.MoveTowards*
+  commentId: Overload:Kobold.Core.MathUtils.MoveTowards
+  href: Kobold.Core.MathUtils.html#Kobold_Core_MathUtils_MoveTowards_System_Single_System_Single_System_Single_
+  name: MoveTowards
+  nameWithType: MathUtils.MoveTowards
+  fullName: Kobold.Core.MathUtils.MoveTowards
+- uid: Kobold.Core.MathUtils.Lerp*
+  commentId: Overload:Kobold.Core.MathUtils.Lerp
+  href: Kobold.Core.MathUtils.html#Kobold_Core_MathUtils_Lerp_System_Single_System_Single_System_Single_
+  name: Lerp
+  nameWithType: MathUtils.Lerp
+  fullName: Kobold.Core.MathUtils.Lerp
+- uid: Kobold.Core.MathUtils.DegreesToRadians*
+  commentId: Overload:Kobold.Core.MathUtils.DegreesToRadians
+  href: Kobold.Core.MathUtils.html#Kobold_Core_MathUtils_DegreesToRadians_System_Single_
+  name: DegreesToRadians
+  nameWithType: MathUtils.DegreesToRadians
+  fullName: Kobold.Core.MathUtils.DegreesToRadians
+- uid: Kobold.Core.MathUtils.RadiansToDegrees*
+  commentId: Overload:Kobold.Core.MathUtils.RadiansToDegrees
+  href: Kobold.Core.MathUtils.html#Kobold_Core_MathUtils_RadiansToDegrees_System_Single_
+  name: RadiansToDegrees
+  nameWithType: MathUtils.RadiansToDegrees
+  fullName: Kobold.Core.MathUtils.RadiansToDegrees
+- uid: Kobold.Core.MathUtils.WrapAngle*
+  commentId: Overload:Kobold.Core.MathUtils.WrapAngle
+  href: Kobold.Core.MathUtils.html#Kobold_Core_MathUtils_WrapAngle_System_Single_
+  name: WrapAngle
+  nameWithType: MathUtils.WrapAngle
+  fullName: Kobold.Core.MathUtils.WrapAngle
+- uid: Kobold.Core.MathUtils.AngleDifference*
+  commentId: Overload:Kobold.Core.MathUtils.AngleDifference
+  href: Kobold.Core.MathUtils.html#Kobold_Core_MathUtils_AngleDifference_System_Single_System_Single_
+  name: AngleDifference
+  nameWithType: MathUtils.AngleDifference
+  fullName: Kobold.Core.MathUtils.AngleDifference

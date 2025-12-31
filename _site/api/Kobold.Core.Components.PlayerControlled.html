@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct PlayerControlled | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct PlayerControlled | Kobold Game Framework ">
+      
+      <meta name="description" content="Component for entities controlled by player input">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/new/docs/apiSpec/new?filename=Kobold_Core_Components_PlayerControlled.md&amp;value=---%0Auid%3A%20Kobold.Core.Components.PlayerControlled%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Kobold.Core.Components.PlayerControlled">
+
+
+
+  <h1 id="Kobold_Core_Components_PlayerControlled" data-uid="Kobold.Core.Components.PlayerControlled" class="text-break">
+Struct PlayerControlled  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Kobold.html">Kobold</a>.<a class="xref" href="Kobold.Core.html">Core</a>.<a class="xref" href="Kobold.Core.Components.html">Components</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Kobold.Core.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Component for entities controlled by player input</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct PlayerControlled</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Kobold_Core_Components_PlayerControlled__ctor_" data-uid="Kobold.Core.Components.PlayerControlled.#ctor*"></a>
+
+  <h3 id="Kobold_Core_Components_PlayerControlled__ctor_System_Single_System_Boolean_System_Boolean_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_" data-uid="Kobold.Core.Components.PlayerControlled.#ctor(System.Single,System.Boolean,System.Boolean,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode)">
+  PlayerControlled(float, bool, bool, KeyCode, KeyCode, KeyCode, KeyCode, KeyCode, KeyCode, KeyCode, KeyCode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerControlled(float speed, bool verticalOnly = false, bool horizontalOnly = false, KeyCode up = KeyCode.Up, KeyCode down = KeyCode.Down, KeyCode left = KeyCode.Left, KeyCode right = KeyCode.Right, KeyCode altUp = KeyCode.W, KeyCode altDown = KeyCode.S, KeyCode altLeft = KeyCode.A, KeyCode altRight = KeyCode.D)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>speed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>verticalOnly</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>horizontalOnly</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+    <dt><code>up</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>down</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>left</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>altUp</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>altDown</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>altLeft</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>altRight</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_AlternateDownKey" data-uid="Kobold.Core.Components.PlayerControlled.AlternateDownKey">
+  AlternateDownKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyCode AlternateDownKey</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_AlternateLeftKey" data-uid="Kobold.Core.Components.PlayerControlled.AlternateLeftKey">
+  AlternateLeftKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyCode AlternateLeftKey</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_AlternateRightKey" data-uid="Kobold.Core.Components.PlayerControlled.AlternateRightKey">
+  AlternateRightKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyCode AlternateRightKey</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_AlternateUpKey" data-uid="Kobold.Core.Components.PlayerControlled.AlternateUpKey">
+  AlternateUpKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyCode AlternateUpKey</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_DownKey" data-uid="Kobold.Core.Components.PlayerControlled.DownKey">
+  DownKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyCode DownKey</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_HorizontalOnly" data-uid="Kobold.Core.Components.PlayerControlled.HorizontalOnly">
+  HorizontalOnly
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HorizontalOnly</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_LeftKey" data-uid="Kobold.Core.Components.PlayerControlled.LeftKey">
+  LeftKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyCode LeftKey</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_RightKey" data-uid="Kobold.Core.Components.PlayerControlled.RightKey">
+  RightKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyCode RightKey</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_Speed" data-uid="Kobold.Core.Components.PlayerControlled.Speed">
+  Speed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Speed</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_UpKey" data-uid="Kobold.Core.Components.PlayerControlled.UpKey">
+  UpKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyCode UpKey</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_VerticalOnly" data-uid="Kobold.Core.Components.PlayerControlled.VerticalOnly">
+  VerticalOnly
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool VerticalOnly</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Kobold_Core_Components_PlayerControlled_CreateHorizontalOnly_" data-uid="Kobold.Core.Components.PlayerControlled.CreateHorizontalOnly*"></a>
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_CreateHorizontalOnly_System_Single_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_" data-uid="Kobold.Core.Components.PlayerControlled.CreateHorizontalOnly(System.Single,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode)">
+  CreateHorizontalOnly(float, KeyCode, KeyCode, KeyCode, KeyCode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PlayerControlled CreateHorizontalOnly(float speed, KeyCode left = KeyCode.Left, KeyCode right = KeyCode.Right, KeyCode altLeft = KeyCode.A, KeyCode altRight = KeyCode.D)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>speed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>left</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>right</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>altLeft</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>altRight</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Components.PlayerControlled.html">PlayerControlled</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Components_PlayerControlled_CreateVerticalOnly_" data-uid="Kobold.Core.Components.PlayerControlled.CreateVerticalOnly*"></a>
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_CreateVerticalOnly_System_Single_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_Kobold_Core_Abstractions_Input_KeyCode_" data-uid="Kobold.Core.Components.PlayerControlled.CreateVerticalOnly(System.Single,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode,Kobold.Core.Abstractions.Input.KeyCode)">
+  CreateVerticalOnly(float, KeyCode, KeyCode, KeyCode, KeyCode)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PlayerControlled CreateVerticalOnly(float speed, KeyCode up = KeyCode.Up, KeyCode down = KeyCode.Down, KeyCode altUp = KeyCode.W, KeyCode altDown = KeyCode.S)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>speed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>up</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>down</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>altUp</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+    <dt><code>altDown</code> <a class="xref" href="Kobold.Core.Abstractions.Input.KeyCode.html">KeyCode</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Components.PlayerControlled.html">PlayerControlled</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Components_PlayerControlled_FullMovement_" data-uid="Kobold.Core.Components.PlayerControlled.FullMovement*"></a>
+
+  <h3 id="Kobold_Core_Components_PlayerControlled_FullMovement_System_Single_" data-uid="Kobold.Core.Components.PlayerControlled.FullMovement(System.Single)">
+  FullMovement(float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static PlayerControlled FullMovement(float speed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>speed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Components.PlayerControlled.html">PlayerControlled</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/PlayerControlled.cs/#L13" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

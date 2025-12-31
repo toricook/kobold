@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct Velocity | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct Velocity | Kobold Game Framework ">
+      
+      <meta name="description" content="Component representing an entity&#39;s velocity (speed and direction) in 2D space. This is the rate of change of position - how fast and in what direction the entity is moving per second. Used by physics systems to update an entity&#39;s Transform.Position each frame. The basic movement equation is: newPosition = oldPosition + (velocity * deltaTime) Velocity is measured in pixels per second in the same coordinate system as Transform.Position. Positive X = moving right, Positive Y = moving down (standard screen coordinates).">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/new/docs/apiSpec/new?filename=Kobold_Core_Components_Velocity.md&amp;value=---%0Auid%3A%20Kobold.Core.Components.Velocity%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Kobold.Core.Components.Velocity">
+
+
+
+  <h1 id="Kobold_Core_Components_Velocity" data-uid="Kobold.Core.Components.Velocity" class="text-break">
+Struct Velocity  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Kobold.html">Kobold</a>.<a class="xref" href="Kobold.Core.html">Core</a>.<a class="xref" href="Kobold.Core.Components.html">Components</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Kobold.Core.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Component representing an entity's velocity (speed and direction) in 2D space.
+This is the rate of change of position - how fast and in what direction
+the entity is moving per second.</p>
+<p>Used by physics systems to update an entity's Transform.Position each frame.
+The basic movement equation is: newPosition = oldPosition + (velocity * deltaTime)</p>
+<p>Velocity is measured in pixels per second in the same coordinate system as Transform.Position.
+Positive X = moving right, Positive Y = moving down (standard screen coordinates).</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct Velocity</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Kobold_Core_Components_Velocity__ctor_" data-uid="Kobold.Core.Components.Velocity.#ctor*"></a>
+
+  <h3 id="Kobold_Core_Components_Velocity__ctor_System_Numerics_Vector2_" data-uid="Kobold.Core.Components.Velocity.#ctor(System.Numerics.Vector2)">
+  Velocity(Vector2)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new Velocity component with the specified velocity vector.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Velocity(Vector2 value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd><p>Velocity in pixels per second (X=horizontal, Y=vertical)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Components_Velocity__ctor_" data-uid="Kobold.Core.Components.Velocity.#ctor*"></a>
+
+  <h3 id="Kobold_Core_Components_Velocity__ctor_System_Single_System_Single_" data-uid="Kobold.Core.Components.Velocity.#ctor(System.Single,System.Single)">
+  Velocity(float, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new Velocity component with the specified horizontal and vertical components.
+Convenience constructor for when you have separate X and Y velocities.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Velocity(float x, float y)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>x</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Horizontal velocity in pixels per second (positive = right)</p>
+</dd>
+    <dt><code>y</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Vertical velocity in pixels per second (positive = down)</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="Kobold_Core_Components_Velocity_Value" data-uid="Kobold.Core.Components.Velocity.Value">
+  Value
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The velocity vector in pixels per second.</p>
+<p>X component: Horizontal velocity (positive = moving right, negative = moving left)
+Y component: Vertical velocity (positive = moving down, negative = moving up)</p>
+<p>Magnitude of the vector represents speed: Vector2.Length() gives pixels/second
+Direction of the vector represents movement direction: Vector2.Normalize() gives unit direction</p>
+<p>Examples:</p>
+<ul>
+<li>(100, 0) = moving right at 100 pixels/second</li>
+<li>(0, -50) = moving up at 50 pixels/second</li>
+<li>(70.7, 70.7) = moving down-right at ~100 pixels/second (diagonal)</li>
+<li>(0, 0) = not moving (stationary)</li>
+</ul>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Vector2 Value</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Kobold_Core_Components_Velocity_Direction_" data-uid="Kobold.Core.Components.Velocity.Direction*"></a>
+
+  <h3 id="Kobold_Core_Components_Velocity_Direction" data-uid="Kobold.Core.Components.Velocity.Direction">
+  Direction
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the direction of movement as a normalized vector (length = 1).
+Returns Vector2.Zero if the entity is not moving (velocity is zero).
+Useful for determining which way an entity is facing or for applying forces
+in the direction of movement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Vector2 Direction { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Components_Velocity_IsMoving_" data-uid="Kobold.Core.Components.Velocity.IsMoving*"></a>
+
+  <h3 id="Kobold_Core_Components_Velocity_IsMoving" data-uid="Kobold.Core.Components.Velocity.IsMoving">
+  IsMoving
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets whether this entity is currently moving (has non-zero velocity).
+Uses a small threshold to account for floating-point precision issues.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly bool IsMoving { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Components_Velocity_Speed_" data-uid="Kobold.Core.Components.Velocity.Speed*"></a>
+
+  <h3 id="Kobold_Core_Components_Velocity_Speed" data-uid="Kobold.Core.Components.Velocity.Speed">
+  Speed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the speed (magnitude) of this velocity in pixels per second.
+This is always a positive value representing how fast the entity is moving,
+regardless of direction.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly float Speed { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Components_Velocity_Zero_" data-uid="Kobold.Core.Components.Velocity.Zero*"></a>
+
+  <h3 id="Kobold_Core_Components_Velocity_Zero" data-uid="Kobold.Core.Components.Velocity.Zero">
+  Zero
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a stationary velocity (no movement).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Velocity Zero { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Components.Velocity.html">Velocity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Kobold_Core_Components_Velocity_Add_" data-uid="Kobold.Core.Components.Velocity.Add*"></a>
+
+  <h3 id="Kobold_Core_Components_Velocity_Add_System_Numerics_Vector2_" data-uid="Kobold.Core.Components.Velocity.Add(System.Numerics.Vector2)">
+  Add(Vector2)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds the specified velocity to the current velocity.
+Useful for applying forces, impulses, or acceleration effects.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Add(Vector2 deltaVelocity)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaVelocity</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd><p>Velocity change to apply</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Components_Velocity_ClampToMaxSpeed_" data-uid="Kobold.Core.Components.Velocity.ClampToMaxSpeed*"></a>
+
+  <h3 id="Kobold_Core_Components_Velocity_ClampToMaxSpeed_System_Single_" data-uid="Kobold.Core.Components.Velocity.ClampToMaxSpeed(System.Single)">
+  ClampToMaxSpeed(float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Limits the velocity to the specified maximum speed.
+Maintains direction but caps the magnitude. Useful for implementing
+maximum movement speeds or terminal velocity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClampToMaxSpeed(float maxSpeed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>maxSpeed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Maximum speed in pixels per second</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Components_Velocity_FromAngleAndSpeed_" data-uid="Kobold.Core.Components.Velocity.FromAngleAndSpeed*"></a>
+
+  <h3 id="Kobold_Core_Components_Velocity_FromAngleAndSpeed_System_Single_System_Single_" data-uid="Kobold.Core.Components.Velocity.FromAngleAndSpeed(System.Single,System.Single)">
+  FromAngleAndSpeed(float, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a velocity from an angle and speed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Velocity FromAngleAndSpeed(float angleRadians, float speed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>angleRadians</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Angle in radians (0 = right, π/2 = down)</p>
+</dd>
+    <dt><code>speed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Speed in pixels per second</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Components.Velocity.html">Velocity</a></dt>
+    <dd><p>Velocity component with the specified angle and speed</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Components_Velocity_FromDirectionAndSpeed_" data-uid="Kobold.Core.Components.Velocity.FromDirectionAndSpeed*"></a>
+
+  <h3 id="Kobold_Core_Components_Velocity_FromDirectionAndSpeed_System_Numerics_Vector2_System_Single_" data-uid="Kobold.Core.Components.Velocity.FromDirectionAndSpeed(System.Numerics.Vector2,System.Single)">
+  FromDirectionAndSpeed(Vector2, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a velocity moving in the specified direction at the specified speed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Velocity FromDirectionAndSpeed(Vector2 direction, float speed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>direction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd><p>Direction vector (will be normalized)</p>
+</dd>
+    <dt><code>speed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Speed in pixels per second</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Components.Velocity.html">Velocity</a></dt>
+    <dd><p>Velocity component with the specified direction and speed</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Components_Velocity_SetDirectionAndSpeed_" data-uid="Kobold.Core.Components.Velocity.SetDirectionAndSpeed*"></a>
+
+  <h3 id="Kobold_Core_Components_Velocity_SetDirectionAndSpeed_System_Numerics_Vector2_System_Single_" data-uid="Kobold.Core.Components.Velocity.SetDirectionAndSpeed(System.Numerics.Vector2,System.Single)">
+  SetDirectionAndSpeed(Vector2, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the velocity to move in the specified direction at the specified speed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetDirectionAndSpeed(Vector2 direction, float speed)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>direction</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.numerics.vector2">Vector2</a></dt>
+    <dd><p>Direction to move (will be normalized automatically)</p>
+</dd>
+    <dt><code>speed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>Speed in pixels per second</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Components_Velocity_ToString_" data-uid="Kobold.Core.Components.Velocity.ToString*"></a>
+
+  <h3 id="Kobold_Core_Components_Velocity_ToString" data-uid="Kobold.Core.Components.Velocity.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L163"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a human-readable string representation of this velocity.
+Useful for debugging and logging.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override readonly string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold/Components/Physics/Velocity.cs/#L22" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

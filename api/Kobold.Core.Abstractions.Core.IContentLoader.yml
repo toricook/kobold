@@ -1,0 +1,271 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Abstractions.Core.IContentLoader
+  commentId: T:Kobold.Core.Abstractions.Core.IContentLoader
+  id: IContentLoader
+  parent: Kobold.Core.Abstractions.Core
+  children:
+  - Kobold.Core.Abstractions.Core.IContentLoader.ContentRoot
+  - Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture(System.String)
+  - Kobold.Core.Abstractions.Core.IContentLoader.TextureExists(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IContentLoader
+  nameWithType: IContentLoader
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader
+  type: Interface
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/IContentLoader.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IContentLoader
+    path: Kobold/Abstractions/Core/IContentLoader.cs
+    startLine: 7
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Core
+  summary: Interface for loading game content (textures, sounds, etc.)
+  example: []
+  syntax:
+    content: public interface IContentLoader
+    content.vb: Public Interface IContentLoader
+- uid: Kobold.Core.Abstractions.Core.IContentLoader.ContentRoot
+  commentId: P:Kobold.Core.Abstractions.Core.IContentLoader.ContentRoot
+  id: ContentRoot
+  parent: Kobold.Core.Abstractions.Core.IContentLoader
+  langs:
+  - csharp
+  - vb
+  name: ContentRoot
+  nameWithType: IContentLoader.ContentRoot
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader.ContentRoot
+  type: Property
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/IContentLoader.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ContentRoot
+    path: Kobold/Abstractions/Core/IContentLoader.cs
+    startLine: 12
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Core
+  summary: Root directory for content files
+  example: []
+  syntax:
+    content: string ContentRoot { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: ReadOnly Property ContentRoot As String
+  overload: Kobold.Core.Abstractions.Core.IContentLoader.ContentRoot*
+- uid: Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture(System.String)
+  commentId: M:Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture(System.String)
+  id: LoadTexture(System.String)
+  parent: Kobold.Core.Abstractions.Core.IContentLoader
+  langs:
+  - csharp
+  - vb
+  name: LoadTexture(string)
+  nameWithType: IContentLoader.LoadTexture(string)
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/IContentLoader.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: LoadTexture
+    path: Kobold/Abstractions/Core/IContentLoader.cs
+    startLine: 19
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Core
+  summary: Load a texture from a file path
+  example: []
+  syntax:
+    content: ITexture LoadTexture(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to the texture file (relative to content directory)
+    return:
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+      description: The loaded texture
+    content.vb: Function LoadTexture(path As String) As ITexture
+  overload: Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture*
+  nameWithType.vb: IContentLoader.LoadTexture(String)
+  fullName.vb: Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture(String)
+  name.vb: LoadTexture(String)
+- uid: Kobold.Core.Abstractions.Core.IContentLoader.TextureExists(System.String)
+  commentId: M:Kobold.Core.Abstractions.Core.IContentLoader.TextureExists(System.String)
+  id: TextureExists(System.String)
+  parent: Kobold.Core.Abstractions.Core.IContentLoader
+  langs:
+  - csharp
+  - vb
+  name: TextureExists(string)
+  nameWithType: IContentLoader.TextureExists(string)
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader.TextureExists(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/IContentLoader.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TextureExists
+    path: Kobold/Abstractions/Core/IContentLoader.cs
+    startLine: 26
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Core
+  summary: Check if a texture file exists
+  example: []
+  syntax:
+    content: bool TextureExists(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to check
+    return:
+      type: System.Boolean
+      description: True if the file exists
+    content.vb: Function TextureExists(path As String) As Boolean
+  overload: Kobold.Core.Abstractions.Core.IContentLoader.TextureExists*
+  nameWithType.vb: IContentLoader.TextureExists(String)
+  fullName.vb: Kobold.Core.Abstractions.Core.IContentLoader.TextureExists(String)
+  name.vb: TextureExists(String)
+references:
+- uid: Kobold.Core.Abstractions.Core
+  commentId: N:Kobold.Core.Abstractions.Core
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Core
+  nameWithType: Kobold.Core.Abstractions.Core
+  fullName: Kobold.Core.Abstractions.Core
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Core
+    name: Core
+    href: Kobold.Core.Abstractions.Core.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Core
+    name: Core
+    href: Kobold.Core.Abstractions.Core.html
+- uid: Kobold.Core.Abstractions.Core.IContentLoader.ContentRoot*
+  commentId: Overload:Kobold.Core.Abstractions.Core.IContentLoader.ContentRoot
+  href: Kobold.Core.Abstractions.Core.IContentLoader.html#Kobold_Core_Abstractions_Core_IContentLoader_ContentRoot
+  name: ContentRoot
+  nameWithType: IContentLoader.ContentRoot
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader.ContentRoot
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture*
+  commentId: Overload:Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture
+  href: Kobold.Core.Abstractions.Core.IContentLoader.html#Kobold_Core_Abstractions_Core_IContentLoader_LoadTexture_System_String_
+  name: LoadTexture
+  nameWithType: IContentLoader.LoadTexture
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture
+- uid: Kobold.Core.Abstractions.Rendering.ITexture
+  commentId: T:Kobold.Core.Abstractions.Rendering.ITexture
+  parent: Kobold.Core.Abstractions.Rendering
+  href: Kobold.Core.Abstractions.Rendering.ITexture.html
+  name: ITexture
+  nameWithType: ITexture
+  fullName: Kobold.Core.Abstractions.Rendering.ITexture
+- uid: Kobold.Core.Abstractions.Rendering
+  commentId: N:Kobold.Core.Abstractions.Rendering
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Rendering
+  nameWithType: Kobold.Core.Abstractions.Rendering
+  fullName: Kobold.Core.Abstractions.Rendering
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+- uid: Kobold.Core.Abstractions.Core.IContentLoader.TextureExists*
+  commentId: Overload:Kobold.Core.Abstractions.Core.IContentLoader.TextureExists
+  href: Kobold.Core.Abstractions.Core.IContentLoader.html#Kobold_Core_Abstractions_Core_IContentLoader_TextureExists_System_String_
+  name: TextureExists
+  nameWithType: IContentLoader.TextureExists
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader.TextureExists
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

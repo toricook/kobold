@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Assets
+  commentId: N:Kobold.Core.Assets
+  id: Kobold.Core.Assets
+  children:
+  - Kobold.Core.Assets.AnimationData
+  - Kobold.Core.Assets.RectangleData
+  - Kobold.Core.Assets.SpriteSheet
+  - Kobold.Core.Assets.SpriteSheetConfig
+  - Kobold.Core.Assets.Vector2Data
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Core.Assets
+  nameWithType: Kobold.Core.Assets
+  fullName: Kobold.Core.Assets
+  type: Namespace
+  assemblies:
+  - Kobold.Core
+references:
+- uid: Kobold.Core.Assets.SpriteSheet
+  commentId: T:Kobold.Core.Assets.SpriteSheet
+  parent: Kobold.Core.Assets
+  href: Kobold.Core.Assets.SpriteSheet.html
+  name: SpriteSheet
+  nameWithType: SpriteSheet
+  fullName: Kobold.Core.Assets.SpriteSheet
+- uid: Kobold.Core.Assets.SpriteSheetConfig
+  commentId: T:Kobold.Core.Assets.SpriteSheetConfig
+  parent: Kobold.Core.Assets
+  href: Kobold.Core.Assets.SpriteSheetConfig.html
+  name: SpriteSheetConfig
+  nameWithType: SpriteSheetConfig
+  fullName: Kobold.Core.Assets.SpriteSheetConfig
+- uid: Kobold.Core.Assets.Vector2Data
+  commentId: T:Kobold.Core.Assets.Vector2Data
+  parent: Kobold.Core.Assets
+  href: Kobold.Core.Assets.Vector2Data.html
+  name: Vector2Data
+  nameWithType: Vector2Data
+  fullName: Kobold.Core.Assets.Vector2Data
+- uid: Kobold.Core.Assets.RectangleData
+  commentId: T:Kobold.Core.Assets.RectangleData
+  parent: Kobold.Core.Assets
+  href: Kobold.Core.Assets.RectangleData.html
+  name: RectangleData
+  nameWithType: RectangleData
+  fullName: Kobold.Core.Assets.RectangleData
+- uid: Kobold.Core.Assets.AnimationData
+  commentId: T:Kobold.Core.Assets.AnimationData
+  parent: Kobold.Core.Assets
+  href: Kobold.Core.Assets.AnimationData.html
+  name: AnimationData
+  nameWithType: AnimationData
+  fullName: Kobold.Core.Assets.AnimationData
+- uid: Kobold.Core.Assets
+  commentId: N:Kobold.Core.Assets
+  href: Kobold.html
+  name: Kobold.Core.Assets
+  nameWithType: Kobold.Core.Assets
+  fullName: Kobold.Core.Assets
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Assets
+    name: Assets
+    href: Kobold.Core.Assets.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Assets
+    name: Assets
+    href: Kobold.Core.Assets.html

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Kobold.Monogame - MonoGame Integration | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Kobold.Monogame - MonoGame Integration | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/monogame/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="koboldmonogame---monogame-integration">Kobold.Monogame - MonoGame Integration</h1>
+
+<p><strong>Kobold.Monogame</strong> provides the MonoGame platform implementation for Kobold.Core's abstractions, enabling rendering, input, and content loading.</p>
+<h2 id="overview">Overview</h2>
+<p>Kobold.Core defines platform-agnostic interfaces:</p>
+<ul>
+<li><code>IRenderer</code> - Drawing graphics</li>
+<li><code>IInputManager</code> - Keyboard/mouse input</li>
+<li><code>IContentLoader</code> - Loading assets from disk</li>
+</ul>
+<p>Kobold.Monogame implements these for MonoGame:</p>
+<ul>
+<li><code>MonoGameRenderer</code> - Renders using SpriteBatch</li>
+<li><code>MonoGameInputManager</code> - Handles MonoGame input</li>
+<li><code>MonoGameFileContentLoader</code> - Loads PNG textures directly from files (bypassing Content Pipeline)</li>
+<li><code>MonoGameHost</code> - Bootstraps and runs your game</li>
+</ul>
+<h2 id="monogamehost">MonoGameHost</h2>
+<p>The main class that runs your Kobold game with MonoGame.</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">MonoGameHost.Run(new MyGame(), new GameConfig
+{
+    WindowWidth = 800,
+    WindowHeight = 600,
+    WindowTitle = &quot;My Game&quot;
+});
+</code></pre>
+<p><strong>What it does:</strong></p>
+<ol>
+<li>Creates MonoGame Game instance</li>
+<li>Instantiates platform implementations (Renderer, Input, ContentLoader)</li>
+<li>Injects them into your GameEngineBase</li>
+<li>Runs the MonoGame game loop (Update/Render)</li>
+</ol>
+<h2 id="platform-implementations">Platform Implementations</h2>
+<h3 id="monogamerenderer">MonoGameRenderer</h3>
+<p>Implements <code>IRenderer</code> using MonoGame's <code>SpriteBatch</code>.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Sprite rendering with rotation, scale, tint</li>
+<li>Rectangle, text, triangle, line drawing</li>
+<li>Pixel-perfect rendering (no sub-pixel coords)</li>
+<li>Fallback pixel font for text rendering</li>
+</ul>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><code>DrawRectangle(position, size, color)</code></li>
+<li><code>DrawTexture(texture, position, scale)</code></li>
+<li><code>DrawSprite(texture, position, sourceRect, scale, rotation, tint)</code></li>
+<li><code>DrawText(text, position, color, fontSize)</code></li>
+<li><code>DrawTriangle(points, position, rotation, color)</code></li>
+<li><code>DrawLine(start, end, color, thickness)</code></li>
+</ul>
+<h3 id="monogameinputmanager">MonoGameInputManager</h3>
+<p>Implements <code>IInputManager</code> using MonoGame's input APIs.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Keyboard state tracking (current and previous frames)</li>
+<li>Mouse position and button states</li>
+<li>Key press detection (triggered once per press)</li>
+</ul>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><code>IsKeyPressed(KeyCode)</code> - True on first frame of press</li>
+<li><code>IsKeyDown(KeyCode)</code> - True while held</li>
+<li><code>IsKeyUp(KeyCode)</code> - True while not pressed</li>
+<li><code>GetMousePosition()</code> - Mouse coordinates</li>
+<li><code>IsMouseButtonPressed(MouseButton)</code> - Mouse click detection</li>
+</ul>
+<h3 id="monogamefilecontentloader">MonoGameFileContentLoader</h3>
+<p>Implements <code>IContentLoader</code> for loading PNG textures directly from the file system at runtime.</p>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Loads raw PNG files from disk (bypasses MonoGame Content Pipeline)</li>
+<li>Uses <code>Texture2D.FromStream</code> for runtime loading</li>
+<li>Supports relative and absolute paths</li>
+<li>Auto-adds .png extension if missing</li>
+<li>Configurable content root directory</li>
+</ul>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">var loader = new MonoGameFileContentLoader(graphicsDevice, &quot;Content&quot;);
+var texture = loader.LoadTexture(&quot;player.png&quot;);  // Loads from Content/player.png
+</code></pre>
+<p><strong>Note:</strong> This implementation does NOT use the MonoGame Content Pipeline (XNB files). For a pipeline-based loader, use <code>MonoGamePipelineContentLoader</code> (not yet implemented).</p>
+<h3 id="monogametexture">MonoGameTexture</h3>
+<p>Wraps MonoGame's <code>Texture2D</code> to implement <code>ITexture</code>.</p>
+<p><strong>Properties:</strong></p>
+<ul>
+<li><code>Width</code> - Texture width in pixels</li>
+<li><code>Height</code> - Texture height in pixels</li>
+</ul>
+<h2 id="quick-start">Quick Start</h2>
+<h3 id="1-create-game-class">1. Create Game Class</h3>
+<pre><code class="lang-csharp">using Kobold.Core;
+using Kobold.Core.Components;
+using Kobold.Core.Systems;
+using Kobold.Monogame;
+
+public class MyGame : GameEngineBase
+{
+    protected override void Initialize()
+    {
+        base.Initialize();
+
+        // Create entities
+        var texture = Assets.LoadTexture(&quot;player.png&quot;);
+        World.Create(
+            new Transform { Position = new Vector2(400, 300) },
+            SpriteRenderer.FullTexture(texture)
+        );
+
+        // Add systems
+        Systems.AddRenderSystem(new RenderSystem(Renderer));
+    }
+}
+</code></pre>
+<h3 id="2-run-with-monogamehost">2. Run with MonoGameHost</h3>
+<pre><code class="lang-csharp">// Program.cs
+MonoGameHost.Run(new MyGame(), new GameConfig
+{
+    WindowWidth = 800,
+    WindowHeight = 600,
+    WindowTitle = &quot;My Kobold Game&quot;
+});
+</code></pre>
+<h3 id="3-add-content-files">3. Add Content Files</h3>
+<p>Place your PNG files in the <code>Content/</code> directory at your project root.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>Kobold.Monogame requires:</p>
+<ul>
+<li><strong>Kobold.Core</strong> - Core framework</li>
+<li><strong>MonoGame.Framework.DesktopGL</strong> - MonoGame (cross-platform)</li>
+<li><strong>.NET 8.0</strong> - Runtime</li>
+</ul>
+<h2 id="platform-support">Platform Support</h2>
+<p>MonoGame supports:</p>
+<ul>
+<li>Windows (DesktopGL)</li>
+<li>macOS (DesktopGL)</li>
+<li>Linux (DesktopGL)</li>
+</ul>
+<p>Kobold can potentially support other MonoGame backends with custom implementations.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong><a href="setup.html">Setup Guide</a></strong> - Detailed MonoGame project setup</li>
+<li><strong><a href="../core/">Core Framework</a></strong> - Platform-agnostic abstractions</li>
+</ul>
+<hr>
+<p><strong>Next:</strong> <a href="setup.html">Setup Guide</a> for detailed project configuration →</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/monogame/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

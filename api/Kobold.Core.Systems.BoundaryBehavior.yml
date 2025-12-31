@@ -1,0 +1,174 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Systems.BoundaryBehavior
+  commentId: T:Kobold.Core.Systems.BoundaryBehavior
+  id: BoundaryBehavior
+  parent: Kobold.Core.Systems
+  children:
+  - Kobold.Core.Systems.BoundaryBehavior.Bounce
+  - Kobold.Core.Systems.BoundaryBehavior.Clamp
+  - Kobold.Core.Systems.BoundaryBehavior.Destroy
+  - Kobold.Core.Systems.BoundaryBehavior.Wrap
+  langs:
+  - csharp
+  - vb
+  name: BoundaryBehavior
+  nameWithType: BoundaryBehavior
+  fullName: Kobold.Core.Systems.BoundaryBehavior
+  type: Enum
+  source:
+    remote:
+      path: Kobold/Systems/BoundarySystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: BoundaryBehavior
+    path: Kobold/Systems/BoundarySystem.cs
+    startLine: 193
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public enum BoundaryBehavior
+    content.vb: Public Enum BoundaryBehavior
+- uid: Kobold.Core.Systems.BoundaryBehavior.Clamp
+  commentId: F:Kobold.Core.Systems.BoundaryBehavior.Clamp
+  id: Clamp
+  parent: Kobold.Core.Systems.BoundaryBehavior
+  langs:
+  - csharp
+  - vb
+  name: Clamp
+  nameWithType: BoundaryBehavior.Clamp
+  fullName: Kobold.Core.Systems.BoundaryBehavior.Clamp
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/BoundarySystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Clamp
+    path: Kobold/Systems/BoundarySystem.cs
+    startLine: 195
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Clamp = 0
+    return:
+      type: Kobold.Core.Systems.BoundaryBehavior
+- uid: Kobold.Core.Systems.BoundaryBehavior.Wrap
+  commentId: F:Kobold.Core.Systems.BoundaryBehavior.Wrap
+  id: Wrap
+  parent: Kobold.Core.Systems.BoundaryBehavior
+  langs:
+  - csharp
+  - vb
+  name: Wrap
+  nameWithType: BoundaryBehavior.Wrap
+  fullName: Kobold.Core.Systems.BoundaryBehavior.Wrap
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/BoundarySystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Wrap
+    path: Kobold/Systems/BoundarySystem.cs
+    startLine: 196
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Wrap = 1
+    return:
+      type: Kobold.Core.Systems.BoundaryBehavior
+- uid: Kobold.Core.Systems.BoundaryBehavior.Bounce
+  commentId: F:Kobold.Core.Systems.BoundaryBehavior.Bounce
+  id: Bounce
+  parent: Kobold.Core.Systems.BoundaryBehavior
+  langs:
+  - csharp
+  - vb
+  name: Bounce
+  nameWithType: BoundaryBehavior.Bounce
+  fullName: Kobold.Core.Systems.BoundaryBehavior.Bounce
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/BoundarySystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Bounce
+    path: Kobold/Systems/BoundarySystem.cs
+    startLine: 197
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Bounce = 2
+    return:
+      type: Kobold.Core.Systems.BoundaryBehavior
+- uid: Kobold.Core.Systems.BoundaryBehavior.Destroy
+  commentId: F:Kobold.Core.Systems.BoundaryBehavior.Destroy
+  id: Destroy
+  parent: Kobold.Core.Systems.BoundaryBehavior
+  langs:
+  - csharp
+  - vb
+  name: Destroy
+  nameWithType: BoundaryBehavior.Destroy
+  fullName: Kobold.Core.Systems.BoundaryBehavior.Destroy
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/BoundarySystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Destroy
+    path: Kobold/Systems/BoundarySystem.cs
+    startLine: 198
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Destroy = 3
+    return:
+      type: Kobold.Core.Systems.BoundaryBehavior
+references:
+- uid: Kobold.Core.Systems
+  commentId: N:Kobold.Core.Systems
+  href: Kobold.html
+  name: Kobold.Core.Systems
+  nameWithType: Kobold.Core.Systems
+  fullName: Kobold.Core.Systems
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+- uid: Kobold.Core.Systems.BoundaryBehavior
+  commentId: T:Kobold.Core.Systems.BoundaryBehavior
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.BoundaryBehavior.html
+  name: BoundaryBehavior
+  nameWithType: BoundaryBehavior
+  fullName: Kobold.Core.Systems.BoundaryBehavior

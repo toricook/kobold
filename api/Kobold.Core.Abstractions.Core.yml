@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Abstractions.Core
+  commentId: N:Kobold.Core.Abstractions.Core
+  id: Kobold.Core.Abstractions.Core
+  children:
+  - Kobold.Core.Abstractions.Core.IContentLoader
+  - Kobold.Core.Abstractions.Core.IGameEngine
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Core.Abstractions.Core
+  nameWithType: Kobold.Core.Abstractions.Core
+  fullName: Kobold.Core.Abstractions.Core
+  type: Namespace
+  assemblies:
+  - Kobold.Core
+references:
+- uid: Kobold.Core.Abstractions.Core.IContentLoader
+  commentId: T:Kobold.Core.Abstractions.Core.IContentLoader
+  parent: Kobold.Core.Abstractions.Core
+  href: Kobold.Core.Abstractions.Core.IContentLoader.html
+  name: IContentLoader
+  nameWithType: IContentLoader
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader
+- uid: Kobold.Core.Abstractions.Core.IGameEngine
+  commentId: T:Kobold.Core.Abstractions.Core.IGameEngine
+  parent: Kobold.Core.Abstractions.Core
+  href: Kobold.Core.Abstractions.Core.IGameEngine.html
+  name: IGameEngine
+  nameWithType: IGameEngine
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine
+- uid: Kobold.Core.Abstractions.Core
+  commentId: N:Kobold.Core.Abstractions.Core
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Core
+  nameWithType: Kobold.Core.Abstractions.Core
+  fullName: Kobold.Core.Abstractions.Core
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Core
+    name: Core
+    href: Kobold.Core.Abstractions.Core.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Core
+    name: Core
+    href: Kobold.Core.Abstractions.Core.html

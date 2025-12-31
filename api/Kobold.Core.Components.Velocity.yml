@@ -1,0 +1,951 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.Velocity
+  commentId: T:Kobold.Core.Components.Velocity
+  id: Velocity
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.Velocity.#ctor(System.Numerics.Vector2)
+  - Kobold.Core.Components.Velocity.#ctor(System.Single,System.Single)
+  - Kobold.Core.Components.Velocity.Add(System.Numerics.Vector2)
+  - Kobold.Core.Components.Velocity.ClampToMaxSpeed(System.Single)
+  - Kobold.Core.Components.Velocity.Direction
+  - Kobold.Core.Components.Velocity.FromAngleAndSpeed(System.Single,System.Single)
+  - Kobold.Core.Components.Velocity.FromDirectionAndSpeed(System.Numerics.Vector2,System.Single)
+  - Kobold.Core.Components.Velocity.IsMoving
+  - Kobold.Core.Components.Velocity.SetDirectionAndSpeed(System.Numerics.Vector2,System.Single)
+  - Kobold.Core.Components.Velocity.Speed
+  - Kobold.Core.Components.Velocity.ToString
+  - Kobold.Core.Components.Velocity.Value
+  - Kobold.Core.Components.Velocity.Zero
+  langs:
+  - csharp
+  - vb
+  name: Velocity
+  nameWithType: Velocity
+  fullName: Kobold.Core.Components.Velocity
+  type: Struct
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Velocity
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 21
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Component representing an entity's velocity (speed and direction) in 2D space.
+
+    This is the rate of change of position - how fast and in what direction 
+
+    the entity is moving per second.
+
+
+    Used by physics systems to update an entity's Transform.Position each frame.
+
+    The basic movement equation is: newPosition = oldPosition + (velocity * deltaTime)
+
+
+    Velocity is measured in pixels per second in the same coordinate system as Transform.Position.
+
+    Positive X = moving right, Positive Y = moving down (standard screen coordinates).
+  example: []
+  syntax:
+    content: public struct Velocity
+    content.vb: Public Structure Velocity
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Kobold.Core.Components.Velocity.Value
+  commentId: F:Kobold.Core.Components.Velocity.Value
+  id: Value
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: Velocity.Value
+  fullName: Kobold.Core.Components.Velocity.Value
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Value
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 38
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    The velocity vector in pixels per second.
+
+
+    X component: Horizontal velocity (positive = moving right, negative = moving left)
+
+    Y component: Vertical velocity (positive = moving down, negative = moving up)
+
+
+    Magnitude of the vector represents speed: Vector2.Length() gives pixels/second
+
+    Direction of the vector represents movement direction: Vector2.Normalize() gives unit direction
+
+
+    Examples:
+
+    - (100, 0) = moving right at 100 pixels/second
+
+    - (0, -50) = moving up at 50 pixels/second  
+
+    - (70.7, 70.7) = moving down-right at ~100 pixels/second (diagonal)
+
+    - (0, 0) = not moving (stationary)
+  example: []
+  syntax:
+    content: public Vector2 Value
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public Value As Vector2
+- uid: Kobold.Core.Components.Velocity.#ctor(System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Components.Velocity.#ctor(System.Numerics.Vector2)
+  id: '#ctor(System.Numerics.Vector2)'
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: Velocity(Vector2)
+  nameWithType: Velocity.Velocity(Vector2)
+  fullName: Kobold.Core.Components.Velocity.Velocity(System.Numerics.Vector2)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 44
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Creates a new Velocity component with the specified velocity vector.
+  example: []
+  syntax:
+    content: public Velocity(Vector2 value)
+    parameters:
+    - id: value
+      type: System.Numerics.Vector2
+      description: Velocity in pixels per second (X=horizontal, Y=vertical)
+    content.vb: Public Sub New(value As Vector2)
+  overload: Kobold.Core.Components.Velocity.#ctor*
+  nameWithType.vb: Velocity.New(Vector2)
+  fullName.vb: Kobold.Core.Components.Velocity.New(System.Numerics.Vector2)
+  name.vb: New(Vector2)
+- uid: Kobold.Core.Components.Velocity.#ctor(System.Single,System.Single)
+  commentId: M:Kobold.Core.Components.Velocity.#ctor(System.Single,System.Single)
+  id: '#ctor(System.Single,System.Single)'
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: Velocity(float, float)
+  nameWithType: Velocity.Velocity(float, float)
+  fullName: Kobold.Core.Components.Velocity.Velocity(float, float)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 55
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Creates a new Velocity component with the specified horizontal and vertical components.
+
+    Convenience constructor for when you have separate X and Y velocities.
+  example: []
+  syntax:
+    content: public Velocity(float x, float y)
+    parameters:
+    - id: x
+      type: System.Single
+      description: Horizontal velocity in pixels per second (positive = right)
+    - id: y
+      type: System.Single
+      description: Vertical velocity in pixels per second (positive = down)
+    content.vb: Public Sub New(x As Single, y As Single)
+  overload: Kobold.Core.Components.Velocity.#ctor*
+  nameWithType.vb: Velocity.New(Single, Single)
+  fullName.vb: Kobold.Core.Components.Velocity.New(Single, Single)
+  name.vb: New(Single, Single)
+- uid: Kobold.Core.Components.Velocity.Speed
+  commentId: P:Kobold.Core.Components.Velocity.Speed
+  id: Speed
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: Speed
+  nameWithType: Velocity.Speed
+  fullName: Kobold.Core.Components.Velocity.Speed
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Speed
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 65
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Gets the speed (magnitude) of this velocity in pixels per second.
+
+    This is always a positive value representing how fast the entity is moving,
+
+    regardless of direction.
+  example: []
+  syntax:
+    content: public readonly float Speed { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Speed As Single
+  overload: Kobold.Core.Components.Velocity.Speed*
+- uid: Kobold.Core.Components.Velocity.Direction
+  commentId: P:Kobold.Core.Components.Velocity.Direction
+  id: Direction
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: Direction
+  nameWithType: Velocity.Direction
+  fullName: Kobold.Core.Components.Velocity.Direction
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Direction
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 73
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Gets the direction of movement as a normalized vector (length = 1).
+
+    Returns Vector2.Zero if the entity is not moving (velocity is zero).
+
+    Useful for determining which way an entity is facing or for applying forces
+
+    in the direction of movement.
+  example: []
+  syntax:
+    content: public readonly Vector2 Direction { get; }
+    parameters: []
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public ReadOnly Property Direction As Vector2
+  overload: Kobold.Core.Components.Velocity.Direction*
+- uid: Kobold.Core.Components.Velocity.IsMoving
+  commentId: P:Kobold.Core.Components.Velocity.IsMoving
+  id: IsMoving
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: IsMoving
+  nameWithType: Velocity.IsMoving
+  fullName: Kobold.Core.Components.Velocity.IsMoving
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IsMoving
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 87
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Gets whether this entity is currently moving (has non-zero velocity).
+
+    Uses a small threshold to account for floating-point precision issues.
+  example: []
+  syntax:
+    content: public readonly bool IsMoving { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsMoving As Boolean
+  overload: Kobold.Core.Components.Velocity.IsMoving*
+- uid: Kobold.Core.Components.Velocity.SetDirectionAndSpeed(System.Numerics.Vector2,System.Single)
+  commentId: M:Kobold.Core.Components.Velocity.SetDirectionAndSpeed(System.Numerics.Vector2,System.Single)
+  id: SetDirectionAndSpeed(System.Numerics.Vector2,System.Single)
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: SetDirectionAndSpeed(Vector2, float)
+  nameWithType: Velocity.SetDirectionAndSpeed(Vector2, float)
+  fullName: Kobold.Core.Components.Velocity.SetDirectionAndSpeed(System.Numerics.Vector2, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: SetDirectionAndSpeed
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 94
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Sets the velocity to move in the specified direction at the specified speed.
+  example: []
+  syntax:
+    content: public void SetDirectionAndSpeed(Vector2 direction, float speed)
+    parameters:
+    - id: direction
+      type: System.Numerics.Vector2
+      description: Direction to move (will be normalized automatically)
+    - id: speed
+      type: System.Single
+      description: Speed in pixels per second
+    content.vb: Public Sub SetDirectionAndSpeed(direction As Vector2, speed As Single)
+  overload: Kobold.Core.Components.Velocity.SetDirectionAndSpeed*
+  nameWithType.vb: Velocity.SetDirectionAndSpeed(Vector2, Single)
+  fullName.vb: Kobold.Core.Components.Velocity.SetDirectionAndSpeed(System.Numerics.Vector2, Single)
+  name.vb: SetDirectionAndSpeed(Vector2, Single)
+- uid: Kobold.Core.Components.Velocity.Add(System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Components.Velocity.Add(System.Numerics.Vector2)
+  id: Add(System.Numerics.Vector2)
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: Add(Vector2)
+  nameWithType: Velocity.Add(Vector2)
+  fullName: Kobold.Core.Components.Velocity.Add(System.Numerics.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Add
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 107
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Adds the specified velocity to the current velocity.
+
+    Useful for applying forces, impulses, or acceleration effects.
+  example: []
+  syntax:
+    content: public void Add(Vector2 deltaVelocity)
+    parameters:
+    - id: deltaVelocity
+      type: System.Numerics.Vector2
+      description: Velocity change to apply
+    content.vb: Public Sub Add(deltaVelocity As Vector2)
+  overload: Kobold.Core.Components.Velocity.Add*
+- uid: Kobold.Core.Components.Velocity.ClampToMaxSpeed(System.Single)
+  commentId: M:Kobold.Core.Components.Velocity.ClampToMaxSpeed(System.Single)
+  id: ClampToMaxSpeed(System.Single)
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: ClampToMaxSpeed(float)
+  nameWithType: Velocity.ClampToMaxSpeed(float)
+  fullName: Kobold.Core.Components.Velocity.ClampToMaxSpeed(float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ClampToMaxSpeed
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 118
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Limits the velocity to the specified maximum speed.
+
+    Maintains direction but caps the magnitude. Useful for implementing
+
+    maximum movement speeds or terminal velocity.
+  example: []
+  syntax:
+    content: public void ClampToMaxSpeed(float maxSpeed)
+    parameters:
+    - id: maxSpeed
+      type: System.Single
+      description: Maximum speed in pixels per second
+    content.vb: Public Sub ClampToMaxSpeed(maxSpeed As Single)
+  overload: Kobold.Core.Components.Velocity.ClampToMaxSpeed*
+  nameWithType.vb: Velocity.ClampToMaxSpeed(Single)
+  fullName.vb: Kobold.Core.Components.Velocity.ClampToMaxSpeed(Single)
+  name.vb: ClampToMaxSpeed(Single)
+- uid: Kobold.Core.Components.Velocity.FromDirectionAndSpeed(System.Numerics.Vector2,System.Single)
+  commentId: M:Kobold.Core.Components.Velocity.FromDirectionAndSpeed(System.Numerics.Vector2,System.Single)
+  id: FromDirectionAndSpeed(System.Numerics.Vector2,System.Single)
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: FromDirectionAndSpeed(Vector2, float)
+  nameWithType: Velocity.FromDirectionAndSpeed(Vector2, float)
+  fullName: Kobold.Core.Components.Velocity.FromDirectionAndSpeed(System.Numerics.Vector2, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: FromDirectionAndSpeed
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 132
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Creates a velocity moving in the specified direction at the specified speed.
+  example: []
+  syntax:
+    content: public static Velocity FromDirectionAndSpeed(Vector2 direction, float speed)
+    parameters:
+    - id: direction
+      type: System.Numerics.Vector2
+      description: Direction vector (will be normalized)
+    - id: speed
+      type: System.Single
+      description: Speed in pixels per second
+    return:
+      type: Kobold.Core.Components.Velocity
+      description: Velocity component with the specified direction and speed
+    content.vb: Public Shared Function FromDirectionAndSpeed(direction As Vector2, speed As Single) As Velocity
+  overload: Kobold.Core.Components.Velocity.FromDirectionAndSpeed*
+  nameWithType.vb: Velocity.FromDirectionAndSpeed(Vector2, Single)
+  fullName.vb: Kobold.Core.Components.Velocity.FromDirectionAndSpeed(System.Numerics.Vector2, Single)
+  name.vb: FromDirectionAndSpeed(Vector2, Single)
+- uid: Kobold.Core.Components.Velocity.FromAngleAndSpeed(System.Single,System.Single)
+  commentId: M:Kobold.Core.Components.Velocity.FromAngleAndSpeed(System.Single,System.Single)
+  id: FromAngleAndSpeed(System.Single,System.Single)
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: FromAngleAndSpeed(float, float)
+  nameWithType: Velocity.FromAngleAndSpeed(float, float)
+  fullName: Kobold.Core.Components.Velocity.FromAngleAndSpeed(float, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: FromAngleAndSpeed
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 145
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Creates a velocity from an angle and speed.
+  example: []
+  syntax:
+    content: public static Velocity FromAngleAndSpeed(float angleRadians, float speed)
+    parameters:
+    - id: angleRadians
+      type: System.Single
+      description: Angle in radians (0 = right, π/2 = down)
+    - id: speed
+      type: System.Single
+      description: Speed in pixels per second
+    return:
+      type: Kobold.Core.Components.Velocity
+      description: Velocity component with the specified angle and speed
+    content.vb: Public Shared Function FromAngleAndSpeed(angleRadians As Single, speed As Single) As Velocity
+  overload: Kobold.Core.Components.Velocity.FromAngleAndSpeed*
+  nameWithType.vb: Velocity.FromAngleAndSpeed(Single, Single)
+  fullName.vb: Kobold.Core.Components.Velocity.FromAngleAndSpeed(Single, Single)
+  name.vb: FromAngleAndSpeed(Single, Single)
+- uid: Kobold.Core.Components.Velocity.Zero
+  commentId: P:Kobold.Core.Components.Velocity.Zero
+  id: Zero
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: Zero
+  nameWithType: Velocity.Zero
+  fullName: Kobold.Core.Components.Velocity.Zero
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Zero
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 156
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Creates a stationary velocity (no movement).
+  example: []
+  syntax:
+    content: public static Velocity Zero { get; }
+    parameters: []
+    return:
+      type: Kobold.Core.Components.Velocity
+    content.vb: Public Shared ReadOnly Property Zero As Velocity
+  overload: Kobold.Core.Components.Velocity.Zero*
+- uid: Kobold.Core.Components.Velocity.ToString
+  commentId: M:Kobold.Core.Components.Velocity.ToString
+  id: ToString
+  parent: Kobold.Core.Components.Velocity
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Velocity.ToString()
+  fullName: Kobold.Core.Components.Velocity.ToString()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/Velocity.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ToString
+    path: Kobold/Components/Physics/Velocity.cs
+    startLine: 162
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Returns a human-readable string representation of this velocity.
+
+    Useful for debugging and logging.
+  example: []
+  syntax:
+    content: public override readonly string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: Kobold.Core.Components.Velocity.ToString*
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Numerics.Vector2
+  commentId: T:System.Numerics.Vector2
+  parent: System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  name: Vector2
+  nameWithType: Vector2
+  fullName: System.Numerics.Vector2
+- uid: System.Numerics
+  commentId: N:System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Numerics
+  nameWithType: System.Numerics
+  fullName: System.Numerics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+- uid: Kobold.Core.Components.Velocity.#ctor*
+  commentId: Overload:Kobold.Core.Components.Velocity.#ctor
+  href: Kobold.Core.Components.Velocity.html#Kobold_Core_Components_Velocity__ctor_System_Numerics_Vector2_
+  name: Velocity
+  nameWithType: Velocity.Velocity
+  fullName: Kobold.Core.Components.Velocity.Velocity
+  nameWithType.vb: Velocity.New
+  fullName.vb: Kobold.Core.Components.Velocity.New
+  name.vb: New
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Core.Components.Velocity.Speed*
+  commentId: Overload:Kobold.Core.Components.Velocity.Speed
+  href: Kobold.Core.Components.Velocity.html#Kobold_Core_Components_Velocity_Speed
+  name: Speed
+  nameWithType: Velocity.Speed
+  fullName: Kobold.Core.Components.Velocity.Speed
+- uid: Kobold.Core.Components.Velocity.Direction*
+  commentId: Overload:Kobold.Core.Components.Velocity.Direction
+  href: Kobold.Core.Components.Velocity.html#Kobold_Core_Components_Velocity_Direction
+  name: Direction
+  nameWithType: Velocity.Direction
+  fullName: Kobold.Core.Components.Velocity.Direction
+- uid: Kobold.Core.Components.Velocity.IsMoving*
+  commentId: Overload:Kobold.Core.Components.Velocity.IsMoving
+  href: Kobold.Core.Components.Velocity.html#Kobold_Core_Components_Velocity_IsMoving
+  name: IsMoving
+  nameWithType: Velocity.IsMoving
+  fullName: Kobold.Core.Components.Velocity.IsMoving
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Kobold.Core.Components.Velocity.SetDirectionAndSpeed*
+  commentId: Overload:Kobold.Core.Components.Velocity.SetDirectionAndSpeed
+  href: Kobold.Core.Components.Velocity.html#Kobold_Core_Components_Velocity_SetDirectionAndSpeed_System_Numerics_Vector2_System_Single_
+  name: SetDirectionAndSpeed
+  nameWithType: Velocity.SetDirectionAndSpeed
+  fullName: Kobold.Core.Components.Velocity.SetDirectionAndSpeed
+- uid: Kobold.Core.Components.Velocity.Add*
+  commentId: Overload:Kobold.Core.Components.Velocity.Add
+  href: Kobold.Core.Components.Velocity.html#Kobold_Core_Components_Velocity_Add_System_Numerics_Vector2_
+  name: Add
+  nameWithType: Velocity.Add
+  fullName: Kobold.Core.Components.Velocity.Add
+- uid: Kobold.Core.Components.Velocity.ClampToMaxSpeed*
+  commentId: Overload:Kobold.Core.Components.Velocity.ClampToMaxSpeed
+  href: Kobold.Core.Components.Velocity.html#Kobold_Core_Components_Velocity_ClampToMaxSpeed_System_Single_
+  name: ClampToMaxSpeed
+  nameWithType: Velocity.ClampToMaxSpeed
+  fullName: Kobold.Core.Components.Velocity.ClampToMaxSpeed
+- uid: Kobold.Core.Components.Velocity.FromDirectionAndSpeed*
+  commentId: Overload:Kobold.Core.Components.Velocity.FromDirectionAndSpeed
+  href: Kobold.Core.Components.Velocity.html#Kobold_Core_Components_Velocity_FromDirectionAndSpeed_System_Numerics_Vector2_System_Single_
+  name: FromDirectionAndSpeed
+  nameWithType: Velocity.FromDirectionAndSpeed
+  fullName: Kobold.Core.Components.Velocity.FromDirectionAndSpeed
+- uid: Kobold.Core.Components.Velocity
+  commentId: T:Kobold.Core.Components.Velocity
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.Velocity.html
+  name: Velocity
+  nameWithType: Velocity
+  fullName: Kobold.Core.Components.Velocity
+- uid: Kobold.Core.Components.Velocity.FromAngleAndSpeed*
+  commentId: Overload:Kobold.Core.Components.Velocity.FromAngleAndSpeed
+  href: Kobold.Core.Components.Velocity.html#Kobold_Core_Components_Velocity_FromAngleAndSpeed_System_Single_System_Single_
+  name: FromAngleAndSpeed
+  nameWithType: Velocity.FromAngleAndSpeed
+  fullName: Kobold.Core.Components.Velocity.FromAngleAndSpeed
+- uid: Kobold.Core.Components.Velocity.Zero*
+  commentId: Overload:Kobold.Core.Components.Velocity.Zero
+  href: Kobold.Core.Components.Velocity.html#Kobold_Core_Components_Velocity_Zero
+  name: Zero
+  nameWithType: Velocity.Zero
+  fullName: Kobold.Core.Components.Velocity.Zero
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: Kobold.Core.Components.Velocity.ToString*
+  commentId: Overload:Kobold.Core.Components.Velocity.ToString
+  href: Kobold.Core.Components.Velocity.html#Kobold_Core_Components_Velocity_ToString
+  name: ToString
+  nameWithType: Velocity.ToString
+  fullName: Kobold.Core.Components.Velocity.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

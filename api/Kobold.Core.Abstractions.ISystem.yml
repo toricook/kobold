@@ -1,0 +1,118 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Abstractions.ISystem
+  commentId: T:Kobold.Core.Abstractions.ISystem
+  id: ISystem
+  parent: Kobold.Core.Abstractions
+  children:
+  - Kobold.Core.Abstractions.ISystem.Update(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: ISystem
+  nameWithType: ISystem
+  fullName: Kobold.Core.Abstractions.ISystem
+  type: Interface
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/ISystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ISystem
+    path: Kobold/Abstractions/Core/ISystem.cs
+    startLine: 11
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions
+  summary: At its core, a system is just a thing that is reponsible for applying updates to entities.
+  example: []
+  syntax:
+    content: public interface ISystem
+    content.vb: Public Interface ISystem
+- uid: Kobold.Core.Abstractions.ISystem.Update(System.Single)
+  commentId: M:Kobold.Core.Abstractions.ISystem.Update(System.Single)
+  id: Update(System.Single)
+  parent: Kobold.Core.Abstractions.ISystem
+  langs:
+  - csharp
+  - vb
+  name: Update(float)
+  nameWithType: ISystem.Update(float)
+  fullName: Kobold.Core.Abstractions.ISystem.Update(float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/ISystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Update
+    path: Kobold/Abstractions/Core/ISystem.cs
+    startLine: 13
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions
+  syntax:
+    content: void Update(float deltaTime)
+    parameters:
+    - id: deltaTime
+      type: System.Single
+    content.vb: Sub Update(deltaTime As Single)
+  overload: Kobold.Core.Abstractions.ISystem.Update*
+  nameWithType.vb: ISystem.Update(Single)
+  fullName.vb: Kobold.Core.Abstractions.ISystem.Update(Single)
+  name.vb: Update(Single)
+references:
+- uid: Kobold.Core.Abstractions
+  commentId: N:Kobold.Core.Abstractions
+  href: Kobold.html
+  name: Kobold.Core.Abstractions
+  nameWithType: Kobold.Core.Abstractions
+  fullName: Kobold.Core.Abstractions
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+- uid: Kobold.Core.Abstractions.ISystem.Update*
+  commentId: Overload:Kobold.Core.Abstractions.ISystem.Update
+  href: Kobold.Core.Abstractions.ISystem.html#Kobold_Core_Abstractions_ISystem_Update_System_Single_
+  name: Update
+  nameWithType: ISystem.Update
+  fullName: Kobold.Core.Abstractions.ISystem.Update
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

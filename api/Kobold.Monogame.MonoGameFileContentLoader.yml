@@ -1,0 +1,709 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Monogame.MonoGameFileContentLoader
+  commentId: T:Kobold.Monogame.MonoGameFileContentLoader
+  id: MonoGameFileContentLoader
+  parent: Kobold.Monogame
+  children:
+  - Kobold.Monogame.MonoGameFileContentLoader.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,System.String)
+  - Kobold.Monogame.MonoGameFileContentLoader.ContentRoot
+  - Kobold.Monogame.MonoGameFileContentLoader.LoadTexture(System.String)
+  - Kobold.Monogame.MonoGameFileContentLoader.TextureExists(System.String)
+  langs:
+  - csharp
+  - vb
+  name: MonoGameFileContentLoader
+  nameWithType: MonoGameFileContentLoader
+  fullName: Kobold.Monogame.MonoGameFileContentLoader
+  type: Class
+  source:
+    remote:
+      path: Kobold.Monogame/MonoGameFileContentLoader.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: MonoGameFileContentLoader
+    path: Kobold.Monogame/MonoGameFileContentLoader.cs
+    startLine: 11
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  summary: >-
+    MonoGame implementation of content loading that loads raw files directly from the file system.
+
+    Loads PNG textures at runtime using Texture2D.FromStream, bypassing the MonoGame Content Pipeline.
+  example: []
+  syntax:
+    content: 'public class MonoGameFileContentLoader : IContentLoader'
+    content.vb: Public Class MonoGameFileContentLoader Implements IContentLoader
+  inheritance:
+  - System.Object
+  implements:
+  - Kobold.Core.Abstractions.Core.IContentLoader
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Monogame.MonoGameFileContentLoader.ContentRoot
+  commentId: P:Kobold.Monogame.MonoGameFileContentLoader.ContentRoot
+  id: ContentRoot
+  parent: Kobold.Monogame.MonoGameFileContentLoader
+  langs:
+  - csharp
+  - vb
+  name: ContentRoot
+  nameWithType: MonoGameFileContentLoader.ContentRoot
+  fullName: Kobold.Monogame.MonoGameFileContentLoader.ContentRoot
+  type: Property
+  source:
+    remote:
+      path: Kobold.Monogame/MonoGameFileContentLoader.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ContentRoot
+    path: Kobold.Monogame/MonoGameFileContentLoader.cs
+    startLine: 16
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  summary: Root directory for content files
+  example: []
+  syntax:
+    content: public string ContentRoot { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ContentRoot As String
+  overload: Kobold.Monogame.MonoGameFileContentLoader.ContentRoot*
+  implements:
+  - Kobold.Core.Abstractions.Core.IContentLoader.ContentRoot
+- uid: Kobold.Monogame.MonoGameFileContentLoader.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,System.String)
+  commentId: M:Kobold.Monogame.MonoGameFileContentLoader.#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,System.String)
+  id: '#ctor(Microsoft.Xna.Framework.Graphics.GraphicsDevice,System.String)'
+  parent: Kobold.Monogame.MonoGameFileContentLoader
+  langs:
+  - csharp
+  - vb
+  name: MonoGameFileContentLoader(GraphicsDevice, string)
+  nameWithType: MonoGameFileContentLoader.MonoGameFileContentLoader(GraphicsDevice, string)
+  fullName: Kobold.Monogame.MonoGameFileContentLoader.MonoGameFileContentLoader(Microsoft.Xna.Framework.Graphics.GraphicsDevice, string)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold.Monogame/MonoGameFileContentLoader.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold.Monogame/MonoGameFileContentLoader.cs
+    startLine: 18
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  syntax:
+    content: public MonoGameFileContentLoader(GraphicsDevice graphicsDevice, string contentRoot = "Content")
+    parameters:
+    - id: graphicsDevice
+      type: Microsoft.Xna.Framework.Graphics.GraphicsDevice
+    - id: contentRoot
+      type: System.String
+    content.vb: Public Sub New(graphicsDevice As GraphicsDevice, contentRoot As String = "Content")
+  overload: Kobold.Monogame.MonoGameFileContentLoader.#ctor*
+  nameWithType.vb: MonoGameFileContentLoader.New(GraphicsDevice, String)
+  fullName.vb: Kobold.Monogame.MonoGameFileContentLoader.New(Microsoft.Xna.Framework.Graphics.GraphicsDevice, String)
+  name.vb: New(GraphicsDevice, String)
+- uid: Kobold.Monogame.MonoGameFileContentLoader.LoadTexture(System.String)
+  commentId: M:Kobold.Monogame.MonoGameFileContentLoader.LoadTexture(System.String)
+  id: LoadTexture(System.String)
+  parent: Kobold.Monogame.MonoGameFileContentLoader
+  langs:
+  - csharp
+  - vb
+  name: LoadTexture(string)
+  nameWithType: MonoGameFileContentLoader.LoadTexture(string)
+  fullName: Kobold.Monogame.MonoGameFileContentLoader.LoadTexture(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Monogame/MonoGameFileContentLoader.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: LoadTexture
+    path: Kobold.Monogame/MonoGameFileContentLoader.cs
+    startLine: 24
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  summary: Load a texture from a file path
+  example: []
+  syntax:
+    content: public ITexture LoadTexture(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to the texture file (relative to content directory)
+    return:
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+      description: The loaded texture
+    content.vb: Public Function LoadTexture(path As String) As ITexture
+  overload: Kobold.Monogame.MonoGameFileContentLoader.LoadTexture*
+  implements:
+  - Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture(System.String)
+  nameWithType.vb: MonoGameFileContentLoader.LoadTexture(String)
+  fullName.vb: Kobold.Monogame.MonoGameFileContentLoader.LoadTexture(String)
+  name.vb: LoadTexture(String)
+- uid: Kobold.Monogame.MonoGameFileContentLoader.TextureExists(System.String)
+  commentId: M:Kobold.Monogame.MonoGameFileContentLoader.TextureExists(System.String)
+  id: TextureExists(System.String)
+  parent: Kobold.Monogame.MonoGameFileContentLoader
+  langs:
+  - csharp
+  - vb
+  name: TextureExists(string)
+  nameWithType: MonoGameFileContentLoader.TextureExists(string)
+  fullName: Kobold.Monogame.MonoGameFileContentLoader.TextureExists(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Monogame/MonoGameFileContentLoader.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TextureExists
+    path: Kobold.Monogame/MonoGameFileContentLoader.cs
+    startLine: 53
+  assemblies:
+  - Kobold.Monogame
+  namespace: Kobold.Monogame
+  summary: Check if a texture file exists
+  example: []
+  syntax:
+    content: public bool TextureExists(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to check
+    return:
+      type: System.Boolean
+      description: True if the file exists
+    content.vb: Public Function TextureExists(path As String) As Boolean
+  overload: Kobold.Monogame.MonoGameFileContentLoader.TextureExists*
+  implements:
+  - Kobold.Core.Abstractions.Core.IContentLoader.TextureExists(System.String)
+  nameWithType.vb: MonoGameFileContentLoader.TextureExists(String)
+  fullName.vb: Kobold.Monogame.MonoGameFileContentLoader.TextureExists(String)
+  name.vb: TextureExists(String)
+references:
+- uid: Kobold.Monogame
+  commentId: N:Kobold.Monogame
+  href: Kobold.html
+  name: Kobold.Monogame
+  nameWithType: Kobold.Monogame
+  fullName: Kobold.Monogame
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Monogame
+    name: Monogame
+    href: Kobold.Monogame.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Monogame
+    name: Monogame
+    href: Kobold.Monogame.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Kobold.Core.Abstractions.Core.IContentLoader
+  commentId: T:Kobold.Core.Abstractions.Core.IContentLoader
+  parent: Kobold.Core.Abstractions.Core
+  href: Kobold.Core.Abstractions.Core.IContentLoader.html
+  name: IContentLoader
+  nameWithType: IContentLoader
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Abstractions.Core
+  commentId: N:Kobold.Core.Abstractions.Core
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Core
+  nameWithType: Kobold.Core.Abstractions.Core
+  fullName: Kobold.Core.Abstractions.Core
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Core
+    name: Core
+    href: Kobold.Core.Abstractions.Core.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Core
+    name: Core
+    href: Kobold.Core.Abstractions.Core.html
+- uid: Kobold.Monogame.MonoGameFileContentLoader.ContentRoot*
+  commentId: Overload:Kobold.Monogame.MonoGameFileContentLoader.ContentRoot
+  href: Kobold.Monogame.MonoGameFileContentLoader.html#Kobold_Monogame_MonoGameFileContentLoader_ContentRoot
+  name: ContentRoot
+  nameWithType: MonoGameFileContentLoader.ContentRoot
+  fullName: Kobold.Monogame.MonoGameFileContentLoader.ContentRoot
+- uid: Kobold.Core.Abstractions.Core.IContentLoader.ContentRoot
+  commentId: P:Kobold.Core.Abstractions.Core.IContentLoader.ContentRoot
+  parent: Kobold.Core.Abstractions.Core.IContentLoader
+  href: Kobold.Core.Abstractions.Core.IContentLoader.html#Kobold_Core_Abstractions_Core_IContentLoader_ContentRoot
+  name: ContentRoot
+  nameWithType: IContentLoader.ContentRoot
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader.ContentRoot
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Kobold.Monogame.MonoGameFileContentLoader.#ctor*
+  commentId: Overload:Kobold.Monogame.MonoGameFileContentLoader.#ctor
+  href: Kobold.Monogame.MonoGameFileContentLoader.html#Kobold_Monogame_MonoGameFileContentLoader__ctor_Microsoft_Xna_Framework_Graphics_GraphicsDevice_System_String_
+  name: MonoGameFileContentLoader
+  nameWithType: MonoGameFileContentLoader.MonoGameFileContentLoader
+  fullName: Kobold.Monogame.MonoGameFileContentLoader.MonoGameFileContentLoader
+  nameWithType.vb: MonoGameFileContentLoader.New
+  fullName.vb: Kobold.Monogame.MonoGameFileContentLoader.New
+  name.vb: New
+- uid: Microsoft.Xna.Framework.Graphics.GraphicsDevice
+  commentId: T:Microsoft.Xna.Framework.Graphics.GraphicsDevice
+  parent: Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: GraphicsDevice
+  nameWithType: GraphicsDevice
+  fullName: Microsoft.Xna.Framework.Graphics.GraphicsDevice
+- uid: Microsoft.Xna.Framework.Graphics
+  commentId: N:Microsoft.Xna.Framework.Graphics
+  isExternal: true
+  name: Microsoft.Xna.Framework.Graphics
+  nameWithType: Microsoft.Xna.Framework.Graphics
+  fullName: Microsoft.Xna.Framework.Graphics
+  spec.csharp:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+  spec.vb:
+  - uid: Microsoft
+    name: Microsoft
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna
+    name: Xna
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework
+    name: Framework
+    isExternal: true
+  - name: .
+  - uid: Microsoft.Xna.Framework.Graphics
+    name: Graphics
+    isExternal: true
+- uid: Kobold.Monogame.MonoGameFileContentLoader.LoadTexture*
+  commentId: Overload:Kobold.Monogame.MonoGameFileContentLoader.LoadTexture
+  href: Kobold.Monogame.MonoGameFileContentLoader.html#Kobold_Monogame_MonoGameFileContentLoader_LoadTexture_System_String_
+  name: LoadTexture
+  nameWithType: MonoGameFileContentLoader.LoadTexture
+  fullName: Kobold.Monogame.MonoGameFileContentLoader.LoadTexture
+- uid: Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture(System.String)
+  commentId: M:Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture(System.String)
+  parent: Kobold.Core.Abstractions.Core.IContentLoader
+  isExternal: true
+  href: Kobold.Core.Abstractions.Core.IContentLoader.html#Kobold_Core_Abstractions_Core_IContentLoader_LoadTexture_System_String_
+  name: LoadTexture(string)
+  nameWithType: IContentLoader.LoadTexture(string)
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture(string)
+  nameWithType.vb: IContentLoader.LoadTexture(String)
+  fullName.vb: Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture(String)
+  name.vb: LoadTexture(String)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture(System.String)
+    name: LoadTexture
+    href: Kobold.Core.Abstractions.Core.IContentLoader.html#Kobold_Core_Abstractions_Core_IContentLoader_LoadTexture_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Core.IContentLoader.LoadTexture(System.String)
+    name: LoadTexture
+    href: Kobold.Core.Abstractions.Core.IContentLoader.html#Kobold_Core_Abstractions_Core_IContentLoader_LoadTexture_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: Kobold.Core.Abstractions.Rendering.ITexture
+  commentId: T:Kobold.Core.Abstractions.Rendering.ITexture
+  parent: Kobold.Core.Abstractions.Rendering
+  href: Kobold.Core.Abstractions.Rendering.ITexture.html
+  name: ITexture
+  nameWithType: ITexture
+  fullName: Kobold.Core.Abstractions.Rendering.ITexture
+- uid: Kobold.Core.Abstractions.Rendering
+  commentId: N:Kobold.Core.Abstractions.Rendering
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Rendering
+  nameWithType: Kobold.Core.Abstractions.Rendering
+  fullName: Kobold.Core.Abstractions.Rendering
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+- uid: Kobold.Monogame.MonoGameFileContentLoader.TextureExists*
+  commentId: Overload:Kobold.Monogame.MonoGameFileContentLoader.TextureExists
+  href: Kobold.Monogame.MonoGameFileContentLoader.html#Kobold_Monogame_MonoGameFileContentLoader_TextureExists_System_String_
+  name: TextureExists
+  nameWithType: MonoGameFileContentLoader.TextureExists
+  fullName: Kobold.Monogame.MonoGameFileContentLoader.TextureExists
+- uid: Kobold.Core.Abstractions.Core.IContentLoader.TextureExists(System.String)
+  commentId: M:Kobold.Core.Abstractions.Core.IContentLoader.TextureExists(System.String)
+  parent: Kobold.Core.Abstractions.Core.IContentLoader
+  isExternal: true
+  href: Kobold.Core.Abstractions.Core.IContentLoader.html#Kobold_Core_Abstractions_Core_IContentLoader_TextureExists_System_String_
+  name: TextureExists(string)
+  nameWithType: IContentLoader.TextureExists(string)
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader.TextureExists(string)
+  nameWithType.vb: IContentLoader.TextureExists(String)
+  fullName.vb: Kobold.Core.Abstractions.Core.IContentLoader.TextureExists(String)
+  name.vb: TextureExists(String)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Core.IContentLoader.TextureExists(System.String)
+    name: TextureExists
+    href: Kobold.Core.Abstractions.Core.IContentLoader.html#Kobold_Core_Abstractions_Core_IContentLoader_TextureExists_System_String_
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Core.IContentLoader.TextureExists(System.String)
+    name: TextureExists
+    href: Kobold.Core.Abstractions.Core.IContentLoader.html#Kobold_Core_Abstractions_Core_IContentLoader_TextureExists_System_String_
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean

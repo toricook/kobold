@@ -1,0 +1,690 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.AnimationClip
+  commentId: T:Kobold.Core.Components.AnimationClip
+  id: AnimationClip
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.AnimationClip.#ctor(System.String,System.Drawing.Rectangle[],System.Single,System.Boolean)
+  - Kobold.Core.Components.AnimationClip.FrameDuration
+  - Kobold.Core.Components.AnimationClip.Frames
+  - Kobold.Core.Components.AnimationClip.FromGrid(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Boolean)
+  - Kobold.Core.Components.AnimationClip.FromSpriteSheet(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Boolean)
+  - Kobold.Core.Components.AnimationClip.Loop
+  - Kobold.Core.Components.AnimationClip.Name
+  langs:
+  - csharp
+  - vb
+  name: AnimationClip
+  nameWithType: AnimationClip
+  fullName: Kobold.Core.Components.AnimationClip
+  type: Class
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Animation.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: AnimationClip
+    path: Kobold/Components/Rendering/Animation.cs
+    startLine: 8
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Defines a sequence of frames for an animation
+  example: []
+  syntax:
+    content: public class AnimationClip
+    content.vb: Public Class AnimationClip
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Core.Components.AnimationClip.Name
+  commentId: P:Kobold.Core.Components.AnimationClip.Name
+  id: Name
+  parent: Kobold.Core.Components.AnimationClip
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: AnimationClip.Name
+  fullName: Kobold.Core.Components.AnimationClip.Name
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Animation.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Name
+    path: Kobold/Components/Rendering/Animation.cs
+    startLine: 10
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Kobold.Core.Components.AnimationClip.Name*
+- uid: Kobold.Core.Components.AnimationClip.Frames
+  commentId: P:Kobold.Core.Components.AnimationClip.Frames
+  id: Frames
+  parent: Kobold.Core.Components.AnimationClip
+  langs:
+  - csharp
+  - vb
+  name: Frames
+  nameWithType: AnimationClip.Frames
+  fullName: Kobold.Core.Components.AnimationClip.Frames
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Animation.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Frames
+    path: Kobold/Components/Rendering/Animation.cs
+    startLine: 11
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public Rectangle[] Frames { get; set; }
+    parameters: []
+    return:
+      type: System.Drawing.Rectangle[]
+    content.vb: Public Property Frames As Rectangle()
+  overload: Kobold.Core.Components.AnimationClip.Frames*
+- uid: Kobold.Core.Components.AnimationClip.FrameDuration
+  commentId: P:Kobold.Core.Components.AnimationClip.FrameDuration
+  id: FrameDuration
+  parent: Kobold.Core.Components.AnimationClip
+  langs:
+  - csharp
+  - vb
+  name: FrameDuration
+  nameWithType: AnimationClip.FrameDuration
+  fullName: Kobold.Core.Components.AnimationClip.FrameDuration
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Animation.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: FrameDuration
+    path: Kobold/Components/Rendering/Animation.cs
+    startLine: 12
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public float FrameDuration { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property FrameDuration As Single
+  overload: Kobold.Core.Components.AnimationClip.FrameDuration*
+- uid: Kobold.Core.Components.AnimationClip.Loop
+  commentId: P:Kobold.Core.Components.AnimationClip.Loop
+  id: Loop
+  parent: Kobold.Core.Components.AnimationClip
+  langs:
+  - csharp
+  - vb
+  name: Loop
+  nameWithType: AnimationClip.Loop
+  fullName: Kobold.Core.Components.AnimationClip.Loop
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Animation.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Loop
+    path: Kobold/Components/Rendering/Animation.cs
+    startLine: 13
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public bool Loop { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property [Loop] As Boolean
+  overload: Kobold.Core.Components.AnimationClip.Loop*
+- uid: Kobold.Core.Components.AnimationClip.#ctor(System.String,System.Drawing.Rectangle[],System.Single,System.Boolean)
+  commentId: M:Kobold.Core.Components.AnimationClip.#ctor(System.String,System.Drawing.Rectangle[],System.Single,System.Boolean)
+  id: '#ctor(System.String,System.Drawing.Rectangle[],System.Single,System.Boolean)'
+  parent: Kobold.Core.Components.AnimationClip
+  langs:
+  - csharp
+  - vb
+  name: AnimationClip(string, Rectangle[], float, bool)
+  nameWithType: AnimationClip.AnimationClip(string, Rectangle[], float, bool)
+  fullName: Kobold.Core.Components.AnimationClip.AnimationClip(string, System.Drawing.Rectangle[], float, bool)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Animation.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Components/Rendering/Animation.cs
+    startLine: 15
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public AnimationClip(string name, Rectangle[] frames, float frameDuration, bool loop = true)
+    parameters:
+    - id: name
+      type: System.String
+    - id: frames
+      type: System.Drawing.Rectangle[]
+    - id: frameDuration
+      type: System.Single
+    - id: loop
+      type: System.Boolean
+    content.vb: Public Sub New(name As String, frames As Rectangle(), frameDuration As Single, [loop] As Boolean = True)
+  overload: Kobold.Core.Components.AnimationClip.#ctor*
+  nameWithType.vb: AnimationClip.New(String, Rectangle(), Single, Boolean)
+  fullName.vb: Kobold.Core.Components.AnimationClip.New(String, System.Drawing.Rectangle(), Single, Boolean)
+  name.vb: New(String, Rectangle(), Single, Boolean)
+- uid: Kobold.Core.Components.AnimationClip.FromSpriteSheet(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Boolean)
+  commentId: M:Kobold.Core.Components.AnimationClip.FromSpriteSheet(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Boolean)
+  id: FromSpriteSheet(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Boolean)
+  parent: Kobold.Core.Components.AnimationClip
+  langs:
+  - csharp
+  - vb
+  name: FromSpriteSheet(string, int, int, int, int, int, float, bool)
+  nameWithType: AnimationClip.FromSpriteSheet(string, int, int, int, int, int, float, bool)
+  fullName: Kobold.Core.Components.AnimationClip.FromSpriteSheet(string, int, int, int, int, int, float, bool)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Animation.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: FromSpriteSheet
+    path: Kobold/Components/Rendering/Animation.cs
+    startLine: 26
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Helper to create an animation from a sprite sheet with uniform frame sizes
+  example: []
+  syntax:
+    content: public static AnimationClip FromSpriteSheet(string name, int startX, int startY, int frameWidth, int frameHeight, int frameCount, float frameDuration, bool loop = true)
+    parameters:
+    - id: name
+      type: System.String
+    - id: startX
+      type: System.Int32
+    - id: startY
+      type: System.Int32
+    - id: frameWidth
+      type: System.Int32
+    - id: frameHeight
+      type: System.Int32
+    - id: frameCount
+      type: System.Int32
+    - id: frameDuration
+      type: System.Single
+    - id: loop
+      type: System.Boolean
+    return:
+      type: Kobold.Core.Components.AnimationClip
+    content.vb: Public Shared Function FromSpriteSheet(name As String, startX As Integer, startY As Integer, frameWidth As Integer, frameHeight As Integer, frameCount As Integer, frameDuration As Single, [loop] As Boolean = True) As AnimationClip
+  overload: Kobold.Core.Components.AnimationClip.FromSpriteSheet*
+  nameWithType.vb: AnimationClip.FromSpriteSheet(String, Integer, Integer, Integer, Integer, Integer, Single, Boolean)
+  fullName.vb: Kobold.Core.Components.AnimationClip.FromSpriteSheet(String, Integer, Integer, Integer, Integer, Integer, Single, Boolean)
+  name.vb: FromSpriteSheet(String, Integer, Integer, Integer, Integer, Integer, Single, Boolean)
+- uid: Kobold.Core.Components.AnimationClip.FromGrid(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Boolean)
+  commentId: M:Kobold.Core.Components.AnimationClip.FromGrid(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Boolean)
+  id: FromGrid(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Boolean)
+  parent: Kobold.Core.Components.AnimationClip
+  langs:
+  - csharp
+  - vb
+  name: FromGrid(string, int, int, int, int, int, int, float, bool)
+  nameWithType: AnimationClip.FromGrid(string, int, int, int, int, int, int, float, bool)
+  fullName: Kobold.Core.Components.AnimationClip.FromGrid(string, int, int, int, int, int, int, float, bool)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Animation.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: FromGrid
+    path: Kobold/Components/Rendering/Animation.cs
+    startLine: 45
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Helper to create an animation from a sprite sheet grid
+  example: []
+  syntax:
+    content: public static AnimationClip FromGrid(string name, int startRow, int startCol, int rows, int cols, int frameWidth, int frameHeight, float frameDuration, bool loop = true)
+    parameters:
+    - id: name
+      type: System.String
+    - id: startRow
+      type: System.Int32
+    - id: startCol
+      type: System.Int32
+    - id: rows
+      type: System.Int32
+    - id: cols
+      type: System.Int32
+    - id: frameWidth
+      type: System.Int32
+    - id: frameHeight
+      type: System.Int32
+    - id: frameDuration
+      type: System.Single
+    - id: loop
+      type: System.Boolean
+    return:
+      type: Kobold.Core.Components.AnimationClip
+    content.vb: Public Shared Function FromGrid(name As String, startRow As Integer, startCol As Integer, rows As Integer, cols As Integer, frameWidth As Integer, frameHeight As Integer, frameDuration As Single, [loop] As Boolean = True) As AnimationClip
+  overload: Kobold.Core.Components.AnimationClip.FromGrid*
+  nameWithType.vb: AnimationClip.FromGrid(String, Integer, Integer, Integer, Integer, Integer, Integer, Single, Boolean)
+  fullName.vb: Kobold.Core.Components.AnimationClip.FromGrid(String, Integer, Integer, Integer, Integer, Integer, Integer, Single, Boolean)
+  name.vb: FromGrid(String, Integer, Integer, Integer, Integer, Integer, Integer, Single, Boolean)
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Components.AnimationClip.Name*
+  commentId: Overload:Kobold.Core.Components.AnimationClip.Name
+  href: Kobold.Core.Components.AnimationClip.html#Kobold_Core_Components_AnimationClip_Name
+  name: Name
+  nameWithType: AnimationClip.Name
+  fullName: Kobold.Core.Components.AnimationClip.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Kobold.Core.Components.AnimationClip.Frames*
+  commentId: Overload:Kobold.Core.Components.AnimationClip.Frames
+  href: Kobold.Core.Components.AnimationClip.html#Kobold_Core_Components_AnimationClip_Frames
+  name: Frames
+  nameWithType: AnimationClip.Frames
+  fullName: Kobold.Core.Components.AnimationClip.Frames
+- uid: System.Drawing.Rectangle[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
+  name: Rectangle[]
+  nameWithType: Rectangle[]
+  fullName: System.Drawing.Rectangle[]
+  nameWithType.vb: Rectangle()
+  fullName.vb: System.Drawing.Rectangle()
+  name.vb: Rectangle()
+  spec.csharp:
+  - uid: System.Drawing.Rectangle
+    name: Rectangle
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Drawing.Rectangle
+    name: Rectangle
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
+  - name: (
+  - name: )
+- uid: Kobold.Core.Components.AnimationClip.FrameDuration*
+  commentId: Overload:Kobold.Core.Components.AnimationClip.FrameDuration
+  href: Kobold.Core.Components.AnimationClip.html#Kobold_Core_Components_AnimationClip_FrameDuration
+  name: FrameDuration
+  nameWithType: AnimationClip.FrameDuration
+  fullName: Kobold.Core.Components.AnimationClip.FrameDuration
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Core.Components.AnimationClip.Loop*
+  commentId: Overload:Kobold.Core.Components.AnimationClip.Loop
+  href: Kobold.Core.Components.AnimationClip.html#Kobold_Core_Components_AnimationClip_Loop
+  name: Loop
+  nameWithType: AnimationClip.Loop
+  fullName: Kobold.Core.Components.AnimationClip.Loop
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Kobold.Core.Components.AnimationClip.#ctor*
+  commentId: Overload:Kobold.Core.Components.AnimationClip.#ctor
+  href: Kobold.Core.Components.AnimationClip.html#Kobold_Core_Components_AnimationClip__ctor_System_String_System_Drawing_Rectangle___System_Single_System_Boolean_
+  name: AnimationClip
+  nameWithType: AnimationClip.AnimationClip
+  fullName: Kobold.Core.Components.AnimationClip.AnimationClip
+  nameWithType.vb: AnimationClip.New
+  fullName.vb: Kobold.Core.Components.AnimationClip.New
+  name.vb: New
+- uid: Kobold.Core.Components.AnimationClip.FromSpriteSheet*
+  commentId: Overload:Kobold.Core.Components.AnimationClip.FromSpriteSheet
+  href: Kobold.Core.Components.AnimationClip.html#Kobold_Core_Components_AnimationClip_FromSpriteSheet_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Single_System_Boolean_
+  name: FromSpriteSheet
+  nameWithType: AnimationClip.FromSpriteSheet
+  fullName: Kobold.Core.Components.AnimationClip.FromSpriteSheet
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Kobold.Core.Components.AnimationClip
+  commentId: T:Kobold.Core.Components.AnimationClip
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.AnimationClip.html
+  name: AnimationClip
+  nameWithType: AnimationClip
+  fullName: Kobold.Core.Components.AnimationClip
+- uid: Kobold.Core.Components.AnimationClip.FromGrid*
+  commentId: Overload:Kobold.Core.Components.AnimationClip.FromGrid
+  href: Kobold.Core.Components.AnimationClip.html#Kobold_Core_Components_AnimationClip_FromGrid_System_String_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Int32_System_Single_System_Boolean_
+  name: FromGrid
+  nameWithType: AnimationClip.FromGrid
+  fullName: Kobold.Core.Components.AnimationClip.FromGrid

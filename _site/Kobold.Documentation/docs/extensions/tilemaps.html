@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Tilemaps - Grid-Based Level Design | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Tilemaps - Grid-Based Level Design | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/extensions/tilemaps.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="tilemaps---grid-based-level-design">Tilemaps - Grid-Based Level Design</h1>
+
+<p>The Tilemaps system provides grid-based level design, rendering, and collision for 2D games.</p>
+<h2 id="overview">Overview</h2>
+<p><strong>TileMap</strong> - Grid data structure storing tile IDs
+<strong>TileSet</strong> - Tile metadata (visuals, properties, collision)
+<strong>TilemapComponent</strong> - ECS component attaching tilemap to entity
+<strong>TilemapSystem</strong> - Updates animations
+<strong>TilemapCollisionSystem</strong> - Handles tile-entity collision</p>
+<h2 id="quick-start">Quick Start</h2>
+<pre><code class="lang-csharp">// Create tilemap
+var tileMap = new TileMap(
+    width: 32,      // 32 tiles wide
+    height: 24,     // 24 tiles tall
+    tileWidth: 32,  // 32 pixels per tile
+    tileHeight: 32,
+    layerCount: 2   // 2 layers (background + foreground)
+);
+
+// Create tileset
+var tileSet = TileSet.FromTexture(
+    texturePath: &quot;tiles.png&quot;,
+    tileWidth: 32,
+    tileHeight: 32,
+    spacing: 0,
+    margin: 0
+);
+
+// Configure tile properties
+tileSet.SetTileProperties(1, new TileProperties { IsSolid = true });
+tileSet.SetTileProperties(2, new TileProperties
+{
+    IsSolid = false,
+    CollisionLayer = TileCollisionLayer.Water
+});
+
+// Fill tilemap
+tileMap.Fill(layer: 0, x: 0, y: 0, width: 32, height: 24, tileId: 0);  // Background
+tileMap.SetTile(layer: 1, x: 5, y: 10, tileId: 1);  // Place solid tile
+
+// Create entity
+var texture = Assets.LoadTexture(&quot;tiles.png&quot;);
+World.Create(new TilemapComponent(tileMap, tileSet, texture));
+
+// Add systems
+Systems.AddSystem(new TilemapSystem(), 100, true);
+Systems.AddSystem(new TilemapCollisionSystem(), 310, true);
+Systems.AddRenderSystem(new TilemapRenderSystem(Renderer));
+</code></pre>
+<h2 id="tilemap-api">TileMap API</h2>
+<p><strong>Constructor:</strong></p>
+<pre><code class="lang-csharp">TileMap(int width, int height, int tileWidth, int tileHeight, int layerCount = 1)
+</code></pre>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><code>GetTile(layer, x, y)</code> - Get tile ID at position</li>
+<li><code>SetTile(layer, x, y, tileId)</code> - Set tile at position</li>
+<li><code>Fill(layer, x, y, width, height, tileId)</code> - Fill region</li>
+<li><code>WorldToTile(worldX, worldY)</code> - Convert world coords to tile coords</li>
+<li><code>TileToWorld(tileX, tileY)</code> - Convert tile coords to world coords</li>
+<li><code>GetTilesInBounds(layer, x, y, width, height)</code> - Query tiles in region</li>
+<li><code>Clone()</code> - Create a copy</li>
+</ul>
+<h2 id="tileset-api">TileSet API</h2>
+<p><strong>Factory:</strong></p>
+<pre><code class="lang-csharp">TileSet.FromTexture(texturePath, tileWidth, tileHeight, spacing, margin)
+</code></pre>
+<p><strong>Methods:</strong></p>
+<ul>
+<li><code>SetTileProperties(tileId, properties)</code> - Configure tile behavior</li>
+<li><code>GetTileProperties(tileId)</code> - Query tile properties</li>
+<li><code>IsSolid(tileId)</code> - Quick solid check</li>
+<li><code>GetTileSourceRect(tileId, tilesPerRow)</code> - Calculate sprite sheet position</li>
+<li><code>SetTileRange(startId, count, properties)</code> - Configure multiple tiles</li>
+</ul>
+<h2 id="tileproperties">TileProperties</h2>
+<pre><code class="lang-csharp">public struct TileProperties
+{
+    public bool IsSolid;                  // Blocks movement
+    public TileCollisionLayer CollisionLayer;  // Collision type
+    public float Friction;                // Movement resistance
+    public int Damage;                    // Harm to entities
+    public string Type;                   // Custom identifier
+    public bool IsAnimated;               // Animated tile
+    public int[] AnimationFrames;         // Frame tile IDs
+    public float AnimationSpeed;          // Frames per second
+    public Dictionary&lt;string, object&gt; CustomProperties;  // Game-specific data
+}
+</code></pre>
+<p><strong>CollisionLayers:</strong></p>
+<ul>
+<li><code>Solid</code> - Blocks all movement</li>
+<li><code>Platform</code> - One-way platform (land from above)</li>
+<li><code>Trigger</code> - Passes through, publishes event</li>
+<li><code>Water</code> - Special behavior</li>
+<li><code>Ice</code> - Low friction</li>
+<li><code>Ladder</code> - Climbable</li>
+</ul>
+<h2 id="tilemap-collision">Tilemap Collision</h2>
+<p><strong>TilemapCollisionSystem</strong> handles entity-tile collision:</p>
+<pre><code class="lang-csharp">// Automatically resolves collisions with solid tiles
+// Publishes events for triggers
+Events.Subscribe&lt;TileTriggerEvent&gt;(e =&gt;
+{
+    Console.WriteLine($&quot;Entity {e.Entity} entered trigger tile at {e.TileX}, {e.TileY}&quot;);
+});
+
+Events.Subscribe&lt;TileDamageEvent&gt;(e =&gt;
+{
+    // Entity took damage from tile
+});
+</code></pre>
+<h2 id="complete-example">Complete Example</h2>
+<p>See <a href="../examples/">CaveExplorer</a> game for a complete tilemap + procedural generation example.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong><a href="../procedural/cave-generation.html">Procedural Generation</a></strong> - Generate tilemaps procedurally</li>
+<li><strong><a href="../core/systems.html#collisionsystem">Collision System</a></strong> - Entity collision</li>
+</ul>
+<hr>
+<p><strong>Next:</strong> <a href="../procedural/">Procedural Generation</a> →</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/extensions/tilemaps.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

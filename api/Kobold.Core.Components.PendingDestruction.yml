@@ -1,0 +1,406 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.PendingDestruction
+  commentId: T:Kobold.Core.Components.PendingDestruction
+  id: PendingDestruction
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.PendingDestruction.#ctor(Kobold.Core.Components.DestructionReason,System.Single)
+  - Kobold.Core.Components.PendingDestruction.Reason
+  - Kobold.Core.Components.PendingDestruction.TimeRemaining
+  langs:
+  - csharp
+  - vb
+  name: PendingDestruction
+  nameWithType: PendingDestruction
+  fullName: Kobold.Core.Components.PendingDestruction
+  type: Struct
+  source:
+    remote:
+      path: Kobold/Components/PendingDestruction.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: PendingDestruction
+    path: Kobold/Components/PendingDestruction.cs
+    startLine: 12
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Component to mark entities for destruction at the end of the frame
+
+    This prevents mid-frame destruction issues with collision detection
+  example: []
+  syntax:
+    content: public struct PendingDestruction
+    content.vb: Public Structure PendingDestruction
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Kobold.Core.Components.PendingDestruction.Reason
+  commentId: F:Kobold.Core.Components.PendingDestruction.Reason
+  id: Reason
+  parent: Kobold.Core.Components.PendingDestruction
+  langs:
+  - csharp
+  - vb
+  name: Reason
+  nameWithType: PendingDestruction.Reason
+  fullName: Kobold.Core.Components.PendingDestruction.Reason
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/PendingDestruction.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Reason
+    path: Kobold/Components/PendingDestruction.cs
+    startLine: 14
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public DestructionReason Reason
+    return:
+      type: Kobold.Core.Components.DestructionReason
+    content.vb: Public Reason As DestructionReason
+- uid: Kobold.Core.Components.PendingDestruction.TimeRemaining
+  commentId: F:Kobold.Core.Components.PendingDestruction.TimeRemaining
+  id: TimeRemaining
+  parent: Kobold.Core.Components.PendingDestruction
+  langs:
+  - csharp
+  - vb
+  name: TimeRemaining
+  nameWithType: PendingDestruction.TimeRemaining
+  fullName: Kobold.Core.Components.PendingDestruction.TimeRemaining
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/PendingDestruction.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TimeRemaining
+    path: Kobold/Components/PendingDestruction.cs
+    startLine: 15
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public float TimeRemaining
+    return:
+      type: System.Single
+    content.vb: Public TimeRemaining As Single
+- uid: Kobold.Core.Components.PendingDestruction.#ctor(Kobold.Core.Components.DestructionReason,System.Single)
+  commentId: M:Kobold.Core.Components.PendingDestruction.#ctor(Kobold.Core.Components.DestructionReason,System.Single)
+  id: '#ctor(Kobold.Core.Components.DestructionReason,System.Single)'
+  parent: Kobold.Core.Components.PendingDestruction
+  langs:
+  - csharp
+  - vb
+  name: PendingDestruction(DestructionReason, float)
+  nameWithType: PendingDestruction.PendingDestruction(DestructionReason, float)
+  fullName: Kobold.Core.Components.PendingDestruction.PendingDestruction(Kobold.Core.Components.DestructionReason, float)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Components/PendingDestruction.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Components/PendingDestruction.cs
+    startLine: 17
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public PendingDestruction(DestructionReason reason, float delay = 0)
+    parameters:
+    - id: reason
+      type: Kobold.Core.Components.DestructionReason
+    - id: delay
+      type: System.Single
+    content.vb: Public Sub New(reason As DestructionReason, delay As Single = 0)
+  overload: Kobold.Core.Components.PendingDestruction.#ctor*
+  nameWithType.vb: PendingDestruction.New(DestructionReason, Single)
+  fullName.vb: Kobold.Core.Components.PendingDestruction.New(Kobold.Core.Components.DestructionReason, Single)
+  name.vb: New(DestructionReason, Single)
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Components.DestructionReason
+  commentId: T:Kobold.Core.Components.DestructionReason
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.DestructionReason.html
+  name: DestructionReason
+  nameWithType: DestructionReason
+  fullName: Kobold.Core.Components.DestructionReason
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Core.Components.PendingDestruction.#ctor*
+  commentId: Overload:Kobold.Core.Components.PendingDestruction.#ctor
+  href: Kobold.Core.Components.PendingDestruction.html#Kobold_Core_Components_PendingDestruction__ctor_Kobold_Core_Components_DestructionReason_System_Single_
+  name: PendingDestruction
+  nameWithType: PendingDestruction.PendingDestruction
+  fullName: Kobold.Core.Components.PendingDestruction.PendingDestruction
+  nameWithType.vb: PendingDestruction.New
+  fullName.vb: Kobold.Core.Components.PendingDestruction.New
+  name.vb: New

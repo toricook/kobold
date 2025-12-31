@@ -1,0 +1,67 @@
+### YamlMime:ManagedReference
+items:
+- uid: Experiments
+  commentId: N:Experiments
+  id: Experiments
+  children:
+  - Experiments.CellularAutomataDisplay
+  - Experiments.CellularAutomataScript
+  - Experiments.CellularAutomataScript.Config
+  - Experiments.Program
+  langs:
+  - csharp
+  - vb
+  name: Experiments
+  nameWithType: Experiments
+  fullName: Experiments
+  type: Namespace
+  assemblies:
+  - Experiments
+references:
+- uid: Experiments.CellularAutomataDisplay
+  commentId: T:Experiments.CellularAutomataDisplay
+  href: Experiments.CellularAutomataDisplay.html
+  name: CellularAutomataDisplay
+  nameWithType: CellularAutomataDisplay
+  fullName: Experiments.CellularAutomataDisplay
+- uid: Experiments.CellularAutomataScript
+  commentId: T:Experiments.CellularAutomataScript
+  href: Experiments.CellularAutomataScript.html
+  name: CellularAutomataScript
+  nameWithType: CellularAutomataScript
+  fullName: Experiments.CellularAutomataScript
+- uid: Experiments.CellularAutomataScript.Config
+  commentId: T:Experiments.CellularAutomataScript.Config
+  parent: Experiments
+  href: Experiments.CellularAutomataScript.html
+  name: CellularAutomataScript.Config
+  nameWithType: CellularAutomataScript.Config
+  fullName: Experiments.CellularAutomataScript.Config
+  spec.csharp:
+  - uid: Experiments.CellularAutomataScript
+    name: CellularAutomataScript
+    href: Experiments.CellularAutomataScript.html
+  - name: .
+  - uid: Experiments.CellularAutomataScript.Config
+    name: Config
+    href: Experiments.CellularAutomataScript.Config.html
+  spec.vb:
+  - uid: Experiments.CellularAutomataScript
+    name: CellularAutomataScript
+    href: Experiments.CellularAutomataScript.html
+  - name: .
+  - uid: Experiments.CellularAutomataScript.Config
+    name: Config
+    href: Experiments.CellularAutomataScript.Config.html
+- uid: Experiments.Program
+  commentId: T:Experiments.Program
+  href: Experiments.Program.html
+  name: Program
+  nameWithType: Program
+  fullName: Experiments.Program
+- uid: Experiments
+  commentId: N:Experiments
+  href: Experiments.html
+  name: Experiments
+  nameWithType: Experiments
+  fullName: Experiments

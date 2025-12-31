@@ -61,7 +61,7 @@ namespace Kobold.Monogame
             // Create MonoGame-specific implementations
             _inputManager = new MonoGameInputManager();
             var renderer = new MonoGameRenderer(GraphicsDevice, _spriteBatch, _defaultFont);
-            var contentLoader = new MonoGameContentLoader(GraphicsDevice, Content.RootDirectory);
+            var contentLoader = new MonoGameFileContentLoader(GraphicsDevice, Content.RootDirectory);
 
             // Inject dependencies into game engine
             if (_gameEngine is GameEngineBase gameEngineBase)

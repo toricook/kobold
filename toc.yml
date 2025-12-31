@@ -1,0 +1,22 @@
+- name: Home
+  href: index.md
+- name: Getting Started
+  href: Kobold.Documentation/docs/getting-started/
+- name: Core
+  href: Kobold.Documentation/docs/core/
+- name: Guides
+  href: Kobold.Documentation/docs/guides/
+- name: Extensions
+  href: Kobold.Documentation/docs/extensions/
+- name: MonoGame
+  href: Kobold.Documentation/docs/monogame/
+- name: Procedural
+  href: Kobold.Documentation/docs/procedural/
+- name: Tools
+  href: Kobold.Documentation/docs/tools/
+- name: Examples
+  href: Kobold.Documentation/docs/examples/
+- name: Explainers
+  href: Kobold.Documentation/docs/explainers/
+- name: API Reference
+  href: api/

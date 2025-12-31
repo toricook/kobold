@@ -1,0 +1,611 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent
+  commentId: T:Kobold.Extensions.Tilemaps.TilemapComponent
+  id: TilemapComponent
+  parent: Kobold.Extensions.Tilemaps
+  children:
+  - Kobold.Extensions.Tilemaps.TilemapComponent.#ctor(Kobold.Extensions.Tilemaps.TileMap,Kobold.Extensions.Tilemaps.TileSet)
+  - Kobold.Extensions.Tilemaps.TilemapComponent.EnableCollision
+  - Kobold.Extensions.Tilemaps.TilemapComponent.Opacity
+  - Kobold.Extensions.Tilemaps.TilemapComponent.RenderLayer
+  - Kobold.Extensions.Tilemaps.TilemapComponent.TileMap
+  - Kobold.Extensions.Tilemaps.TilemapComponent.TileSet
+  - Kobold.Extensions.Tilemaps.TilemapComponent.Visible
+  langs:
+  - csharp
+  - vb
+  name: TilemapComponent
+  nameWithType: TilemapComponent
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent
+  type: Struct
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TilemapComponent
+    path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+    startLine: 6
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: >-
+    ECS component that attaches a tilemap to an entity.
+
+    Used with TilemapSystem for rendering and collision.
+  example: []
+  syntax:
+    content: public struct TilemapComponent
+    content.vb: Public Structure TilemapComponent
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.TileMap
+  commentId: P:Kobold.Extensions.Tilemaps.TilemapComponent.TileMap
+  id: TileMap
+  parent: Kobold.Extensions.Tilemaps.TilemapComponent
+  langs:
+  - csharp
+  - vb
+  name: TileMap
+  nameWithType: TilemapComponent.TileMap
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.TileMap
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TileMap
+    path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+    startLine: 11
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: The tilemap data (tile layout).
+  example: []
+  syntax:
+    content: public TileMap TileMap { readonly get; set; }
+    parameters: []
+    return:
+      type: Kobold.Extensions.Tilemaps.TileMap
+    content.vb: Public Property TileMap As TileMap
+  overload: Kobold.Extensions.Tilemaps.TilemapComponent.TileMap*
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.TileSet
+  commentId: P:Kobold.Extensions.Tilemaps.TilemapComponent.TileSet
+  id: TileSet
+  parent: Kobold.Extensions.Tilemaps.TilemapComponent
+  langs:
+  - csharp
+  - vb
+  name: TileSet
+  nameWithType: TilemapComponent.TileSet
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.TileSet
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TileSet
+    path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+    startLine: 16
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: The tileset (visual and property data for tiles).
+  example: []
+  syntax:
+    content: public TileSet TileSet { readonly get; set; }
+    parameters: []
+    return:
+      type: Kobold.Extensions.Tilemaps.TileSet
+    content.vb: Public Property TileSet As TileSet
+  overload: Kobold.Extensions.Tilemaps.TilemapComponent.TileSet*
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.EnableCollision
+  commentId: P:Kobold.Extensions.Tilemaps.TilemapComponent.EnableCollision
+  id: EnableCollision
+  parent: Kobold.Extensions.Tilemaps.TilemapComponent
+  langs:
+  - csharp
+  - vb
+  name: EnableCollision
+  nameWithType: TilemapComponent.EnableCollision
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.EnableCollision
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: EnableCollision
+    path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+    startLine: 21
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Whether to generate collision for solid tiles.
+  example: []
+  syntax:
+    content: public bool EnableCollision { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EnableCollision As Boolean
+  overload: Kobold.Extensions.Tilemaps.TilemapComponent.EnableCollision*
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.RenderLayer
+  commentId: P:Kobold.Extensions.Tilemaps.TilemapComponent.RenderLayer
+  id: RenderLayer
+  parent: Kobold.Extensions.Tilemaps.TilemapComponent
+  langs:
+  - csharp
+  - vb
+  name: RenderLayer
+  nameWithType: TilemapComponent.RenderLayer
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.RenderLayer
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: RenderLayer
+    path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+    startLine: 26
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Render layer priority (higher = rendered on top).
+  example: []
+  syntax:
+    content: public int RenderLayer { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property RenderLayer As Integer
+  overload: Kobold.Extensions.Tilemaps.TilemapComponent.RenderLayer*
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.Opacity
+  commentId: P:Kobold.Extensions.Tilemaps.TilemapComponent.Opacity
+  id: Opacity
+  parent: Kobold.Extensions.Tilemaps.TilemapComponent
+  langs:
+  - csharp
+  - vb
+  name: Opacity
+  nameWithType: TilemapComponent.Opacity
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.Opacity
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Opacity
+    path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+    startLine: 31
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Opacity for rendering (0.0 = transparent, 1.0 = opaque).
+  example: []
+  syntax:
+    content: public float Opacity { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Opacity As Single
+  overload: Kobold.Extensions.Tilemaps.TilemapComponent.Opacity*
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.Visible
+  commentId: P:Kobold.Extensions.Tilemaps.TilemapComponent.Visible
+  id: Visible
+  parent: Kobold.Extensions.Tilemaps.TilemapComponent
+  langs:
+  - csharp
+  - vb
+  name: Visible
+  nameWithType: TilemapComponent.Visible
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.Visible
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Visible
+    path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+    startLine: 36
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Whether this tilemap is currently visible.
+  example: []
+  syntax:
+    content: public bool Visible { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Visible As Boolean
+  overload: Kobold.Extensions.Tilemaps.TilemapComponent.Visible*
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.#ctor(Kobold.Extensions.Tilemaps.TileMap,Kobold.Extensions.Tilemaps.TileSet)
+  commentId: M:Kobold.Extensions.Tilemaps.TilemapComponent.#ctor(Kobold.Extensions.Tilemaps.TileMap,Kobold.Extensions.Tilemaps.TileSet)
+  id: '#ctor(Kobold.Extensions.Tilemaps.TileMap,Kobold.Extensions.Tilemaps.TileSet)'
+  parent: Kobold.Extensions.Tilemaps.TilemapComponent
+  langs:
+  - csharp
+  - vb
+  name: TilemapComponent(TileMap, TileSet)
+  nameWithType: TilemapComponent.TilemapComponent(TileMap, TileSet)
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.TilemapComponent(Kobold.Extensions.Tilemaps.TileMap, Kobold.Extensions.Tilemaps.TileSet)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold.Extensions/Tilemaps/TilemapComponent.cs
+    startLine: 43
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Creates a new tilemap component.
+  example: []
+  syntax:
+    content: public TilemapComponent(TileMap tileMap, TileSet tileSet)
+    parameters:
+    - id: tileMap
+      type: Kobold.Extensions.Tilemaps.TileMap
+      description: The tilemap
+    - id: tileSet
+      type: Kobold.Extensions.Tilemaps.TileSet
+      description: The tileset
+    content.vb: Public Sub New(tileMap As TileMap, tileSet As TileSet)
+  overload: Kobold.Extensions.Tilemaps.TilemapComponent.#ctor*
+  nameWithType.vb: TilemapComponent.New(TileMap, TileSet)
+  fullName.vb: Kobold.Extensions.Tilemaps.TilemapComponent.New(Kobold.Extensions.Tilemaps.TileMap, Kobold.Extensions.Tilemaps.TileSet)
+  name.vb: New(TileMap, TileSet)
+references:
+- uid: Kobold.Extensions.Tilemaps
+  commentId: N:Kobold.Extensions.Tilemaps
+  href: Kobold.html
+  name: Kobold.Extensions.Tilemaps
+  nameWithType: Kobold.Extensions.Tilemaps
+  fullName: Kobold.Extensions.Tilemaps
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Tilemaps
+    name: Tilemaps
+    href: Kobold.Extensions.Tilemaps.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Tilemaps
+    name: Tilemaps
+    href: Kobold.Extensions.Tilemaps.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.TileMap*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TilemapComponent.TileMap
+  href: Kobold.Extensions.Tilemaps.TilemapComponent.html#Kobold_Extensions_Tilemaps_TilemapComponent_TileMap
+  name: TileMap
+  nameWithType: TilemapComponent.TileMap
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.TileMap
+- uid: Kobold.Extensions.Tilemaps.TileMap
+  commentId: T:Kobold.Extensions.Tilemaps.TileMap
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TileMap.html
+  name: TileMap
+  nameWithType: TileMap
+  fullName: Kobold.Extensions.Tilemaps.TileMap
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.TileSet*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TilemapComponent.TileSet
+  href: Kobold.Extensions.Tilemaps.TilemapComponent.html#Kobold_Extensions_Tilemaps_TilemapComponent_TileSet
+  name: TileSet
+  nameWithType: TilemapComponent.TileSet
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.TileSet
+- uid: Kobold.Extensions.Tilemaps.TileSet
+  commentId: T:Kobold.Extensions.Tilemaps.TileSet
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TileSet.html
+  name: TileSet
+  nameWithType: TileSet
+  fullName: Kobold.Extensions.Tilemaps.TileSet
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.EnableCollision*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TilemapComponent.EnableCollision
+  href: Kobold.Extensions.Tilemaps.TilemapComponent.html#Kobold_Extensions_Tilemaps_TilemapComponent_EnableCollision
+  name: EnableCollision
+  nameWithType: TilemapComponent.EnableCollision
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.EnableCollision
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.RenderLayer*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TilemapComponent.RenderLayer
+  href: Kobold.Extensions.Tilemaps.TilemapComponent.html#Kobold_Extensions_Tilemaps_TilemapComponent_RenderLayer
+  name: RenderLayer
+  nameWithType: TilemapComponent.RenderLayer
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.RenderLayer
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.Opacity*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TilemapComponent.Opacity
+  href: Kobold.Extensions.Tilemaps.TilemapComponent.html#Kobold_Extensions_Tilemaps_TilemapComponent_Opacity
+  name: Opacity
+  nameWithType: TilemapComponent.Opacity
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.Opacity
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.Visible*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TilemapComponent.Visible
+  href: Kobold.Extensions.Tilemaps.TilemapComponent.html#Kobold_Extensions_Tilemaps_TilemapComponent_Visible
+  name: Visible
+  nameWithType: TilemapComponent.Visible
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.Visible
+- uid: Kobold.Extensions.Tilemaps.TilemapComponent.#ctor*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TilemapComponent.#ctor
+  href: Kobold.Extensions.Tilemaps.TilemapComponent.html#Kobold_Extensions_Tilemaps_TilemapComponent__ctor_Kobold_Extensions_Tilemaps_TileMap_Kobold_Extensions_Tilemaps_TileSet_
+  name: TilemapComponent
+  nameWithType: TilemapComponent.TilemapComponent
+  fullName: Kobold.Extensions.Tilemaps.TilemapComponent.TilemapComponent
+  nameWithType.vb: TilemapComponent.New
+  fullName.vb: Kobold.Extensions.Tilemaps.TilemapComponent.New
+  name.vb: New

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Cave Generation - Cellular Automata | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Cave Generation - Cellular Automata | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/procedural/cave-generation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="cave-generation---cellular-automata">Cave Generation - Cellular Automata</h1>
+
+<p>Generate organic cave-like structures using cellular automata algorithms.</p>
+<h2 id="how-it-works">How It Works</h2>
+<ol>
+<li><strong>Initialize:</strong> Randomly place walls based on density</li>
+<li><strong>Smooth:</strong> Apply cellular automata rules (like Conway's Game of Life) for N iterations</li>
+<li><strong>Connect:</strong> Optionally connect separate cave regions with corridors</li>
+<li><strong>Clean:</strong> Remove small isolated regions</li>
+</ol>
+<h2 id="quick-start">Quick Start</h2>
+<pre><code class="lang-csharp">using Kobold.Procedural;
+using Kobold.Extensions.Tilemaps;
+
+// Create configuration
+var config = CellularAutomataConfig.Cave();
+config.Width = 64;
+config.Height = 48;
+config.Seed = 12345;  // For reproducible results
+
+// Generate cave
+var generator = new CellularAutomataGenerator(config);
+var (tileMap, tileSet) = generator.GenerateWithTileSet(wallIsSolid: true);
+
+// Use in game
+var texture = Assets.LoadTexture(&quot;tiles.png&quot;);
+World.Create(new TilemapComponent(tileMap, tileSet, texture));
+</code></pre>
+<h2 id="configuration">Configuration</h2>
+<h3 id="cellularautomataconfig">CellularAutomataConfig</h3>
+<pre><code class="lang-csharp">public class CellularAutomataConfig
+{
+    public int Width, Height;           // Map size in tiles
+    public int Iterations;              // Smoothing passes (4-6 recommended)
+    public float InitialWallProbability; // Starting density (0.4-0.5 for caves)
+    public int BirthThreshold;          // Neighbors to become wall (4)
+    public int DeathThreshold;          // Neighbors to stay wall (3)
+    public int Seed;                    // Random seed (0 = random)
+    public int WallTileId, FloorTileId; // Tile IDs
+    public int TileWidth, TileHeight;   // Pixel dimensions
+    public bool EdgeIsWall;             // Treat boundaries as walls
+    public bool ConnectCaves;           // Connect separate regions
+    public int MinCaveSize;             // Minimum tiles to keep region
+}
+</code></pre>
+<h3 id="presets">Presets</h3>
+<pre><code class="lang-csharp">// Organic caves (recommended)
+var config = CellularAutomataConfig.Cave();
+
+// Open areas with sparse obstacles
+var config = CellularAutomataConfig.OpenArea();
+
+// Dense maze-like patterns
+var config = CellularAutomataConfig.Maze();
+</code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="basic-cave">Basic Cave</h3>
+<pre><code class="lang-csharp">var config = new CellularAutomataConfig
+{
+    Width = 48,
+    Height = 32,
+    TileWidth = 32,
+    TileHeight = 32,
+    Iterations = 5,
+    InitialWallProbability = 0.45f,
+    BirthThreshold = 4,
+    DeathThreshold = 3,
+    ConnectCaves = true,
+    MinCaveSize = 50
+};
+
+var generator = new CellularAutomataGenerator(config);
+var (tileMap, tileSet) = generator.GenerateWithTileSet();
+</code></pre>
+<h3 id="reproducible-generation">Reproducible Generation</h3>
+<pre><code class="lang-csharp">var config = CellularAutomataConfig.Cave();
+config.Seed = 42;  // Same seed = same cave
+
+var gen1 = new CellularAutomataGenerator(config);
+var gen2 = new CellularAutomataGenerator(config);
+
+// Both generate identical caves
+</code></pre>
+<h3 id="large-open-cave">Large Open Cave</h3>
+<pre><code class="lang-csharp">var config = new CellularAutomataConfig
+{
+    Width = 80,
+    Height = 60,
+    Iterations = 6,
+    InitialWallProbability = 0.35f,  // Less dense
+    ConnectCaves = true
+};
+</code></pre>
+<h2 id="complete-example">Complete Example</h2>
+<p>See <a href="../examples/">CaveExplorer</a> game for a complete implementation with player movement, tilemap collision, and camera following.</p>
+<h2 id="tips">Tips</h2>
+<ul>
+<li><strong>More iterations</strong> = smoother, rounder caves</li>
+<li><strong>Higher density</strong> (0.5+) = smaller caves, more walls</li>
+<li><strong>Lower density</strong> (0.3-0.4) = larger open caves</li>
+<li><strong>ConnectCaves = true</strong> ensures all areas reachable</li>
+<li><strong>MinCaveSize</strong> removes tiny disconnected rooms</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong><a href="../extensions/tilemaps.html">Tilemaps</a></strong> - Using generated tilemaps</li>
+<li><strong><a href="../examples/">CaveExplorer Example</a></strong> - Complete game</li>
+</ul>
+<hr>
+<p><strong>Back:</strong> <a href="index.html">Procedural Overview</a> ←</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/procedural/cave-generation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

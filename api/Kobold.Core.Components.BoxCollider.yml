@@ -1,0 +1,1127 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.BoxCollider
+  commentId: T:Kobold.Core.Components.BoxCollider
+  id: BoxCollider
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.BoxCollider.#ctor(System.Numerics.Vector2,System.Numerics.Vector2)
+  - Kobold.Core.Components.BoxCollider.#ctor(System.Single,System.Single,System.Numerics.Vector2)
+  - Kobold.Core.Components.BoxCollider.Contains(System.Numerics.Vector2,System.Numerics.Vector2)
+  - Kobold.Core.Components.BoxCollider.FromRenderSize(System.Numerics.Vector2,System.Boolean)
+  - Kobold.Core.Components.BoxCollider.GetWorldBounds(System.Numerics.Vector2)
+  - Kobold.Core.Components.BoxCollider.GetWorldCenter(System.Numerics.Vector2)
+  - Kobold.Core.Components.BoxCollider.GetWorldPosition(System.Numerics.Vector2)
+  - Kobold.Core.Components.BoxCollider.Offset
+  - Kobold.Core.Components.BoxCollider.Overlaps(System.Numerics.Vector2,Kobold.Core.Components.BoxCollider,System.Numerics.Vector2)
+  - Kobold.Core.Components.BoxCollider.Shrunken(System.Numerics.Vector2,System.Single,System.Boolean)
+  - Kobold.Core.Components.BoxCollider.Size
+  - Kobold.Core.Components.BoxCollider.Square(System.Single,System.Boolean)
+  - Kobold.Core.Components.BoxCollider.ToString
+  langs:
+  - csharp
+  - vb
+  name: BoxCollider
+  nameWithType: BoxCollider
+  fullName: Kobold.Core.Components.BoxCollider
+  type: Struct
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: BoxCollider
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 18
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Component defining a rectangular collision boundary for an entity.
+
+    This creates an axis-aligned bounding box (AABB) used by collision detection systems
+
+    to determine when entities are overlapping or touching.
+
+
+    The collision box is positioned relative to the entity's Transform.Position,
+
+    with an optional offset to fine-tune the collision area. The box doesn't rotate
+
+    with the entity - it's always axis-aligned for performance.
+  example: []
+  syntax:
+    content: public struct BoxCollider
+    content.vb: Public Structure BoxCollider
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Kobold.Core.Components.BoxCollider.Size
+  commentId: F:Kobold.Core.Components.BoxCollider.Size
+  id: Size
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: BoxCollider.Size
+  fullName: Kobold.Core.Components.BoxCollider.Size
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Size
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 37
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    The width and height of the collision box in pixels.
+
+
+    X component: Width of the collision box
+
+    Y component: Height of the collision box
+
+
+    This defines the collision area regardless of any visual scaling or rotation.
+
+    Should match the logical size of the entity for collision purposes.
+
+
+    Examples:
+
+    - (20, 20) = 20x20 pixel square collision box
+
+    - (50, 10) = 50 pixels wide, 10 pixels tall (like a paddle)
+
+    - (5, 100) = 5 pixels wide, 100 pixels tall (like a thin laser beam)
+
+
+    Values should be positive. Zero or negative values may cause undefined behavior
+
+    in collision detection systems.
+  example: []
+  syntax:
+    content: public Vector2 Size
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public Size As Vector2
+- uid: Kobold.Core.Components.BoxCollider.Offset
+  commentId: F:Kobold.Core.Components.BoxCollider.Offset
+  id: Offset
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: Offset
+  nameWithType: BoxCollider.Offset
+  fullName: Kobold.Core.Components.BoxCollider.Offset
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Offset
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 55
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Offset from the entity's Transform.Position to the collision box's top-left corner.
+
+    This allows fine-tuning the collision area relative to the entity's logical position.
+
+
+    X component: Horizontal offset in pixels (positive = right, negative = left)
+
+    Y component: Vertical offset in pixels (positive = down, negative = up)
+
+
+    Common uses:
+
+    - (0, 0) = collision box starts at entity position (default)
+
+    - (-Size.X/2, -Size.Y/2) = center the collision box on the entity position
+
+    - (5, 10) = move collision box 5 pixels right and 10 pixels down from entity position
+
+
+    Useful when the entity's Transform.Position represents the center, but you want
+
+    the collision box positioned differently, or when the visual sprite doesn't
+
+    perfectly match the collision area you want.
+  example: []
+  syntax:
+    content: public Vector2 Offset
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public Offset As Vector2
+- uid: Kobold.Core.Components.BoxCollider.#ctor(System.Numerics.Vector2,System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Components.BoxCollider.#ctor(System.Numerics.Vector2,System.Numerics.Vector2)
+  id: '#ctor(System.Numerics.Vector2,System.Numerics.Vector2)'
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: BoxCollider(Vector2, Vector2)
+  nameWithType: BoxCollider.BoxCollider(Vector2, Vector2)
+  fullName: Kobold.Core.Components.BoxCollider.BoxCollider(System.Numerics.Vector2, System.Numerics.Vector2)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 62
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Creates a new BoxCollider with the specified size and optional offset.
+  example: []
+  syntax:
+    content: public BoxCollider(Vector2 size, Vector2 offset = default)
+    parameters:
+    - id: size
+      type: System.Numerics.Vector2
+      description: Width and height of the collision box in pixels
+    - id: offset
+      type: System.Numerics.Vector2
+      description: 'Offset from entity position to collision box (default: 0,0)'
+    content.vb: Public Sub New(size As Vector2, offset As Vector2 = Nothing)
+  overload: Kobold.Core.Components.BoxCollider.#ctor*
+  nameWithType.vb: BoxCollider.New(Vector2, Vector2)
+  fullName.vb: Kobold.Core.Components.BoxCollider.New(System.Numerics.Vector2, System.Numerics.Vector2)
+  name.vb: New(Vector2, Vector2)
+- uid: Kobold.Core.Components.BoxCollider.#ctor(System.Single,System.Single,System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Components.BoxCollider.#ctor(System.Single,System.Single,System.Numerics.Vector2)
+  id: '#ctor(System.Single,System.Single,System.Numerics.Vector2)'
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: BoxCollider(float, float, Vector2)
+  nameWithType: BoxCollider.BoxCollider(float, float, Vector2)
+  fullName: Kobold.Core.Components.BoxCollider.BoxCollider(float, float, System.Numerics.Vector2)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 75
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Creates a new BoxCollider with the specified width, height, and optional offset.
+
+    Convenience constructor for when you have separate width and height values.
+  example: []
+  syntax:
+    content: public BoxCollider(float width, float height, Vector2 offset = default)
+    parameters:
+    - id: width
+      type: System.Single
+      description: Width of the collision box in pixels
+    - id: height
+      type: System.Single
+      description: Height of the collision box in pixels
+    - id: offset
+      type: System.Numerics.Vector2
+      description: 'Offset from entity position to collision box (default: 0,0)'
+    content.vb: Public Sub New(width As Single, height As Single, offset As Vector2 = Nothing)
+  overload: Kobold.Core.Components.BoxCollider.#ctor*
+  nameWithType.vb: BoxCollider.New(Single, Single, Vector2)
+  fullName.vb: Kobold.Core.Components.BoxCollider.New(Single, Single, System.Numerics.Vector2)
+  name.vb: New(Single, Single, Vector2)
+- uid: Kobold.Core.Components.BoxCollider.GetWorldPosition(System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Components.BoxCollider.GetWorldPosition(System.Numerics.Vector2)
+  id: GetWorldPosition(System.Numerics.Vector2)
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: GetWorldPosition(Vector2)
+  nameWithType: BoxCollider.GetWorldPosition(Vector2)
+  fullName: Kobold.Core.Components.BoxCollider.GetWorldPosition(System.Numerics.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetWorldPosition
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 87
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Gets the actual world position of the collision box's top-left corner.
+
+    This combines the entity's transform position with the collider's offset.
+  example: []
+  syntax:
+    content: public readonly Vector2 GetWorldPosition(Vector2 entityPosition)
+    parameters:
+    - id: entityPosition
+      type: System.Numerics.Vector2
+      description: The entity's Transform.Position
+    return:
+      type: System.Numerics.Vector2
+      description: World position of the collision box's top-left corner
+    content.vb: Public Function GetWorldPosition(entityPosition As Vector2) As Vector2
+  overload: Kobold.Core.Components.BoxCollider.GetWorldPosition*
+- uid: Kobold.Core.Components.BoxCollider.GetWorldBounds(System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Components.BoxCollider.GetWorldBounds(System.Numerics.Vector2)
+  id: GetWorldBounds(System.Numerics.Vector2)
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: GetWorldBounds(Vector2)
+  nameWithType: BoxCollider.GetWorldBounds(Vector2)
+  fullName: Kobold.Core.Components.BoxCollider.GetWorldBounds(System.Numerics.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetWorldBounds
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 98
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Gets the world-space bounds of this collision box.
+
+    Returns the left, top, right, and bottom edges in world coordinates.
+  example: []
+  syntax:
+    content: public readonly (float left, float top, float right, float bottom) GetWorldBounds(Vector2 entityPosition)
+    parameters:
+    - id: entityPosition
+      type: System.Numerics.Vector2
+      description: The entity's Transform.Position
+    return:
+      type: System.ValueTuple{System.Single,System.Single,System.Single,System.Single}
+      description: Tuple of (left, top, right, bottom) world coordinates
+    content.vb: Public Function GetWorldBounds(entityPosition As Vector2) As (left As Single, top As Single, right As Single, bottom As Single)
+  overload: Kobold.Core.Components.BoxCollider.GetWorldBounds*
+- uid: Kobold.Core.Components.BoxCollider.GetWorldCenter(System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Components.BoxCollider.GetWorldCenter(System.Numerics.Vector2)
+  id: GetWorldCenter(System.Numerics.Vector2)
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: GetWorldCenter(Vector2)
+  nameWithType: BoxCollider.GetWorldCenter(Vector2)
+  fullName: Kobold.Core.Components.BoxCollider.GetWorldCenter(System.Numerics.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetWorldCenter
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 114
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Gets the center point of the collision box in world coordinates.
+  example: []
+  syntax:
+    content: public readonly Vector2 GetWorldCenter(Vector2 entityPosition)
+    parameters:
+    - id: entityPosition
+      type: System.Numerics.Vector2
+      description: The entity's Transform.Position
+    return:
+      type: System.Numerics.Vector2
+      description: World position of the collision box center
+    content.vb: Public Function GetWorldCenter(entityPosition As Vector2) As Vector2
+  overload: Kobold.Core.Components.BoxCollider.GetWorldCenter*
+- uid: Kobold.Core.Components.BoxCollider.Contains(System.Numerics.Vector2,System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Components.BoxCollider.Contains(System.Numerics.Vector2,System.Numerics.Vector2)
+  id: Contains(System.Numerics.Vector2,System.Numerics.Vector2)
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: Contains(Vector2, Vector2)
+  nameWithType: BoxCollider.Contains(Vector2, Vector2)
+  fullName: Kobold.Core.Components.BoxCollider.Contains(System.Numerics.Vector2, System.Numerics.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Contains
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 125
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Checks if a world point is inside this collision box.
+  example: []
+  syntax:
+    content: public readonly bool Contains(Vector2 entityPosition, Vector2 point)
+    parameters:
+    - id: entityPosition
+      type: System.Numerics.Vector2
+      description: The entity's Transform.Position
+    - id: point
+      type: System.Numerics.Vector2
+      description: World point to test
+    return:
+      type: System.Boolean
+      description: True if the point is inside the collision box
+    content.vb: Public Function Contains(entityPosition As Vector2, point As Vector2) As Boolean
+  overload: Kobold.Core.Components.BoxCollider.Contains*
+- uid: Kobold.Core.Components.BoxCollider.Overlaps(System.Numerics.Vector2,Kobold.Core.Components.BoxCollider,System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Components.BoxCollider.Overlaps(System.Numerics.Vector2,Kobold.Core.Components.BoxCollider,System.Numerics.Vector2)
+  id: Overlaps(System.Numerics.Vector2,Kobold.Core.Components.BoxCollider,System.Numerics.Vector2)
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: Overlaps(Vector2, BoxCollider, Vector2)
+  nameWithType: BoxCollider.Overlaps(Vector2, BoxCollider, Vector2)
+  fullName: Kobold.Core.Components.BoxCollider.Overlaps(System.Numerics.Vector2, Kobold.Core.Components.BoxCollider, System.Numerics.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Overlaps
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 139
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Checks if this collision box overlaps with another collision box.
+
+    Both boxes are positioned using their respective entity positions.
+  example: []
+  syntax:
+    content: public readonly bool Overlaps(Vector2 entityPosition, BoxCollider other, Vector2 otherEntityPosition)
+    parameters:
+    - id: entityPosition
+      type: System.Numerics.Vector2
+      description: This entity's Transform.Position
+    - id: other
+      type: Kobold.Core.Components.BoxCollider
+      description: The other collision box
+    - id: otherEntityPosition
+      type: System.Numerics.Vector2
+      description: The other entity's Transform.Position
+    return:
+      type: System.Boolean
+      description: True if the collision boxes overlap
+    content.vb: Public Function Overlaps(entityPosition As Vector2, other As BoxCollider, otherEntityPosition As Vector2) As Boolean
+  overload: Kobold.Core.Components.BoxCollider.Overlaps*
+- uid: Kobold.Core.Components.BoxCollider.FromRenderSize(System.Numerics.Vector2,System.Boolean)
+  commentId: M:Kobold.Core.Components.BoxCollider.FromRenderSize(System.Numerics.Vector2,System.Boolean)
+  id: FromRenderSize(System.Numerics.Vector2,System.Boolean)
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: FromRenderSize(Vector2, bool)
+  nameWithType: BoxCollider.FromRenderSize(Vector2, bool)
+  fullName: Kobold.Core.Components.BoxCollider.FromRenderSize(System.Numerics.Vector2, bool)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: FromRenderSize
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 154
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Creates a BoxCollider that matches the size of a rendered rectangle.
+
+    Useful when you want collision to exactly match the visual representation.
+  example: []
+  syntax:
+    content: public static BoxCollider FromRenderSize(Vector2 renderSize, bool centered = false)
+    parameters:
+    - id: renderSize
+      type: System.Numerics.Vector2
+      description: Size of the rendered rectangle
+    - id: centered
+      type: System.Boolean
+      description: If true, centers the collision box on the entity position
+    return:
+      type: Kobold.Core.Components.BoxCollider
+      description: BoxCollider matching the render size
+    content.vb: Public Shared Function FromRenderSize(renderSize As Vector2, centered As Boolean = False) As BoxCollider
+  overload: Kobold.Core.Components.BoxCollider.FromRenderSize*
+  nameWithType.vb: BoxCollider.FromRenderSize(Vector2, Boolean)
+  fullName.vb: Kobold.Core.Components.BoxCollider.FromRenderSize(System.Numerics.Vector2, Boolean)
+  name.vb: FromRenderSize(Vector2, Boolean)
+- uid: Kobold.Core.Components.BoxCollider.Square(System.Single,System.Boolean)
+  commentId: M:Kobold.Core.Components.BoxCollider.Square(System.Single,System.Boolean)
+  id: Square(System.Single,System.Boolean)
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: Square(float, bool)
+  nameWithType: BoxCollider.Square(float, bool)
+  fullName: Kobold.Core.Components.BoxCollider.Square(float, bool)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Square
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 166
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Creates a square BoxCollider with the specified size.
+  example: []
+  syntax:
+    content: public static BoxCollider Square(float size, bool centered = false)
+    parameters:
+    - id: size
+      type: System.Single
+      description: Width and height of the square collision box
+    - id: centered
+      type: System.Boolean
+      description: If true, centers the collision box on the entity position
+    return:
+      type: Kobold.Core.Components.BoxCollider
+      description: Square BoxCollider
+    content.vb: Public Shared Function Square(size As Single, centered As Boolean = False) As BoxCollider
+  overload: Kobold.Core.Components.BoxCollider.Square*
+  nameWithType.vb: BoxCollider.Square(Single, Boolean)
+  fullName.vb: Kobold.Core.Components.BoxCollider.Square(Single, Boolean)
+  name.vb: Square(Single, Boolean)
+- uid: Kobold.Core.Components.BoxCollider.Shrunken(System.Numerics.Vector2,System.Single,System.Boolean)
+  commentId: M:Kobold.Core.Components.BoxCollider.Shrunken(System.Numerics.Vector2,System.Single,System.Boolean)
+  id: Shrunken(System.Numerics.Vector2,System.Single,System.Boolean)
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: Shrunken(Vector2, float, bool)
+  nameWithType: BoxCollider.Shrunken(Vector2, float, bool)
+  fullName: Kobold.Core.Components.BoxCollider.Shrunken(System.Numerics.Vector2, float, bool)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Shrunken
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 179
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Creates a BoxCollider slightly smaller than the render size.
+
+    Useful for making collisions feel more forgiving in games.
+  example: []
+  syntax:
+    content: public static BoxCollider Shrunken(Vector2 renderSize, float shrinkAmount, bool centered = false)
+    parameters:
+    - id: renderSize
+      type: System.Numerics.Vector2
+      description: Size of the rendered rectangle
+    - id: shrinkAmount
+      type: System.Single
+      description: Amount to shrink the collision box on all sides
+    - id: centered
+      type: System.Boolean
+      description: If true, centers the collision box on the entity position
+    return:
+      type: Kobold.Core.Components.BoxCollider
+      description: Shrunken BoxCollider
+    content.vb: Public Shared Function Shrunken(renderSize As Vector2, shrinkAmount As Single, centered As Boolean = False) As BoxCollider
+  overload: Kobold.Core.Components.BoxCollider.Shrunken*
+  nameWithType.vb: BoxCollider.Shrunken(Vector2, Single, Boolean)
+  fullName.vb: Kobold.Core.Components.BoxCollider.Shrunken(System.Numerics.Vector2, Single, Boolean)
+  name.vb: Shrunken(Vector2, Single, Boolean)
+- uid: Kobold.Core.Components.BoxCollider.ToString
+  commentId: M:Kobold.Core.Components.BoxCollider.ToString
+  id: ToString
+  parent: Kobold.Core.Components.BoxCollider
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: BoxCollider.ToString()
+  fullName: Kobold.Core.Components.BoxCollider.ToString()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/BoxCollider.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ToString
+    path: Kobold/Components/Physics/BoxCollider.cs
+    startLine: 193
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Returns a human-readable string representation of this collision box.
+
+    Useful for debugging and logging.
+  example: []
+  syntax:
+    content: public override readonly string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: Kobold.Core.Components.BoxCollider.ToString*
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Numerics.Vector2
+  commentId: T:System.Numerics.Vector2
+  parent: System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  name: Vector2
+  nameWithType: Vector2
+  fullName: System.Numerics.Vector2
+- uid: System.Numerics
+  commentId: N:System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Numerics
+  nameWithType: System.Numerics
+  fullName: System.Numerics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+- uid: Kobold.Core.Components.BoxCollider.#ctor*
+  commentId: Overload:Kobold.Core.Components.BoxCollider.#ctor
+  href: Kobold.Core.Components.BoxCollider.html#Kobold_Core_Components_BoxCollider__ctor_System_Numerics_Vector2_System_Numerics_Vector2_
+  name: BoxCollider
+  nameWithType: BoxCollider.BoxCollider
+  fullName: Kobold.Core.Components.BoxCollider.BoxCollider
+  nameWithType.vb: BoxCollider.New
+  fullName.vb: Kobold.Core.Components.BoxCollider.New
+  name.vb: New
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Core.Components.BoxCollider.GetWorldPosition*
+  commentId: Overload:Kobold.Core.Components.BoxCollider.GetWorldPosition
+  href: Kobold.Core.Components.BoxCollider.html#Kobold_Core_Components_BoxCollider_GetWorldPosition_System_Numerics_Vector2_
+  name: GetWorldPosition
+  nameWithType: BoxCollider.GetWorldPosition
+  fullName: Kobold.Core.Components.BoxCollider.GetWorldPosition
+- uid: Kobold.Core.Components.BoxCollider.GetWorldBounds*
+  commentId: Overload:Kobold.Core.Components.BoxCollider.GetWorldBounds
+  href: Kobold.Core.Components.BoxCollider.html#Kobold_Core_Components_BoxCollider_GetWorldBounds_System_Numerics_Vector2_
+  name: GetWorldBounds
+  nameWithType: BoxCollider.GetWorldBounds
+  fullName: Kobold.Core.Components.BoxCollider.GetWorldBounds
+- uid: System.ValueTuple{System.Single,System.Single,System.Single,System.Single}
+  commentId: T:System.ValueTuple{System.Single,System.Single,System.Single,System.Single}
+  parent: System
+  definition: System.ValueTuple`4
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: (float left, float top, float right, float bottom)
+  nameWithType: (float left, float top, float right, float bottom)
+  fullName: (float left, float top, float right, float bottom)
+  nameWithType.vb: (left As Single, top As Single, right As Single, bottom As Single)
+  fullName.vb: (left As Single, top As Single, right As Single, bottom As Single)
+  name.vb: (left As Single, top As Single, right As Single, bottom As Single)
+  spec.csharp:
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: " "
+  - uid: System.ValueTuple{System.Single,System.Single,System.Single,System.Single}.left
+    name: left
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single,system.single,system.single-.left
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: " "
+  - uid: System.ValueTuple{System.Single,System.Single,System.Single,System.Single}.top
+    name: top
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single,system.single,system.single-.top
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: " "
+  - uid: System.ValueTuple{System.Single,System.Single,System.Single,System.Single}.right
+    name: right
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single,system.single,system.single-.right
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: " "
+  - uid: System.ValueTuple{System.Single,System.Single,System.Single,System.Single}.bottom
+    name: bottom
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single,system.single,system.single-.bottom
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Single,System.Single,System.Single,System.Single}.left
+    name: left
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single,system.single,system.single-.left
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Single,System.Single,System.Single,System.Single}.top
+    name: top
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single,system.single,system.single-.top
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Single,System.Single,System.Single,System.Single}.right
+    name: right
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single,system.single,system.single-.right
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Single,System.Single,System.Single,System.Single}.bottom
+    name: bottom
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single,system.single,system.single-.bottom
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.ValueTuple`4
+  commentId: T:System.ValueTuple`4
+  name: (T1, T2, T3, T4)
+  nameWithType: (T1, T2, T3, T4)
+  fullName: (T1, T2, T3, T4)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: ','
+  - name: " "
+  - name: T4
+  - name: )
+- uid: Kobold.Core.Components.BoxCollider.GetWorldCenter*
+  commentId: Overload:Kobold.Core.Components.BoxCollider.GetWorldCenter
+  href: Kobold.Core.Components.BoxCollider.html#Kobold_Core_Components_BoxCollider_GetWorldCenter_System_Numerics_Vector2_
+  name: GetWorldCenter
+  nameWithType: BoxCollider.GetWorldCenter
+  fullName: Kobold.Core.Components.BoxCollider.GetWorldCenter
+- uid: Kobold.Core.Components.BoxCollider.Contains*
+  commentId: Overload:Kobold.Core.Components.BoxCollider.Contains
+  href: Kobold.Core.Components.BoxCollider.html#Kobold_Core_Components_BoxCollider_Contains_System_Numerics_Vector2_System_Numerics_Vector2_
+  name: Contains
+  nameWithType: BoxCollider.Contains
+  fullName: Kobold.Core.Components.BoxCollider.Contains
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Kobold.Core.Components.BoxCollider.Overlaps*
+  commentId: Overload:Kobold.Core.Components.BoxCollider.Overlaps
+  href: Kobold.Core.Components.BoxCollider.html#Kobold_Core_Components_BoxCollider_Overlaps_System_Numerics_Vector2_Kobold_Core_Components_BoxCollider_System_Numerics_Vector2_
+  name: Overlaps
+  nameWithType: BoxCollider.Overlaps
+  fullName: Kobold.Core.Components.BoxCollider.Overlaps
+- uid: Kobold.Core.Components.BoxCollider
+  commentId: T:Kobold.Core.Components.BoxCollider
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.BoxCollider.html
+  name: BoxCollider
+  nameWithType: BoxCollider
+  fullName: Kobold.Core.Components.BoxCollider
+- uid: Kobold.Core.Components.BoxCollider.FromRenderSize*
+  commentId: Overload:Kobold.Core.Components.BoxCollider.FromRenderSize
+  href: Kobold.Core.Components.BoxCollider.html#Kobold_Core_Components_BoxCollider_FromRenderSize_System_Numerics_Vector2_System_Boolean_
+  name: FromRenderSize
+  nameWithType: BoxCollider.FromRenderSize
+  fullName: Kobold.Core.Components.BoxCollider.FromRenderSize
+- uid: Kobold.Core.Components.BoxCollider.Square*
+  commentId: Overload:Kobold.Core.Components.BoxCollider.Square
+  href: Kobold.Core.Components.BoxCollider.html#Kobold_Core_Components_BoxCollider_Square_System_Single_System_Boolean_
+  name: Square
+  nameWithType: BoxCollider.Square
+  fullName: Kobold.Core.Components.BoxCollider.Square
+- uid: Kobold.Core.Components.BoxCollider.Shrunken*
+  commentId: Overload:Kobold.Core.Components.BoxCollider.Shrunken
+  href: Kobold.Core.Components.BoxCollider.html#Kobold_Core_Components_BoxCollider_Shrunken_System_Numerics_Vector2_System_Single_System_Boolean_
+  name: Shrunken
+  nameWithType: BoxCollider.Shrunken
+  fullName: Kobold.Core.Components.BoxCollider.Shrunken
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: Kobold.Core.Components.BoxCollider.ToString*
+  commentId: Overload:Kobold.Core.Components.BoxCollider.ToString
+  href: Kobold.Core.Components.BoxCollider.html#Kobold_Core_Components_BoxCollider_ToString
+  name: ToString
+  nameWithType: BoxCollider.ToString
+  fullName: Kobold.Core.Components.BoxCollider.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
