@@ -11,6 +11,8 @@ using Kobold.Core.Components;
 using Kobold.Core.Components.Gameplay;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
+using Kobold.Extensions.Combat.Components;
+using Kobold.Extensions.Combat.Systems;
 using Kobold.Extensions.Items.Registry;
 using Kobold.Extensions.Items.Spawning;
 using Kobold.Extensions.Pickups;
@@ -165,6 +167,7 @@ namespace CaveExplorer
 
             // Create gameplay systems
             var inputSystem = new InputSystem(InputManager, World);
+            var combatInputSystem = new CombatInputSystem(World, InputManager, EventBus);
             var cameraSystem = new CameraSystem(World);
             var tileMapCollisionSystem = new TileMapCollisionSystem(World);
             var physicsSystem = new PhysicsSystem(World, physicsConfig);
@@ -173,9 +176,12 @@ namespace CaveExplorer
             var pickupSystem = new Kobold.Extensions.Pickups.PickupSystem(World, EventBus);
             var portalSystem = new PortalSystem(World, EventBus);
             var progressionSystem = new LevelProgressionSystem(World, EventBus);
+            var meleeAttackSystem = new MeleeAttackSystem(World, EventBus);
+            var attackCooldownSystem = new AttackCooldownSystem(World);
             var destructionSystem = new DestructionSystem(World, EventBus);
             var renderSystem = new RenderSystem(Renderer, World);
             var tileMapRenderSystem = new TileMapRenderSystem(Renderer, World);
+            var combatDebugRenderSystem = new CombatDebugRenderSystem(World, Renderer, EventBus);
 
             // Register UI systems (always run, even in menu)
             SystemManager.AddSystem(uiInputSystem, SystemUpdateOrder.INPUT - 10, requiresGameplayState: false);
@@ -186,6 +192,7 @@ namespace CaveExplorer
 
             // Register gameplay systems (only run during gameplay)
             SystemManager.AddSystem(inputSystem, SystemUpdateOrder.INPUT, requiresGameplayState: true);
+            SystemManager.AddSystem(combatInputSystem, SystemUpdateOrder.INPUT + 1, requiresGameplayState: true);
             SystemManager.AddSystem(cameraSystem, SystemUpdateOrder.INPUT + 50, requiresGameplayState: true); // Update camera after input
             SystemManager.AddSystem(tileMapCollisionSystem, SystemUpdateOrder.PHYSICS - 1, requiresGameplayState: true);
             SystemManager.AddSystem(physicsSystem, SystemUpdateOrder.PHYSICS, requiresGameplayState: true);
@@ -194,11 +201,14 @@ namespace CaveExplorer
             SystemManager.AddSystem(pickupSystem, SystemUpdateOrder.COLLISION + 2, requiresGameplayState: true);
             SystemManager.AddSystem(portalSystem, SystemUpdateOrder.COLLISION + 3, requiresGameplayState: true);
             SystemManager.AddSystem(progressionSystem, SystemUpdateOrder.COLLISION + 4, requiresGameplayState: true);
+            SystemManager.AddSystem(meleeAttackSystem, SystemUpdateOrder.GAME_LOGIC, requiresGameplayState: true);
+            SystemManager.AddSystem(attackCooldownSystem, SystemUpdateOrder.GAME_LOGIC + 1, requiresGameplayState: true);
             SystemManager.AddSystem(destructionSystem, SystemUpdateOrder.CLEANUP, requiresGameplayState: true);
 
             // Render systems always run (now using camera-aware core RenderSystem)
             SystemManager.AddRenderSystem(tileMapRenderSystem);
             SystemManager.AddRenderSystem(renderSystem);
+            SystemManager.AddRenderSystem(combatDebugRenderSystem);
         }
 
         private void CreateGameState()
@@ -249,6 +259,9 @@ namespace CaveExplorer
 
             // Spawn coins randomly on floor tiles
             SpawnCoins(tileMap);
+
+            // Spawn monsters in the cave
+            SpawnMonsters(tileMap, monsterCount: 5);
 
             // Notify progression system that initial level is ready
             EventBus.Publish(new LevelReadyEvent(0, tileMap));
@@ -328,10 +341,54 @@ namespace CaveExplorer
                 new BoxCollider(28f, 28f, new Vector2(-14f, -14f)), // Centered 28x28 collider
                 PlayerControlled.FullMovement(150f),
                 new Player(),
-                new PlayerInventory() // Track collected items
+                new PlayerInventory(), // Track collected items
+                new HealthComponent(maxHealth: 100, invulnerabilityDuration: 0.5f),
+                new MeleeWeaponComponent(damage: 25, attackRadius: 64f, cooldownDuration: 0.5f, attackKey: KeyCode.Space, targetTag: "Enemy")
             );
 
-            System.Console.WriteLine($"Player created at ({position.X}, {position.Y}) with Player tag and PlayerInventory");
+            System.Console.WriteLine($"Player created at ({position.X}, {position.Y}) with Player tag, PlayerInventory, Health, and Weapon");
+        }
+
+        private void CreateMonster(Vector2 position)
+        {
+            World.Create(
+                new Transform(position),
+                new SpriteRenderer(
+                    _spriteSheet.Texture,
+                    _spriteSheet.GetNamedRegion("enemy"),
+                    new Vector2(1f, 1f)
+                ),
+                new BoxCollider(28f, 28f, new Vector2(-14f, -14f)), // Centered 28x28 collider
+                new Enemy(),
+                new HealthComponent(maxHealth: 30)
+            );
+
+            System.Console.WriteLine($"Monster created at ({position.X}, {position.Y}) with Enemy tag and Health");
+        }
+
+        private void SpawnMonsters(TileMap tileMap, int monsterCount = 5)
+        {
+            var random = new Random();
+            int spawned = 0;
+
+            // Try to spawn the requested number of monsters
+            for (int attempt = 0; attempt < monsterCount * 10 && spawned < monsterCount; attempt++)
+            {
+                int x = random.Next(tileMap.Width);
+                int y = random.Next(tileMap.Height);
+
+                // Check if it's a floor tile
+                if (tileMap.GetTile(0, x, y) == 0)
+                {
+                    var (worldX, worldY) = tileMap.TileToWorldCenter(x, y);
+                    var position = new Vector2(worldX, worldY);
+
+                    CreateMonster(position);
+                    spawned++;
+                }
+            }
+
+            System.Console.WriteLine($"Spawned {spawned} monsters in the cave");
         }
 
         private void CreateCoinCounterUI()
@@ -425,6 +482,9 @@ namespace CaveExplorer
 
             // Spawn coins randomly on floor tiles
             SpawnCoins(tileMap);
+
+            // Spawn monsters in the cave
+            SpawnMonsters(tileMap, monsterCount: 5);
 
             // Notify progression system that level is ready
             EventBus.Publish(new LevelReadyEvent(evt.Depth, tileMap));
