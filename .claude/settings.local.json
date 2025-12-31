@@ -21,7 +21,12 @@
       "Bash(cat:*)",
       "Bash(dir:*)",
       "Bash(timeout 5 dotnet run:*)",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(findstr:*)",
+      "WebSearch",
+      "Bash(dotnet mgcb-editor:*)",
+      "Bash(dotnet tool install:*)",
+      "Bash(mgcb:*)"
     ]
   }
 }

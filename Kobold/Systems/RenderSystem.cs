@@ -81,7 +81,9 @@ namespace Kobold.Core.Systems
             foreach (var renderable in renderableEntities)
             {
                 // Convert world position to screen position
-                Vector2 screenPosition = camera.HasValue
+                // UI layer (100+) should render in screen space, not affected by camera
+                bool isUILayer = renderable.Layer >= RenderLayers.UI;
+                Vector2 screenPosition = (camera.HasValue && !isUILayer)
                     ? camera.Value.WorldToScreen(renderable.Transform.Position)
                     : renderable.Transform.Position;
 
