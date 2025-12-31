@@ -26,13 +26,11 @@ namespace Kobold.Extensions.Tilemaps
             _animationTime += deltaTime;
 
             // Update animated tiles
-            var query = new QueryDescription().WithAll<TilemapComponent>();
+            var query = new QueryDescription().WithAll<TileMapComponent>();
 
-            _world.Query(in query, (ref TilemapComponent tilemapComponent) =>
+            _world.Query(in query, (ref TileMapComponent tilemapComponent) =>
             {
-                if (!tilemapComponent.Visible)
-                    return;
-
+                // TODO: Add Visible property to TileMapComponent if needed
                 UpdateAnimatedTiles(ref tilemapComponent, deltaTime);
             });
         }
@@ -40,7 +38,7 @@ namespace Kobold.Extensions.Tilemaps
         /// <summary>
         /// Updates animated tiles in the tilemap.
         /// </summary>
-        private void UpdateAnimatedTiles(ref TilemapComponent tilemapComponent, float deltaTime)
+        private void UpdateAnimatedTiles(ref TileMapComponent tilemapComponent, float deltaTime)
         {
             var tileMap = tilemapComponent.TileMap;
             var tileSet = tilemapComponent.TileSet;
@@ -95,42 +93,25 @@ namespace Kobold.Extensions.Tilemaps
         }
 
         /// <summary>
-        /// Helper method to check if a tilemap entity exists and is visible.
+        /// Helper method to check if a tilemap entity exists.
         /// </summary>
-        public bool IsTilemapVisible(Entity entity)
+        public bool HasTilemap(Entity entity)
         {
             if (!_world.IsAlive(entity))
                 return false;
 
-            if (!_world.Has<TilemapComponent>(entity))
-                return false;
-
-            var component = _world.Get<TilemapComponent>(entity);
-            return component.Visible;
+            return _world.Has<TileMapComponent>(entity);
         }
 
         /// <summary>
-        /// Sets the visibility of a tilemap.
+        /// Gets the TileMapComponent for an entity.
         /// </summary>
-        public void SetTilemapVisibility(Entity entity, bool visible)
+        public TileMapComponent? GetTilemap(Entity entity)
         {
-            if (!_world.IsAlive(entity) || !_world.Has<TilemapComponent>(entity))
-                return;
+            if (!_world.IsAlive(entity) || !_world.Has<TileMapComponent>(entity))
+                return null;
 
-            ref var component = ref _world.Get<TilemapComponent>(entity);
-            component.Visible = visible;
-        }
-
-        /// <summary>
-        /// Sets the opacity of a tilemap.
-        /// </summary>
-        public void SetTilemapOpacity(Entity entity, float opacity)
-        {
-            if (!_world.IsAlive(entity) || !_world.Has<TilemapComponent>(entity))
-                return;
-
-            ref var component = ref _world.Get<TilemapComponent>(entity);
-            component.Opacity = Math.Clamp(opacity, 0f, 1f);
+            return _world.Get<TileMapComponent>(entity);
         }
     }
 }

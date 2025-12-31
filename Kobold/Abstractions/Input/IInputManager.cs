@@ -23,7 +23,7 @@ namespace Kobold.Core.Abstractions.Input
     {
         W, A, S, D, Space, Enter, Escape,
         Up, Down, Left, Right,
-        P
+        P, E
         // Add more as needed
     }
 

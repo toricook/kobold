@@ -1,9 +1,9 @@
 using Arch.Core;
 using Arch.Core.Extensions;
-using CaveExplorer.Components;
 using Kobold.Core.Abstractions;
 using Kobold.Core.Abstractions.Rendering;
 using Kobold.Core.Components;
+using Kobold.Extensions.Tilemaps;
 using System;
 using System.Drawing;
 using System.Numerics;
