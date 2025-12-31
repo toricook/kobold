@@ -40,9 +40,23 @@ namespace Kobold.Monogame
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            if (File.Exists(Path.Combine(Content.RootDirectory, "DefaultFont.xnb")))
+            try
             {
-                _defaultFont = Content.Load<SpriteFont>("DefaultFont");
+                // Try loading from the compiled content output directory
+                _defaultFont = Content.Load<SpriteFont>("bin/DesktopGL/DefaultFont");
+            }
+            catch (Exception)
+            {
+                // Try alternative path (directly in Content root)
+                try
+                {
+                    _defaultFont = Content.Load<SpriteFont>("DefaultFont");
+                }
+                catch (Exception)
+                {
+                    // DefaultFont not found, will use PixelFont fallback
+                    _defaultFont = null;
+                }
             }
             // Create MonoGame-specific implementations
             _inputManager = new MonoGameInputManager();

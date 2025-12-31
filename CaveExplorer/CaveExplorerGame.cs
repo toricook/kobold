@@ -10,8 +10,10 @@ using Kobold.Core.Events;
 using Kobold.Core.Systems;
 using Kobold.Extensions.Portals;
 using Kobold.Extensions.Progression;
+using Kobold.Extensions.SaveSystem;
 using Kobold.Extensions.Tilemaps;
 using Kobold.Extensions.Procedural;
+using Kobold.Extensions.UI.Systems;
 using System.Drawing;
 using System.Numerics;
 
@@ -22,6 +24,9 @@ namespace CaveExplorer
         // Entity references
         private Entity _gameStateEntity;
         private SpriteSheet _spriteSheet;
+
+        // Save system
+        private SaveManager _saveManager;
 
         public CaveExplorerGame() : base()
         {
@@ -39,6 +44,9 @@ namespace CaveExplorer
             // Create game state entity
             CreateGameState();
 
+            // Initialize save system
+            InitializeSaveSystem();
+
             // Initialize and register systems
             InitializeSystems();
 
@@ -47,6 +55,15 @@ namespace CaveExplorer
 
             // Create initial game entities
             CreateInitialEntities();
+        }
+
+        private void InitializeSaveSystem()
+        {
+            _saveManager = new SaveManager(World, EventBus, "CaveExplorer");
+
+            // Register component serializers for custom components
+            // The save system already handles core components (Transform, Velocity, etc.)
+            // Register any CaveExplorer-specific components here if needed
         }
 
         private void InitializeSystems()
@@ -73,7 +90,13 @@ namespace CaveExplorer
                 EnableCollisionResponse = true
             };
 
-            // Create systems
+            // Create UI systems (run always, not just during gameplay)
+            var uiInputSystem = new UIInputSystem(World, InputManager, EventBus);
+            var uiButtonSystem = new UIButtonSystem(World, EventBus);
+            var uiAnchorSystem = new UIAnchorSystem(World, new Vector2(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT));
+            var menuSystem = new MenuSystem(World, EventBus, InputManager, _saveManager, _gameStateEntity);
+
+            // Create gameplay systems
             var inputSystem = new InputSystem(InputManager, World);
             var cameraSystem = new CameraSystem(World);
             var tileMapCollisionSystem = new TileMapCollisionSystem(World);
@@ -86,7 +109,13 @@ namespace CaveExplorer
             var renderSystem = new RenderSystem(Renderer, World);
             var tileMapRenderSystem = new TileMapRenderSystem(Renderer, World);
 
-            // Register systems (no boundary system - we use tile collision and camera bounds)
+            // Register UI systems (always run, even in menu)
+            SystemManager.AddSystem(uiInputSystem, SystemUpdateOrder.INPUT - 10, requiresGameplayState: false);
+            SystemManager.AddSystem(uiButtonSystem, SystemUpdateOrder.UI, requiresGameplayState: false);
+            SystemManager.AddSystem(uiAnchorSystem, SystemUpdateOrder.UI + 1, requiresGameplayState: false);
+            SystemManager.AddSystem(menuSystem, SystemUpdateOrder.UI + 2, requiresGameplayState: false);
+
+            // Register gameplay systems (only run during gameplay)
             SystemManager.AddSystem(inputSystem, SystemUpdateOrder.INPUT, requiresGameplayState: true);
             SystemManager.AddSystem(cameraSystem, SystemUpdateOrder.INPUT + 50, requiresGameplayState: true); // Update camera after input
             SystemManager.AddSystem(tileMapCollisionSystem, SystemUpdateOrder.PHYSICS - 1, requiresGameplayState: true);
@@ -105,7 +134,7 @@ namespace CaveExplorer
         private void CreateGameState()
         {
             _gameStateEntity = World.Create(
-                new CoreGameState(StandardGameState.Playing),
+                new CoreGameState(StandardGameState.Menu), // Start in menu instead of playing
                 new ProgressionState()
             );
         }
@@ -136,11 +165,11 @@ namespace CaveExplorer
             // Create tilemap entity
             CreateTileMapEntity(tileMap, tileSet);
 
-            // Create camera entity
-            CreateCamera(tileMap);
-
             // Find valid spawn position for player
             var spawnPosition = FindValidSpawnPosition(tileMap);
+
+            // Create camera entity at player's spawn position
+            CreateCamera(tileMap, spawnPosition);
 
             // Create player entity
             CreatePlayer(spawnPosition);
@@ -156,7 +185,7 @@ namespace CaveExplorer
             );
         }
 
-        private void CreateCamera(TileMap tileMap)
+        private Camera CreateCamera(TileMap tileMap, Vector2 initialPosition)
         {
             var camera = new Camera(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT, smoothSpeed: 5f);
 
@@ -165,7 +194,11 @@ namespace CaveExplorer
             float mapHeight = tileMap.Height * tileMap.TileHeight;
             camera.SetBounds(mapWidth, mapHeight);
 
+            // Initialize camera at the player's starting position
+            camera.Position = initialPosition;
+
             World.Create(camera);
+            return camera;
         }
 
         private Vector2 FindValidSpawnPosition(TileMap tileMap)
@@ -254,8 +287,11 @@ namespace CaveExplorer
             // Create tilemap entity
             CreateTileMapEntity(tileMap, tileSet);
 
-            // Create camera entity
-            CreateCamera(tileMap);
+            // Find valid spawn position for camera
+            var spawnPosition = FindValidSpawnPosition(tileMap);
+
+            // Create camera entity at spawn position
+            CreateCamera(tileMap, spawnPosition);
 
             // Notify progression system that level is ready
             EventBus.Publish(new LevelReadyEvent(evt.Depth, tileMap));
