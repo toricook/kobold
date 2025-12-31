@@ -168,6 +168,7 @@ namespace CaveExplorer
             // Create gameplay systems
             var inputSystem = new InputSystem(InputManager, World);
             var combatInputSystem = new CombatInputSystem(World, InputManager, EventBus);
+            var simpleAISystem = new SimpleAISystem(World, EventBus);
             var cameraSystem = new CameraSystem(World);
             var tileMapCollisionSystem = new TileMapCollisionSystem(World);
             var physicsSystem = new PhysicsSystem(World, physicsConfig);
@@ -193,6 +194,7 @@ namespace CaveExplorer
             // Register gameplay systems (only run during gameplay)
             SystemManager.AddSystem(inputSystem, SystemUpdateOrder.INPUT, requiresGameplayState: true);
             SystemManager.AddSystem(combatInputSystem, SystemUpdateOrder.INPUT + 1, requiresGameplayState: true);
+            SystemManager.AddSystem(simpleAISystem, SystemUpdateOrder.INPUT + 2, requiresGameplayState: true); // AI runs after player input
             SystemManager.AddSystem(cameraSystem, SystemUpdateOrder.INPUT + 50, requiresGameplayState: true); // Update camera after input
             SystemManager.AddSystem(tileMapCollisionSystem, SystemUpdateOrder.PHYSICS - 1, requiresGameplayState: true);
             SystemManager.AddSystem(physicsSystem, SystemUpdateOrder.PHYSICS, requiresGameplayState: true);
@@ -353,6 +355,7 @@ namespace CaveExplorer
         {
             World.Create(
                 new Transform(position),
+                new Velocity(Vector2.Zero),
                 new SpriteRenderer(
                     _spriteSheet.Texture,
                     _spriteSheet.GetNamedRegion("enemy"),
@@ -360,10 +363,17 @@ namespace CaveExplorer
                 ),
                 new BoxCollider(28f, 28f, new Vector2(-14f, -14f)), // Centered 28x28 collider
                 new Enemy(),
-                new HealthComponent(maxHealth: 30)
+                new HealthComponent(maxHealth: 30),
+                new SimpleAIComponent(
+                    detectionRange: 150f,  // Start chasing when player is within 150 pixels
+                    moveSpeed: 60f,        // Move at 60 pixels/second (slower than player's 150)
+                    attackRange: 35f,      // Attack when within 35 pixels
+                    attackDamage: 15,      // Deal 15 damage per attack
+                    attackCooldown: 1.5f   // 1.5 seconds between attacks
+                )
             );
 
-            System.Console.WriteLine($"Monster created at ({position.X}, {position.Y}) with Enemy tag and Health");
+            System.Console.WriteLine($"Monster created at ({position.X}, {position.Y}) with Enemy tag, Health, and AI");
         }
 
         private void SpawnMonsters(TileMap tileMap, int monsterCount = 5)
