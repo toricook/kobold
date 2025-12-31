@@ -1,0 +1,174 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Systems.BoundaryType
+  commentId: T:Kobold.Core.Systems.BoundaryType
+  id: BoundaryType
+  parent: Kobold.Core.Systems
+  children:
+  - Kobold.Core.Systems.BoundaryType.Bottom
+  - Kobold.Core.Systems.BoundaryType.Left
+  - Kobold.Core.Systems.BoundaryType.Right
+  - Kobold.Core.Systems.BoundaryType.Top
+  langs:
+  - csharp
+  - vb
+  name: BoundaryType
+  nameWithType: BoundaryType
+  fullName: Kobold.Core.Systems.BoundaryType
+  type: Enum
+  source:
+    remote:
+      path: Kobold/Systems/BoundarySystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: BoundaryType
+    path: Kobold/Systems/BoundarySystem.cs
+    startLine: 201
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public enum BoundaryType
+    content.vb: Public Enum BoundaryType
+- uid: Kobold.Core.Systems.BoundaryType.Top
+  commentId: F:Kobold.Core.Systems.BoundaryType.Top
+  id: Top
+  parent: Kobold.Core.Systems.BoundaryType
+  langs:
+  - csharp
+  - vb
+  name: Top
+  nameWithType: BoundaryType.Top
+  fullName: Kobold.Core.Systems.BoundaryType.Top
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/BoundarySystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Top
+    path: Kobold/Systems/BoundarySystem.cs
+    startLine: 203
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Top = 0
+    return:
+      type: Kobold.Core.Systems.BoundaryType
+- uid: Kobold.Core.Systems.BoundaryType.Bottom
+  commentId: F:Kobold.Core.Systems.BoundaryType.Bottom
+  id: Bottom
+  parent: Kobold.Core.Systems.BoundaryType
+  langs:
+  - csharp
+  - vb
+  name: Bottom
+  nameWithType: BoundaryType.Bottom
+  fullName: Kobold.Core.Systems.BoundaryType.Bottom
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/BoundarySystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Bottom
+    path: Kobold/Systems/BoundarySystem.cs
+    startLine: 203
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Bottom = 1
+    return:
+      type: Kobold.Core.Systems.BoundaryType
+- uid: Kobold.Core.Systems.BoundaryType.Left
+  commentId: F:Kobold.Core.Systems.BoundaryType.Left
+  id: Left
+  parent: Kobold.Core.Systems.BoundaryType
+  langs:
+  - csharp
+  - vb
+  name: Left
+  nameWithType: BoundaryType.Left
+  fullName: Kobold.Core.Systems.BoundaryType.Left
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/BoundarySystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Left
+    path: Kobold/Systems/BoundarySystem.cs
+    startLine: 203
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Left = 2
+    return:
+      type: Kobold.Core.Systems.BoundaryType
+- uid: Kobold.Core.Systems.BoundaryType.Right
+  commentId: F:Kobold.Core.Systems.BoundaryType.Right
+  id: Right
+  parent: Kobold.Core.Systems.BoundaryType
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: BoundaryType.Right
+  fullName: Kobold.Core.Systems.BoundaryType.Right
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/BoundarySystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Right
+    path: Kobold/Systems/BoundarySystem.cs
+    startLine: 203
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Right = 3
+    return:
+      type: Kobold.Core.Systems.BoundaryType
+references:
+- uid: Kobold.Core.Systems
+  commentId: N:Kobold.Core.Systems
+  href: Kobold.html
+  name: Kobold.Core.Systems
+  nameWithType: Kobold.Core.Systems
+  fullName: Kobold.Core.Systems
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+- uid: Kobold.Core.Systems.BoundaryType
+  commentId: T:Kobold.Core.Systems.BoundaryType
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.BoundaryType.html
+  name: BoundaryType
+  nameWithType: BoundaryType
+  fullName: Kobold.Core.Systems.BoundaryType

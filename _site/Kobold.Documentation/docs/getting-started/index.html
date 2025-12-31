@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Getting Started with Kobold | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Getting Started with Kobold | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/getting-started/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="getting-started-with-kobold">Getting Started with Kobold</h1>
+
+<p>Welcome to Kobold! This guide will help you install the framework, understand the basics, and build your first game.</p>
+<h2 id="what-is-kobold">What is Kobold?</h2>
+<p>Kobold is a 2D game framework built on the Entity Component System (ECS) architecture and MonoGame. It provides:</p>
+<ul>
+<li>High-performance ECS using the Arch library</li>
+<li>Built-in physics and collision systems</li>
+<li>Sprite rendering and animation</li>
+<li>Asset management and sprite sheet support</li>
+<li>Event-driven architecture</li>
+<li>Platform abstraction layer</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you start, make sure you have:</p>
+<ul>
+<li><strong>.NET 8 SDK</strong> or later - <a href="https://dotnet.microsoft.com/download">Download here</a></li>
+<li><strong>MonoGame</strong> - Installed via NuGet (handled automatically)</li>
+<li><strong>A code editor</strong> - Visual Studio, VS Code, or Rider</li>
+<li><strong>Basic C# knowledge</strong> - Familiarity with C# syntax and OOP concepts</li>
+</ul>
+<h2 id="quick-navigation">Quick Navigation</h2>
+<p>Choose your path:</p>
+<h3 id="installation"><a href="installation.html">Installation</a></h3>
+<p>Set up Kobold and create your first project. Start here if you're brand new to Kobold.</p>
+<h3 id="quick-start"><a href="quick-start.html">Quick Start</a></h3>
+<p>A 5-minute tutorial that gets you up and running with a minimal working example. Perfect if you learn by doing.</p>
+<h3 id="your-first-game"><a href="your-first-game.html">Your First Game</a></h3>
+<p>Build a complete simple game from scratch. Learn the fundamentals through a hands-on tutorial.</p>
+<h2 id="installation-overview">Installation Overview</h2>
+<p>Kobold is distributed as NuGet packages:</p>
+<pre><code class="lang-bash"># Core framework (required)
+dotnet add package Kobold.Core
+
+# MonoGame integration (required for rendering)
+dotnet add package Kobold.Monogame
+
+# Optional extensions
+dotnet add package Kobold.Extensions  # Tilemaps and more
+dotnet add package Kobold.Procedural  # Procedural generation
+</code></pre>
+<p>Or reference the projects directly if working from source:</p>
+<pre><code class="lang-xml">&lt;ItemGroup&gt;
+  &lt;ProjectReference Include=&quot;..\Kobold\Kobold.csproj&quot; /&gt;
+  &lt;ProjectReference Include=&quot;..\Kobold.Monogame\Kobold.Monogame.csproj&quot; /&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+<h2 id="your-first-kobold-game">Your First Kobold Game</h2>
+<p>Here's the minimal code to create a Kobold game:</p>
+<pre><code class="lang-csharp">using Kobold.Core;
+using Kobold.Core.Components;
+using Kobold.Core.Systems;
+using Kobold.Monogame;
+using System.Numerics;
+using System.Drawing;
+
+public class MyGame : GameEngineBase
+{
+    protected override void Initialize()
+    {
+        base.Initialize();
+
+        // Create a simple rectangle entity
+        World.Create(
+            new Transform { Position = new Vector2(400, 300) },
+            new RectangleRenderer
+            {
+                Size = new Vector2(50, 50),
+                Color = Color.Green
+            }
+        );
+
+        // Add the render system
+        Systems.AddRenderSystem(new RenderSystem(Renderer));
+    }
+}
+
+// Program.cs
+MonoGameHost.Run(new MyGame(), new GameConfig
+{
+    WindowWidth = 800,
+    WindowHeight = 600,
+    WindowTitle = &quot;My First Kobold Game&quot;
+});
+</code></pre>
+<p>This creates a window with a green square in the center. Simple!</p>
+<h2 id="key-concepts">Key Concepts</h2>
+<h3 id="entity-component-system-ecs">Entity Component System (ECS)</h3>
+<p>Kobold uses ECS architecture where:</p>
+<ul>
+<li><strong>Entities</strong> are just IDs (created with <code>World.Create()</code>)</li>
+<li><strong>Components</strong> are data structs (like <code>Transform</code>, <code>Velocity</code>)</li>
+<li><strong>Systems</strong> contain logic (like <code>PhysicsSystem</code>, <code>RenderSystem</code>)</li>
+</ul>
+<p>This separation makes games performant, modular, and easy to reason about.</p>
+<h3 id="game-lifecycle">Game Lifecycle</h3>
+<p>Every Kobold game extends <code>GameEngineBase</code> and follows this lifecycle:</p>
+<ol>
+<li><strong>Initialize()</strong> - Set up your game, create initial entities, add systems</li>
+<li><strong>Update(deltaTime)</strong> - Called every frame, updates all systems</li>
+<li><strong>Render()</strong> - Called every frame, renders all entities</li>
+<li><strong>Shutdown()</strong> - Clean up resources when the game closes</li>
+</ol>
+<h3 id="the-world">The World</h3>
+<p>The <code>World</code> property is your ECS world from the Arch library. Use it to:</p>
+<ul>
+<li>Create entities: <code>World.Create(component1, component2, ...)</code></li>
+<li>Query entities: <code>World.Query(...)</code></li>
+<li>Destroy entities: <code>World.Destroy(entity)</code></li>
+</ul>
+<h3 id="systems">Systems</h3>
+<p>Systems update entities each frame. Add them in <code>Initialize()</code>:</p>
+<pre><code class="lang-csharp">// Update systems (called during Update)
+Systems.AddSystem(new PhysicsSystem(), order: 100, requiresGameplayState: true);
+
+// Render systems (called during Render)
+Systems.AddRenderSystem(new RenderSystem(Renderer));
+</code></pre>
+<h2 id="next-steps">Next Steps</h2>
+<ol>
+<li><strong><a href="installation.html">Installation</a></strong> - Detailed installation guide</li>
+<li><strong><a href="quick-start.html">Quick Start</a></strong> - 5-minute hands-on tutorial</li>
+<li><strong><a href="your-first-game.html">Your First Game</a></strong> - Build a complete game</li>
+<li><strong><a href="../core/architecture.html">Core Architecture</a></strong> - Deep dive into ECS</li>
+</ol>
+<h2 id="need-help">Need Help?</h2>
+<ul>
+<li>Check the <a href="../examples/code-snippets.html">examples</a> for common patterns</li>
+<li>Review the <a href="../core/">core documentation</a> for API reference</li>
+<li>See example games: Asteroids, Pong, CaveExplorer</li>
+</ul>
+<hr>
+<p><strong>Ready to install?</strong> Continue to <a href="installation.html">Installation</a> →</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/getting-started/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

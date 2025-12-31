@@ -1,5 +1,5 @@
 using Kobold.Monogame;
-using Procedural;
+using Kobold.Extensions.Procedural;
 using Rapid.NET;
 
 namespace Experiments

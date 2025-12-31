@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Abstractions.Input
+  commentId: N:Kobold.Core.Abstractions.Input
+  id: Kobold.Core.Abstractions.Input
+  children:
+  - Kobold.Core.Abstractions.Input.IInputManager
+  - Kobold.Core.Abstractions.Input.KeyCode
+  - Kobold.Core.Abstractions.Input.MouseButton
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Core.Abstractions.Input
+  nameWithType: Kobold.Core.Abstractions.Input
+  fullName: Kobold.Core.Abstractions.Input
+  type: Namespace
+  assemblies:
+  - Kobold.Core
+references:
+- uid: Kobold.Core.Abstractions.Input.IInputManager
+  commentId: T:Kobold.Core.Abstractions.Input.IInputManager
+  parent: Kobold.Core.Abstractions.Input
+  href: Kobold.Core.Abstractions.Input.IInputManager.html
+  name: IInputManager
+  nameWithType: IInputManager
+  fullName: Kobold.Core.Abstractions.Input.IInputManager
+- uid: Kobold.Core.Abstractions.Input.KeyCode
+  commentId: T:Kobold.Core.Abstractions.Input.KeyCode
+  parent: Kobold.Core.Abstractions.Input
+  href: Kobold.Core.Abstractions.Input.KeyCode.html
+  name: KeyCode
+  nameWithType: KeyCode
+  fullName: Kobold.Core.Abstractions.Input.KeyCode
+- uid: Kobold.Core.Abstractions.Input.MouseButton
+  commentId: T:Kobold.Core.Abstractions.Input.MouseButton
+  parent: Kobold.Core.Abstractions.Input
+  href: Kobold.Core.Abstractions.Input.MouseButton.html
+  name: MouseButton
+  nameWithType: MouseButton
+  fullName: Kobold.Core.Abstractions.Input.MouseButton
+- uid: Kobold.Core.Abstractions.Input
+  commentId: N:Kobold.Core.Abstractions.Input
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Input
+  nameWithType: Kobold.Core.Abstractions.Input
+  fullName: Kobold.Core.Abstractions.Input
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Input
+    name: Input
+    href: Kobold.Core.Abstractions.Input.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Input
+    name: Input
+    href: Kobold.Core.Abstractions.Input.html

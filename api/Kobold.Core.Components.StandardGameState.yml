@@ -1,0 +1,239 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.StandardGameState
+  commentId: T:Kobold.Core.Components.StandardGameState
+  id: StandardGameState
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.StandardGameState.GameOver
+  - Kobold.Core.Components.StandardGameState.Loading
+  - Kobold.Core.Components.StandardGameState.Menu
+  - Kobold.Core.Components.StandardGameState.Paused
+  - Kobold.Core.Components.StandardGameState.Playing
+  langs:
+  - csharp
+  - vb
+  name: StandardGameState
+  nameWithType: StandardGameState
+  fullName: Kobold.Core.Components.StandardGameState
+  type: Enum
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: StandardGameState
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 197
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Standard game states that most games will need.
+
+    Games can use this directly or create their own enum with these values included.
+  example: []
+  syntax:
+    content: public enum StandardGameState
+    content.vb: Public Enum StandardGameState
+- uid: Kobold.Core.Components.StandardGameState.Playing
+  commentId: F:Kobold.Core.Components.StandardGameState.Playing
+  id: Playing
+  parent: Kobold.Core.Components.StandardGameState
+  langs:
+  - csharp
+  - vb
+  name: Playing
+  nameWithType: StandardGameState.Playing
+  fullName: Kobold.Core.Components.StandardGameState.Playing
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Playing
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 203
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Game is actively running - all gameplay systems should be active.
+
+    This is the main game loop state where players can interact and things happen.
+  example: []
+  syntax:
+    content: Playing = 0
+    return:
+      type: Kobold.Core.Components.StandardGameState
+- uid: Kobold.Core.Components.StandardGameState.Paused
+  commentId: F:Kobold.Core.Components.StandardGameState.Paused
+  id: Paused
+  parent: Kobold.Core.Components.StandardGameState
+  langs:
+  - csharp
+  - vb
+  name: Paused
+  nameWithType: StandardGameState.Paused
+  fullName: Kobold.Core.Components.StandardGameState.Paused
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Paused
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 210
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Game is temporarily stopped but can be resumed.
+
+    Only UI and input systems should be active to handle unpause input.
+
+    Game world state is preserved.
+  example: []
+  syntax:
+    content: Paused = 1
+    return:
+      type: Kobold.Core.Components.StandardGameState
+- uid: Kobold.Core.Components.StandardGameState.GameOver
+  commentId: F:Kobold.Core.Components.StandardGameState.GameOver
+  id: GameOver
+  parent: Kobold.Core.Components.StandardGameState
+  langs:
+  - csharp
+  - vb
+  name: GameOver
+  nameWithType: StandardGameState.GameOver
+  fullName: Kobold.Core.Components.StandardGameState.GameOver
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GameOver
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 217
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Game session has ended (win/lose condition met).
+
+    Only UI systems should be active to show final state and restart options.
+
+    Game world state may be reset or preserved for restart.
+  example: []
+  syntax:
+    content: GameOver = 2
+    return:
+      type: Kobold.Core.Components.StandardGameState
+- uid: Kobold.Core.Components.StandardGameState.Loading
+  commentId: F:Kobold.Core.Components.StandardGameState.Loading
+  id: Loading
+  parent: Kobold.Core.Components.StandardGameState
+  langs:
+  - csharp
+  - vb
+  name: Loading
+  nameWithType: StandardGameState.Loading
+  fullName: Kobold.Core.Components.StandardGameState.Loading
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Loading
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 224
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Game is loading resources or initializing.
+
+    Typically only loading/progress systems are active.
+
+    Transitions to Playing when ready.
+  example: []
+  syntax:
+    content: Loading = 3
+    return:
+      type: Kobold.Core.Components.StandardGameState
+- uid: Kobold.Core.Components.StandardGameState.Menu
+  commentId: F:Kobold.Core.Components.StandardGameState.Menu
+  id: Menu
+  parent: Kobold.Core.Components.StandardGameState
+  langs:
+  - csharp
+  - vb
+  name: Menu
+  nameWithType: StandardGameState.Menu
+  fullName: Kobold.Core.Components.StandardGameState.Menu
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Core/GameState.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Menu
+    path: Kobold/Components/Core/GameState.cs
+    startLine: 231
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: >-
+    Showing main menu or game selection screens.
+
+    Only UI and menu systems are active.
+
+    No gameplay systems should run.
+  example: []
+  syntax:
+    content: Menu = 4
+    return:
+      type: Kobold.Core.Components.StandardGameState
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: Kobold.Core.Components.StandardGameState
+  commentId: T:Kobold.Core.Components.StandardGameState
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.StandardGameState.html
+  name: StandardGameState
+  nameWithType: StandardGameState
+  fullName: Kobold.Core.Components.StandardGameState

@@ -1,0 +1,410 @@
+### YamlMime:TableOfContent
+items:
+- uid: Experiments
+  name: Experiments
+  type: Namespace
+  items:
+  - uid: Experiments.CellularAutomataDisplay
+    name: CellularAutomataDisplay
+    type: Class
+  - uid: Experiments.CellularAutomataScript
+    name: CellularAutomataScript
+    type: Class
+  - uid: Experiments.CellularAutomataScript.Config
+    name: CellularAutomataScript.Config
+    type: Class
+  - uid: Experiments.Program
+    name: Program
+    type: Class
+- uid: Kobold.Core
+  name: Kobold.Core
+  type: Namespace
+  items:
+  - uid: Kobold.Core.AssetManager
+    name: AssetManager
+    type: Class
+  - uid: Kobold.Core.GameEngineBase
+    name: GameEngineBase
+    type: Class
+  - uid: Kobold.Core.MathUtils
+    name: MathUtils
+    type: Class
+- uid: Kobold.Core.Abstractions
+  name: Kobold.Core.Abstractions
+  type: Namespace
+  items:
+  - uid: Kobold.Core.Abstractions.IRenderSystem
+    name: IRenderSystem
+    type: Interface
+  - uid: Kobold.Core.Abstractions.ISystem
+    name: ISystem
+    type: Interface
+- uid: Kobold.Core.Abstractions.Core
+  name: Kobold.Core.Abstractions.Core
+  type: Namespace
+  items:
+  - uid: Kobold.Core.Abstractions.Core.IContentLoader
+    name: IContentLoader
+    type: Interface
+  - uid: Kobold.Core.Abstractions.Core.IGameEngine
+    name: IGameEngine
+    type: Interface
+- uid: Kobold.Core.Abstractions.Input
+  name: Kobold.Core.Abstractions.Input
+  type: Namespace
+  items:
+  - uid: Kobold.Core.Abstractions.Input.IInputManager
+    name: IInputManager
+    type: Interface
+  - uid: Kobold.Core.Abstractions.Input.KeyCode
+    name: KeyCode
+    type: Enum
+  - uid: Kobold.Core.Abstractions.Input.MouseButton
+    name: MouseButton
+    type: Enum
+- uid: Kobold.Core.Abstractions.Rendering
+  name: Kobold.Core.Abstractions.Rendering
+  type: Namespace
+  items:
+  - uid: Kobold.Core.Abstractions.Rendering.IRenderer
+    name: IRenderer
+    type: Interface
+  - uid: Kobold.Core.Abstractions.Rendering.ITexture
+    name: ITexture
+    type: Interface
+- uid: Kobold.Core.Assets
+  name: Kobold.Core.Assets
+  type: Namespace
+  items:
+  - uid: Kobold.Core.Assets.AnimationData
+    name: AnimationData
+    type: Class
+  - uid: Kobold.Core.Assets.RectangleData
+    name: RectangleData
+    type: Class
+  - uid: Kobold.Core.Assets.SpriteSheet
+    name: SpriteSheet
+    type: Class
+  - uid: Kobold.Core.Assets.SpriteSheetConfig
+    name: SpriteSheetConfig
+    type: Class
+  - uid: Kobold.Core.Assets.Vector2Data
+    name: Vector2Data
+    type: Class
+- uid: Kobold.Core.Components
+  name: Kobold.Core.Components
+  type: Namespace
+  items:
+  - uid: Kobold.Core.Components.Acceleration
+    name: Acceleration
+    type: Struct
+  - uid: Kobold.Core.Components.AngularAcceleration
+    name: AngularAcceleration
+    type: Struct
+  - uid: Kobold.Core.Components.AngularVelocity
+    name: AngularVelocity
+    type: Struct
+  - uid: Kobold.Core.Components.Animation
+    name: Animation
+    type: Struct
+  - uid: Kobold.Core.Components.AnimationClip
+    name: AnimationClip
+    type: Class
+  - uid: Kobold.Core.Components.BoxCollider
+    name: BoxCollider
+    type: Struct
+  - uid: Kobold.Core.Components.Camera
+    name: Camera
+    type: Struct
+  - uid: Kobold.Core.Components.CoreGameState
+    name: CoreGameState
+    type: Struct
+  - uid: Kobold.Core.Components.Debug
+    name: Debug
+    type: Struct
+  - uid: Kobold.Core.Components.Destructible
+    name: Destructible
+    type: Struct
+  - uid: Kobold.Core.Components.DestructionReason
+    name: DestructionReason
+    type: Enum
+  - uid: Kobold.Core.Components.Drag
+    name: Drag
+    type: Struct
+  - uid: Kobold.Core.Components.Dynamic
+    name: Dynamic
+    type: Struct
+  - uid: Kobold.Core.Components.Enemy
+    name: Enemy
+    type: Struct
+  - uid: Kobold.Core.Components.GameState`1
+    name: GameState<TState>
+    type: Struct
+  - uid: Kobold.Core.Components.Gravity
+    name: Gravity
+    type: Struct
+  - uid: Kobold.Core.Components.IRenderable
+    name: IRenderable
+    type: Interface
+  - uid: Kobold.Core.Components.MaxSpeed
+    name: MaxSpeed
+    type: Struct
+  - uid: Kobold.Core.Components.PendingDestruction
+    name: PendingDestruction
+    type: Struct
+  - uid: Kobold.Core.Components.Physics
+    name: Physics
+    type: Struct
+  - uid: Kobold.Core.Components.Player
+    name: Player
+    type: Struct
+  - uid: Kobold.Core.Components.PlayerControlled
+    name: PlayerControlled
+    type: Struct
+  - uid: Kobold.Core.Components.PowerUp
+    name: PowerUp
+    type: Struct
+  - uid: Kobold.Core.Components.Projectile
+    name: Projectile
+    type: Struct
+  - uid: Kobold.Core.Components.RectangleRenderer
+    name: RectangleRenderer
+    type: Struct
+  - uid: Kobold.Core.Components.RenderLayers
+    name: RenderLayers
+    type: Class
+  - uid: Kobold.Core.Components.ScreenBounds
+    name: ScreenBounds
+    type: Struct
+  - uid: Kobold.Core.Components.SpriteRenderer
+    name: SpriteRenderer
+    type: Struct
+  - uid: Kobold.Core.Components.StandardGameState
+    name: StandardGameState
+    type: Enum
+  - uid: Kobold.Core.Components.Static
+    name: Static
+    type: Struct
+  - uid: Kobold.Core.Components.TextRenderer
+    name: TextRenderer
+    type: Struct
+  - uid: Kobold.Core.Components.Thruster
+    name: Thruster
+    type: Struct
+  - uid: Kobold.Core.Components.Transform
+    name: Transform
+    type: Struct
+  - uid: Kobold.Core.Components.TriangleRenderer
+    name: TriangleRenderer
+    type: Struct
+  - uid: Kobold.Core.Components.Trigger
+    name: Trigger
+    type: Struct
+  - uid: Kobold.Core.Components.UI
+    name: UI
+    type: Struct
+  - uid: Kobold.Core.Components.Velocity
+    name: Velocity
+    type: Struct
+- uid: Kobold.Core.Components.Gameplay
+  name: Kobold.Core.Components.Gameplay
+  type: Namespace
+  items:
+  - uid: Kobold.Core.Components.Gameplay.CustomBoundaryBehavior
+    name: CustomBoundaryBehavior
+    type: Struct
+  - uid: Kobold.Core.Components.Gameplay.Lifetime
+    name: Lifetime
+    type: Struct
+- uid: Kobold.Core.Configuration
+  name: Kobold.Core.Configuration
+  type: Namespace
+  items:
+  - uid: Kobold.Core.Configuration.GameConfig
+    name: GameConfig
+    type: Class
+- uid: Kobold.Core.Events
+  name: Kobold.Core.Events
+  type: Namespace
+  items:
+  - uid: Kobold.Core.Events.BaseEvent
+    name: BaseEvent
+    type: Class
+  - uid: Kobold.Core.Events.EventBus
+    name: EventBus
+    type: Class
+  - uid: Kobold.Core.Events.GameRestartEvent
+    name: GameRestartEvent
+    type: Class
+  - uid: Kobold.Core.Events.GameStateChangedEvent`1
+    name: GameStateChangedEvent<TGameState>
+    type: Class
+  - uid: Kobold.Core.Events.IEvent
+    name: IEvent
+    type: Interface
+  - uid: Kobold.Core.Events.IEventHandler`1
+    name: IEventHandler<T>
+    type: Interface
+- uid: Kobold.Core.Factories
+  name: Kobold.Core.Factories
+  type: Namespace
+  items:
+  - uid: Kobold.Core.Factories.EntityFactory
+    name: EntityFactory
+    type: Class
+- uid: Kobold.Core.Systems
+  name: Kobold.Core.Systems
+  type: Namespace
+  items:
+  - uid: Kobold.Core.Systems.AnimationSystem
+    name: AnimationSystem
+    type: Class
+  - uid: Kobold.Core.Systems.BoundaryBehavior
+    name: BoundaryBehavior
+    type: Enum
+  - uid: Kobold.Core.Systems.BoundaryCollisionEvent
+    name: BoundaryCollisionEvent
+    type: Class
+  - uid: Kobold.Core.Systems.BoundaryConfig
+    name: BoundaryConfig
+    type: Class
+  - uid: Kobold.Core.Systems.BoundarySystem
+    name: BoundarySystem
+    type: Class
+  - uid: Kobold.Core.Systems.BoundaryType
+    name: BoundaryType
+    type: Enum
+  - uid: Kobold.Core.Systems.CollisionConfig
+    name: CollisionConfig
+    type: Class
+  - uid: Kobold.Core.Systems.CollisionEvent
+    name: CollisionEvent
+    type: Class
+  - uid: Kobold.Core.Systems.CollisionLayer
+    name: CollisionLayer
+    type: Enum
+  - uid: Kobold.Core.Systems.CollisionLayerComponent
+    name: CollisionLayerComponent
+    type: Struct
+  - uid: Kobold.Core.Systems.CollisionMatrix
+    name: CollisionMatrix
+    type: Class
+  - uid: Kobold.Core.Systems.CollisionSystem
+    name: CollisionSystem
+    type: Class
+  - uid: Kobold.Core.Systems.DestructionStats
+    name: DestructionStats
+    type: Struct
+  - uid: Kobold.Core.Systems.DestructionSystem
+    name: DestructionSystem
+    type: Class
+  - uid: Kobold.Core.Systems.EntityDestroyedEvent
+    name: EntityDestroyedEvent
+    type: Class
+  - uid: Kobold.Core.Systems.GameStateSystem`1
+    name: GameStateSystem<TGameState>
+    type: Class
+  - uid: Kobold.Core.Systems.InputSystem
+    name: InputSystem
+    type: Class
+  - uid: Kobold.Core.Systems.InputTransition
+    name: InputTransition
+    type: Class
+  - uid: Kobold.Core.Systems.PhysicsConfig
+    name: PhysicsConfig
+    type: Class
+  - uid: Kobold.Core.Systems.PhysicsSystem
+    name: PhysicsSystem
+    type: Class
+  - uid: Kobold.Core.Systems.RenderSystem
+    name: RenderSystem
+    type: Class
+  - uid: Kobold.Core.Systems.StateConfig
+    name: StateConfig
+    type: Class
+  - uid: Kobold.Core.Systems.SystemInfo
+    name: SystemInfo
+    type: Class
+  - uid: Kobold.Core.Systems.SystemManager
+    name: SystemManager
+    type: Class
+  - uid: Kobold.Core.Systems.SystemManagerInfo
+    name: SystemManagerInfo
+    type: Class
+  - uid: Kobold.Core.Systems.SystemUpdateOrder
+    name: SystemUpdateOrder
+    type: Class
+- uid: Kobold.Extensions.Procedural
+  name: Kobold.Extensions.Procedural
+  type: Namespace
+  items:
+  - uid: Kobold.Extensions.Procedural.CellularAutomataConfig
+    name: CellularAutomataConfig
+    type: Class
+  - uid: Kobold.Extensions.Procedural.CellularAutomataGenerator
+    name: CellularAutomataGenerator
+    type: Class
+- uid: Kobold.Extensions.Tilemaps
+  name: Kobold.Extensions.Tilemaps
+  type: Namespace
+  items:
+  - uid: Kobold.Extensions.Tilemaps.TileCollisionLayer
+    name: TileCollisionLayer
+    type: Enum
+  - uid: Kobold.Extensions.Tilemaps.TileDamageEvent
+    name: TileDamageEvent
+    type: Class
+  - uid: Kobold.Extensions.Tilemaps.TileMap
+    name: TileMap
+    type: Class
+  - uid: Kobold.Extensions.Tilemaps.TileProperties
+    name: TileProperties
+    type: Struct
+  - uid: Kobold.Extensions.Tilemaps.TileSet
+    name: TileSet
+    type: Class
+  - uid: Kobold.Extensions.Tilemaps.TileTriggerEvent
+    name: TileTriggerEvent
+    type: Class
+  - uid: Kobold.Extensions.Tilemaps.TilemapCollisionConfig
+    name: TilemapCollisionConfig
+    type: Class
+  - uid: Kobold.Extensions.Tilemaps.TilemapCollisionSystem
+    name: TilemapCollisionSystem
+    type: Class
+  - uid: Kobold.Extensions.Tilemaps.TilemapComponent
+    name: TilemapComponent
+    type: Struct
+  - uid: Kobold.Extensions.Tilemaps.TilemapSystem
+    name: TilemapSystem
+    type: Class
+- uid: Kobold.Monogame
+  name: Kobold.Monogame
+  type: Namespace
+  items:
+  - uid: Kobold.Monogame.MonoGameFileContentLoader
+    name: MonoGameFileContentLoader
+    type: Class
+  - uid: Kobold.Monogame.MonoGameHost
+    name: MonoGameHost
+    type: Class
+  - uid: Kobold.Monogame.MonoGameInputManager
+    name: MonoGameInputManager
+    type: Class
+  - uid: Kobold.Monogame.MonoGameRenderer
+    name: MonoGameRenderer
+    type: Class
+  - uid: Kobold.Monogame.MonoGameTexture
+    name: MonoGameTexture
+    type: Class
+  - uid: Kobold.Monogame.PixelFont
+    name: PixelFont
+    type: Class
+- uid: SpriteSheetEditor
+  name: SpriteSheetEditor
+  type: Namespace
+  items:
+  - uid: SpriteSheetEditor.SpriteSheetEditorGame
+    name: SpriteSheetEditorGame
+    type: Class
+memberLayout: SamePage

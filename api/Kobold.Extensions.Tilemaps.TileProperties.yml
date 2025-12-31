@@ -1,0 +1,986 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Extensions.Tilemaps.TileProperties
+  commentId: T:Kobold.Extensions.Tilemaps.TileProperties
+  id: TileProperties
+  parent: Kobold.Extensions.Tilemaps
+  children:
+  - Kobold.Extensions.Tilemaps.TileProperties.#ctor
+  - Kobold.Extensions.Tilemaps.TileProperties.AnimationFrames
+  - Kobold.Extensions.Tilemaps.TileProperties.AnimationSpeed
+  - Kobold.Extensions.Tilemaps.TileProperties.CollisionLayer
+  - Kobold.Extensions.Tilemaps.TileProperties.CustomProperties
+  - Kobold.Extensions.Tilemaps.TileProperties.Damage
+  - Kobold.Extensions.Tilemaps.TileProperties.Friction
+  - Kobold.Extensions.Tilemaps.TileProperties.IsAnimated
+  - Kobold.Extensions.Tilemaps.TileProperties.IsSolid
+  - Kobold.Extensions.Tilemaps.TileProperties.Platform
+  - Kobold.Extensions.Tilemaps.TileProperties.Solid
+  - Kobold.Extensions.Tilemaps.TileProperties.Type
+  - Kobold.Extensions.Tilemaps.TileProperties.WithDamage(System.Int32,System.String)
+  langs:
+  - csharp
+  - vb
+  name: TileProperties
+  nameWithType: TileProperties
+  fullName: Kobold.Extensions.Tilemaps.TileProperties
+  type: Struct
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TileProperties
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 170
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Properties associated with a tile.
+  example: []
+  syntax:
+    content: public struct TileProperties
+    content.vb: Public Structure TileProperties
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Kobold.Extensions.Tilemaps.TileProperties.IsSolid
+  commentId: P:Kobold.Extensions.Tilemaps.TileProperties.IsSolid
+  id: IsSolid
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: IsSolid
+  nameWithType: TileProperties.IsSolid
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.IsSolid
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IsSolid
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 175
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Whether this tile blocks movement (collision).
+  example: []
+  syntax:
+    content: public bool IsSolid { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsSolid As Boolean
+  overload: Kobold.Extensions.Tilemaps.TileProperties.IsSolid*
+- uid: Kobold.Extensions.Tilemaps.TileProperties.CollisionLayer
+  commentId: P:Kobold.Extensions.Tilemaps.TileProperties.CollisionLayer
+  id: CollisionLayer
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: CollisionLayer
+  nameWithType: TileProperties.CollisionLayer
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.CollisionLayer
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CollisionLayer
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 180
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Collision layer for this tile.
+  example: []
+  syntax:
+    content: public TileCollisionLayer CollisionLayer { readonly get; set; }
+    parameters: []
+    return:
+      type: Kobold.Extensions.Tilemaps.TileCollisionLayer
+    content.vb: Public Property CollisionLayer As TileCollisionLayer
+  overload: Kobold.Extensions.Tilemaps.TileProperties.CollisionLayer*
+- uid: Kobold.Extensions.Tilemaps.TileProperties.Friction
+  commentId: P:Kobold.Extensions.Tilemaps.TileProperties.Friction
+  id: Friction
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: Friction
+  nameWithType: TileProperties.Friction
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.Friction
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Friction
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 185
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Friction coefficient (0 = no friction, 1 = full friction).
+  example: []
+  syntax:
+    content: public float Friction { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Friction As Single
+  overload: Kobold.Extensions.Tilemaps.TileProperties.Friction*
+- uid: Kobold.Extensions.Tilemaps.TileProperties.Damage
+  commentId: P:Kobold.Extensions.Tilemaps.TileProperties.Damage
+  id: Damage
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: Damage
+  nameWithType: TileProperties.Damage
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.Damage
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Damage
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 190
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Damage dealt to entities that touch this tile.
+  example: []
+  syntax:
+    content: public int Damage { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Damage As Integer
+  overload: Kobold.Extensions.Tilemaps.TileProperties.Damage*
+- uid: Kobold.Extensions.Tilemaps.TileProperties.Type
+  commentId: P:Kobold.Extensions.Tilemaps.TileProperties.Type
+  id: Type
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: TileProperties.Type
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.Type
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Type
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 195
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Type identifier for special tile behaviors (e.g., "water", "lava", "ice").
+  example: []
+  syntax:
+    content: public string? Type { readonly get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Type As String
+  overload: Kobold.Extensions.Tilemaps.TileProperties.Type*
+- uid: Kobold.Extensions.Tilemaps.TileProperties.IsAnimated
+  commentId: P:Kobold.Extensions.Tilemaps.TileProperties.IsAnimated
+  id: IsAnimated
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: IsAnimated
+  nameWithType: TileProperties.IsAnimated
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.IsAnimated
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IsAnimated
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 200
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Whether this tile is animated.
+  example: []
+  syntax:
+    content: public bool IsAnimated { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property IsAnimated As Boolean
+  overload: Kobold.Extensions.Tilemaps.TileProperties.IsAnimated*
+- uid: Kobold.Extensions.Tilemaps.TileProperties.AnimationFrames
+  commentId: P:Kobold.Extensions.Tilemaps.TileProperties.AnimationFrames
+  id: AnimationFrames
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: AnimationFrames
+  nameWithType: TileProperties.AnimationFrames
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.AnimationFrames
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: AnimationFrames
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 205
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Animation frame IDs if this tile is animated.
+  example: []
+  syntax:
+    content: public int[]? AnimationFrames { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Int32[]
+    content.vb: Public Property AnimationFrames As Integer()
+  overload: Kobold.Extensions.Tilemaps.TileProperties.AnimationFrames*
+- uid: Kobold.Extensions.Tilemaps.TileProperties.AnimationSpeed
+  commentId: P:Kobold.Extensions.Tilemaps.TileProperties.AnimationSpeed
+  id: AnimationSpeed
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: AnimationSpeed
+  nameWithType: TileProperties.AnimationSpeed
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.AnimationSpeed
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: AnimationSpeed
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 210
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Animation speed in frames per second.
+  example: []
+  syntax:
+    content: public float AnimationSpeed { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property AnimationSpeed As Single
+  overload: Kobold.Extensions.Tilemaps.TileProperties.AnimationSpeed*
+- uid: Kobold.Extensions.Tilemaps.TileProperties.CustomProperties
+  commentId: P:Kobold.Extensions.Tilemaps.TileProperties.CustomProperties
+  id: CustomProperties
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: CustomProperties
+  nameWithType: TileProperties.CustomProperties
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.CustomProperties
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CustomProperties
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 215
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Custom properties for game-specific data.
+  example: []
+  syntax:
+    content: public Dictionary<string, object>? CustomProperties { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.Object}
+    content.vb: Public Property CustomProperties As Dictionary(Of String, Object)
+  overload: Kobold.Extensions.Tilemaps.TileProperties.CustomProperties*
+- uid: Kobold.Extensions.Tilemaps.TileProperties.#ctor
+  commentId: M:Kobold.Extensions.Tilemaps.TileProperties.#ctor
+  id: '#ctor'
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: TileProperties()
+  nameWithType: TileProperties.TileProperties()
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.TileProperties()
+  type: Constructor
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 220
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Creates default tile properties (non-solid, no special behavior).
+  example: []
+  syntax:
+    content: public TileProperties()
+    content.vb: Public Sub New()
+  overload: Kobold.Extensions.Tilemaps.TileProperties.#ctor*
+  nameWithType.vb: TileProperties.New()
+  fullName.vb: Kobold.Extensions.Tilemaps.TileProperties.New()
+  name.vb: New()
+- uid: Kobold.Extensions.Tilemaps.TileProperties.Solid
+  commentId: M:Kobold.Extensions.Tilemaps.TileProperties.Solid
+  id: Solid
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: Solid()
+  nameWithType: TileProperties.Solid()
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.Solid()
+  type: Method
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Solid
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 236
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Creates a solid tile with default properties.
+  example: []
+  syntax:
+    content: public static TileProperties Solid()
+    return:
+      type: Kobold.Extensions.Tilemaps.TileProperties
+    content.vb: Public Shared Function Solid() As TileProperties
+  overload: Kobold.Extensions.Tilemaps.TileProperties.Solid*
+- uid: Kobold.Extensions.Tilemaps.TileProperties.Platform
+  commentId: M:Kobold.Extensions.Tilemaps.TileProperties.Platform
+  id: Platform
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: Platform()
+  nameWithType: TileProperties.Platform()
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.Platform()
+  type: Method
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Platform
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 248
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Creates a platform tile (one-way collision from above).
+  example: []
+  syntax:
+    content: public static TileProperties Platform()
+    return:
+      type: Kobold.Extensions.Tilemaps.TileProperties
+    content.vb: Public Shared Function Platform() As TileProperties
+  overload: Kobold.Extensions.Tilemaps.TileProperties.Platform*
+- uid: Kobold.Extensions.Tilemaps.TileProperties.WithDamage(System.Int32,System.String)
+  commentId: M:Kobold.Extensions.Tilemaps.TileProperties.WithDamage(System.Int32,System.String)
+  id: WithDamage(System.Int32,System.String)
+  parent: Kobold.Extensions.Tilemaps.TileProperties
+  langs:
+  - csharp
+  - vb
+  name: WithDamage(int, string)
+  nameWithType: TileProperties.WithDamage(int, string)
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.WithDamage(int, string)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TileSet.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: WithDamage
+    path: Kobold.Extensions/Tilemaps/TileSet.cs
+    startLine: 260
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Creates a damage tile.
+  example: []
+  syntax:
+    content: public static TileProperties WithDamage(int damage, string type = "damage")
+    parameters:
+    - id: damage
+      type: System.Int32
+    - id: type
+      type: System.String
+    return:
+      type: Kobold.Extensions.Tilemaps.TileProperties
+    content.vb: Public Shared Function WithDamage(damage As Integer, type As String = "damage") As TileProperties
+  overload: Kobold.Extensions.Tilemaps.TileProperties.WithDamage*
+  nameWithType.vb: TileProperties.WithDamage(Integer, String)
+  fullName.vb: Kobold.Extensions.Tilemaps.TileProperties.WithDamage(Integer, String)
+  name.vb: WithDamage(Integer, String)
+references:
+- uid: Kobold.Extensions.Tilemaps
+  commentId: N:Kobold.Extensions.Tilemaps
+  href: Kobold.html
+  name: Kobold.Extensions.Tilemaps
+  nameWithType: Kobold.Extensions.Tilemaps
+  fullName: Kobold.Extensions.Tilemaps
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Tilemaps
+    name: Tilemaps
+    href: Kobold.Extensions.Tilemaps.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Tilemaps
+    name: Tilemaps
+    href: Kobold.Extensions.Tilemaps.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Extensions.Tilemaps.TileProperties.IsSolid*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.IsSolid
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties_IsSolid
+  name: IsSolid
+  nameWithType: TileProperties.IsSolid
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.IsSolid
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Kobold.Extensions.Tilemaps.TileProperties.CollisionLayer*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.CollisionLayer
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties_CollisionLayer
+  name: CollisionLayer
+  nameWithType: TileProperties.CollisionLayer
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.CollisionLayer
+- uid: Kobold.Extensions.Tilemaps.TileCollisionLayer
+  commentId: T:Kobold.Extensions.Tilemaps.TileCollisionLayer
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TileCollisionLayer.html
+  name: TileCollisionLayer
+  nameWithType: TileCollisionLayer
+  fullName: Kobold.Extensions.Tilemaps.TileCollisionLayer
+- uid: Kobold.Extensions.Tilemaps.TileProperties.Friction*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.Friction
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties_Friction
+  name: Friction
+  nameWithType: TileProperties.Friction
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.Friction
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Extensions.Tilemaps.TileProperties.Damage*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.Damage
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties_Damage
+  name: Damage
+  nameWithType: TileProperties.Damage
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.Damage
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Kobold.Extensions.Tilemaps.TileProperties.Type*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.Type
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties_Type
+  name: Type
+  nameWithType: TileProperties.Type
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.Type
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Kobold.Extensions.Tilemaps.TileProperties.IsAnimated*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.IsAnimated
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties_IsAnimated
+  name: IsAnimated
+  nameWithType: TileProperties.IsAnimated
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.IsAnimated
+- uid: Kobold.Extensions.Tilemaps.TileProperties.AnimationFrames*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.AnimationFrames
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties_AnimationFrames
+  name: AnimationFrames
+  nameWithType: TileProperties.AnimationFrames
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.AnimationFrames
+- uid: System.Int32[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: )
+- uid: Kobold.Extensions.Tilemaps.TileProperties.AnimationSpeed*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.AnimationSpeed
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties_AnimationSpeed
+  name: AnimationSpeed
+  nameWithType: TileProperties.AnimationSpeed
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.AnimationSpeed
+- uid: Kobold.Extensions.Tilemaps.TileProperties.CustomProperties*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.CustomProperties
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties_CustomProperties
+  name: CustomProperties
+  nameWithType: TileProperties.CustomProperties
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.CustomProperties
+- uid: System.Collections.Generic.Dictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, object>
+  nameWithType: Dictionary<string, object>
+  fullName: System.Collections.Generic.Dictionary<string, object>
+  nameWithType.vb: Dictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, Object)
+  name.vb: Dictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Kobold.Extensions.Tilemaps.TileProperties.#ctor*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.#ctor
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties__ctor
+  name: TileProperties
+  nameWithType: TileProperties.TileProperties
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.TileProperties
+  nameWithType.vb: TileProperties.New
+  fullName.vb: Kobold.Extensions.Tilemaps.TileProperties.New
+  name.vb: New
+- uid: Kobold.Extensions.Tilemaps.TileProperties.Solid*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.Solid
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties_Solid
+  name: Solid
+  nameWithType: TileProperties.Solid
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.Solid
+- uid: Kobold.Extensions.Tilemaps.TileProperties
+  commentId: T:Kobold.Extensions.Tilemaps.TileProperties
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TileProperties.html
+  name: TileProperties
+  nameWithType: TileProperties
+  fullName: Kobold.Extensions.Tilemaps.TileProperties
+- uid: Kobold.Extensions.Tilemaps.TileProperties.Platform*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.Platform
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties_Platform
+  name: Platform
+  nameWithType: TileProperties.Platform
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.Platform
+- uid: Kobold.Extensions.Tilemaps.TileProperties.WithDamage*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TileProperties.WithDamage
+  href: Kobold.Extensions.Tilemaps.TileProperties.html#Kobold_Extensions_Tilemaps_TileProperties_WithDamage_System_Int32_System_String_
+  name: WithDamage
+  nameWithType: TileProperties.WithDamage
+  fullName: Kobold.Extensions.Tilemaps.TileProperties.WithDamage

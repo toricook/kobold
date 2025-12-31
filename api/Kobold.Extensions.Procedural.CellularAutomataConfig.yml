@@ -1,0 +1,1066 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig
+  commentId: T:Kobold.Extensions.Procedural.CellularAutomataConfig
+  id: CellularAutomataConfig
+  parent: Kobold.Extensions.Procedural
+  children:
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.BirthThreshold
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.Cave
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.ConnectCaves
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.DeathThreshold
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.EdgeIsWall
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.FloorTileId
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.Height
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.InitialWallProbability
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.Iterations
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.Maze
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.MinCaveSize
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.OpenArea
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.Seed
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.TileHeight
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.TileWidth
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.WallTileId
+  - Kobold.Extensions.Procedural.CellularAutomataConfig.Width
+  langs:
+  - csharp
+  - vb
+  name: CellularAutomataConfig
+  nameWithType: CellularAutomataConfig
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig
+  type: Class
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CellularAutomataConfig
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 5
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: Configuration options for cellular automata generation.
+  example: []
+  syntax:
+    content: public class CellularAutomataConfig
+    content.vb: Public Class CellularAutomataConfig
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.Width
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.Width
+  id: Width
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: CellularAutomataConfig.Width
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.Width
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Width
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 10
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: Width of the map in tiles.
+  example: []
+  syntax:
+    content: public int Width { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Width As Integer
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.Width*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.Height
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.Height
+  id: Height
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: CellularAutomataConfig.Height
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.Height
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Height
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 15
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: Height of the map in tiles.
+  example: []
+  syntax:
+    content: public int Height { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Height As Integer
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.Height*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.Iterations
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.Iterations
+  id: Iterations
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: Iterations
+  nameWithType: CellularAutomataConfig.Iterations
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.Iterations
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Iterations
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 21
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: >-
+    Number of smoothing iterations to perform.
+
+    Higher values create smoother, more organic shapes.
+  example: []
+  syntax:
+    content: public int Iterations { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Iterations As Integer
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.Iterations*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.InitialWallProbability
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.InitialWallProbability
+  id: InitialWallProbability
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: InitialWallProbability
+  nameWithType: CellularAutomataConfig.InitialWallProbability
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.InitialWallProbability
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: InitialWallProbability
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 27
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: >-
+    Initial chance (0.0 to 1.0) that a cell is a wall.
+
+    Higher values create more walls/obstacles.
+  example: []
+  syntax:
+    content: public float InitialWallProbability { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property InitialWallProbability As Single
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.InitialWallProbability*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.BirthThreshold
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.BirthThreshold
+  id: BirthThreshold
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: BirthThreshold
+  nameWithType: CellularAutomataConfig.BirthThreshold
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.BirthThreshold
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: BirthThreshold
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 33
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: >-
+    Minimum number of neighboring walls for a cell to become/remain a wall.
+
+    Used during smoothing iterations.
+  example: []
+  syntax:
+    content: public int BirthThreshold { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property BirthThreshold As Integer
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.BirthThreshold*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.DeathThreshold
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.DeathThreshold
+  id: DeathThreshold
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: DeathThreshold
+  nameWithType: CellularAutomataConfig.DeathThreshold
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.DeathThreshold
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DeathThreshold
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 39
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: >-
+    Maximum number of neighboring walls for a cell to remain alive.
+
+    If neighbors exceed this, the cell dies (becomes floor).
+  example: []
+  syntax:
+    content: public int DeathThreshold { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property DeathThreshold As Integer
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.DeathThreshold*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.Seed
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.Seed
+  id: Seed
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: Seed
+  nameWithType: CellularAutomataConfig.Seed
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.Seed
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Seed
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 45
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: >-
+    Random seed for deterministic generation.
+
+    If null, a random seed is used.
+  example: []
+  syntax:
+    content: public int? Seed { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int32}
+    content.vb: Public Property Seed As Integer?
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.Seed*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.WallTileId
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.WallTileId
+  id: WallTileId
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: WallTileId
+  nameWithType: CellularAutomataConfig.WallTileId
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.WallTileId
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: WallTileId
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 50
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: Tile ID to use for wall tiles.
+  example: []
+  syntax:
+    content: public int WallTileId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property WallTileId As Integer
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.WallTileId*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.FloorTileId
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.FloorTileId
+  id: FloorTileId
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: FloorTileId
+  nameWithType: CellularAutomataConfig.FloorTileId
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.FloorTileId
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: FloorTileId
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 55
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: Tile ID to use for floor/empty tiles.
+  example: []
+  syntax:
+    content: public int FloorTileId { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property FloorTileId As Integer
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.FloorTileId*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.TileWidth
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.TileWidth
+  id: TileWidth
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: TileWidth
+  nameWithType: CellularAutomataConfig.TileWidth
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.TileWidth
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TileWidth
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 60
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: Width of each tile in pixels (for TileMap creation).
+  example: []
+  syntax:
+    content: public int TileWidth { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TileWidth As Integer
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.TileWidth*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.TileHeight
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.TileHeight
+  id: TileHeight
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: TileHeight
+  nameWithType: CellularAutomataConfig.TileHeight
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.TileHeight
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TileHeight
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 65
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: Height of each tile in pixels (for TileMap creation).
+  example: []
+  syntax:
+    content: public int TileHeight { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property TileHeight As Integer
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.TileHeight*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.EdgeIsWall
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.EdgeIsWall
+  id: EdgeIsWall
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: EdgeIsWall
+  nameWithType: CellularAutomataConfig.EdgeIsWall
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.EdgeIsWall
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: EdgeIsWall
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 71
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: >-
+    Whether to treat edges of the map as walls.
+
+    When true, out-of-bounds cells count as walls for neighbor calculations.
+  example: []
+  syntax:
+    content: public bool EdgeIsWall { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EdgeIsWall As Boolean
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.EdgeIsWall*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.ConnectCaves
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.ConnectCaves
+  id: ConnectCaves
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: ConnectCaves
+  nameWithType: CellularAutomataConfig.ConnectCaves
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.ConnectCaves
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ConnectCaves
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 77
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: >-
+    Whether to connect all cave regions with corridors.
+
+    When true, uses flood fill + MST to ensure all caves are reachable.
+  example: []
+  syntax:
+    content: public bool ConnectCaves { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ConnectCaves As Boolean
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.ConnectCaves*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.MinCaveSize
+  commentId: P:Kobold.Extensions.Procedural.CellularAutomataConfig.MinCaveSize
+  id: MinCaveSize
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: MinCaveSize
+  nameWithType: CellularAutomataConfig.MinCaveSize
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.MinCaveSize
+  type: Property
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: MinCaveSize
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 83
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: >-
+    Minimum size (in tiles) for a cave region to be kept.
+
+    Smaller regions are filled in as walls.
+  example: []
+  syntax:
+    content: public int MinCaveSize { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MinCaveSize As Integer
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.MinCaveSize*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.Cave
+  commentId: M:Kobold.Extensions.Procedural.CellularAutomataConfig.Cave
+  id: Cave
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: Cave()
+  nameWithType: CellularAutomataConfig.Cave()
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.Cave()
+  type: Method
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Cave
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 88
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: Creates a default configuration for cave-like generation.
+  example: []
+  syntax:
+    content: public static CellularAutomataConfig Cave()
+    return:
+      type: Kobold.Extensions.Procedural.CellularAutomataConfig
+    content.vb: Public Shared Function Cave() As CellularAutomataConfig
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.Cave*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.OpenArea
+  commentId: M:Kobold.Extensions.Procedural.CellularAutomataConfig.OpenArea
+  id: OpenArea
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: OpenArea()
+  nameWithType: CellularAutomataConfig.OpenArea()
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.OpenArea()
+  type: Method
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: OpenArea
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 105
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: Creates a configuration for more open areas with scattered obstacles.
+  example: []
+  syntax:
+    content: public static CellularAutomataConfig OpenArea()
+    return:
+      type: Kobold.Extensions.Procedural.CellularAutomataConfig
+    content.vb: Public Shared Function OpenArea() As CellularAutomataConfig
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.OpenArea*
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.Maze
+  commentId: M:Kobold.Extensions.Procedural.CellularAutomataConfig.Maze
+  id: Maze
+  parent: Kobold.Extensions.Procedural.CellularAutomataConfig
+  langs:
+  - csharp
+  - vb
+  name: Maze()
+  nameWithType: CellularAutomataConfig.Maze()
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.Maze()
+  type: Method
+  source:
+    remote:
+      path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Maze
+    path: Kobold.Extensions/Procedural/CellularAutomataConfig.cs
+    startLine: 122
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Procedural
+  summary: Creates a configuration for dense maze-like structures.
+  example: []
+  syntax:
+    content: public static CellularAutomataConfig Maze()
+    return:
+      type: Kobold.Extensions.Procedural.CellularAutomataConfig
+    content.vb: Public Shared Function Maze() As CellularAutomataConfig
+  overload: Kobold.Extensions.Procedural.CellularAutomataConfig.Maze*
+references:
+- uid: Kobold.Extensions.Procedural
+  commentId: N:Kobold.Extensions.Procedural
+  href: Kobold.html
+  name: Kobold.Extensions.Procedural
+  nameWithType: Kobold.Extensions.Procedural
+  fullName: Kobold.Extensions.Procedural
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Procedural
+    name: Procedural
+    href: Kobold.Extensions.Procedural.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Procedural
+    name: Procedural
+    href: Kobold.Extensions.Procedural.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.Width*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.Width
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_Width
+  name: Width
+  nameWithType: CellularAutomataConfig.Width
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.Width
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.Height*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.Height
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_Height
+  name: Height
+  nameWithType: CellularAutomataConfig.Height
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.Height
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.Iterations*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.Iterations
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_Iterations
+  name: Iterations
+  nameWithType: CellularAutomataConfig.Iterations
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.Iterations
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.InitialWallProbability*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.InitialWallProbability
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_InitialWallProbability
+  name: InitialWallProbability
+  nameWithType: CellularAutomataConfig.InitialWallProbability
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.InitialWallProbability
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.BirthThreshold*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.BirthThreshold
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_BirthThreshold
+  name: BirthThreshold
+  nameWithType: CellularAutomataConfig.BirthThreshold
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.BirthThreshold
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.DeathThreshold*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.DeathThreshold
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_DeathThreshold
+  name: DeathThreshold
+  nameWithType: CellularAutomataConfig.DeathThreshold
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.DeathThreshold
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.Seed*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.Seed
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_Seed
+  name: Seed
+  nameWithType: CellularAutomataConfig.Seed
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.Seed
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int?
+  nameWithType: int?
+  fullName: int?
+  nameWithType.vb: Integer?
+  fullName.vb: Integer?
+  name.vb: Integer?
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.WallTileId*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.WallTileId
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_WallTileId
+  name: WallTileId
+  nameWithType: CellularAutomataConfig.WallTileId
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.WallTileId
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.FloorTileId*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.FloorTileId
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_FloorTileId
+  name: FloorTileId
+  nameWithType: CellularAutomataConfig.FloorTileId
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.FloorTileId
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.TileWidth*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.TileWidth
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_TileWidth
+  name: TileWidth
+  nameWithType: CellularAutomataConfig.TileWidth
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.TileWidth
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.TileHeight*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.TileHeight
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_TileHeight
+  name: TileHeight
+  nameWithType: CellularAutomataConfig.TileHeight
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.TileHeight
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.EdgeIsWall*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.EdgeIsWall
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_EdgeIsWall
+  name: EdgeIsWall
+  nameWithType: CellularAutomataConfig.EdgeIsWall
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.EdgeIsWall
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.ConnectCaves*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.ConnectCaves
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_ConnectCaves
+  name: ConnectCaves
+  nameWithType: CellularAutomataConfig.ConnectCaves
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.ConnectCaves
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.MinCaveSize*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.MinCaveSize
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_MinCaveSize
+  name: MinCaveSize
+  nameWithType: CellularAutomataConfig.MinCaveSize
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.MinCaveSize
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.Cave*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.Cave
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_Cave
+  name: Cave
+  nameWithType: CellularAutomataConfig.Cave
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.Cave
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig
+  commentId: T:Kobold.Extensions.Procedural.CellularAutomataConfig
+  parent: Kobold.Extensions.Procedural
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html
+  name: CellularAutomataConfig
+  nameWithType: CellularAutomataConfig
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.OpenArea*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.OpenArea
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_OpenArea
+  name: OpenArea
+  nameWithType: CellularAutomataConfig.OpenArea
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.OpenArea
+- uid: Kobold.Extensions.Procedural.CellularAutomataConfig.Maze*
+  commentId: Overload:Kobold.Extensions.Procedural.CellularAutomataConfig.Maze
+  href: Kobold.Extensions.Procedural.CellularAutomataConfig.html#Kobold_Extensions_Procedural_CellularAutomataConfig_Maze
+  name: Maze
+  nameWithType: CellularAutomataConfig.Maze
+  fullName: Kobold.Extensions.Procedural.CellularAutomataConfig.Maze

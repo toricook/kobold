@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Abstractions
+  commentId: N:Kobold.Core.Abstractions
+  id: Kobold.Core.Abstractions
+  children:
+  - Kobold.Core.Abstractions.IRenderSystem
+  - Kobold.Core.Abstractions.ISystem
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Core.Abstractions
+  nameWithType: Kobold.Core.Abstractions
+  fullName: Kobold.Core.Abstractions
+  type: Namespace
+  assemblies:
+  - Kobold.Core
+references:
+- uid: Kobold.Core.Abstractions.IRenderSystem
+  commentId: T:Kobold.Core.Abstractions.IRenderSystem
+  parent: Kobold.Core.Abstractions
+  href: Kobold.Core.Abstractions.IRenderSystem.html
+  name: IRenderSystem
+  nameWithType: IRenderSystem
+  fullName: Kobold.Core.Abstractions.IRenderSystem
+- uid: Kobold.Core.Abstractions.ISystem
+  commentId: T:Kobold.Core.Abstractions.ISystem
+  parent: Kobold.Core.Abstractions
+  href: Kobold.Core.Abstractions.ISystem.html
+  name: ISystem
+  nameWithType: ISystem
+  fullName: Kobold.Core.Abstractions.ISystem
+- uid: Kobold.Core.Abstractions
+  commentId: N:Kobold.Core.Abstractions
+  href: Kobold.html
+  name: Kobold.Core.Abstractions
+  nameWithType: Kobold.Core.Abstractions
+  fullName: Kobold.Core.Abstractions
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html

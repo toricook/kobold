@@ -1,0 +1,155 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Abstractions.Input.MouseButton
+  commentId: T:Kobold.Core.Abstractions.Input.MouseButton
+  id: MouseButton
+  parent: Kobold.Core.Abstractions.Input
+  children:
+  - Kobold.Core.Abstractions.Input.MouseButton.Left
+  - Kobold.Core.Abstractions.Input.MouseButton.Middle
+  - Kobold.Core.Abstractions.Input.MouseButton.Right
+  langs:
+  - csharp
+  - vb
+  name: MouseButton
+  nameWithType: MouseButton
+  fullName: Kobold.Core.Abstractions.Input.MouseButton
+  type: Enum
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: MouseButton
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 29
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: public enum MouseButton
+    content.vb: Public Enum MouseButton
+- uid: Kobold.Core.Abstractions.Input.MouseButton.Left
+  commentId: F:Kobold.Core.Abstractions.Input.MouseButton.Left
+  id: Left
+  parent: Kobold.Core.Abstractions.Input.MouseButton
+  langs:
+  - csharp
+  - vb
+  name: Left
+  nameWithType: MouseButton.Left
+  fullName: Kobold.Core.Abstractions.Input.MouseButton.Left
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Left
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 31
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: Left = 0
+    return:
+      type: Kobold.Core.Abstractions.Input.MouseButton
+- uid: Kobold.Core.Abstractions.Input.MouseButton.Right
+  commentId: F:Kobold.Core.Abstractions.Input.MouseButton.Right
+  id: Right
+  parent: Kobold.Core.Abstractions.Input.MouseButton
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: MouseButton.Right
+  fullName: Kobold.Core.Abstractions.Input.MouseButton.Right
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Right
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 31
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: Right = 1
+    return:
+      type: Kobold.Core.Abstractions.Input.MouseButton
+- uid: Kobold.Core.Abstractions.Input.MouseButton.Middle
+  commentId: F:Kobold.Core.Abstractions.Input.MouseButton.Middle
+  id: Middle
+  parent: Kobold.Core.Abstractions.Input.MouseButton
+  langs:
+  - csharp
+  - vb
+  name: Middle
+  nameWithType: MouseButton.Middle
+  fullName: Kobold.Core.Abstractions.Input.MouseButton.Middle
+  type: Field
+  source:
+    remote:
+      path: Kobold/Abstractions/Input/IInputManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Middle
+    path: Kobold/Abstractions/Input/IInputManager.cs
+    startLine: 31
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Input
+  syntax:
+    content: Middle = 2
+    return:
+      type: Kobold.Core.Abstractions.Input.MouseButton
+references:
+- uid: Kobold.Core.Abstractions.Input
+  commentId: N:Kobold.Core.Abstractions.Input
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Input
+  nameWithType: Kobold.Core.Abstractions.Input
+  fullName: Kobold.Core.Abstractions.Input
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Input
+    name: Input
+    href: Kobold.Core.Abstractions.Input.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Input
+    name: Input
+    href: Kobold.Core.Abstractions.Input.html
+- uid: Kobold.Core.Abstractions.Input.MouseButton
+  commentId: T:Kobold.Core.Abstractions.Input.MouseButton
+  parent: Kobold.Core.Abstractions.Input
+  href: Kobold.Core.Abstractions.Input.MouseButton.html
+  name: MouseButton
+  nameWithType: MouseButton
+  fullName: Kobold.Core.Abstractions.Input.MouseButton

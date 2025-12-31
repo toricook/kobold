@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: SpriteSheetEditor
+  commentId: N:SpriteSheetEditor
+  id: SpriteSheetEditor
+  children:
+  - SpriteSheetEditor.SpriteSheetEditorGame
+  langs:
+  - csharp
+  - vb
+  name: SpriteSheetEditor
+  nameWithType: SpriteSheetEditor
+  fullName: SpriteSheetEditor
+  type: Namespace
+  assemblies:
+  - SpriteSheetEditor
+references:
+- uid: SpriteSheetEditor.SpriteSheetEditorGame
+  commentId: T:SpriteSheetEditor.SpriteSheetEditorGame
+  href: SpriteSheetEditor.SpriteSheetEditorGame.html
+  name: SpriteSheetEditorGame
+  nameWithType: SpriteSheetEditorGame
+  fullName: SpriteSheetEditor.SpriteSheetEditorGame

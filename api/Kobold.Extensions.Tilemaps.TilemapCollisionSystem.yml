@@ -1,0 +1,659 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Extensions.Tilemaps.TilemapCollisionSystem
+  commentId: T:Kobold.Extensions.Tilemaps.TilemapCollisionSystem
+  id: TilemapCollisionSystem
+  parent: Kobold.Extensions.Tilemaps
+  children:
+  - Kobold.Extensions.Tilemaps.TilemapCollisionSystem.#ctor(Arch.Core.World,Kobold.Core.Events.EventBus,Kobold.Extensions.Tilemaps.TilemapCollisionConfig)
+  - Kobold.Extensions.Tilemaps.TilemapCollisionSystem.IsPositionSolid(System.Numerics.Vector2,Kobold.Extensions.Tilemaps.TileMap,Kobold.Extensions.Tilemaps.TileSet,System.Numerics.Vector2)
+  - Kobold.Extensions.Tilemaps.TilemapCollisionSystem.Update(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: TilemapCollisionSystem
+  nameWithType: TilemapCollisionSystem
+  fullName: Kobold.Extensions.Tilemaps.TilemapCollisionSystem
+  type: Class
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TilemapCollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: TilemapCollisionSystem
+    path: Kobold.Extensions/Tilemaps/TilemapCollisionSystem.cs
+    startLine: 14
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: >-
+    System that handles collision detection between entities and tilemap tiles.
+
+    Integrates with Kobold.Core's physics and collision systems.
+  example: []
+  syntax:
+    content: 'public class TilemapCollisionSystem : ISystem'
+    content.vb: Public Class TilemapCollisionSystem Implements ISystem
+  inheritance:
+  - System.Object
+  implements:
+  - Kobold.Core.Abstractions.ISystem
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.#ctor(Arch.Core.World,Kobold.Core.Events.EventBus,Kobold.Extensions.Tilemaps.TilemapCollisionConfig)
+  commentId: M:Kobold.Extensions.Tilemaps.TilemapCollisionSystem.#ctor(Arch.Core.World,Kobold.Core.Events.EventBus,Kobold.Extensions.Tilemaps.TilemapCollisionConfig)
+  id: '#ctor(Arch.Core.World,Kobold.Core.Events.EventBus,Kobold.Extensions.Tilemaps.TilemapCollisionConfig)'
+  parent: Kobold.Extensions.Tilemaps.TilemapCollisionSystem
+  langs:
+  - csharp
+  - vb
+  name: TilemapCollisionSystem(World, EventBus?, TilemapCollisionConfig?)
+  nameWithType: TilemapCollisionSystem.TilemapCollisionSystem(World, EventBus?, TilemapCollisionConfig?)
+  fullName: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.TilemapCollisionSystem(Arch.Core.World, Kobold.Core.Events.EventBus?, Kobold.Extensions.Tilemaps.TilemapCollisionConfig?)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TilemapCollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold.Extensions/Tilemaps/TilemapCollisionSystem.cs
+    startLine: 20
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  syntax:
+    content: public TilemapCollisionSystem(World world, EventBus? eventBus = null, TilemapCollisionConfig? config = null)
+    parameters:
+    - id: world
+      type: Arch.Core.World
+    - id: eventBus
+      type: Kobold.Core.Events.EventBus
+    - id: config
+      type: Kobold.Extensions.Tilemaps.TilemapCollisionConfig
+    content.vb: Public Sub New(world As World, eventBus As EventBus = Nothing, config As TilemapCollisionConfig = Nothing)
+  overload: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.#ctor*
+  nameWithType.vb: TilemapCollisionSystem.New(World, EventBus, TilemapCollisionConfig)
+  fullName.vb: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.New(Arch.Core.World, Kobold.Core.Events.EventBus, Kobold.Extensions.Tilemaps.TilemapCollisionConfig)
+  name.vb: New(World, EventBus, TilemapCollisionConfig)
+- uid: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.Update(System.Single)
+  commentId: M:Kobold.Extensions.Tilemaps.TilemapCollisionSystem.Update(System.Single)
+  id: Update(System.Single)
+  parent: Kobold.Extensions.Tilemaps.TilemapCollisionSystem
+  langs:
+  - csharp
+  - vb
+  name: Update(float)
+  nameWithType: TilemapCollisionSystem.Update(float)
+  fullName: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.Update(float)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TilemapCollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Update
+    path: Kobold.Extensions/Tilemaps/TilemapCollisionSystem.cs
+    startLine: 27
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  example: []
+  syntax:
+    content: public void Update(float deltaTime)
+    parameters:
+    - id: deltaTime
+      type: System.Single
+    content.vb: Public Sub Update(deltaTime As Single)
+  overload: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.Update*
+  implements:
+  - Kobold.Core.Abstractions.ISystem.Update(System.Single)
+  nameWithType.vb: TilemapCollisionSystem.Update(Single)
+  fullName.vb: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.Update(Single)
+  name.vb: Update(Single)
+- uid: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.IsPositionSolid(System.Numerics.Vector2,Kobold.Extensions.Tilemaps.TileMap,Kobold.Extensions.Tilemaps.TileSet,System.Numerics.Vector2)
+  commentId: M:Kobold.Extensions.Tilemaps.TilemapCollisionSystem.IsPositionSolid(System.Numerics.Vector2,Kobold.Extensions.Tilemaps.TileMap,Kobold.Extensions.Tilemaps.TileSet,System.Numerics.Vector2)
+  id: IsPositionSolid(System.Numerics.Vector2,Kobold.Extensions.Tilemaps.TileMap,Kobold.Extensions.Tilemaps.TileSet,System.Numerics.Vector2)
+  parent: Kobold.Extensions.Tilemaps.TilemapCollisionSystem
+  langs:
+  - csharp
+  - vb
+  name: IsPositionSolid(Vector2, TileMap, TileSet, Vector2)
+  nameWithType: TilemapCollisionSystem.IsPositionSolid(Vector2, TileMap, TileSet, Vector2)
+  fullName: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.IsPositionSolid(System.Numerics.Vector2, Kobold.Extensions.Tilemaps.TileMap, Kobold.Extensions.Tilemaps.TileSet, System.Numerics.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Kobold.Extensions/Tilemaps/TilemapCollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IsPositionSolid
+    path: Kobold.Extensions/Tilemaps/TilemapCollisionSystem.cs
+    startLine: 333
+  assemblies:
+  - Kobold.Extensions
+  namespace: Kobold.Extensions.Tilemaps
+  summary: Checks if a specific world position collides with any solid tile.
+  example: []
+  syntax:
+    content: public bool IsPositionSolid(Vector2 worldPosition, TileMap tileMap, TileSet tileSet, Vector2 tilemapOffset)
+    parameters:
+    - id: worldPosition
+      type: System.Numerics.Vector2
+    - id: tileMap
+      type: Kobold.Extensions.Tilemaps.TileMap
+    - id: tileSet
+      type: Kobold.Extensions.Tilemaps.TileSet
+    - id: tilemapOffset
+      type: System.Numerics.Vector2
+    return:
+      type: System.Boolean
+    content.vb: Public Function IsPositionSolid(worldPosition As Vector2, tileMap As TileMap, tileSet As TileSet, tilemapOffset As Vector2) As Boolean
+  overload: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.IsPositionSolid*
+references:
+- uid: Kobold.Extensions.Tilemaps
+  commentId: N:Kobold.Extensions.Tilemaps
+  href: Kobold.html
+  name: Kobold.Extensions.Tilemaps
+  nameWithType: Kobold.Extensions.Tilemaps
+  fullName: Kobold.Extensions.Tilemaps
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Tilemaps
+    name: Tilemaps
+    href: Kobold.Extensions.Tilemaps.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Extensions
+    name: Extensions
+    href: Kobold.Extensions.html
+  - name: .
+  - uid: Kobold.Extensions.Tilemaps
+    name: Tilemaps
+    href: Kobold.Extensions.Tilemaps.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Kobold.Core.Abstractions.ISystem
+  commentId: T:Kobold.Core.Abstractions.ISystem
+  parent: Kobold.Core.Abstractions
+  href: Kobold.Core.Abstractions.ISystem.html
+  name: ISystem
+  nameWithType: ISystem
+  fullName: Kobold.Core.Abstractions.ISystem
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Abstractions
+  commentId: N:Kobold.Core.Abstractions
+  href: Kobold.html
+  name: Kobold.Core.Abstractions
+  nameWithType: Kobold.Core.Abstractions
+  fullName: Kobold.Core.Abstractions
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+- uid: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.#ctor*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TilemapCollisionSystem.#ctor
+  href: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.html#Kobold_Extensions_Tilemaps_TilemapCollisionSystem__ctor_Arch_Core_World_Kobold_Core_Events_EventBus_Kobold_Extensions_Tilemaps_TilemapCollisionConfig_
+  name: TilemapCollisionSystem
+  nameWithType: TilemapCollisionSystem.TilemapCollisionSystem
+  fullName: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.TilemapCollisionSystem
+  nameWithType.vb: TilemapCollisionSystem.New
+  fullName.vb: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.New
+  name.vb: New
+- uid: Arch.Core.World
+  commentId: T:Arch.Core.World
+  parent: Arch.Core
+  isExternal: true
+  name: World
+  nameWithType: World
+  fullName: Arch.Core.World
+- uid: Kobold.Core.Events.EventBus
+  commentId: T:Kobold.Core.Events.EventBus
+  parent: Kobold.Core.Events
+  href: Kobold.Core.Events.EventBus.html
+  name: EventBus
+  nameWithType: EventBus
+  fullName: Kobold.Core.Events.EventBus
+- uid: Kobold.Extensions.Tilemaps.TilemapCollisionConfig
+  commentId: T:Kobold.Extensions.Tilemaps.TilemapCollisionConfig
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TilemapCollisionConfig.html
+  name: TilemapCollisionConfig
+  nameWithType: TilemapCollisionConfig
+  fullName: Kobold.Extensions.Tilemaps.TilemapCollisionConfig
+- uid: Arch.Core
+  commentId: N:Arch.Core
+  isExternal: true
+  name: Arch.Core
+  nameWithType: Arch.Core
+  fullName: Arch.Core
+  spec.csharp:
+  - uid: Arch
+    name: Arch
+    isExternal: true
+  - name: .
+  - uid: Arch.Core
+    name: Core
+    isExternal: true
+  spec.vb:
+  - uid: Arch
+    name: Arch
+    isExternal: true
+  - name: .
+  - uid: Arch.Core
+    name: Core
+    isExternal: true
+- uid: Kobold.Core.Events
+  commentId: N:Kobold.Core.Events
+  href: Kobold.html
+  name: Kobold.Core.Events
+  nameWithType: Kobold.Core.Events
+  fullName: Kobold.Core.Events
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+- uid: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.Update*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TilemapCollisionSystem.Update
+  href: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.html#Kobold_Extensions_Tilemaps_TilemapCollisionSystem_Update_System_Single_
+  name: Update
+  nameWithType: TilemapCollisionSystem.Update
+  fullName: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.Update
+- uid: Kobold.Core.Abstractions.ISystem.Update(System.Single)
+  commentId: M:Kobold.Core.Abstractions.ISystem.Update(System.Single)
+  parent: Kobold.Core.Abstractions.ISystem
+  isExternal: true
+  href: Kobold.Core.Abstractions.ISystem.html#Kobold_Core_Abstractions_ISystem_Update_System_Single_
+  name: Update(float)
+  nameWithType: ISystem.Update(float)
+  fullName: Kobold.Core.Abstractions.ISystem.Update(float)
+  nameWithType.vb: ISystem.Update(Single)
+  fullName.vb: Kobold.Core.Abstractions.ISystem.Update(Single)
+  name.vb: Update(Single)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.ISystem.Update(System.Single)
+    name: Update
+    href: Kobold.Core.Abstractions.ISystem.html#Kobold_Core_Abstractions_ISystem_Update_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.ISystem.Update(System.Single)
+    name: Update
+    href: Kobold.Core.Abstractions.ISystem.html#Kobold_Core_Abstractions_ISystem_Update_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.IsPositionSolid*
+  commentId: Overload:Kobold.Extensions.Tilemaps.TilemapCollisionSystem.IsPositionSolid
+  href: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.html#Kobold_Extensions_Tilemaps_TilemapCollisionSystem_IsPositionSolid_System_Numerics_Vector2_Kobold_Extensions_Tilemaps_TileMap_Kobold_Extensions_Tilemaps_TileSet_System_Numerics_Vector2_
+  name: IsPositionSolid
+  nameWithType: TilemapCollisionSystem.IsPositionSolid
+  fullName: Kobold.Extensions.Tilemaps.TilemapCollisionSystem.IsPositionSolid
+- uid: System.Numerics.Vector2
+  commentId: T:System.Numerics.Vector2
+  parent: System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  name: Vector2
+  nameWithType: Vector2
+  fullName: System.Numerics.Vector2
+- uid: Kobold.Extensions.Tilemaps.TileMap
+  commentId: T:Kobold.Extensions.Tilemaps.TileMap
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TileMap.html
+  name: TileMap
+  nameWithType: TileMap
+  fullName: Kobold.Extensions.Tilemaps.TileMap
+- uid: Kobold.Extensions.Tilemaps.TileSet
+  commentId: T:Kobold.Extensions.Tilemaps.TileSet
+  parent: Kobold.Extensions.Tilemaps
+  href: Kobold.Extensions.Tilemaps.TileSet.html
+  name: TileSet
+  nameWithType: TileSet
+  fullName: Kobold.Extensions.Tilemaps.TileSet
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.Numerics
+  commentId: N:System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Numerics
+  nameWithType: System.Numerics
+  fullName: System.Numerics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics

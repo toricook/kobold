@@ -1,0 +1,311 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Systems.CollisionLayer
+  commentId: T:Kobold.Core.Systems.CollisionLayer
+  id: CollisionLayer
+  parent: Kobold.Core.Systems
+  children:
+  - Kobold.Core.Systems.CollisionLayer.Default
+  - Kobold.Core.Systems.CollisionLayer.Enemy
+  - Kobold.Core.Systems.CollisionLayer.EnemyProjectile
+  - Kobold.Core.Systems.CollisionLayer.Environment
+  - Kobold.Core.Systems.CollisionLayer.Pickup
+  - Kobold.Core.Systems.CollisionLayer.Player
+  - Kobold.Core.Systems.CollisionLayer.PlayerProjectile
+  - Kobold.Core.Systems.CollisionLayer.Projectile
+  - Kobold.Core.Systems.CollisionLayer.Trigger
+  langs:
+  - csharp
+  - vb
+  name: CollisionLayer
+  nameWithType: CollisionLayer
+  fullName: Kobold.Core.Systems.CollisionLayer
+  type: Enum
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CollisionLayer
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 259
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  summary: Collision layers for filtering
+  example: []
+  syntax:
+    content: public enum CollisionLayer
+    content.vb: Public Enum CollisionLayer
+- uid: Kobold.Core.Systems.CollisionLayer.Default
+  commentId: F:Kobold.Core.Systems.CollisionLayer.Default
+  id: Default
+  parent: Kobold.Core.Systems.CollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: CollisionLayer.Default
+  fullName: Kobold.Core.Systems.CollisionLayer.Default
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Default
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 261
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Default = 0
+    return:
+      type: Kobold.Core.Systems.CollisionLayer
+- uid: Kobold.Core.Systems.CollisionLayer.Player
+  commentId: F:Kobold.Core.Systems.CollisionLayer.Player
+  id: Player
+  parent: Kobold.Core.Systems.CollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Player
+  nameWithType: CollisionLayer.Player
+  fullName: Kobold.Core.Systems.CollisionLayer.Player
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Player
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 262
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Player = 1
+    return:
+      type: Kobold.Core.Systems.CollisionLayer
+- uid: Kobold.Core.Systems.CollisionLayer.Enemy
+  commentId: F:Kobold.Core.Systems.CollisionLayer.Enemy
+  id: Enemy
+  parent: Kobold.Core.Systems.CollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Enemy
+  nameWithType: CollisionLayer.Enemy
+  fullName: Kobold.Core.Systems.CollisionLayer.Enemy
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Enemy
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 263
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Enemy = 2
+    return:
+      type: Kobold.Core.Systems.CollisionLayer
+- uid: Kobold.Core.Systems.CollisionLayer.Projectile
+  commentId: F:Kobold.Core.Systems.CollisionLayer.Projectile
+  id: Projectile
+  parent: Kobold.Core.Systems.CollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Projectile
+  nameWithType: CollisionLayer.Projectile
+  fullName: Kobold.Core.Systems.CollisionLayer.Projectile
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Projectile
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 264
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Projectile = 3
+    return:
+      type: Kobold.Core.Systems.CollisionLayer
+- uid: Kobold.Core.Systems.CollisionLayer.Environment
+  commentId: F:Kobold.Core.Systems.CollisionLayer.Environment
+  id: Environment
+  parent: Kobold.Core.Systems.CollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Environment
+  nameWithType: CollisionLayer.Environment
+  fullName: Kobold.Core.Systems.CollisionLayer.Environment
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Environment
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 265
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Environment = 4
+    return:
+      type: Kobold.Core.Systems.CollisionLayer
+- uid: Kobold.Core.Systems.CollisionLayer.PlayerProjectile
+  commentId: F:Kobold.Core.Systems.CollisionLayer.PlayerProjectile
+  id: PlayerProjectile
+  parent: Kobold.Core.Systems.CollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: PlayerProjectile
+  nameWithType: CollisionLayer.PlayerProjectile
+  fullName: Kobold.Core.Systems.CollisionLayer.PlayerProjectile
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: PlayerProjectile
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 266
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: PlayerProjectile = 5
+    return:
+      type: Kobold.Core.Systems.CollisionLayer
+- uid: Kobold.Core.Systems.CollisionLayer.EnemyProjectile
+  commentId: F:Kobold.Core.Systems.CollisionLayer.EnemyProjectile
+  id: EnemyProjectile
+  parent: Kobold.Core.Systems.CollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: EnemyProjectile
+  nameWithType: CollisionLayer.EnemyProjectile
+  fullName: Kobold.Core.Systems.CollisionLayer.EnemyProjectile
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: EnemyProjectile
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 267
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: EnemyProjectile = 6
+    return:
+      type: Kobold.Core.Systems.CollisionLayer
+- uid: Kobold.Core.Systems.CollisionLayer.Pickup
+  commentId: F:Kobold.Core.Systems.CollisionLayer.Pickup
+  id: Pickup
+  parent: Kobold.Core.Systems.CollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Pickup
+  nameWithType: CollisionLayer.Pickup
+  fullName: Kobold.Core.Systems.CollisionLayer.Pickup
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Pickup
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 268
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Pickup = 7
+    return:
+      type: Kobold.Core.Systems.CollisionLayer
+- uid: Kobold.Core.Systems.CollisionLayer.Trigger
+  commentId: F:Kobold.Core.Systems.CollisionLayer.Trigger
+  id: Trigger
+  parent: Kobold.Core.Systems.CollisionLayer
+  langs:
+  - csharp
+  - vb
+  name: Trigger
+  nameWithType: CollisionLayer.Trigger
+  fullName: Kobold.Core.Systems.CollisionLayer.Trigger
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Trigger
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 269
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: Trigger = 8
+    return:
+      type: Kobold.Core.Systems.CollisionLayer
+references:
+- uid: Kobold.Core.Systems
+  commentId: N:Kobold.Core.Systems
+  href: Kobold.html
+  name: Kobold.Core.Systems
+  nameWithType: Kobold.Core.Systems
+  fullName: Kobold.Core.Systems
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+- uid: Kobold.Core.Systems.CollisionLayer
+  commentId: T:Kobold.Core.Systems.CollisionLayer
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.CollisionLayer.html
+  name: CollisionLayer
+  nameWithType: CollisionLayer
+  fullName: Kobold.Core.Systems.CollisionLayer

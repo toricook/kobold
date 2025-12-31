@@ -1,0 +1,905 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Systems.GameStateSystem`1
+  commentId: T:Kobold.Core.Systems.GameStateSystem`1
+  id: GameStateSystem`1
+  parent: Kobold.Core.Systems
+  children:
+  - Kobold.Core.Systems.GameStateSystem`1.#ctor(Arch.Core.World,Kobold.Core.Events.EventBus,Kobold.Core.Abstractions.Input.IInputManager)
+  - Kobold.Core.Systems.GameStateSystem`1.ChangeState(`0)
+  - Kobold.Core.Systems.GameStateSystem`1.ConfigureState(`0,Kobold.Core.Systems.StateConfig)
+  - Kobold.Core.Systems.GameStateSystem`1.EventBus
+  - Kobold.Core.Systems.GameStateSystem`1.GetCurrentState
+  - Kobold.Core.Systems.GameStateSystem`1.HandleStateChange(`0,`0)
+  - Kobold.Core.Systems.GameStateSystem`1.HandleStateTransitionInputs
+  - Kobold.Core.Systems.GameStateSystem`1.InputManager
+  - Kobold.Core.Systems.GameStateSystem`1.Update(System.Single)
+  - Kobold.Core.Systems.GameStateSystem`1.World
+  langs:
+  - csharp
+  - vb
+  name: GameStateSystem<TGameState>
+  nameWithType: GameStateSystem<TGameState>
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>
+  type: Class
+  source:
+    remote:
+      path: Kobold/Systems/GameStateSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GameStateSystem
+    path: Kobold/Systems/GameStateSystem.cs
+    startLine: 17
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  summary: >-
+    Generic game state management system. Configure states with callbacks and an input that should trigger a transition out of this state
+
+    if applicable. Then calling ChangeState will handle performing the callbacks and publishing a GameStateChangedEvent.
+  example: []
+  syntax:
+    content: 'public class GameStateSystem<TGameState> : ISystem where TGameState : struct'
+    typeParameters:
+    - id: TGameState
+    content.vb: Public Class GameStateSystem(Of TGameState As Structure) Implements ISystem
+  inheritance:
+  - System.Object
+  implements:
+  - Kobold.Core.Abstractions.ISystem
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  nameWithType.vb: GameStateSystem(Of TGameState)
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState)
+  name.vb: GameStateSystem(Of TGameState)
+- uid: Kobold.Core.Systems.GameStateSystem`1.World
+  commentId: F:Kobold.Core.Systems.GameStateSystem`1.World
+  id: World
+  parent: Kobold.Core.Systems.GameStateSystem`1
+  langs:
+  - csharp
+  - vb
+  name: World
+  nameWithType: GameStateSystem<TGameState>.World
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.World
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/GameStateSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: World
+    path: Kobold/Systems/GameStateSystem.cs
+    startLine: 19
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: protected readonly World World
+    return:
+      type: Arch.Core.World
+    content.vb: Protected ReadOnly World As World
+  nameWithType.vb: GameStateSystem(Of TGameState).World
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).World
+- uid: Kobold.Core.Systems.GameStateSystem`1.EventBus
+  commentId: F:Kobold.Core.Systems.GameStateSystem`1.EventBus
+  id: EventBus
+  parent: Kobold.Core.Systems.GameStateSystem`1
+  langs:
+  - csharp
+  - vb
+  name: EventBus
+  nameWithType: GameStateSystem<TGameState>.EventBus
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.EventBus
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/GameStateSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: EventBus
+    path: Kobold/Systems/GameStateSystem.cs
+    startLine: 20
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: protected readonly EventBus EventBus
+    return:
+      type: Kobold.Core.Events.EventBus
+    content.vb: Protected ReadOnly EventBus As EventBus
+  nameWithType.vb: GameStateSystem(Of TGameState).EventBus
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).EventBus
+- uid: Kobold.Core.Systems.GameStateSystem`1.InputManager
+  commentId: F:Kobold.Core.Systems.GameStateSystem`1.InputManager
+  id: InputManager
+  parent: Kobold.Core.Systems.GameStateSystem`1
+  langs:
+  - csharp
+  - vb
+  name: InputManager
+  nameWithType: GameStateSystem<TGameState>.InputManager
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.InputManager
+  type: Field
+  source:
+    remote:
+      path: Kobold/Systems/GameStateSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: InputManager
+    path: Kobold/Systems/GameStateSystem.cs
+    startLine: 21
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: protected readonly IInputManager InputManager
+    return:
+      type: Kobold.Core.Abstractions.Input.IInputManager
+    content.vb: Protected ReadOnly InputManager As IInputManager
+  nameWithType.vb: GameStateSystem(Of TGameState).InputManager
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).InputManager
+- uid: Kobold.Core.Systems.GameStateSystem`1.#ctor(Arch.Core.World,Kobold.Core.Events.EventBus,Kobold.Core.Abstractions.Input.IInputManager)
+  commentId: M:Kobold.Core.Systems.GameStateSystem`1.#ctor(Arch.Core.World,Kobold.Core.Events.EventBus,Kobold.Core.Abstractions.Input.IInputManager)
+  id: '#ctor(Arch.Core.World,Kobold.Core.Events.EventBus,Kobold.Core.Abstractions.Input.IInputManager)'
+  parent: Kobold.Core.Systems.GameStateSystem`1
+  langs:
+  - csharp
+  - vb
+  name: GameStateSystem(World, EventBus, IInputManager)
+  nameWithType: GameStateSystem<TGameState>.GameStateSystem(World, EventBus, IInputManager)
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.GameStateSystem(Arch.Core.World, Kobold.Core.Events.EventBus, Kobold.Core.Abstractions.Input.IInputManager)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Systems/GameStateSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Systems/GameStateSystem.cs
+    startLine: 24
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public GameStateSystem(World world, EventBus eventBus, IInputManager inputManager)
+    parameters:
+    - id: world
+      type: Arch.Core.World
+    - id: eventBus
+      type: Kobold.Core.Events.EventBus
+    - id: inputManager
+      type: Kobold.Core.Abstractions.Input.IInputManager
+    content.vb: Public Sub New(world As World, eventBus As EventBus, inputManager As IInputManager)
+  overload: Kobold.Core.Systems.GameStateSystem`1.#ctor*
+  nameWithType.vb: GameStateSystem(Of TGameState).New(World, EventBus, IInputManager)
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).New(Arch.Core.World, Kobold.Core.Events.EventBus, Kobold.Core.Abstractions.Input.IInputManager)
+  name.vb: New(World, EventBus, IInputManager)
+- uid: Kobold.Core.Systems.GameStateSystem`1.Update(System.Single)
+  commentId: M:Kobold.Core.Systems.GameStateSystem`1.Update(System.Single)
+  id: Update(System.Single)
+  parent: Kobold.Core.Systems.GameStateSystem`1
+  langs:
+  - csharp
+  - vb
+  name: Update(float)
+  nameWithType: GameStateSystem<TGameState>.Update(float)
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.Update(float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Systems/GameStateSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Update
+    path: Kobold/Systems/GameStateSystem.cs
+    startLine: 31
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  example: []
+  syntax:
+    content: public virtual void Update(float deltaTime)
+    parameters:
+    - id: deltaTime
+      type: System.Single
+    content.vb: Public Overridable Sub Update(deltaTime As Single)
+  overload: Kobold.Core.Systems.GameStateSystem`1.Update*
+  implements:
+  - Kobold.Core.Abstractions.ISystem.Update(System.Single)
+  nameWithType.vb: GameStateSystem(Of TGameState).Update(Single)
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).Update(Single)
+  name.vb: Update(Single)
+- uid: Kobold.Core.Systems.GameStateSystem`1.ConfigureState(`0,Kobold.Core.Systems.StateConfig)
+  commentId: M:Kobold.Core.Systems.GameStateSystem`1.ConfigureState(`0,Kobold.Core.Systems.StateConfig)
+  id: ConfigureState(`0,Kobold.Core.Systems.StateConfig)
+  parent: Kobold.Core.Systems.GameStateSystem`1
+  langs:
+  - csharp
+  - vb
+  name: ConfigureState(TGameState, StateConfig)
+  nameWithType: GameStateSystem<TGameState>.ConfigureState(TGameState, StateConfig)
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.ConfigureState(TGameState, Kobold.Core.Systems.StateConfig)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Systems/GameStateSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ConfigureState
+    path: Kobold/Systems/GameStateSystem.cs
+    startLine: 36
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public void ConfigureState(TGameState state, StateConfig config)
+    parameters:
+    - id: state
+      type: '{TGameState}'
+    - id: config
+      type: Kobold.Core.Systems.StateConfig
+    content.vb: Public Sub ConfigureState(state As TGameState, config As StateConfig)
+  overload: Kobold.Core.Systems.GameStateSystem`1.ConfigureState*
+  nameWithType.vb: GameStateSystem(Of TGameState).ConfigureState(TGameState, StateConfig)
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).ConfigureState(TGameState, Kobold.Core.Systems.StateConfig)
+- uid: Kobold.Core.Systems.GameStateSystem`1.ChangeState(`0)
+  commentId: M:Kobold.Core.Systems.GameStateSystem`1.ChangeState(`0)
+  id: ChangeState(`0)
+  parent: Kobold.Core.Systems.GameStateSystem`1
+  langs:
+  - csharp
+  - vb
+  name: ChangeState(TGameState)
+  nameWithType: GameStateSystem<TGameState>.ChangeState(TGameState)
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.ChangeState(TGameState)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Systems/GameStateSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ChangeState
+    path: Kobold/Systems/GameStateSystem.cs
+    startLine: 42
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public void ChangeState(TGameState newState)
+    parameters:
+    - id: newState
+      type: '{TGameState}'
+    content.vb: Public Sub ChangeState(newState As TGameState)
+  overload: Kobold.Core.Systems.GameStateSystem`1.ChangeState*
+  nameWithType.vb: GameStateSystem(Of TGameState).ChangeState(TGameState)
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).ChangeState(TGameState)
+- uid: Kobold.Core.Systems.GameStateSystem`1.GetCurrentState
+  commentId: M:Kobold.Core.Systems.GameStateSystem`1.GetCurrentState
+  id: GetCurrentState
+  parent: Kobold.Core.Systems.GameStateSystem`1
+  langs:
+  - csharp
+  - vb
+  name: GetCurrentState()
+  nameWithType: GameStateSystem<TGameState>.GetCurrentState()
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.GetCurrentState()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Systems/GameStateSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetCurrentState
+    path: Kobold/Systems/GameStateSystem.cs
+    startLine: 57
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public TGameState GetCurrentState()
+    return:
+      type: '{TGameState}'
+    content.vb: Public Function GetCurrentState() As TGameState
+  overload: Kobold.Core.Systems.GameStateSystem`1.GetCurrentState*
+  nameWithType.vb: GameStateSystem(Of TGameState).GetCurrentState()
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).GetCurrentState()
+- uid: Kobold.Core.Systems.GameStateSystem`1.HandleStateTransitionInputs
+  commentId: M:Kobold.Core.Systems.GameStateSystem`1.HandleStateTransitionInputs
+  id: HandleStateTransitionInputs
+  parent: Kobold.Core.Systems.GameStateSystem`1
+  langs:
+  - csharp
+  - vb
+  name: HandleStateTransitionInputs()
+  nameWithType: GameStateSystem<TGameState>.HandleStateTransitionInputs()
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.HandleStateTransitionInputs()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Systems/GameStateSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: HandleStateTransitionInputs
+    path: Kobold/Systems/GameStateSystem.cs
+    startLine: 68
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: protected virtual void HandleStateTransitionInputs()
+    content.vb: Protected Overridable Sub HandleStateTransitionInputs()
+  overload: Kobold.Core.Systems.GameStateSystem`1.HandleStateTransitionInputs*
+  nameWithType.vb: GameStateSystem(Of TGameState).HandleStateTransitionInputs()
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).HandleStateTransitionInputs()
+- uid: Kobold.Core.Systems.GameStateSystem`1.HandleStateChange(`0,`0)
+  commentId: M:Kobold.Core.Systems.GameStateSystem`1.HandleStateChange(`0,`0)
+  id: HandleStateChange(`0,`0)
+  parent: Kobold.Core.Systems.GameStateSystem`1
+  langs:
+  - csharp
+  - vb
+  name: HandleStateChange(TGameState, TGameState)
+  nameWithType: GameStateSystem<TGameState>.HandleStateChange(TGameState, TGameState)
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.HandleStateChange(TGameState, TGameState)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Systems/GameStateSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: HandleStateChange
+    path: Kobold/Systems/GameStateSystem.cs
+    startLine: 90
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: protected virtual void HandleStateChange(TGameState newState, TGameState previousState)
+    parameters:
+    - id: newState
+      type: '{TGameState}'
+    - id: previousState
+      type: '{TGameState}'
+    content.vb: Protected Overridable Sub HandleStateChange(newState As TGameState, previousState As TGameState)
+  overload: Kobold.Core.Systems.GameStateSystem`1.HandleStateChange*
+  nameWithType.vb: GameStateSystem(Of TGameState).HandleStateChange(TGameState, TGameState)
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).HandleStateChange(TGameState, TGameState)
+references:
+- uid: Kobold.Core.Systems
+  commentId: N:Kobold.Core.Systems
+  href: Kobold.html
+  name: Kobold.Core.Systems
+  nameWithType: Kobold.Core.Systems
+  fullName: Kobold.Core.Systems
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Kobold.Core.Abstractions.ISystem
+  commentId: T:Kobold.Core.Abstractions.ISystem
+  parent: Kobold.Core.Abstractions
+  href: Kobold.Core.Abstractions.ISystem.html
+  name: ISystem
+  nameWithType: ISystem
+  fullName: Kobold.Core.Abstractions.ISystem
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Abstractions
+  commentId: N:Kobold.Core.Abstractions
+  href: Kobold.html
+  name: Kobold.Core.Abstractions
+  nameWithType: Kobold.Core.Abstractions
+  fullName: Kobold.Core.Abstractions
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+- uid: Arch.Core.World
+  commentId: T:Arch.Core.World
+  parent: Arch.Core
+  isExternal: true
+  name: World
+  nameWithType: World
+  fullName: Arch.Core.World
+- uid: Arch.Core
+  commentId: N:Arch.Core
+  isExternal: true
+  name: Arch.Core
+  nameWithType: Arch.Core
+  fullName: Arch.Core
+  spec.csharp:
+  - uid: Arch
+    name: Arch
+    isExternal: true
+  - name: .
+  - uid: Arch.Core
+    name: Core
+    isExternal: true
+  spec.vb:
+  - uid: Arch
+    name: Arch
+    isExternal: true
+  - name: .
+  - uid: Arch.Core
+    name: Core
+    isExternal: true
+- uid: Kobold.Core.Events.EventBus
+  commentId: T:Kobold.Core.Events.EventBus
+  parent: Kobold.Core.Events
+  href: Kobold.Core.Events.EventBus.html
+  name: EventBus
+  nameWithType: EventBus
+  fullName: Kobold.Core.Events.EventBus
+- uid: Kobold.Core.Events
+  commentId: N:Kobold.Core.Events
+  href: Kobold.html
+  name: Kobold.Core.Events
+  nameWithType: Kobold.Core.Events
+  fullName: Kobold.Core.Events
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+- uid: Kobold.Core.Abstractions.Input.IInputManager
+  commentId: T:Kobold.Core.Abstractions.Input.IInputManager
+  parent: Kobold.Core.Abstractions.Input
+  href: Kobold.Core.Abstractions.Input.IInputManager.html
+  name: IInputManager
+  nameWithType: IInputManager
+  fullName: Kobold.Core.Abstractions.Input.IInputManager
+- uid: Kobold.Core.Abstractions.Input
+  commentId: N:Kobold.Core.Abstractions.Input
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Input
+  nameWithType: Kobold.Core.Abstractions.Input
+  fullName: Kobold.Core.Abstractions.Input
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Input
+    name: Input
+    href: Kobold.Core.Abstractions.Input.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Input
+    name: Input
+    href: Kobold.Core.Abstractions.Input.html
+- uid: Kobold.Core.Systems.GameStateSystem`1.#ctor*
+  commentId: Overload:Kobold.Core.Systems.GameStateSystem`1.#ctor
+  href: Kobold.Core.Systems.GameStateSystem-1.html#Kobold_Core_Systems_GameStateSystem_1__ctor_Arch_Core_World_Kobold_Core_Events_EventBus_Kobold_Core_Abstractions_Input_IInputManager_
+  name: GameStateSystem
+  nameWithType: GameStateSystem<TGameState>.GameStateSystem
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.GameStateSystem
+  nameWithType.vb: GameStateSystem(Of TGameState).New
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).New
+  name.vb: New
+- uid: Kobold.Core.Systems.GameStateSystem`1.Update*
+  commentId: Overload:Kobold.Core.Systems.GameStateSystem`1.Update
+  href: Kobold.Core.Systems.GameStateSystem-1.html#Kobold_Core_Systems_GameStateSystem_1_Update_System_Single_
+  name: Update
+  nameWithType: GameStateSystem<TGameState>.Update
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.Update
+  nameWithType.vb: GameStateSystem(Of TGameState).Update
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).Update
+- uid: Kobold.Core.Abstractions.ISystem.Update(System.Single)
+  commentId: M:Kobold.Core.Abstractions.ISystem.Update(System.Single)
+  parent: Kobold.Core.Abstractions.ISystem
+  isExternal: true
+  href: Kobold.Core.Abstractions.ISystem.html#Kobold_Core_Abstractions_ISystem_Update_System_Single_
+  name: Update(float)
+  nameWithType: ISystem.Update(float)
+  fullName: Kobold.Core.Abstractions.ISystem.Update(float)
+  nameWithType.vb: ISystem.Update(Single)
+  fullName.vb: Kobold.Core.Abstractions.ISystem.Update(Single)
+  name.vb: Update(Single)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.ISystem.Update(System.Single)
+    name: Update
+    href: Kobold.Core.Abstractions.ISystem.html#Kobold_Core_Abstractions_ISystem_Update_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.ISystem.Update(System.Single)
+    name: Update
+    href: Kobold.Core.Abstractions.ISystem.html#Kobold_Core_Abstractions_ISystem_Update_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Core.Systems.GameStateSystem`1.ConfigureState*
+  commentId: Overload:Kobold.Core.Systems.GameStateSystem`1.ConfigureState
+  href: Kobold.Core.Systems.GameStateSystem-1.html#Kobold_Core_Systems_GameStateSystem_1_ConfigureState__0_Kobold_Core_Systems_StateConfig_
+  name: ConfigureState
+  nameWithType: GameStateSystem<TGameState>.ConfigureState
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.ConfigureState
+  nameWithType.vb: GameStateSystem(Of TGameState).ConfigureState
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).ConfigureState
+- uid: '{TGameState}'
+  commentId: '!:TGameState'
+  definition: TGameState
+  name: TGameState
+  nameWithType: TGameState
+  fullName: TGameState
+- uid: Kobold.Core.Systems.StateConfig
+  commentId: T:Kobold.Core.Systems.StateConfig
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.StateConfig.html
+  name: StateConfig
+  nameWithType: StateConfig
+  fullName: Kobold.Core.Systems.StateConfig
+- uid: TGameState
+  name: TGameState
+  nameWithType: TGameState
+  fullName: TGameState
+- uid: Kobold.Core.Systems.GameStateSystem`1.ChangeState*
+  commentId: Overload:Kobold.Core.Systems.GameStateSystem`1.ChangeState
+  href: Kobold.Core.Systems.GameStateSystem-1.html#Kobold_Core_Systems_GameStateSystem_1_ChangeState__0_
+  name: ChangeState
+  nameWithType: GameStateSystem<TGameState>.ChangeState
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.ChangeState
+  nameWithType.vb: GameStateSystem(Of TGameState).ChangeState
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).ChangeState
+- uid: Kobold.Core.Systems.GameStateSystem`1.GetCurrentState*
+  commentId: Overload:Kobold.Core.Systems.GameStateSystem`1.GetCurrentState
+  href: Kobold.Core.Systems.GameStateSystem-1.html#Kobold_Core_Systems_GameStateSystem_1_GetCurrentState
+  name: GetCurrentState
+  nameWithType: GameStateSystem<TGameState>.GetCurrentState
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.GetCurrentState
+  nameWithType.vb: GameStateSystem(Of TGameState).GetCurrentState
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).GetCurrentState
+- uid: Kobold.Core.Systems.GameStateSystem`1.HandleStateTransitionInputs*
+  commentId: Overload:Kobold.Core.Systems.GameStateSystem`1.HandleStateTransitionInputs
+  href: Kobold.Core.Systems.GameStateSystem-1.html#Kobold_Core_Systems_GameStateSystem_1_HandleStateTransitionInputs
+  name: HandleStateTransitionInputs
+  nameWithType: GameStateSystem<TGameState>.HandleStateTransitionInputs
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.HandleStateTransitionInputs
+  nameWithType.vb: GameStateSystem(Of TGameState).HandleStateTransitionInputs
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).HandleStateTransitionInputs
+- uid: Kobold.Core.Systems.GameStateSystem`1.HandleStateChange*
+  commentId: Overload:Kobold.Core.Systems.GameStateSystem`1.HandleStateChange
+  href: Kobold.Core.Systems.GameStateSystem-1.html#Kobold_Core_Systems_GameStateSystem_1_HandleStateChange__0__0_
+  name: HandleStateChange
+  nameWithType: GameStateSystem<TGameState>.HandleStateChange
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>.HandleStateChange
+  nameWithType.vb: GameStateSystem(Of TGameState).HandleStateChange
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState).HandleStateChange

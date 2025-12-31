@@ -1,0 +1,724 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Systems.DestructionSystem
+  commentId: T:Kobold.Core.Systems.DestructionSystem
+  id: DestructionSystem
+  parent: Kobold.Core.Systems
+  children:
+  - Kobold.Core.Systems.DestructionSystem.#ctor(Arch.Core.World,Kobold.Core.Events.EventBus)
+  - Kobold.Core.Systems.DestructionSystem.GetStats
+  - Kobold.Core.Systems.DestructionSystem.MarkForDestruction(Arch.Core.World,Arch.Core.Entity,Kobold.Core.Components.DestructionReason,System.Single)
+  - Kobold.Core.Systems.DestructionSystem.SetLifetime(Arch.Core.World,Arch.Core.Entity,System.Single)
+  - Kobold.Core.Systems.DestructionSystem.Update(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: DestructionSystem
+  nameWithType: DestructionSystem
+  fullName: Kobold.Core.Systems.DestructionSystem
+  type: Class
+  source:
+    remote:
+      path: Kobold/Systems/DestructionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: DestructionSystem
+    path: Kobold/Systems/DestructionSystem.cs
+    startLine: 19
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  summary: >-
+    Unified system that handles both lifetime expiration and pending destruction
+
+    Processes all entity destruction at the end of the frame for safety
+  example: []
+  syntax:
+    content: 'public class DestructionSystem : ISystem'
+    content.vb: Public Class DestructionSystem Implements ISystem
+  inheritance:
+  - System.Object
+  implements:
+  - Kobold.Core.Abstractions.ISystem
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Core.Systems.DestructionSystem.#ctor(Arch.Core.World,Kobold.Core.Events.EventBus)
+  commentId: M:Kobold.Core.Systems.DestructionSystem.#ctor(Arch.Core.World,Kobold.Core.Events.EventBus)
+  id: '#ctor(Arch.Core.World,Kobold.Core.Events.EventBus)'
+  parent: Kobold.Core.Systems.DestructionSystem
+  langs:
+  - csharp
+  - vb
+  name: DestructionSystem(World, EventBus)
+  nameWithType: DestructionSystem.DestructionSystem(World, EventBus)
+  fullName: Kobold.Core.Systems.DestructionSystem.DestructionSystem(Arch.Core.World, Kobold.Core.Events.EventBus)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Systems/DestructionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Systems/DestructionSystem.cs
+    startLine: 25
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public DestructionSystem(World world, EventBus eventBus = null)
+    parameters:
+    - id: world
+      type: Arch.Core.World
+    - id: eventBus
+      type: Kobold.Core.Events.EventBus
+    content.vb: Public Sub New(world As World, eventBus As EventBus = Nothing)
+  overload: Kobold.Core.Systems.DestructionSystem.#ctor*
+  nameWithType.vb: DestructionSystem.New(World, EventBus)
+  fullName.vb: Kobold.Core.Systems.DestructionSystem.New(Arch.Core.World, Kobold.Core.Events.EventBus)
+  name.vb: New(World, EventBus)
+- uid: Kobold.Core.Systems.DestructionSystem.Update(System.Single)
+  commentId: M:Kobold.Core.Systems.DestructionSystem.Update(System.Single)
+  id: Update(System.Single)
+  parent: Kobold.Core.Systems.DestructionSystem
+  langs:
+  - csharp
+  - vb
+  name: Update(float)
+  nameWithType: DestructionSystem.Update(float)
+  fullName: Kobold.Core.Systems.DestructionSystem.Update(float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Systems/DestructionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Update
+    path: Kobold/Systems/DestructionSystem.cs
+    startLine: 31
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  example: []
+  syntax:
+    content: public void Update(float deltaTime)
+    parameters:
+    - id: deltaTime
+      type: System.Single
+    content.vb: Public Sub Update(deltaTime As Single)
+  overload: Kobold.Core.Systems.DestructionSystem.Update*
+  implements:
+  - Kobold.Core.Abstractions.ISystem.Update(System.Single)
+  nameWithType.vb: DestructionSystem.Update(Single)
+  fullName.vb: Kobold.Core.Systems.DestructionSystem.Update(Single)
+  name.vb: Update(Single)
+- uid: Kobold.Core.Systems.DestructionSystem.MarkForDestruction(Arch.Core.World,Arch.Core.Entity,Kobold.Core.Components.DestructionReason,System.Single)
+  commentId: M:Kobold.Core.Systems.DestructionSystem.MarkForDestruction(Arch.Core.World,Arch.Core.Entity,Kobold.Core.Components.DestructionReason,System.Single)
+  id: MarkForDestruction(Arch.Core.World,Arch.Core.Entity,Kobold.Core.Components.DestructionReason,System.Single)
+  parent: Kobold.Core.Systems.DestructionSystem
+  langs:
+  - csharp
+  - vb
+  name: MarkForDestruction(World, Entity, DestructionReason, float)
+  nameWithType: DestructionSystem.MarkForDestruction(World, Entity, DestructionReason, float)
+  fullName: Kobold.Core.Systems.DestructionSystem.MarkForDestruction(Arch.Core.World, Arch.Core.Entity, Kobold.Core.Components.DestructionReason, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Systems/DestructionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: MarkForDestruction
+    path: Kobold/Systems/DestructionSystem.cs
+    startLine: 116
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  summary: Mark an entity for destruction (safer than immediate destruction)
+  example: []
+  syntax:
+    content: public static void MarkForDestruction(World world, Entity entity, DestructionReason reason = DestructionReason.Manual, float delay = 0)
+    parameters:
+    - id: world
+      type: Arch.Core.World
+    - id: entity
+      type: Arch.Core.Entity
+    - id: reason
+      type: Kobold.Core.Components.DestructionReason
+    - id: delay
+      type: System.Single
+    content.vb: Public Shared Sub MarkForDestruction(world As World, entity As Entity, reason As DestructionReason = DestructionReason.Manual, delay As Single = 0)
+  overload: Kobold.Core.Systems.DestructionSystem.MarkForDestruction*
+  nameWithType.vb: DestructionSystem.MarkForDestruction(World, Entity, DestructionReason, Single)
+  fullName.vb: Kobold.Core.Systems.DestructionSystem.MarkForDestruction(Arch.Core.World, Arch.Core.Entity, Kobold.Core.Components.DestructionReason, Single)
+  name.vb: MarkForDestruction(World, Entity, DestructionReason, Single)
+- uid: Kobold.Core.Systems.DestructionSystem.SetLifetime(Arch.Core.World,Arch.Core.Entity,System.Single)
+  commentId: M:Kobold.Core.Systems.DestructionSystem.SetLifetime(Arch.Core.World,Arch.Core.Entity,System.Single)
+  id: SetLifetime(Arch.Core.World,Arch.Core.Entity,System.Single)
+  parent: Kobold.Core.Systems.DestructionSystem
+  langs:
+  - csharp
+  - vb
+  name: SetLifetime(World, Entity, float)
+  nameWithType: DestructionSystem.SetLifetime(World, Entity, float)
+  fullName: Kobold.Core.Systems.DestructionSystem.SetLifetime(Arch.Core.World, Arch.Core.Entity, float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Systems/DestructionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: SetLifetime
+    path: Kobold/Systems/DestructionSystem.cs
+    startLine: 133
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  summary: Create an entity with a lifetime (convenience method)
+  example: []
+  syntax:
+    content: public static void SetLifetime(World world, Entity entity, float lifetime)
+    parameters:
+    - id: world
+      type: Arch.Core.World
+    - id: entity
+      type: Arch.Core.Entity
+    - id: lifetime
+      type: System.Single
+    content.vb: Public Shared Sub SetLifetime(world As World, entity As Entity, lifetime As Single)
+  overload: Kobold.Core.Systems.DestructionSystem.SetLifetime*
+  nameWithType.vb: DestructionSystem.SetLifetime(World, Entity, Single)
+  fullName.vb: Kobold.Core.Systems.DestructionSystem.SetLifetime(Arch.Core.World, Arch.Core.Entity, Single)
+  name.vb: SetLifetime(World, Entity, Single)
+- uid: Kobold.Core.Systems.DestructionSystem.GetStats
+  commentId: M:Kobold.Core.Systems.DestructionSystem.GetStats
+  id: GetStats
+  parent: Kobold.Core.Systems.DestructionSystem
+  langs:
+  - csharp
+  - vb
+  name: GetStats()
+  nameWithType: DestructionSystem.GetStats()
+  fullName: Kobold.Core.Systems.DestructionSystem.GetStats()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Systems/DestructionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetStats
+    path: Kobold/Systems/DestructionSystem.cs
+    startLine: 154
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  summary: Get destruction statistics for debugging
+  example: []
+  syntax:
+    content: public DestructionStats GetStats()
+    return:
+      type: Kobold.Core.Systems.DestructionStats
+    content.vb: Public Function GetStats() As DestructionStats
+  overload: Kobold.Core.Systems.DestructionSystem.GetStats*
+references:
+- uid: Kobold.Core.Systems
+  commentId: N:Kobold.Core.Systems
+  href: Kobold.html
+  name: Kobold.Core.Systems
+  nameWithType: Kobold.Core.Systems
+  fullName: Kobold.Core.Systems
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Kobold.Core.Abstractions.ISystem
+  commentId: T:Kobold.Core.Abstractions.ISystem
+  parent: Kobold.Core.Abstractions
+  href: Kobold.Core.Abstractions.ISystem.html
+  name: ISystem
+  nameWithType: ISystem
+  fullName: Kobold.Core.Abstractions.ISystem
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Abstractions
+  commentId: N:Kobold.Core.Abstractions
+  href: Kobold.html
+  name: Kobold.Core.Abstractions
+  nameWithType: Kobold.Core.Abstractions
+  fullName: Kobold.Core.Abstractions
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+- uid: Kobold.Core.Systems.DestructionSystem.#ctor*
+  commentId: Overload:Kobold.Core.Systems.DestructionSystem.#ctor
+  href: Kobold.Core.Systems.DestructionSystem.html#Kobold_Core_Systems_DestructionSystem__ctor_Arch_Core_World_Kobold_Core_Events_EventBus_
+  name: DestructionSystem
+  nameWithType: DestructionSystem.DestructionSystem
+  fullName: Kobold.Core.Systems.DestructionSystem.DestructionSystem
+  nameWithType.vb: DestructionSystem.New
+  fullName.vb: Kobold.Core.Systems.DestructionSystem.New
+  name.vb: New
+- uid: Arch.Core.World
+  commentId: T:Arch.Core.World
+  parent: Arch.Core
+  isExternal: true
+  name: World
+  nameWithType: World
+  fullName: Arch.Core.World
+- uid: Kobold.Core.Events.EventBus
+  commentId: T:Kobold.Core.Events.EventBus
+  parent: Kobold.Core.Events
+  href: Kobold.Core.Events.EventBus.html
+  name: EventBus
+  nameWithType: EventBus
+  fullName: Kobold.Core.Events.EventBus
+- uid: Arch.Core
+  commentId: N:Arch.Core
+  isExternal: true
+  name: Arch.Core
+  nameWithType: Arch.Core
+  fullName: Arch.Core
+  spec.csharp:
+  - uid: Arch
+    name: Arch
+    isExternal: true
+  - name: .
+  - uid: Arch.Core
+    name: Core
+    isExternal: true
+  spec.vb:
+  - uid: Arch
+    name: Arch
+    isExternal: true
+  - name: .
+  - uid: Arch.Core
+    name: Core
+    isExternal: true
+- uid: Kobold.Core.Events
+  commentId: N:Kobold.Core.Events
+  href: Kobold.html
+  name: Kobold.Core.Events
+  nameWithType: Kobold.Core.Events
+  fullName: Kobold.Core.Events
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+- uid: Kobold.Core.Systems.DestructionSystem.Update*
+  commentId: Overload:Kobold.Core.Systems.DestructionSystem.Update
+  href: Kobold.Core.Systems.DestructionSystem.html#Kobold_Core_Systems_DestructionSystem_Update_System_Single_
+  name: Update
+  nameWithType: DestructionSystem.Update
+  fullName: Kobold.Core.Systems.DestructionSystem.Update
+- uid: Kobold.Core.Abstractions.ISystem.Update(System.Single)
+  commentId: M:Kobold.Core.Abstractions.ISystem.Update(System.Single)
+  parent: Kobold.Core.Abstractions.ISystem
+  isExternal: true
+  href: Kobold.Core.Abstractions.ISystem.html#Kobold_Core_Abstractions_ISystem_Update_System_Single_
+  name: Update(float)
+  nameWithType: ISystem.Update(float)
+  fullName: Kobold.Core.Abstractions.ISystem.Update(float)
+  nameWithType.vb: ISystem.Update(Single)
+  fullName.vb: Kobold.Core.Abstractions.ISystem.Update(Single)
+  name.vb: Update(Single)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.ISystem.Update(System.Single)
+    name: Update
+    href: Kobold.Core.Abstractions.ISystem.html#Kobold_Core_Abstractions_ISystem_Update_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.ISystem.Update(System.Single)
+    name: Update
+    href: Kobold.Core.Abstractions.ISystem.html#Kobold_Core_Abstractions_ISystem_Update_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Core.Systems.DestructionSystem.MarkForDestruction*
+  commentId: Overload:Kobold.Core.Systems.DestructionSystem.MarkForDestruction
+  href: Kobold.Core.Systems.DestructionSystem.html#Kobold_Core_Systems_DestructionSystem_MarkForDestruction_Arch_Core_World_Arch_Core_Entity_Kobold_Core_Components_DestructionReason_System_Single_
+  name: MarkForDestruction
+  nameWithType: DestructionSystem.MarkForDestruction
+  fullName: Kobold.Core.Systems.DestructionSystem.MarkForDestruction
+- uid: Arch.Core.Entity
+  commentId: T:Arch.Core.Entity
+  parent: Arch.Core
+  isExternal: true
+  name: Entity
+  nameWithType: Entity
+  fullName: Arch.Core.Entity
+- uid: Kobold.Core.Components.DestructionReason
+  commentId: T:Kobold.Core.Components.DestructionReason
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.DestructionReason.html
+  name: DestructionReason
+  nameWithType: DestructionReason
+  fullName: Kobold.Core.Components.DestructionReason
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: Kobold.Core.Systems.DestructionSystem.SetLifetime*
+  commentId: Overload:Kobold.Core.Systems.DestructionSystem.SetLifetime
+  href: Kobold.Core.Systems.DestructionSystem.html#Kobold_Core_Systems_DestructionSystem_SetLifetime_Arch_Core_World_Arch_Core_Entity_System_Single_
+  name: SetLifetime
+  nameWithType: DestructionSystem.SetLifetime
+  fullName: Kobold.Core.Systems.DestructionSystem.SetLifetime
+- uid: Kobold.Core.Systems.DestructionSystem.GetStats*
+  commentId: Overload:Kobold.Core.Systems.DestructionSystem.GetStats
+  href: Kobold.Core.Systems.DestructionSystem.html#Kobold_Core_Systems_DestructionSystem_GetStats
+  name: GetStats
+  nameWithType: DestructionSystem.GetStats
+  fullName: Kobold.Core.Systems.DestructionSystem.GetStats
+- uid: Kobold.Core.Systems.DestructionStats
+  commentId: T:Kobold.Core.Systems.DestructionStats
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.DestructionStats.html
+  name: DestructionStats
+  nameWithType: DestructionStats
+  fullName: Kobold.Core.Systems.DestructionStats

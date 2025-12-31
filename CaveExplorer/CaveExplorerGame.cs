@@ -11,7 +11,7 @@ using Kobold.Core.Systems;
 using Kobold.Extensions.Portals;
 using Kobold.Extensions.Progression;
 using Kobold.Extensions.Tilemaps;
-using Procedural;
+using Kobold.Extensions.Procedural;
 using System.Drawing;
 using System.Numerics;
 
@@ -303,8 +303,7 @@ namespace CaveExplorer
 
         public override void Render()
         {
-            // Call all render systems (each handles its own Begin/End)
-            SystemManager.RenderAll();
+            base.Render();
         }
     }
 }

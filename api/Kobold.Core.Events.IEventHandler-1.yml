@@ -1,0 +1,114 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Events.IEventHandler`1
+  commentId: T:Kobold.Core.Events.IEventHandler`1
+  id: IEventHandler`1
+  parent: Kobold.Core.Events
+  children:
+  - Kobold.Core.Events.IEventHandler`1.Handle(`0)
+  langs:
+  - csharp
+  - vb
+  name: IEventHandler<T>
+  nameWithType: IEventHandler<T>
+  fullName: Kobold.Core.Events.IEventHandler<T>
+  type: Interface
+  source:
+    remote:
+      path: Kobold/Events/IEventHandler.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IEventHandler
+    path: Kobold/Events/IEventHandler.cs
+    startLine: 8
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Events
+  syntax:
+    content: 'public interface IEventHandler<in T> where T : IEvent'
+    typeParameters:
+    - id: T
+    content.vb: Public Interface IEventHandler(Of In T As IEvent)
+  nameWithType.vb: IEventHandler(Of T)
+  fullName.vb: Kobold.Core.Events.IEventHandler(Of T)
+  name.vb: IEventHandler(Of T)
+- uid: Kobold.Core.Events.IEventHandler`1.Handle(`0)
+  commentId: M:Kobold.Core.Events.IEventHandler`1.Handle(`0)
+  id: Handle(`0)
+  parent: Kobold.Core.Events.IEventHandler`1
+  langs:
+  - csharp
+  - vb
+  name: Handle(T)
+  nameWithType: IEventHandler<T>.Handle(T)
+  fullName: Kobold.Core.Events.IEventHandler<T>.Handle(T)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Events/IEventHandler.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Handle
+    path: Kobold/Events/IEventHandler.cs
+    startLine: 10
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Events
+  syntax:
+    content: void Handle(T eventData)
+    parameters:
+    - id: eventData
+      type: '{T}'
+    content.vb: Sub Handle(eventData As T)
+  overload: Kobold.Core.Events.IEventHandler`1.Handle*
+  nameWithType.vb: IEventHandler(Of T).Handle(T)
+  fullName.vb: Kobold.Core.Events.IEventHandler(Of T).Handle(T)
+references:
+- uid: Kobold.Core.Events
+  commentId: N:Kobold.Core.Events
+  href: Kobold.html
+  name: Kobold.Core.Events
+  nameWithType: Kobold.Core.Events
+  fullName: Kobold.Core.Events
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+- uid: Kobold.Core.Events.IEventHandler`1.Handle*
+  commentId: Overload:Kobold.Core.Events.IEventHandler`1.Handle
+  href: Kobold.Core.Events.IEventHandler-1.html#Kobold_Core_Events_IEventHandler_1_Handle__0_
+  name: Handle
+  nameWithType: IEventHandler<T>.Handle
+  fullName: Kobold.Core.Events.IEventHandler<T>.Handle
+  nameWithType.vb: IEventHandler(Of T).Handle
+  fullName.vb: Kobold.Core.Events.IEventHandler(Of T).Handle
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T

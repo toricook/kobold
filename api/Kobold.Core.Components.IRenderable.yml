@@ -1,0 +1,113 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.IRenderable
+  commentId: T:Kobold.Core.Components.IRenderable
+  id: IRenderable
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.IRenderable.Layer
+  langs:
+  - csharp
+  - vb
+  name: IRenderable
+  nameWithType: IRenderable
+  fullName: Kobold.Core.Components.IRenderable
+  type: Interface
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Renderable.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IRenderable
+    path: Kobold/Components/Rendering/Renderable.cs
+    startLine: 11
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public interface IRenderable
+    content.vb: Public Interface IRenderable
+- uid: Kobold.Core.Components.IRenderable.Layer
+  commentId: P:Kobold.Core.Components.IRenderable.Layer
+  id: Layer
+  parent: Kobold.Core.Components.IRenderable
+  langs:
+  - csharp
+  - vb
+  name: Layer
+  nameWithType: IRenderable.Layer
+  fullName: Kobold.Core.Components.IRenderable.Layer
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Rendering/Renderable.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Layer
+    path: Kobold/Components/Rendering/Renderable.cs
+    startLine: 13
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: int Layer { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: ReadOnly Property Layer As Integer
+  overload: Kobold.Core.Components.IRenderable.Layer*
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: Kobold.Core.Components.IRenderable.Layer*
+  commentId: Overload:Kobold.Core.Components.IRenderable.Layer
+  href: Kobold.Core.Components.IRenderable.html#Kobold_Core_Components_IRenderable_Layer
+  name: Layer
+  nameWithType: IRenderable.Layer
+  fullName: Kobold.Core.Components.IRenderable.Layer
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

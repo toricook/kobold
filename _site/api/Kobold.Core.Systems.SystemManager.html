@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SystemManager | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SystemManager | Kobold Game Framework ">
+      
+      <meta name="description" content="Enhanced system manager with ordering and render system support">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/new/docs/apiSpec/new?filename=Kobold_Core_Systems_SystemManager.md&amp;value=---%0Auid%3A%20Kobold.Core.Systems.SystemManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Kobold.Core.Systems.SystemManager">
+
+
+
+  <h1 id="Kobold_Core_Systems_SystemManager" data-uid="Kobold.Core.Systems.SystemManager" class="text-break">
+Class SystemManager  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Kobold.html">Kobold</a>.<a class="xref" href="Kobold.Core.html">Core</a>.<a class="xref" href="Kobold.Core.Systems.html">Systems</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Kobold.Core.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Enhanced system manager with ordering and render system support</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SystemManager</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">SystemManager</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Kobold_Core_Systems_SystemManager__ctor_" data-uid="Kobold.Core.Systems.SystemManager.#ctor*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager__ctor_Kobold_Core_Events_EventBus_Arch_Core_World_" data-uid="Kobold.Core.Systems.SystemManager.#ctor(Kobold.Core.Events.EventBus,Arch.Core.World)">
+  SystemManager(EventBus, World)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SystemManager(EventBus eventBus, World world)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventBus</code> <a class="xref" href="Kobold.Core.Events.EventBus.html">EventBus</a></dt>
+    <dd></dd>
+    <dt><code>world</code> <span class="xref">World</span></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Kobold_Core_Systems_SystemManager_AddHybridSystem_" data-uid="Kobold.Core.Systems.SystemManager.AddHybridSystem*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_AddHybridSystem_Kobold_Core_Abstractions_ISystem_System_Int32_System_Boolean_" data-uid="Kobold.Core.Systems.SystemManager.AddHybridSystem(Kobold.Core.Abstractions.ISystem,System.Int32,System.Boolean)">
+  AddHybridSystem(ISystem, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a system that implements both ISystem and IRenderSystem</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddHybridSystem(ISystem system, int order = 400, bool requiresGameplayState = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>system</code> <a class="xref" href="Kobold.Core.Abstractions.ISystem.html">ISystem</a></dt>
+    <dd></dd>
+    <dt><code>order</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>requiresGameplayState</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Systems_SystemManager_AddRenderSystem_" data-uid="Kobold.Core.Systems.SystemManager.AddRenderSystem*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_AddRenderSystem_Kobold_Core_Abstractions_IRenderSystem_" data-uid="Kobold.Core.Systems.SystemManager.AddRenderSystem(Kobold.Core.Abstractions.IRenderSystem)">
+  AddRenderSystem(IRenderSystem)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a render system (these are always active)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddRenderSystem(IRenderSystem renderSystem)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>renderSystem</code> <a class="xref" href="Kobold.Core.Abstractions.IRenderSystem.html">IRenderSystem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Systems_SystemManager_AddSystem_" data-uid="Kobold.Core.Systems.SystemManager.AddSystem*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_AddSystem_Kobold_Core_Abstractions_ISystem_System_Int32_System_Boolean_" data-uid="Kobold.Core.Systems.SystemManager.AddSystem(Kobold.Core.Abstractions.ISystem,System.Int32,System.Boolean)">
+  AddSystem(ISystem, int, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Add a regular update system</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddSystem(ISystem system, int order = 400, bool requiresGameplayState = true)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>system</code> <a class="xref" href="Kobold.Core.Abstractions.ISystem.html">ISystem</a></dt>
+    <dd></dd>
+    <dt><code>order</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>requiresGameplayState</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Systems_SystemManager_ClearSystems_" data-uid="Kobold.Core.Systems.SystemManager.ClearSystems*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_ClearSystems" data-uid="Kobold.Core.Systems.SystemManager.ClearSystems">
+  ClearSystems()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L213"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Clear all systems</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearSystems()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Systems_SystemManager_GetSystemInfo_" data-uid="Kobold.Core.Systems.SystemManager.GetSystemInfo*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_GetSystemInfo" data-uid="Kobold.Core.Systems.SystemManager.GetSystemInfo">
+  GetSystemInfo()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get system information for debugging</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SystemManagerInfo GetSystemInfo()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Core.Systems.SystemManagerInfo.html">SystemManagerInfo</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Systems_SystemManager_GetSystem_" data-uid="Kobold.Core.Systems.SystemManager.GetSystem*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_GetSystem__1" data-uid="Kobold.Core.Systems.SystemManager.GetSystem``1">
+  GetSystem&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L147"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get a specific system by type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T GetSystem&lt;T&gt;() where T : class</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Systems_SystemManager_GetSystems_" data-uid="Kobold.Core.Systems.SystemManager.GetSystems*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_GetSystems__1" data-uid="Kobold.Core.Systems.SystemManager.GetSystems``1">
+  GetSystems&lt;T&gt;()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L172"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get all systems of a specific type</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;T&gt; GetSystems&lt;T&gt;() where T : class</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Systems_SystemManager_IsSystemEnabled_" data-uid="Kobold.Core.Systems.SystemManager.IsSystemEnabled*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_IsSystemEnabled_Kobold_Core_Abstractions_ISystem_" data-uid="Kobold.Core.Systems.SystemManager.IsSystemEnabled(Kobold.Core.Abstractions.ISystem)">
+  IsSystemEnabled(ISystem)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L236"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Check if a system is enabled</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSystemEnabled(ISystem system)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>system</code> <a class="xref" href="Kobold.Core.Abstractions.ISystem.html">ISystem</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Systems_SystemManager_RemoveRenderSystem_" data-uid="Kobold.Core.Systems.SystemManager.RemoveRenderSystem*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_RemoveRenderSystem_Kobold_Core_Abstractions_IRenderSystem_" data-uid="Kobold.Core.Systems.SystemManager.RemoveRenderSystem(Kobold.Core.Abstractions.IRenderSystem)">
+  RemoveRenderSystem(IRenderSystem)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove a render system</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveRenderSystem(IRenderSystem renderSystem)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>renderSystem</code> <a class="xref" href="Kobold.Core.Abstractions.IRenderSystem.html">IRenderSystem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Systems_SystemManager_RemoveSystem_" data-uid="Kobold.Core.Systems.SystemManager.RemoveSystem*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_RemoveSystem_Kobold_Core_Abstractions_ISystem_" data-uid="Kobold.Core.Systems.SystemManager.RemoveSystem(Kobold.Core.Abstractions.ISystem)">
+  RemoveSystem(ISystem)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L92"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Remove a system</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveSystem(ISystem system)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>system</code> <a class="xref" href="Kobold.Core.Abstractions.ISystem.html">ISystem</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Systems_SystemManager_RenderAll_" data-uid="Kobold.Core.Systems.SystemManager.RenderAll*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_RenderAll" data-uid="Kobold.Core.Systems.SystemManager.RenderAll">
+  RenderAll()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Render all render systems</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RenderAll()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Systems_SystemManager_SetSystemEnabled_" data-uid="Kobold.Core.Systems.SystemManager.SetSystemEnabled*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_SetSystemEnabled_Kobold_Core_Abstractions_ISystem_System_Boolean_" data-uid="Kobold.Core.Systems.SystemManager.SetSystemEnabled(Kobold.Core.Abstractions.ISystem,System.Boolean)">
+  SetSystemEnabled(ISystem, bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L224"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Enable or disable a system</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetSystemEnabled(ISystem system, bool enabled)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>system</code> <a class="xref" href="Kobold.Core.Abstractions.ISystem.html">ISystem</a></dt>
+    <dd></dd>
+    <dt><code>enabled</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Core_Systems_SystemManager_UpdateAll_" data-uid="Kobold.Core.Systems.SystemManager.UpdateAll*"></a>
+
+  <h3 id="Kobold_Core_Systems_SystemManager_UpdateAll_System_Single_" data-uid="Kobold.Core.Systems.SystemManager.UpdateAll(System.Single)">
+  UpdateAll(float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Update all systems in order</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateAll(float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold/Systems/SystemManager.cs/#L30" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

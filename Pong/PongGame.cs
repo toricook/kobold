@@ -158,8 +158,7 @@ namespace Pong
 
         public override void Render()
         {
-            var renderSystem = SystemManager.GetSystem<RenderSystem>();
-            renderSystem?.Render();
+            base.Render();
         }
     }
 }

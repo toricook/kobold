@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Systems Reference | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Systems Reference | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/core/systems.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="systems-reference">Systems Reference</h1>
+
+<p>Systems contain the logic that processes entities with specific components each frame. This page documents all built-in systems in Kobold.Core.</p>
+<h2 id="system-basics">System Basics</h2>
+<p>All systems implement <code>ISystem</code> or <code>IRenderSystem</code>:</p>
+<pre><code class="lang-csharp">public interface ISystem
+{
+    void Update(float deltaTime, World world);
+}
+
+public interface IRenderSystem
+{
+    void Render(World world);
+}
+</code></pre>
+<p>Systems are added in your game's <code>Initialize()</code> method:</p>
+<pre><code class="lang-csharp">protected override void Initialize()
+{
+    base.Initialize();
+
+    // Add update systems with execution order
+    Systems.AddSystem(new PhysicsSystem(), order: 100, requiresGameplayState: true);
+    Systems.AddSystem(new CollisionSystem(matrix), order: 300, requiresGameplayState: true);
+
+    // Add render systems
+    Systems.AddRenderSystem(new RenderSystem(Renderer));
+}
+</code></pre>
+<h2 id="system-execution-order">System Execution Order</h2>
+<p>Use these constants for consistent ordering:</p>
+<pre><code class="lang-csharp">public static class SystemOrder
+{
+    public const int INPUT = 0;
+    public const int PHYSICS = 100;
+    public const int AI = 200;
+    public const int COLLISION = 300;
+    public const int GAME_LOGIC = 400;
+    public const int UI = 500;
+    public const int CLEANUP = 600;
+}
+</code></pre>
+<h2 id="built-in-systems">Built-in Systems</h2>
+<h3 id="physicssystem">PhysicsSystem</h3>
+<p>Moves entities based on velocity and applies physics simulation.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Systems.PhysicsSystem</code></p>
+<p><strong>Processes:</strong> Entities with <code>Transform</code> and <code>Velocity</code> components</p>
+<p><strong>Configuration:</strong></p>
+<pre><code class="lang-csharp">public class PhysicsConfig
+{
+    public bool EnableGravity = false;
+    public Vector2 GlobalGravity = new Vector2(0, 980);  // Pixels/sec²
+    public bool EnableDamping = false;
+    public float GlobalDamping = 0.99f;                  // 0-1
+}
+</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">var config = new PhysicsConfig
+{
+    EnableGravity = true,
+    GlobalGravity = new Vector2(0, 500),  // Platformer gravity
+    EnableDamping = true,
+    GlobalDamping = 0.98f
+};
+
+Systems.AddSystem(new PhysicsSystem(config), SystemOrder.PHYSICS, true);
+</code></pre>
+<p><strong>What it does:</strong></p>
+<ol>
+<li>Applies gravity to entities with <code>Physics</code> component (if enabled)</li>
+<li>Applies damping to velocity (if enabled)</li>
+<li>Moves entities: <code>position += velocity * deltaTime</code></li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Entity affected by gravity
+World.Create(
+    new Transform { Position = new Vector2(400, 100) },
+    new Velocity { Value = Vector2.Zero },
+    new Physics { Mass = 1.0f, Damping = 0.99f }
+);
+</code></pre>
+<hr>
+<h3 id="collisionsystem">CollisionSystem</h3>
+<p>Detects and resolves collisions between entities with BoxCollider.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Systems.CollisionSystem</code></p>
+<p><strong>Processes:</strong> Entities with <code>Transform</code> and <code>BoxCollider</code> components</p>
+<p><strong>Configuration:</strong></p>
+<pre><code class="lang-csharp">public class CollisionMatrix
+{
+    public void SetCollision(CollisionLayer layerA, CollisionLayer layerB, bool collides);
+    public bool ShouldCollide(CollisionLayer layerA, CollisionLayer layerB);
+}
+</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">var matrix = new CollisionMatrix();
+matrix.SetCollision(CollisionLayer.Player, CollisionLayer.Enemy, true);
+matrix.SetCollision(CollisionLayer.Projectile, CollisionLayer.Enemy, true);
+matrix.SetCollision(CollisionLayer.Player, CollisionLayer.Pickup, true);
+
+var config = new CollisionSystemConfig
+{
+    EnableCollisionResponse = true,  // Apply physics-based impulses
+    EnableCollisionEvents = true     // Publish CollisionEvent
+};
+
+Systems.AddSystem(new CollisionSystem(matrix, config), SystemOrder.COLLISION, true);
+</code></pre>
+<p><strong>Features:</strong></p>
+<ul>
+<li>AABB (box-box) collision detection</li>
+<li>Collision filtering via CollisionMatrix</li>
+<li>Optional collision response (separates overlapping entities)</li>
+<li>Publishes <code>CollisionEvent</code> to EventBus</li>
+</ul>
+<p><strong>CollisionEvent:</strong></p>
+<pre><code class="lang-csharp">public record CollisionEvent
+{
+    public Entity EntityA;
+    public Entity EntityB;
+    public Vector2 CollisionPoint;
+    public Vector2 Normal;
+    public float Penetration;
+    public CollisionLayer LayerA;
+    public CollisionLayer LayerB;
+}
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Subscribe to collisions
+Events.Subscribe&lt;CollisionEvent&gt;(OnCollision);
+
+void OnCollision(CollisionEvent collision)
+{
+    if (collision.LayerA == CollisionLayer.Player &amp;&amp;
+        collision.LayerB == CollisionLayer.Enemy)
+    {
+        // Player hit enemy
+        World.Destroy(collision.EntityB);
+    }
+}
+</code></pre>
+<hr>
+<h3 id="rendersystem">RenderSystem</h3>
+<p>Draws all entities with rendering components.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Systems.RenderSystem</code></p>
+<p><strong>Processes:</strong> Entities with <code>Transform</code> and rendering components (<code>SpriteRenderer</code>, <code>RectangleRenderer</code>, <code>TextRenderer</code>, <code>TriangleRenderer</code>)</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">Systems.AddRenderSystem(new RenderSystem(Renderer));
+</code></pre>
+<p><strong>What it does:</strong></p>
+<ol>
+<li>Collects all renderable entities</li>
+<li>Sorts by layer (lower layers render first/behind)</li>
+<li>Applies camera transformation if Camera exists</li>
+<li>Calls appropriate IRenderer methods for each entity type</li>
+</ol>
+<p><strong>Rendering Order:</strong></p>
+<ul>
+<li>Background (layer 0)</li>
+<li>Game objects (layer 100)</li>
+<li>UI (layer 200)</li>
+<li>Debug (layer 300)</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Background (renders behind everything)
+World.Create(
+    new Transform { Position = Vector2.Zero },
+    SpriteRenderer.Background(bgTexture)  // Layer 0
+);
+
+// Game object (middle layer)
+World.Create(
+    new Transform { Position = new Vector2(400, 300) },
+    SpriteRenderer.GameObject(playerTexture)  // Layer 100
+);
+
+// UI (renders on top)
+World.Create(
+    new Transform { Position = new Vector2(10, 10) },
+    new TextRenderer { Text = &quot;Score: 0&quot;, Layer = RenderLayers.UI }  // Layer 200
+);
+</code></pre>
+<hr>
+<h3 id="animationsystem">AnimationSystem</h3>
+<p>Updates sprite animations.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Systems.AnimationSystem</code></p>
+<p><strong>Processes:</strong> Entities with <code>Animation</code> and <code>SpriteRenderer</code> components</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">Systems.AddSystem(new AnimationSystem(), SystemOrder.GAME_LOGIC, true);
+</code></pre>
+<p><strong>What it does:</strong></p>
+<ol>
+<li>Advances animation time</li>
+<li>Changes frames when frame duration expires</li>
+<li>Loops or stops at end based on clip settings</li>
+<li>Updates SpriteRenderer.SourceRect to current frame</li>
+</ol>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">var spriteSheet = Assets.LoadSpriteSheet(&quot;player.json&quot;);
+var texture = Assets.LoadTexture(&quot;player.png&quot;);
+
+var animation = new Animation();
+animation.Clips[&quot;walk&quot;] = spriteSheet.CreateAnimationClip(&quot;walk&quot;);
+animation.Clips[&quot;idle&quot;] = spriteSheet.CreateAnimationClip(&quot;idle&quot;);
+animation.Play(&quot;walk&quot;);
+
+World.Create(
+    new Transform { Position = new Vector2(400, 300) },
+    SpriteRenderer.FromSpriteSheet(texture, spriteSheet.GetFrame(0)),
+    animation
+);
+
+// Switch animations in Update()
+ref var anim = ref entity.Get&lt;Animation&gt;();
+if (velocity.IsMoving)
+    anim.Play(&quot;walk&quot;);
+else
+    anim.Play(&quot;idle&quot;);
+</code></pre>
+<hr>
+<h3 id="boundarysystem">BoundarySystem</h3>
+<p>Handles screen boundary behavior (wrap, bounce, clamp, destroy).</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Systems.BoundarySystem</code></p>
+<p><strong>Processes:</strong> Entities with <code>Transform</code> (and optionally <code>Velocity</code> for bouncing)</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">Systems.AddSystem(new BoundarySystem(BoundaryBehavior.Wrap), SystemOrder.GAME_LOGIC, true);
+</code></pre>
+<p><strong>Boundary Behaviors:</strong></p>
+<ul>
+<li><code>None</code> - Do nothing</li>
+<li><code>Wrap</code> - Wrap to opposite side (Asteroids-style)</li>
+<li><code>Clamp</code> - Stop at edge</li>
+<li><code>Bounce</code> - Bounce off edges (reverses velocity)</li>
+<li><code>Destroy</code> - Destroy entity when it leaves screen</li>
+</ul>
+<p><strong>Requires:</strong> An entity with <code>ScreenBounds</code> component defining the boundaries</p>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Define screen bounds
+World.Create(new ScreenBounds
+{
+    MinX = 0,
+    MaxX = 800,
+    MinY = 0,
+    MaxY = 600
+});
+
+// Wrap behavior (Asteroids-style)
+Systems.AddSystem(new BoundarySystem(BoundaryBehavior.Wrap), 200, true);
+
+// Per-entity custom behavior
+World.Create(
+    new Transform { Position = new Vector2(400, 300) },
+    new Velocity { Value = new Vector2(100, 0) },
+    new CustomBoundaryBehavior { Behavior = BoundaryBehavior.Bounce }
+);
+</code></pre>
+<hr>
+<h3 id="destructionsystem">DestructionSystem</h3>
+<p>Removes entities marked with <code>PendingDestruction</code>.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Systems.DestructionSystem</code></p>
+<p><strong>Processes:</strong> Entities with <code>PendingDestruction</code> component</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">Systems.AddSystem(new DestructionSystem(), SystemOrder.CLEANUP, true);
+</code></pre>
+<p><strong>What it does:</strong></p>
+<ul>
+<li>Destroys all entities marked with <code>PendingDestruction</code></li>
+<li>Runs at the end of the frame (cleanup phase)</li>
+<li>Safer than calling <code>World.Destroy()</code> during system updates</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Mark entity for destruction
+World.Add(entity, new PendingDestruction());
+
+// DestructionSystem will remove it at end of frame
+</code></pre>
+<hr>
+<h3 id="inputsystem">InputSystem</h3>
+<p>Processes input and updates player-controlled entities.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Systems.InputSystem</code></p>
+<p><strong>Processes:</strong> Custom - you typically query entities yourself</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">Systems.AddSystem(new InputSystem(InputManager), SystemOrder.INPUT, true);
+</code></pre>
+<p>Note: InputSystem is often custom per-game. You can also handle input directly in your GameEngineBase.Update() method.</p>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">public class PlayerInputSystem : ISystem
+{
+    private readonly IInputManager _input;
+
+    public PlayerInputSystem(IInputManager input)
+    {
+        _input = input;
+    }
+
+    public void Update(float deltaTime, World world)
+    {
+        var players = world.Query&lt;Transform, Velocity, PlayerControlled&gt;();
+        foreach (var player in players)
+        {
+            ref var velocity = ref player.Get&lt;Velocity&gt;();
+
+            var moveDir = Vector2.Zero;
+            if (_input.IsKeyDown(KeyCode.W)) moveDir.Y -= 1;
+            if (_input.IsKeyDown(KeyCode.S)) moveDir.Y += 1;
+            if (_input.IsKeyDown(KeyCode.A)) moveDir.X -= 1;
+            if (_input.IsKeyDown(KeyCode.D)) moveDir.X += 1;
+
+            if (moveDir != Vector2.Zero)
+            {
+                velocity.Value = Vector2.Normalize(moveDir) * 200f;
+            }
+            else
+            {
+                velocity.Value = Vector2.Zero;
+            }
+        }
+    }
+}
+</code></pre>
+<hr>
+<h3 id="gamestatesystem">GameStateSystem</h3>
+<p>Manages game state transitions and pausing.</p>
+<p><strong>Location:</strong> <code>Kobold.Core.Systems.GameStateSystem</code></p>
+<p><strong>Processes:</strong> Entities with <code>GameState</code> component</p>
+<p><strong>Usage:</strong></p>
+<pre><code class="lang-csharp">Systems.AddSystem(new GameStateSystem(), SystemOrder.GAME_LOGIC, false);  // Always runs
+</code></pre>
+<p><strong>What it does:</strong></p>
+<ul>
+<li>Manages pausing/unpausing based on GameState</li>
+<li>Systems with <code>requiresGameplayState = true</code> pause when not in Playing state</li>
+<li>Systems with <code>requiresGameplayState = false</code> always run</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">// Create game state entity
+var gameState = World.Create(new GameState
+{
+    State = GameStateType.Playing
+});
+
+// Pause game
+ref var state = ref World.Get&lt;GameState&gt;(gameState);
+state.State = GameStateType.Paused;  // Gameplay systems stop updating
+</code></pre>
+<hr>
+<h2 id="creating-custom-systems">Creating Custom Systems</h2>
+<h3 id="basic-custom-system">Basic Custom System</h3>
+<pre><code class="lang-csharp">public class GravityWellSystem : ISystem
+{
+    private readonly Vector2 _wellPosition;
+    private readonly float _strength;
+
+    public GravityWellSystem(Vector2 position, float strength)
+    {
+        _wellPosition = position;
+        _strength = strength;
+    }
+
+    public void Update(float deltaTime, World world)
+    {
+        var query = world.Query&lt;Transform, Velocity&gt;();
+        foreach (var entity in query)
+        {
+            ref var transform = ref entity.Get&lt;Transform&gt;();
+            ref var velocity = ref entity.Get&lt;Velocity&gt;();
+
+            var direction = Vector2.Normalize(_wellPosition - transform.Position);
+            var distance = Vector2.Distance(transform.Position, _wellPosition);
+
+            if (distance &gt; 10)  // Avoid division by zero
+            {
+                var force = direction * (_strength / distance);
+                velocity.Value += force * deltaTime;
+            }
+        }
+    }
+}
+
+// Add to game
+Systems.AddSystem(new GravityWellSystem(new Vector2(400, 300), 10000f), 150, true);
+</code></pre>
+<h3 id="custom-render-system">Custom Render System</h3>
+<pre><code class="lang-csharp">public class DebugColliderRenderSystem : IRenderSystem
+{
+    private readonly IRenderer _renderer;
+
+    public DebugColliderRenderSystem(IRenderer renderer)
+    {
+        _renderer = renderer;
+    }
+
+    public void Render(World world)
+    {
+        var query = world.Query&lt;Transform, BoxCollider&gt;();
+        foreach (var entity in query)
+        {
+            ref var transform = ref entity.Get&lt;Transform&gt;();
+            ref var collider = ref entity.Get&lt;BoxCollider&gt;();
+
+            var bounds = collider.GetWorldBounds(transform);
+
+            // Draw collider outline
+            _renderer.DrawRectangle(
+                new Vector2(bounds.Left, bounds.Top),
+                new Vector2(bounds.Width, bounds.Height),
+                Color.Lime
+            );
+        }
+    }
+}
+</code></pre>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-respect-system-order">1. Respect System Order</h3>
+<p>Always add systems in logical order:</p>
+<pre><code class="lang-csharp">Systems.AddSystem(new InputSystem(...), SystemOrder.INPUT, true);
+Systems.AddSystem(new PhysicsSystem(), SystemOrder.PHYSICS, true);
+Systems.AddSystem(new CollisionSystem(...), SystemOrder.COLLISION, true);
+Systems.AddSystem(new DestructionSystem(), SystemOrder.CLEANUP, true);
+</code></pre>
+<h3 id="2-use-requiresgameplaystate-correctly">2. Use requiresGameplayState Correctly</h3>
+<ul>
+<li><code>true</code> - System pauses when game is paused (gameplay systems)</li>
+<li><code>false</code> - System always runs (UI, menu systems)</li>
+</ul>
+<h3 id="3-dont-destroy-during-iteration">3. Don't Destroy During Iteration</h3>
+<pre><code class="lang-csharp">// Bad - can cause issues
+foreach (var entity in query)
+{
+    World.Destroy(entity.Entity);  // Dangerous!
+}
+
+// Good - mark for deferred destruction
+foreach (var entity in query)
+{
+    World.Add(entity.Entity, new PendingDestruction());
+}
+</code></pre>
+<h3 id="4-cache-expensive-queries">4. Cache Expensive Queries</h3>
+<pre><code class="lang-csharp">public class MySystem : ISystem
+{
+    private QueryDescription _query;
+
+    public MySystem()
+    {
+        _query = new QueryDescription().WithAll&lt;Transform, Velocity&gt;();
+    }
+
+    public void Update(float deltaTime, World world)
+    {
+        foreach (var entity in world.Query(_query))
+        {
+            // Process...
+        }
+    }
+}
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong><a href="components.html">Components</a></strong> - Components that systems process</li>
+<li><strong><a href="architecture.html">Architecture</a></strong> - Understanding ECS</li>
+<li><strong><a href="game-engine.html">Game Engine</a></strong> - Adding systems to your game</li>
+</ul>
+<hr>
+<p><strong>Next:</strong> Learn about <a href="asset-manager.html">Asset Management</a> →</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/core/systems.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

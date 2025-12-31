@@ -1,0 +1,1181 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.GameEngineBase
+  commentId: T:Kobold.Core.GameEngineBase
+  id: GameEngineBase
+  parent: Kobold.Core
+  children:
+  - Kobold.Core.GameEngineBase.#ctor
+  - Kobold.Core.GameEngineBase.#ctor(Kobold.Core.Abstractions.Rendering.IRenderer,Kobold.Core.Abstractions.Input.IInputManager)
+  - Kobold.Core.GameEngineBase.Assets
+  - Kobold.Core.GameEngineBase.ContentLoader
+  - Kobold.Core.GameEngineBase.EventBus
+  - Kobold.Core.GameEngineBase.Initialize
+  - Kobold.Core.GameEngineBase.InputManager
+  - Kobold.Core.GameEngineBase.Render
+  - Kobold.Core.GameEngineBase.Renderer
+  - Kobold.Core.GameEngineBase.SetContentLoader(Kobold.Core.Abstractions.Core.IContentLoader)
+  - Kobold.Core.GameEngineBase.SetInputManager(Kobold.Core.Abstractions.Input.IInputManager)
+  - Kobold.Core.GameEngineBase.SetRenderer(Kobold.Core.Abstractions.Rendering.IRenderer)
+  - Kobold.Core.GameEngineBase.Shutdown
+  - Kobold.Core.GameEngineBase.SystemManager
+  - Kobold.Core.GameEngineBase.Update(System.Single)
+  - Kobold.Core.GameEngineBase.World
+  langs:
+  - csharp
+  - vb
+  name: GameEngineBase
+  nameWithType: GameEngineBase
+  fullName: Kobold.Core.GameEngineBase
+  type: Class
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GameEngineBase
+    path: Kobold/GameEngineBase.cs
+    startLine: 9
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: 'public abstract class GameEngineBase : IGameEngine'
+    content.vb: Public MustInherit Class GameEngineBase Implements IGameEngine
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - Experiments.CellularAutomataDisplay
+  implements:
+  - Kobold.Core.Abstractions.Core.IGameEngine
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Core.GameEngineBase.World
+  commentId: F:Kobold.Core.GameEngineBase.World
+  id: World
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: World
+  nameWithType: GameEngineBase.World
+  fullName: Kobold.Core.GameEngineBase.World
+  type: Field
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: World
+    path: Kobold/GameEngineBase.cs
+    startLine: 11
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: protected World World
+    return:
+      type: Arch.Core.World
+    content.vb: Protected World As World
+- uid: Kobold.Core.GameEngineBase.Renderer
+  commentId: F:Kobold.Core.GameEngineBase.Renderer
+  id: Renderer
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: Renderer
+  nameWithType: GameEngineBase.Renderer
+  fullName: Kobold.Core.GameEngineBase.Renderer
+  type: Field
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Renderer
+    path: Kobold/GameEngineBase.cs
+    startLine: 12
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: protected IRenderer Renderer
+    return:
+      type: Kobold.Core.Abstractions.Rendering.IRenderer
+    content.vb: Protected Renderer As IRenderer
+- uid: Kobold.Core.GameEngineBase.InputManager
+  commentId: F:Kobold.Core.GameEngineBase.InputManager
+  id: InputManager
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: InputManager
+  nameWithType: GameEngineBase.InputManager
+  fullName: Kobold.Core.GameEngineBase.InputManager
+  type: Field
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: InputManager
+    path: Kobold/GameEngineBase.cs
+    startLine: 13
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: protected IInputManager InputManager
+    return:
+      type: Kobold.Core.Abstractions.Input.IInputManager
+    content.vb: Protected InputManager As IInputManager
+- uid: Kobold.Core.GameEngineBase.ContentLoader
+  commentId: F:Kobold.Core.GameEngineBase.ContentLoader
+  id: ContentLoader
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: ContentLoader
+  nameWithType: GameEngineBase.ContentLoader
+  fullName: Kobold.Core.GameEngineBase.ContentLoader
+  type: Field
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: ContentLoader
+    path: Kobold/GameEngineBase.cs
+    startLine: 14
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: protected IContentLoader ContentLoader
+    return:
+      type: Kobold.Core.Abstractions.Core.IContentLoader
+    content.vb: Protected ContentLoader As IContentLoader
+- uid: Kobold.Core.GameEngineBase.Assets
+  commentId: F:Kobold.Core.GameEngineBase.Assets
+  id: Assets
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: Assets
+  nameWithType: GameEngineBase.Assets
+  fullName: Kobold.Core.GameEngineBase.Assets
+  type: Field
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Assets
+    path: Kobold/GameEngineBase.cs
+    startLine: 15
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: protected AssetManager Assets
+    return:
+      type: Kobold.Core.AssetManager
+    content.vb: Protected Assets As AssetManager
+- uid: Kobold.Core.GameEngineBase.EventBus
+  commentId: F:Kobold.Core.GameEngineBase.EventBus
+  id: EventBus
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: EventBus
+  nameWithType: GameEngineBase.EventBus
+  fullName: Kobold.Core.GameEngineBase.EventBus
+  type: Field
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: EventBus
+    path: Kobold/GameEngineBase.cs
+    startLine: 16
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: protected EventBus EventBus
+    return:
+      type: Kobold.Core.Events.EventBus
+    content.vb: Protected EventBus As EventBus
+- uid: Kobold.Core.GameEngineBase.SystemManager
+  commentId: F:Kobold.Core.GameEngineBase.SystemManager
+  id: SystemManager
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: SystemManager
+  nameWithType: GameEngineBase.SystemManager
+  fullName: Kobold.Core.GameEngineBase.SystemManager
+  type: Field
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: SystemManager
+    path: Kobold/GameEngineBase.cs
+    startLine: 17
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: protected SystemManager SystemManager
+    return:
+      type: Kobold.Core.Systems.SystemManager
+    content.vb: Protected SystemManager As SystemManager
+- uid: Kobold.Core.GameEngineBase.#ctor
+  commentId: M:Kobold.Core.GameEngineBase.#ctor
+  id: '#ctor'
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: GameEngineBase()
+  nameWithType: GameEngineBase.GameEngineBase()
+  fullName: Kobold.Core.GameEngineBase.GameEngineBase()
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/GameEngineBase.cs
+    startLine: 21
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: public GameEngineBase()
+    content.vb: Public Sub New()
+  overload: Kobold.Core.GameEngineBase.#ctor*
+  nameWithType.vb: GameEngineBase.New()
+  fullName.vb: Kobold.Core.GameEngineBase.New()
+  name.vb: New()
+- uid: Kobold.Core.GameEngineBase.#ctor(Kobold.Core.Abstractions.Rendering.IRenderer,Kobold.Core.Abstractions.Input.IInputManager)
+  commentId: M:Kobold.Core.GameEngineBase.#ctor(Kobold.Core.Abstractions.Rendering.IRenderer,Kobold.Core.Abstractions.Input.IInputManager)
+  id: '#ctor(Kobold.Core.Abstractions.Rendering.IRenderer,Kobold.Core.Abstractions.Input.IInputManager)'
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: GameEngineBase(IRenderer, IInputManager)
+  nameWithType: GameEngineBase.GameEngineBase(IRenderer, IInputManager)
+  fullName: Kobold.Core.GameEngineBase.GameEngineBase(Kobold.Core.Abstractions.Rendering.IRenderer, Kobold.Core.Abstractions.Input.IInputManager)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/GameEngineBase.cs
+    startLine: 29
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: public GameEngineBase(IRenderer renderer, IInputManager inputManager)
+    parameters:
+    - id: renderer
+      type: Kobold.Core.Abstractions.Rendering.IRenderer
+    - id: inputManager
+      type: Kobold.Core.Abstractions.Input.IInputManager
+    content.vb: Public Sub New(renderer As IRenderer, inputManager As IInputManager)
+  overload: Kobold.Core.GameEngineBase.#ctor*
+  nameWithType.vb: GameEngineBase.New(IRenderer, IInputManager)
+  fullName.vb: Kobold.Core.GameEngineBase.New(Kobold.Core.Abstractions.Rendering.IRenderer, Kobold.Core.Abstractions.Input.IInputManager)
+  name.vb: New(IRenderer, IInputManager)
+- uid: Kobold.Core.GameEngineBase.SetRenderer(Kobold.Core.Abstractions.Rendering.IRenderer)
+  commentId: M:Kobold.Core.GameEngineBase.SetRenderer(Kobold.Core.Abstractions.Rendering.IRenderer)
+  id: SetRenderer(Kobold.Core.Abstractions.Rendering.IRenderer)
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: SetRenderer(IRenderer)
+  nameWithType: GameEngineBase.SetRenderer(IRenderer)
+  fullName: Kobold.Core.GameEngineBase.SetRenderer(Kobold.Core.Abstractions.Rendering.IRenderer)
+  type: Method
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: SetRenderer
+    path: Kobold/GameEngineBase.cs
+    startLine: 36
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: public void SetRenderer(IRenderer renderer)
+    parameters:
+    - id: renderer
+      type: Kobold.Core.Abstractions.Rendering.IRenderer
+    content.vb: Public Sub SetRenderer(renderer As IRenderer)
+  overload: Kobold.Core.GameEngineBase.SetRenderer*
+- uid: Kobold.Core.GameEngineBase.SetInputManager(Kobold.Core.Abstractions.Input.IInputManager)
+  commentId: M:Kobold.Core.GameEngineBase.SetInputManager(Kobold.Core.Abstractions.Input.IInputManager)
+  id: SetInputManager(Kobold.Core.Abstractions.Input.IInputManager)
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: SetInputManager(IInputManager)
+  nameWithType: GameEngineBase.SetInputManager(IInputManager)
+  fullName: Kobold.Core.GameEngineBase.SetInputManager(Kobold.Core.Abstractions.Input.IInputManager)
+  type: Method
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: SetInputManager
+    path: Kobold/GameEngineBase.cs
+    startLine: 43
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: public void SetInputManager(IInputManager inputManager)
+    parameters:
+    - id: inputManager
+      type: Kobold.Core.Abstractions.Input.IInputManager
+    content.vb: Public Sub SetInputManager(inputManager As IInputManager)
+  overload: Kobold.Core.GameEngineBase.SetInputManager*
+- uid: Kobold.Core.GameEngineBase.SetContentLoader(Kobold.Core.Abstractions.Core.IContentLoader)
+  commentId: M:Kobold.Core.GameEngineBase.SetContentLoader(Kobold.Core.Abstractions.Core.IContentLoader)
+  id: SetContentLoader(Kobold.Core.Abstractions.Core.IContentLoader)
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: SetContentLoader(IContentLoader)
+  nameWithType: GameEngineBase.SetContentLoader(IContentLoader)
+  fullName: Kobold.Core.GameEngineBase.SetContentLoader(Kobold.Core.Abstractions.Core.IContentLoader)
+  type: Method
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: SetContentLoader
+    path: Kobold/GameEngineBase.cs
+    startLine: 50
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: public void SetContentLoader(IContentLoader contentLoader)
+    parameters:
+    - id: contentLoader
+      type: Kobold.Core.Abstractions.Core.IContentLoader
+    content.vb: Public Sub SetContentLoader(contentLoader As IContentLoader)
+  overload: Kobold.Core.GameEngineBase.SetContentLoader*
+- uid: Kobold.Core.GameEngineBase.Initialize
+  commentId: M:Kobold.Core.GameEngineBase.Initialize
+  id: Initialize
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: GameEngineBase.Initialize()
+  fullName: Kobold.Core.GameEngineBase.Initialize()
+  type: Method
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Initialize
+    path: Kobold/GameEngineBase.cs
+    startLine: 57
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  example: []
+  syntax:
+    content: public virtual void Initialize()
+    content.vb: Public Overridable Sub Initialize()
+  overload: Kobold.Core.GameEngineBase.Initialize*
+  implements:
+  - Kobold.Core.Abstractions.Core.IGameEngine.Initialize
+- uid: Kobold.Core.GameEngineBase.Update(System.Single)
+  commentId: M:Kobold.Core.GameEngineBase.Update(System.Single)
+  id: Update(System.Single)
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: Update(float)
+  nameWithType: GameEngineBase.Update(float)
+  fullName: Kobold.Core.GameEngineBase.Update(float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Update
+    path: Kobold/GameEngineBase.cs
+    startLine: 72
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  example: []
+  syntax:
+    content: public virtual void Update(float deltaTime)
+    parameters:
+    - id: deltaTime
+      type: System.Single
+    content.vb: Public Overridable Sub Update(deltaTime As Single)
+  overload: Kobold.Core.GameEngineBase.Update*
+  implements:
+  - Kobold.Core.Abstractions.Core.IGameEngine.Update(System.Single)
+  nameWithType.vb: GameEngineBase.Update(Single)
+  fullName.vb: Kobold.Core.GameEngineBase.Update(Single)
+  name.vb: Update(Single)
+- uid: Kobold.Core.GameEngineBase.Render
+  commentId: M:Kobold.Core.GameEngineBase.Render
+  id: Render
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: Render()
+  nameWithType: GameEngineBase.Render()
+  fullName: Kobold.Core.GameEngineBase.Render()
+  type: Method
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Render
+    path: Kobold/GameEngineBase.cs
+    startLine: 80
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  example: []
+  syntax:
+    content: public virtual void Render()
+    content.vb: Public Overridable Sub Render()
+  overload: Kobold.Core.GameEngineBase.Render*
+  implements:
+  - Kobold.Core.Abstractions.Core.IGameEngine.Render
+- uid: Kobold.Core.GameEngineBase.Shutdown
+  commentId: M:Kobold.Core.GameEngineBase.Shutdown
+  id: Shutdown
+  parent: Kobold.Core.GameEngineBase
+  langs:
+  - csharp
+  - vb
+  name: Shutdown()
+  nameWithType: GameEngineBase.Shutdown()
+  fullName: Kobold.Core.GameEngineBase.Shutdown()
+  type: Method
+  source:
+    remote:
+      path: Kobold/GameEngineBase.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Shutdown
+    path: Kobold/GameEngineBase.cs
+    startLine: 89
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  example: []
+  syntax:
+    content: public virtual void Shutdown()
+    content.vb: Public Overridable Sub Shutdown()
+  overload: Kobold.Core.GameEngineBase.Shutdown*
+  implements:
+  - Kobold.Core.Abstractions.Core.IGameEngine.Shutdown
+references:
+- uid: Kobold.Core
+  commentId: N:Kobold.Core
+  href: Kobold.html
+  name: Kobold.Core
+  nameWithType: Kobold.Core
+  fullName: Kobold.Core
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: Kobold.Core.Abstractions.Core.IGameEngine
+  commentId: T:Kobold.Core.Abstractions.Core.IGameEngine
+  parent: Kobold.Core.Abstractions.Core
+  href: Kobold.Core.Abstractions.Core.IGameEngine.html
+  name: IGameEngine
+  nameWithType: IGameEngine
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Abstractions.Core
+  commentId: N:Kobold.Core.Abstractions.Core
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Core
+  nameWithType: Kobold.Core.Abstractions.Core
+  fullName: Kobold.Core.Abstractions.Core
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Core
+    name: Core
+    href: Kobold.Core.Abstractions.Core.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Core
+    name: Core
+    href: Kobold.Core.Abstractions.Core.html
+- uid: Arch.Core.World
+  commentId: T:Arch.Core.World
+  parent: Arch.Core
+  isExternal: true
+  name: World
+  nameWithType: World
+  fullName: Arch.Core.World
+- uid: Arch.Core
+  commentId: N:Arch.Core
+  isExternal: true
+  name: Arch.Core
+  nameWithType: Arch.Core
+  fullName: Arch.Core
+  spec.csharp:
+  - uid: Arch
+    name: Arch
+    isExternal: true
+  - name: .
+  - uid: Arch.Core
+    name: Core
+    isExternal: true
+  spec.vb:
+  - uid: Arch
+    name: Arch
+    isExternal: true
+  - name: .
+  - uid: Arch.Core
+    name: Core
+    isExternal: true
+- uid: Kobold.Core.Abstractions.Rendering.IRenderer
+  commentId: T:Kobold.Core.Abstractions.Rendering.IRenderer
+  parent: Kobold.Core.Abstractions.Rendering
+  href: Kobold.Core.Abstractions.Rendering.IRenderer.html
+  name: IRenderer
+  nameWithType: IRenderer
+  fullName: Kobold.Core.Abstractions.Rendering.IRenderer
+- uid: Kobold.Core.Abstractions.Rendering
+  commentId: N:Kobold.Core.Abstractions.Rendering
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Rendering
+  nameWithType: Kobold.Core.Abstractions.Rendering
+  fullName: Kobold.Core.Abstractions.Rendering
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+- uid: Kobold.Core.Abstractions.Input.IInputManager
+  commentId: T:Kobold.Core.Abstractions.Input.IInputManager
+  parent: Kobold.Core.Abstractions.Input
+  href: Kobold.Core.Abstractions.Input.IInputManager.html
+  name: IInputManager
+  nameWithType: IInputManager
+  fullName: Kobold.Core.Abstractions.Input.IInputManager
+- uid: Kobold.Core.Abstractions.Input
+  commentId: N:Kobold.Core.Abstractions.Input
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Input
+  nameWithType: Kobold.Core.Abstractions.Input
+  fullName: Kobold.Core.Abstractions.Input
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Input
+    name: Input
+    href: Kobold.Core.Abstractions.Input.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Input
+    name: Input
+    href: Kobold.Core.Abstractions.Input.html
+- uid: Kobold.Core.Abstractions.Core.IContentLoader
+  commentId: T:Kobold.Core.Abstractions.Core.IContentLoader
+  parent: Kobold.Core.Abstractions.Core
+  href: Kobold.Core.Abstractions.Core.IContentLoader.html
+  name: IContentLoader
+  nameWithType: IContentLoader
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader
+- uid: Kobold.Core.AssetManager
+  commentId: T:Kobold.Core.AssetManager
+  parent: Kobold.Core
+  href: Kobold.Core.AssetManager.html
+  name: AssetManager
+  nameWithType: AssetManager
+  fullName: Kobold.Core.AssetManager
+- uid: Kobold.Core.Events.EventBus
+  commentId: T:Kobold.Core.Events.EventBus
+  parent: Kobold.Core.Events
+  href: Kobold.Core.Events.EventBus.html
+  name: EventBus
+  nameWithType: EventBus
+  fullName: Kobold.Core.Events.EventBus
+- uid: Kobold.Core.Events
+  commentId: N:Kobold.Core.Events
+  href: Kobold.html
+  name: Kobold.Core.Events
+  nameWithType: Kobold.Core.Events
+  fullName: Kobold.Core.Events
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Events
+    name: Events
+    href: Kobold.Core.Events.html
+- uid: Kobold.Core.Systems.SystemManager
+  commentId: T:Kobold.Core.Systems.SystemManager
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.SystemManager.html
+  name: SystemManager
+  nameWithType: SystemManager
+  fullName: Kobold.Core.Systems.SystemManager
+- uid: Kobold.Core.Systems
+  commentId: N:Kobold.Core.Systems
+  href: Kobold.html
+  name: Kobold.Core.Systems
+  nameWithType: Kobold.Core.Systems
+  fullName: Kobold.Core.Systems
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+- uid: Kobold.Core.GameEngineBase.#ctor*
+  commentId: Overload:Kobold.Core.GameEngineBase.#ctor
+  href: Kobold.Core.GameEngineBase.html#Kobold_Core_GameEngineBase__ctor
+  name: GameEngineBase
+  nameWithType: GameEngineBase.GameEngineBase
+  fullName: Kobold.Core.GameEngineBase.GameEngineBase
+  nameWithType.vb: GameEngineBase.New
+  fullName.vb: Kobold.Core.GameEngineBase.New
+  name.vb: New
+- uid: Kobold.Core.GameEngineBase.SetRenderer*
+  commentId: Overload:Kobold.Core.GameEngineBase.SetRenderer
+  href: Kobold.Core.GameEngineBase.html#Kobold_Core_GameEngineBase_SetRenderer_Kobold_Core_Abstractions_Rendering_IRenderer_
+  name: SetRenderer
+  nameWithType: GameEngineBase.SetRenderer
+  fullName: Kobold.Core.GameEngineBase.SetRenderer
+- uid: Kobold.Core.GameEngineBase.SetInputManager*
+  commentId: Overload:Kobold.Core.GameEngineBase.SetInputManager
+  href: Kobold.Core.GameEngineBase.html#Kobold_Core_GameEngineBase_SetInputManager_Kobold_Core_Abstractions_Input_IInputManager_
+  name: SetInputManager
+  nameWithType: GameEngineBase.SetInputManager
+  fullName: Kobold.Core.GameEngineBase.SetInputManager
+- uid: Kobold.Core.GameEngineBase.SetContentLoader*
+  commentId: Overload:Kobold.Core.GameEngineBase.SetContentLoader
+  href: Kobold.Core.GameEngineBase.html#Kobold_Core_GameEngineBase_SetContentLoader_Kobold_Core_Abstractions_Core_IContentLoader_
+  name: SetContentLoader
+  nameWithType: GameEngineBase.SetContentLoader
+  fullName: Kobold.Core.GameEngineBase.SetContentLoader
+- uid: Kobold.Core.GameEngineBase.Initialize*
+  commentId: Overload:Kobold.Core.GameEngineBase.Initialize
+  href: Kobold.Core.GameEngineBase.html#Kobold_Core_GameEngineBase_Initialize
+  name: Initialize
+  nameWithType: GameEngineBase.Initialize
+  fullName: Kobold.Core.GameEngineBase.Initialize
+- uid: Kobold.Core.Abstractions.Core.IGameEngine.Initialize
+  commentId: M:Kobold.Core.Abstractions.Core.IGameEngine.Initialize
+  parent: Kobold.Core.Abstractions.Core.IGameEngine
+  href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Initialize
+  name: Initialize()
+  nameWithType: IGameEngine.Initialize()
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine.Initialize()
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Core.IGameEngine.Initialize
+    name: Initialize
+    href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Initialize
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Core.IGameEngine.Initialize
+    name: Initialize
+    href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Initialize
+  - name: (
+  - name: )
+- uid: Kobold.Core.GameEngineBase.Update*
+  commentId: Overload:Kobold.Core.GameEngineBase.Update
+  href: Kobold.Core.GameEngineBase.html#Kobold_Core_GameEngineBase_Update_System_Single_
+  name: Update
+  nameWithType: GameEngineBase.Update
+  fullName: Kobold.Core.GameEngineBase.Update
+- uid: Kobold.Core.Abstractions.Core.IGameEngine.Update(System.Single)
+  commentId: M:Kobold.Core.Abstractions.Core.IGameEngine.Update(System.Single)
+  parent: Kobold.Core.Abstractions.Core.IGameEngine
+  isExternal: true
+  href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Update_System_Single_
+  name: Update(float)
+  nameWithType: IGameEngine.Update(float)
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine.Update(float)
+  nameWithType.vb: IGameEngine.Update(Single)
+  fullName.vb: Kobold.Core.Abstractions.Core.IGameEngine.Update(Single)
+  name.vb: Update(Single)
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Core.IGameEngine.Update(System.Single)
+    name: Update
+    href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Update_System_Single_
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Core.IGameEngine.Update(System.Single)
+    name: Update
+    href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Update_System_Single_
+  - name: (
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Core.GameEngineBase.Render*
+  commentId: Overload:Kobold.Core.GameEngineBase.Render
+  href: Kobold.Core.GameEngineBase.html#Kobold_Core_GameEngineBase_Render
+  name: Render
+  nameWithType: GameEngineBase.Render
+  fullName: Kobold.Core.GameEngineBase.Render
+- uid: Kobold.Core.Abstractions.Core.IGameEngine.Render
+  commentId: M:Kobold.Core.Abstractions.Core.IGameEngine.Render
+  parent: Kobold.Core.Abstractions.Core.IGameEngine
+  href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Render
+  name: Render()
+  nameWithType: IGameEngine.Render()
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine.Render()
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Core.IGameEngine.Render
+    name: Render
+    href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Render
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Core.IGameEngine.Render
+    name: Render
+    href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Render
+  - name: (
+  - name: )
+- uid: Kobold.Core.GameEngineBase.Shutdown*
+  commentId: Overload:Kobold.Core.GameEngineBase.Shutdown
+  href: Kobold.Core.GameEngineBase.html#Kobold_Core_GameEngineBase_Shutdown
+  name: Shutdown
+  nameWithType: GameEngineBase.Shutdown
+  fullName: Kobold.Core.GameEngineBase.Shutdown
+- uid: Kobold.Core.Abstractions.Core.IGameEngine.Shutdown
+  commentId: M:Kobold.Core.Abstractions.Core.IGameEngine.Shutdown
+  parent: Kobold.Core.Abstractions.Core.IGameEngine
+  href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Shutdown
+  name: Shutdown()
+  nameWithType: IGameEngine.Shutdown()
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine.Shutdown()
+  spec.csharp:
+  - uid: Kobold.Core.Abstractions.Core.IGameEngine.Shutdown
+    name: Shutdown
+    href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Shutdown
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: Kobold.Core.Abstractions.Core.IGameEngine.Shutdown
+    name: Shutdown
+    href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Shutdown
+  - name: (
+  - name: )

@@ -1,0 +1,1012 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.SpriteRenderer
+  commentId: T:Kobold.Core.Components.SpriteRenderer
+  id: SpriteRenderer
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.SpriteRenderer.#ctor(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Nullable{System.Drawing.Color},System.Int32,System.Nullable{System.Numerics.Vector2})
+  - Kobold.Core.Components.SpriteRenderer.Background(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2)
+  - Kobold.Core.Components.SpriteRenderer.FromSpriteSheet(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Nullable{System.Drawing.Color},System.Int32)
+  - Kobold.Core.Components.SpriteRenderer.FullTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Single,System.Nullable{System.Drawing.Color},System.Int32)
+  - Kobold.Core.Components.SpriteRenderer.GameObject(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2)
+  - Kobold.Core.Components.SpriteRenderer.Layer
+  - Kobold.Core.Components.SpriteRenderer.Pivot
+  - Kobold.Core.Components.SpriteRenderer.Rotation
+  - Kobold.Core.Components.SpriteRenderer.Scale
+  - Kobold.Core.Components.SpriteRenderer.SourceRect
+  - Kobold.Core.Components.SpriteRenderer.Texture
+  - Kobold.Core.Components.SpriteRenderer.Tint
+  - Kobold.Core.Components.SpriteRenderer.UI(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2)
+  langs:
+  - csharp
+  - vb
+  name: SpriteRenderer
+  nameWithType: SpriteRenderer
+  fullName: Kobold.Core.Components.SpriteRenderer
+  type: Struct
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: SpriteRenderer
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 9
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Renders a sprite from a texture or sprite sheet
+  example: []
+  syntax:
+    content: 'public struct SpriteRenderer : IRenderable'
+    content.vb: Public Structure SpriteRenderer Implements IRenderable
+  implements:
+  - Kobold.Core.Components.IRenderable
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Kobold.Core.Components.SpriteRenderer.Texture
+  commentId: F:Kobold.Core.Components.SpriteRenderer.Texture
+  id: Texture
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: Texture
+  nameWithType: SpriteRenderer.Texture
+  fullName: Kobold.Core.Components.SpriteRenderer.Texture
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Texture
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 11
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public ITexture Texture
+    return:
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+    content.vb: Public Texture As ITexture
+- uid: Kobold.Core.Components.SpriteRenderer.SourceRect
+  commentId: F:Kobold.Core.Components.SpriteRenderer.SourceRect
+  id: SourceRect
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: SourceRect
+  nameWithType: SpriteRenderer.SourceRect
+  fullName: Kobold.Core.Components.SpriteRenderer.SourceRect
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: SourceRect
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 12
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public Rectangle SourceRect
+    return:
+      type: System.Drawing.Rectangle
+    content.vb: Public SourceRect As Rectangle
+- uid: Kobold.Core.Components.SpriteRenderer.Scale
+  commentId: F:Kobold.Core.Components.SpriteRenderer.Scale
+  id: Scale
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: Scale
+  nameWithType: SpriteRenderer.Scale
+  fullName: Kobold.Core.Components.SpriteRenderer.Scale
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Scale
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 13
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public Vector2 Scale
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public Scale As Vector2
+- uid: Kobold.Core.Components.SpriteRenderer.Rotation
+  commentId: F:Kobold.Core.Components.SpriteRenderer.Rotation
+  id: Rotation
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: Rotation
+  nameWithType: SpriteRenderer.Rotation
+  fullName: Kobold.Core.Components.SpriteRenderer.Rotation
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Rotation
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 14
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public float Rotation
+    return:
+      type: System.Single
+    content.vb: Public Rotation As Single
+- uid: Kobold.Core.Components.SpriteRenderer.Tint
+  commentId: F:Kobold.Core.Components.SpriteRenderer.Tint
+  id: Tint
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: Tint
+  nameWithType: SpriteRenderer.Tint
+  fullName: Kobold.Core.Components.SpriteRenderer.Tint
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Tint
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 15
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public Color Tint
+    return:
+      type: System.Drawing.Color
+    content.vb: Public Tint As Color
+- uid: Kobold.Core.Components.SpriteRenderer.Layer
+  commentId: P:Kobold.Core.Components.SpriteRenderer.Layer
+  id: Layer
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: Layer
+  nameWithType: SpriteRenderer.Layer
+  fullName: Kobold.Core.Components.SpriteRenderer.Layer
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Layer
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 16
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  example: []
+  syntax:
+    content: public readonly int Layer { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Layer As Integer
+  overload: Kobold.Core.Components.SpriteRenderer.Layer*
+  implements:
+  - Kobold.Core.Components.IRenderable.Layer
+- uid: Kobold.Core.Components.SpriteRenderer.Pivot
+  commentId: F:Kobold.Core.Components.SpriteRenderer.Pivot
+  id: Pivot
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: Pivot
+  nameWithType: SpriteRenderer.Pivot
+  fullName: Kobold.Core.Components.SpriteRenderer.Pivot
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Pivot
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 17
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public Vector2 Pivot
+    return:
+      type: System.Numerics.Vector2
+    content.vb: Public Pivot As Vector2
+- uid: Kobold.Core.Components.SpriteRenderer.#ctor(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Nullable{System.Drawing.Color},System.Int32,System.Nullable{System.Numerics.Vector2})
+  commentId: M:Kobold.Core.Components.SpriteRenderer.#ctor(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Nullable{System.Drawing.Color},System.Int32,System.Nullable{System.Numerics.Vector2})
+  id: '#ctor(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Nullable{System.Drawing.Color},System.Int32,System.Nullable{System.Numerics.Vector2})'
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: SpriteRenderer(ITexture, Rectangle, Vector2, float, Color?, int, Vector2?)
+  nameWithType: SpriteRenderer.SpriteRenderer(ITexture, Rectangle, Vector2, float, Color?, int, Vector2?)
+  fullName: Kobold.Core.Components.SpriteRenderer.SpriteRenderer(Kobold.Core.Abstractions.Rendering.ITexture, System.Drawing.Rectangle, System.Numerics.Vector2, float, System.Drawing.Color?, int, System.Numerics.Vector2?)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 19
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public SpriteRenderer(ITexture texture, Rectangle sourceRect, Vector2 scale, float rotation = 0, Color? tint = null, int layer = 0, Vector2? pivot = null)
+    parameters:
+    - id: texture
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+    - id: sourceRect
+      type: System.Drawing.Rectangle
+    - id: scale
+      type: System.Numerics.Vector2
+    - id: rotation
+      type: System.Single
+    - id: tint
+      type: System.Nullable{System.Drawing.Color}
+    - id: layer
+      type: System.Int32
+    - id: pivot
+      type: System.Nullable{System.Numerics.Vector2}
+    content.vb: Public Sub New(texture As ITexture, sourceRect As Rectangle, scale As Vector2, rotation As Single = 0, tint As Color? = Nothing, layer As Integer = 0, pivot As Vector2? = Nothing)
+  overload: Kobold.Core.Components.SpriteRenderer.#ctor*
+  nameWithType.vb: SpriteRenderer.New(ITexture, Rectangle, Vector2, Single, Color?, Integer, Vector2?)
+  fullName.vb: Kobold.Core.Components.SpriteRenderer.New(Kobold.Core.Abstractions.Rendering.ITexture, System.Drawing.Rectangle, System.Numerics.Vector2, Single, System.Drawing.Color?, Integer, System.Numerics.Vector2?)
+  name.vb: New(ITexture, Rectangle, Vector2, Single, Color?, Integer, Vector2?)
+- uid: Kobold.Core.Components.SpriteRenderer.FullTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Single,System.Nullable{System.Drawing.Color},System.Int32)
+  commentId: M:Kobold.Core.Components.SpriteRenderer.FullTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Single,System.Nullable{System.Drawing.Color},System.Int32)
+  id: FullTexture(Kobold.Core.Abstractions.Rendering.ITexture,System.Numerics.Vector2,System.Single,System.Nullable{System.Drawing.Color},System.Int32)
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: FullTexture(ITexture, Vector2, float, Color?, int)
+  nameWithType: SpriteRenderer.FullTexture(ITexture, Vector2, float, Color?, int)
+  fullName: Kobold.Core.Components.SpriteRenderer.FullTexture(Kobold.Core.Abstractions.Rendering.ITexture, System.Numerics.Vector2, float, System.Drawing.Color?, int)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: FullTexture
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 34
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Create a sprite renderer for a full texture (not from a sprite sheet)
+  example: []
+  syntax:
+    content: public static SpriteRenderer FullTexture(ITexture texture, Vector2 scale, float rotation = 0, Color? tint = null, int layer = 0)
+    parameters:
+    - id: texture
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+    - id: scale
+      type: System.Numerics.Vector2
+    - id: rotation
+      type: System.Single
+    - id: tint
+      type: System.Nullable{System.Drawing.Color}
+    - id: layer
+      type: System.Int32
+    return:
+      type: Kobold.Core.Components.SpriteRenderer
+    content.vb: Public Shared Function FullTexture(texture As ITexture, scale As Vector2, rotation As Single = 0, tint As Color? = Nothing, layer As Integer = 0) As SpriteRenderer
+  overload: Kobold.Core.Components.SpriteRenderer.FullTexture*
+  nameWithType.vb: SpriteRenderer.FullTexture(ITexture, Vector2, Single, Color?, Integer)
+  fullName.vb: Kobold.Core.Components.SpriteRenderer.FullTexture(Kobold.Core.Abstractions.Rendering.ITexture, System.Numerics.Vector2, Single, System.Drawing.Color?, Integer)
+  name.vb: FullTexture(ITexture, Vector2, Single, Color?, Integer)
+- uid: Kobold.Core.Components.SpriteRenderer.FromSpriteSheet(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Nullable{System.Drawing.Color},System.Int32)
+  commentId: M:Kobold.Core.Components.SpriteRenderer.FromSpriteSheet(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Nullable{System.Drawing.Color},System.Int32)
+  id: FromSpriteSheet(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2,System.Single,System.Nullable{System.Drawing.Color},System.Int32)
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: FromSpriteSheet(ITexture, Rectangle, Vector2, float, Color?, int)
+  nameWithType: SpriteRenderer.FromSpriteSheet(ITexture, Rectangle, Vector2, float, Color?, int)
+  fullName: Kobold.Core.Components.SpriteRenderer.FromSpriteSheet(Kobold.Core.Abstractions.Rendering.ITexture, System.Drawing.Rectangle, System.Numerics.Vector2, float, System.Drawing.Color?, int)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: FromSpriteSheet
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 44
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Create a sprite renderer for a single frame from a sprite sheet
+  example: []
+  syntax:
+    content: public static SpriteRenderer FromSpriteSheet(ITexture texture, Rectangle sourceRect, Vector2 scale, float rotation = 0, Color? tint = null, int layer = 0)
+    parameters:
+    - id: texture
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+    - id: sourceRect
+      type: System.Drawing.Rectangle
+    - id: scale
+      type: System.Numerics.Vector2
+    - id: rotation
+      type: System.Single
+    - id: tint
+      type: System.Nullable{System.Drawing.Color}
+    - id: layer
+      type: System.Int32
+    return:
+      type: Kobold.Core.Components.SpriteRenderer
+    content.vb: Public Shared Function FromSpriteSheet(texture As ITexture, sourceRect As Rectangle, scale As Vector2, rotation As Single = 0, tint As Color? = Nothing, layer As Integer = 0) As SpriteRenderer
+  overload: Kobold.Core.Components.SpriteRenderer.FromSpriteSheet*
+  nameWithType.vb: SpriteRenderer.FromSpriteSheet(ITexture, Rectangle, Vector2, Single, Color?, Integer)
+  fullName.vb: Kobold.Core.Components.SpriteRenderer.FromSpriteSheet(Kobold.Core.Abstractions.Rendering.ITexture, System.Drawing.Rectangle, System.Numerics.Vector2, Single, System.Drawing.Color?, Integer)
+  name.vb: FromSpriteSheet(ITexture, Rectangle, Vector2, Single, Color?, Integer)
+- uid: Kobold.Core.Components.SpriteRenderer.Background(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Components.SpriteRenderer.Background(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2)
+  id: Background(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2)
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: Background(ITexture, Rectangle, Vector2)
+  nameWithType: SpriteRenderer.Background(ITexture, Rectangle, Vector2)
+  fullName: Kobold.Core.Components.SpriteRenderer.Background(Kobold.Core.Abstractions.Rendering.ITexture, System.Drawing.Rectangle, System.Numerics.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Background
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 51
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public static SpriteRenderer Background(ITexture texture, Rectangle sourceRect, Vector2 scale)
+    parameters:
+    - id: texture
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+    - id: sourceRect
+      type: System.Drawing.Rectangle
+    - id: scale
+      type: System.Numerics.Vector2
+    return:
+      type: Kobold.Core.Components.SpriteRenderer
+    content.vb: Public Shared Function Background(texture As ITexture, sourceRect As Rectangle, scale As Vector2) As SpriteRenderer
+  overload: Kobold.Core.Components.SpriteRenderer.Background*
+- uid: Kobold.Core.Components.SpriteRenderer.GameObject(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Components.SpriteRenderer.GameObject(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2)
+  id: GameObject(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2)
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: GameObject(ITexture, Rectangle, Vector2)
+  nameWithType: SpriteRenderer.GameObject(ITexture, Rectangle, Vector2)
+  fullName: Kobold.Core.Components.SpriteRenderer.GameObject(Kobold.Core.Abstractions.Rendering.ITexture, System.Drawing.Rectangle, System.Numerics.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GameObject
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 54
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public static SpriteRenderer GameObject(ITexture texture, Rectangle sourceRect, Vector2 scale)
+    parameters:
+    - id: texture
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+    - id: sourceRect
+      type: System.Drawing.Rectangle
+    - id: scale
+      type: System.Numerics.Vector2
+    return:
+      type: Kobold.Core.Components.SpriteRenderer
+    content.vb: Public Shared Function GameObject(texture As ITexture, sourceRect As Rectangle, scale As Vector2) As SpriteRenderer
+  overload: Kobold.Core.Components.SpriteRenderer.GameObject*
+- uid: Kobold.Core.Components.SpriteRenderer.UI(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2)
+  commentId: M:Kobold.Core.Components.SpriteRenderer.UI(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2)
+  id: UI(Kobold.Core.Abstractions.Rendering.ITexture,System.Drawing.Rectangle,System.Numerics.Vector2)
+  parent: Kobold.Core.Components.SpriteRenderer
+  langs:
+  - csharp
+  - vb
+  name: UI(ITexture, Rectangle, Vector2)
+  nameWithType: SpriteRenderer.UI(ITexture, Rectangle, Vector2)
+  fullName: Kobold.Core.Components.SpriteRenderer.UI(Kobold.Core.Abstractions.Rendering.ITexture, System.Drawing.Rectangle, System.Numerics.Vector2)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Rendering/SpriteRenderer.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: UI
+    path: Kobold/Components/Rendering/SpriteRenderer.cs
+    startLine: 57
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public static SpriteRenderer UI(ITexture texture, Rectangle sourceRect, Vector2 scale)
+    parameters:
+    - id: texture
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+    - id: sourceRect
+      type: System.Drawing.Rectangle
+    - id: scale
+      type: System.Numerics.Vector2
+    return:
+      type: Kobold.Core.Components.SpriteRenderer
+    content.vb: Public Shared Function UI(texture As ITexture, sourceRect As Rectangle, scale As Vector2) As SpriteRenderer
+  overload: Kobold.Core.Components.SpriteRenderer.UI*
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: Kobold.Core.Components.IRenderable
+  commentId: T:Kobold.Core.Components.IRenderable
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.IRenderable.html
+  name: IRenderable
+  nameWithType: IRenderable
+  fullName: Kobold.Core.Components.IRenderable
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Abstractions.Rendering.ITexture
+  commentId: T:Kobold.Core.Abstractions.Rendering.ITexture
+  parent: Kobold.Core.Abstractions.Rendering
+  href: Kobold.Core.Abstractions.Rendering.ITexture.html
+  name: ITexture
+  nameWithType: ITexture
+  fullName: Kobold.Core.Abstractions.Rendering.ITexture
+- uid: Kobold.Core.Abstractions.Rendering
+  commentId: N:Kobold.Core.Abstractions.Rendering
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Rendering
+  nameWithType: Kobold.Core.Abstractions.Rendering
+  fullName: Kobold.Core.Abstractions.Rendering
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+- uid: System.Drawing.Rectangle
+  commentId: T:System.Drawing.Rectangle
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.rectangle
+  name: Rectangle
+  nameWithType: Rectangle
+  fullName: System.Drawing.Rectangle
+- uid: System.Drawing
+  commentId: N:System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Drawing
+  nameWithType: System.Drawing
+  fullName: System.Drawing
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Drawing
+    name: Drawing
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing
+- uid: System.Numerics.Vector2
+  commentId: T:System.Numerics.Vector2
+  parent: System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  name: Vector2
+  nameWithType: Vector2
+  fullName: System.Numerics.Vector2
+- uid: System.Numerics
+  commentId: N:System.Numerics
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Numerics
+  nameWithType: System.Numerics
+  fullName: System.Numerics
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Numerics
+    name: Numerics
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Drawing.Color
+  commentId: T:System.Drawing.Color
+  parent: System.Drawing
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  name: Color
+  nameWithType: Color
+  fullName: System.Drawing.Color
+- uid: Kobold.Core.Components.SpriteRenderer.Layer*
+  commentId: Overload:Kobold.Core.Components.SpriteRenderer.Layer
+  href: Kobold.Core.Components.SpriteRenderer.html#Kobold_Core_Components_SpriteRenderer_Layer
+  name: Layer
+  nameWithType: SpriteRenderer.Layer
+  fullName: Kobold.Core.Components.SpriteRenderer.Layer
+- uid: Kobold.Core.Components.IRenderable.Layer
+  commentId: P:Kobold.Core.Components.IRenderable.Layer
+  parent: Kobold.Core.Components.IRenderable
+  href: Kobold.Core.Components.IRenderable.html#Kobold_Core_Components_IRenderable_Layer
+  name: Layer
+  nameWithType: IRenderable.Layer
+  fullName: Kobold.Core.Components.IRenderable.Layer
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Kobold.Core.Components.SpriteRenderer.#ctor*
+  commentId: Overload:Kobold.Core.Components.SpriteRenderer.#ctor
+  href: Kobold.Core.Components.SpriteRenderer.html#Kobold_Core_Components_SpriteRenderer__ctor_Kobold_Core_Abstractions_Rendering_ITexture_System_Drawing_Rectangle_System_Numerics_Vector2_System_Single_System_Nullable_System_Drawing_Color__System_Int32_System_Nullable_System_Numerics_Vector2__
+  name: SpriteRenderer
+  nameWithType: SpriteRenderer.SpriteRenderer
+  fullName: Kobold.Core.Components.SpriteRenderer.SpriteRenderer
+  nameWithType.vb: SpriteRenderer.New
+  fullName.vb: Kobold.Core.Components.SpriteRenderer.New
+  name.vb: New
+- uid: System.Nullable{System.Drawing.Color}
+  commentId: T:System.Nullable{System.Drawing.Color}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  name: Color?
+  nameWithType: Color?
+  fullName: System.Drawing.Color?
+  spec.csharp:
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: '?'
+  spec.vb:
+  - uid: System.Drawing.Color
+    name: Color
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.drawing.color
+  - name: '?'
+- uid: System.Nullable{System.Numerics.Vector2}
+  commentId: T:System.Nullable{System.Numerics.Vector2}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  name: Vector2?
+  nameWithType: Vector2?
+  fullName: System.Numerics.Vector2?
+  spec.csharp:
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: '?'
+  spec.vb:
+  - uid: System.Numerics.Vector2
+    name: Vector2
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.numerics.vector2
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Kobold.Core.Components.SpriteRenderer.FullTexture*
+  commentId: Overload:Kobold.Core.Components.SpriteRenderer.FullTexture
+  href: Kobold.Core.Components.SpriteRenderer.html#Kobold_Core_Components_SpriteRenderer_FullTexture_Kobold_Core_Abstractions_Rendering_ITexture_System_Numerics_Vector2_System_Single_System_Nullable_System_Drawing_Color__System_Int32_
+  name: FullTexture
+  nameWithType: SpriteRenderer.FullTexture
+  fullName: Kobold.Core.Components.SpriteRenderer.FullTexture
+- uid: Kobold.Core.Components.SpriteRenderer
+  commentId: T:Kobold.Core.Components.SpriteRenderer
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.SpriteRenderer.html
+  name: SpriteRenderer
+  nameWithType: SpriteRenderer
+  fullName: Kobold.Core.Components.SpriteRenderer
+- uid: Kobold.Core.Components.SpriteRenderer.FromSpriteSheet*
+  commentId: Overload:Kobold.Core.Components.SpriteRenderer.FromSpriteSheet
+  href: Kobold.Core.Components.SpriteRenderer.html#Kobold_Core_Components_SpriteRenderer_FromSpriteSheet_Kobold_Core_Abstractions_Rendering_ITexture_System_Drawing_Rectangle_System_Numerics_Vector2_System_Single_System_Nullable_System_Drawing_Color__System_Int32_
+  name: FromSpriteSheet
+  nameWithType: SpriteRenderer.FromSpriteSheet
+  fullName: Kobold.Core.Components.SpriteRenderer.FromSpriteSheet
+- uid: Kobold.Core.Components.SpriteRenderer.Background*
+  commentId: Overload:Kobold.Core.Components.SpriteRenderer.Background
+  href: Kobold.Core.Components.SpriteRenderer.html#Kobold_Core_Components_SpriteRenderer_Background_Kobold_Core_Abstractions_Rendering_ITexture_System_Drawing_Rectangle_System_Numerics_Vector2_
+  name: Background
+  nameWithType: SpriteRenderer.Background
+  fullName: Kobold.Core.Components.SpriteRenderer.Background
+- uid: Kobold.Core.Components.SpriteRenderer.GameObject*
+  commentId: Overload:Kobold.Core.Components.SpriteRenderer.GameObject
+  href: Kobold.Core.Components.SpriteRenderer.html#Kobold_Core_Components_SpriteRenderer_GameObject_Kobold_Core_Abstractions_Rendering_ITexture_System_Drawing_Rectangle_System_Numerics_Vector2_
+  name: GameObject
+  nameWithType: SpriteRenderer.GameObject
+  fullName: Kobold.Core.Components.SpriteRenderer.GameObject
+- uid: Kobold.Core.Components.SpriteRenderer.UI*
+  commentId: Overload:Kobold.Core.Components.SpriteRenderer.UI
+  href: Kobold.Core.Components.SpriteRenderer.html#Kobold_Core_Components_SpriteRenderer_UI_Kobold_Core_Abstractions_Rendering_ITexture_System_Drawing_Rectangle_System_Numerics_Vector2_
+  name: UI
+  nameWithType: SpriteRenderer.UI
+  fullName: Kobold.Core.Components.SpriteRenderer.UI

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Code Snippets - Common Patterns | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Code Snippets - Common Patterns | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/examples/code-snippets.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="code-snippets---common-patterns">Code Snippets - Common Patterns</h1>
+
+<p>This page contains copy-paste ready code snippets for common game development patterns in Kobold. Use these as starting points for your own implementations.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#creating-entities">Creating Entities</a></li>
+<li><a href="#movement-and-physics">Movement and Physics</a></li>
+<li><a href="#input-handling">Input Handling</a></li>
+<li><a href="#collision-detection">Collision Detection</a></li>
+<li><a href="#rendering">Rendering</a></li>
+<li><a href="#animation">Animation</a></li>
+<li><a href="#cameras">Cameras</a></li>
+<li><a href="#timers-and-lifecycle">Timers and Lifecycle</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#utilities">Utilities</a></li>
+</ul>
+<h2 id="creating-entities">Creating Entities</h2>
+<h3 id="simple-moving-sprite">Simple Moving Sprite</h3>
+<pre><code class="lang-csharp">var texture = Assets.LoadTexture(&quot;player.png&quot;);
+var player = World.Create(
+    new Transform { Position = new Vector2(400, 300) },
+    SpriteRenderer.FullTexture(texture),
+    new Velocity { Value = new Vector2(100, 0) }
+);
+</code></pre>
+<h3 id="rectangle-with-physics">Rectangle with Physics</h3>
+<pre><code class="lang-csharp">var entity = World.Create(
+    new Transform { Position = new Vector2(100, 100) },
+    new RectangleRenderer
+    {
+        Size = new Vector2(50, 50),
+        Color = Color.Green,
+        Layer = 100
+    },
+    new Velocity { Value = Vector2.Zero },
+    new Physics
+    {
+        Mass = 1.0f,
+        Damping = 0.98f,
+        Restitution = 0.8f
+    },
+    BoxCollider.Square(50)
+);
+</code></pre>
+<h3 id="sprite-from-sprite-sheet">Sprite from Sprite Sheet</h3>
+<pre><code class="lang-csharp">var spriteSheet = Assets.LoadSpriteSheet(&quot;characters.json&quot;);
+var texture = Assets.LoadTexture(&quot;characters.png&quot;);
+
+var entity = World.Create(
+    new Transform { Position = new Vector2(200, 200) },
+    SpriteRenderer.FromSpriteSheet(
+        texture,
+        spriteSheet.GetFrame(0),
+        scale: 2.0f
+    )
+);
+</code></pre>
+<h3 id="entity-with-animation">Entity with Animation</h3>
+<pre><code class="lang-csharp">var spriteSheet = Assets.LoadSpriteSheet(&quot;player.json&quot;);
+var texture = Assets.LoadTexture(&quot;player.png&quot;);
+
+var animation = new Animation();
+animation.Clips[&quot;walk&quot;] = spriteSheet.CreateAnimationClip(&quot;walk&quot;);
+animation.Clips[&quot;idle&quot;] = spriteSheet.CreateAnimationClip(&quot;idle&quot;);
+animation.Play(&quot;idle&quot;);
+
+var player = World.Create(
+    new Transform { Position = new Vector2(400, 300) },
+    SpriteRenderer.FromSpriteSheet(texture, spriteSheet.GetFrame(0)),
+    animation
+);
+</code></pre>
+<h2 id="movement-and-physics">Movement and Physics</h2>
+<h3 id="apply-forceimpulse">Apply Force/Impulse</h3>
+<pre><code class="lang-csharp">// Query entities with velocity
+var query = World.Query&lt;Velocity&gt;();
+foreach (var entity in query)
+{
+    ref var velocity = ref entity.Get&lt;Velocity&gt;();
+
+    // Apply an impulse (instant velocity change)
+    velocity.Value += new Vector2(100, -200);
+
+    // Or set velocity directly
+    velocity.Value = new Vector2(150, 0);
+}
+</code></pre>
+<h3 id="continuous-movement">Continuous Movement</h3>
+<pre><code class="lang-csharp">// In your game's Update method
+protected override void Update(float deltaTime)
+{
+    base.Update(deltaTime);
+
+    var query = World.Query&lt;Transform, Velocity&gt;();
+    foreach (var entity in query)
+    {
+        ref var transform = ref entity.Get&lt;Transform&gt;();
+        ref var velocity = ref entity.Get&lt;Velocity&gt;();
+
+        transform.Position += velocity.Value * deltaTime;
+    }
+}
+</code></pre>
+<h3 id="move-towards-target">Move Towards Target</h3>
+<pre><code class="lang-csharp">var query = World.Query&lt;Transform, Velocity&gt;();
+foreach (var entity in query)
+{
+    ref var transform = ref entity.Get&lt;Transform&gt;();
+    ref var velocity = ref entity.Get&lt;Velocity&gt;();
+
+    var target = new Vector2(500, 300);
+    var direction = Vector2.Normalize(target - transform.Position);
+    var speed = 100f;
+
+    velocity.Value = direction * speed;
+}
+</code></pre>
+<h3 id="rotate-to-face-direction">Rotate to Face Direction</h3>
+<pre><code class="lang-csharp">ref var transform = ref entity.Get&lt;Transform&gt;();
+ref var velocity = ref entity.Get&lt;Velocity&gt;();
+
+if (velocity.IsMoving)
+{
+    transform.LookAt(transform.Position + velocity.Direction);
+}
+</code></pre>
+<h2 id="input-handling">Input Handling</h2>
+<h3 id="basic-keyboard-input">Basic Keyboard Input</h3>
+<pre><code class="lang-csharp">protected override void Update(float deltaTime)
+{
+    base.Update(deltaTime);
+
+    if (InputManager.IsKeyPressed(KeyCode.Space))
+    {
+        // Fire weapon (triggered once per key press)
+    }
+
+    if (InputManager.IsKeyDown(KeyCode.W))
+    {
+        // Move forward (continuous while held)
+    }
+}
+</code></pre>
+<h3 id="player-movement-8-direction">Player Movement (8-Direction)</h3>
+<pre><code class="lang-csharp">var query = World.Query&lt;Transform, Velocity, PlayerControlled&gt;();
+foreach (var entity in query)
+{
+    ref var velocity = ref entity.Get&lt;Velocity&gt;();
+
+    var moveDir = Vector2.Zero;
+    if (InputManager.IsKeyDown(KeyCode.W)) moveDir.Y -= 1;
+    if (InputManager.IsKeyDown(KeyCode.S)) moveDir.Y += 1;
+    if (InputManager.IsKeyDown(KeyCode.A)) moveDir.X -= 1;
+    if (InputManager.IsKeyDown(KeyCode.D)) moveDir.X += 1;
+
+    if (moveDir != Vector2.Zero)
+    {
+        moveDir = Vector2.Normalize(moveDir);
+        velocity.Value = moveDir * 200f; // 200 pixels per second
+    }
+    else
+    {
+        velocity.Value = Vector2.Zero;
+    }
+}
+</code></pre>
+<h3 id="mouse-input">Mouse Input</h3>
+<pre><code class="lang-csharp">var mousePos = InputManager.GetMousePosition();
+
+if (InputManager.IsMouseButtonPressed(MouseButton.Left))
+{
+    // Spawn something at mouse position
+    World.Create(
+        new Transform { Position = mousePos },
+        new RectangleRenderer { Size = new Vector2(10, 10), Color = Color.Red }
+    );
+}
+</code></pre>
+<h2 id="collision-detection">Collision Detection</h2>
+<h3 id="subscribe-to-collision-events">Subscribe to Collision Events</h3>
+<pre><code class="lang-csharp">protected override void Initialize()
+{
+    base.Initialize();
+
+    // Subscribe to collision events
+    Events.Subscribe&lt;CollisionEvent&gt;(OnCollision);
+}
+
+private void OnCollision(CollisionEvent collision)
+{
+    // Check collision layers
+    if (collision.LayerA == CollisionLayer.Player &amp;&amp;
+        collision.LayerB == CollisionLayer.Enemy)
+    {
+        // Player hit enemy
+        World.Destroy(collision.EntityB);
+    }
+
+    if (collision.LayerA == CollisionLayer.Projectile &amp;&amp;
+        collision.LayerB == CollisionLayer.Enemy)
+    {
+        // Projectile hit enemy
+        World.Destroy(collision.EntityA); // Destroy projectile
+        World.Destroy(collision.EntityB); // Destroy enemy
+    }
+}
+</code></pre>
+<h3 id="custom-collision-response">Custom Collision Response</h3>
+<pre><code class="lang-csharp">private void OnCollision(CollisionEvent collision)
+{
+    // Apply knockback
+    if (World.Has&lt;Velocity&gt;(collision.EntityB))
+    {
+        ref var velocity = ref World.Get&lt;Velocity&gt;(collision.EntityB);
+        velocity.Value += collision.Normal * 300f; // Knockback force
+    }
+}
+</code></pre>
+<h3 id="point-in-rectangle-check">Point-in-Rectangle Check</h3>
+<pre><code class="lang-csharp">var query = World.Query&lt;Transform, BoxCollider&gt;();
+var mousePos = InputManager.GetMousePosition();
+
+foreach (var entity in query)
+{
+    ref var transform = ref entity.Get&lt;Transform&gt;();
+    ref var collider = ref entity.Get&lt;BoxCollider&gt;();
+
+    if (collider.Contains(mousePos))
+    {
+        // Mouse is over this entity
+    }
+}
+</code></pre>
+<h2 id="rendering">Rendering</h2>
+<h3 id="layer-based-rendering">Layer-based Rendering</h3>
+<pre><code class="lang-csharp">// Background (renders behind)
+World.Create(
+    new Transform { Position = Vector2.Zero },
+    SpriteRenderer.Background(backgroundTexture)
+);
+
+// Game objects (middle layer)
+World.Create(
+    new Transform { Position = new Vector2(100, 100) },
+    SpriteRenderer.GameObject(playerTexture)
+);
+
+// UI (renders on top)
+World.Create(
+    new Transform { Position = new Vector2(10, 10) },
+    new TextRenderer
+    {
+        Text = &quot;Score: 0&quot;,
+        Color = Color.White,
+        FontSize = 24,
+        Layer = RenderLayers.UI
+    }
+);
+</code></pre>
+<h3 id="sprite-with-tint-and-rotation">Sprite with Tint and Rotation</h3>
+<pre><code class="lang-csharp">World.Create(
+    new Transform { Position = new Vector2(200, 200), Rotation = MathF.PI / 4 },
+    new SpriteRenderer
+    {
+        Texture = texture,
+        SourceRect = null, // Use full texture
+        Scale = new Vector2(2, 2),
+        Tint = Color.FromArgb(255, 255, 100, 100), // Reddish tint
+        Layer = 100
+    }
+);
+</code></pre>
+<h2 id="animation">Animation</h2>
+<h3 id="play-animation-based-on-state">Play Animation Based on State</h3>
+<pre><code class="lang-csharp">var query = World.Query&lt;Velocity, Animation&gt;();
+foreach (var entity in query)
+{
+    ref var velocity = ref entity.Get&lt;Velocity&gt;();
+    ref var animation = ref entity.Get&lt;Animation&gt;();
+
+    if (velocity.IsMoving)
+    {
+        if (animation.CurrentClip != &quot;walk&quot;)
+            animation.Play(&quot;walk&quot;);
+    }
+    else
+    {
+        if (animation.CurrentClip != &quot;idle&quot;)
+            animation.Play(&quot;idle&quot;);
+    }
+}
+</code></pre>
+<h3 id="create-animation-from-grid">Create Animation from Grid</h3>
+<pre><code class="lang-csharp">var walkClip = AnimationClip.FromGrid(
+    gridWidth: 8,          // 8 frames wide
+    gridHeight: 1,         // 1 frame tall
+    frameWidth: 32,
+    frameHeight: 32,
+    startFrame: 0,
+    frameCount: 8,
+    frameDuration: 0.1f,   // 10 FPS
+    loop: true
+);
+</code></pre>
+<h2 id="cameras">Cameras</h2>
+<h3 id="follow-player">Follow Player</h3>
+<pre><code class="lang-csharp">// Create camera entity
+var camera = World.Create(
+    new Camera
+    {
+        Position = Vector2.Zero,
+        ViewportWidth = 800,
+        ViewportHeight = 600,
+        SmoothSpeed = 5f,
+        FollowTarget = playerEntity
+    }
+);
+</code></pre>
+<h3 id="camera-with-bounds">Camera with Bounds</h3>
+<pre><code class="lang-csharp">var camera = World.Create(
+    new Camera
+    {
+        Position = Vector2.Zero,
+        ViewportWidth = 800,
+        ViewportHeight = 600,
+        MinBounds = new Vector2(0, 0),
+        MaxBounds = new Vector2(2000, 1500) // Map size
+    }
+);
+</code></pre>
+<h2 id="timers-and-lifecycle">Timers and Lifecycle</h2>
+<h3 id="timed-destruction">Timed Destruction</h3>
+<pre><code class="lang-csharp">// Create a particle that lives for 2 seconds
+World.Create(
+    new Transform { Position = new Vector2(300, 300) },
+    new RectangleRenderer { Size = new Vector2(5, 5), Color = Color.Yellow },
+    new Lifetime { TimeRemaining = 2.0f }
+);
+</code></pre>
+<h3 id="delayed-action">Delayed Action</h3>
+<pre><code class="lang-csharp">// Custom component
+public struct DelayedAction
+{
+    public float TimeRemaining;
+    public Action Action;
+}
+
+// Usage
+World.Create(
+    new DelayedAction
+    {
+        TimeRemaining = 3.0f,
+        Action = () =&gt; Console.WriteLine(&quot;3 seconds elapsed!&quot;)
+    }
+);
+
+// In a custom system
+var query = World.Query&lt;DelayedAction&gt;();
+foreach (var entity in query)
+{
+    ref var delayed = ref entity.Get&lt;DelayedAction&gt;();
+    delayed.TimeRemaining -= deltaTime;
+
+    if (delayed.TimeRemaining &lt;= 0)
+    {
+        delayed.Action?.Invoke();
+        World.Destroy(entity.Entity);
+    }
+}
+</code></pre>
+<h2 id="events">Events</h2>
+<h3 id="publish-custom-event">Publish Custom Event</h3>
+<pre><code class="lang-csharp">// Define event
+public record PlayerScoredEvent(int Points, Entity Player);
+
+// Publish
+Events.Publish(new PlayerScoredEvent(100, playerEntity));
+
+// Subscribe
+Events.Subscribe&lt;PlayerScoredEvent&gt;(e =&gt;
+{
+    Console.WriteLine($&quot;Player scored {e.Points} points!&quot;);
+});
+</code></pre>
+<h3 id="one-time-event-handler">One-time Event Handler</h3>
+<pre><code class="lang-csharp">void OnGameStart()
+{
+    Action&lt;PlayerDiedEvent&gt; handler = null;
+    handler = (e) =&gt;
+    {
+        Console.WriteLine(&quot;Game Over!&quot;);
+        Events.Unsubscribe(handler); // Unsubscribe after first call
+    };
+
+    Events.Subscribe(handler);
+}
+</code></pre>
+<h2 id="utilities">Utilities</h2>
+<h3 id="random-position-in-rectangle">Random Position in Rectangle</h3>
+<pre><code class="lang-csharp">var randomX = MathUtils.RandomRange(0, 800);
+var randomY = MathUtils.RandomRange(0, 600);
+var randomPos = new Vector2(randomX, randomY);
+</code></pre>
+<h3 id="random-direction">Random Direction</h3>
+<pre><code class="lang-csharp">var randomDirection = MathUtils.RandomDirection();
+var velocity = randomDirection * 150f; // Random direction, fixed speed
+</code></pre>
+<h3 id="lerp-position">Lerp Position</h3>
+<pre><code class="lang-csharp">ref var transform = ref entity.Get&lt;Transform&gt;();
+var target = new Vector2(500, 300);
+
+transform.Position = MathUtils.Lerp(
+    transform.Position,
+    target,
+    0.05f // Interpolation factor (0-1)
+);
+</code></pre>
+<h3 id="clamp-to-bounds">Clamp to Bounds</h3>
+<pre><code class="lang-csharp">ref var transform = ref entity.Get&lt;Transform&gt;();
+
+transform.Position = new Vector2(
+    MathUtils.Clamp(transform.Position.X, 0, 800),
+    MathUtils.Clamp(transform.Position.Y, 0, 600)
+);
+</code></pre>
+<h3 id="angle-between-vectors">Angle Between Vectors</h3>
+<pre><code class="lang-csharp">var from = transform.Forward;
+var to = Vector2.Normalize(target - transform.Position);
+
+var angleDiff = MathUtils.AngleDifference(
+    MathF.Atan2(from.Y, from.X),
+    MathF.Atan2(to.Y, to.X)
+);
+</code></pre>
+<h2 id="complete-examples">Complete Examples</h2>
+<h3 id="spawning-projectiles">Spawning Projectiles</h3>
+<pre><code class="lang-csharp">private void FireProjectile(Vector2 position, Vector2 direction)
+{
+    var projectileTexture = Assets.LoadTexture(&quot;bullet.png&quot;);
+
+    World.Create(
+        new Transform
+        {
+            Position = position,
+            Rotation = MathF.Atan2(direction.Y, direction.X)
+        },
+        SpriteRenderer.FullTexture(projectileTexture),
+        new Velocity { Value = direction * 400f },
+        BoxCollider.FromRenderSize(projectileTexture.Width, projectileTexture.Height),
+        new Lifetime { TimeRemaining = 5.0f },
+        new Tags { Values = new[] { &quot;Projectile&quot; } }
+    );
+}
+</code></pre>
+<h3 id="power-up-system">Power-up System</h3>
+<pre><code class="lang-csharp">// Power-up component
+public struct PowerUp
+{
+    public PowerUpType Type;
+    public float Duration;
+}
+
+// Create power-up entity
+World.Create(
+    new Transform { Position = new Vector2(300, 300) },
+    SpriteRenderer.FullTexture(powerUpTexture),
+    BoxCollider.Square(32),
+    new PowerUp { Type = PowerUpType.SpeedBoost, Duration = 5.0f }
+);
+
+// Collision handler
+private void OnCollision(CollisionEvent collision)
+{
+    if (World.Has&lt;PowerUp&gt;(collision.EntityA) &amp;&amp;
+        World.Has&lt;PlayerControlled&gt;(collision.EntityB))
+    {
+        var powerUp = World.Get&lt;PowerUp&gt;(collision.EntityA);
+        ApplyPowerUp(collision.EntityB, powerUp);
+        World.Destroy(collision.EntityA);
+    }
+}
+</code></pre>
+<hr>
+<p><strong>Need more examples?</strong> Check out the example games:</p>
+<ul>
+<li><a href="asteroids-walkthrough.md">Asteroids Walkthrough</a></li>
+<li><a href="pong-walkthrough.md">Pong Walkthrough</a></li>
+<li><a href="cave-explorer-walkthrough.md">Cave Explorer Walkthrough</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/examples/code-snippets.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

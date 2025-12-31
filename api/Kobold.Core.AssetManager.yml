@@ -1,0 +1,1381 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.AssetManager
+  commentId: T:Kobold.Core.AssetManager
+  id: AssetManager
+  parent: Kobold.Core
+  children:
+  - Kobold.Core.AssetManager.#ctor(Kobold.Core.Abstractions.Core.IContentLoader,System.String)
+  - Kobold.Core.AssetManager.CachedSpriteSheetCount
+  - Kobold.Core.AssetManager.CachedTextureCount
+  - Kobold.Core.AssetManager.GetCachedSpriteSheetPaths
+  - Kobold.Core.AssetManager.GetCachedTexturePaths
+  - Kobold.Core.AssetManager.GetSpriteSheet(System.String)
+  - Kobold.Core.AssetManager.GetTexture(System.String)
+  - Kobold.Core.AssetManager.IsSpriteSheetLoaded(System.String)
+  - Kobold.Core.AssetManager.IsTextureLoaded(System.String)
+  - Kobold.Core.AssetManager.LoadSpriteSheet(System.String)
+  - Kobold.Core.AssetManager.LoadSpriteSheetConfig(System.String)
+  - Kobold.Core.AssetManager.LoadTexture(System.String)
+  - Kobold.Core.AssetManager.PreloadTextures(System.String[])
+  - Kobold.Core.AssetManager.SaveSpriteSheetConfig(Kobold.Core.Assets.SpriteSheetConfig,System.String)
+  - Kobold.Core.AssetManager.UnloadAll
+  - Kobold.Core.AssetManager.UnloadAllSpriteSheets
+  - Kobold.Core.AssetManager.UnloadAllTextures
+  - Kobold.Core.AssetManager.UnloadSpriteSheet(System.String)
+  - Kobold.Core.AssetManager.UnloadTexture(System.String)
+  langs:
+  - csharp
+  - vb
+  name: AssetManager
+  nameWithType: AssetManager
+  fullName: Kobold.Core.AssetManager
+  type: Class
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: AssetManager
+    path: Kobold/AssetManager.cs
+    startLine: 13
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Manages loading and caching of game assets (textures, sprite sheets, etc.)
+  example: []
+  syntax:
+    content: public class AssetManager
+    content.vb: Public Class AssetManager
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Core.AssetManager.#ctor(Kobold.Core.Abstractions.Core.IContentLoader,System.String)
+  commentId: M:Kobold.Core.AssetManager.#ctor(Kobold.Core.Abstractions.Core.IContentLoader,System.String)
+  id: '#ctor(Kobold.Core.Abstractions.Core.IContentLoader,System.String)'
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: AssetManager(IContentLoader, string)
+  nameWithType: AssetManager.AssetManager(IContentLoader, string)
+  fullName: Kobold.Core.AssetManager.AssetManager(Kobold.Core.Abstractions.Core.IContentLoader, string)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/AssetManager.cs
+    startLine: 20
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  syntax:
+    content: public AssetManager(IContentLoader contentLoader, string contentRoot = "Content")
+    parameters:
+    - id: contentLoader
+      type: Kobold.Core.Abstractions.Core.IContentLoader
+    - id: contentRoot
+      type: System.String
+    content.vb: Public Sub New(contentLoader As IContentLoader, contentRoot As String = "Content")
+  overload: Kobold.Core.AssetManager.#ctor*
+  nameWithType.vb: AssetManager.New(IContentLoader, String)
+  fullName.vb: Kobold.Core.AssetManager.New(Kobold.Core.Abstractions.Core.IContentLoader, String)
+  name.vb: New(IContentLoader, String)
+- uid: Kobold.Core.AssetManager.LoadTexture(System.String)
+  commentId: M:Kobold.Core.AssetManager.LoadTexture(System.String)
+  id: LoadTexture(System.String)
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: LoadTexture(string)
+  nameWithType: AssetManager.LoadTexture(string)
+  fullName: Kobold.Core.AssetManager.LoadTexture(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: LoadTexture
+    path: Kobold/AssetManager.cs
+    startLine: 33
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Load a texture, or return cached version if already loaded
+  example: []
+  syntax:
+    content: public ITexture LoadTexture(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to the texture file
+    return:
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+      description: The loaded texture
+    content.vb: Public Function LoadTexture(path As String) As ITexture
+  overload: Kobold.Core.AssetManager.LoadTexture*
+  nameWithType.vb: AssetManager.LoadTexture(String)
+  fullName.vb: Kobold.Core.AssetManager.LoadTexture(String)
+  name.vb: LoadTexture(String)
+- uid: Kobold.Core.AssetManager.GetTexture(System.String)
+  commentId: M:Kobold.Core.AssetManager.GetTexture(System.String)
+  id: GetTexture(System.String)
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: GetTexture(string)
+  nameWithType: AssetManager.GetTexture(string)
+  fullName: Kobold.Core.AssetManager.GetTexture(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetTexture
+    path: Kobold/AssetManager.cs
+    startLine: 52
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Get a previously loaded texture from cache
+  example: []
+  syntax:
+    content: public ITexture? GetTexture(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to the texture
+    return:
+      type: Kobold.Core.Abstractions.Rendering.ITexture
+      description: The cached texture, or null if not loaded
+    content.vb: Public Function GetTexture(path As String) As ITexture
+  overload: Kobold.Core.AssetManager.GetTexture*
+  nameWithType.vb: AssetManager.GetTexture(String)
+  fullName.vb: Kobold.Core.AssetManager.GetTexture(String)
+  name.vb: GetTexture(String)
+- uid: Kobold.Core.AssetManager.IsTextureLoaded(System.String)
+  commentId: M:Kobold.Core.AssetManager.IsTextureLoaded(System.String)
+  id: IsTextureLoaded(System.String)
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: IsTextureLoaded(string)
+  nameWithType: AssetManager.IsTextureLoaded(string)
+  fullName: Kobold.Core.AssetManager.IsTextureLoaded(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IsTextureLoaded
+    path: Kobold/AssetManager.cs
+    startLine: 63
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Check if a texture is already loaded in cache
+  example: []
+  syntax:
+    content: public bool IsTextureLoaded(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to check
+    return:
+      type: System.Boolean
+      description: True if the texture is cached
+    content.vb: Public Function IsTextureLoaded(path As String) As Boolean
+  overload: Kobold.Core.AssetManager.IsTextureLoaded*
+  nameWithType.vb: AssetManager.IsTextureLoaded(String)
+  fullName.vb: Kobold.Core.AssetManager.IsTextureLoaded(String)
+  name.vb: IsTextureLoaded(String)
+- uid: Kobold.Core.AssetManager.PreloadTextures(System.String[])
+  commentId: M:Kobold.Core.AssetManager.PreloadTextures(System.String[])
+  id: PreloadTextures(System.String[])
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: PreloadTextures(params string[])
+  nameWithType: AssetManager.PreloadTextures(params string[])
+  fullName: Kobold.Core.AssetManager.PreloadTextures(params string[])
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: PreloadTextures
+    path: Kobold/AssetManager.cs
+    startLine: 72
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Preload multiple textures at once (useful for loading screens)
+  example: []
+  syntax:
+    content: public void PreloadTextures(params string[] paths)
+    parameters:
+    - id: paths
+      type: System.String[]
+      description: Array of texture paths to preload
+    content.vb: Public Sub PreloadTextures(ParamArray paths As String())
+  overload: Kobold.Core.AssetManager.PreloadTextures*
+  nameWithType.vb: AssetManager.PreloadTextures(ParamArray String())
+  fullName.vb: Kobold.Core.AssetManager.PreloadTextures(ParamArray String())
+  name.vb: PreloadTextures(ParamArray String())
+- uid: Kobold.Core.AssetManager.UnloadTexture(System.String)
+  commentId: M:Kobold.Core.AssetManager.UnloadTexture(System.String)
+  id: UnloadTexture(System.String)
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: UnloadTexture(string)
+  nameWithType: AssetManager.UnloadTexture(string)
+  fullName: Kobold.Core.AssetManager.UnloadTexture(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: UnloadTexture
+    path: Kobold/AssetManager.cs
+    startLine: 85
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Unload a specific texture from cache
+  example: []
+  syntax:
+    content: public bool UnloadTexture(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to the texture to unload
+    return:
+      type: System.Boolean
+      description: True if the texture was unloaded, false if it wasn't cached
+    content.vb: Public Function UnloadTexture(path As String) As Boolean
+  overload: Kobold.Core.AssetManager.UnloadTexture*
+  nameWithType.vb: AssetManager.UnloadTexture(String)
+  fullName.vb: Kobold.Core.AssetManager.UnloadTexture(String)
+  name.vb: UnloadTexture(String)
+- uid: Kobold.Core.AssetManager.UnloadAllTextures
+  commentId: M:Kobold.Core.AssetManager.UnloadAllTextures
+  id: UnloadAllTextures
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: UnloadAllTextures()
+  nameWithType: AssetManager.UnloadAllTextures()
+  fullName: Kobold.Core.AssetManager.UnloadAllTextures()
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: UnloadAllTextures
+    path: Kobold/AssetManager.cs
+    startLine: 93
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Unload all cached textures
+  example: []
+  syntax:
+    content: public void UnloadAllTextures()
+    content.vb: Public Sub UnloadAllTextures()
+  overload: Kobold.Core.AssetManager.UnloadAllTextures*
+- uid: Kobold.Core.AssetManager.CachedTextureCount
+  commentId: P:Kobold.Core.AssetManager.CachedTextureCount
+  id: CachedTextureCount
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: CachedTextureCount
+  nameWithType: AssetManager.CachedTextureCount
+  fullName: Kobold.Core.AssetManager.CachedTextureCount
+  type: Property
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CachedTextureCount
+    path: Kobold/AssetManager.cs
+    startLine: 101
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Get count of currently cached textures
+  example: []
+  syntax:
+    content: public int CachedTextureCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property CachedTextureCount As Integer
+  overload: Kobold.Core.AssetManager.CachedTextureCount*
+- uid: Kobold.Core.AssetManager.GetCachedTexturePaths
+  commentId: M:Kobold.Core.AssetManager.GetCachedTexturePaths
+  id: GetCachedTexturePaths
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: GetCachedTexturePaths()
+  nameWithType: AssetManager.GetCachedTexturePaths()
+  fullName: Kobold.Core.AssetManager.GetCachedTexturePaths()
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetCachedTexturePaths
+    path: Kobold/AssetManager.cs
+    startLine: 106
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Get all currently cached texture paths
+  example: []
+  syntax:
+    content: public IEnumerable<string> GetCachedTexturePaths()
+    return:
+      type: System.Collections.Generic.IEnumerable{System.String}
+    content.vb: Public Function GetCachedTexturePaths() As IEnumerable(Of String)
+  overload: Kobold.Core.AssetManager.GetCachedTexturePaths*
+- uid: Kobold.Core.AssetManager.LoadSpriteSheet(System.String)
+  commentId: M:Kobold.Core.AssetManager.LoadSpriteSheet(System.String)
+  id: LoadSpriteSheet(System.String)
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: LoadSpriteSheet(string)
+  nameWithType: AssetManager.LoadSpriteSheet(string)
+  fullName: Kobold.Core.AssetManager.LoadSpriteSheet(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: LoadSpriteSheet
+    path: Kobold/AssetManager.cs
+    startLine: 118
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Load a sprite sheet with its configuration (expects .png and .json files)
+  example: []
+  syntax:
+    content: public SpriteSheet LoadSpriteSheet(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to the sprite sheet (without extension)
+    return:
+      type: Kobold.Core.Assets.SpriteSheet
+      description: The loaded sprite sheet
+    content.vb: Public Function LoadSpriteSheet(path As String) As SpriteSheet
+  overload: Kobold.Core.AssetManager.LoadSpriteSheet*
+  nameWithType.vb: AssetManager.LoadSpriteSheet(String)
+  fullName.vb: Kobold.Core.AssetManager.LoadSpriteSheet(String)
+  name.vb: LoadSpriteSheet(String)
+- uid: Kobold.Core.AssetManager.LoadSpriteSheetConfig(System.String)
+  commentId: M:Kobold.Core.AssetManager.LoadSpriteSheetConfig(System.String)
+  id: LoadSpriteSheetConfig(System.String)
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: LoadSpriteSheetConfig(string)
+  nameWithType: AssetManager.LoadSpriteSheetConfig(string)
+  fullName: Kobold.Core.AssetManager.LoadSpriteSheetConfig(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: LoadSpriteSheetConfig
+    path: Kobold/AssetManager.cs
+    startLine: 145
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Load a sprite sheet configuration from a JSON file
+  example: []
+  syntax:
+    content: public SpriteSheetConfig LoadSpriteSheetConfig(string configPath)
+    parameters:
+    - id: configPath
+      type: System.String
+      description: Path to the JSON config file
+    return:
+      type: Kobold.Core.Assets.SpriteSheetConfig
+      description: The loaded configuration
+    content.vb: Public Function LoadSpriteSheetConfig(configPath As String) As SpriteSheetConfig
+  overload: Kobold.Core.AssetManager.LoadSpriteSheetConfig*
+  nameWithType.vb: AssetManager.LoadSpriteSheetConfig(String)
+  fullName.vb: Kobold.Core.AssetManager.LoadSpriteSheetConfig(String)
+  name.vb: LoadSpriteSheetConfig(String)
+- uid: Kobold.Core.AssetManager.SaveSpriteSheetConfig(Kobold.Core.Assets.SpriteSheetConfig,System.String)
+  commentId: M:Kobold.Core.AssetManager.SaveSpriteSheetConfig(Kobold.Core.Assets.SpriteSheetConfig,System.String)
+  id: SaveSpriteSheetConfig(Kobold.Core.Assets.SpriteSheetConfig,System.String)
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: SaveSpriteSheetConfig(SpriteSheetConfig, string)
+  nameWithType: AssetManager.SaveSpriteSheetConfig(SpriteSheetConfig, string)
+  fullName: Kobold.Core.AssetManager.SaveSpriteSheetConfig(Kobold.Core.Assets.SpriteSheetConfig, string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: SaveSpriteSheetConfig
+    path: Kobold/AssetManager.cs
+    startLine: 185
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Save a sprite sheet configuration to a JSON file
+  example: []
+  syntax:
+    content: public void SaveSpriteSheetConfig(SpriteSheetConfig config, string configPath)
+    parameters:
+    - id: config
+      type: Kobold.Core.Assets.SpriteSheetConfig
+      description: The configuration to save
+    - id: configPath
+      type: System.String
+      description: Path where to save the config
+    content.vb: Public Sub SaveSpriteSheetConfig(config As SpriteSheetConfig, configPath As String)
+  overload: Kobold.Core.AssetManager.SaveSpriteSheetConfig*
+  nameWithType.vb: AssetManager.SaveSpriteSheetConfig(SpriteSheetConfig, String)
+  fullName.vb: Kobold.Core.AssetManager.SaveSpriteSheetConfig(Kobold.Core.Assets.SpriteSheetConfig, String)
+  name.vb: SaveSpriteSheetConfig(SpriteSheetConfig, String)
+- uid: Kobold.Core.AssetManager.GetSpriteSheet(System.String)
+  commentId: M:Kobold.Core.AssetManager.GetSpriteSheet(System.String)
+  id: GetSpriteSheet(System.String)
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: GetSpriteSheet(string)
+  nameWithType: AssetManager.GetSpriteSheet(string)
+  fullName: Kobold.Core.AssetManager.GetSpriteSheet(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetSpriteSheet
+    path: Kobold/AssetManager.cs
+    startLine: 219
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Get a previously loaded sprite sheet from cache
+  example: []
+  syntax:
+    content: public SpriteSheet? GetSpriteSheet(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to the sprite sheet
+    return:
+      type: Kobold.Core.Assets.SpriteSheet
+      description: The cached sprite sheet, or null if not loaded
+    content.vb: Public Function GetSpriteSheet(path As String) As SpriteSheet
+  overload: Kobold.Core.AssetManager.GetSpriteSheet*
+  nameWithType.vb: AssetManager.GetSpriteSheet(String)
+  fullName.vb: Kobold.Core.AssetManager.GetSpriteSheet(String)
+  name.vb: GetSpriteSheet(String)
+- uid: Kobold.Core.AssetManager.IsSpriteSheetLoaded(System.String)
+  commentId: M:Kobold.Core.AssetManager.IsSpriteSheetLoaded(System.String)
+  id: IsSpriteSheetLoaded(System.String)
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: IsSpriteSheetLoaded(string)
+  nameWithType: AssetManager.IsSpriteSheetLoaded(string)
+  fullName: Kobold.Core.AssetManager.IsSpriteSheetLoaded(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IsSpriteSheetLoaded
+    path: Kobold/AssetManager.cs
+    startLine: 230
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Check if a sprite sheet is already loaded in cache
+  example: []
+  syntax:
+    content: public bool IsSpriteSheetLoaded(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to check
+    return:
+      type: System.Boolean
+      description: True if the sprite sheet is cached
+    content.vb: Public Function IsSpriteSheetLoaded(path As String) As Boolean
+  overload: Kobold.Core.AssetManager.IsSpriteSheetLoaded*
+  nameWithType.vb: AssetManager.IsSpriteSheetLoaded(String)
+  fullName.vb: Kobold.Core.AssetManager.IsSpriteSheetLoaded(String)
+  name.vb: IsSpriteSheetLoaded(String)
+- uid: Kobold.Core.AssetManager.UnloadSpriteSheet(System.String)
+  commentId: M:Kobold.Core.AssetManager.UnloadSpriteSheet(System.String)
+  id: UnloadSpriteSheet(System.String)
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: UnloadSpriteSheet(string)
+  nameWithType: AssetManager.UnloadSpriteSheet(string)
+  fullName: Kobold.Core.AssetManager.UnloadSpriteSheet(string)
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: UnloadSpriteSheet
+    path: Kobold/AssetManager.cs
+    startLine: 240
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Unload a specific sprite sheet from cache
+  example: []
+  syntax:
+    content: public bool UnloadSpriteSheet(string path)
+    parameters:
+    - id: path
+      type: System.String
+      description: Path to the sprite sheet to unload
+    return:
+      type: System.Boolean
+      description: True if the sprite sheet was unloaded, false if it wasn't cached
+    content.vb: Public Function UnloadSpriteSheet(path As String) As Boolean
+  overload: Kobold.Core.AssetManager.UnloadSpriteSheet*
+  nameWithType.vb: AssetManager.UnloadSpriteSheet(String)
+  fullName.vb: Kobold.Core.AssetManager.UnloadSpriteSheet(String)
+  name.vb: UnloadSpriteSheet(String)
+- uid: Kobold.Core.AssetManager.UnloadAllSpriteSheets
+  commentId: M:Kobold.Core.AssetManager.UnloadAllSpriteSheets
+  id: UnloadAllSpriteSheets
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: UnloadAllSpriteSheets()
+  nameWithType: AssetManager.UnloadAllSpriteSheets()
+  fullName: Kobold.Core.AssetManager.UnloadAllSpriteSheets()
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: UnloadAllSpriteSheets
+    path: Kobold/AssetManager.cs
+    startLine: 248
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Unload all cached sprite sheets
+  example: []
+  syntax:
+    content: public void UnloadAllSpriteSheets()
+    content.vb: Public Sub UnloadAllSpriteSheets()
+  overload: Kobold.Core.AssetManager.UnloadAllSpriteSheets*
+- uid: Kobold.Core.AssetManager.UnloadAll
+  commentId: M:Kobold.Core.AssetManager.UnloadAll
+  id: UnloadAll
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: UnloadAll()
+  nameWithType: AssetManager.UnloadAll()
+  fullName: Kobold.Core.AssetManager.UnloadAll()
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: UnloadAll
+    path: Kobold/AssetManager.cs
+    startLine: 256
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Unload all assets (textures and sprite sheets)
+  example: []
+  syntax:
+    content: public void UnloadAll()
+    content.vb: Public Sub UnloadAll()
+  overload: Kobold.Core.AssetManager.UnloadAll*
+- uid: Kobold.Core.AssetManager.CachedSpriteSheetCount
+  commentId: P:Kobold.Core.AssetManager.CachedSpriteSheetCount
+  id: CachedSpriteSheetCount
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: CachedSpriteSheetCount
+  nameWithType: AssetManager.CachedSpriteSheetCount
+  fullName: Kobold.Core.AssetManager.CachedSpriteSheetCount
+  type: Property
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CachedSpriteSheetCount
+    path: Kobold/AssetManager.cs
+    startLine: 265
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Get count of currently cached sprite sheets
+  example: []
+  syntax:
+    content: public int CachedSpriteSheetCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property CachedSpriteSheetCount As Integer
+  overload: Kobold.Core.AssetManager.CachedSpriteSheetCount*
+- uid: Kobold.Core.AssetManager.GetCachedSpriteSheetPaths
+  commentId: M:Kobold.Core.AssetManager.GetCachedSpriteSheetPaths
+  id: GetCachedSpriteSheetPaths
+  parent: Kobold.Core.AssetManager
+  langs:
+  - csharp
+  - vb
+  name: GetCachedSpriteSheetPaths()
+  nameWithType: AssetManager.GetCachedSpriteSheetPaths()
+  fullName: Kobold.Core.AssetManager.GetCachedSpriteSheetPaths()
+  type: Method
+  source:
+    remote:
+      path: Kobold/AssetManager.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetCachedSpriteSheetPaths
+    path: Kobold/AssetManager.cs
+    startLine: 270
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core
+  summary: Get all currently cached sprite sheet paths
+  example: []
+  syntax:
+    content: public IEnumerable<string> GetCachedSpriteSheetPaths()
+    return:
+      type: System.Collections.Generic.IEnumerable{System.String}
+    content.vb: Public Function GetCachedSpriteSheetPaths() As IEnumerable(Of String)
+  overload: Kobold.Core.AssetManager.GetCachedSpriteSheetPaths*
+references:
+- uid: Kobold.Core
+  commentId: N:Kobold.Core
+  href: Kobold.html
+  name: Kobold.Core
+  nameWithType: Kobold.Core
+  fullName: Kobold.Core
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.AssetManager.#ctor*
+  commentId: Overload:Kobold.Core.AssetManager.#ctor
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager__ctor_Kobold_Core_Abstractions_Core_IContentLoader_System_String_
+  name: AssetManager
+  nameWithType: AssetManager.AssetManager
+  fullName: Kobold.Core.AssetManager.AssetManager
+  nameWithType.vb: AssetManager.New
+  fullName.vb: Kobold.Core.AssetManager.New
+  name.vb: New
+- uid: Kobold.Core.Abstractions.Core.IContentLoader
+  commentId: T:Kobold.Core.Abstractions.Core.IContentLoader
+  parent: Kobold.Core.Abstractions.Core
+  href: Kobold.Core.Abstractions.Core.IContentLoader.html
+  name: IContentLoader
+  nameWithType: IContentLoader
+  fullName: Kobold.Core.Abstractions.Core.IContentLoader
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Kobold.Core.Abstractions.Core
+  commentId: N:Kobold.Core.Abstractions.Core
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Core
+  nameWithType: Kobold.Core.Abstractions.Core
+  fullName: Kobold.Core.Abstractions.Core
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Core
+    name: Core
+    href: Kobold.Core.Abstractions.Core.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Core
+    name: Core
+    href: Kobold.Core.Abstractions.Core.html
+- uid: Kobold.Core.AssetManager.LoadTexture*
+  commentId: Overload:Kobold.Core.AssetManager.LoadTexture
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_LoadTexture_System_String_
+  name: LoadTexture
+  nameWithType: AssetManager.LoadTexture
+  fullName: Kobold.Core.AssetManager.LoadTexture
+- uid: Kobold.Core.Abstractions.Rendering.ITexture
+  commentId: T:Kobold.Core.Abstractions.Rendering.ITexture
+  parent: Kobold.Core.Abstractions.Rendering
+  href: Kobold.Core.Abstractions.Rendering.ITexture.html
+  name: ITexture
+  nameWithType: ITexture
+  fullName: Kobold.Core.Abstractions.Rendering.ITexture
+- uid: Kobold.Core.Abstractions.Rendering
+  commentId: N:Kobold.Core.Abstractions.Rendering
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Rendering
+  nameWithType: Kobold.Core.Abstractions.Rendering
+  fullName: Kobold.Core.Abstractions.Rendering
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Rendering
+    name: Rendering
+    href: Kobold.Core.Abstractions.Rendering.html
+- uid: Kobold.Core.AssetManager.GetTexture*
+  commentId: Overload:Kobold.Core.AssetManager.GetTexture
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_GetTexture_System_String_
+  name: GetTexture
+  nameWithType: AssetManager.GetTexture
+  fullName: Kobold.Core.AssetManager.GetTexture
+- uid: Kobold.Core.AssetManager.IsTextureLoaded*
+  commentId: Overload:Kobold.Core.AssetManager.IsTextureLoaded
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_IsTextureLoaded_System_String_
+  name: IsTextureLoaded
+  nameWithType: AssetManager.IsTextureLoaded
+  fullName: Kobold.Core.AssetManager.IsTextureLoaded
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Kobold.Core.AssetManager.PreloadTextures*
+  commentId: Overload:Kobold.Core.AssetManager.PreloadTextures
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_PreloadTextures_System_String___
+  name: PreloadTextures
+  nameWithType: AssetManager.PreloadTextures
+  fullName: Kobold.Core.AssetManager.PreloadTextures
+- uid: System.String[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
+  nameWithType.vb: String()
+  fullName.vb: String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
+- uid: Kobold.Core.AssetManager.UnloadTexture*
+  commentId: Overload:Kobold.Core.AssetManager.UnloadTexture
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_UnloadTexture_System_String_
+  name: UnloadTexture
+  nameWithType: AssetManager.UnloadTexture
+  fullName: Kobold.Core.AssetManager.UnloadTexture
+- uid: Kobold.Core.AssetManager.UnloadAllTextures*
+  commentId: Overload:Kobold.Core.AssetManager.UnloadAllTextures
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_UnloadAllTextures
+  name: UnloadAllTextures
+  nameWithType: AssetManager.UnloadAllTextures
+  fullName: Kobold.Core.AssetManager.UnloadAllTextures
+- uid: Kobold.Core.AssetManager.CachedTextureCount*
+  commentId: Overload:Kobold.Core.AssetManager.CachedTextureCount
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_CachedTextureCount
+  name: CachedTextureCount
+  nameWithType: AssetManager.CachedTextureCount
+  fullName: Kobold.Core.AssetManager.CachedTextureCount
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Kobold.Core.AssetManager.GetCachedTexturePaths*
+  commentId: Overload:Kobold.Core.AssetManager.GetCachedTexturePaths
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_GetCachedTexturePaths
+  name: GetCachedTexturePaths
+  nameWithType: AssetManager.GetCachedTexturePaths
+  fullName: Kobold.Core.AssetManager.GetCachedTexturePaths
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<string>
+  nameWithType: IEnumerable<string>
+  fullName: System.Collections.Generic.IEnumerable<string>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: Kobold.Core.AssetManager.LoadSpriteSheet*
+  commentId: Overload:Kobold.Core.AssetManager.LoadSpriteSheet
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_LoadSpriteSheet_System_String_
+  name: LoadSpriteSheet
+  nameWithType: AssetManager.LoadSpriteSheet
+  fullName: Kobold.Core.AssetManager.LoadSpriteSheet
+- uid: Kobold.Core.Assets.SpriteSheet
+  commentId: T:Kobold.Core.Assets.SpriteSheet
+  parent: Kobold.Core.Assets
+  href: Kobold.Core.Assets.SpriteSheet.html
+  name: SpriteSheet
+  nameWithType: SpriteSheet
+  fullName: Kobold.Core.Assets.SpriteSheet
+- uid: Kobold.Core.Assets
+  commentId: N:Kobold.Core.Assets
+  href: Kobold.html
+  name: Kobold.Core.Assets
+  nameWithType: Kobold.Core.Assets
+  fullName: Kobold.Core.Assets
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Assets
+    name: Assets
+    href: Kobold.Core.Assets.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Assets
+    name: Assets
+    href: Kobold.Core.Assets.html
+- uid: Kobold.Core.AssetManager.LoadSpriteSheetConfig*
+  commentId: Overload:Kobold.Core.AssetManager.LoadSpriteSheetConfig
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_LoadSpriteSheetConfig_System_String_
+  name: LoadSpriteSheetConfig
+  nameWithType: AssetManager.LoadSpriteSheetConfig
+  fullName: Kobold.Core.AssetManager.LoadSpriteSheetConfig
+- uid: Kobold.Core.Assets.SpriteSheetConfig
+  commentId: T:Kobold.Core.Assets.SpriteSheetConfig
+  parent: Kobold.Core.Assets
+  href: Kobold.Core.Assets.SpriteSheetConfig.html
+  name: SpriteSheetConfig
+  nameWithType: SpriteSheetConfig
+  fullName: Kobold.Core.Assets.SpriteSheetConfig
+- uid: Kobold.Core.AssetManager.SaveSpriteSheetConfig*
+  commentId: Overload:Kobold.Core.AssetManager.SaveSpriteSheetConfig
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_SaveSpriteSheetConfig_Kobold_Core_Assets_SpriteSheetConfig_System_String_
+  name: SaveSpriteSheetConfig
+  nameWithType: AssetManager.SaveSpriteSheetConfig
+  fullName: Kobold.Core.AssetManager.SaveSpriteSheetConfig
+- uid: Kobold.Core.AssetManager.GetSpriteSheet*
+  commentId: Overload:Kobold.Core.AssetManager.GetSpriteSheet
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_GetSpriteSheet_System_String_
+  name: GetSpriteSheet
+  nameWithType: AssetManager.GetSpriteSheet
+  fullName: Kobold.Core.AssetManager.GetSpriteSheet
+- uid: Kobold.Core.AssetManager.IsSpriteSheetLoaded*
+  commentId: Overload:Kobold.Core.AssetManager.IsSpriteSheetLoaded
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_IsSpriteSheetLoaded_System_String_
+  name: IsSpriteSheetLoaded
+  nameWithType: AssetManager.IsSpriteSheetLoaded
+  fullName: Kobold.Core.AssetManager.IsSpriteSheetLoaded
+- uid: Kobold.Core.AssetManager.UnloadSpriteSheet*
+  commentId: Overload:Kobold.Core.AssetManager.UnloadSpriteSheet
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_UnloadSpriteSheet_System_String_
+  name: UnloadSpriteSheet
+  nameWithType: AssetManager.UnloadSpriteSheet
+  fullName: Kobold.Core.AssetManager.UnloadSpriteSheet
+- uid: Kobold.Core.AssetManager.UnloadAllSpriteSheets*
+  commentId: Overload:Kobold.Core.AssetManager.UnloadAllSpriteSheets
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_UnloadAllSpriteSheets
+  name: UnloadAllSpriteSheets
+  nameWithType: AssetManager.UnloadAllSpriteSheets
+  fullName: Kobold.Core.AssetManager.UnloadAllSpriteSheets
+- uid: Kobold.Core.AssetManager.UnloadAll*
+  commentId: Overload:Kobold.Core.AssetManager.UnloadAll
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_UnloadAll
+  name: UnloadAll
+  nameWithType: AssetManager.UnloadAll
+  fullName: Kobold.Core.AssetManager.UnloadAll
+- uid: Kobold.Core.AssetManager.CachedSpriteSheetCount*
+  commentId: Overload:Kobold.Core.AssetManager.CachedSpriteSheetCount
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_CachedSpriteSheetCount
+  name: CachedSpriteSheetCount
+  nameWithType: AssetManager.CachedSpriteSheetCount
+  fullName: Kobold.Core.AssetManager.CachedSpriteSheetCount
+- uid: Kobold.Core.AssetManager.GetCachedSpriteSheetPaths*
+  commentId: Overload:Kobold.Core.AssetManager.GetCachedSpriteSheetPaths
+  href: Kobold.Core.AssetManager.html#Kobold_Core_AssetManager_GetCachedSpriteSheetPaths
+  name: GetCachedSpriteSheetPaths
+  nameWithType: AssetManager.GetCachedSpriteSheetPaths
+  fullName: Kobold.Core.AssetManager.GetCachedSpriteSheetPaths

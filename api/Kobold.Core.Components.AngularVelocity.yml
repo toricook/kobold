@@ -1,0 +1,453 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.AngularVelocity
+  commentId: T:Kobold.Core.Components.AngularVelocity
+  id: AngularVelocity
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.AngularVelocity.#ctor(System.Single)
+  - Kobold.Core.Components.AngularVelocity.FromDegrees(System.Single)
+  - Kobold.Core.Components.AngularVelocity.GetDegrees
+  - Kobold.Core.Components.AngularVelocity.Value
+  langs:
+  - csharp
+  - vb
+  name: AngularVelocity
+  nameWithType: AngularVelocity
+  fullName: Kobold.Core.Components.AngularVelocity
+  type: Struct
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: AngularVelocity
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 12
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Angular velocity component for rotating entities
+  example: []
+  syntax:
+    content: public struct AngularVelocity
+    content.vb: Public Structure AngularVelocity
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Kobold.Core.Components.AngularVelocity.Value
+  commentId: F:Kobold.Core.Components.AngularVelocity.Value
+  id: Value
+  parent: Kobold.Core.Components.AngularVelocity
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: AngularVelocity.Value
+  fullName: Kobold.Core.Components.AngularVelocity.Value
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Value
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 14
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public float Value
+    return:
+      type: System.Single
+    content.vb: Public Value As Single
+- uid: Kobold.Core.Components.AngularVelocity.#ctor(System.Single)
+  commentId: M:Kobold.Core.Components.AngularVelocity.#ctor(System.Single)
+  id: '#ctor(System.Single)'
+  parent: Kobold.Core.Components.AngularVelocity
+  langs:
+  - csharp
+  - vb
+  name: AngularVelocity(float)
+  nameWithType: AngularVelocity.AngularVelocity(float)
+  fullName: Kobold.Core.Components.AngularVelocity.AngularVelocity(float)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 16
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public AngularVelocity(float value)
+    parameters:
+    - id: value
+      type: System.Single
+    content.vb: Public Sub New(value As Single)
+  overload: Kobold.Core.Components.AngularVelocity.#ctor*
+  nameWithType.vb: AngularVelocity.New(Single)
+  fullName.vb: Kobold.Core.Components.AngularVelocity.New(Single)
+  name.vb: New(Single)
+- uid: Kobold.Core.Components.AngularVelocity.FromDegrees(System.Single)
+  commentId: M:Kobold.Core.Components.AngularVelocity.FromDegrees(System.Single)
+  id: FromDegrees(System.Single)
+  parent: Kobold.Core.Components.AngularVelocity
+  langs:
+  - csharp
+  - vb
+  name: FromDegrees(float)
+  nameWithType: AngularVelocity.FromDegrees(float)
+  fullName: Kobold.Core.Components.AngularVelocity.FromDegrees(float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: FromDegrees
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 24
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Create angular velocity from degrees per second
+  example: []
+  syntax:
+    content: public static AngularVelocity FromDegrees(float degreesPerSecond)
+    parameters:
+    - id: degreesPerSecond
+      type: System.Single
+    return:
+      type: Kobold.Core.Components.AngularVelocity
+    content.vb: Public Shared Function FromDegrees(degreesPerSecond As Single) As AngularVelocity
+  overload: Kobold.Core.Components.AngularVelocity.FromDegrees*
+  nameWithType.vb: AngularVelocity.FromDegrees(Single)
+  fullName.vb: Kobold.Core.Components.AngularVelocity.FromDegrees(Single)
+  name.vb: FromDegrees(Single)
+- uid: Kobold.Core.Components.AngularVelocity.GetDegrees
+  commentId: M:Kobold.Core.Components.AngularVelocity.GetDegrees
+  id: GetDegrees
+  parent: Kobold.Core.Components.AngularVelocity
+  langs:
+  - csharp
+  - vb
+  name: GetDegrees()
+  nameWithType: AngularVelocity.GetDegrees()
+  fullName: Kobold.Core.Components.AngularVelocity.GetDegrees()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: GetDegrees
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 32
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Get angular velocity in degrees per second
+  example: []
+  syntax:
+    content: public float GetDegrees()
+    return:
+      type: System.Single
+    content.vb: Public Function GetDegrees() As Single
+  overload: Kobold.Core.Components.AngularVelocity.GetDegrees*
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Core.Components.AngularVelocity.#ctor*
+  commentId: Overload:Kobold.Core.Components.AngularVelocity.#ctor
+  href: Kobold.Core.Components.AngularVelocity.html#Kobold_Core_Components_AngularVelocity__ctor_System_Single_
+  name: AngularVelocity
+  nameWithType: AngularVelocity.AngularVelocity
+  fullName: Kobold.Core.Components.AngularVelocity.AngularVelocity
+  nameWithType.vb: AngularVelocity.New
+  fullName.vb: Kobold.Core.Components.AngularVelocity.New
+  name.vb: New
+- uid: Kobold.Core.Components.AngularVelocity.FromDegrees*
+  commentId: Overload:Kobold.Core.Components.AngularVelocity.FromDegrees
+  href: Kobold.Core.Components.AngularVelocity.html#Kobold_Core_Components_AngularVelocity_FromDegrees_System_Single_
+  name: FromDegrees
+  nameWithType: AngularVelocity.FromDegrees
+  fullName: Kobold.Core.Components.AngularVelocity.FromDegrees
+- uid: Kobold.Core.Components.AngularVelocity
+  commentId: T:Kobold.Core.Components.AngularVelocity
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.AngularVelocity.html
+  name: AngularVelocity
+  nameWithType: AngularVelocity
+  fullName: Kobold.Core.Components.AngularVelocity
+- uid: Kobold.Core.Components.AngularVelocity.GetDegrees*
+  commentId: Overload:Kobold.Core.Components.AngularVelocity.GetDegrees
+  href: Kobold.Core.Components.AngularVelocity.html#Kobold_Core_Components_AngularVelocity_GetDegrees
+  name: GetDegrees
+  nameWithType: AngularVelocity.GetDegrees
+  fullName: Kobold.Core.Components.AngularVelocity.GetDegrees

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct TileProperties | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct TileProperties | Kobold Game Framework ">
+      
+      <meta name="description" content="Properties associated with a tile.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/new/docs/apiSpec/new?filename=Kobold_Extensions_Tilemaps_TileProperties.md&amp;value=---%0Auid%3A%20Kobold.Extensions.Tilemaps.TileProperties%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Kobold.Extensions.Tilemaps.TileProperties">
+
+
+
+  <h1 id="Kobold_Extensions_Tilemaps_TileProperties" data-uid="Kobold.Extensions.Tilemaps.TileProperties" class="text-break">
+Struct TileProperties  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Kobold.html">Kobold</a>.<a class="xref" href="Kobold.Extensions.html">Extensions</a>.<a class="xref" href="Kobold.Extensions.Tilemaps.html">Tilemaps</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Kobold.Extensions.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Properties associated with a tile.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct TileProperties</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties__ctor_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.#ctor*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties__ctor" data-uid="Kobold.Extensions.Tilemaps.TileProperties.#ctor">
+  TileProperties()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L221"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates default tile properties (non-solid, no special behavior).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TileProperties()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties_AnimationFrames_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.AnimationFrames*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties_AnimationFrames" data-uid="Kobold.Extensions.Tilemaps.TileProperties.AnimationFrames">
+  AnimationFrames
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Animation frame IDs if this tile is animated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int[]? AnimationFrames { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties_AnimationSpeed_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.AnimationSpeed*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties_AnimationSpeed" data-uid="Kobold.Extensions.Tilemaps.TileProperties.AnimationSpeed">
+  AnimationSpeed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L211"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Animation speed in frames per second.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AnimationSpeed { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties_CollisionLayer_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.CollisionLayer*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties_CollisionLayer" data-uid="Kobold.Extensions.Tilemaps.TileProperties.CollisionLayer">
+  CollisionLayer
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Collision layer for this tile.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TileCollisionLayer CollisionLayer { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Extensions.Tilemaps.TileCollisionLayer.html">TileCollisionLayer</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties_CustomProperties_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.CustomProperties*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties_CustomProperties" data-uid="Kobold.Extensions.Tilemaps.TileProperties.CustomProperties">
+  CustomProperties
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L216"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Custom properties for game-specific data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, object&gt;? CustomProperties { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties_Damage_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.Damage*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties_Damage" data-uid="Kobold.Extensions.Tilemaps.TileProperties.Damage">
+  Damage
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Damage dealt to entities that touch this tile.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Damage { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties_Friction_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.Friction*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties_Friction" data-uid="Kobold.Extensions.Tilemaps.TileProperties.Friction">
+  Friction
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L186"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Friction coefficient (0 = no friction, 1 = full friction).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float Friction { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties_IsAnimated_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.IsAnimated*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties_IsAnimated" data-uid="Kobold.Extensions.Tilemaps.TileProperties.IsAnimated">
+  IsAnimated
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L201"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether this tile is animated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAnimated { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties_IsSolid_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.IsSolid*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties_IsSolid" data-uid="Kobold.Extensions.Tilemaps.TileProperties.IsSolid">
+  IsSolid
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L176"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Whether this tile blocks movement (collision).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSolid { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties_Type_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.Type*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties_Type" data-uid="Kobold.Extensions.Tilemaps.TileProperties.Type">
+  Type
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L196"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Type identifier for special tile behaviors (e.g., &quot;water&quot;, &quot;lava&quot;, &quot;ice&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Type { readonly get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties_Platform_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.Platform*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties_Platform" data-uid="Kobold.Extensions.Tilemaps.TileProperties.Platform">
+  Platform()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a platform tile (one-way collision from above).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TileProperties Platform()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Extensions.Tilemaps.TileProperties.html">TileProperties</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties_Solid_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.Solid*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties_Solid" data-uid="Kobold.Extensions.Tilemaps.TileProperties.Solid">
+  Solid()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L237"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a solid tile with default properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TileProperties Solid()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Extensions.Tilemaps.TileProperties.html">TileProperties</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Kobold_Extensions_Tilemaps_TileProperties_WithDamage_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.WithDamage*"></a>
+
+  <h3 id="Kobold_Extensions_Tilemaps_TileProperties_WithDamage_System_Int32_System_String_" data-uid="Kobold.Extensions.Tilemaps.TileProperties.WithDamage(System.Int32,System.String)">
+  WithDamage(int, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L261"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a damage tile.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TileProperties WithDamage(int damage, string type = &quot;damage&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>damage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Kobold.Extensions.Tilemaps.TileProperties.html">TileProperties</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Extensions/Tilemaps/TileSet.cs/#L171" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

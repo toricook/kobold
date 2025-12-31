@@ -1,0 +1,448 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Systems.CollisionMatrix
+  commentId: T:Kobold.Core.Systems.CollisionMatrix
+  id: CollisionMatrix
+  parent: Kobold.Core.Systems
+  children:
+  - Kobold.Core.Systems.CollisionMatrix.#ctor
+  - Kobold.Core.Systems.CollisionMatrix.CanCollide(Kobold.Core.Systems.CollisionLayer,Kobold.Core.Systems.CollisionLayer)
+  - Kobold.Core.Systems.CollisionMatrix.SetCollision(Kobold.Core.Systems.CollisionLayer,Kobold.Core.Systems.CollisionLayer,System.Boolean)
+  langs:
+  - csharp
+  - vb
+  name: CollisionMatrix
+  nameWithType: CollisionMatrix
+  fullName: Kobold.Core.Systems.CollisionMatrix
+  type: Class
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CollisionMatrix
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 275
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  summary: Matrix defining which layers can collide with each other
+  example: []
+  syntax:
+    content: public class CollisionMatrix
+    content.vb: Public Class CollisionMatrix
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Kobold.Core.Systems.CollisionMatrix.#ctor
+  commentId: M:Kobold.Core.Systems.CollisionMatrix.#ctor
+  id: '#ctor'
+  parent: Kobold.Core.Systems.CollisionMatrix
+  langs:
+  - csharp
+  - vb
+  name: CollisionMatrix()
+  nameWithType: CollisionMatrix.CollisionMatrix()
+  fullName: Kobold.Core.Systems.CollisionMatrix.CollisionMatrix()
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 280
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public CollisionMatrix()
+    content.vb: Public Sub New()
+  overload: Kobold.Core.Systems.CollisionMatrix.#ctor*
+  nameWithType.vb: CollisionMatrix.New()
+  fullName.vb: Kobold.Core.Systems.CollisionMatrix.New()
+  name.vb: New()
+- uid: Kobold.Core.Systems.CollisionMatrix.SetCollision(Kobold.Core.Systems.CollisionLayer,Kobold.Core.Systems.CollisionLayer,System.Boolean)
+  commentId: M:Kobold.Core.Systems.CollisionMatrix.SetCollision(Kobold.Core.Systems.CollisionLayer,Kobold.Core.Systems.CollisionLayer,System.Boolean)
+  id: SetCollision(Kobold.Core.Systems.CollisionLayer,Kobold.Core.Systems.CollisionLayer,System.Boolean)
+  parent: Kobold.Core.Systems.CollisionMatrix
+  langs:
+  - csharp
+  - vb
+  name: SetCollision(CollisionLayer, CollisionLayer, bool)
+  nameWithType: CollisionMatrix.SetCollision(CollisionLayer, CollisionLayer, bool)
+  fullName: Kobold.Core.Systems.CollisionMatrix.SetCollision(Kobold.Core.Systems.CollisionLayer, Kobold.Core.Systems.CollisionLayer, bool)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: SetCollision
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 324
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public void SetCollision(CollisionLayer layer1, CollisionLayer layer2, bool canCollide)
+    parameters:
+    - id: layer1
+      type: Kobold.Core.Systems.CollisionLayer
+    - id: layer2
+      type: Kobold.Core.Systems.CollisionLayer
+    - id: canCollide
+      type: System.Boolean
+    content.vb: Public Sub SetCollision(layer1 As CollisionLayer, layer2 As CollisionLayer, canCollide As Boolean)
+  overload: Kobold.Core.Systems.CollisionMatrix.SetCollision*
+  nameWithType.vb: CollisionMatrix.SetCollision(CollisionLayer, CollisionLayer, Boolean)
+  fullName.vb: Kobold.Core.Systems.CollisionMatrix.SetCollision(Kobold.Core.Systems.CollisionLayer, Kobold.Core.Systems.CollisionLayer, Boolean)
+  name.vb: SetCollision(CollisionLayer, CollisionLayer, Boolean)
+- uid: Kobold.Core.Systems.CollisionMatrix.CanCollide(Kobold.Core.Systems.CollisionLayer,Kobold.Core.Systems.CollisionLayer)
+  commentId: M:Kobold.Core.Systems.CollisionMatrix.CanCollide(Kobold.Core.Systems.CollisionLayer,Kobold.Core.Systems.CollisionLayer)
+  id: CanCollide(Kobold.Core.Systems.CollisionLayer,Kobold.Core.Systems.CollisionLayer)
+  parent: Kobold.Core.Systems.CollisionMatrix
+  langs:
+  - csharp
+  - vb
+  name: CanCollide(CollisionLayer, CollisionLayer)
+  nameWithType: CollisionMatrix.CanCollide(CollisionLayer, CollisionLayer)
+  fullName: Kobold.Core.Systems.CollisionMatrix.CanCollide(Kobold.Core.Systems.CollisionLayer, Kobold.Core.Systems.CollisionLayer)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Systems/CollisionSystem.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: CanCollide
+    path: Kobold/Systems/CollisionSystem.cs
+    startLine: 330
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Systems
+  syntax:
+    content: public bool CanCollide(CollisionLayer layer1, CollisionLayer layer2)
+    parameters:
+    - id: layer1
+      type: Kobold.Core.Systems.CollisionLayer
+    - id: layer2
+      type: Kobold.Core.Systems.CollisionLayer
+    return:
+      type: System.Boolean
+    content.vb: Public Function CanCollide(layer1 As CollisionLayer, layer2 As CollisionLayer) As Boolean
+  overload: Kobold.Core.Systems.CollisionMatrix.CanCollide*
+references:
+- uid: Kobold.Core.Systems
+  commentId: N:Kobold.Core.Systems
+  href: Kobold.html
+  name: Kobold.Core.Systems
+  nameWithType: Kobold.Core.Systems
+  fullName: Kobold.Core.Systems
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Systems.CollisionMatrix.#ctor*
+  commentId: Overload:Kobold.Core.Systems.CollisionMatrix.#ctor
+  href: Kobold.Core.Systems.CollisionMatrix.html#Kobold_Core_Systems_CollisionMatrix__ctor
+  name: CollisionMatrix
+  nameWithType: CollisionMatrix.CollisionMatrix
+  fullName: Kobold.Core.Systems.CollisionMatrix.CollisionMatrix
+  nameWithType.vb: CollisionMatrix.New
+  fullName.vb: Kobold.Core.Systems.CollisionMatrix.New
+  name.vb: New
+- uid: Kobold.Core.Systems.CollisionMatrix.SetCollision*
+  commentId: Overload:Kobold.Core.Systems.CollisionMatrix.SetCollision
+  href: Kobold.Core.Systems.CollisionMatrix.html#Kobold_Core_Systems_CollisionMatrix_SetCollision_Kobold_Core_Systems_CollisionLayer_Kobold_Core_Systems_CollisionLayer_System_Boolean_
+  name: SetCollision
+  nameWithType: CollisionMatrix.SetCollision
+  fullName: Kobold.Core.Systems.CollisionMatrix.SetCollision
+- uid: Kobold.Core.Systems.CollisionLayer
+  commentId: T:Kobold.Core.Systems.CollisionLayer
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.CollisionLayer.html
+  name: CollisionLayer
+  nameWithType: CollisionLayer
+  fullName: Kobold.Core.Systems.CollisionLayer
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Kobold.Core.Systems.CollisionMatrix.CanCollide*
+  commentId: Overload:Kobold.Core.Systems.CollisionMatrix.CanCollide
+  href: Kobold.Core.Systems.CollisionMatrix.html#Kobold_Core_Systems_CollisionMatrix_CanCollide_Kobold_Core_Systems_CollisionLayer_Kobold_Core_Systems_CollisionLayer_
+  name: CanCollide
+  nameWithType: CollisionMatrix.CanCollide
+  fullName: Kobold.Core.Systems.CollisionMatrix.CanCollide

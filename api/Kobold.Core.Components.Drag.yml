@@ -1,0 +1,517 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Components.Drag
+  commentId: T:Kobold.Core.Components.Drag
+  id: Drag
+  parent: Kobold.Core.Components
+  children:
+  - Kobold.Core.Components.Drag.#ctor(System.Single,System.Single)
+  - Kobold.Core.Components.Drag.Angular
+  - Kobold.Core.Components.Drag.Atmosphere
+  - Kobold.Core.Components.Drag.Linear
+  - Kobold.Core.Components.Drag.Space
+  - Kobold.Core.Components.Drag.Water
+  langs:
+  - csharp
+  - vb
+  name: Drag
+  nameWithType: Drag
+  fullName: Kobold.Core.Components.Drag
+  type: Struct
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Drag
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 56
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Drag/friction component for air/space resistance
+  example: []
+  syntax:
+    content: public struct Drag
+    content.vb: Public Structure Drag
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Kobold.Core.Components.Drag.Linear
+  commentId: F:Kobold.Core.Components.Drag.Linear
+  id: Linear
+  parent: Kobold.Core.Components.Drag
+  langs:
+  - csharp
+  - vb
+  name: Linear
+  nameWithType: Drag.Linear
+  fullName: Kobold.Core.Components.Drag.Linear
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Linear
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 58
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public float Linear
+    return:
+      type: System.Single
+    content.vb: Public Linear As Single
+- uid: Kobold.Core.Components.Drag.Angular
+  commentId: F:Kobold.Core.Components.Drag.Angular
+  id: Angular
+  parent: Kobold.Core.Components.Drag
+  langs:
+  - csharp
+  - vb
+  name: Angular
+  nameWithType: Drag.Angular
+  fullName: Kobold.Core.Components.Drag.Angular
+  type: Field
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Angular
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 59
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public float Angular
+    return:
+      type: System.Single
+    content.vb: Public Angular As Single
+- uid: Kobold.Core.Components.Drag.#ctor(System.Single,System.Single)
+  commentId: M:Kobold.Core.Components.Drag.#ctor(System.Single,System.Single)
+  id: '#ctor(System.Single,System.Single)'
+  parent: Kobold.Core.Components.Drag
+  langs:
+  - csharp
+  - vb
+  name: Drag(float, float)
+  nameWithType: Drag.Drag(float, float)
+  fullName: Kobold.Core.Components.Drag.Drag(float, float)
+  type: Constructor
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: .ctor
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 61
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  syntax:
+    content: public Drag(float linear, float angular = 0)
+    parameters:
+    - id: linear
+      type: System.Single
+    - id: angular
+      type: System.Single
+    content.vb: Public Sub New(linear As Single, angular As Single = 0)
+  overload: Kobold.Core.Components.Drag.#ctor*
+  nameWithType.vb: Drag.New(Single, Single)
+  fullName.vb: Kobold.Core.Components.Drag.New(Single, Single)
+  name.vb: New(Single, Single)
+- uid: Kobold.Core.Components.Drag.Space
+  commentId: P:Kobold.Core.Components.Drag.Space
+  id: Space
+  parent: Kobold.Core.Components.Drag
+  langs:
+  - csharp
+  - vb
+  name: Space
+  nameWithType: Drag.Space
+  fullName: Kobold.Core.Components.Drag.Space
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Space
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 70
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Space-like drag (very minimal)
+  example: []
+  syntax:
+    content: public static Drag Space { get; }
+    parameters: []
+    return:
+      type: Kobold.Core.Components.Drag
+    content.vb: Public Shared ReadOnly Property Space As Drag
+  overload: Kobold.Core.Components.Drag.Space*
+- uid: Kobold.Core.Components.Drag.Atmosphere
+  commentId: P:Kobold.Core.Components.Drag.Atmosphere
+  id: Atmosphere
+  parent: Kobold.Core.Components.Drag
+  langs:
+  - csharp
+  - vb
+  name: Atmosphere
+  nameWithType: Drag.Atmosphere
+  fullName: Kobold.Core.Components.Drag.Atmosphere
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Atmosphere
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 75
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Atmosphere-like drag (more noticeable)
+  example: []
+  syntax:
+    content: public static Drag Atmosphere { get; }
+    parameters: []
+    return:
+      type: Kobold.Core.Components.Drag
+    content.vb: Public Shared ReadOnly Property Atmosphere As Drag
+  overload: Kobold.Core.Components.Drag.Atmosphere*
+- uid: Kobold.Core.Components.Drag.Water
+  commentId: P:Kobold.Core.Components.Drag.Water
+  id: Water
+  parent: Kobold.Core.Components.Drag
+  langs:
+  - csharp
+  - vb
+  name: Water
+  nameWithType: Drag.Water
+  fullName: Kobold.Core.Components.Drag.Water
+  type: Property
+  source:
+    remote:
+      path: Kobold/Components/Physics/Physics.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Water
+    path: Kobold/Components/Physics/Physics.cs
+    startLine: 80
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Components
+  summary: Water-like drag (heavy)
+  example: []
+  syntax:
+    content: public static Drag Water { get; }
+    parameters: []
+    return:
+      type: Kobold.Core.Components.Drag
+    content.vb: Public Shared ReadOnly Property Water As Drag
+  overload: Kobold.Core.Components.Drag.Water*
+references:
+- uid: Kobold.Core.Components
+  commentId: N:Kobold.Core.Components
+  href: Kobold.html
+  name: Kobold.Core.Components
+  nameWithType: Kobold.Core.Components
+  fullName: Kobold.Core.Components
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Components
+    name: Components
+    href: Kobold.Core.Components.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Kobold.Core.Components.Drag.#ctor*
+  commentId: Overload:Kobold.Core.Components.Drag.#ctor
+  href: Kobold.Core.Components.Drag.html#Kobold_Core_Components_Drag__ctor_System_Single_System_Single_
+  name: Drag
+  nameWithType: Drag.Drag
+  fullName: Kobold.Core.Components.Drag.Drag
+  nameWithType.vb: Drag.New
+  fullName.vb: Kobold.Core.Components.Drag.New
+  name.vb: New
+- uid: Kobold.Core.Components.Drag.Space*
+  commentId: Overload:Kobold.Core.Components.Drag.Space
+  href: Kobold.Core.Components.Drag.html#Kobold_Core_Components_Drag_Space
+  name: Space
+  nameWithType: Drag.Space
+  fullName: Kobold.Core.Components.Drag.Space
+- uid: Kobold.Core.Components.Drag
+  commentId: T:Kobold.Core.Components.Drag
+  parent: Kobold.Core.Components
+  href: Kobold.Core.Components.Drag.html
+  name: Drag
+  nameWithType: Drag
+  fullName: Kobold.Core.Components.Drag
+- uid: Kobold.Core.Components.Drag.Atmosphere*
+  commentId: Overload:Kobold.Core.Components.Drag.Atmosphere
+  href: Kobold.Core.Components.Drag.html#Kobold_Core_Components_Drag_Atmosphere
+  name: Atmosphere
+  nameWithType: Drag.Atmosphere
+  fullName: Kobold.Core.Components.Drag.Atmosphere
+- uid: Kobold.Core.Components.Drag.Water*
+  commentId: Overload:Kobold.Core.Components.Drag.Water
+  href: Kobold.Core.Components.Drag.html#Kobold_Core_Components_Drag_Water
+  name: Water
+  nameWithType: Drag.Water
+  fullName: Kobold.Core.Components.Drag.Water

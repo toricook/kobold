@@ -1,0 +1,234 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Abstractions.Core.IGameEngine
+  commentId: T:Kobold.Core.Abstractions.Core.IGameEngine
+  id: IGameEngine
+  parent: Kobold.Core.Abstractions.Core
+  children:
+  - Kobold.Core.Abstractions.Core.IGameEngine.Initialize
+  - Kobold.Core.Abstractions.Core.IGameEngine.Render
+  - Kobold.Core.Abstractions.Core.IGameEngine.Shutdown
+  - Kobold.Core.Abstractions.Core.IGameEngine.Update(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: IGameEngine
+  nameWithType: IGameEngine
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine
+  type: Interface
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/IGameEngine.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: IGameEngine
+    path: Kobold/Abstractions/Core/IGameEngine.cs
+    startLine: 15
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Core
+  summary: >-
+    The basic definition of what makes a game. A game is initialized once at the beginning and shut down once at the end,
+
+    and in between, the game runs. While it runs, there is a loop. In every iteration of the loop, the state of everything that
+
+    exists in the game (the "entities") is updated and then the current state of the game is rendered. The update loop
+
+    requires knowledge of how much time has passed since the last update was called (the "delta time") since update loops
+
+    may run at different rates on different hardware.
+  example: []
+  syntax:
+    content: public interface IGameEngine
+    content.vb: Public Interface IGameEngine
+- uid: Kobold.Core.Abstractions.Core.IGameEngine.Initialize
+  commentId: M:Kobold.Core.Abstractions.Core.IGameEngine.Initialize
+  id: Initialize
+  parent: Kobold.Core.Abstractions.Core.IGameEngine
+  langs:
+  - csharp
+  - vb
+  name: Initialize()
+  nameWithType: IGameEngine.Initialize()
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine.Initialize()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/IGameEngine.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Initialize
+    path: Kobold/Abstractions/Core/IGameEngine.cs
+    startLine: 17
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Core
+  syntax:
+    content: void Initialize()
+    content.vb: Sub Initialize()
+  overload: Kobold.Core.Abstractions.Core.IGameEngine.Initialize*
+- uid: Kobold.Core.Abstractions.Core.IGameEngine.Update(System.Single)
+  commentId: M:Kobold.Core.Abstractions.Core.IGameEngine.Update(System.Single)
+  id: Update(System.Single)
+  parent: Kobold.Core.Abstractions.Core.IGameEngine
+  langs:
+  - csharp
+  - vb
+  name: Update(float)
+  nameWithType: IGameEngine.Update(float)
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine.Update(float)
+  type: Method
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/IGameEngine.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Update
+    path: Kobold/Abstractions/Core/IGameEngine.cs
+    startLine: 18
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Core
+  syntax:
+    content: void Update(float deltaTime)
+    parameters:
+    - id: deltaTime
+      type: System.Single
+    content.vb: Sub Update(deltaTime As Single)
+  overload: Kobold.Core.Abstractions.Core.IGameEngine.Update*
+  nameWithType.vb: IGameEngine.Update(Single)
+  fullName.vb: Kobold.Core.Abstractions.Core.IGameEngine.Update(Single)
+  name.vb: Update(Single)
+- uid: Kobold.Core.Abstractions.Core.IGameEngine.Render
+  commentId: M:Kobold.Core.Abstractions.Core.IGameEngine.Render
+  id: Render
+  parent: Kobold.Core.Abstractions.Core.IGameEngine
+  langs:
+  - csharp
+  - vb
+  name: Render()
+  nameWithType: IGameEngine.Render()
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine.Render()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/IGameEngine.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Render
+    path: Kobold/Abstractions/Core/IGameEngine.cs
+    startLine: 19
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Core
+  syntax:
+    content: void Render()
+    content.vb: Sub Render()
+  overload: Kobold.Core.Abstractions.Core.IGameEngine.Render*
+- uid: Kobold.Core.Abstractions.Core.IGameEngine.Shutdown
+  commentId: M:Kobold.Core.Abstractions.Core.IGameEngine.Shutdown
+  id: Shutdown
+  parent: Kobold.Core.Abstractions.Core.IGameEngine
+  langs:
+  - csharp
+  - vb
+  name: Shutdown()
+  nameWithType: IGameEngine.Shutdown()
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine.Shutdown()
+  type: Method
+  source:
+    remote:
+      path: Kobold/Abstractions/Core/IGameEngine.cs
+      branch: docs
+      repo: https://github.com/toricook/kobold.git
+    id: Shutdown
+    path: Kobold/Abstractions/Core/IGameEngine.cs
+    startLine: 20
+  assemblies:
+  - Kobold.Core
+  namespace: Kobold.Core.Abstractions.Core
+  syntax:
+    content: void Shutdown()
+    content.vb: Sub Shutdown()
+  overload: Kobold.Core.Abstractions.Core.IGameEngine.Shutdown*
+references:
+- uid: Kobold.Core.Abstractions.Core
+  commentId: N:Kobold.Core.Abstractions.Core
+  href: Kobold.html
+  name: Kobold.Core.Abstractions.Core
+  nameWithType: Kobold.Core.Abstractions.Core
+  fullName: Kobold.Core.Abstractions.Core
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Core
+    name: Core
+    href: Kobold.Core.Abstractions.Core.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Abstractions
+    name: Abstractions
+    href: Kobold.Core.Abstractions.html
+  - name: .
+  - uid: Kobold.Core.Abstractions.Core
+    name: Core
+    href: Kobold.Core.Abstractions.Core.html
+- uid: Kobold.Core.Abstractions.Core.IGameEngine.Initialize*
+  commentId: Overload:Kobold.Core.Abstractions.Core.IGameEngine.Initialize
+  href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Initialize
+  name: Initialize
+  nameWithType: IGameEngine.Initialize
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine.Initialize
+- uid: Kobold.Core.Abstractions.Core.IGameEngine.Update*
+  commentId: Overload:Kobold.Core.Abstractions.Core.IGameEngine.Update
+  href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Update_System_Single_
+  name: Update
+  nameWithType: IGameEngine.Update
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine.Update
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Kobold.Core.Abstractions.Core.IGameEngine.Render*
+  commentId: Overload:Kobold.Core.Abstractions.Core.IGameEngine.Render
+  href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Render
+  name: Render
+  nameWithType: IGameEngine.Render
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine.Render
+- uid: Kobold.Core.Abstractions.Core.IGameEngine.Shutdown*
+  commentId: Overload:Kobold.Core.Abstractions.Core.IGameEngine.Shutdown
+  href: Kobold.Core.Abstractions.Core.IGameEngine.html#Kobold_Core_Abstractions_Core_IGameEngine_Shutdown
+  name: Shutdown
+  nameWithType: IGameEngine.Shutdown
+  fullName: Kobold.Core.Abstractions.Core.IGameEngine.Shutdown

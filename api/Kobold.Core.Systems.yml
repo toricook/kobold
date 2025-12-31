@@ -1,0 +1,258 @@
+### YamlMime:ManagedReference
+items:
+- uid: Kobold.Core.Systems
+  commentId: N:Kobold.Core.Systems
+  id: Kobold.Core.Systems
+  children:
+  - Kobold.Core.Systems.AnimationSystem
+  - Kobold.Core.Systems.BoundaryBehavior
+  - Kobold.Core.Systems.BoundaryCollisionEvent
+  - Kobold.Core.Systems.BoundaryConfig
+  - Kobold.Core.Systems.BoundarySystem
+  - Kobold.Core.Systems.BoundaryType
+  - Kobold.Core.Systems.CollisionConfig
+  - Kobold.Core.Systems.CollisionEvent
+  - Kobold.Core.Systems.CollisionLayer
+  - Kobold.Core.Systems.CollisionLayerComponent
+  - Kobold.Core.Systems.CollisionMatrix
+  - Kobold.Core.Systems.CollisionSystem
+  - Kobold.Core.Systems.DestructionStats
+  - Kobold.Core.Systems.DestructionSystem
+  - Kobold.Core.Systems.EntityDestroyedEvent
+  - Kobold.Core.Systems.GameStateSystem`1
+  - Kobold.Core.Systems.InputSystem
+  - Kobold.Core.Systems.InputTransition
+  - Kobold.Core.Systems.PhysicsConfig
+  - Kobold.Core.Systems.PhysicsSystem
+  - Kobold.Core.Systems.RenderSystem
+  - Kobold.Core.Systems.StateConfig
+  - Kobold.Core.Systems.SystemInfo
+  - Kobold.Core.Systems.SystemManager
+  - Kobold.Core.Systems.SystemManagerInfo
+  - Kobold.Core.Systems.SystemUpdateOrder
+  langs:
+  - csharp
+  - vb
+  name: Kobold.Core.Systems
+  nameWithType: Kobold.Core.Systems
+  fullName: Kobold.Core.Systems
+  type: Namespace
+  assemblies:
+  - Kobold.Core
+references:
+- uid: Kobold.Core.Systems.AnimationSystem
+  commentId: T:Kobold.Core.Systems.AnimationSystem
+  href: Kobold.Core.Systems.AnimationSystem.html
+  name: AnimationSystem
+  nameWithType: AnimationSystem
+  fullName: Kobold.Core.Systems.AnimationSystem
+- uid: Kobold.Core.Systems.BoundarySystem
+  commentId: T:Kobold.Core.Systems.BoundarySystem
+  href: Kobold.Core.Systems.BoundarySystem.html
+  name: BoundarySystem
+  nameWithType: BoundarySystem
+  fullName: Kobold.Core.Systems.BoundarySystem
+- uid: Kobold.Core.Systems.BoundaryConfig
+  commentId: T:Kobold.Core.Systems.BoundaryConfig
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.BoundaryConfig.html
+  name: BoundaryConfig
+  nameWithType: BoundaryConfig
+  fullName: Kobold.Core.Systems.BoundaryConfig
+- uid: Kobold.Core.Systems.BoundaryBehavior
+  commentId: T:Kobold.Core.Systems.BoundaryBehavior
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.BoundaryBehavior.html
+  name: BoundaryBehavior
+  nameWithType: BoundaryBehavior
+  fullName: Kobold.Core.Systems.BoundaryBehavior
+- uid: Kobold.Core.Systems.BoundaryType
+  commentId: T:Kobold.Core.Systems.BoundaryType
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.BoundaryType.html
+  name: BoundaryType
+  nameWithType: BoundaryType
+  fullName: Kobold.Core.Systems.BoundaryType
+- uid: Kobold.Core.Systems.BoundaryCollisionEvent
+  commentId: T:Kobold.Core.Systems.BoundaryCollisionEvent
+  href: Kobold.Core.Systems.BoundaryCollisionEvent.html
+  name: BoundaryCollisionEvent
+  nameWithType: BoundaryCollisionEvent
+  fullName: Kobold.Core.Systems.BoundaryCollisionEvent
+- uid: Kobold.Core.Systems.CollisionSystem
+  commentId: T:Kobold.Core.Systems.CollisionSystem
+  href: Kobold.Core.Systems.CollisionSystem.html
+  name: CollisionSystem
+  nameWithType: CollisionSystem
+  fullName: Kobold.Core.Systems.CollisionSystem
+- uid: Kobold.Core.Systems.CollisionConfig
+  commentId: T:Kobold.Core.Systems.CollisionConfig
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.CollisionConfig.html
+  name: CollisionConfig
+  nameWithType: CollisionConfig
+  fullName: Kobold.Core.Systems.CollisionConfig
+- uid: Kobold.Core.Systems.CollisionLayerComponent
+  commentId: T:Kobold.Core.Systems.CollisionLayerComponent
+  href: Kobold.Core.Systems.CollisionLayerComponent.html
+  name: CollisionLayerComponent
+  nameWithType: CollisionLayerComponent
+  fullName: Kobold.Core.Systems.CollisionLayerComponent
+- uid: Kobold.Core.Systems.CollisionLayer
+  commentId: T:Kobold.Core.Systems.CollisionLayer
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.CollisionLayer.html
+  name: CollisionLayer
+  nameWithType: CollisionLayer
+  fullName: Kobold.Core.Systems.CollisionLayer
+- uid: Kobold.Core.Systems.CollisionMatrix
+  commentId: T:Kobold.Core.Systems.CollisionMatrix
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.CollisionMatrix.html
+  name: CollisionMatrix
+  nameWithType: CollisionMatrix
+  fullName: Kobold.Core.Systems.CollisionMatrix
+- uid: Kobold.Core.Systems.CollisionEvent
+  commentId: T:Kobold.Core.Systems.CollisionEvent
+  href: Kobold.Core.Systems.CollisionEvent.html
+  name: CollisionEvent
+  nameWithType: CollisionEvent
+  fullName: Kobold.Core.Systems.CollisionEvent
+- uid: Kobold.Core.Systems.DestructionSystem
+  commentId: T:Kobold.Core.Systems.DestructionSystem
+  href: Kobold.Core.Systems.DestructionSystem.html
+  name: DestructionSystem
+  nameWithType: DestructionSystem
+  fullName: Kobold.Core.Systems.DestructionSystem
+- uid: Kobold.Core.Systems.DestructionStats
+  commentId: T:Kobold.Core.Systems.DestructionStats
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.DestructionStats.html
+  name: DestructionStats
+  nameWithType: DestructionStats
+  fullName: Kobold.Core.Systems.DestructionStats
+- uid: Kobold.Core.Systems.EntityDestroyedEvent
+  commentId: T:Kobold.Core.Systems.EntityDestroyedEvent
+  href: Kobold.Core.Systems.EntityDestroyedEvent.html
+  name: EntityDestroyedEvent
+  nameWithType: EntityDestroyedEvent
+  fullName: Kobold.Core.Systems.EntityDestroyedEvent
+- uid: Kobold.Core.Systems.GameStateSystem`1
+  commentId: T:Kobold.Core.Systems.GameStateSystem`1
+  href: Kobold.Core.Systems.GameStateSystem-1.html
+  name: GameStateSystem<TGameState>
+  nameWithType: GameStateSystem<TGameState>
+  fullName: Kobold.Core.Systems.GameStateSystem<TGameState>
+  nameWithType.vb: GameStateSystem(Of TGameState)
+  fullName.vb: Kobold.Core.Systems.GameStateSystem(Of TGameState)
+  name.vb: GameStateSystem(Of TGameState)
+  spec.csharp:
+  - uid: Kobold.Core.Systems.GameStateSystem`1
+    name: GameStateSystem
+    href: Kobold.Core.Systems.GameStateSystem-1.html
+  - name: <
+  - name: TGameState
+  - name: '>'
+  spec.vb:
+  - uid: Kobold.Core.Systems.GameStateSystem`1
+    name: GameStateSystem
+    href: Kobold.Core.Systems.GameStateSystem-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TGameState
+  - name: )
+- uid: Kobold.Core.Systems.StateConfig
+  commentId: T:Kobold.Core.Systems.StateConfig
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.StateConfig.html
+  name: StateConfig
+  nameWithType: StateConfig
+  fullName: Kobold.Core.Systems.StateConfig
+- uid: Kobold.Core.Systems.InputTransition
+  commentId: T:Kobold.Core.Systems.InputTransition
+  href: Kobold.Core.Systems.InputTransition.html
+  name: InputTransition
+  nameWithType: InputTransition
+  fullName: Kobold.Core.Systems.InputTransition
+- uid: Kobold.Core.Systems.InputSystem
+  commentId: T:Kobold.Core.Systems.InputSystem
+  href: Kobold.Core.Systems.InputSystem.html
+  name: InputSystem
+  nameWithType: InputSystem
+  fullName: Kobold.Core.Systems.InputSystem
+- uid: Kobold.Core.Systems.PhysicsSystem
+  commentId: T:Kobold.Core.Systems.PhysicsSystem
+  href: Kobold.Core.Systems.PhysicsSystem.html
+  name: PhysicsSystem
+  nameWithType: PhysicsSystem
+  fullName: Kobold.Core.Systems.PhysicsSystem
+- uid: Kobold.Core.Systems.PhysicsConfig
+  commentId: T:Kobold.Core.Systems.PhysicsConfig
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.PhysicsConfig.html
+  name: PhysicsConfig
+  nameWithType: PhysicsConfig
+  fullName: Kobold.Core.Systems.PhysicsConfig
+- uid: Kobold.Core.Systems.RenderSystem
+  commentId: T:Kobold.Core.Systems.RenderSystem
+  href: Kobold.Core.Systems.RenderSystem.html
+  name: RenderSystem
+  nameWithType: RenderSystem
+  fullName: Kobold.Core.Systems.RenderSystem
+- uid: Kobold.Core.Systems.SystemUpdateOrder
+  commentId: T:Kobold.Core.Systems.SystemUpdateOrder
+  href: Kobold.Core.Systems.SystemUpdateOrder.html
+  name: SystemUpdateOrder
+  nameWithType: SystemUpdateOrder
+  fullName: Kobold.Core.Systems.SystemUpdateOrder
+- uid: Kobold.Core.Systems.SystemManager
+  commentId: T:Kobold.Core.Systems.SystemManager
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.SystemManager.html
+  name: SystemManager
+  nameWithType: SystemManager
+  fullName: Kobold.Core.Systems.SystemManager
+- uid: Kobold.Core.Systems.SystemInfo
+  commentId: T:Kobold.Core.Systems.SystemInfo
+  href: Kobold.Core.Systems.SystemInfo.html
+  name: SystemInfo
+  nameWithType: SystemInfo
+  fullName: Kobold.Core.Systems.SystemInfo
+- uid: Kobold.Core.Systems.SystemManagerInfo
+  commentId: T:Kobold.Core.Systems.SystemManagerInfo
+  parent: Kobold.Core.Systems
+  href: Kobold.Core.Systems.SystemManagerInfo.html
+  name: SystemManagerInfo
+  nameWithType: SystemManagerInfo
+  fullName: Kobold.Core.Systems.SystemManagerInfo
+- uid: Kobold.Core.Systems
+  commentId: N:Kobold.Core.Systems
+  href: Kobold.html
+  name: Kobold.Core.Systems
+  nameWithType: Kobold.Core.Systems
+  fullName: Kobold.Core.Systems
+  spec.csharp:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html
+  spec.vb:
+  - uid: Kobold
+    name: Kobold
+    href: Kobold.html
+  - name: .
+  - uid: Kobold.Core
+    name: Core
+    href: Kobold.Core.html
+  - name: .
+  - uid: Kobold.Core.Systems
+    name: Systems
+    href: Kobold.Core.Systems.html

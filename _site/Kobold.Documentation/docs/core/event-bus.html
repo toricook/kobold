@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Event Bus - Decoupled Event System | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Event Bus - Decoupled Event System | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/core/event-bus.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="event-bus---decoupled-event-system">Event Bus - Decoupled Event System</h1>
+
+<p>The <code>EventBus</code> provides a pub/sub (publish/subscribe) event system for decoupled communication between game systems. It's accessible via <code>GameEngineBase.Events</code>.</p>
+<h2 id="overview">Overview</h2>
+<p>EventBus allows systems to communicate without direct references:</p>
+<ul>
+<li><strong>Publishers</strong> raise events when something happens</li>
+<li><strong>Subscribers</strong> listen for and react to events</li>
+<li>Type-safe event handling</li>
+<li>Support for both interface-based and Action-based handlers</li>
+</ul>
+<h2 id="basic-usage">Basic Usage</h2>
+<h3 id="1-define-an-event">1. Define an Event</h3>
+<p>Events can be any type - classes, structs, or records:</p>
+<pre><code class="lang-csharp">// Record (recommended)
+public record PlayerDiedEvent(Entity Player, string Cause);
+
+// Class
+public class ScoreChangedEvent
+{
+    public int NewScore { get; init; }
+    public int Delta { get; init; }
+}
+
+// Struct
+public struct LevelCompletedEvent
+{
+    public int LevelNumber;
+    public float CompletionTime;
+}
+</code></pre>
+<h3 id="2-subscribe-to-events">2. Subscribe to Events</h3>
+<p>Subscribe in your game's <code>Initialize()</code>:</p>
+<pre><code class="lang-csharp">protected override void Initialize()
+{
+    base.Initialize();
+
+    // Subscribe with Action (lambda)
+    Events.Subscribe&lt;PlayerDiedEvent&gt;(e =&gt;
+    {
+        Console.WriteLine($&quot;Player died from {e.Cause}&quot;);
+    });
+
+    // Subscribe with method reference
+    Events.Subscribe&lt;ScoreChangedEvent&gt;(OnScoreChanged);
+}
+
+private void OnScoreChanged(ScoreChangedEvent e)
+{
+    Console.WriteLine($&quot;Score: {e.NewScore} (+{e.Delta})&quot;);
+}
+</code></pre>
+<h3 id="3-publish-events">3. Publish Events</h3>
+<p>Publish events when something happens:</p>
+<pre><code class="lang-csharp">// In a collision handler
+private void OnCollision(CollisionEvent collision)
+{
+    if (collision.LayerA == CollisionLayer.Player &amp;&amp;
+        collision.LayerB == CollisionLayer.Enemy)
+    {
+        Events.Publish(new PlayerDiedEvent(collision.EntityA, &quot;Enemy collision&quot;));
+    }
+}
+
+// When score changes
+private void AddScore(int points)
+{
+    _currentScore += points;
+    Events.Publish(new ScoreChangedEvent
+    {
+        NewScore = _currentScore,
+        Delta = points
+    });
+}
+</code></pre>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="subscribe">Subscribe</h3>
+<p>Subscribe to events with an Action:</p>
+<pre><code class="lang-csharp">void Subscribe&lt;T&gt;(Action&lt;T&gt; handler) where T : notnull
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">Events.Subscribe&lt;PlayerDiedEvent&gt;(e =&gt;
+{
+    // Handle player death
+    ShowGameOverScreen();
+});
+</code></pre>
+<p>Subscribe with an IEventHandler:</p>
+<pre><code class="lang-csharp">void Subscribe&lt;T&gt;(IEventHandler&lt;T&gt; handler) where T : notnull
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">public class ScoreDisplay : IEventHandler&lt;ScoreChangedEvent&gt;
+{
+    public void Handle(ScoreChangedEvent eventData)
+    {
+        UpdateScoreUI(eventData.NewScore);
+    }
+}
+
+// Subscribe
+Events.Subscribe(new ScoreDisplay());
+</code></pre>
+<h3 id="publish">Publish</h3>
+<p>Publish an event to all subscribers:</p>
+<pre><code class="lang-csharp">void Publish&lt;T&gt;(T eventData) where T : notnull
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">Events.Publish(new LevelCompletedEvent
+{
+    LevelNumber = 1,
+    CompletionTime = 45.2f
+});
+</code></pre>
+<h3 id="unsubscribe">Unsubscribe</h3>
+<p>Remove a handler:</p>
+<pre><code class="lang-csharp">void Unsubscribe&lt;T&gt;(Action&lt;T&gt; handler) where T : notnull
+void Unsubscribe&lt;T&gt;(IEventHandler&lt;T&gt; handler) where T : notnull
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">Action&lt;PlayerDiedEvent&gt; handler = e =&gt; { /* ... */ };
+Events.Subscribe(handler);
+
+// Later...
+Events.Unsubscribe(handler);
+</code></pre>
+<h3 id="clear">Clear</h3>
+<p>Remove all subscribers:</p>
+<pre><code class="lang-csharp">void Clear()
+</code></pre>
+<h2 id="built-in-events">Built-in Events</h2>
+<h3 id="collisionevent">CollisionEvent</h3>
+<p>Published by <code>CollisionSystem</code> when entities collide:</p>
+<pre><code class="lang-csharp">public record CollisionEvent
+{
+    public Entity EntityA;
+    public Entity EntityB;
+    public Vector2 CollisionPoint;
+    public Vector2 Normal;
+    public float Penetration;
+    public CollisionLayer LayerA;
+    public CollisionLayer LayerB;
+}
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="lang-csharp">Events.Subscribe&lt;CollisionEvent&gt;(collision =&gt;
+{
+    if (collision.LayerA == CollisionLayer.Projectile &amp;&amp;
+        collision.LayerB == CollisionLayer.Enemy)
+    {
+        // Projectile hit enemy
+        World.Destroy(collision.EntityA);
+        World.Destroy(collision.EntityB);
+        Events.Publish(new EnemyKilledEvent());
+    }
+});
+</code></pre>
+<h2 id="patterns-and-examples">Patterns and Examples</h2>
+<h3 id="game-state-events">Game State Events</h3>
+<pre><code class="lang-csharp">public record GameStateChangedEvent(GameStateType OldState, GameStateType NewState);
+
+// Publish when state changes
+Events.Publish(new GameStateChangedEvent(GameStateType.Playing, GameStateType.Paused));
+
+// Subscribe to handle pausing
+Events.Subscribe&lt;GameStateChangedEvent&gt;(e =&gt;
+{
+    if (e.NewState == GameStateType.Paused)
+    {
+        // Show pause menu
+    }
+});
+</code></pre>
+<h3 id="achievement-system">Achievement System</h3>
+<pre><code class="lang-csharp">public record AchievementUnlockedEvent(string AchievementId, string Name);
+
+Events.Subscribe&lt;EnemyKilledEvent&gt;(e =&gt;
+{
+    _enemiesKilled++;
+    if (_enemiesKilled &gt;= 100)
+    {
+        Events.Publish(new AchievementUnlockedEvent(&quot;killer&quot;, &quot;Kill 100 Enemies&quot;));
+    }
+});
+
+Events.Subscribe&lt;AchievementUnlockedEvent&gt;(e =&gt;
+{
+    ShowNotification($&quot;Achievement Unlocked: {e.Name}&quot;);
+});
+</code></pre>
+<h3 id="power-up-system">Power-up System</h3>
+<pre><code class="lang-csharp">public record PowerUpCollectedEvent(PowerUpType Type, float Duration);
+
+Events.Subscribe&lt;CollisionEvent&gt;(collision =&gt;
+{
+    if (World.Has&lt;PowerUp&gt;(collision.EntityA) &amp;&amp;
+        World.Has&lt;PlayerControlled&gt;(collision.EntityB))
+    {
+        var powerUp = World.Get&lt;PowerUp&gt;(collision.EntityA);
+        Events.Publish(new PowerUpCollectedEvent(powerUp.Type, powerUp.Duration));
+        World.Destroy(collision.EntityA);
+    }
+});
+
+Events.Subscribe&lt;PowerUpCollectedEvent&gt;(e =&gt;
+{
+    ApplyPowerUpToPlayer(e.Type, e.Duration);
+    ShowPowerUpUI(e.Type, e.Duration);
+});
+</code></pre>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-use-records-for-events">1. Use Records for Events</h3>
+<p>Records provide value equality and clean syntax:</p>
+<pre><code class="lang-csharp">// Good
+public record PlayerScored(int Points, Entity Player);
+
+// Less good
+public class PlayerScored
+{
+    public int Points { get; set; }
+    public Entity Player { get; set; }
+}
+</code></pre>
+<h3 id="2-unsubscribe-when-done">2. Unsubscribe When Done</h3>
+<pre><code class="lang-csharp">// One-shot event handler
+Action&lt;BossDefeatedEvent&gt; handler = null;
+handler = e =&gt;
+{
+    ShowVictoryScreen();
+    Events.Unsubscribe(handler);  // Unsubscribe after first call
+};
+Events.Subscribe(handler);
+</code></pre>
+<h3 id="3-dont-overuse-events">3. Don't Overuse Events</h3>
+<p>Events are great for cross-cutting concerns, but don't use them for everything:</p>
+<p><strong>Good use cases:</strong></p>
+<ul>
+<li>UI updates in response to game events</li>
+<li>Achievement/stat tracking</li>
+<li>Audio triggers</li>
+<li>Cross-system notifications</li>
+</ul>
+<p><strong>Bad use cases:</strong></p>
+<ul>
+<li>Core game loop logic (use systems instead)</li>
+<li>Tight coupling between systems (use direct queries)</li>
+<li>Performance-critical paths (events have overhead)</li>
+</ul>
+<h3 id="4-event-naming">4. Event Naming</h3>
+<p>Use past tense for events that have happened:</p>
+<pre><code class="lang-csharp">// Good
+PlayerDiedEvent
+ScoreChangedEvent
+LevelCompletedEvent
+
+// Not as clear
+PlayerDieEvent
+ScoreChangeEvent
+LevelCompleteEvent
+</code></pre>
+<h3 id="5-hierarchical-events">5. Hierarchical Events</h3>
+<p>You can use inheritance for event filtering:</p>
+<pre><code class="lang-csharp">public record GameEvent;  // Base event
+public record PlayerEvent : GameEvent;
+public record EnemyEvent : GameEvent;
+
+public record PlayerDiedEvent : PlayerEvent;
+public record PlayerScoredEvent : PlayerEvent;
+
+// Subscribe to all player events
+Events.Subscribe&lt;PlayerEvent&gt;(e =&gt;
+{
+    Console.WriteLine($&quot;Player event: {e.GetType().Name}&quot;);
+});
+</code></pre>
+<h2 id="complete-example">Complete Example</h2>
+<pre><code class="lang-csharp">public class SpaceShooter : GameEngineBase
+{
+    private int _score = 0;
+    private int _lives = 3;
+
+    protected override void Initialize()
+    {
+        base.Initialize();
+
+        // Subscribe to game events
+        Events.Subscribe&lt;EnemyDestroyedEvent&gt;(OnEnemyDestroyed);
+        Events.Subscribe&lt;PlayerHitEvent&gt;(OnPlayerHit);
+        Events.Subscribe&lt;CollisionEvent&gt;(OnCollision);
+
+        // Create systems
+        Systems.AddSystem(new CollisionSystem(CreateCollisionMatrix()), 300, true);
+
+        // Create player
+        World.Create(
+            new Transform { Position = new Vector2(400, 500) },
+            SpriteRenderer.FullTexture(Assets.LoadTexture(&quot;player.png&quot;)),
+            new PlayerControlled(),
+            BoxCollider.Square(32)
+        );
+    }
+
+    private void OnCollision(CollisionEvent collision)
+    {
+        if (collision.LayerA == CollisionLayer.Player &amp;&amp;
+            collision.LayerB == CollisionLayer.Enemy)
+        {
+            Events.Publish(new PlayerHitEvent(collision.EntityA));
+        }
+
+        if (collision.LayerA == CollisionLayer.Projectile &amp;&amp;
+            collision.LayerB == CollisionLayer.Enemy)
+        {
+            World.Destroy(collision.EntityA);  // Destroy projectile
+            World.Destroy(collision.EntityB);  // Destroy enemy
+            Events.Publish(new EnemyDestroyedEvent(collision.EntityB));
+        }
+    }
+
+    private void OnEnemyDestroyed(EnemyDestroyedEvent e)
+    {
+        _score += 100;
+        Events.Publish(new ScoreChangedEvent(_score, 100));
+
+        if (_score &gt;= 1000)
+        {
+            Events.Publish(new AchievementUnlockedEvent(&quot;score_master&quot;, &quot;Reach 1000 points&quot;));
+        }
+    }
+
+    private void OnPlayerHit(PlayerHitEvent e)
+    {
+        _lives--;
+        Events.Publish(new LivesChangedEvent(_lives));
+
+        if (_lives &lt;= 0)
+        {
+            Events.Publish(new GameOverEvent(_score));
+        }
+    }
+}
+
+// Event definitions
+public record EnemyDestroyedEvent(Entity Enemy);
+public record PlayerHitEvent(Entity Player);
+public record ScoreChangedEvent(int NewScore, int Delta);
+public record LivesChangedEvent(int Lives);
+public record AchievementUnlockedEvent(string Id, string Name);
+public record GameOverEvent(int FinalScore);
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong><a href="architecture.html">Architecture</a></strong> - Event-driven design in ECS</li>
+<li><strong><a href="systems.html">Systems</a></strong> - Using events in systems</li>
+<li><strong><a href="systems.html#collisionsystem">Collision System</a></strong> - CollisionEvent details</li>
+</ul>
+<hr>
+<p><strong>Next:</strong> Learn about <a href="utilities.html">Utilities</a> →</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/core/event-bus.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

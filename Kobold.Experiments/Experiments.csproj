@@ -7,6 +7,7 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,7 +19,6 @@
     <ProjectReference Include="..\Kobold.Monogame\Kobold.Monogame.csproj" />
     <ProjectReference Include="..\Kobold\Kobold.Core.csproj" />
     <ProjectReference Include="..\Kobold.Extensions\Kobold.Extensions.csproj" />
-    <ProjectReference Include="..\Kobold.Procedural\Procedural.csproj" />
   </ItemGroup>
 
 </Project>

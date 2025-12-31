@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Collision Handling Guide | Kobold Game Framework </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Collision Handling Guide | Kobold Game Framework ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/guides/collision.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="collision-handling-guide">Collision Handling Guide</h1>
+
+<p>Set up collision detection, layers, and event handling.</p>
+<h2 id="basic-collision-setup">Basic Collision Setup</h2>
+<pre><code class="lang-csharp">// 1. Create collision matrix
+var matrix = new CollisionMatrix();
+matrix.SetCollision(CollisionLayer.Player, CollisionLayer.Enemy, true);
+matrix.SetCollision(CollisionLayer.Projectile, CollisionLayer.Enemy, true);
+
+// 2. Add collision system
+Systems.AddSystem(new CollisionSystem(matrix), 300, true);
+
+// 3. Subscribe to collision events
+Events.Subscribe&lt;CollisionEvent&gt;(OnCollision);
+
+// 4. Create entities with colliders
+World.Create(
+    new Transform(),
+    BoxCollider.Square(32),
+    new Tags { Values = new[] { &quot;Player&quot; } }
+);
+</code></pre>
+<h2 id="collision-layers">Collision Layers</h2>
+<pre><code class="lang-csharp">public enum CollisionLayer
+{
+    Default,
+    Player,
+    Enemy,
+    Projectile,
+    Environment,
+    PlayerProjectile,
+    EnemyProjectile,
+    Pickup,
+    Trigger
+}
+</code></pre>
+<h2 id="collision-matrix-patterns">Collision Matrix Patterns</h2>
+<h3 id="player-vs-world">Player vs World</h3>
+<pre><code class="lang-csharp">var matrix = new CollisionMatrix();
+matrix.SetCollision(CollisionLayer.Player, CollisionLayer.Environment, true);
+matrix.SetCollision(CollisionLayer.Player, CollisionLayer.Enemy, true);
+matrix.SetCollision(CollisionLayer.Player, CollisionLayer.Pickup, true);
+</code></pre>
+<h3 id="projectiles">Projectiles</h3>
+<pre><code class="lang-csharp">// Player projectiles hit enemies
+matrix.SetCollision(CollisionLayer.PlayerProjectile, CollisionLayer.Enemy, true);
+
+// Enemy projectiles hit player
+matrix.SetCollision(CollisionLayer.EnemyProjectile, CollisionLayer.Player, true);
+
+// Projectiles don't hit their own team
+matrix.SetCollision(CollisionLayer.PlayerProjectile, CollisionLayer.Player, false);
+matrix.SetCollision(CollisionLayer.EnemyProjectile, CollisionLayer.Enemy, false);
+</code></pre>
+<h2 id="handling-collisions">Handling Collisions</h2>
+<pre><code class="lang-csharp">private void OnCollision(CollisionEvent collision)
+{
+    // Player hit enemy
+    if (collision.LayerA == CollisionLayer.Player &amp;&amp;
+        collision.LayerB == CollisionLayer.Enemy)
+    {
+        Events.Publish(new PlayerHitEvent(collision.EntityA));
+    }
+
+    // Projectile hit enemy
+    if (collision.LayerA == CollisionLayer.Projectile &amp;&amp;
+        collision.LayerB == CollisionLayer.Enemy)
+    {
+        World.Destroy(collision.EntityA);  // Destroy projectile
+        World.Destroy(collision.EntityB);  // Destroy enemy
+    }
+
+    // Player collected pickup
+    if (collision.LayerA == CollisionLayer.Player &amp;&amp;
+        collision.LayerB == CollisionLayer.Pickup)
+    {
+        ApplyPickup(collision.EntityA, collision.EntityB);
+        World.Destroy(collision.EntityB);
+    }
+}
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><strong><a href="../core/systems.html#collisionsystem">CollisionSystem</a></strong> - System API</li>
+<li><strong><a href="../core/components.html#boxcollider">BoxCollider</a></strong> - Collider component</li>
+</ul>
+<hr>
+<p><strong>Back:</strong> <a href="index.html">Guides</a> ←</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/toricook/kobold/blob/docs/Kobold.Documentation/docs/guides/collision.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright © 2025 Kobold Game Framework
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
