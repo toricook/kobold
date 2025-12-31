@@ -26,7 +26,7 @@ namespace CaveExplorer.Systems
 
         public void Render()
         {
-            _renderer.Begin();
+            // Note: Begin/End are called by GameEngineBase, not by individual render systems
 
             // Get camera (if exists)
             Camera? camera = GetCamera();
@@ -45,8 +45,6 @@ namespace CaveExplorer.Systems
             {
                 Console.WriteLine("Warning: No tilemap entities found!");
             }
-
-            _renderer.End();
         }
 
         private Camera? GetCamera()

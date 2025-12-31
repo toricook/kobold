@@ -1,4 +1,6 @@
 using Arch.Core;
+using CaveExplorer.Components;
+using CaveExplorer.Components.PickupEffects;
 using CaveExplorer.Systems;
 using Kobold.Core;
 using Kobold.Core.Abstractions.Input;
@@ -8,11 +10,13 @@ using Kobold.Core.Components;
 using Kobold.Core.Components.Gameplay;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
+using Kobold.Extensions.Pickups;
 using Kobold.Extensions.Portals;
 using Kobold.Extensions.Progression;
 using Kobold.Extensions.SaveSystem;
 using Kobold.Extensions.Tilemaps;
 using Kobold.Extensions.Procedural;
+using Kobold.Extensions.UI.Components;
 using Kobold.Extensions.UI.Systems;
 using System.Drawing;
 using System.Numerics;
@@ -95,6 +99,7 @@ namespace CaveExplorer
             var uiButtonSystem = new UIButtonSystem(World, EventBus);
             var uiAnchorSystem = new UIAnchorSystem(World, new Vector2(Constants.SCREEN_WIDTH, Constants.SCREEN_HEIGHT));
             var menuSystem = new MenuSystem(World, EventBus, InputManager, _saveManager, _gameStateEntity);
+            var coinDisplaySystem = new CoinDisplaySystem(World, EventBus);
 
             // Create gameplay systems
             var inputSystem = new InputSystem(InputManager, World);
@@ -103,6 +108,7 @@ namespace CaveExplorer
             var physicsSystem = new PhysicsSystem(World, physicsConfig);
             var collisionSystem = new CollisionSystem(World, EventBus, collisionConfig);
             var triggerSystem = new TriggerSystem(World, EventBus, InputManager, KeyCode.E);
+            var pickupSystem = new Kobold.Extensions.Pickups.PickupSystem(World, EventBus);
             var portalSystem = new PortalSystem(World, EventBus);
             var progressionSystem = new LevelProgressionSystem(World, EventBus);
             var destructionSystem = new DestructionSystem(World, EventBus);
@@ -114,6 +120,7 @@ namespace CaveExplorer
             SystemManager.AddSystem(uiButtonSystem, SystemUpdateOrder.UI, requiresGameplayState: false);
             SystemManager.AddSystem(uiAnchorSystem, SystemUpdateOrder.UI + 1, requiresGameplayState: false);
             SystemManager.AddSystem(menuSystem, SystemUpdateOrder.UI + 2, requiresGameplayState: false);
+            SystemManager.AddSystem(coinDisplaySystem, SystemUpdateOrder.UI + 3, requiresGameplayState: true); // Update coin display during gameplay
 
             // Register gameplay systems (only run during gameplay)
             SystemManager.AddSystem(inputSystem, SystemUpdateOrder.INPUT, requiresGameplayState: true);
@@ -122,8 +129,9 @@ namespace CaveExplorer
             SystemManager.AddSystem(physicsSystem, SystemUpdateOrder.PHYSICS, requiresGameplayState: true);
             SystemManager.AddSystem(collisionSystem, SystemUpdateOrder.COLLISION, requiresGameplayState: true);
             SystemManager.AddSystem(triggerSystem, SystemUpdateOrder.COLLISION + 1, requiresGameplayState: true);
-            SystemManager.AddSystem(portalSystem, SystemUpdateOrder.COLLISION + 2, requiresGameplayState: true);
-            SystemManager.AddSystem(progressionSystem, SystemUpdateOrder.COLLISION + 3, requiresGameplayState: true);
+            SystemManager.AddSystem(pickupSystem, SystemUpdateOrder.COLLISION + 2, requiresGameplayState: true);
+            SystemManager.AddSystem(portalSystem, SystemUpdateOrder.COLLISION + 3, requiresGameplayState: true);
+            SystemManager.AddSystem(progressionSystem, SystemUpdateOrder.COLLISION + 4, requiresGameplayState: true);
             SystemManager.AddSystem(destructionSystem, SystemUpdateOrder.CLEANUP, requiresGameplayState: true);
 
             // Render systems always run (now using camera-aware core RenderSystem)
@@ -173,6 +181,12 @@ namespace CaveExplorer
 
             // Create player entity
             CreatePlayer(spawnPosition);
+
+            // Create UI elements
+            CreateCoinCounterUI();
+
+            // Spawn coins randomly on floor tiles
+            SpawnCoins(tileMap);
 
             // Notify progression system that initial level is ready
             EventBus.Publish(new LevelReadyEvent(0, tileMap));
@@ -251,8 +265,81 @@ namespace CaveExplorer
                 ),
                 new BoxCollider(28f, 28f, new Vector2(-14f, -14f)), // Centered 28x28 collider
                 PlayerControlled.FullMovement(150f),
-                new Player()
+                new Player(),
+                new PlayerInventory() // Track collected items
             );
+
+            System.Console.WriteLine($"Player created at ({position.X}, {position.Y}) with Player tag and PlayerInventory");
+        }
+
+        private void CreateCoinCounterUI()
+        {
+            // Create coin counter in top-right corner
+            World.Create(
+                new Transform(Vector2.Zero), // Position will be set by UIAnchorSystem
+                new TextRenderer("Coins: 0", Color.White, fontSize: 24f, layer: RenderLayers.UI),
+                new UIAnchor(AnchorPoint.TopRight, new Vector2(-200, 20)), // 200px from right, 20px from top
+                new CoinCounterUI(),
+                new Kobold.Core.Components.UI() // Tag as UI element
+            );
+        }
+
+        private void SpawnCoins(TileMap tileMap)
+        {
+            var random = new Random();
+            const float spawnChance = 0.05f; // 5% of floor tiles will have coins
+            int coinsSpawned = 0;
+
+            // Iterate through all tiles and spawn coins on random floor tiles
+            for (int x = 0; x < tileMap.Width; x++)
+            {
+                for (int y = 0; y < tileMap.Height; y++)
+                {
+                    // Check if this is a floor tile (tile ID 0)
+                    if (tileMap.GetTile(0, x, y) == 0)
+                    {
+                        // Randomly decide if a coin should spawn here
+                        if (random.NextDouble() < spawnChance)
+                        {
+                            // Convert tile coordinates to world coordinates
+                            var (worldX, worldY) = tileMap.TileToWorldCenter(x, y);
+                            var position = new Vector2(worldX, worldY);
+
+                            // Create coin entity with trigger-based pickup
+                            World.Create(
+                                new Transform(position),
+                                new SpriteRenderer(
+                                    _spriteSheet.Texture,
+                                    _spriteSheet.GetNamedRegion("coin"),
+                                    new Vector2(1f, 1f)
+                                ),
+                                new BoxCollider(32f, 32f, new Vector2(-16f, -16f)), // Trigger area
+                                new CollisionLayerComponent(CollisionLayer.Trigger), // CRITICAL: Set collision layer for trigger detection
+                                new TriggerComponent(
+                                    mode: TriggerMode.OnStayWithButton,
+                                    activationLayers: CollisionLayer.Player,
+                                    triggerTag: "coin"
+                                ),
+                                new PickupComponent(
+                                    effect: new CoinPickupEffect(coinValue: 1),
+                                    requiresInteraction: true,
+                                    pickupTag: "coin"
+                                ),
+                                new PowerUp(), // Tag component for categorization
+                                new Trigger() // Required tag for trigger system
+                            );
+
+                            coinsSpawned++;
+                            if (coinsSpawned <= 3)
+                            {
+                                System.Console.WriteLine($"Spawned coin at tile ({x},{y}) -> world ({worldX},{worldY})");
+                            }
+                        }
+                    }
+                }
+            }
+
+            System.Console.WriteLine($"Total coins spawned: {coinsSpawned}");
         }
 
         /// <summary>
@@ -292,6 +379,9 @@ namespace CaveExplorer
 
             // Create camera entity at spawn position
             CreateCamera(tileMap, spawnPosition);
+
+            // Spawn coins randomly on floor tiles
+            SpawnCoins(tileMap);
 
             // Notify progression system that level is ready
             EventBus.Publish(new LevelReadyEvent(evt.Depth, tileMap));

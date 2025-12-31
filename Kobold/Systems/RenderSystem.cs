@@ -24,7 +24,7 @@ namespace Kobold.Core.Systems
 
         public void Render()
         {
-            _renderer.Begin();
+            // Note: Begin/End are called by GameEngineBase, not by individual render systems
 
             // Get camera (if exists)
             Camera? camera = GetCamera();
@@ -115,9 +115,6 @@ namespace Kobold.Core.Systems
                         break;
                 }
             }
-
-            _renderer.End();
-
         }
 
         private Camera? GetCamera()

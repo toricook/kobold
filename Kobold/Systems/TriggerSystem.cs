@@ -63,13 +63,18 @@ namespace Kobold.Core.Systems
                     bool buttonPressed = !buttonRequired ||
                                        (_inputManager?.IsKeyPressed(_interactKey) ?? false);
 
+                    System.Console.WriteLine($"[TriggerSystem OnStay] Tag: {trigger.TriggerTag}, ButtonRequired: {buttonRequired}, ButtonPressed: {buttonPressed}, Entities: {trigger.EntitiesInside.Count}");
+
                     if (buttonPressed)
                     {
+                        // Use Interact event type when button is required, Stay otherwise
+                        var eventType = buttonRequired ? TriggerEventType.Interact : TriggerEventType.Stay;
+                        System.Console.WriteLine($"[TriggerSystem OnStay] Publishing {eventType} event for: {trigger.TriggerTag}");
                         foreach (var entity in trigger.EntitiesInside)
                         {
                             if (_world.IsAlive(entity))
                             {
-                                PublishTriggerEvent(triggerEntity, entity, TriggerEventType.Stay, ref trigger);
+                                PublishTriggerEvent(triggerEntity, entity, eventType, ref trigger);
                             }
                         }
                     }
@@ -81,8 +86,12 @@ namespace Kobold.Core.Systems
                     trigger.EntitiesInside.Count > 0 &&
                     trigger.CooldownTimer <= 0)
                 {
-                    if (_inputManager?.IsKeyPressed(_interactKey) ?? false)
+                    bool keyPressed = _inputManager?.IsKeyPressed(_interactKey) ?? false;
+                    System.Console.WriteLine($"[TriggerSystem] E key pressed: {keyPressed}, Entities in trigger: {trigger.EntitiesInside.Count}, Tag: {trigger.TriggerTag}");
+
+                    if (keyPressed)
                     {
+                        System.Console.WriteLine($"[TriggerSystem] Publishing Interact event for trigger: {trigger.TriggerTag}");
                         foreach (var entity in trigger.EntitiesInside)
                         {
                             if (_world.IsAlive(entity))
@@ -128,6 +137,7 @@ namespace Kobold.Core.Systems
             {
                 // Entity entered trigger
                 trigger.EntitiesInside.Add(otherEntity);
+                System.Console.WriteLine($"[TriggerSystem] Entity entered trigger zone! Tag: {trigger.TriggerTag}, Mode: {trigger.Mode}");
 
                 if (trigger.Mode.HasFlag(TriggerMode.OnEnter) &&
                     trigger.CooldownTimer <= 0)
