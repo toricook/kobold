@@ -12,6 +12,8 @@ using Kobold.Core.Components.Gameplay;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
 using Kobold.Extensions.Combat.Components;
+using Kobold.Extensions.Combat.Registry;
+using Kobold.Extensions.Combat.Spawning;
 using Kobold.Extensions.Combat.Systems;
 using Kobold.Extensions.Items.Registry;
 using Kobold.Extensions.Items.Spawning;
@@ -45,6 +47,10 @@ namespace CaveExplorer
         private ItemFactory _itemFactory;
         private TilemapItemSpawner _tilemapItemSpawner;
 
+        // Monster system
+        private MonsterRegistry _monsterRegistry;
+        private MonsterFactory _monsterFactory;
+
         public CaveExplorerGame() : base()
         {
         }
@@ -66,6 +72,9 @@ namespace CaveExplorer
 
             // Initialize item system (before creating entities that need it)
             InitializeItemSystem();
+
+            // Initialize monster system (before creating entities that need it)
+            InitializeMonsterSystem();
 
             // Initialize and register systems
             InitializeSystems();
@@ -132,6 +141,23 @@ namespace CaveExplorer
             _tilemapItemSpawner = new TilemapItemSpawner(_itemSpawner, _itemFactory);
 
             System.Console.WriteLine("Item system initialized successfully");
+        }
+
+        private void InitializeMonsterSystem()
+        {
+            System.Console.WriteLine("Initializing monster system...");
+
+            // Initialize registry
+            _monsterRegistry = new MonsterRegistry();
+
+            // Load monster definitions from JSON (path is relative to Content/ folder)
+            _monsterRegistry.LoadMonstersFromJson("monsters.json");
+            System.Console.WriteLine($"Loaded {_monsterRegistry.MonsterCount} monsters from monsters.json");
+
+            // Initialize monster factory
+            _monsterFactory = new MonsterFactory(World, Assets);
+
+            System.Console.WriteLine("Monster system initialized successfully");
         }
 
         private void InitializeSystems()
@@ -393,7 +419,11 @@ namespace CaveExplorer
                     var (worldX, worldY) = tileMap.TileToWorldCenter(x, y);
                     var position = new Vector2(worldX, worldY);
 
-                    CreateMonster(position);
+                    // Get a random monster from the registry based on spawn weights
+                    var monsterDef = _monsterRegistry.GetRandomMonster(random);
+
+                    // Create the monster using the factory
+                    _monsterFactory.CreateMonsterEntity(monsterDef, position);
                     spawned++;
                 }
             }

@@ -1,79 +1,94 @@
 {
-  "spriteWidth": 32,
-  "spriteHeight": 32,
-  "columns": 21,
-  "rows": 14,
-  "spacing": 0,
-  "margin": 0,
-  "pivot": {
-    "x": 0.5,
-    "y": 0.5
+  "SpriteWidth": 32,
+  "SpriteHeight": 32,
+  "Columns": 14,
+  "Rows": 21,
+  "Spacing": 0,
+  "Margin": 0,
+  "Pivot": {
+    "X": 0.5,
+    "Y": 0.5
   },
-  "namedRegions": {
+  "NamedRegions": {
     "player": {
-      "x": 192,
-      "y": 512,
-      "width": 32,
-      "height": 32
+      "X": 192,
+      "Y": 512,
+      "Width": 32,
+      "Height": 32
     },
     "stairUp": {
-      "x": 96,
-      "y": 0,
-      "width": 32,
-      "height": 32
+      "X": 96,
+      "Y": 0,
+      "Width": 32,
+      "Height": 32
     },
     "stairDown": {
-      "x": 128,
-      "y": 0,
-      "width": 32,
-      "height": 32
+      "X": 128,
+      "Y": 0,
+      "Width": 32,
+      "Height": 32
     },
     "coin": {
-      "x": 32,
-      "y": 192,
-      "width": 32,
-      "height": 32
+      "X": 32,
+      "Y": 192,
+      "Width": 32,
+      "Height": 32
     },
     "health_potion": {
-      "x": 64,
-      "y": 192,
-      "width": 32,
-      "height": 32
+      "X": 64,
+      "Y": 192,
+      "Width": 32,
+      "Height": 32
     },
     "key": {
-      "x": 0,
-      "y": 192,
-      "width": 32,
-      "height": 32
+      "X": 0,
+      "Y": 192,
+      "Width": 32,
+      "Height": 32
     },
     "gem_blue": {
-      "x": 96,
-      "y": 192,
-      "width": 32,
-      "height": 32
+      "X": 96,
+      "Y": 192,
+      "Width": 32,
+      "Height": 32
     },
     "gem_red": {
-      "x": 128,
-      "y": 192,
-      "width": 32,
-      "height": 32
+      "X": 128,
+      "Y": 192,
+      "Width": 32,
+      "Height": 32
     },
     "treasure_chest": {
-      "x": 160,
-      "y": 192,
-      "width": 32,
-      "height": 32
+      "X": 160,
+      "Y": 192,
+      "Width": 32,
+      "Height": 32
     },
     "enemy": {
-      "x": 0,
-      "y": 512,
-      "width": 32,
-      "height": 32
+      "X": 0,
+      "Y": 512,
+      "Width": 32,
+      "Height": 32
+    },
+    "enemy2": {
+      "X": 32,
+      "Y": 512,
+      "Width": 32,
+      "Height": 32
+    },
+    "enemy3": {
+      "X": 64,
+      "Y": 512,
+      "Width": 32,
+      "Height": 32
+    },
+    "enemy4": {
+      "X": 96,
+      "Y": 512,
+      "Width": 32,
+      "Height": 32
     }
   },
-  "animations": {},
-  "metadata": {
-    "description": "Main sprite sheet with 21x14 grid of 32x32 sprites",
-    "totalSprites": "294"
-  }
+  "Animations": {},
+  "Metadata": {}
 }

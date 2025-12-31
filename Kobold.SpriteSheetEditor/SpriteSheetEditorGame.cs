@@ -5,6 +5,10 @@ using Kobold.Core.Assets;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using Color = Microsoft.Xna.Framework.Color;
+using Rectangle = Microsoft.Xna.Framework.Rectangle;
+using Keys = Microsoft.Xna.Framework.Input.Keys;
+using ButtonState = Microsoft.Xna.Framework.Input.ButtonState;
 
 namespace SpriteSheetEditor
 {
@@ -16,6 +20,11 @@ namespace SpriteSheetEditor
 
         // Background
         private Texture2D _checkerboardTexture;
+
+        // Simple bitmap font
+        private Texture2D _fontTexture;
+        private const int CHAR_WIDTH = 6;
+        private const int CHAR_HEIGHT = 8;
 
         // Editor state
         private Texture2D? _loadedTexture;
@@ -36,6 +45,9 @@ namespace SpriteSheetEditor
         private Dictionary<string, Rectangle> _namedRegions = new Dictionary<string, Rectangle>();
         private Rectangle? _selectedRegion = null;
         private string _currentRegionName = "";
+        private bool _isNamingMode = false;
+        private string _inputBuffer = "";
+        private bool _showHelp = true;
 
         // Input state
         private KeyboardState _previousKeyState;
@@ -60,6 +72,9 @@ namespace SpriteSheetEditor
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            // Create simple bitmap font
+            CreateFontTexture();
 
             // Create checkerboard background texture
             CreateCheckerboardTexture();
@@ -87,6 +102,126 @@ namespace SpriteSheetEditor
             }
 
             _checkerboardTexture.SetData(data);
+        }
+
+        private void CreateFontTexture()
+        {
+            // Create a 5x7 bitmap font for ASCII 32-126 (95 printable characters)
+            int charsPerRow = 16;
+            int numRows = 6;
+            int texWidth = CHAR_WIDTH * charsPerRow;
+            int texHeight = CHAR_HEIGHT * numRows;
+
+            _fontTexture = new Texture2D(GraphicsDevice, texWidth, texHeight);
+            Color[] data = new Color[texWidth * texHeight];
+
+            // Fill with transparent
+            for (int i = 0; i < data.Length; i++)
+                data[i] = Color.Transparent;
+
+            // Simple 5x7 font data for all printable ASCII (each char is 7 bytes, bits represent pixels)
+            // Format: each byte is a row, bits 0-4 are the 5 pixels
+            byte[][] fontData = new byte[95][];
+
+            // Space (32)
+            fontData[0] = new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+            // ! (33)
+            fontData[1] = new byte[] { 0x04, 0x04, 0x04, 0x04, 0x00, 0x04, 0x00 };
+            // " (34)
+            fontData[2] = new byte[] { 0x0A, 0x0A, 0x00, 0x00, 0x00, 0x00, 0x00 };
+            // Skip to commonly used characters...
+
+            // 0-9 (48-57)
+            fontData[48-32] = new byte[] { 0x0E, 0x11, 0x13, 0x15, 0x19, 0x0E, 0x00 }; // 0
+            fontData[49-32] = new byte[] { 0x04, 0x0C, 0x04, 0x04, 0x04, 0x0E, 0x00 }; // 1
+            fontData[50-32] = new byte[] { 0x0E, 0x11, 0x02, 0x04, 0x08, 0x1F, 0x00 }; // 2
+            fontData[51-32] = new byte[] { 0x0E, 0x11, 0x06, 0x01, 0x11, 0x0E, 0x00 }; // 3
+            fontData[52-32] = new byte[] { 0x02, 0x06, 0x0A, 0x12, 0x1F, 0x02, 0x00 }; // 4
+            fontData[53-32] = new byte[] { 0x1F, 0x10, 0x1E, 0x01, 0x11, 0x0E, 0x00 }; // 5
+            fontData[54-32] = new byte[] { 0x06, 0x08, 0x1E, 0x11, 0x11, 0x0E, 0x00 }; // 6
+            fontData[55-32] = new byte[] { 0x1F, 0x01, 0x02, 0x04, 0x08, 0x08, 0x00 }; // 7
+            fontData[56-32] = new byte[] { 0x0E, 0x11, 0x0E, 0x11, 0x11, 0x0E, 0x00 }; // 8
+            fontData[57-32] = new byte[] { 0x0E, 0x11, 0x11, 0x0F, 0x01, 0x0E, 0x00 }; // 9
+
+            // : (58)
+            fontData[58-32] = new byte[] { 0x00, 0x04, 0x00, 0x00, 0x04, 0x00, 0x00 };
+
+            // A-Z (65-90)
+            fontData[65-32] = new byte[] { 0x0E, 0x11, 0x11, 0x1F, 0x11, 0x11, 0x00 }; // A
+            fontData[66-32] = new byte[] { 0x1E, 0x11, 0x1E, 0x11, 0x11, 0x1E, 0x00 }; // B
+            fontData[67-32] = new byte[] { 0x0E, 0x11, 0x10, 0x10, 0x11, 0x0E, 0x00 }; // C
+            fontData[68-32] = new byte[] { 0x1E, 0x11, 0x11, 0x11, 0x11, 0x1E, 0x00 }; // D
+            fontData[69-32] = new byte[] { 0x1F, 0x10, 0x1E, 0x10, 0x10, 0x1F, 0x00 }; // E
+            fontData[70-32] = new byte[] { 0x1F, 0x10, 0x1E, 0x10, 0x10, 0x10, 0x00 }; // F
+            fontData[71-32] = new byte[] { 0x0E, 0x11, 0x10, 0x17, 0x11, 0x0F, 0x00 }; // G
+            fontData[72-32] = new byte[] { 0x11, 0x11, 0x1F, 0x11, 0x11, 0x11, 0x00 }; // H
+            fontData[73-32] = new byte[] { 0x0E, 0x04, 0x04, 0x04, 0x04, 0x0E, 0x00 }; // I
+            fontData[74-32] = new byte[] { 0x01, 0x01, 0x01, 0x11, 0x11, 0x0E, 0x00 }; // J
+            fontData[75-32] = new byte[] { 0x11, 0x12, 0x1C, 0x12, 0x11, 0x11, 0x00 }; // K
+            fontData[76-32] = new byte[] { 0x10, 0x10, 0x10, 0x10, 0x10, 0x1F, 0x00 }; // L
+            fontData[77-32] = new byte[] { 0x11, 0x1B, 0x15, 0x11, 0x11, 0x11, 0x00 }; // M
+            fontData[78-32] = new byte[] { 0x11, 0x19, 0x15, 0x13, 0x11, 0x11, 0x00 }; // N
+            fontData[79-32] = new byte[] { 0x0E, 0x11, 0x11, 0x11, 0x11, 0x0E, 0x00 }; // O
+            fontData[80-32] = new byte[] { 0x1E, 0x11, 0x11, 0x1E, 0x10, 0x10, 0x00 }; // P
+            fontData[81-32] = new byte[] { 0x0E, 0x11, 0x11, 0x15, 0x12, 0x0D, 0x00 }; // Q
+            fontData[82-32] = new byte[] { 0x1E, 0x11, 0x11, 0x1E, 0x12, 0x11, 0x00 }; // R
+            fontData[83-32] = new byte[] { 0x0E, 0x11, 0x0C, 0x03, 0x11, 0x0E, 0x00 }; // S
+            fontData[84-32] = new byte[] { 0x1F, 0x04, 0x04, 0x04, 0x04, 0x04, 0x00 }; // T
+            fontData[85-32] = new byte[] { 0x11, 0x11, 0x11, 0x11, 0x11, 0x0E, 0x00 }; // U
+            fontData[86-32] = new byte[] { 0x11, 0x11, 0x11, 0x11, 0x0A, 0x04, 0x00 }; // V
+            fontData[87-32] = new byte[] { 0x11, 0x11, 0x11, 0x15, 0x1B, 0x11, 0x00 }; // W
+            fontData[88-32] = new byte[] { 0x11, 0x11, 0x0A, 0x04, 0x0A, 0x11, 0x00 }; // X
+            fontData[89-32] = new byte[] { 0x11, 0x11, 0x0A, 0x04, 0x04, 0x04, 0x00 }; // Y
+            fontData[90-32] = new byte[] { 0x1F, 0x01, 0x02, 0x04, 0x08, 0x1F, 0x00 }; // Z
+
+            // a-z (97-122) - same as uppercase for simplicity
+            for (int i = 0; i < 26; i++)
+            {
+                fontData[97-32+i] = fontData[65-32+i];
+            }
+
+            // Common symbols
+            fontData[40-32] = new byte[] { 0x02, 0x04, 0x08, 0x08, 0x04, 0x02, 0x00 }; // (
+            fontData[41-32] = new byte[] { 0x08, 0x04, 0x02, 0x02, 0x04, 0x08, 0x00 }; // )
+            fontData[45-32] = new byte[] { 0x00, 0x00, 0x0E, 0x00, 0x00, 0x00, 0x00 }; // -
+            fontData[46-32] = new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x04, 0x00 }; // .
+            fontData[47-32] = new byte[] { 0x01, 0x02, 0x04, 0x08, 0x10, 0x00, 0x00 }; // /
+            fontData[95-32] = new byte[] { 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x00 }; // _
+            fontData[124-32] = new byte[] { 0x04, 0x04, 0x04, 0x04, 0x04, 0x04, 0x00 }; // |
+
+            // Render all characters
+            for (int ch = 0; ch < 95; ch++)
+            {
+                if (fontData[ch] != null)
+                {
+                    DrawCharFromData(data, texWidth, ch, fontData[ch]);
+                }
+            }
+
+            _fontTexture.SetData(data);
+        }
+
+        private void DrawCharFromData(Color[] data, int texWidth, int charIndex, byte[] charData)
+        {
+            int charsPerRow = 16;
+            int charX = (charIndex % charsPerRow) * CHAR_WIDTH;
+            int charY = (charIndex / charsPerRow) * CHAR_HEIGHT;
+
+            for (int y = 0; y < 7 && y < charData.Length; y++)
+            {
+                for (int x = 0; x < 5; x++)
+                {
+                    if ((charData[y] & (1 << (4 - x))) != 0)
+                    {
+                        int px = charX + x;
+                        int py = charY + y;
+                        if (px < texWidth && py < texWidth / charsPerRow * CHAR_HEIGHT)
+                        {
+                            data[py * texWidth + px] = Color.White;
+                        }
+                    }
+                }
+            }
         }
 
         protected override void Update(GameTime gameTime)
@@ -122,7 +257,7 @@ namespace SpriteSheetEditor
             }
             else
             {
-                title += " | Press L to load test_sheet.png";
+                title += " | Press F to load a sprite sheet";
             }
 
             if (_selectedRegion.HasValue)
@@ -135,6 +270,17 @@ namespace SpriteSheetEditor
 
         private void HandleInput(KeyboardState keyState, MouseState mouseState)
         {
+            // Toggle help
+            if (keyState.IsKeyDown(Keys.H) && !_previousKeyState.IsKeyDown(Keys.H))
+                _showHelp = !_showHelp;
+
+            // Handle naming mode separately
+            if (_isNamingMode)
+            {
+                HandleNamingInput(keyState);
+                return;
+            }
+
             // Camera controls (WASD)
             float panSpeed = 5f;
             if (keyState.IsKeyDown(Keys.W)) _cameraPosition.Y -= panSpeed;
@@ -162,16 +308,28 @@ namespace SpriteSheetEditor
             if (keyState.IsKeyDown(Keys.Left) && !_previousKeyState.IsKeyDown(Keys.Left))
                 _spriteWidth = Math.Max(1, _spriteWidth - 1);
 
-            // Load texture (L key)
-            if (keyState.IsKeyDown(Keys.L) && !_previousKeyState.IsKeyDown(Keys.L))
+            // Load texture (L or F key)
+            if ((keyState.IsKeyDown(Keys.L) || keyState.IsKeyDown(Keys.F)) && !_previousKeyState.IsKeyDown(Keys.L) && !_previousKeyState.IsKeyDown(Keys.F))
                 LoadTexture();
 
             // Save config (S key with Ctrl)
             if (keyState.IsKeyDown(Keys.LeftControl) && keyState.IsKeyDown(Keys.S) && !_previousKeyState.IsKeyDown(Keys.S))
                 SaveConfig();
 
+            // Name selected region (N key)
+            if (keyState.IsKeyDown(Keys.N) && !_previousKeyState.IsKeyDown(Keys.N) && _selectedRegion.HasValue)
+            {
+                StartNaming();
+            }
+
+            // Delete named region (Delete key)
+            if (keyState.IsKeyDown(Keys.Delete) && !_previousKeyState.IsKeyDown(Keys.Delete) && !string.IsNullOrEmpty(_currentRegionName))
+            {
+                DeleteNamedRegion();
+            }
+
             // Mouse selection
-            if (_loadedTexture != null && mouseState.LeftButton == ButtonState.Pressed)
+            if (_loadedTexture != null && mouseState.LeftButton == ButtonState.Pressed && _previousMouseState.LeftButton == ButtonState.Released)
             {
                 HandleMouseSelection(mouseState);
             }
@@ -194,6 +352,117 @@ namespace SpriteSheetEditor
                 int y = _margin + gridY * (_spriteHeight + _spacing);
 
                 _selectedRegion = new Rectangle(x, y, _spriteWidth, _spriteHeight);
+
+                // Check if this region has a name
+                _currentRegionName = "";
+                foreach (var kvp in _namedRegions)
+                {
+                    if (kvp.Value.Equals(_selectedRegion.Value))
+                    {
+                        _currentRegionName = kvp.Key;
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void StartNaming()
+        {
+            _isNamingMode = true;
+            _inputBuffer = _currentRegionName; // Start with existing name if any
+        }
+
+        private void HandleNamingInput(KeyboardState keyState)
+        {
+            // Escape cancels naming
+            if (keyState.IsKeyDown(Keys.Escape) && !_previousKeyState.IsKeyDown(Keys.Escape))
+            {
+                _isNamingMode = false;
+                _inputBuffer = "";
+                return;
+            }
+
+            // Enter confirms naming
+            if (keyState.IsKeyDown(Keys.Enter) && !_previousKeyState.IsKeyDown(Keys.Enter))
+            {
+                if (!string.IsNullOrWhiteSpace(_inputBuffer) && _selectedRegion.HasValue)
+                {
+                    // Remove old entry if we're renaming
+                    if (!string.IsNullOrEmpty(_currentRegionName) && _namedRegions.ContainsKey(_currentRegionName))
+                    {
+                        _namedRegions.Remove(_currentRegionName);
+                    }
+
+                    // Add the new name
+                    _namedRegions[_inputBuffer.Trim()] = _selectedRegion.Value;
+                    _currentRegionName = _inputBuffer.Trim();
+                }
+                _isNamingMode = false;
+                _inputBuffer = "";
+                return;
+            }
+
+            // Backspace removes last character
+            if (keyState.IsKeyDown(Keys.Back) && !_previousKeyState.IsKeyDown(Keys.Back))
+            {
+                if (_inputBuffer.Length > 0)
+                    _inputBuffer = _inputBuffer.Substring(0, _inputBuffer.Length - 1);
+                return;
+            }
+
+            // Handle text input (letters, numbers, underscore)
+            foreach (Keys key in keyState.GetPressedKeys())
+            {
+                if (_previousKeyState.IsKeyDown(key))
+                    continue; // Already handled
+
+                string character = GetCharFromKey(key, keyState.IsKeyDown(Keys.LeftShift) || keyState.IsKeyDown(Keys.RightShift));
+                if (!string.IsNullOrEmpty(character))
+                    _inputBuffer += character;
+            }
+        }
+
+        private string GetCharFromKey(Keys key, bool shift)
+        {
+            // Handle letters
+            if (key >= Keys.A && key <= Keys.Z)
+            {
+                char c = (char)('a' + (key - Keys.A));
+                if (shift) c = char.ToUpper(c);
+                return c.ToString();
+            }
+
+            // Handle numbers
+            if (key >= Keys.D0 && key <= Keys.D9)
+            {
+                if (shift)
+                {
+                    // Shifted number symbols
+                    string[] symbols = { ")", "!", "@", "#", "$", "%", "^", "&", "*", "(" };
+                    return symbols[key - Keys.D0];
+                }
+                return ((char)('0' + (key - Keys.D0))).ToString();
+            }
+
+            // Handle special characters
+            switch (key)
+            {
+                case Keys.Space: return " ";
+                case Keys.OemMinus: return shift ? "_" : "-";
+                case Keys.OemPeriod: return shift ? ">" : ".";
+                case Keys.OemComma: return shift ? "<" : ",";
+                case Keys.OemQuestion: return shift ? "?" : "/";
+                default: return null;
+            }
+        }
+
+        private void DeleteNamedRegion()
+        {
+            if (_namedRegions.ContainsKey(_currentRegionName))
+            {
+                _namedRegions.Remove(_currentRegionName);
+                _currentRegionName = "";
+                Console.WriteLine($"Deleted named region");
             }
         }
 
@@ -209,15 +478,80 @@ namespace SpriteSheetEditor
 
         private void LoadTexture()
         {
-            // For now, use a hardcoded path. In Phase 2, we can add a file dialog.
-            string testPath = "test_sheet.png";
-
-            if (File.Exists(testPath))
+            // Use a file dialog to select a PNG file
+            using (var fileDialog = new System.Windows.Forms.OpenFileDialog())
             {
-                using (var stream = File.OpenRead(testPath))
+                fileDialog.Filter = "PNG Images (*.png)|*.png|All Files (*.*)|*.*";
+                fileDialog.Title = "Select Sprite Sheet";
+                fileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+
+                if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    _loadedTexture = Texture2D.FromStream(GraphicsDevice, stream);
-                    _loadedTexturePath = testPath;
+                    try
+                    {
+                        using (var stream = File.OpenRead(fileDialog.FileName))
+                        {
+                            _loadedTexture = Texture2D.FromStream(GraphicsDevice, stream);
+                            _loadedTexturePath = fileDialog.FileName;
+
+                            // Clear previous named regions when loading new texture
+                            _namedRegions.Clear();
+                            _selectedRegion = null;
+                            _currentRegionName = "";
+
+                            // Try to load existing JSON config if it exists
+                            LoadExistingConfig(fileDialog.FileName);
+
+                            Console.WriteLine($"Loaded texture: {fileDialog.FileName}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error loading texture: {ex.Message}");
+                    }
+                }
+            }
+        }
+
+        private void LoadExistingConfig(string texturePath)
+        {
+            string configPath = Path.ChangeExtension(texturePath, ".json");
+            if (File.Exists(configPath))
+            {
+                try
+                {
+                    var json = File.ReadAllText(configPath);
+                    var options = new System.Text.Json.JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    };
+                    var config = System.Text.Json.JsonSerializer.Deserialize<SpriteSheetConfig>(json, options);
+
+                    if (config != null)
+                    {
+                        _spriteWidth = config.SpriteWidth;
+                        _spriteHeight = config.SpriteHeight;
+                        _spacing = config.Spacing;
+                        _margin = config.Margin;
+
+                        // Load named regions
+                        _namedRegions.Clear();
+                        foreach (var region in config.NamedRegions)
+                        {
+                            _namedRegions[region.Key] = new Rectangle(
+                                region.Value.X,
+                                region.Value.Y,
+                                region.Value.Width,
+                                region.Value.Height
+                            );
+                        }
+
+                        Console.WriteLine($"Loaded existing config from: {configPath}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error loading config: {ex.Message}");
                 }
             }
         }
@@ -286,6 +620,9 @@ namespace SpriteSheetEditor
                     DrawGrid();
                 }
 
+                // Draw named regions
+                DrawNamedRegions();
+
                 // Draw selected region highlight
                 if (_selectedRegion.HasValue)
                 {
@@ -293,6 +630,11 @@ namespace SpriteSheetEditor
                 }
             }
 
+            _spriteBatch.End();
+
+            // Draw UI overlays (text)
+            _spriteBatch.Begin();
+            DrawUI();
             _spriteBatch.End();
 
             base.Draw(gameTime);
@@ -347,6 +689,170 @@ namespace SpriteSheetEditor
             DrawLine(topRight, bottomRight, color);
             DrawLine(bottomRight, bottomLeft, color);
             DrawLine(bottomLeft, topLeft, color);
+        }
+
+        private void DrawNamedRegions()
+        {
+            foreach (var kvp in _namedRegions)
+            {
+                // Draw outline for named regions in cyan
+                DrawRectangleOutline(kvp.Value, Color.Cyan, 1);
+
+                // Draw name label above the region
+                Vector2 labelPos = WorldToScreen(new Vector2(kvp.Value.X, kvp.Value.Y - 15));
+                DrawTextWithBackground(kvp.Key, labelPos, Color.Cyan, Color.Black);
+            }
+        }
+
+        private void DrawUI()
+        {
+            // Draw help overlay
+            if (_showHelp)
+            {
+                DrawHelpOverlay();
+            }
+
+            // Draw naming mode UI
+            if (_isNamingMode)
+            {
+                DrawNamingUI();
+            }
+
+            // Draw current selection info
+            if (_selectedRegion.HasValue && !_isNamingMode)
+            {
+                DrawSelectionInfo();
+            }
+        }
+
+        private void DrawHelpOverlay()
+        {
+            int y = 10;
+            int lineHeight = 20;
+            Color bgColor = new Color(0, 0, 0, 180);
+            Color textColor = Color.White;
+
+            DrawFilledRectangle(new Rectangle(5, 5, 350, 280), bgColor);
+
+            DrawText("SPRITE SHEET EDITOR CONTROLS", new Vector2(10, y), Color.Yellow);
+            y += lineHeight * 2;
+
+            DrawText("WASD: Pan camera", new Vector2(10, y), textColor); y += lineHeight;
+            DrawText("Q/E: Zoom out/in", new Vector2(10, y), textColor); y += lineHeight;
+            DrawText("Arrow Keys: Adjust grid size", new Vector2(10, y), textColor); y += lineHeight;
+            DrawText("G: Toggle grid", new Vector2(10, y), textColor); y += lineHeight;
+            DrawText("H: Toggle this help", new Vector2(10, y), textColor); y += lineHeight;
+            y += lineHeight / 2;
+            DrawText("Left Click: Select sprite tile", new Vector2(10, y), Color.Lime); y += lineHeight;
+            DrawText("N: Name selected tile", new Vector2(10, y), Color.Lime); y += lineHeight;
+            DrawText("Delete: Remove name from tile", new Vector2(10, y), Color.Lime); y += lineHeight;
+            y += lineHeight / 2;
+            DrawText("F or L: Load sprite sheet file", new Vector2(10, y), Color.Cyan); y += lineHeight;
+            DrawText("Ctrl+S: Save JSON config", new Vector2(10, y), Color.Orange); y += lineHeight;
+            DrawText("Esc: Exit", new Vector2(10, y), textColor);
+        }
+
+        private void DrawNamingUI()
+        {
+            int width = 400;
+            int height = 100;
+            int x = (_graphics.PreferredBackBufferWidth - width) / 2;
+            int y = (_graphics.PreferredBackBufferHeight - height) / 2;
+
+            DrawFilledRectangle(new Rectangle(x, y, width, height), new Color(0, 0, 0, 220));
+            DrawRectangleOutlineScreen(new Rectangle(x, y, width, height), Color.Yellow, 2);
+
+            DrawText("Enter sprite name:", new Vector2(x + 10, y + 10), Color.White);
+            DrawText(_inputBuffer + "_", new Vector2(x + 10, y + 40), Color.Yellow);
+            DrawText("Press Enter to confirm, Esc to cancel", new Vector2(x + 10, y + 70), Color.Gray);
+        }
+
+        private void DrawSelectionInfo()
+        {
+            string info = $"Selected: ({_selectedRegion.Value.X}, {_selectedRegion.Value.Y})";
+            if (!string.IsNullOrEmpty(_currentRegionName))
+                info += $" | Name: {_currentRegionName}";
+            else
+                info += " | Press N to name";
+
+            DrawTextWithBackground(info, new Vector2(10, _graphics.PreferredBackBufferHeight - 30), Color.Yellow, new Color(0, 0, 0, 180));
+        }
+
+        private void DrawText(string text, Vector2 position, Color color)
+        {
+            if (string.IsNullOrEmpty(text)) return;
+
+            int charsPerRow = 16;
+            float x = position.X;
+
+            // Draw shadow first for better readability
+            foreach (char c in text)
+            {
+                int charCode = c - 32; // ASCII offset
+                if (charCode < 0 || charCode >= 95)
+                {
+                    x += CHAR_WIDTH; // Skip unknown characters
+                    continue;
+                }
+
+                int srcX = (charCode % charsPerRow) * CHAR_WIDTH;
+                int srcY = (charCode / charsPerRow) * CHAR_HEIGHT;
+
+                Rectangle sourceRect = new Rectangle(srcX, srcY, CHAR_WIDTH, CHAR_HEIGHT);
+
+                // Draw shadow (offset by 1 pixel)
+                _spriteBatch.Draw(_fontTexture, new Vector2(x + 1, position.Y + 1), sourceRect, Color.Black);
+
+                x += CHAR_WIDTH;
+            }
+
+            // Draw text on top of shadow
+            x = position.X;
+            foreach (char c in text)
+            {
+                int charCode = c - 32; // ASCII offset
+                if (charCode < 0 || charCode >= 95)
+                {
+                    x += CHAR_WIDTH; // Skip unknown characters
+                    continue;
+                }
+
+                int srcX = (charCode % charsPerRow) * CHAR_WIDTH;
+                int srcY = (charCode / charsPerRow) * CHAR_HEIGHT;
+
+                Rectangle sourceRect = new Rectangle(srcX, srcY, CHAR_WIDTH, CHAR_HEIGHT);
+                _spriteBatch.Draw(_fontTexture, new Vector2(x, position.Y), sourceRect, color);
+
+                x += CHAR_WIDTH;
+            }
+        }
+
+        private void DrawTextWithBackground(string text, Vector2 position, Color textColor, Color bgColor)
+        {
+            // Background box
+            int padding = 4;
+            int width = text.Length * 8 + padding * 2;
+            int height = 16 + padding * 2;
+            DrawFilledRectangle(new Rectangle((int)position.X - padding, (int)position.Y - padding, width, height), bgColor);
+            DrawText(text, position, textColor);
+        }
+
+        private void DrawFilledRectangle(Rectangle rect, Color color)
+        {
+            var pixel = new Texture2D(GraphicsDevice, 1, 1);
+            pixel.SetData(new[] { color });
+            _spriteBatch.Draw(pixel, rect, color);
+        }
+
+        private void DrawRectangleOutlineScreen(Rectangle rect, Color color, int thickness)
+        {
+            var pixel = new Texture2D(GraphicsDevice, 1, 1);
+            pixel.SetData(new[] { color });
+
+            _spriteBatch.Draw(pixel, new Rectangle(rect.X, rect.Y, rect.Width, thickness), color);
+            _spriteBatch.Draw(pixel, new Rectangle(rect.X, rect.Bottom - thickness, rect.Width, thickness), color);
+            _spriteBatch.Draw(pixel, new Rectangle(rect.X, rect.Y, thickness, rect.Height), color);
+            _spriteBatch.Draw(pixel, new Rectangle(rect.Right - thickness, rect.Y, thickness, rect.Height), color);
         }
 
         private void DrawCheckerboardBackground()
