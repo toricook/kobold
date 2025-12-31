@@ -10,16 +10,78 @@
     "y": 0.5
   },
   "namedRegions": {
-    "player": { "x": 192, "y": 512, "width": 32, "height": 32 },
-    "enemy1": { "x": 32, "y": 0, "width": 32, "height": 32 },
-    "enemy2": { "x": 64, "y": 0, "width": 32, "height": 32 },
-    "wall": { "x": 96, "y": 0, "width": 32, "height": 32 },
-    "floor": { "x": 128, "y": 0, "width": 32, "height": 32 },
-    "coin": { "x": 160, "y": 0, "width": 32, "height": 32 },
-    "gem": { "x": 192, "y": 0, "width": 32, "height": 32 },
-    "chest": { "x": 224, "y": 0, "width": 32, "height": 32 },
-    "key": { "x": 256, "y": 0, "width": 32, "height": 32 },
-    "door": { "x": 288, "y": 0, "width": 32, "height": 32 }
+    "player": {
+      "x": 192,
+      "y": 512,
+      "width": 32,
+      "height": 32
+    },
+    "stairUp": {
+      "x": 96,
+      "y": 0,
+      "width": 32,
+      "height": 32
+    },
+    "stairDown": {
+      "x": 128,
+      "y": 0,
+      "width": 32,
+      "height": 32
+    },
+    "enemy1": {
+      "x": 32,
+      "y": 0,
+      "width": 32,
+      "height": 32
+    },
+    "enemy2": {
+      "x": 64,
+      "y": 0,
+      "width": 32,
+      "height": 32
+    },
+    "wall": {
+      "x": 96,
+      "y": 0,
+      "width": 32,
+      "height": 32
+    },
+    "floor": {
+      "x": 128,
+      "y": 0,
+      "width": 32,
+      "height": 32
+    },
+    "coin": {
+      "x": 160,
+      "y": 0,
+      "width": 32,
+      "height": 32
+    },
+    "gem": {
+      "x": 192,
+      "y": 0,
+      "width": 32,
+      "height": 32
+    },
+    "chest": {
+      "x": 224,
+      "y": 0,
+      "width": 32,
+      "height": 32
+    },
+    "key": {
+      "x": 256,
+      "y": 0,
+      "width": 32,
+      "height": 32
+    },
+    "door": {
+      "x": 288,
+      "y": 0,
+      "width": 32,
+      "height": 32
+    }
   },
   "animations": {},
   "metadata": {
