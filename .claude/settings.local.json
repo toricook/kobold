@@ -20,7 +20,8 @@
       "Bash(git rm:*)",
       "Bash(cat:*)",
       "Bash(dir:*)",
-      "Bash(timeout 5 dotnet run:*)"
+      "Bash(timeout 5 dotnet run:*)",
+      "Bash(git log:*)"
     ]
   }
 }

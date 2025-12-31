@@ -33,6 +33,24 @@ Grid-based level design and rendering system.
 - ⏳ Procedural tile generation helpers
 - ⏳ Chunk-based loading for large maps
 
+#### 💾 Save/Load System ✅
+Flexible and extensible save system with automatic serialization, compression, and auto-save support.
+
+**Implemented:**
+- ✅ Automatic serialization of all entities and components
+- ✅ Manual component serializer registration for control and performance
+- ✅ Multiple save slots with metadata (timestamp, playtime, version)
+- ✅ Auto-save functionality with configurable intervals
+- ✅ GZip compression to reduce disk space
+- ✅ Event-based notifications for save/load operations
+- ✅ Error recovery with automatic backups
+- ✅ Built-in serializers for core components (Transform, Velocity, etc.)
+
+**Coming soon:**
+- ⏳ Save file migration for version updates
+- ⏳ Cloud save integration
+- ⏳ Checkpoint system
+
 ### Planned Extensions
 
 #### ⚡ Particle Systems
@@ -68,12 +86,6 @@ Visual effects for explosions, fire, smoke, trails, etc.
 - Post-processing effects
 - Particle backgrounds
 
-#### 💾 Save/Load System
-- Save state management
-- Serialization helpers
-- Cloud save integration
-- Checkpoint system
-
 #### 📊 UI Framework
 - Menu systems
 - Health bars and HUDs
@@ -101,6 +113,11 @@ Kobold.Extensions/
 │   ├── TileLayer.cs
 │   ├── TileSet.cs
 │   └── TilemapSystem.cs
+├── SaveSystem/        # Save/load functionality
+│   ├── SaveManager.cs
+│   ├── AutoSaveSystem.cs
+│   ├── WorldSerializer.cs
+│   └── ComponentSerializerRegistry.cs
 ├── Particles/         # Particle effects (planned)
 ├── AI/                # Pathfinding and behaviors (planned)
 ├── Dialogue/          # Conversation system (planned)
@@ -169,12 +186,57 @@ systemManager.AddSystem(tilemapSystem);
 systemManager.AddSystem(collisionSystem);
 ```
 
+### Using the Save System
+
+```csharp
+using Kobold.Extensions.SaveSystem;
+using Kobold.Core.Components;
+
+// Initialize save manager in your game
+_saveManager = new SaveManager(World, EventBus);
+
+// Register custom component serializers (using anonymous objects)
+_saveManager.RegisterSerializer<HealthComponent>(
+    serialize: (h) => new { Current = h.Current, Max = h.Max },
+    deserialize: (data) => {
+        dynamic d = data;
+        return new HealthComponent { Current = d.Current, Max = d.Max };
+    }
+);
+
+// Setup auto-save (optional)
+_autoSaveSystem = new AutoSaveSystem(World, _saveManager, EventBus);
+_autoSaveSystem.AutoSaveInterval = 300f; // 5 minutes
+SystemManager.AddSystem(_autoSaveSystem, SystemUpdateOrder.CLEANUP);
+
+// Manual save
+_saveManager.Save("save_1", new Dictionary<string, string> {
+    ["playerLevel"] = "5",
+    ["currentArea"] = "Forest"
+});
+
+// Load game
+if (_saveManager.SaveExists("save_1"))
+{
+    _saveManager.Load("save_1");
+}
+
+// List all save slots
+var saves = _saveManager.GetAllSaveMetadata()
+    .OrderByDescending(m => m.Timestamp);
+foreach (var save in saves)
+{
+    Console.WriteLine($"{save.SlotName}: {save.Playtime:F0}s");
+}
+```
+
 ### Combining Core + Extensions
 
 ```csharp
 using Kobold.Core;
 using Kobold.Core.Systems;
 using Kobold.Extensions.Tilemaps;
+using Kobold.Extensions.SaveSystem;
 
 // Core systems (essential)
 var physics = new PhysicsSystem(world);
@@ -182,6 +244,7 @@ var collision = new CollisionSystem(world, eventBus);
 
 // Extension systems (optional)
 var tilemap = new TilemapSystem(world, myTilemap);
+var autoSave = new AutoSaveSystem(world, saveManager, eventBus);
 // var particles = new ParticleSystem(world); // When available
 // var dialogue = new DialogueSystem(world);   // When available
 
@@ -194,6 +257,7 @@ void Update(float deltaTime)
 
     // Extensions
     tilemap.Update(deltaTime);
+    autoSave.Update(deltaTime);
 }
 ```
 
@@ -248,7 +312,7 @@ We welcome contributions! Here's how extensions are organized:
 - ⏳ UI framework
 
 ### Phase 4
-- ⏳ Save/load system
+- ✅ Save/load system
 - ⏳ Audio extensions
 - ⏳ Screen effects
 
