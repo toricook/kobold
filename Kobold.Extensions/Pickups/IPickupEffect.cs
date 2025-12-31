@@ -20,5 +20,12 @@ namespace Kobold.Extensions.Pickups
         /// Optional: Returns a description of this pickup for UI/logging purposes.
         /// </summary>
         string GetDescription() => "Pickup";
+
+        /// <summary>
+        /// Indicates whether this pickup type should stack in inventory.
+        /// Stackable items are counted by quantity (e.g., coins, potions).
+        /// Non-stackable items are tracked individually (e.g., unique weapons, equipment).
+        /// </summary>
+        bool IsStackable { get; }
     }
 }

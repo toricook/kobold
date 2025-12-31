@@ -1,6 +1,7 @@
 using Arch.Core;
 using CaveExplorer.Components;
 using CaveExplorer.Components.PickupEffects;
+using CaveExplorer.Items;
 using CaveExplorer.Systems;
 using Kobold.Core;
 using Kobold.Core.Abstractions.Input;
@@ -10,6 +11,8 @@ using Kobold.Core.Components;
 using Kobold.Core.Components.Gameplay;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
+using Kobold.Extensions.Items.Registry;
+using Kobold.Extensions.Items.Spawning;
 using Kobold.Extensions.Pickups;
 using Kobold.Extensions.Portals;
 using Kobold.Extensions.Progression;
@@ -32,6 +35,14 @@ namespace CaveExplorer
         // Save system
         private SaveManager _saveManager;
 
+        // Item system
+        private ItemRegistry _itemRegistry;
+        private LootTableRegistry _lootTableRegistry;
+        private ItemSpawner _itemSpawner;
+        private CaveExplorerEffectFactory _effectFactory;
+        private ItemFactory _itemFactory;
+        private TilemapItemSpawner _tilemapItemSpawner;
+
         public CaveExplorerGame() : base()
         {
         }
@@ -51,6 +62,9 @@ namespace CaveExplorer
             // Initialize save system
             InitializeSaveSystem();
 
+            // Initialize item system (before creating entities that need it)
+            InitializeItemSystem();
+
             // Initialize and register systems
             InitializeSystems();
 
@@ -68,6 +82,54 @@ namespace CaveExplorer
             // Register component serializers for custom components
             // The save system already handles core components (Transform, Velocity, etc.)
             // Register any CaveExplorer-specific components here if needed
+        }
+
+        private void InitializeItemSystem()
+        {
+            System.Console.WriteLine("Initializing item system...");
+
+            // Initialize registries
+            _itemRegistry = new ItemRegistry();
+            _lootTableRegistry = new LootTableRegistry();
+
+            // Load item definitions from JSON (path is relative to Content/ folder)
+            _itemRegistry.LoadItemsFromJson("items.json");
+            System.Console.WriteLine($"Loaded {_itemRegistry.GetAllItems().Count} items from items.json");
+
+            // Load loot tables from JSON (path is relative to Content/ folder)
+            _lootTableRegistry.LoadLootTablesFromJson("loot_tables.json");
+            System.Console.WriteLine($"Loaded {_lootTableRegistry.GetAllLootTables().Count} loot tables from loot_tables.json");
+
+            // Initialize item spawner
+            _itemSpawner = new ItemSpawner(_itemRegistry);
+
+            // Initialize effect factory with dependencies for chest effects
+            _effectFactory = new CaveExplorerEffectFactory(
+                _lootTableRegistry,
+                _itemSpawner,
+                null, // ItemFactory will be set after creation
+                new Random()
+            );
+
+            // Initialize item factory
+            _itemFactory = new ItemFactory(World, Assets, _effectFactory);
+
+            // Update effect factory with item factory reference (for chest effects)
+            // Note: This is a bit circular, but necessary for OpenChestEffect to spawn items
+            _effectFactory = new CaveExplorerEffectFactory(
+                _lootTableRegistry,
+                _itemSpawner,
+                _itemFactory,
+                new Random()
+            );
+
+            // Re-create item factory with updated effect factory
+            _itemFactory = new ItemFactory(World, Assets, _effectFactory);
+
+            // Initialize tilemap item spawner (for easy tilemap-based spawning)
+            _tilemapItemSpawner = new TilemapItemSpawner(_itemSpawner, _itemFactory);
+
+            System.Console.WriteLine("Item system initialized successfully");
         }
 
         private void InitializeSystems()
@@ -286,60 +348,41 @@ namespace CaveExplorer
 
         private void SpawnCoins(TileMap tileMap)
         {
+            // Use the new item spawning system to spawn items on the tilemap
+            const float spawnChance = 0.05f; // 5% of floor tiles will have items
+
+            // Spawn items using the tilemap item spawner
+            int itemsSpawned = _tilemapItemSpawner.SpawnItemsOnTilemap(
+                tileMap,
+                floorTileId: 0,
+                spawnChance: spawnChance,
+                rarityFilter: null, // Spawn all rarities
+                rarityWeights: null  // Use default rarity weights
+            );
+
+            System.Console.WriteLine($"Spawned {itemsSpawned} items on tilemap using item system");
+
+            // Optionally spawn some specific items for testing
+            // Example: Spawn a treasure chest at a random location
             var random = new Random();
-            const float spawnChance = 0.05f; // 5% of floor tiles will have coins
-            int coinsSpawned = 0;
-
-            // Iterate through all tiles and spawn coins on random floor tiles
-            for (int x = 0; x < tileMap.Width; x++)
+            for (int attempt = 0; attempt < 10; attempt++)
             {
-                for (int y = 0; y < tileMap.Height; y++)
+                int x = random.Next(tileMap.Width);
+                int y = random.Next(tileMap.Height);
+
+                if (tileMap.GetTile(0, x, y) == 0) // Floor tile
                 {
-                    // Check if this is a floor tile (tile ID 0)
-                    if (tileMap.GetTile(0, x, y) == 0)
-                    {
-                        // Randomly decide if a coin should spawn here
-                        if (random.NextDouble() < spawnChance)
-                        {
-                            // Convert tile coordinates to world coordinates
-                            var (worldX, worldY) = tileMap.TileToWorldCenter(x, y);
-                            var position = new Vector2(worldX, worldY);
+                    var (worldX, worldY) = tileMap.TileToWorldCenter(x, y);
+                    var position = new Vector2(worldX, worldY);
 
-                            // Create coin entity with trigger-based pickup
-                            World.Create(
-                                new Transform(position),
-                                new SpriteRenderer(
-                                    _spriteSheet.Texture,
-                                    _spriteSheet.GetNamedRegion("coin"),
-                                    new Vector2(1f, 1f)
-                                ),
-                                new BoxCollider(32f, 32f, new Vector2(-16f, -16f)), // Trigger area
-                                new CollisionLayerComponent(CollisionLayer.Trigger), // CRITICAL: Set collision layer for trigger detection
-                                new TriggerComponent(
-                                    mode: TriggerMode.OnStayWithButton,
-                                    activationLayers: CollisionLayer.Player,
-                                    triggerTag: "coin"
-                                ),
-                                new PickupComponent(
-                                    effect: new CoinPickupEffect(coinValue: 1),
-                                    requiresInteraction: true,
-                                    pickupTag: "coin"
-                                ),
-                                new PowerUp(), // Tag component for categorization
-                                new Trigger() // Required tag for trigger system
-                            );
+                    // Spawn a treasure chest
+                    var chestDef = _itemSpawner.GetItemById("treasure_chest");
+                    _itemFactory.CreatePickupEntity(chestDef, position);
 
-                            coinsSpawned++;
-                            if (coinsSpawned <= 3)
-                            {
-                                System.Console.WriteLine($"Spawned coin at tile ({x},{y}) -> world ({worldX},{worldY})");
-                            }
-                        }
-                    }
+                    System.Console.WriteLine($"Spawned treasure chest at ({worldX}, {worldY})");
+                    break;
                 }
             }
-
-            System.Console.WriteLine($"Total coins spawned: {coinsSpawned}");
         }
 
         /// <summary>

@@ -47,5 +47,10 @@ namespace CaveExplorer.Components.PickupEffects
         {
             return $"Coin ({CoinValue})";
         }
+
+        /// <summary>
+        /// Coins are stackable items
+        /// </summary>
+        public bool IsStackable => true;
     }
 }
