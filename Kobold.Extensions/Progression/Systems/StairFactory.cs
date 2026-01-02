@@ -33,7 +33,8 @@ namespace Kobold.Extensions.Progression
                 new SpriteRenderer(
                     spriteSheet.Texture,
                     spriteSheet.GetNamedRegion("stairUp"),
-                    new Vector2(1f, 1f)
+                    new Vector2(1f, 1f),
+                    layer: -10  // Render below GameObjects layer (0)
                 ),
                 new Trigger(),  // Non-solid trigger zone
                 new CollisionLayerComponent(CollisionLayer.Trigger),
@@ -74,7 +75,8 @@ namespace Kobold.Extensions.Progression
                 new SpriteRenderer(
                     spriteSheet.Texture,
                     spriteSheet.GetNamedRegion("stairDown"),
-                    new Vector2(1f, 1f)
+                    new Vector2(1f, 1f),
+                    layer: -10  // Render below GameObjects layer (0)
                 ),
                 new Trigger(),  // Non-solid trigger zone
                 new CollisionLayerComponent(CollisionLayer.Trigger),

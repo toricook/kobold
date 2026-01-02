@@ -53,10 +53,25 @@ namespace Kobold.Extensions.Items.Spawning
         {
             rarityWeights ??= GetDefaultRarityWeights();
 
-            // First, select a rarity tier based on rarity weights
+            // Filter out rarities that have no items
+            var availableRarities = new Dictionary<ItemRarity, int>();
+            foreach (var kvp in rarityWeights)
+            {
+                var items = _itemRegistry.GetItemsByRarity(kvp.Key);
+                if (items.Count > 0)
+                {
+                    availableRarities[kvp.Key] = kvp.Value;
+                }
+            }
+
+            // If no items available at all, throw exception
+            if (availableRarities.Count == 0)
+                throw new InvalidOperationException("No items registered in the item registry");
+
+            // First, select a rarity tier based on rarity weights (only from available rarities)
             var rarity = WeightedRandomSelector.SelectWeighted(
-                rarityWeights.Keys,
-                r => rarityWeights[r],
+                availableRarities.Keys,
+                r => availableRarities[r],
                 _random
             );
 

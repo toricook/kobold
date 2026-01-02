@@ -223,6 +223,34 @@
       },
       "spawnWeight": 25,
       "maxStackSize": 5
+    },
+    {
+      "id": "diamond",
+      "name": "Diamond",
+      "description": "An extremely rare and valuable diamond worth 100 gold",
+      "rarity": "Legendary",
+      "sprite": {
+        "texturePath": "sprites",
+        "regionName": "gem_blue",
+        "scale": { "x": 1.5, "y": 1.5 }
+      },
+      "pickup": {
+        "effectType": "AddCoins",
+        "effectParams": {
+          "amount": 100
+        },
+        "requiresInteraction": true,
+        "pickupTag": "gem",
+        "isStackable": true
+      },
+      "collision": {
+        "width": 32,
+        "height": 32,
+        "offset": { "x": -16, "y": -16 },
+        "collisionLayer": "Trigger"
+      },
+      "spawnWeight": 10,
+      "maxStackSize": 99
     }
   ]
 }
