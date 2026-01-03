@@ -2,6 +2,7 @@
 using Kobold.Core.Abstractions.Core;
 using Kobold.Core.Abstractions.Input;
 using Kobold.Core.Abstractions.Rendering;
+using Kobold.Core.Abstractions.Audio;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
 
@@ -13,7 +14,9 @@ namespace Kobold.Core
         protected IRenderer Renderer;
         protected IInputManager InputManager;
         protected IContentLoader ContentLoader;
+        protected IAudioPlayer AudioPlayer;
         protected AssetManager Assets;
+        protected AudioManager Audio;
         protected EventBus EventBus;
         protected SystemManager SystemManager;
 
@@ -55,6 +58,13 @@ namespace Kobold.Core
             ContentLoader = contentLoader;
         }
 
+        public void SetAudioPlayer(IAudioPlayer audioPlayer)
+        {
+            if (_isInitialized)
+                throw new InvalidOperationException("Cannot set audio player after initialization");
+            AudioPlayer = audioPlayer;
+        }
+
         public virtual void Initialize()
         {
             if (Renderer == null)
@@ -63,9 +73,14 @@ namespace Kobold.Core
                 throw new InvalidOperationException("InputManager must be set before initialization");
             if (ContentLoader == null)
                 throw new InvalidOperationException("ContentLoader must be set before initialization");
+            if (AudioPlayer == null)
+                throw new InvalidOperationException("AudioPlayer must be set before initialization");
 
             // Create AssetManager with the ContentLoader and content root
             Assets = new AssetManager(ContentLoader, ContentLoader.ContentRoot);
+
+            // Create AudioManager with AssetManager and AudioPlayer
+            Audio = new AudioManager(Assets, AudioPlayer);
 
             _isInitialized = true;
         }
@@ -89,6 +104,9 @@ namespace Kobold.Core
 
         public virtual void Shutdown()
         {
+            // Stop any playing music
+            Audio?.StopMusic();
+
             // Unload all assets
             Assets?.UnloadAll();
 

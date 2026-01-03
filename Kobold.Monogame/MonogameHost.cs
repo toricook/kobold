@@ -62,6 +62,7 @@ namespace Kobold.Monogame
             _inputManager = new MonoGameInputManager();
             var renderer = new MonoGameRenderer(GraphicsDevice, _spriteBatch, _defaultFont);
             var contentLoader = new MonoGameFileContentLoader(GraphicsDevice, Content.RootDirectory);
+            var audioPlayer = new MonoGameAudioPlayer();
 
             // Inject dependencies into game engine
             if (_gameEngine is GameEngineBase gameEngineBase)
@@ -69,6 +70,7 @@ namespace Kobold.Monogame
                 gameEngineBase.SetRenderer(renderer);
                 gameEngineBase.SetInputManager(_inputManager);
                 gameEngineBase.SetContentLoader(contentLoader);
+                gameEngineBase.SetAudioPlayer(audioPlayer);
             }
 
             // Initialize the game engine

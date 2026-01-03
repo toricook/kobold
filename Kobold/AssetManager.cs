@@ -1,5 +1,6 @@
 using Kobold.Core.Abstractions.Core;
 using Kobold.Core.Abstractions.Rendering;
+using Kobold.Core.Abstractions.Audio;
 using Kobold.Core.Assets;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace Kobold.Core
         private readonly IContentLoader _contentLoader;
         private readonly Dictionary<string, ITexture> _textureCache;
         private readonly Dictionary<string, SpriteSheet> _spriteSheetCache;
+        private readonly Dictionary<string, ISoundEffect> _soundEffectCache;
+        private readonly Dictionary<string, IMusic> _musicCache;
         private readonly string _contentRoot;
 
         public AssetManager(IContentLoader contentLoader, string contentRoot = "Content")
@@ -24,6 +27,8 @@ namespace Kobold.Core
             _contentRoot = contentRoot;
             _textureCache = new Dictionary<string, ITexture>();
             _spriteSheetCache = new Dictionary<string, SpriteSheet>();
+            _soundEffectCache = new Dictionary<string, ISoundEffect>();
+            _musicCache = new Dictionary<string, IMusic>();
         }
 
         /// <summary>
@@ -251,13 +256,141 @@ namespace Kobold.Core
             _spriteSheetCache.Clear();
         }
 
+        // ===== SOUND EFFECT METHODS =====
+
         /// <summary>
-        /// Unload all assets (textures and sprite sheets)
+        /// Load a sound effect, or return cached version if already loaded
+        /// </summary>
+        /// <param name="path">Path to the sound file</param>
+        /// <returns>The loaded sound effect</returns>
+        public ISoundEffect LoadSoundEffect(string path)
+        {
+            if (_soundEffectCache.TryGetValue(path, out var cachedSound))
+                return cachedSound;
+
+            var sound = _contentLoader.LoadSoundEffect(path);
+            _soundEffectCache[path] = sound;
+            return sound;
+        }
+
+        /// <summary>
+        /// Get a previously loaded sound effect from cache
+        /// </summary>
+        /// <param name="path">Path to the sound effect</param>
+        /// <returns>The cached sound effect, or null if not loaded</returns>
+        public ISoundEffect? GetSoundEffect(string path)
+        {
+            _soundEffectCache.TryGetValue(path, out var sound);
+            return sound;
+        }
+
+        /// <summary>
+        /// Preload multiple sound effects at once
+        /// </summary>
+        /// <param name="paths">Array of sound effect paths to preload</param>
+        public void PreloadSoundEffects(params string[] paths)
+        {
+            foreach (var path in paths)
+                LoadSoundEffect(path);
+        }
+
+        /// <summary>
+        /// Unload a specific sound effect from cache
+        /// </summary>
+        /// <param name="path">Path to the sound effect to unload</param>
+        /// <returns>True if the sound effect was unloaded, false if it wasn't cached</returns>
+        public bool UnloadSoundEffect(string path)
+        {
+            if (_soundEffectCache.TryGetValue(path, out var sound))
+            {
+                sound?.Dispose();
+                return _soundEffectCache.Remove(path);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Unload all cached sound effects
+        /// </summary>
+        public void UnloadAllSoundEffects()
+        {
+            foreach (var sound in _soundEffectCache.Values)
+                sound?.Dispose();
+            _soundEffectCache.Clear();
+        }
+
+        // ===== MUSIC METHODS =====
+
+        /// <summary>
+        /// Load a music track, or return cached version if already loaded
+        /// </summary>
+        /// <param name="path">Path to the music file</param>
+        /// <returns>The loaded music track</returns>
+        public IMusic LoadMusic(string path)
+        {
+            if (_musicCache.TryGetValue(path, out var cachedMusic))
+                return cachedMusic;
+
+            var music = _contentLoader.LoadMusic(path);
+            _musicCache[path] = music;
+            return music;
+        }
+
+        /// <summary>
+        /// Get a previously loaded music track from cache
+        /// </summary>
+        /// <param name="path">Path to the music track</param>
+        /// <returns>The cached music track, or null if not loaded</returns>
+        public IMusic? GetMusic(string path)
+        {
+            _musicCache.TryGetValue(path, out var music);
+            return music;
+        }
+
+        /// <summary>
+        /// Preload multiple music tracks at once
+        /// </summary>
+        /// <param name="paths">Array of music paths to preload</param>
+        public void PreloadMusic(params string[] paths)
+        {
+            foreach (var path in paths)
+                LoadMusic(path);
+        }
+
+        /// <summary>
+        /// Unload a specific music track from cache
+        /// </summary>
+        /// <param name="path">Path to the music track to unload</param>
+        /// <returns>True if the music track was unloaded, false if it wasn't cached</returns>
+        public bool UnloadMusic(string path)
+        {
+            if (_musicCache.TryGetValue(path, out var music))
+            {
+                music?.Dispose();
+                return _musicCache.Remove(path);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Unload all cached music tracks
+        /// </summary>
+        public void UnloadAllMusic()
+        {
+            foreach (var music in _musicCache.Values)
+                music?.Dispose();
+            _musicCache.Clear();
+        }
+
+        /// <summary>
+        /// Unload all assets (textures, sprite sheets, and audio)
         /// </summary>
         public void UnloadAll()
         {
             UnloadAllTextures();
             UnloadAllSpriteSheets();
+            UnloadAllSoundEffects();
+            UnloadAllMusic();
         }
 
         /// <summary>
@@ -272,6 +405,16 @@ namespace Kobold.Core
         {
             return _spriteSheetCache.Keys;
         }
+
+        /// <summary>
+        /// Get count of currently cached sound effects
+        /// </summary>
+        public int CachedSoundEffectCount => _soundEffectCache.Count;
+
+        /// <summary>
+        /// Get count of currently cached music tracks
+        /// </summary>
+        public int CachedMusicCount => _musicCache.Count;
 
         private string GetConfigPath(string assetPath)
         {
