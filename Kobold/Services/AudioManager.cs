@@ -1,6 +1,6 @@
 using Kobold.Core.Abstractions.Audio;
 
-namespace Kobold.Core
+namespace Kobold.Core.Services
 {
     /// <summary>
     /// Manages audio playback for sound effects and music

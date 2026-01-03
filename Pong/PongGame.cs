@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Numerics;
 using Kobold.Core.Abstractions.Input;
 using Kobold.Core.Abstractions.Rendering;
+using SystemUpdateOrder = Kobold.Core.Services.SystemUpdateOrder;
 
 namespace Pong
 {

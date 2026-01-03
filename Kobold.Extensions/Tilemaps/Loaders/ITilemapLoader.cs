@@ -1,4 +1,5 @@
 using Kobold.Core;
+using Kobold.Core.Services;
 
 namespace Kobold.Extensions.Tilemaps.Loaders
 {

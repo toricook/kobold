@@ -14,7 +14,13 @@ namespace Kobold.Core.Systems
     /// <summary>
     /// Generic game state management system. Configure states with callbacks and an input that should trigger a transition out of this state
     /// if applicable. Then calling ChangeState will handle performing the callbacks and publishing a GameStateChangedEvent.
+    ///
+    /// DEPRECATED: This system is deprecated in favor of GameStateManager&lt;TState&gt; from Kobold.Core.Services.
+    /// The new service-based approach provides better performance (no ECS queries for singleton state)
+    /// and clearer semantics. Input handling should be done in a dedicated input system that calls
+    /// the GameStateManager to change states.
     /// </summary>
+    [Obsolete("Use GameStateManager<TState> from Kobold.Core.Services instead. Handle input transitions in a dedicated input system.")]
     public class GameStateSystem<TGameState> : ISystem where TGameState : struct
     {
         protected readonly World World;

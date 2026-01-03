@@ -5,7 +5,7 @@ using Kobold.Core.Abstractions.Input;
 using Kobold.Core.Abstractions.Rendering;
 using Kobold.Core.Abstractions.Audio;
 using Kobold.Core.Events;
-using Kobold.Core.Systems;
+using Kobold.Core.Services;
 
 namespace Kobold.Core
 {
@@ -27,7 +27,17 @@ namespace Kobold.Core
         {
             World = World.Create();
             EventBus = new EventBus();
-            SystemManager = new SystemManager(EventBus, World);
+            SystemManager = new SystemManager(OnSystemError);
+        }
+
+        /// <summary>
+        /// Default error handler for system exceptions. Logs the error and continues execution.
+        /// Override this method to customize error handling behavior.
+        /// </summary>
+        protected virtual void OnSystemError(ISystem system, Exception exception, string context)
+        {
+            Console.Error.WriteLine($"[ERROR] System {system?.GetType().Name} threw exception during {context}:");
+            Console.Error.WriteLine(exception);
         }
 
         // Alternative constructor for direct injection
@@ -91,7 +101,39 @@ namespace Kobold.Core
             if (!_isInitialized)
                 throw new InvalidOperationException("Game engine must be initialized before updating");
 
-            SystemManager.UpdateAll(deltaTime);
+            // Determine which system groups should run based on game state
+            var activeGroups = GetActiveSystemGroups();
+            SystemManager.UpdateAll(deltaTime, activeGroups);
+        }
+
+        /// <summary>
+        /// Determines which system groups should be active based on the current game state.
+        /// Override this method to customize which systems run in different game states.
+        /// Default behavior: runs Always systems, plus Playing systems if game is in playing state.
+        /// </summary>
+        protected virtual SystemGroup GetActiveSystemGroups()
+        {
+            // Start with always-active systems
+            var groups = SystemGroup.Always;
+
+            // Check if there's a game state entity and if game is playing
+            // This provides backward compatibility with the old component-based game state
+            var gameStateQuery = new QueryDescription().WithAll<Components.CoreGameState>();
+            World.Query(in gameStateQuery, (ref Components.CoreGameState gameState) =>
+            {
+                if (gameState.IsPlaying)
+                    groups |= SystemGroup.Playing;
+                else if (gameState.IsPaused)
+                    groups |= SystemGroup.Paused;
+                else if (gameState.IsGameOver)
+                    groups |= SystemGroup.GameOver;
+                else if (gameState.IsInMenu)
+                    groups |= SystemGroup.Menu;
+                else if (gameState.IsLoading)
+                    groups |= SystemGroup.Loading;
+            });
+
+            return groups;
         }
 
         public virtual void Render()

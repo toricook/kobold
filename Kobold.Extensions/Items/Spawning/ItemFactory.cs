@@ -5,6 +5,7 @@ using Arch.Core.Extensions;
 using Kobold.Core;
 using Kobold.Core.Components;
 using Kobold.Core.Components.Gameplay;
+using Kobold.Core.Services;
 using Kobold.Core.Systems;
 using Kobold.Extensions.Items.Data;
 using Kobold.Extensions.Items.Effects;

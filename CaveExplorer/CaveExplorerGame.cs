@@ -11,6 +11,7 @@ using Kobold.Core.Components;
 using Kobold.Core.Components.Gameplay;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
+using SystemUpdateOrder = Kobold.Core.Services.SystemUpdateOrder;
 using Kobold.Extensions.Combat.Components;
 using Kobold.Extensions.Combat.Registry;
 using Kobold.Extensions.Combat.Spawning;

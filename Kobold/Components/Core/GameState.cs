@@ -10,14 +10,20 @@ namespace Kobold.Core.Components
     /// Core game state component that represents the current high-level state of the game.
     /// This is used by the SystemManager to determine which systems should be active,
     /// and by game-specific systems to control flow and behavior.
-    /// 
+    ///
     /// The core engine provides basic states (Playing, Paused, GameOver), but games
     /// can extend this with their own state enums by implementing IGameState.
-    /// 
+    ///
     /// Only one GameState component should exist per game - it's typically attached
     /// to a singleton entity that represents the overall game session.
+    ///
+    /// DEPRECATED: This component-based approach to game state is deprecated.
+    /// Use GameStateManager&lt;TState&gt; from Kobold.Core.Services instead, which provides
+    /// better performance and clearer semantics for singleton game state.
+    /// See: Kobold.Core.Services.GameStateManager
     /// </summary>
     /// <typeparam name="TState">The state enum type (e.g., PongGameState, SpaceInvadersState)</typeparam>
+    [Obsolete("Use GameStateManager<TState> from Kobold.Core.Services instead. This component-based approach forces singleton state into the ECS model unnecessarily.")]
     public struct GameState<TState> : IEquatable<GameState<TState>> where TState : struct, Enum
     {
         /// <summary>
@@ -194,7 +200,10 @@ namespace Kobold.Core.Components
     /// <summary>
     /// Standard game states that most games will need.
     /// Games can use this directly or create their own enum with these values included.
+    ///
+    /// DEPRECATED: This enum is deprecated. Use StandardGameState from Kobold.Core.Services instead.
     /// </summary>
+    [Obsolete("Use StandardGameState from Kobold.Core.Services instead.")]
     public enum StandardGameState
     {
         /// <summary>
@@ -236,7 +245,10 @@ namespace Kobold.Core.Components
     /// Convenience wrapper for games that use the standard core game states.
     /// This provides a simpler API than the full generic GameState&lt;TState&gt; for common cases.
     /// Most simple games can just use this instead of defining their own state enum.
+    ///
+    /// DEPRECATED: This component wrapper is deprecated. Use CoreGameStateManager from Kobold.Core.Services instead.
     /// </summary>
+    [Obsolete("Use CoreGameStateManager from Kobold.Core.Services instead.")]
     public struct CoreGameState : IEquatable<CoreGameState>
     {
         private readonly GameState<StandardGameState> _inner;

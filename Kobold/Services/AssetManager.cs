@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.Json;
 
-namespace Kobold.Core
+namespace Kobold.Core.Services
 {
     /// <summary>
     /// Manages loading and caching of game assets (textures, sprite sheets, etc.)
