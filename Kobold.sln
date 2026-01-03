@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaveExplorer", "CaveExplore
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpriteSheetEditor", "Kobold.SpriteSheetEditor\SpriteSheetEditor.csproj", "{5D9704FB-2C82-4902-BDC4-D7F884159566}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kobold.Documentation", "Kobold.Documentation\Kobold.Documentation.csproj", "{41DB0EE9-C5D1-45FB-B8C9-1D218B3DBFB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kobold.Documentation", "Kobold.Documentation\Kobold.Documentation.csproj", "{41DB0EE9-C5D1-45FB-B8C9-1D218B3DBFB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platformer", "Platformer\Platformer.csproj", "{87285C8B-746A-40D1-ACDD-494368677AF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,10 @@ Global
 		{41DB0EE9-C5D1-45FB-B8C9-1D218B3DBFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41DB0EE9-C5D1-45FB-B8C9-1D218B3DBFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41DB0EE9-C5D1-45FB-B8C9-1D218B3DBFB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87285C8B-746A-40D1-ACDD-494368677AF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87285C8B-746A-40D1-ACDD-494368677AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87285C8B-746A-40D1-ACDD-494368677AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87285C8B-746A-40D1-ACDD-494368677AF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

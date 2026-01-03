@@ -41,7 +41,18 @@ namespace Kobold.Core.Systems
 
             World.Query(in query, (ref PlayerControlled playerControlled, ref Velocity velocity) =>
             {
-                velocity.Value = Vector2.Zero;
+                // For platformers (HorizontalOnly), preserve vertical velocity for gravity/jumping
+                // For top-down games, reset all velocity
+                if (playerControlled.HorizontalOnly)
+                {
+                    // Keep Y velocity (gravity), reset X
+                    velocity.Value = new Vector2(0, velocity.Value.Y);
+                }
+                else
+                {
+                    // Reset both components for full directional control
+                    velocity.Value = Vector2.Zero;
+                }
 
                 // Handle vertical movement
                 if (!playerControlled.HorizontalOnly)

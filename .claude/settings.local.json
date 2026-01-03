@@ -28,7 +28,10 @@
       "Bash(dotnet tool install:*)",
       "Bash(mgcb:*)",
       "Bash(docfx --version:*)",
-      "Bash(docfx:*)"
+      "Bash(docfx:*)",
+      "Bash(timeout 3 dotnet run:*)",
+      "Bash(timeout 10 dotnet run:*)",
+      "Bash(timeout 10:*)"
     ]
   }
 }
