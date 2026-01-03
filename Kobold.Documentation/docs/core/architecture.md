@@ -470,6 +470,8 @@ Arch automatically pools component arrays for performance. You don't need to man
 
 One of Kobold's key design principles is **complete separation between game logic and platform-specific code**. This is achieved through interface-based abstractions.
 
+> **📚 For detailed information on abstractions and assets, see [Abstractions and Assets Architecture](abstractions-and-assets.md)**
+
 ### Core is Platform-Agnostic
 
 **Kobold.Core** has zero dependencies on MonoGame, Unity, or any rendering engine. All platform-specific functionality is defined as interfaces:
@@ -584,9 +586,11 @@ Custom platform hosts are possible but require implementing all the platform int
 
 ## Learn More
 
+- **[Abstractions and Assets](abstractions-and-assets.md)** - Deep dive into platform interfaces and asset types
 - **[Game Engine](game-engine.md)** - How GameEngineBase manages the World
 - **[Components Reference](components.md)** - All built-in components
 - **[Systems Reference](systems.md)** - All built-in systems
+- **[Asset Manager](asset-manager.md)** - High-level asset management
 - **[MonoGame Integration](../monogame/)** - How the MonoGame host works
 - **[Arch Library](https://github.com/genaray/Arch)** - The underlying ECS library
 

@@ -3,6 +3,7 @@ using Kobold.Extensions.Tilemaps;
 using Kobold.Core.Components;
 using System.Drawing;
 using System.Numerics;
+using Kobold.Core.Abstractions.Engine;
 
 namespace Platformer
 {
@@ -116,7 +117,7 @@ namespace Platformer
     }
 
     // Temporary debug system to track player position
-    public class PlayerPositionDebugSystem : Kobold.Core.Abstractions.ISystem
+    public class PlayerPositionDebugSystem : ISystem
     {
         private readonly Arch.Core.World _world;
         private int _frameCount = 0;

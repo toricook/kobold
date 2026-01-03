@@ -1,5 +1,5 @@
 using Arch.Core;
-using Kobold.Core.Abstractions;
+using Kobold.Core.Abstractions.Engine;
 using Kobold.Core.Components;
 
 namespace Kobold.Core.Systems

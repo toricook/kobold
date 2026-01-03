@@ -1,7 +1,7 @@
 using Arch.Core;
 using Arch.Core.Extensions;
 using Kobold.Core;
-using Kobold.Core.Abstractions;
+using Kobold.Core.Abstractions.Engine;
 using Kobold.Core.Assets;
 using Kobold.Core.Components;
 using Kobold.Core.Components.Gameplay;

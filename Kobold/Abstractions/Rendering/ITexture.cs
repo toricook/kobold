@@ -11,7 +11,14 @@ namespace Kobold.Core.Abstractions.Rendering
     /// </summary>
     public interface ITexture
     {
+        /// <summary>
+        /// Width of the texture in pixels
+        /// </summary>
         int Width { get; }
+
+        /// <summary>
+        /// Height of the texture in pixels
+        /// </summary>
         int Height { get; }
     }
 }

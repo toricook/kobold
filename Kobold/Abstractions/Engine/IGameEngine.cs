@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kobold.Core.Abstractions.Core
+namespace Kobold.Core.Abstractions.Engine
 {
     /// <summary>
     /// The basic definition of what makes a game. A game is initialized once at the beginning and shut down once at the end,

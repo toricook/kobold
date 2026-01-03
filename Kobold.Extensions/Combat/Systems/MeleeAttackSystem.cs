@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Numerics;
 using Arch.Core;
 using Arch.Core.Extensions;
-using Kobold.Core.Abstractions;
+using Kobold.Core.Abstractions.Engine;
 using Kobold.Core.Components;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;

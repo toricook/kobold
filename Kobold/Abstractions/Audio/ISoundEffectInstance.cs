@@ -5,8 +5,11 @@ namespace Kobold.Core.Abstractions.Audio
     /// </summary>
     public enum SoundState
     {
+        /// <summary>Sound is currently playing</summary>
         Playing,
+        /// <summary>Sound is paused and can be resumed</summary>
         Paused,
+        /// <summary>Sound is stopped</summary>
         Stopped
     }
 

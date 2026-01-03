@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Kobold.Core.Abstractions
+namespace Kobold.Core.Abstractions.Engine
 {
     /// <summary>
     /// Interface for systems that only need to render. 

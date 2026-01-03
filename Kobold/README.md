@@ -1,153 +1,137 @@
-# Kobold.Core
+# Game Engine
 
-**Essential game engine foundations that every game needs.**
+A lightweight 2D game engine built on [Arch ECS](https://github.com/genaray/Arch), designed for rapid development of top-down RPGs, roguelikes, and platformers.
 
-Kobold.Core provides the fundamental building blocks for creating games using an Entity Component System (ECS) architecture. This package contains only the core features that virtually every game requires, keeping it lightweight and focused.
+## Vision
 
-## Philosophy
+This engine prioritizes getting games shipped quickly while maintaining clean architecture. It's built for personal projects but designed to be extensible as needs grow.
 
-Kobold.Core follows the principle of **minimal essential functionality**:
-- ✅ Include: Features that nearly every game needs
-- ❌ Exclude: Specialized features that only some games require (those go in Kobold.Extensions)
+### Design Philosophy
 
-## What's Included
+- **ECS-First**: Built on Arch for performance and flexibility
+- **Platform Agnostic Core**: Game logic independent of rendering/input implementation
+- **Pragmatic Abstractions**: MonoGame handles rendering, input, and audio initially - but the architecture allows swapping implementations later
+- **Feature-Driven**: Focused on features needed for 2D action RPGs, roguelikes, and platformers rather than general-purpose everything
 
-### Core Architecture
-- **Entity Component System (ECS)** - Built on Arch for high-performance entity management
-- **Component System** - Transform, Velocity, Physics, and other fundamental components
-- **System Manager** - Orchestrates game systems and update loops
-- **Event Bus** - Decoupled communication between systems
+## Architecture Overview
 
-### Essential Systems
-- **PhysicsSystem** - Basic physics simulation (velocity, gravity, damping)
-- **CollisionSystem** - Collision detection with layers and filtering
-- **BoundarySystem** - Screen boundary handling (wrap, clamp, destroy)
-- **DestructionSystem** - Entity lifecycle management
-- **InputSystem** - Generic input handling
-- **RenderSystem** - Rendering abstraction layer
+The engine is split into distinct layers:
 
-### Core Components
-- **Transform** - Position, rotation, scale
-- **Velocity** - Movement and direction
-- **Physics** - Mass, restitution, damping
-- **BoxCollider** - AABB collision detection
-- **Renderable** - Visual representation
-- **Lifetime** - Timed entity destruction
+### Core Layer (Platform Agnostic)
+The heart of the engine - pure game logic with no platform dependencies.
 
-### Utilities
-- **MathUtils** - Common game math operations
-- **EventBus** - Event-driven communication
-- **Configuration** - Game and system configuration
+- **ECS Foundation** (Arch)
+  - Entity management
+  - Component definitions
+  - System execution pipeline
+  
+- **Core Systems**
+  - Physics/collision detection
+  - Game state management
+  - Event system
+  - Serialization
+  - Asset management (metadata/references only)
 
-## When to Use Kobold.Core
+- **Game-Specific Features**
+  - Tilemap/grid system
+  - Pathfinding
+  - Inventory system
+  - Character stats/progression
+  - Turn-based combat system (for roguelikes)
+  - Platformer physics (jump curves, slopes, etc.)
 
-Use Kobold.Core when you need:
-- A lightweight ECS game framework
-- Basic physics and collision detection
-- Input handling and rendering abstractions
-- Event-driven architecture
-- To build a simple 2D game with minimal dependencies
+### Platform Layer (MonoGame Implementation - for now)
+Concrete implementations of platform-specific functionality.
 
-## When to Use Kobold.Extensions
+- **Rendering**
+  - Sprite rendering
+  - Tilemap rendering
+  - Camera system
+  - Particle effects
+  - UI rendering
 
-If you need specialized features, check out **Kobold.Extensions**:
-- **Tilemaps** - Grid-based level design
-- **Particle Systems** - Visual effects
-- **AI/Pathfinding** - Enemy behaviors
-- **Dialogue Systems** - Conversations and narrative
-- **Animation Systems** - Sprite animations
-- And more...
+- **Input Management**
+  - Keyboard/mouse input
+  - Gamepad support
+  - Input mapping/rebinding
 
-## Design Principles
+- **Audio**
+  - Sound effect playback
+  - Music management
+  - Audio mixing
 
-1. **Minimal Dependencies** - Only essential third-party packages
-2. **Performance First** - Optimized for game update loops
-3. **Extensible** - Easy to extend without modifying core code
-4. **Well-Tested** - Comprehensive unit and system tests
-5. **Platform Agnostic** - Rendering/input abstracted for any platform
+- **Asset Loading**
+  - Texture loading
+  - Audio file loading
+  - Data file loading
 
-## Architecture
+### Future: Custom Implementation Layer
+Eventually, replace MonoGame components with custom implementations:
+- Custom 2D renderer (potentially using modern graphics APIs)
+- Custom audio engine
+- Custom input system
+- Cross-platform support beyond what MonoGame offers
+
+## Technology Stack
+
+- **Language**: C# (.NET)
+- **ECS Framework**: [Arch](https://github.com/genaray/Arch)
+- **Platform Layer**: MonoGame (initially)
+- **Target Platforms**: Desktop (Windows/Mac/Linux) initially
+
+## Project Structure
 
 ```
-Kobold.Core/
-├── Abstractions/       # Interfaces for platform-specific implementations
-├── Components/         # Core ECS components
-│   ├── Core/          # Transform, Tags, GameState
-│   ├── Physics/       # Velocity, Physics, Colliders
-│   ├── Rendering/     # Renderable, RenderLayers
-│   └── Gameplay/      # Lifetime, Boundary behaviors
-├── Systems/           # Core game systems
-├── Events/            # Event system and core events
-├── Configuration/     # Configuration classes
-└── MathUtils.cs       # Math utilities
+/Core                    # Platform-agnostic engine core
+  /ECS                   # ECS-specific code (systems, components, queries)
+  /Physics               # Collision detection, spatial partitioning
+  /GameSystems           # Game-specific systems (inventory, stats, etc.)
+  /Grid                  # Tilemap and grid-based logic
+  /Events                # Event system
+  /Serialization         # Save/load functionality
 
-Platform-Specific Implementations:
-└── Kobold.Monogame/   # MonoGame rendering and input
+/Platform                # Platform-specific implementations
+  /MonoGame              # MonoGame implementation
+    /Rendering           # Rendering systems
+    /Input               # Input handling
+    /Audio               # Audio playback
+    /Assets              # Asset loading
+
+/Games                   # Actual game projects using the engine
+  /ExampleRoguelike      # Sample roguelike game
+  /ExamplePlatformer     # Sample platformer game
 ```
 
-## Example Usage
+## Development Approach
 
-```csharp
-using Kobold.Core;
-using Kobold.Core.Components;
-using Kobold.Core.Systems;
+1. **Core-First Development**: Implement game logic in Core layer without rendering concerns
+2. **Thin Platform Layer**: Keep MonoGame layer as thin as possible - just adapters
+3. **Test Core Independently**: Core systems should be testable without graphics
+4. **Incremental Migration**: As custom implementations are built, swap them in without changing Core
 
-// Create a simple game entity
-var world = World.Create();
-var eventBus = new EventBus();
+## Current Status
 
-var player = world.Create(
-    new Transform(new Vector2(100, 100)),
-    new Velocity(Vector2.Zero),
-    new Physics { Mass = 1.0f },
-    new BoxCollider(new Vector2(32, 32)),
-    new PlayerControlled(speed: 200f)
-);
-
-// Set up core systems
-var physics = new PhysicsSystem(world, new PhysicsConfig());
-var collision = new CollisionSystem(world, eventBus);
-var input = new InputSystem(inputManager, world);
-
-// Game loop
-void Update(float deltaTime)
-{
-    input.Update(deltaTime);
-    physics.Update(deltaTime);
-    collision.Update(deltaTime);
-}
-```
+🚧 **In Development** - Architecture being established, migrating existing code to match this structure.
 
 ## Getting Started
 
-1. **Install Kobold.Core**
-   ```bash
-   dotnet add package Kobold.Core
-   ```
+*(Coming soon - setup instructions, first game tutorial)*
 
-2. **Choose a platform implementation** (e.g., Kobold.Monogame)
-   ```bash
-   dotnet add package Kobold.Monogame
-   ```
+## Why This Architecture?
 
-3. **Start building your game**
-   - Create entities with core components
-   - Add game systems to your update loop
-   - Implement game-specific logic
+**Platform Independence**: By keeping core logic separate, we can:
+- Unit test game systems without rendering
+- Swap rendering implementations (MonoGame → custom renderer)
+- Potentially support different platforms/engines
 
-## Related Packages
+**ECS Benefits**: Using Arch gives us:
+- High performance through data-oriented design
+- Flexible entity composition
+- Easy parallel system execution
+- Clean separation of data and behavior
 
-- **Kobold.Extensions** - Optional features for common game mechanics
-- **Kobold.Monogame** - MonoGame platform implementation
-
-## Contributing
-
-Kobold.Core should remain focused on essential features. Before adding new features:
-1. Ask: "Will virtually every game need this?"
-2. If yes → Add to Kobold.Core
-3. If no → Add to Kobold.Extensions
-4. If unsure → Start in Extensions, promote later if widely used
+**Practical Complexity**: MonoGame handles the hard parts (graphics, audio, windowing) so we can focus on game-specific features, but the architecture allows replacing it when needed.
 
 ## License
 
-[Add your license here]
+*(Your license here)*

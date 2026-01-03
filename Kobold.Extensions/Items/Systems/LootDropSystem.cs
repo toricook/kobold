@@ -4,7 +4,7 @@ using System.Linq;
 using System.Numerics;
 using Arch.Core;
 using Arch.Core.Extensions;
-using Kobold.Core.Abstractions;
+using Kobold.Core.Abstractions.Engine;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
 using Kobold.Extensions.Items.Components;

@@ -1,7 +1,7 @@
 using Kobold.Core.Abstractions.Rendering;
 using Kobold.Core.Abstractions.Audio;
 
-namespace Kobold.Core.Abstractions.Core
+namespace Kobold.Core.Abstractions.Assets
 {
     /// <summary>
     /// Interface for loading game content (textures, sounds, etc.)

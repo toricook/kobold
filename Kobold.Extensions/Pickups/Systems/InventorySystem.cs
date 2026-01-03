@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using Arch.Core;
 using Arch.Core.Extensions;
-using Kobold.Core.Abstractions;
+using Kobold.Core.Abstractions.Engine;
 using Kobold.Core.Events;
 
 namespace Kobold.Extensions.Pickups

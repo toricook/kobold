@@ -1,7 +1,7 @@
 using System;
 using System.Numerics;
 using Arch.Core;
-using Kobold.Core.Abstractions;
+using Kobold.Core.Abstractions.Engine;
 using Kobold.Core.Components;
 using Kobold.Core.Events;
 using Kobold.Extensions.Combat.Components;
