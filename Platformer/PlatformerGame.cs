@@ -5,6 +5,9 @@ using System.Drawing;
 using System.Numerics;
 using Kobold.Core.Abstractions.Engine;
 
+using Kobold.Extensions.Physics.Components;
+using Kobold.Extensions.Collision.Components;
+using Kobold.Extensions.Input.Components;
 namespace Platformer
 {
     public class PlatformerGame : PlatformerGameBase

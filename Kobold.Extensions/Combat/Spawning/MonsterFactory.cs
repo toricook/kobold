@@ -7,7 +7,10 @@ using Kobold.Core.Services;
 using Kobold.Core.Systems;
 using Kobold.Extensions.Combat.Components;
 using Kobold.Extensions.Combat.Data;
+using Kobold.Extensions.Collision.Systems;
+using Kobold.Extensions.Collision.Components;
 
+using Kobold.Extensions.Physics.Components;
 namespace Kobold.Extensions.Combat.Spawning
 {
     /// <summary>

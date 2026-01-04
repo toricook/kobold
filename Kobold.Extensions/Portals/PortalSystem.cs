@@ -2,6 +2,7 @@ using Arch.Core;
 using Arch.Core.Extensions;
 using Kobold.Core.Abstractions.Engine;
 using Kobold.Core.Events;
+using Kobold.Extensions.Triggers.Events;
 using System;
 using System.Collections.Generic;
 

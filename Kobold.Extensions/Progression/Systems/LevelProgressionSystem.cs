@@ -4,7 +4,7 @@ using Kobold.Core;
 using Kobold.Core.Abstractions.Engine;
 using Kobold.Core.Assets;
 using Kobold.Core.Components;
-using Kobold.Core.Components.Gameplay;
+using Kobold.Extensions.Gameplay.Components;
 using Kobold.Core.Events;
 using Kobold.Extensions.Portals;
 using Kobold.Extensions.Tilemaps;

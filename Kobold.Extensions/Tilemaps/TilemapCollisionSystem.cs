@@ -5,6 +5,8 @@ using Kobold.Core.Components;
 using Kobold.Core.Events;
 using System;
 using System.Numerics;
+using Kobold.Extensions.Collision.Components;
+using Kobold.Extensions.Physics.Components;
 
 namespace Kobold.Extensions.Tilemaps
 {

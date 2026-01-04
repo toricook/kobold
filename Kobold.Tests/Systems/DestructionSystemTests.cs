@@ -1,4 +1,4 @@
-﻿using Kobold.Core.Components.Gameplay;
+﻿using Kobold.Extensions.Gameplay.Components;
 using Kobold.Core.Components;
 using Kobold.Core.Systems;
 using NUnit.Framework;
@@ -10,7 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Tests.Helpers;
 using FluentAssertions;
-
+using Kobold.Extensions.Destruction.Systems;
+using Kobold.Extensions.Destruction.Components;
+using Kobold.Extensions.Gameplay.Components;
 namespace Tests.Systems
 {
     [TestFixture]

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 
+using Kobold.Extensions.Physics.Components;
 namespace Kobold.Extensions.Portals
 {
     /// <summary>

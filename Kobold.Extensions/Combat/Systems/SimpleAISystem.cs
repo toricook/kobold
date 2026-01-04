@@ -7,6 +7,7 @@ using Kobold.Core.Events;
 using Kobold.Extensions.Combat.Components;
 using Kobold.Extensions.Combat.Events;
 
+using Kobold.Extensions.Physics.Components;
 namespace Kobold.Extensions.Combat.Systems
 {
     /// <summary>

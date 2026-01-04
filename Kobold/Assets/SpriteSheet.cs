@@ -1,5 +1,4 @@
 using Kobold.Core.Abstractions.Rendering;
-using Kobold.Core.Components;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -126,37 +125,6 @@ namespace Kobold.Core.Assets
                 }
                 return frames;
             }
-        }
-
-        /// <summary>
-        /// Create an AnimationClip from a configured animation
-        /// </summary>
-        public AnimationClip CreateAnimationClip(string animationName)
-        {
-            if (!Config.Animations.TryGetValue(animationName, out var animData))
-            {
-                throw new KeyNotFoundException($"Animation '{animationName}' not found in sprite sheet config.");
-            }
-
-            var frames = GetAnimationFrames(animData);
-            float frameDuration = 1f / animData.Fps;
-
-            return new AnimationClip(animationName, frames, frameDuration, animData.Loop);
-        }
-
-        /// <summary>
-        /// Create all configured animations as AnimationClips
-        /// </summary>
-        public Dictionary<string, AnimationClip> CreateAllAnimations()
-        {
-            var animations = new Dictionary<string, AnimationClip>();
-
-            foreach (var kvp in Config.Animations)
-            {
-                animations[kvp.Key] = CreateAnimationClip(kvp.Key);
-            }
-
-            return animations;
         }
 
         /// <summary>

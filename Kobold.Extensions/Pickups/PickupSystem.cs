@@ -5,7 +5,9 @@ using Kobold.Core.Components;
 using Kobold.Core.Events;
 using Kobold.Core.Systems;
 using System;
-
+using Kobold.Extensions.Collision.Systems;
+using Kobold.Extensions.Triggers.Events;
+using Kobold.Extensions.Destruction.Components;
 namespace Kobold.Extensions.Pickups
 {
     /// <summary>

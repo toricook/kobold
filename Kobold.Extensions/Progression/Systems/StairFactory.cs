@@ -1,7 +1,7 @@
 using Arch.Core;
 using Kobold.Core.Assets;
 using Kobold.Core.Components;
-using Kobold.Core.Components.Gameplay;
+using Kobold.Extensions.Gameplay.Components;
 using Kobold.Core.Systems;
 using Kobold.Extensions.Portals;
 using Kobold.Extensions.Tilemaps;
@@ -9,6 +9,9 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 
+using Kobold.Extensions.Collision.Components;
+using Kobold.Extensions.Collision.Systems;
+using Kobold.Extensions.Triggers.Components;
 namespace Kobold.Extensions.Progression
 {
     /// <summary>

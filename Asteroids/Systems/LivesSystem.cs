@@ -13,7 +13,15 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Kobold.Core.Abstractions.Engine;
-using Kobold.Core.Components.Gameplay;
+using Kobold.Extensions.Gameplay.Components;
+using Kobold.Extensions.Physics.Components;
+using Kobold.Extensions.Collision.Systems;
+using Kobold.Extensions.Collision.Components;
+using Kobold.Extensions.Boundaries.Systems;
+using Kobold.Extensions.Boundaries.Components;
+using Kobold.Extensions.Destruction.Systems;
+using Kobold.Extensions.Destruction.Components;
+using Kobold.Extensions.GameState.Events;
 
 namespace Asteroids.Systems
 {

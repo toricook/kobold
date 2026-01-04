@@ -7,6 +7,9 @@ using Kobold.Core.Systems;
 using Pong.Components;
 using System.Numerics;
 
+using Kobold.Extensions.Collision.Systems;
+using Kobold.Extensions.Physics.Components;
+using Kobold.Extensions.Collision.Components;
 namespace Pong.Systems
 {
     /// <summary>

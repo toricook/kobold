@@ -1,11 +1,14 @@
 using FluentAssertions;
 using Kobold.Core.Components;
-using Kobold.Core.Components.Gameplay;
 using Kobold.Core.Systems;
 using NUnit.Framework;
 using System.Numerics;
 using Tests.Helpers;
-
+using Kobold.Extensions.Physics.Components;
+using Kobold.Extensions.Collision.Systems;
+using Kobold.Extensions.Collision.Components;
+using Kobold.Extensions.Destruction.Components;
+using Kobold.Extensions.Gameplay.Components;
 namespace Tests.Systems
 {
     [TestFixture]

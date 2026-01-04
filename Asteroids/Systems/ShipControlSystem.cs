@@ -12,6 +12,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
+using Kobold.Extensions.Physics.Components;
 namespace Asteroids.Systems
 {
     /// <summary>

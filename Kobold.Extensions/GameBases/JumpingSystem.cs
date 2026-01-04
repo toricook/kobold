@@ -4,6 +4,8 @@ using Kobold.Core.Abstractions.Input;
 using Kobold.Core.Components;
 using System.Numerics;
 
+using Kobold.Extensions.Input.Components;
+using Kobold.Extensions.Physics.Components;
 namespace Kobold.Extensions.GameBases
 {
     /// <summary>

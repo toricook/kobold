@@ -6,6 +6,8 @@ using Kobold.Extensions.Tilemaps;
 using System;
 using System.Numerics;
 
+using Kobold.Extensions.Physics.Components;
+using Kobold.Extensions.Collision.Components;
 namespace CaveExplorer.Systems
 {
     /// <summary>

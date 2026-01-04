@@ -2,7 +2,7 @@
 using Kobold.Core.Abstractions.Input;
 using Kobold.Core.Components;
 using Kobold.Core.Events;
-using Kobold.Core.Factories;
+// using Kobold.Core.Factories - removed;
 using Kobold.Core.Systems;
 using Pong.Components;
 using System;
@@ -12,7 +12,9 @@ using System.Linq;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
-
+using Kobold.Extensions.Physics.Components;
+using Kobold.Extensions.GameState.Systems;
+using Kobold.Extensions.GameState.Events;
 namespace Pong.Systems
 {
     /// <summary>

@@ -4,12 +4,22 @@ using Kobold.Core.Abstractions.Input;
 using Kobold.Core.Abstractions.Rendering;
 using Kobold.Core.Assets;
 using Kobold.Core.Components;
-using Kobold.Core.Components.Gameplay;
+using Kobold.Extensions.Gameplay.Components;
 using Kobold.Core.Services;
 using Kobold.Core.Systems;
+using Kobold.Extensions.Physics.Systems;
+using Kobold.Extensions.Collision.Systems;
 using Kobold.Extensions.Tilemaps;
 using System.Drawing;
 using System.Numerics;
+
+using Kobold.Extensions.Input.Systems;
+using Kobold.Extensions.Triggers.Systems;
+using Kobold.Extensions.Destruction.Systems;
+using Kobold.Extensions.Input.Components;
+using Kobold.Extensions.Collision.Components;
+using Kobold.Extensions.Physics.Components;
+using PhysicsComponent = Kobold.Extensions.Physics.Components.Physics;
 
 namespace Kobold.Extensions.GameBases
 {
@@ -227,7 +237,7 @@ namespace Kobold.Extensions.GameBases
                 new SpriteRenderer(spriteTexture, spriteRegion, new Vector2(1f, 1f)),
                 new BoxCollider(28f, 28f, new Vector2(-14f, -14f)),
                 PlayerControlled.CreateHorizontalOnly(moveSpeed), // Horizontal movement only for platformers
-                new Physics(damping: 0.0f), // Enable gravity
+                new PhysicsComponent(damping: 0.0f), // Enable gravity
                 new Player()
             );
 

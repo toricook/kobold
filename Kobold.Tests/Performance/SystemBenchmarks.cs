@@ -5,7 +5,10 @@ using Kobold.Core.Systems;
 using System;
 using System.Numerics;
 using Tests.Helpers;
-
+using Kobold.Extensions.Collision.Systems;
+using Kobold.Extensions.Collision.Components;
+using Kobold.Extensions.Physics.Systems;
+using Kobold.Extensions.Physics.Components;
 namespace Tests.Performance
 {
     /// <summary>

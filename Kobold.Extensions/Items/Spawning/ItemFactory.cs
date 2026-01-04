@@ -4,13 +4,16 @@ using Arch.Core;
 using Arch.Core.Extensions;
 using Kobold.Core;
 using Kobold.Core.Components;
-using Kobold.Core.Components.Gameplay;
+using Kobold.Extensions.Gameplay.Components;
 using Kobold.Core.Services;
 using Kobold.Core.Systems;
 using Kobold.Extensions.Items.Data;
 using Kobold.Extensions.Items.Effects;
 using Kobold.Extensions.Pickups;
+using Kobold.Extensions.Collision.Systems;
+using Kobold.Extensions.Collision.Components;
 
+using Kobold.Extensions.Triggers.Components;
 namespace Kobold.Extensions.Items.Spawning
 {
     /// <summary>

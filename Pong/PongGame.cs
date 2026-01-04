@@ -12,6 +12,12 @@ using Kobold.Core.Abstractions.Input;
 using Kobold.Core.Abstractions.Rendering;
 using SystemUpdateOrder = Kobold.Core.Services.SystemUpdateOrder;
 
+using Kobold.Extensions.Physics.Systems;
+using Kobold.Extensions.Physics.Components;
+using Kobold.Extensions.Collision.Systems;
+using Kobold.Extensions.Collision.Components;
+using Kobold.Extensions.Input.Systems;
+using Kobold.Extensions.Input.Components;
 namespace Pong
 {
     public class PongGame : GameEngineBase

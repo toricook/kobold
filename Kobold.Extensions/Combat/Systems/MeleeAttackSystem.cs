@@ -10,6 +10,8 @@ using Kobold.Core.Systems;
 using Kobold.Extensions.Combat.Components;
 using Kobold.Extensions.Combat.Events;
 
+using Kobold.Extensions.Destruction.Components;
+using Kobold.Extensions.Destruction.Systems;
 namespace Kobold.Extensions.Combat.Systems
 {
     /// <summary>

@@ -1,6 +1,8 @@
 using System.Numerics;
 using Kobold.Core.Components;
 
+using Kobold.Extensions.Physics.Components;
+using Kobold.Extensions.Input.Components;
 namespace Kobold.Extensions.SaveSystem.Serializers
 {
     /// <summary>

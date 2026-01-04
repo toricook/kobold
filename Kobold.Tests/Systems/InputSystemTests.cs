@@ -6,7 +6,9 @@ using NSubstitute;
 using NUnit.Framework;
 using System.Numerics;
 using Tests.Helpers;
-
+using Kobold.Extensions.Physics.Components;
+using Kobold.Extensions.Input.Systems;
+using Kobold.Extensions.Input.Components;
 namespace Tests.Systems
 {
     [TestFixture]

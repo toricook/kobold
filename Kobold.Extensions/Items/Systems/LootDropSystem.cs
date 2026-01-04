@@ -11,6 +11,7 @@ using Kobold.Extensions.Items.Components;
 using Kobold.Extensions.Items.Data;
 using Kobold.Extensions.Items.Registry;
 using Kobold.Extensions.Items.Spawning;
+using Kobold.Extensions.Destruction.Systems;
 
 namespace Kobold.Extensions.Items.Systems
 {

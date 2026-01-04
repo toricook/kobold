@@ -1,11 +1,44 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Kobold.Core.Events
 {
+    /// <summary>
+    /// Central event bus for publish-subscribe messaging between game systems.
+    /// Provides decoupled communication where publishers don't need to know about subscribers.
+    /// </summary>
+    /// <remarks>
+    /// The EventBus enables loose coupling between systems by allowing them to communicate via events
+    /// instead of direct method calls. Systems publish events when something interesting happens,
+    /// and other systems subscribe to receive notifications.
+    ///
+    /// Features:
+    /// - Type-safe event handling with generics
+    /// - Support for event inheritance (handlers for base types receive derived events)
+    /// - Lambda-based subscription for convenience
+    /// - Automatic cleanup of handlers
+    ///
+    /// Example usage:
+    /// <code>
+    /// // Create the event bus (typically done once in your game engine)
+    /// var eventBus = new EventBus();
+    ///
+    /// // Subscribe to events using lambda:
+    /// eventBus.Subscribe&lt;PlayerDefeatedEvent&gt;(evt => {
+    ///     Console.WriteLine($"Player defeated at {evt.Timestamp}");
+    /// });
+    ///
+    /// // Or using a handler class:
+    /// eventBus.Subscribe(new PlayerDefeatedHandler());
+    ///
+    /// // Publish an event:
+    /// eventBus.Publish(new PlayerDefeatedEvent(playerEntity, enemyEntity));
+    /// </code>
+    /// </remarks>
+    /// <seealso cref="IEvent"/>
+    /// <seealso cref="IEventHandler{T}"/>
+    /// <seealso cref="BaseEvent"/>
     public class EventBus
     {
         private readonly Dictionary<Type, List<object>> _handlers = new();

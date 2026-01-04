@@ -31,7 +31,9 @@
       "Bash(docfx:*)",
       "Bash(timeout 3 dotnet run:*)",
       "Bash(timeout 10 dotnet run:*)",
-      "Bash(timeout 10:*)"
+      "Bash(timeout 10:*)",
+      "Bash(grep:*)",
+      "Bash(dotnet add:*)"
     ]
   }
 }
