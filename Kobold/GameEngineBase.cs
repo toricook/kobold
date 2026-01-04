@@ -6,6 +6,7 @@ using Kobold.Core.Abstractions.Rendering;
 using Kobold.Core.Abstractions.Audio;
 using Kobold.Core.Events;
 using Kobold.Core.Services;
+using Kobold.Core.Scenes;
 
 namespace Kobold.Core
 {
@@ -20,6 +21,7 @@ namespace Kobold.Core
         protected AudioManager Audio;
         protected EventBus EventBus;
         protected SystemManager SystemManager;
+        protected SceneManager SceneManager;
 
         private bool _isInitialized = false;
 
@@ -93,6 +95,9 @@ namespace Kobold.Core
             // Create AudioManager with AssetManager and AudioPlayer
             Audio = new AudioManager(Assets, AudioPlayer);
 
+            // Create SceneManager with all required services
+            SceneManager = new SceneManager(World, Assets, Audio, EventBus, SystemManager, Renderer, InputManager);
+
             _isInitialized = true;
         }
 
@@ -101,39 +106,29 @@ namespace Kobold.Core
             if (!_isInitialized)
                 throw new InvalidOperationException("Game engine must be initialized before updating");
 
+            // Update scene manager first (handles transitions and scene updates)
+            SceneManager.Update(deltaTime);
+
             // Determine which system groups should run based on game state
-            var activeGroups = GetActiveSystemGroups();
+            // If a scene is active, use its system group; otherwise fall back to legacy method
+            var activeGroups = SceneManager.HasActiveScene
+                ? SceneManager.GetActiveSystemGroup()
+                : GetActiveSystemGroups();
+
             SystemManager.UpdateAll(deltaTime, activeGroups);
         }
 
         /// <summary>
         /// Determines which system groups should be active based on the current game state.
         /// Override this method to customize which systems run in different game states.
-        /// Default behavior: runs Always systems, plus Playing systems if game is in playing state.
+        /// Default behavior: runs Always and Playing systems.
+        /// This method is used as a fallback when no scene is active.
         /// </summary>
         protected virtual SystemGroup GetActiveSystemGroups()
         {
-            // Start with always-active systems
-            var groups = SystemGroup.Always;
-
-            // Check if there's a game state entity and if game is playing
-            // This provides backward compatibility with the old component-based game state
-            var gameStateQuery = new QueryDescription().WithAll<Components.CoreGameState>();
-            World.Query(in gameStateQuery, (ref Components.CoreGameState gameState) =>
-            {
-                if (gameState.IsPlaying)
-                    groups |= SystemGroup.Playing;
-                else if (gameState.IsPaused)
-                    groups |= SystemGroup.Paused;
-                else if (gameState.IsGameOver)
-                    groups |= SystemGroup.GameOver;
-                else if (gameState.IsInMenu)
-                    groups |= SystemGroup.Menu;
-                else if (gameState.IsLoading)
-                    groups |= SystemGroup.Loading;
-            });
-
-            return groups;
+            // Default: run always-active systems and playing systems
+            // Override this method in derived classes for custom behavior
+            return SystemGroup.Always | SystemGroup.Playing;
         }
 
         public virtual void Render()
@@ -147,6 +142,9 @@ namespace Kobold.Core
 
         public virtual void Shutdown()
         {
+            // Unload any active scenes
+            SceneManager?.UnloadCurrentScene();
+
             // Stop any playing music
             Audio?.StopMusic();
 
