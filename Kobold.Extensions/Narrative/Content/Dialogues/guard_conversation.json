@@ -1,0 +1,121 @@
+{
+  "id": "guard_conversation",
+  "nodes": {
+    "start": {
+      "speaker": "Guard",
+      "text": "Halt! State your business in this town.",
+      "choices": [
+        {
+          "text": "I'm here to help with the monster problem.",
+          "next": "helpful",
+          "condition": {
+            "flag": "quest_accepted",
+            "value": true
+          }
+        },
+        {
+          "text": "Just passing through, no trouble.",
+          "next": "passing"
+        },
+        {
+          "text": "None of your concern!",
+          "next": "hostile",
+          "setFlags": {
+            "guard_angered": true
+          }
+        }
+      ]
+    },
+    "helpful": {
+      "speaker": "Guard",
+      "text": "Ah, you're the adventurer the mayor mentioned! Thank you for coming. You'll find the mayor in the town hall.",
+      "choices": [
+        {
+          "text": "I'll head there right away.",
+          "next": "end",
+          "setFlags": {
+            "met_guard": true,
+            "guard_reputation": 5
+          }
+        },
+        {
+          "text": "What can you tell me about the monsters?",
+          "next": "monster_info"
+        }
+      ]
+    },
+    "passing": {
+      "speaker": "Guard",
+      "text": "Very well. Stay out of trouble and you won't have any problems here.",
+      "choices": [
+        {
+          "text": "Understood.",
+          "next": "end",
+          "setFlags": {
+            "met_guard": true
+          }
+        },
+        {
+          "text": "Actually, I might be able to help. What's going on?",
+          "next": "reconsider"
+        }
+      ]
+    },
+    "hostile": {
+      "speaker": "Guard",
+      "text": "Watch your tone, stranger! One more outburst like that and you'll spend the night in the stocks.",
+      "choices": [
+        {
+          "text": "Sorry, long journey. Didn't mean any offense.",
+          "next": "apologize"
+        },
+        {
+          "text": "Fine, I'll go.",
+          "next": "end"
+        }
+      ]
+    },
+    "monster_info": {
+      "speaker": "Guard",
+      "text": "Strange creatures have been appearing in the old mine. Nothing like we've seen before. Several miners haven't returned.",
+      "choices": [
+        {
+          "text": "I'll look into it. Thanks for the information.",
+          "next": "end",
+          "setFlags": {
+            "met_guard": true,
+            "knows_about_mine": true
+          }
+        }
+      ]
+    },
+    "reconsider": {
+      "speaker": "Guard",
+      "text": "Well, we could use the help. There have been strange happenings lately. If you're serious, talk to the mayor.",
+      "choices": [
+        {
+          "text": "I'll do that.",
+          "next": "end",
+          "setFlags": {
+            "met_guard": true,
+            "guard_suggested_mayor": true
+          }
+        }
+      ]
+    },
+    "apologize": {
+      "speaker": "Guard",
+      "text": "Hmph. I suppose I can understand that. The roads are dangerous these days. Move along.",
+      "choices": [
+        {
+          "text": "Thank you for understanding.",
+          "next": "end",
+          "setFlags": {
+            "met_guard": true,
+            "apologized_to_guard": true
+          }
+        }
+      ]
+    }
+  }
+}

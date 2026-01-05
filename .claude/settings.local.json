@@ -33,7 +33,8 @@
       "Bash(timeout 10 dotnet run:*)",
       "Bash(timeout 10:*)",
       "Bash(grep:*)",
-      "Bash(dotnet add:*)"
+      "Bash(dotnet add:*)",
+      "Bash(mv:*)"
     ]
   }
 }

@@ -258,7 +258,7 @@ namespace Kobold.Extensions.Progression
                     return;
 
                 // Don't destroy game state entities
-                if (entity.Has<CoreGameState>() || entity.Has<ProgressionState>())
+                if (entity.Has<ProgressionState>())
                     return;
 
                 entitiesToDestroy.Add(entity);

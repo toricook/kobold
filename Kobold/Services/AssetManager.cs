@@ -2,6 +2,7 @@ using Kobold.Core.Abstractions.Assets;
 using Kobold.Core.Abstractions.Rendering;
 using Kobold.Core.Abstractions.Audio;
 using Kobold.Core.Assets;
+using Kobold.Core.Narrative;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,6 +20,7 @@ namespace Kobold.Core.Services
         private readonly Dictionary<string, SpriteSheet> _spriteSheetCache;
         private readonly Dictionary<string, ISoundEffect> _soundEffectCache;
         private readonly Dictionary<string, IMusic> _musicCache;
+        private readonly Dictionary<string, DialogueData> _dialogueCache;
         private readonly string _contentRoot;
 
         public AssetManager(IContentLoader contentLoader, string contentRoot = "Content")
@@ -29,6 +31,7 @@ namespace Kobold.Core.Services
             _spriteSheetCache = new Dictionary<string, SpriteSheet>();
             _soundEffectCache = new Dictionary<string, ISoundEffect>();
             _musicCache = new Dictionary<string, IMusic>();
+            _dialogueCache = new Dictionary<string, DialogueData>();
         }
 
         /// <summary>
@@ -383,7 +386,7 @@ namespace Kobold.Core.Services
         }
 
         /// <summary>
-        /// Unload all assets (textures, sprite sheets, and audio)
+        /// Unload all assets (textures, sprite sheets, audio, and dialogues)
         /// </summary>
         public void UnloadAll()
         {
@@ -391,6 +394,7 @@ namespace Kobold.Core.Services
             UnloadAllSpriteSheets();
             UnloadAllSoundEffects();
             UnloadAllMusic();
+            UnloadAllDialogues();
         }
 
         /// <summary>
@@ -415,6 +419,117 @@ namespace Kobold.Core.Services
         /// Get count of currently cached music tracks
         /// </summary>
         public int CachedMusicCount => _musicCache.Count;
+
+        // ===== DIALOGUE METHODS =====
+
+        /// <summary>
+        /// Load a dialogue conversation from a JSON file, or return cached version if already loaded.
+        /// </summary>
+        /// <param name="path">Path to the dialogue JSON file</param>
+        /// <returns>The loaded dialogue data</returns>
+        public DialogueData LoadDialogue(string path)
+        {
+            // Check if already cached
+            if (_dialogueCache.TryGetValue(path, out var cachedDialogue))
+                return cachedDialogue;
+
+            // Load from file
+            string fullPath = path;
+            if (!Path.IsPathRooted(path))
+            {
+                fullPath = Path.Combine(_contentRoot, path);
+            }
+
+            if (!Path.HasExtension(fullPath))
+            {
+                fullPath += ".json";
+            }
+
+            if (!File.Exists(fullPath))
+            {
+                throw new FileNotFoundException($"Dialogue file not found: {fullPath}");
+            }
+
+            var json = File.ReadAllText(fullPath);
+
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
+
+            var dialogue = JsonSerializer.Deserialize<DialogueData>(json, options);
+
+            if (dialogue == null)
+            {
+                throw new InvalidOperationException($"Failed to deserialize dialogue from: {fullPath}");
+            }
+
+            // Cache the dialogue
+            _dialogueCache[path] = dialogue;
+            return dialogue;
+        }
+
+        /// <summary>
+        /// Get a previously loaded dialogue from cache.
+        /// </summary>
+        /// <param name="path">Path to the dialogue</param>
+        /// <returns>The cached dialogue data, or null if not loaded</returns>
+        public DialogueData? GetDialogue(string path)
+        {
+            _dialogueCache.TryGetValue(path, out var dialogue);
+            return dialogue;
+        }
+
+        /// <summary>
+        /// Check if a dialogue is already loaded in cache.
+        /// </summary>
+        /// <param name="path">Path to check</param>
+        /// <returns>True if the dialogue is cached</returns>
+        public bool IsDialogueLoaded(string path)
+        {
+            return _dialogueCache.ContainsKey(path);
+        }
+
+        /// <summary>
+        /// Preload multiple dialogues at once.
+        /// </summary>
+        /// <param name="paths">Array of dialogue paths to preload</param>
+        public void PreloadDialogues(params string[] paths)
+        {
+            foreach (var path in paths)
+                LoadDialogue(path);
+        }
+
+        /// <summary>
+        /// Unload a specific dialogue from cache.
+        /// </summary>
+        /// <param name="path">Path to the dialogue to unload</param>
+        /// <returns>True if the dialogue was unloaded, false if it wasn't cached</returns>
+        public bool UnloadDialogue(string path)
+        {
+            return _dialogueCache.Remove(path);
+        }
+
+        /// <summary>
+        /// Unload all cached dialogues.
+        /// </summary>
+        public void UnloadAllDialogues()
+        {
+            _dialogueCache.Clear();
+        }
+
+        /// <summary>
+        /// Get count of currently cached dialogues.
+        /// </summary>
+        public int CachedDialogueCount => _dialogueCache.Count;
+
+        /// <summary>
+        /// Get all currently cached dialogue paths.
+        /// </summary>
+        public IEnumerable<string> GetCachedDialoguePaths()
+        {
+            return _dialogueCache.Keys;
+        }
 
         private string GetConfigPath(string assetPath)
         {

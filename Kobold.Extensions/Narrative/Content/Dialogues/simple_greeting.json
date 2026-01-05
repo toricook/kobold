@@ -1,0 +1,39 @@
+{
+  "id": "simple_greeting",
+  "nodes": {
+    "start": {
+      "speaker": "Villager",
+      "text": "Hello there, traveler! Welcome to our village.",
+      "choices": [
+        {
+          "text": "Thank you! It's nice to be here.",
+          "next": "friendly"
+        },
+        {
+          "text": "I'm just looking for supplies.",
+          "next": "business"
+        }
+      ]
+    },
+    "friendly": {
+      "speaker": "Villager",
+      "text": "We don't get many visitors these days. Make yourself at home!",
+      "choices": [
+        {
+          "text": "I appreciate that.",
+          "next": "end"
+        }
+      ]
+    },
+    "business": {
+      "speaker": "Villager",
+      "text": "The general store is just down the street. Old Marcus has everything you might need.",
+      "choices": [
+        {
+          "text": "Thanks for the directions.",
+          "next": "end"
+        }
+      ]
+    }
+  }
+}
