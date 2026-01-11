@@ -16,9 +16,10 @@ namespace Kobold.Core.Components
         public Color Tint;
         public int Layer { get; }
         public Vector2 Pivot; // Pivot point for rotation (0,0 = top-left, 0.5,0.5 = center)
+        public bool YSort; // Enable Y-sorting for top-down depth rendering
 
         public SpriteRenderer(ITexture texture, Rectangle sourceRect, Vector2 scale, float rotation = 0f,
-            Color? tint = null, int layer = RenderLayers.GameObjects, Vector2? pivot = null)
+            Color? tint = null, int layer = RenderLayers.GameObjects, Vector2? pivot = null, bool ySort = false)
         {
             Texture = texture;
             SourceRect = sourceRect;
@@ -27,25 +28,26 @@ namespace Kobold.Core.Components
             Tint = tint ?? Color.White;
             Layer = layer;
             Pivot = pivot ?? new Vector2(0.5f, 0.5f);
+            YSort = ySort;
         }
 
         /// <summary>
         /// Create a sprite renderer for a full texture (not from a sprite sheet)
         /// </summary>
         public static SpriteRenderer FullTexture(ITexture texture, Vector2 scale, float rotation = 0f,
-            Color? tint = null, int layer = RenderLayers.GameObjects)
+            Color? tint = null, int layer = RenderLayers.GameObjects, bool ySort = false)
         {
             var sourceRect = new Rectangle(0, 0, texture.Width, texture.Height);
-            return new SpriteRenderer(texture, sourceRect, scale, rotation, tint, layer);
+            return new SpriteRenderer(texture, sourceRect, scale, rotation, tint, layer, ySort: ySort);
         }
 
         /// <summary>
         /// Create a sprite renderer for a single frame from a sprite sheet
         /// </summary>
         public static SpriteRenderer FromSpriteSheet(ITexture texture, Rectangle sourceRect, Vector2 scale,
-            float rotation = 0f, Color? tint = null, int layer = RenderLayers.GameObjects)
+            float rotation = 0f, Color? tint = null, int layer = RenderLayers.GameObjects, bool ySort = false)
         {
-            return new SpriteRenderer(texture, sourceRect, scale, rotation, tint, layer);
+            return new SpriteRenderer(texture, sourceRect, scale, rotation, tint, layer, ySort: ySort);
         }
 
         // Convenience constructors for common layers

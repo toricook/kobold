@@ -31,29 +31,62 @@ namespace Kobold.Extensions.Collision.Systems
             _config = config ?? new CollisionConfig();
         }
 
-        private void ApplyCollisionResponse(Entity entity1, Entity entity2, Vector2 collisionNormal)
+        private void ApplyCollisionResponse(Entity entity1, Entity entity2, Vector2 collisionNormal, float penetrationDepth)
         {
-            // Only apply response if both entities have velocity and physics
-            if (!_world.Has<Velocity>(entity1) || !_world.Has<Velocity>(entity2))
-                return;
-
-            ref var velocity1 = ref _world.Get<Velocity>(entity1);
-            ref var velocity2 = ref _world.Get<Velocity>(entity2);
-
-            // Get masses (default to 1 if no physics component)
-            float mass1 = _world.Has<PhysicsComponent>(entity1) ? _world.Get<PhysicsComponent>(entity1).Mass : 1f;
-            float mass2 = _world.Has<PhysicsComponent>(entity2) ? _world.Get<PhysicsComponent>(entity2).Mass : 1f;
-
-            // Skip collision response for static objects
+            // Get physics properties
             bool isStatic1 = _world.Has<PhysicsComponent>(entity1) && _world.Get<PhysicsComponent>(entity1).IsStatic;
             bool isStatic2 = _world.Has<PhysicsComponent>(entity2) && _world.Get<PhysicsComponent>(entity2).IsStatic;
 
             if (isStatic1 && isStatic2)
                 return;
 
+            // Get masses (default to 1 if no physics component)
+            float mass1 = _world.Has<PhysicsComponent>(entity1) ? _world.Get<PhysicsComponent>(entity1).Mass : 1f;
+            float mass2 = _world.Has<PhysicsComponent>(entity2) ? _world.Get<PhysicsComponent>(entity2).Mass : 1f;
+
+            // POSITION CORRECTION: Separate the entities to resolve overlap
+            if (_world.Has<Transform>(entity1) && _world.Has<Transform>(entity2) && penetrationDepth > 0)
+            {
+                ref var transform1 = ref _world.Get<Transform>(entity1);
+                ref var transform2 = ref _world.Get<Transform>(entity2);
+
+                // Calculate separation based on mass ratio
+                float totalMass = mass1 + mass2;
+                float percent = 0.8f; // Penetration percentage to correct (80% prevents jitter)
+                float slop = 0.01f; // Small allowable penetration (prevents jitter from tiny overlaps)
+
+                float correctionMagnitude = Math.Max(penetrationDepth - slop, 0.0f) * percent;
+                Vector2 correction = correctionMagnitude * collisionNormal;
+
+                // Apply position correction based on mass
+                if (!isStatic1 && !isStatic2)
+                {
+                    // Both dynamic - split correction based on mass ratio
+                    transform1.Position -= correction * (mass2 / totalMass);
+                    transform2.Position += correction * (mass1 / totalMass);
+                }
+                else if (!isStatic1)
+                {
+                    // Only entity1 is dynamic
+                    transform1.Position -= correction;
+                }
+                else if (!isStatic2)
+                {
+                    // Only entity2 is dynamic
+                    transform2.Position += correction;
+                }
+            }
+
+            // VELOCITY RESPONSE: Apply impulses if both have velocity
+            if (!_world.Has<Velocity>(entity1) || !_world.Has<Velocity>(entity2))
+                return;
+
+            ref var velocity1 = ref _world.Get<Velocity>(entity1);
+            ref var velocity2 = ref _world.Get<Velocity>(entity2);
+
             // Get restitution (bounciness)
-            float restitution1 = _world.Has<PhysicsComponent>(entity1) ? _world.Get<PhysicsComponent>(entity1).Restitution : 0.5f;
-            float restitution2 = _world.Has<PhysicsComponent>(entity2) ? _world.Get<PhysicsComponent>(entity2).Restitution : 0.5f;
+            float restitution1 = _world.Has<PhysicsComponent>(entity1) ? _world.Get<PhysicsComponent>(entity1).Restitution : 0.0f;
+            float restitution2 = _world.Has<PhysicsComponent>(entity2) ? _world.Get<PhysicsComponent>(entity2).Restitution : 0.0f;
             float combinedRestitution = (restitution1 + restitution2) / 2f;
 
             // Calculate relative velocity
@@ -117,7 +150,7 @@ namespace Kobold.Extensions.Collision.Systems
                         continue;
 
                     // Check for box-box collision
-                    if (IsBoxBoxCollision(collider1, collider2, out var collisionPoint, out var collisionNormal))
+                    if (IsBoxBoxCollision(collider1, collider2, out var collisionPoint, out var collisionNormal, out var penetrationDepth))
                     {
                         // Double-check entities are still alive before publishing event
                         if (!_world.IsAlive(collider1.Entity) || !_world.IsAlive(collider2.Entity))
@@ -140,7 +173,7 @@ namespace Kobold.Extensions.Collision.Systems
                         // Apply collision response if enabled
                         if (_config.EnableCollisionResponse)
                         {
-                            ApplyCollisionResponse(collider1.Entity, collider2.Entity, collisionNormal);
+                            ApplyCollisionResponse(collider1.Entity, collider2.Entity, collisionNormal, penetrationDepth);
                         }
                     }
                 }
@@ -172,10 +205,11 @@ namespace Kobold.Extensions.Collision.Systems
             return _config.CollisionMatrix.CanCollide(layer1, layer2);
         }
 
-        private bool IsBoxBoxCollision(ColliderInfo box1, ColliderInfo box2, out Vector2 collisionPoint, out Vector2 collisionNormal)
+        private bool IsBoxBoxCollision(ColliderInfo box1, ColliderInfo box2, out Vector2 collisionPoint, out Vector2 collisionNormal, out float penetrationDepth)
         {
             collisionPoint = Vector2.Zero;
             collisionNormal = Vector2.Zero;
+            penetrationDepth = 0f;
 
             bool collision = box1.Position.X < box2.Position.X + box2.Size.X &&
                            box1.Position.X + box1.Size.X > box2.Position.X &&
@@ -184,26 +218,34 @@ namespace Kobold.Extensions.Collision.Systems
 
             if (collision)
             {
-                // Calculate collision point (center of overlap)
+                // Calculate overlap amounts
                 float overlapLeft = Math.Max(box1.Position.X, box2.Position.X);
                 float overlapRight = Math.Min(box1.Position.X + box1.Size.X, box2.Position.X + box2.Size.X);
                 float overlapTop = Math.Max(box1.Position.Y, box2.Position.Y);
                 float overlapBottom = Math.Min(box1.Position.Y + box1.Size.Y, box2.Position.Y + box2.Size.Y);
 
+                float overlapX = overlapRight - overlapLeft;
+                float overlapY = overlapBottom - overlapTop;
+
                 collisionPoint = new Vector2((overlapLeft + overlapRight) / 2, (overlapTop + overlapBottom) / 2);
 
-                // Calculate collision normal (from box1 to box2)
+                // Calculate collision normal based on minimum penetration axis
                 Vector2 center1 = box1.Position + box1.Size / 2;
                 Vector2 center2 = box2.Position + box2.Size / 2;
                 Vector2 direction = center2 - center1;
 
-                if (direction.LengthSquared() > 0)
+                // Use the axis with minimum overlap as the collision normal
+                if (overlapX < overlapY)
                 {
-                    collisionNormal = Vector2.Normalize(direction);
+                    // Horizontal collision
+                    penetrationDepth = overlapX;
+                    collisionNormal = direction.X > 0 ? Vector2.UnitX : -Vector2.UnitX;
                 }
                 else
                 {
-                    collisionNormal = Vector2.UnitX; // Default normal
+                    // Vertical collision
+                    penetrationDepth = overlapY;
+                    collisionNormal = direction.Y > 0 ? Vector2.UnitY : -Vector2.UnitY;
                 }
             }
 

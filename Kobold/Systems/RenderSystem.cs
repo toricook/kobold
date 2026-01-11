@@ -15,11 +15,25 @@ namespace Kobold.Core.Systems
     {
         private readonly IRenderer _renderer;
         private readonly World _world;
+        private readonly List<IRenderableCollector> _customCollectors = new();
 
         public RenderSystem(IRenderer renderer, World world)
         {
             _renderer = renderer;
             _world = world;
+        }
+
+        /// <summary>
+        /// Register a custom renderable collector that can contribute renderables to the unified render pipeline.
+        /// This allows extensions to add new renderable types (e.g., tilemaps, particles) that participate in
+        /// layer-based and Y-sorted rendering alongside built-in renderables.
+        /// </summary>
+        public void RegisterCollector(IRenderableCollector collector)
+        {
+            if (collector == null)
+                throw new ArgumentNullException(nameof(collector));
+
+            _customCollectors.Add(collector);
         }
 
         public void Render()
@@ -29,92 +43,144 @@ namespace Kobold.Core.Systems
             // Get camera (if exists)
             Camera? camera = GetCamera();
 
-            // Collect all renderable entities with their layers
-            var renderableEntities = new List<RenderableEntity>();
+            // Collect all renderables (built-in + custom collectors)
+            var renderables = new List<RenderableItem>();
 
-            // Collect rectangles - layer is built into the component
-            var rectangleQuery = new QueryDescription().WithAll<Transform, RectangleRenderer>();
-            _world.Query(in rectangleQuery, (Entity entity, ref Transform transform, ref RectangleRenderer rectangleRenderer) =>
+            // Collect built-in renderables
+            CollectRectangles(camera, renderables);
+            CollectText(camera, renderables);
+            CollectSprites(camera, renderables);
+
+            // Allow custom collectors to contribute
+            foreach (var collector in _customCollectors)
             {
-                renderableEntities.Add(new RenderableEntity
-                {
-                    Entity = entity,
-                    Layer = rectangleRenderer.Layer, // Layer from component
-                    RenderType = RenderType.Rectangle,
-                    Transform = transform,
-                    RectangleRenderer = rectangleRenderer
-                });
+                collector.CollectRenderables(_world, camera, renderables);
+            }
+
+            // Sort by layer first, then by Y position if Y-sorting is enabled
+            renderables.Sort((a, b) =>
+            {
+                // Primary sort: layer
+                int layerCompare = a.Layer.CompareTo(b.Layer);
+                if (layerCompare != 0)
+                    return layerCompare;
+
+                // Secondary sort: Y position (only matters if both have YSort enabled)
+                if (a.YSort && b.YSort)
+                    return a.YSortValue.CompareTo(b.YSortValue);
+
+                // If only one has YSort, non-YSort renders first (behind)
+                if (a.YSort && !b.YSort)
+                    return 1;
+                if (!a.YSort && b.YSort)
+                    return -1;
+
+                return 0;
             });
 
-            // Collect text - layer is built into the component
-            var textQuery = new QueryDescription().WithAll<Transform, TextRenderer>();
-            _world.Query(in textQuery, (Entity entity, ref Transform transform, ref TextRenderer textRenderer) =>
+            // Render in sorted order
+            foreach (var renderable in renderables)
             {
-                renderableEntities.Add(new RenderableEntity
-                {
-                    Entity = entity,
-                    Layer = textRenderer.Layer, // Layer from component
-                    RenderType = RenderType.Text,
-                    Transform = transform,
-                    TextRenderer = textRenderer
-                });
-            });
+                renderable.RenderAction?.Invoke();
+            }
+        }
 
-            // Collect sprites - layer is built into the component
-            var spriteQuery = new QueryDescription().WithAll<Transform, SpriteRenderer>();
-            _world.Query(in spriteQuery, (Entity entity, ref Transform transform, ref SpriteRenderer spriteRenderer) =>
+        private void CollectRectangles(Camera? camera, List<RenderableItem> renderables)
+        {
+            var query = new QueryDescription().WithAll<Transform, RectangleRenderer>();
+            _world.Query(in query, (Entity entity, ref Transform transform, ref RectangleRenderer rectangleRenderer) =>
             {
-                renderableEntities.Add(new RenderableEntity
-                {
-                    Entity = entity,
-                    Layer = spriteRenderer.Layer, // Layer from component
-                    RenderType = RenderType.Sprite,
-                    Transform = transform,
-                    SpriteRenderer = spriteRenderer
-                });
-            });
+                // Calculate Y position for Y-sorting (bottom of rectangle)
+                float ySortValue = rectangleRenderer.YSort
+                    ? transform.Position.Y + rectangleRenderer.Size.Y
+                    : 0f;
 
-            // Sort by layer (lower layers render first, appear behind)
-            renderableEntities.Sort((a, b) => a.Layer.CompareTo(b.Layer));
-
-            // Render in layer order
-            foreach (var renderable in renderableEntities)
-            {
                 // Convert world position to screen position
-                // UI layer (100+) should render in screen space, not affected by camera
-                bool isUILayer = renderable.Layer >= RenderLayers.UI;
+                bool isUILayer = rectangleRenderer.Layer >= RenderLayers.UI;
                 Vector2 screenPosition = (camera.HasValue && !isUILayer)
-                    ? camera.Value.WorldToScreen(renderable.Transform.Position)
-                    : renderable.Transform.Position;
+                    ? camera.Value.WorldToScreen(transform.Position)
+                    : transform.Position;
 
-                // Round to integer pixel coordinates to prevent sub-pixel rendering artifacts
+                // Round to integer pixel coordinates
                 screenPosition = new Vector2(MathF.Round(screenPosition.X), MathF.Round(screenPosition.Y));
 
-                switch (renderable.RenderType)
+                // Copy values for lambda capture
+                var size = rectangleRenderer.Size;
+                var color = rectangleRenderer.Color;
+
+                renderables.Add(new RenderableItem
                 {
-                    case RenderType.Rectangle:
-                        _renderer.DrawRectangle(screenPosition,
-                            renderable.RectangleRenderer.Size,
-                            renderable.RectangleRenderer.Color);
-                        break;
+                    Layer = rectangleRenderer.Layer,
+                    YSort = rectangleRenderer.YSort,
+                    YSortValue = ySortValue,
+                    RenderAction = () => _renderer.DrawRectangle(screenPosition, size, color)
+                });
+            });
+        }
 
-                    case RenderType.Text:
-                        _renderer.DrawText(renderable.TextRenderer.Text,
-                            screenPosition,
-                            renderable.TextRenderer.Color,
-                            renderable.TextRenderer.FontSize);
-                        break;
+        private void CollectText(Camera? camera, List<RenderableItem> renderables)
+        {
+            var query = new QueryDescription().WithAll<Transform, TextRenderer>();
+            _world.Query(in query, (Entity entity, ref Transform transform, ref TextRenderer textRenderer) =>
+            {
+                // Convert world position to screen position
+                bool isUILayer = textRenderer.Layer >= RenderLayers.UI;
+                Vector2 screenPosition = (camera.HasValue && !isUILayer)
+                    ? camera.Value.WorldToScreen(transform.Position)
+                    : transform.Position;
 
-                    case RenderType.Sprite:
-                        _renderer.DrawSprite(renderable.SpriteRenderer.Texture,
-                            screenPosition,
-                            renderable.SpriteRenderer.SourceRect,
-                            renderable.SpriteRenderer.Scale,
-                            renderable.SpriteRenderer.Rotation,
-                            renderable.SpriteRenderer.Tint);
-                        break;
-                }
-            }
+                // Round to integer pixel coordinates
+                screenPosition = new Vector2(MathF.Round(screenPosition.X), MathF.Round(screenPosition.Y));
+
+                // Copy values for lambda capture
+                var text = textRenderer.Text;
+                var color = textRenderer.Color;
+                var fontSize = textRenderer.FontSize;
+
+                renderables.Add(new RenderableItem
+                {
+                    Layer = textRenderer.Layer,
+                    YSort = false, // Text typically doesn't use Y-sorting
+                    YSortValue = 0f,
+                    RenderAction = () => _renderer.DrawText(text, screenPosition, color, fontSize)
+                });
+            });
+        }
+
+        private void CollectSprites(Camera? camera, List<RenderableItem> renderables)
+        {
+            var query = new QueryDescription().WithAll<Transform, SpriteRenderer>();
+            _world.Query(in query, (Entity entity, ref Transform transform, ref SpriteRenderer spriteRenderer) =>
+            {
+                // Calculate Y position for Y-sorting (bottom of sprite)
+                float ySortValue = spriteRenderer.YSort
+                    ? transform.Position.Y + spriteRenderer.SourceRect.Height * spriteRenderer.Scale.Y
+                    : 0f;
+
+                // Convert world position to screen position
+                bool isUILayer = spriteRenderer.Layer >= RenderLayers.UI;
+                Vector2 screenPosition = (camera.HasValue && !isUILayer)
+                    ? camera.Value.WorldToScreen(transform.Position)
+                    : transform.Position;
+
+                // Round to integer pixel coordinates
+                screenPosition = new Vector2(MathF.Round(screenPosition.X), MathF.Round(screenPosition.Y));
+
+                // Copy values for lambda capture
+                var texture = spriteRenderer.Texture;
+                var sourceRect = spriteRenderer.SourceRect;
+                var scale = spriteRenderer.Scale;
+                var rotation = spriteRenderer.Rotation;
+                var tint = spriteRenderer.Tint;
+
+                renderables.Add(new RenderableItem
+                {
+                    Layer = spriteRenderer.Layer,
+                    YSort = spriteRenderer.YSort,
+                    YSortValue = ySortValue,
+                    RenderAction = () => _renderer.DrawSprite(texture, screenPosition, sourceRect, scale, rotation, tint)
+                });
+            });
         }
 
         private Camera? GetCamera()
@@ -128,24 +194,6 @@ namespace Kobold.Core.Systems
             });
 
             return result;
-        }
-
-        private struct RenderableEntity
-        {
-            public Entity Entity;
-            public int Layer;
-            public RenderType RenderType;
-            public Transform Transform;
-            public RectangleRenderer RectangleRenderer;
-            public TextRenderer TextRenderer;
-            public SpriteRenderer SpriteRenderer;
-        }
-
-        private enum RenderType
-        {
-            Rectangle,
-            Text,
-            Sprite
         }
     }
 }

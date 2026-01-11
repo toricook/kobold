@@ -34,7 +34,9 @@
       "Bash(timeout 10:*)",
       "Bash(grep:*)",
       "Bash(dotnet add:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "Bash(dotnet run:*)",
+      "Bash(git checkout:*)"
     ]
   }
 }

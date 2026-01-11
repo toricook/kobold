@@ -4,10 +4,6 @@
     <ProjectReference Include="..\Kobold\Kobold.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="DotTiled" Version="0.2.0" />
-  </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

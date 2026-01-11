@@ -19,20 +19,22 @@ namespace Kobold.Core.Components
         public Vector2 Size;
         public Color Color;
         public int Layer { get; }
+        public bool YSort; // Enable Y-sorting for top-down depth rendering
 
-        public RectangleRenderer(Vector2 size, Color color, int layer = RenderLayers.GameObjects)
+        public RectangleRenderer(Vector2 size, Color color, int layer = RenderLayers.GameObjects, bool ySort = false)
         {
             Size = size;
             Color = color;
             Layer = layer;
+            YSort = ySort;
         }
 
         // Convenience constructors for common layers
         public static RectangleRenderer Background(Vector2 size, Color color)
             => new RectangleRenderer(size, color, RenderLayers.Background);
 
-        public static RectangleRenderer GameObject(Vector2 size, Color color)
-            => new RectangleRenderer(size, color, RenderLayers.GameObjects);
+        public static RectangleRenderer GameObject(Vector2 size, Color color, bool ySort = false)
+            => new RectangleRenderer(size, color, RenderLayers.GameObjects, ySort);
 
         public static RectangleRenderer UI(Vector2 size, Color color)
             => new RectangleRenderer(size, color, RenderLayers.UI);

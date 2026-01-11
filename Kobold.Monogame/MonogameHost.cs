@@ -19,12 +19,12 @@ namespace Kobold.Monogame
 
         private Color _backgroundColor;
 
-        public MonoGameHost(IGameEngine gameEngine, GameConfig? config = null)
+        public MonoGameHost(IGameEngine gameEngine, GameConfig? config = null, string contentRoot = "Content")
         {
-            var gameConfig = config ?? new GameConfig();   
+            var gameConfig = config ?? new GameConfig();
 
             _graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+            Content.RootDirectory = contentRoot;
             IsMouseVisible = true;
             _gameEngine = gameEngine;
 

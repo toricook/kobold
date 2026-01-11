@@ -16,9 +16,24 @@ namespace Kobold.Extensions.Tilemaps.Loaders
         public TileMap TileMap { get; set; }
 
         /// <summary>
-        /// Tileset with tile properties and configuration
+        /// Tileset with tile properties and configuration (primary tileset for backward compatibility)
         /// </summary>
         public TileSet TileSet { get; set; }
+
+        /// <summary>
+        /// Information about all tilesets used in the map
+        /// </summary>
+        public List<TilesetMetadata> Tilesets { get; set; } = new();
+
+        /// <summary>
+        /// Loaded tilesets with textures and sprite sheets (populated after calling LoadTilesetTextures)
+        /// </summary>
+        public List<TilesetInfo> LoadedTilesets { get; set; } = new();
+
+        /// <summary>
+        /// Metadata about tile layers (names, visibility, y_sort, etc.)
+        /// </summary>
+        public List<TileLayerMetadata> TileLayers { get; set; } = new();
 
         /// <summary>
         /// List of object layers (spawn points, triggers, etc.)
@@ -53,6 +68,33 @@ namespace Kobold.Extensions.Tilemaps.Loaders
     }
 
     /// <summary>
+    /// Metadata about a tileset before textures are loaded
+    /// </summary>
+    public class TilesetMetadata
+    {
+        public int FirstGid { get; set; }
+        public string Name { get; set; } = "";
+        public int TileWidth { get; set; }
+        public int TileHeight { get; set; }
+        public int Spacing { get; set; }
+        public int Margin { get; set; }
+        public string ImageSource { get; set; } = "";
+    }
+
+    /// <summary>
+    /// Metadata about a tile layer
+    /// </summary>
+    public class TileLayerMetadata
+    {
+        public int LayerIndex { get; set; }
+        public string Name { get; set; } = "";
+        public bool Visible { get; set; } = true;
+        public float Opacity { get; set; } = 1.0f;
+        public bool YSort { get; set; } = false;
+        public Dictionary<string, object> Properties { get; set; } = new();
+    }
+
+    /// <summary>
     /// Represents an object layer from a tilemap file.
     /// Object layers contain entities like spawn points, triggers, etc.
     /// </summary>
@@ -72,6 +114,11 @@ namespace Kobold.Extensions.Tilemaps.Loaders
         /// Layer opacity (0-1)
         /// </summary>
         public float Opacity { get; set; } = 1.0f;
+
+        /// <summary>
+        /// Enable Y-sorting for top-down depth rendering
+        /// </summary>
+        public bool YSort { get; set; } = false;
 
         /// <summary>
         /// Objects in this layer
@@ -134,6 +181,11 @@ namespace Kobold.Extensions.Tilemaps.Loaders
         /// Whether the object is visible
         /// </summary>
         public bool Visible { get; set; } = true;
+
+        /// <summary>
+        /// Enable Y-sorting for top-down depth rendering (overrides layer setting)
+        /// </summary>
+        public bool? YSort { get; set; } = null;
 
         /// <summary>
         /// Shape of the object
