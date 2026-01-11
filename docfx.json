@@ -7,8 +7,7 @@
             "Kobold/**/*.csproj",
             "Kobold.Monogame/**/*.csproj",
             "Kobold.Extensions/**/*.csproj",
-            "Kobold.SpriteSheetEditor/**/*.csproj",
-            "Kobold.Experiments/**/*.csproj"
+            "Kobold.Procedural/**/*.csproj"
           ],
           "exclude": [
             "**/bin/**",
@@ -31,17 +30,16 @@
       },
       {
         "files": [
-          "Kobold.Documentation/docs/**.md",
-          "Kobold.Documentation/docs/**/toc.yml",
+          "index.md",
           "toc.yml",
-          "index.md"
+          "guides/**.md"
         ]
       }
     ],
     "resource": [
       {
         "files": [
-          "Kobold.Documentation/docs/images/**"
+          "images/**"
         ]
       }
     ],

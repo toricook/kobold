@@ -1,3 +1,7 @@
+---
+title: Extensions Philosophy
+---
+
 # Kobold.Extensions
 
 Optional game features that many games use, but not all.
@@ -5,6 +9,7 @@ Optional game features that many games use, but not all.
 ## Philosophy
 
 Kobold.Extensions provides specialized systems and components that are common in games but not universally required:
+
 - ✅ **Include:** Features many games use but aren't strictly necessary
 - ✅ **Include:** Specialized systems that would bloat Kobold.Core
 - ❌ **Exclude:** Game-specific logic (that stays in your game project)
@@ -12,22 +17,28 @@ Kobold.Extensions provides specialized systems and components that are common in
 ## What's Included
 
 ### 🗺️ Tilemaps
+
 Grid-based level design and rendering system.
+
 - Multi-layer tilemaps
 - Tileset management with tile properties
 - Collision detection (solid, platform, trigger)
 - Animated tiles
-- **[Tiled Map Editor Integration Guide](Tilemaps/Loaders/Tiled/README.md)**
+- **[Tiled Map Editor Integration Guide](tiled-integration.md)**
 
 ### 💾 Save/Load System
+
 Flexible save system with automatic serialization.
+
 - Automatic serialization of entities and components
 - Multiple save slots with metadata
 - Auto-save functionality
 - GZip compression
 
 ### 🎨 UI Framework
+
 Wireframe-first UI system for quick prototyping.
+
 - Interactive buttons with hover/pressed states
 - Screen anchoring
 - Event-driven interactions
@@ -49,10 +60,9 @@ dotnet add package Kobold.Extensions
 ```
 
 Or reference in `.csproj`:
+
 ```xml
 <ItemGroup>
   <ProjectReference Include="..\Kobold.Extensions\Kobold.Extensions.csproj" />
 </ItemGroup>
 ```
-
-For detailed API documentation and usage examples, see the [generated docs](https://toricook.github.io/Kobold/).
