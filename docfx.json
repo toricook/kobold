@@ -6,8 +6,7 @@
           "files": [
             "Kobold/**/*.csproj",
             "Kobold.Monogame/**/*.csproj",
-            "Kobold.Extensions/**/*.csproj",
-            "Kobold.Procedural/**/*.csproj"
+            "Kobold.Extensions/**/*.csproj"
           ],
           "exclude": [
             "**/bin/**",
