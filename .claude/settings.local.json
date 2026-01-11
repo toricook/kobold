@@ -36,7 +36,8 @@
       "Bash(dotnet add:*)",
       "Bash(mv:*)",
       "Bash(dotnet run:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(gh workflow:*)"
     ]
   }
 }
