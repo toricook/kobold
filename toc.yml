@@ -6,6 +6,8 @@
       href: guides/architecture.md
     - name: Extensions Overview
       href: guides/extensions.md
+    - name: Animation System
+      href: guides/animation.md
     - name: Tiled Map Integration
       href: guides/tiled-integration.md
 - name: API Reference

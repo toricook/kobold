@@ -66,8 +66,10 @@ public class ExampleClass { }
 **Policy:**
 - XML comments are **required** for all public APIs in Kobold framework projects
 - XML comments provide auto-generated API documentation via DocFX
-- **DO NOT** create separate markdown documentation files in `docs/` unless explicitly requested by the user
-- XML comments are the primary documentation mechanism for code-level documentation
+- **DO NOT** create documentation files (markdown, README, summary docs, etc.) unless explicitly requested by the user
+- **DO NOT** proactively create files in `docs/` or documentation files anywhere in the project
+- XML comments are the primary and sufficient documentation mechanism for code-level documentation
+- Only create additional documentation when the user explicitly asks for it
 
 ## General Review Principles
 
