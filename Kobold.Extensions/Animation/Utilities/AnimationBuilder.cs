@@ -220,7 +220,7 @@ namespace Kobold.Extensions.Animation.Utilities
             AddAnimationFromRow($"{namePrefix}right", rightRow, startCol, framesPerDirection, fps);
             return this;
         }
-        is 
+        
         /// <summary>
         /// Helper method to add eight-way directional walking animations.
         /// Assumes each direction is on a separate row.

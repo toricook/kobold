@@ -81,6 +81,12 @@ namespace Kobold.Extensions.Input.Systems
                         velocity.Value += new Vector2(playerControlled.Speed, 0);
                     }
                 }
+
+                // Normalize diagonal movement to prevent faster diagonal speed
+                if (velocity.Value.LengthSquared() > playerControlled.Speed * playerControlled.Speed)
+                {
+                    velocity.Value = Vector2.Normalize(velocity.Value) * playerControlled.Speed;
+                }
             });
         }
 
@@ -107,6 +113,12 @@ namespace Kobold.Extensions.Input.Systems
                         velocity.Value += new Vector2(-speed, 0);
                     if (InputManager.IsKeyDown(right))
                         velocity.Value += new Vector2(speed, 0);
+                }
+
+                // Normalize diagonal movement to prevent faster diagonal speed
+                if (velocity.Value.LengthSquared() > speed * speed)
+                {
+                    velocity.Value = Vector2.Normalize(velocity.Value) * speed;
                 }
             });
         }
